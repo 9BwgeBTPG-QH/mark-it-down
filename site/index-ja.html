@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark It Down - ブラウザで動くWYSIWYGマークダウンエディタ</title>
+  <meta name="description" content="ブラウザで動くWYSIWYGマークダウンエディタ。Side Panel + New Tab両対応。AIから貼って編集、Markdownでエクスポート。アカウント不要。">
+  <!-- OGP -->
+  <meta property="og:title" content="Mark It Down - ブラウザで動くWYSIWYGマークダウンエディタ">
+  <meta property="og:description" content="ブラウザで動くWYSIWYGマークダウンエディタ。Side Panel + New Tab両対応。AIから貼って編集、Markdownでエクスポート。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="screenshots/hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-logo">
+        <img src="icon-128.png" alt="Mark It Down" class="logo-icon">
+        <h1>Mark It Down</h1>
+      </div>
+      <p class="tagline">ビューアじゃない。<strong>本物のエディタ</strong>。</p>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-image">
+          <img src="screenshots/hero.png" alt="Mark It Down - WYSIWYGマークダウンエディタ" loading="lazy">
+        </div>
+        <div class="hero-content">
+          <h2>問題</h2>
+          <p>ただコピペするだけでは、「あなたの知識」になっていない。</p>
+          
+          <h2>解決</h2>
+          <p>Mark It Downは、<strong>「咀嚼の場所」</strong>。</p>
+          <ul>
+            <li>集中してマークダウンを書くもよし</li>
+            <li>AIの出力を編集し、自分の言葉に書き換えるもよし</li>
+            <li>.mdでエクスポートして、Obsidian/Notionへ持ち出すもよし</li>
+          </ul>
+          <p class="emphasis">マークダウンで書くために、余計な機能は削りました。</p>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-primary">
+              Chrome Web Storeで入手
+            </a>
+            <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down" class="btn btn-secondary">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- What Makes It Different -->
+      <section>
+        <h2>📌 他と何が違う？</h2>
+        <div class="features">
+          <div class="feature-card">
+            <h3>✅ 表示だけじゃなく、編集できる</h3>
+            <p>WYSIWYG編集体験</p>
+          </div>
+          <div class="feature-card">
+            <h3>✅ Side Panel</h3>
+            <p>AIチャットなどウェブサイトの横でメモ</p>
+          </div>
+          <div class="feature-card">
+            <h3>✅ New Tab</h3>
+            <p>全画面で集中執筆</p>
+          </div>
+          <div class="feature-card">
+            <h3>✅ アカウント不要</h3>
+            <p>100%ローカル保存</p>
+          </div>
+          <div class="feature-card">
+            <h3>✅ Git連携</h3>
+            <p>自分のGitHub/GitLabにバックアップ</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenshots Gallery -->
+      <section>
+        <h2>スクリーンショット</h2>
+        <div class="screenshots">
+          <div class="screenshot-item">
+            <img src="screenshots/SidePanel.png" alt="Side Panel - Webページ横でのメモ編集" loading="lazy">
+            <p class="screenshot-caption">Side Panel - Webページ横でクイックメモ</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/conflict-resolution.png" alt="競合問題の解決 - Side by sideによる競合解決" loading="lazy">
+            <p class="screenshot-caption">マージ競合解決 - Side-by-sideで比較</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/Paste.png" alt="ペースト - クリップボードからのペースト" loading="lazy">
+            <p class="screenshot-caption">クリップボードからペースト - 即座にレンダリング</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/template.png" alt="Template - テンプレート機能" loading="lazy">
+            <p class="screenshot-caption">テンプレートシステム - 再利用可能なノートテンプレート</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/zen-mode.png" alt="Zen Mode - 集中執筆モード" loading="lazy">
+            <p class="screenshot-caption">Zenモード - 集中執筆モード（F11/Ctrl+Shift+Z）</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Features -->
+      <section>
+        <h2>主な機能</h2>
+        
+        <div class="feature-detail">
+          <h3>📑 デュアルモード</h3>
+          <ul>
+            <li><strong>New Tab：</strong>目次付きの全画面編集</li>
+            <li><strong>Side Panel：</strong>Webページ横でクイックメモ</li>
+          </ul>
+        </div>
+
+        <div class="feature-detail">
+          <h3>🧘 Zenモード</h3>
+          <p><em>New Tab 専用</em> - F11またはCtrl+Shift+Z</p>
+          <ul>
+            <li>集中執筆モード</li>
+            <li>エディタ以外すべて非表示</li>
+          </ul>
+        </div>
+
+        <div class="feature-detail">
+          <h3>✨ 即時レンダリング</h3>
+          <ul>
+            <li>GFMテーブル、Mermaid図、コードハイライト</li>
+            <li>GitHub Alerts（NOTE, TIP, WARNING）</li>
+            <li>LaTeX数式（$E=mc^2$）</li>
+          </ul>
+        </div>
+
+        <div class="feature-detail">
+          <h3>📁 スマートフォルダ</h3>
+          <ul>
+            <li>Inbox → Template /Archive/Trash</li>
+            <li>クイックアクション：Alt+T/A/X</li>
+          </ul>
+        </div>
+
+        <div class="feature-detail">
+          <h3>🔗 Git連携</h3>
+          <ul>
+            <li>GitHub/GitLabへPush/Pull</li>
+            <li>Side-by-sideでマージ競合解決</li>
+            <li>AES-GCM暗号化トークン</li>
+          </ul>
+        </div>
+
+        <div class="feature-detail">
+          <h3>📤 いつでもエクスポート</h3>
+          <ul>
+            <li>.md / .zip</li>
+            <li>あなたのノート、あなたのデータ</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Philosophy -->
+      <section class="philosophy">
+        <blockquote>
+          <p><strong>プラグインもウィジェットもない。</strong></p>
+          <p><strong>書いた瞬間、完成形が見える。</strong></p>
+          <p><strong>書くことに向き合えるマークダウンエディタ。</strong></p>
+          <p><strong>あるのは、空白のページとあなたの思考だけ。</strong></p>
+        </blockquote>
+      </section>
+
+      <!-- Privacy -->
+      <section>
+        <h2>🔒 プライバシー重視</h2>
+        <ul>
+          <li>すべてローカル保存（chrome.storage）</li>
+          <li>アカウント不要、クラウドなし、トラッキングなし</li>
+          <li>ノートがブラウザの外に出ることはない</li>
+        </ul>
+        <p>
+          <a href="privacy-policy.html">プライバシーポリシーの詳細 →</a>
+        </p>
+      </section>
+
+      <!-- Perfect For -->
+      <section>
+        <h2>こんな方に：</h2>
+        <ul>
+          <li>AIの出力を自分の知識にしたい人</li>
+          <li>気が散らないMarkdown執筆環境がほしい人</li>
+          <li>Gitでノートをバックアップしたい開発者</li>
+        </ul>
+      </section>
+
+      <!-- Support -->
+      <section>
+        <h2>サポート</h2>
+        <p>
+          バグ報告・機能要望は<a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down/issues">GitHub Issues</a>までお願いします。
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <a href="index.html">English</a> |
+        Mark It Down &copy; 2025 |
+        <a href="privacy-policy.html">Privacy Policy</a> |
+        <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down">GitHub</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

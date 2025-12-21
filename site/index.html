@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark It Down - WYSIWYG Markdown Editor for Chrome</title>
+  <meta name="description" content="WYSIWYG Markdown editor in your browser. Side Panel + New Tab. Paste from AI, edit instantly, export as markdown. No account needed.">
+  <!-- OGP -->
+  <meta property="og:title" content="Mark It Down - WYSIWYG Markdown Editor for Chrome">
+  <meta property="og:description" content="WYSIWYG Markdown editor in your browser. Side Panel + New Tab. Paste from AI, edit instantly, export as markdown.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="screenshots/hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-logo">
+        <img src="icon-128.png" alt="Mark It Down" class="logo-icon">
+        <h1>Mark It Down</h1>
+      </div>
+      <p class="tagline">Not just a viewer. A <strong>real editor</strong> in your browser.</p>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-image">
+          <img src="screenshots/hero.png" alt="Mark It Down - WYSIWYG Markdown Editor" loading="lazy">
+        </div>
+        <div class="hero-content">
+          <h2>The Problem</h2>
+          <p>Just copy-pasting doesn't make it <em>your</em> knowledge.</p>
+          
+          <h2>The Solution</h2>
+          <p>Mark It Down is a <strong>place to digest</strong>.</p>
+          <ul>
+            <li>Write focused Markdown</li>
+            <li>Edit AI output, make it your own words</li>
+            <li>Export .md to Obsidian/Notion</li>
+          </ul>
+          <p class="emphasis">We removed everything except what you need to write.</p>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-primary">
+              Get it on Chrome Web Store
+            </a>
+            <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down" class="btn btn-secondary">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- What Makes It Different -->
+      <section>
+        <h2>📌 What makes it different:</h2>
+        <div class="features">
+          <div class="feature-card">
+            <h3>✅ Edit, not just view</h3>
+            <p>Full WYSIWYG editing experience</p>
+          </div>
+          <div class="feature-card">
+            <h3>✅ Side Panel</h3>
+            <p>Take notes alongside AI chats or web sites</p>
+          </div>
+          <div class="feature-card">
+            <h3>✅ New Tab</h3>
+            <p>Full-screen focused writing</p>
+          </div>
+          <div class="feature-card">
+            <h3>✅ No account required</h3>
+            <p>100% local storage</p>
+          </div>
+          <div class="feature-card">
+            <h3>✅ Git sync</h3>
+            <p>Backup to your own GitHub/GitLab</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenshots Gallery -->
+      <section>
+        <h2>Screenshots</h2>
+        <div class="screenshots">
+          <div class="screenshot-item">
+            <img src="screenshots/SidePanel.png" alt="Side Panel - Webページ横でのメモ編集" loading="lazy">
+            <p class="screenshot-caption">Side Panel - Quick notes alongside any webpage</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/conflict-resolution.png" alt="競合問題の解決 - Side by sideによる競合解決" loading="lazy">
+            <p class="screenshot-caption">Merge Conflict Resolution - Side-by-side comparison</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/Paste.png" alt="ペースト - クリップボードからのペースト" loading="lazy">
+            <p class="screenshot-caption">Paste from Clipboard - Instant rendering</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/template.png" alt="Template - テンプレート機能" loading="lazy">
+            <p class="screenshot-caption">Template System - Reusable note templates</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="screenshots/zen-mode.png" alt="Zen Mode - 集中執筆モード" loading="lazy">
+            <p class="screenshot-caption">Zen Mode - Distraction-free writing (F11/Ctrl+Shift+Z)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Features -->
+      <section>
+        <h2>Core Features</h2>
+        
+        <div class="feature-detail">
+          <h3>📑 Dual Mode</h3>
+          <ul>
+            <li><strong>New Tab:</strong> Full-screen with Table of Contents</li>
+            <li><strong>Side Panel:</strong> Quick notes alongside any webpage</li>
+          </ul>
+        </div>
+
+        <div class="feature-detail">
+          <h3>🧘 Zen Mode</h3>
+          <p><em>New Tab ONLY</em> - Press F11 or Ctrl+Shift+Z</p>
+          <ul>
+            <li>Distraction-free writing</li>
+            <li>Hide everything except the editor</li>
+          </ul>
+        </div>
+
+        <div class="feature-detail">
+          <h3>✨ Instant Rendering</h3>
+          <ul>
+            <li>GFM tables, Mermaid diagrams, code highlighting</li>
+            <li>GitHub Alerts (NOTE, TIP, WARNING)</li>
+            <li>LaTeX math ($E=mc^2$)</li>
+          </ul>
+        </div>
+
+        <div class="feature-detail">
+          <h3>📁 Smart Folders</h3>
+          <ul>
+            <li>Inbox → Template /Archive/Trash</li>
+            <li>Quick actions: Alt+T/A/X</li>
+          </ul>
+        </div>
+
+        <div class="feature-detail">
+          <h3>🔗 Git Integration</h3>
+          <ul>
+            <li>Push/Pull to GitHub/GitLab</li>
+            <li>Side-by-side merge conflict resolution</li>
+            <li>AES-GCM encrypted tokens</li>
+          </ul>
+        </div>
+
+        <div class="feature-detail">
+          <h3>📤 Export Anytime</h3>
+          <ul>
+            <li>.md or .zip</li>
+            <li>Your notes, your data</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Philosophy -->
+      <section class="philosophy">
+        <blockquote>
+          <p><strong>No plugins. No widgets.</strong></p>
+          <p><strong>What you write is what you see.</strong></p>
+          <p><strong>A Markdown editor for focused writing.</strong></p>
+          <p><strong>Just a blank page and your thoughts.</strong></p>
+        </blockquote>
+      </section>
+
+      <!-- Privacy -->
+      <section>
+        <h2>🔒 Privacy First</h2>
+        <ul>
+          <li>All data stored locally (chrome.storage)</li>
+          <li>No account, no cloud, no tracking</li>
+          <li>Your notes never leave your browser</li>
+        </ul>
+        <p>
+          <a href="privacy-policy.html">Read full Privacy Policy →</a>
+        </p>
+      </section>
+
+      <!-- Perfect For -->
+      <section>
+        <h2>Perfect for:</h2>
+        <ul>
+          <li>AI power users who want to own their knowledge</li>
+          <li>Writers who need distraction-free Markdown</li>
+          <li>Developers who want Git-backed notes</li>
+        </ul>
+      </section>
+
+      <!-- Support -->
+      <section>
+        <h2>Support</h2>
+        <p>
+          For bug reports and feature requests, please visit <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down/issues">GitHub Issues</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <a href="index-ja.html">日本語</a> |
+        Mark It Down &copy; 2025 |
+        <a href="privacy-policy.html">Privacy Policy</a> |
+        <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down">GitHub</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Mark It Down</title>
+  <meta name="description" content="Privacy Policy for Mark It Down Chrome Extension">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Privacy Policy</h1>
+      <p class="tagline">Mark It Down Chrome Extension</p>
+    </header>
+
+    <main>
+      <p><strong>Last Updated: December 2024</strong></p>
+
+      <section>
+        <h2>Overview</h2>
+        <p>
+          Mark It Down is a Chrome extension that provides a WYSIWYG Markdown note-taking experience
+          in your new tab and side panel. This privacy policy explains how we handle your data.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data Collection</h2>
+        <p>
+          <strong>Mark It Down does NOT collect, transmit, or share any personal data.</strong>
+        </p>
+        <p>
+          All your notes and settings are stored locally in your browser using Chrome's storage API.
+          We do not have servers and do not collect any information about you or your usage.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data Storage</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Data Type</th>
+              <th>Storage Location</th>
+              <th>Transmitted?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Notes</td>
+              <td>Local (chrome.storage.local)</td>
+              <td>No*</td>
+            </tr>
+            <tr>
+              <td>Settings</td>
+              <td>Local (chrome.storage.local)</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Git Token</td>
+              <td>Local (encrypted)</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><small>*Unless you explicitly enable Git synchronization</small></p>
+      </section>
+
+      <section>
+        <h2>Git Synchronization (Optional)</h2>
+        <p>If you choose to enable Git synchronization:</p>
+
+        <h3>Token Security</h3>
+        <ul>
+          <li><strong>Encryption</strong>: Your token is encrypted using AES-256-GCM with PBKDF2 key derivation</li>
+          <li><strong>Storage</strong>: The encrypted token is stored only in your browser's local storage</li>
+          <li><strong>No transmission to us</strong>: Your token is never sent to our servers (we don't have any)</li>
+        </ul>
+
+        <h3>Data Transmission</h3>
+        <ul>
+          <li><strong>Direct Communication</strong>: Notes are transmitted directly between your browser and your Git repository</li>
+          <li><strong>No Intermediary</strong>: No data passes through any third-party servers</li>
+          <li><strong>Your Control</strong>: You can disconnect Git synchronization at any time</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Permissions Explained</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>storage</td>
+              <td>Store your notes and settings locally in Chrome</td>
+            </tr>
+            <tr>
+              <td>unlimitedStorage</td>
+              <td>Support unlimited notes without storage restrictions</td>
+            </tr>
+            <tr>
+              <td>sidePanel</td>
+              <td>Enable the side panel feature for note-taking while browsing</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Third-Party Services</h2>
+        <p>
+          Mark It Down does not integrate with any third-party analytics, advertising, or data collection services.
+        </p>
+        <p>
+          The only external services involved are GitHub/GitLab (optional), and communication is direct between
+          your browser and the Git service.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data Retention</h2>
+        <ul>
+          <li>Your data remains on your device as long as the extension is installed</li>
+          <li>Uninstalling the extension will delete all locally stored data</li>
+          <li>We have no access to your data and cannot recover it</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>
+          If you have questions about this privacy policy:
+          <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down/issues">GitHub Issues</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Summary</h2>
+        <p>
+          <strong>Your data is yours. We don't collect it, we don't see it, we don't sell it.
+          Everything stays on your device.</strong>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <a href="index.html">← Back to Home</a> |
+        <a href="index-ja.html">日本語</a> |
+        Mark It Down &copy; 2025
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
