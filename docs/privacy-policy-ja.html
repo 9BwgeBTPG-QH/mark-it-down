@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー - Mark It Down</title>
+  <meta name="description" content="Mark It Down Chrome拡張機能のプライバシーポリシー">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>プライバシーポリシー</h1>
+      <p class="tagline">Mark It Down Chrome拡張機能</p>
+    </header>
+
+    <main>
+      <p><strong>最終更新日: 2024年12月</strong></p>
+
+      <section>
+        <h2>概要</h2>
+        <p>
+          Mark It Downは、新しいタブとサイドパネルでWYSIWYGマークダウンメモ体験を提供するChrome拡張機能です。
+          このプライバシーポリシーでは、お客様のデータの取り扱いについて説明します。
+        </p>
+      </section>
+
+      <section>
+        <h2>データ収集について</h2>
+        <p>
+          <strong>Mark It Downは、個人データを収集、送信、共有しません。</strong>
+        </p>
+        <p>
+          すべてのノートと設定は、ChromeのストレージAPIを使用してブラウザ内にローカル保存されます。
+          私たちはサーバーを持たず、お客様やご利用状況に関する情報を一切収集しません。
+        </p>
+      </section>
+
+      <section>
+        <h2>データの保存</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>データの種類</th>
+              <th>保存場所</th>
+              <th>送信の有無</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ノート</td>
+              <td>ローカル（chrome.storage.local）</td>
+              <td>なし*</td>
+            </tr>
+            <tr>
+              <td>設定</td>
+              <td>ローカル（chrome.storage.local）</td>
+              <td>なし</td>
+            </tr>
+            <tr>
+              <td>Gitトークン</td>
+              <td>ローカル（暗号化）</td>
+              <td>なし</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><small>*Git同期を明示的に有効にした場合を除く</small></p>
+      </section>
+
+      <section>
+        <h2>Git同期（オプション）</h2>
+        <p>Git同期を有効にした場合：</p>
+
+        <h3>トークンのセキュリティ</h3>
+        <ul>
+          <li><strong>暗号化</strong>: トークンはPBKDF2鍵導出を用いたAES-256-GCMで暗号化されます</li>
+          <li><strong>保存</strong>: 暗号化されたトークンはブラウザのローカルストレージにのみ保存されます</li>
+          <li><strong>私たちへの送信なし</strong>: トークンが私たちのサーバーに送信されることはありません（サーバーは存在しません）</li>
+        </ul>
+
+        <h3>データ通信</h3>
+        <ul>
+          <li><strong>直接通信</strong>: ノートはお客様のブラウザとGitリポジトリ間で直接送受信されます</li>
+          <li><strong>仲介なし</strong>: データが第三者のサーバーを経由することはありません</li>
+          <li><strong>お客様の管理下</strong>: Git同期はいつでも解除できます</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>権限の説明</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>権限</th>
+              <th>目的</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>storage</td>
+              <td>ノートと設定をChromeにローカル保存するため</td>
+            </tr>
+            <tr>
+              <td>unlimitedStorage</td>
+              <td>ストレージ制限なしで無制限のノートをサポートするため</td>
+            </tr>
+            <tr>
+              <td>sidePanel</td>
+              <td>ブラウジング中にメモを取るためのサイドパネル機能を有効にするため</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>サードパーティサービス</h2>
+        <p>
+          Mark It Downは、サードパーティの分析、広告、データ収集サービスと連携していません。
+        </p>
+        <p>
+          関連する外部サービスはGitHub/GitLab（オプション）のみであり、
+          通信はお客様のブラウザとGitサービス間で直接行われます。
+        </p>
+      </section>
+
+      <section>
+        <h2>データの保持</h2>
+        <ul>
+          <li>データは拡張機能がインストールされている限り、お客様のデバイスに保持されます</li>
+          <li>拡張機能をアンインストールすると、ローカルに保存されたすべてのデータが削除されます</li>
+          <li>私たちはお客様のデータにアクセスできず、復元することもできません</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>お問い合わせ</h2>
+        <p>
+          このプライバシーポリシーに関するご質問は
+          <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down/issues">GitHub Issues</a>
+          までお願いします。
+        </p>
+      </section>
+
+      <section>
+        <h2>まとめ</h2>
+        <p>
+          <strong>お客様のデータはお客様のものです。私たちはそれを収集せず、見ることもなく、販売することもありません。
+          すべてはお客様のデバイス内に留まります。</strong>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <a href="index-ja.html">&larr; ホームに戻る</a> |
+        <a href="privacy-policy.html">English</a> |
+        Mark It Down &copy; 2025
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
