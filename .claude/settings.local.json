@@ -3,7 +3,8 @@
     "allow": [
       "Bash(git mv:*)",
       "Bash(gh label create:*)",
-      "Bash(gh issue create:*)"
+      "Bash(gh issue create:*)",
+      "Bash(gh issue comment:*)"
     ]
   }
 }
