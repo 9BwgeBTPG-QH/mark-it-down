@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mark It Down - ブラウザで動くWYSIWYGマークダウンエディタ</title>
-  <meta name="description" content="ブラウザで動くWYSIWYGマークダウンエディタ。Side Panel + New Tab両対応。AIから貼って編集、Markdownでエクスポート。アカウント不要。">
-  <meta name="theme-color" content="#0f0f1a">
+  <title>Mark It Down - 書くための静かな場所</title>
+  <meta name="description" content="気が散らないMarkdownエディタ。AIのそばで書いて、考えを整理して、次へ進む。">
+  <meta name="theme-color" content="#FAF9F7">
   <!-- OGP -->
-  <meta property="og:title" content="Mark It Down - ブラウザで動くWYSIWYGマークダウンエディタ">
-  <meta property="og:description" content="ブラウザで動くWYSIWYGマークダウンエディタ。Side Panel + New Tab両対応。AIから貼って編集、Markdownでエクスポート。">
+  <meta property="og:title" content="Mark It Down - 書くための静かな場所">
+  <meta property="og:description" content="気が散らないMarkdownエディタ。AIのそばで書いて、考えを整理して、次へ進む。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="screenshots/hero.png">
+  <meta property="og:image" content="screenshots/zen-mode.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
@@ -27,201 +27,75 @@
         <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
         <h1>Mark It Down</h1>
       </div>
-      <p class="tagline">ビューアじゃない。<strong>本物のエディタ</strong>。</p>
+      <p class="tagline">書くための静かな場所</p>
     </header>
 
     <main id="main-content" role="main">
       <!-- Hero Section -->
-      <section class="hero" aria-labelledby="hero-problem">
-        <div class="hero-image">
-          <img src="screenshots/hero.png" alt="Mark It Downインターフェース - サイドパネル表示のWYSIWYGマークダウンエディタ" loading="lazy">
-        </div>
-        <div class="hero-content">
-          <h2 id="hero-problem">問題</h2>
-          <p>ただコピペするだけでは、「あなたの知識」になっていない。</p>
-
-          <h2 id="hero-solution">解決</h2>
-          <p>Mark It Downは、<strong>「咀嚼の場所」</strong>。</p>
-          <ul role="list">
-            <li>集中してマークダウンを書くもよし</li>
-            <li>AIの出力を編集し、自分の言葉に書き換えるもよし</li>
-            <li>.mdでエクスポートして、Obsidian/Notionへ持ち出すもよし</li>
-          </ul>
-          <p class="emphasis">マークダウンで書くために、余計な機能は削りました。</p>
-
-          <div class="buttons">
-            <a href="#" class="btn btn-primary" aria-label="Chrome Web StoreでMark It Downを入手">
-              Chrome Web Storeで入手
-            </a>
-            <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down" class="btn btn-secondary" aria-label="GitHubでソースコードを見る">
-              GitHub
-            </a>
-          </div>
+      <section class="hero" aria-labelledby="hero-heading">
+        <h2 id="hero-heading" class="visually-hidden">はじめに</h2>
+        <p class="hero-tagline">書く。考える。次へ。</p>
+        <p class="hero-subtitle">
+          AIのそばで使える、気が散らないMarkdownエディタ。
+          保存する場所じゃない。咀嚼する場所。
+        </p>
+        <div class="buttons">
+          <a href="#" class="btn btn-primary" aria-label="Mark It Downで書き始める">
+            書き始める
+          </a>
+          <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down" class="btn btn-secondary" aria-label="GitHubでソースを見る">
+            GitHub
+          </a>
         </div>
       </section>
 
-      <!-- What Makes It Different -->
-      <section aria-labelledby="features-heading">
-        <h2 id="features-heading"><span aria-hidden="true">&#x1F4CC;</span> 他と何が違う？</h2>
-        <div class="features" role="list">
-          <article class="feature-card" role="listitem">
-            <h3><span aria-hidden="true">&#x2705;</span> 表示だけじゃなく、編集できる</h3>
-            <p>WYSIWYG編集体験</p>
-          </article>
-          <article class="feature-card" role="listitem">
-            <h3><span aria-hidden="true">&#x2705;</span> Side Panel</h3>
-            <p>AIチャットなどウェブサイトの横でメモ</p>
-          </article>
-          <article class="feature-card" role="listitem">
-            <h3><span aria-hidden="true">&#x2705;</span> New Tab</h3>
-            <p>全画面で集中執筆</p>
-          </article>
-          <article class="feature-card" role="listitem">
-            <h3><span aria-hidden="true">&#x2705;</span> アカウント不要</h3>
-            <p>100%ローカル保存</p>
-          </article>
-          <article class="feature-card" role="listitem">
-            <h3><span aria-hidden="true">&#x2705;</span> Git連携</h3>
-            <p>自分のGitHub/GitLabにバックアップ</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Screenshots Gallery -->
-      <section aria-labelledby="screenshots-heading">
-        <h2 id="screenshots-heading">スクリーンショット</h2>
-        <div class="screenshots" role="list">
-          <figure class="screenshot-item" role="listitem">
-            <img src="screenshots/SidePanel.png" alt="Side Panel表示でWebページ横でのメモ編集の様子" loading="lazy">
-            <figcaption class="screenshot-caption">Side Panel - Webページ横でクイックメモ</figcaption>
-          </figure>
-          <figure class="screenshot-item" role="listitem">
-            <img src="screenshots/conflict-resolution.png" alt="マージ競合解決インターフェース - Side-by-side比較表示" loading="lazy">
-            <figcaption class="screenshot-caption">マージ競合解決 - Side-by-sideで比較</figcaption>
-          </figure>
-          <figure class="screenshot-item" role="listitem">
-            <img src="screenshots/Paste.png" alt="クリップボードからペースト機能 - 即座にマークダウンレンダリング" loading="lazy">
-            <figcaption class="screenshot-caption">クリップボードからペースト - 即座にレンダリング</figcaption>
-          </figure>
-          <figure class="screenshot-item" role="listitem">
-            <img src="screenshots/template.png" alt="テンプレート管理インターフェース - 再利用可能なノートテンプレート" loading="lazy">
-            <figcaption class="screenshot-caption">テンプレートシステム - 再利用可能なノートテンプレート</figcaption>
-          </figure>
-          <figure class="screenshot-item" role="listitem">
-            <img src="screenshots/zen-mode.png" alt="Zenモード - 全画面集中執筆モード" loading="lazy">
-            <figcaption class="screenshot-caption">Zenモード - 集中執筆モード（F11/Ctrl+Shift+Z）</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <!-- Core Features -->
-      <section aria-labelledby="core-features-heading">
-        <h2 id="core-features-heading">主な機能</h2>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x1F4D1;</span> デュアルモード</h3>
-          <ul role="list">
-            <li><strong>New Tab：</strong>目次付きの全画面編集</li>
-            <li><strong>Side Panel：</strong>Webページ横でクイックメモ</li>
-          </ul>
-        </article>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x1F9D8;</span> Zenモード</h3>
-          <p><em>New Tab 専用</em> - F11またはCtrl+Shift+Z</p>
-          <ul role="list">
-            <li>集中執筆モード</li>
-            <li>エディタ以外すべて非表示</li>
-          </ul>
-        </article>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x2728;</span> 即時レンダリング</h3>
-          <ul role="list">
-            <li>GFMテーブル、Mermaid図、コードハイライト</li>
-            <li>GitHub Alerts（NOTE, TIP, WARNING）</li>
-            <li>LaTeX数式（$E=mc^2$）</li>
-          </ul>
-        </article>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x1F4C1;</span> スマートフォルダ</h3>
-          <ul role="list">
-            <li>Inbox、Template、Archive、Trash</li>
-            <li>クイックアクション：Alt+T/A/X</li>
-          </ul>
-        </article>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x1F517;</span> Git連携</h3>
-          <ul role="list">
-            <li>GitHub/GitLabへPush/Pull</li>
-            <li>Side-by-sideでマージ競合解決</li>
-            <li>AES-GCM暗号化トークン</li>
-          </ul>
-        </article>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x1F4E4;</span> いつでもエクスポート</h3>
-          <ul role="list">
-            <li>.md / .zip</li>
-            <li>あなたのノート、あなたのデータ</li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- Philosophy -->
+      <!-- Philosophy Section -->
       <section class="philosophy" aria-labelledby="philosophy-heading">
-        <h2 class="visually-hidden" id="philosophy-heading">私たちの哲学</h2>
-        <blockquote>
-          <p><strong>プラグインもウィジェットもない。</strong></p>
-          <p><strong>書いた瞬間、完成形が見える。</strong></p>
-          <p><strong>書くことに向き合えるマークダウンエディタ。</strong></p>
-          <p><strong>あるのは、空白のページとあなたの思考だけ。</strong></p>
-        </blockquote>
-      </section>
-
-      <!-- Privacy -->
-      <section aria-labelledby="privacy-heading">
-        <h2 id="privacy-heading"><span aria-hidden="true">&#x1F512;</span> プライバシー重視</h2>
-        <ul role="list">
-          <li>すべてローカル保存（chrome.storage）</li>
-          <li>アカウント不要、クラウドなし、トラッキングなし</li>
-          <li>ノートがブラウザの外に出ることはない</li>
-        </ul>
-        <p>
-          <a href="privacy-policy-ja.html">プライバシーポリシーの詳細</a>
-        </p>
-      </section>
-
-      <!-- Perfect For -->
-      <section aria-labelledby="perfect-for-heading">
-        <h2 id="perfect-for-heading">こんな方に：</h2>
-        <ul role="list">
-          <li>AIの出力を自分の知識にしたい人</li>
-          <li>気が散らないMarkdown執筆環境がほしい人</li>
-          <li>Gitでノートをバックアップしたい開発者</li>
+        <h2 id="philosophy-heading" class="visually-hidden">哲学</h2>
+        <ul class="philosophy-list" role="list">
+          <li class="philosophy-item" role="listitem">
+            <h3>道具を減らして、余白を増やす。</h3>
+            <p>プラグインもウィジェットもない。あるのは空白のページとあなたの思考だけ。</p>
+          </li>
+          <li class="philosophy-item" role="listitem">
+            <h3>保存じゃなくて、咀嚼。</h3>
+            <p>コピペするだけでは自分のものにならない。書き直すことで、自分の言葉になる。</p>
+          </li>
+          <li class="philosophy-item" role="listitem">
+            <h3>あなたの言葉で、あなたのリズムで。</h3>
+            <p>サイドパネルでも新しいタブでも。集中したいときはZenモード。</p>
+          </li>
         </ul>
       </section>
 
-      <!-- Support -->
-      <section aria-labelledby="support-heading">
-        <h2 id="support-heading">サポート</h2>
-        <p>
-          バグ報告・機能要望は<a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down/issues">GitHub Issues</a>までお願いします。
-        </p>
+      <!-- Screenshot Section -->
+      <section class="screenshot-section" aria-labelledby="screenshot-heading">
+        <h2 id="screenshot-heading" class="visually-hidden">プレビュー</h2>
+        <img src="screenshots/zen-mode.png" alt="Mark It DownのZenモード - 集中執筆のためのクリーンなインターフェース" loading="lazy">
+        <p class="screenshot-caption">Zenモード — 集中執筆</p>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">書き始めませんか？</h2>
+        <p>Chrome拡張機能で利用可能。アカウント不要。</p>
+        <div class="buttons">
+          <a href="#" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
+            拡張機能を入手
+          </a>
+        </div>
       </section>
     </main>
 
     <footer role="contentinfo">
       <p>
         <a href="index.html" hreflang="en">English</a>
-        <span aria-hidden="true">|</span>
-        <span>Mark It Down &copy; 2025</span>
-        <span aria-hidden="true">|</span>
-        <a href="privacy-policy-ja.html">プライバシーポリシー</a>
-        <span aria-hidden="true">|</span>
+        <span aria-hidden="true">·</span>
+        <a href="privacy-policy-ja.html">プライバシー</a>
+        <span aria-hidden="true">·</span>
         <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down">GitHub</a>
+        <span aria-hidden="true">·</span>
+        <span>© 2025</span>
       </p>
     </footer>
   </div>

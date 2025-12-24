@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mark It Down - WYSIWYG Markdown Editor for Chrome</title>
-  <meta name="description" content="WYSIWYG Markdown editor in your browser. Side Panel + New Tab. Paste from AI, edit instantly, export as markdown. No account needed.">
-  <meta name="theme-color" content="#0f0f1a">
+  <title>Mark It Down - A Quiet Space for Writing</title>
+  <meta name="description" content="A distraction-free Markdown editor in your browser. Write beside AI, digest your thoughts, move on.">
+  <meta name="theme-color" content="#FAF9F7">
   <!-- OGP -->
-  <meta property="og:title" content="Mark It Down - WYSIWYG Markdown Editor for Chrome">
-  <meta property="og:description" content="WYSIWYG Markdown editor in your browser. Side Panel + New Tab. Paste from AI, edit instantly, export as markdown.">
+  <meta property="og:title" content="Mark It Down - A Quiet Space for Writing">
+  <meta property="og:description" content="A distraction-free Markdown editor in your browser. Write beside AI, digest your thoughts, move on.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="screenshots/hero.png">
+  <meta property="og:image" content="screenshots/zen-mode.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
@@ -27,201 +27,75 @@
         <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
         <h1>Mark It Down</h1>
       </div>
-      <p class="tagline">Not just a viewer. A <strong>real editor</strong> in your browser.</p>
+      <p class="tagline">A quiet space for writing</p>
     </header>
 
     <main id="main-content" role="main">
       <!-- Hero Section -->
-      <section class="hero" aria-labelledby="hero-problem">
-        <div class="hero-image">
-          <img src="screenshots/hero.png" alt="Mark It Down interface showing the WYSIWYG Markdown editor with side panel view" loading="lazy">
-        </div>
-        <div class="hero-content">
-          <h2 id="hero-problem">The Problem</h2>
-          <p>Just copy-pasting doesn't make it <em>your</em> knowledge.</p>
-
-          <h2 id="hero-solution">The Solution</h2>
-          <p>Mark It Down is a <strong>place to digest</strong>.</p>
-          <ul role="list">
-            <li>Write focused Markdown</li>
-            <li>Edit AI output, make it your own words</li>
-            <li>Export .md to Obsidian/Notion</li>
-          </ul>
-          <p class="emphasis">We removed everything except what you need to write.</p>
-
-          <div class="buttons">
-            <a href="#" class="btn btn-primary" aria-label="Get Mark It Down on Chrome Web Store">
-              Get it on Chrome Web Store
-            </a>
-            <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down" class="btn btn-secondary" aria-label="View source code on GitHub">
-              GitHub
-            </a>
-          </div>
+      <section class="hero" aria-labelledby="hero-heading">
+        <h2 id="hero-heading" class="visually-hidden">Introduction</h2>
+        <p class="hero-tagline">Write. Think. Move on.</p>
+        <p class="hero-subtitle">
+          A distraction-free Markdown editor that sits beside AI.
+          Not a place to store—a place to digest.
+        </p>
+        <div class="buttons">
+          <a href="#" class="btn btn-primary" aria-label="Begin writing with Mark It Down">
+            Begin writing
+          </a>
+          <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down" class="btn btn-secondary" aria-label="View source on GitHub">
+            GitHub
+          </a>
         </div>
       </section>
 
-      <!-- What Makes It Different -->
-      <section aria-labelledby="features-heading">
-        <h2 id="features-heading"><span aria-hidden="true">&#x1F4CC;</span> What makes it different:</h2>
-        <div class="features" role="list">
-          <article class="feature-card" role="listitem">
-            <h3><span aria-hidden="true">&#x2705;</span> Edit, not just view</h3>
-            <p>Full WYSIWYG editing experience</p>
-          </article>
-          <article class="feature-card" role="listitem">
-            <h3><span aria-hidden="true">&#x2705;</span> Side Panel</h3>
-            <p>Take notes alongside AI chats or web sites</p>
-          </article>
-          <article class="feature-card" role="listitem">
-            <h3><span aria-hidden="true">&#x2705;</span> New Tab</h3>
-            <p>Full-screen focused writing</p>
-          </article>
-          <article class="feature-card" role="listitem">
-            <h3><span aria-hidden="true">&#x2705;</span> No account required</h3>
-            <p>100% local storage</p>
-          </article>
-          <article class="feature-card" role="listitem">
-            <h3><span aria-hidden="true">&#x2705;</span> Git sync</h3>
-            <p>Backup to your own GitHub/GitLab</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Screenshots Gallery -->
-      <section aria-labelledby="screenshots-heading">
-        <h2 id="screenshots-heading">Screenshots</h2>
-        <div class="screenshots" role="list">
-          <figure class="screenshot-item" role="listitem">
-            <img src="screenshots/SidePanel.png" alt="Side Panel view showing note editing alongside a webpage" loading="lazy">
-            <figcaption class="screenshot-caption">Side Panel - Quick notes alongside any webpage</figcaption>
-          </figure>
-          <figure class="screenshot-item" role="listitem">
-            <img src="screenshots/conflict-resolution.png" alt="Merge conflict resolution interface with side-by-side comparison" loading="lazy">
-            <figcaption class="screenshot-caption">Merge Conflict Resolution - Side-by-side comparison</figcaption>
-          </figure>
-          <figure class="screenshot-item" role="listitem">
-            <img src="screenshots/Paste.png" alt="Clipboard paste feature with instant markdown rendering" loading="lazy">
-            <figcaption class="screenshot-caption">Paste from Clipboard - Instant rendering</figcaption>
-          </figure>
-          <figure class="screenshot-item" role="listitem">
-            <img src="screenshots/template.png" alt="Template management interface for reusable note templates" loading="lazy">
-            <figcaption class="screenshot-caption">Template System - Reusable note templates</figcaption>
-          </figure>
-          <figure class="screenshot-item" role="listitem">
-            <img src="screenshots/zen-mode.png" alt="Zen Mode with distraction-free full-screen writing" loading="lazy">
-            <figcaption class="screenshot-caption">Zen Mode - Distraction-free writing (F11/Ctrl+Shift+Z)</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <!-- Core Features -->
-      <section aria-labelledby="core-features-heading">
-        <h2 id="core-features-heading">Core Features</h2>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x1F4D1;</span> Dual Mode</h3>
-          <ul role="list">
-            <li><strong>New Tab:</strong> Full-screen with Table of Contents</li>
-            <li><strong>Side Panel:</strong> Quick notes alongside any webpage</li>
-          </ul>
-        </article>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x1F9D8;</span> Zen Mode</h3>
-          <p><em>New Tab ONLY</em> - Press F11 or Ctrl+Shift+Z</p>
-          <ul role="list">
-            <li>Distraction-free writing</li>
-            <li>Hide everything except the editor</li>
-          </ul>
-        </article>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x2728;</span> Instant Rendering</h3>
-          <ul role="list">
-            <li>GFM tables, Mermaid diagrams, code highlighting</li>
-            <li>GitHub Alerts (NOTE, TIP, WARNING)</li>
-            <li>LaTeX math ($E=mc^2$)</li>
-          </ul>
-        </article>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x1F4C1;</span> Smart Folders</h3>
-          <ul role="list">
-            <li>Inbox, Template, Archive, Trash</li>
-            <li>Quick actions: Alt+T/A/X</li>
-          </ul>
-        </article>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x1F517;</span> Git Integration</h3>
-          <ul role="list">
-            <li>Push/Pull to GitHub/GitLab</li>
-            <li>Side-by-side merge conflict resolution</li>
-            <li>AES-GCM encrypted tokens</li>
-          </ul>
-        </article>
-
-        <article class="feature-detail">
-          <h3><span aria-hidden="true">&#x1F4E4;</span> Export Anytime</h3>
-          <ul role="list">
-            <li>.md or .zip</li>
-            <li>Your notes, your data</li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- Philosophy -->
+      <!-- Philosophy Section -->
       <section class="philosophy" aria-labelledby="philosophy-heading">
-        <h2 class="visually-hidden" id="philosophy-heading">Our Philosophy</h2>
-        <blockquote>
-          <p><strong>No plugins. No widgets.</strong></p>
-          <p><strong>What you write is what you see.</strong></p>
-          <p><strong>A Markdown editor for focused writing.</strong></p>
-          <p><strong>Just a blank page and your thoughts.</strong></p>
-        </blockquote>
-      </section>
-
-      <!-- Privacy -->
-      <section aria-labelledby="privacy-heading">
-        <h2 id="privacy-heading"><span aria-hidden="true">&#x1F512;</span> Privacy First</h2>
-        <ul role="list">
-          <li>All data stored locally (chrome.storage)</li>
-          <li>No account, no cloud, no tracking</li>
-          <li>Your notes never leave your browser</li>
-        </ul>
-        <p>
-          <a href="privacy-policy.html">Read full Privacy Policy</a>
-        </p>
-      </section>
-
-      <!-- Perfect For -->
-      <section aria-labelledby="perfect-for-heading">
-        <h2 id="perfect-for-heading">Perfect for:</h2>
-        <ul role="list">
-          <li>AI power users who want to own their knowledge</li>
-          <li>Writers who need distraction-free Markdown</li>
-          <li>Developers who want Git-backed notes</li>
+        <h2 id="philosophy-heading" class="visually-hidden">Philosophy</h2>
+        <ul class="philosophy-list" role="list">
+          <li class="philosophy-item" role="listitem">
+            <h3>Less tool. More space.</h3>
+            <p>No plugins, no widgets. Just a blank page and your thoughts.</p>
+          </li>
+          <li class="philosophy-item" role="listitem">
+            <h3>Not storage. Digestion.</h3>
+            <p>Copy-pasting doesn't make it yours. Rewriting does.</p>
+          </li>
+          <li class="philosophy-item" role="listitem">
+            <h3>Your words. Your rhythm.</h3>
+            <p>Side panel or new tab. Zen mode when you need focus.</p>
+          </li>
         </ul>
       </section>
 
-      <!-- Support -->
-      <section aria-labelledby="support-heading">
-        <h2 id="support-heading">Support</h2>
-        <p>
-          For bug reports and feature requests, please visit <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down/issues">GitHub Issues</a>.
-        </p>
+      <!-- Screenshot Section -->
+      <section class="screenshot-section" aria-labelledby="screenshot-heading">
+        <h2 id="screenshot-heading" class="visually-hidden">Preview</h2>
+        <img src="screenshots/zen-mode.png" alt="Mark It Down in Zen Mode - a clean, distraction-free writing interface" loading="lazy">
+        <p class="screenshot-caption">Zen Mode — distraction-free writing</p>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">Ready to write?</h2>
+        <p>Available as a Chrome extension. No account required.</p>
+        <div class="buttons">
+          <a href="#" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
+            Get the extension
+          </a>
+        </div>
       </section>
     </main>
 
     <footer role="contentinfo">
       <p>
         <a href="index-ja.html" hreflang="ja">日本語</a>
-        <span aria-hidden="true">|</span>
-        <span>Mark It Down &copy; 2025</span>
-        <span aria-hidden="true">|</span>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <span aria-hidden="true">|</span>
+        <span aria-hidden="true">·</span>
+        <a href="privacy-policy.html">Privacy</a>
+        <span aria-hidden="true">·</span>
         <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down">GitHub</a>
+        <span aria-hidden="true">·</span>
+        <span>© 2025</span>
       </p>
     </footer>
   </div>
