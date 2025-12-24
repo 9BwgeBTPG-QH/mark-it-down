@@ -283,7 +283,8 @@ ul li::before {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.875rem 1.5rem;
+  min-height: 44px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
@@ -315,13 +316,55 @@ ul li::before {
 /* Links */
 a {
   color: var(--accent-light);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
   transition: color 0.2s ease;
 }
 
 a:hover {
   color: var(--text-primary);
-  text-decoration: underline;
+}
+
+/* Focus States (Accessibility) */
+a:focus,
+button:focus,
+.btn:focus {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 2px;
+}
+
+/* Skip to Content (Accessibility) */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-light);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 6px 6px;
+  text-decoration: none;
+  font-weight: 500;
+  z-index: 1000;
+  transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: none;
 }
 
 /* Tables */
