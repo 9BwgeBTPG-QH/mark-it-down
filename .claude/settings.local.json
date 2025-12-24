@@ -4,7 +4,10 @@
       "Bash(git mv:*)",
       "Bash(gh label create:*)",
       "Bash(gh issue create:*)",
-      "Bash(gh issue comment:*)"
+      "Bash(gh issue comment:*)",
+      "Bash(gh issue view:*)",
+      "Skill(ui-ux-pro-max)",
+      "Bash(python3:*)"
     ]
   }
 }

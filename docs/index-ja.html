@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mark It Down - ブラウザで動くWYSIWYGマークダウンエディタ</title>
   <meta name="description" content="ブラウザで動くWYSIWYGマークダウンエディタ。Side Panel + New Tab両対応。AIから貼って編集、Markdownでエクスポート。アカウント不要。">
+  <meta name="theme-color" content="#0f0f1a">
   <!-- OGP -->
   <meta property="og:title" content="Mark It Down - ブラウザで動くWYSIWYGマークダウンエディタ">
   <meta property="og:description" content="ブラウザで動くWYSIWYGマークダウンエディタ。Side Panel + New Tab両対応。AIから貼って編集、Markdownでエクスポート。">
@@ -21,27 +22,27 @@
 <body>
   <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
   <div class="container">
-    <header>
+    <header role="banner">
       <div class="header-logo">
-        <img src="icon-128.png" alt="Mark It Down" class="logo-icon">
+        <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
         <h1>Mark It Down</h1>
       </div>
       <p class="tagline">ビューアじゃない。<strong>本物のエディタ</strong>。</p>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" role="main">
       <!-- Hero Section -->
-      <section class="hero">
+      <section class="hero" aria-labelledby="hero-problem">
         <div class="hero-image">
-          <img src="screenshots/hero.png" alt="Mark It Down - WYSIWYGマークダウンエディタ" loading="lazy">
+          <img src="screenshots/hero.png" alt="Mark It Downインターフェース - サイドパネル表示のWYSIWYGマークダウンエディタ" loading="lazy">
         </div>
         <div class="hero-content">
-          <h2>問題</h2>
+          <h2 id="hero-problem">問題</h2>
           <p>ただコピペするだけでは、「あなたの知識」になっていない。</p>
-          
-          <h2>解決</h2>
+
+          <h2 id="hero-solution">解決</h2>
           <p>Mark It Downは、<strong>「咀嚼の場所」</strong>。</p>
-          <ul>
+          <ul role="list">
             <li>集中してマークダウンを書くもよし</li>
             <li>AIの出力を編集し、自分の言葉に書き換えるもよし</li>
             <li>.mdでエクスポートして、Obsidian/Notionへ持ち出すもよし</li>
@@ -49,10 +50,10 @@
           <p class="emphasis">マークダウンで書くために、余計な機能は削りました。</p>
 
           <div class="buttons">
-            <a href="#" class="btn btn-primary">
+            <a href="#" class="btn btn-primary" aria-label="Chrome Web StoreでMark It Downを入手">
               Chrome Web Storeで入手
             </a>
-            <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down" class="btn btn-secondary">
+            <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down" class="btn btn-secondary" aria-label="GitHubでソースコードを見る">
               GitHub
             </a>
           </div>
@@ -60,117 +61,118 @@
       </section>
 
       <!-- What Makes It Different -->
-      <section>
-        <h2><span aria-hidden="true">📌</span> 他と何が違う？</h2>
-        <div class="features">
-          <div class="feature-card">
-            <h3><span aria-hidden="true">✅</span> 表示だけじゃなく、編集できる</h3>
+      <section aria-labelledby="features-heading">
+        <h2 id="features-heading"><span aria-hidden="true">&#x1F4CC;</span> 他と何が違う？</h2>
+        <div class="features" role="list">
+          <article class="feature-card" role="listitem">
+            <h3><span aria-hidden="true">&#x2705;</span> 表示だけじゃなく、編集できる</h3>
             <p>WYSIWYG編集体験</p>
-          </div>
-          <div class="feature-card">
-            <h3><span aria-hidden="true">✅</span> Side Panel</h3>
+          </article>
+          <article class="feature-card" role="listitem">
+            <h3><span aria-hidden="true">&#x2705;</span> Side Panel</h3>
             <p>AIチャットなどウェブサイトの横でメモ</p>
-          </div>
-          <div class="feature-card">
-            <h3><span aria-hidden="true">✅</span> New Tab</h3>
+          </article>
+          <article class="feature-card" role="listitem">
+            <h3><span aria-hidden="true">&#x2705;</span> New Tab</h3>
             <p>全画面で集中執筆</p>
-          </div>
-          <div class="feature-card">
-            <h3><span aria-hidden="true">✅</span> アカウント不要</h3>
+          </article>
+          <article class="feature-card" role="listitem">
+            <h3><span aria-hidden="true">&#x2705;</span> アカウント不要</h3>
             <p>100%ローカル保存</p>
-          </div>
-          <div class="feature-card">
-            <h3><span aria-hidden="true">✅</span> Git連携</h3>
+          </article>
+          <article class="feature-card" role="listitem">
+            <h3><span aria-hidden="true">&#x2705;</span> Git連携</h3>
             <p>自分のGitHub/GitLabにバックアップ</p>
-          </div>
+          </article>
         </div>
       </section>
 
       <!-- Screenshots Gallery -->
-      <section>
-        <h2>スクリーンショット</h2>
-        <div class="screenshots">
-          <div class="screenshot-item">
-            <img src="screenshots/SidePanel.png" alt="Side Panel - Webページ横でのメモ編集" loading="lazy">
-            <p class="screenshot-caption">Side Panel - Webページ横でクイックメモ</p>
-          </div>
-          <div class="screenshot-item">
-            <img src="screenshots/conflict-resolution.png" alt="競合問題の解決 - Side by sideによる競合解決" loading="lazy">
-            <p class="screenshot-caption">マージ競合解決 - Side-by-sideで比較</p>
-          </div>
-          <div class="screenshot-item">
-            <img src="screenshots/Paste.png" alt="ペースト - クリップボードからのペースト" loading="lazy">
-            <p class="screenshot-caption">クリップボードからペースト - 即座にレンダリング</p>
-          </div>
-          <div class="screenshot-item">
-            <img src="screenshots/template.png" alt="Template - テンプレート機能" loading="lazy">
-            <p class="screenshot-caption">テンプレートシステム - 再利用可能なノートテンプレート</p>
-          </div>
-          <div class="screenshot-item">
-            <img src="screenshots/zen-mode.png" alt="Zen Mode - 集中執筆モード" loading="lazy">
-            <p class="screenshot-caption">Zenモード - 集中執筆モード（F11/Ctrl+Shift+Z）</p>
-          </div>
+      <section aria-labelledby="screenshots-heading">
+        <h2 id="screenshots-heading">スクリーンショット</h2>
+        <div class="screenshots" role="list">
+          <figure class="screenshot-item" role="listitem">
+            <img src="screenshots/SidePanel.png" alt="Side Panel表示でWebページ横でのメモ編集の様子" loading="lazy">
+            <figcaption class="screenshot-caption">Side Panel - Webページ横でクイックメモ</figcaption>
+          </figure>
+          <figure class="screenshot-item" role="listitem">
+            <img src="screenshots/conflict-resolution.png" alt="マージ競合解決インターフェース - Side-by-side比較表示" loading="lazy">
+            <figcaption class="screenshot-caption">マージ競合解決 - Side-by-sideで比較</figcaption>
+          </figure>
+          <figure class="screenshot-item" role="listitem">
+            <img src="screenshots/Paste.png" alt="クリップボードからペースト機能 - 即座にマークダウンレンダリング" loading="lazy">
+            <figcaption class="screenshot-caption">クリップボードからペースト - 即座にレンダリング</figcaption>
+          </figure>
+          <figure class="screenshot-item" role="listitem">
+            <img src="screenshots/template.png" alt="テンプレート管理インターフェース - 再利用可能なノートテンプレート" loading="lazy">
+            <figcaption class="screenshot-caption">テンプレートシステム - 再利用可能なノートテンプレート</figcaption>
+          </figure>
+          <figure class="screenshot-item" role="listitem">
+            <img src="screenshots/zen-mode.png" alt="Zenモード - 全画面集中執筆モード" loading="lazy">
+            <figcaption class="screenshot-caption">Zenモード - 集中執筆モード（F11/Ctrl+Shift+Z）</figcaption>
+          </figure>
         </div>
       </section>
 
       <!-- Core Features -->
-      <section>
-        <h2>主な機能</h2>
-        
-        <div class="feature-detail">
-          <h3><span aria-hidden="true">📑</span> デュアルモード</h3>
-          <ul>
+      <section aria-labelledby="core-features-heading">
+        <h2 id="core-features-heading">主な機能</h2>
+
+        <article class="feature-detail">
+          <h3><span aria-hidden="true">&#x1F4D1;</span> デュアルモード</h3>
+          <ul role="list">
             <li><strong>New Tab：</strong>目次付きの全画面編集</li>
             <li><strong>Side Panel：</strong>Webページ横でクイックメモ</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="feature-detail">
-          <h3><span aria-hidden="true">🧘</span> Zenモード</h3>
+        <article class="feature-detail">
+          <h3><span aria-hidden="true">&#x1F9D8;</span> Zenモード</h3>
           <p><em>New Tab 専用</em> - F11またはCtrl+Shift+Z</p>
-          <ul>
+          <ul role="list">
             <li>集中執筆モード</li>
             <li>エディタ以外すべて非表示</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="feature-detail">
-          <h3><span aria-hidden="true">✨</span> 即時レンダリング</h3>
-          <ul>
+        <article class="feature-detail">
+          <h3><span aria-hidden="true">&#x2728;</span> 即時レンダリング</h3>
+          <ul role="list">
             <li>GFMテーブル、Mermaid図、コードハイライト</li>
             <li>GitHub Alerts（NOTE, TIP, WARNING）</li>
             <li>LaTeX数式（$E=mc^2$）</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="feature-detail">
-          <h3><span aria-hidden="true">📁</span> スマートフォルダ</h3>
-          <ul>
-            <li>Inbox → Template /Archive/Trash</li>
+        <article class="feature-detail">
+          <h3><span aria-hidden="true">&#x1F4C1;</span> スマートフォルダ</h3>
+          <ul role="list">
+            <li>Inbox、Template、Archive、Trash</li>
             <li>クイックアクション：Alt+T/A/X</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="feature-detail">
-          <h3><span aria-hidden="true">🔗</span> Git連携</h3>
-          <ul>
+        <article class="feature-detail">
+          <h3><span aria-hidden="true">&#x1F517;</span> Git連携</h3>
+          <ul role="list">
             <li>GitHub/GitLabへPush/Pull</li>
             <li>Side-by-sideでマージ競合解決</li>
             <li>AES-GCM暗号化トークン</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="feature-detail">
-          <h3><span aria-hidden="true">📤</span> いつでもエクスポート</h3>
-          <ul>
+        <article class="feature-detail">
+          <h3><span aria-hidden="true">&#x1F4E4;</span> いつでもエクスポート</h3>
+          <ul role="list">
             <li>.md / .zip</li>
             <li>あなたのノート、あなたのデータ</li>
           </ul>
-        </div>
+        </article>
       </section>
 
       <!-- Philosophy -->
-      <section class="philosophy">
+      <section class="philosophy" aria-labelledby="philosophy-heading">
+        <h2 class="visually-hidden" id="philosophy-heading">私たちの哲学</h2>
         <blockquote>
           <p><strong>プラグインもウィジェットもない。</strong></p>
           <p><strong>書いた瞬間、完成形が見える。</strong></p>
@@ -180,22 +182,22 @@
       </section>
 
       <!-- Privacy -->
-      <section>
-        <h2><span aria-hidden="true">🔒</span> プライバシー重視</h2>
-        <ul>
+      <section aria-labelledby="privacy-heading">
+        <h2 id="privacy-heading"><span aria-hidden="true">&#x1F512;</span> プライバシー重視</h2>
+        <ul role="list">
           <li>すべてローカル保存（chrome.storage）</li>
           <li>アカウント不要、クラウドなし、トラッキングなし</li>
           <li>ノートがブラウザの外に出ることはない</li>
         </ul>
         <p>
-          <a href="privacy-policy-ja.html">プライバシーポリシーの詳細 &rarr;</a>
+          <a href="privacy-policy-ja.html">プライバシーポリシーの詳細</a>
         </p>
       </section>
 
       <!-- Perfect For -->
-      <section>
-        <h2>こんな方に：</h2>
-        <ul>
+      <section aria-labelledby="perfect-for-heading">
+        <h2 id="perfect-for-heading">こんな方に：</h2>
+        <ul role="list">
           <li>AIの出力を自分の知識にしたい人</li>
           <li>気が散らないMarkdown執筆環境がほしい人</li>
           <li>Gitでノートをバックアップしたい開発者</li>
@@ -203,19 +205,22 @@
       </section>
 
       <!-- Support -->
-      <section>
-        <h2>サポート</h2>
+      <section aria-labelledby="support-heading">
+        <h2 id="support-heading">サポート</h2>
         <p>
           バグ報告・機能要望は<a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down/issues">GitHub Issues</a>までお願いします。
         </p>
       </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
       <p>
-        <a href="index.html">English</a> |
-        Mark It Down &copy; 2025 |
-        <a href="privacy-policy-ja.html">プライバシーポリシー</a> |
+        <a href="index.html" hreflang="en">English</a>
+        <span aria-hidden="true">|</span>
+        <span>Mark It Down &copy; 2025</span>
+        <span aria-hidden="true">|</span>
+        <a href="privacy-policy-ja.html">プライバシーポリシー</a>
+        <span aria-hidden="true">|</span>
         <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down">GitHub</a>
       </p>
     </footer>
