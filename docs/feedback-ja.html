@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フィードバック - Mark It Down</title>
+  <meta name="description" content="Mark It Downへのフィードバックをお送りください。改善にご協力ください。">
+  <meta name="theme-color" content="#FAF9F7">
+  <!-- OGP -->
+  <meta property="og:title" content="フィードバック - Mark It Down">
+  <meta property="og:description" content="Mark It Downへのフィードバックをお送りください。改善にご協力ください。">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--spacing-lg) 0;
+    }
+
+    .form-embed {
+      width: 100%;
+      min-height: 800px;
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-lg);
+      background: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-info {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .form-info h2 {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .form-info p {
+      max-width: 500px;
+      margin: 0 auto var(--spacing-sm);
+    }
+
+    .feedback-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-md);
+      max-width: 600px;
+      margin: var(--spacing-xl) auto;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feedback-types li {
+      text-align: center;
+      padding: var(--spacing-md);
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .feedback-types li h3 {
+      font-size: var(--font-size-base);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .feedback-types li p {
+      font-size: var(--font-size-sm);
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .form-embed {
+        min-height: 1000px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">メインコンテンツへ</a>
+  <div class="container">
+    <header role="banner">
+      <div class="header-logo">
+        <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+        <h1>Mark It Down</h1>
+      </div>
+      <p class="tagline">フィードバック</p>
+    </header>
+
+    <main id="main-content" role="main">
+      <div class="form-container">
+        <div class="form-info">
+          <h2>ご意見をお聞かせください</h2>
+          <p>
+            皆様のフィードバックがMark It Downをより良くします。<br>
+            ご感想、バグ報告、機能リクエストをお待ちしています。
+          </p>
+
+          <ul class="feedback-types" role="list">
+            <li>
+              <h3>バグ報告</h3>
+              <p>動作がおかしい？</p>
+            </li>
+            <li>
+              <h3>機能リクエスト</h3>
+              <p>アイデアはありますか？</p>
+            </li>
+            <li>
+              <h3>一般的なご意見</h3>
+              <p>何かお考えですか？</p>
+            </li>
+          </ul>
+        </div>
+
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScqUD4-8YBhOu3wub7Bh06r6Hv1zX5i5OwDVdYl66nlJ5Mejw/viewform?embedded=true"
+          class="form-embed"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Mark It Down フィードバックフォーム">
+          フォームを読み込んでいます...
+        </iframe>
+      </div>
+    </main>
+
+    <footer role="contentinfo">
+      <p>
+        <a href="feedback.html" hreflang="en">English</a>
+        <span aria-hidden="true">·</span>
+        <a href="index-ja.html">ホーム</a>
+        <span aria-hidden="true">·</span>
+        <a href="features-ja.html">機能</a>
+        <span aria-hidden="true">·</span>
+        <a href="privacy-policy-ja.html">プライバシー</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/9BwgeBTPG-QH/chorme_mark-it-down">GitHub</a>
+        <span aria-hidden="true">·</span>
+        <span>© 2025</span>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
