@@ -339,6 +339,47 @@ p {
   margin: 0;
 }
 
+/* Flow Section (Information Flow Philosophy) */
+.flow-section {
+  padding: var(--spacing-2xl) 0;
+  text-align: center;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.flow-section h2 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-2xl);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.flow-description {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.flow-section .philosophy-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  .flow-section .philosophy-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .flow-section .philosophy-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ========================================
    10. BUTTONS
    ======================================== */
