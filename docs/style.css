@@ -509,7 +509,8 @@ a:hover {
    ======================================== */
 
 .tab-container {
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  scroll-margin-top: var(--spacing-sm);
 }
 
 /* Hide radio inputs */
@@ -519,19 +520,26 @@ a:hover {
   pointer-events: none;
 }
 
-/* Tab navigation bar */
+/* Tab navigation bar - compact horizontal scroll on mobile */
 .tab-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: var(--spacing-xs);
   justify-content: center;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
   border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.tab-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .tab-nav label {
-  padding: var(--spacing-xs) var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: 500;
@@ -540,6 +548,8 @@ a:hover {
   border-radius: var(--radius-sm);
   transition: color var(--transition-fast), background var(--transition-fast);
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .tab-nav label:hover {
@@ -547,11 +557,14 @@ a:hover {
   background: var(--bg-secondary);
 }
 
-/* Active tab style */
+/* Active tab style - 8 tabs */
 #tab-modes:checked ~ .tab-nav label[for="tab-modes"],
-#tab-editor:checked ~ .tab-nav label[for="tab-editor"],
+#tab-markdown:checked ~ .tab-nav label[for="tab-markdown"],
+#tab-view:checked ~ .tab-nav label[for="tab-view"],
 #tab-notes:checked ~ .tab-nav label[for="tab-notes"],
-#tab-sync:checked ~ .tab-nav label[for="tab-sync"],
+#tab-storage:checked ~ .tab-nav label[for="tab-storage"],
+#tab-git:checked ~ .tab-nav label[for="tab-git"],
+#tab-dual:checked ~ .tab-nav label[for="tab-dual"],
 #tab-keys:checked ~ .tab-nav label[for="tab-keys"] {
   color: var(--accent-primary);
   background: var(--accent-light);
@@ -562,27 +575,55 @@ a:hover {
   display: none;
 }
 
-/* Show active panel */
+/* Show active panel - 8 tabs */
 #tab-modes:checked ~ .tab-content .tab-panel-modes,
-#tab-editor:checked ~ .tab-content .tab-panel-editor,
+#tab-markdown:checked ~ .tab-content .tab-panel-markdown,
+#tab-view:checked ~ .tab-content .tab-panel-view,
 #tab-notes:checked ~ .tab-content .tab-panel-notes,
-#tab-sync:checked ~ .tab-content .tab-panel-sync,
+#tab-storage:checked ~ .tab-content .tab-panel-storage,
+#tab-git:checked ~ .tab-content .tab-panel-git,
+#tab-dual:checked ~ .tab-content .tab-panel-dual,
 #tab-keys:checked ~ .tab-content .tab-panel-keys {
   display: block;
 }
 
-/* Tab content area */
+/* Tab content area - compact height */
 .tab-content {
-  min-height: 300px;
+  min-height: 280px;
 }
 
-/* Tab panel sections */
+/* Tab panel sections - compact */
 .tab-panel section {
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 }
 
 .tab-panel section:last-child {
   margin-bottom: 0;
+}
+
+/* Compact philosophy list in tabs */
+.tab-panel .philosophy-list {
+  gap: var(--spacing-sm);
+}
+
+.tab-panel .philosophy-item h3 {
+  font-size: var(--font-size-base);
+  margin-bottom: 0.25rem;
+}
+
+.tab-panel .philosophy-item p {
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+.tab-panel h2 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+.tab-panel > section > p {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 /* Keyboard shortcuts table */
@@ -618,15 +659,17 @@ a:hover {
   border: 1px solid var(--border-primary);
 }
 
-/* Responsive: Stack tabs on mobile */
-@media (max-width: 480px) {
+/* Responsive: Horizontal scroll on mobile */
+@media (max-width: 640px) {
   .tab-nav {
-    flex-direction: column;
-    align-items: stretch;
+    justify-content: flex-start;
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
   }
 
   .tab-nav label {
-    text-align: center;
+    padding: var(--spacing-xs) var(--spacing-xs);
+    font-size: 0.8rem;
   }
 }
 
@@ -636,19 +679,20 @@ a:hover {
 
 .cta-section {
   text-align: center;
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-xl) 0;
   border-top: 1px solid var(--border-subtle);
 }
 
 .cta-section h2 {
   font-family: var(--font-serif);
-  font-size: var(--font-size-2xl);
-  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-sm);
 }
 
 .cta-section p {
   max-width: 440px;
-  margin: 0 auto var(--spacing-xl);
+  margin: 0 auto var(--spacing-md);
+  font-size: var(--font-size-sm);
 }
 
 /* ========================================

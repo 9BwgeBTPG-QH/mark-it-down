@@ -39,20 +39,26 @@
       </section>
 
       <!-- Tab Navigation -->
-      <div class="tab-container" role="tablist" aria-label="Feature categories">
+      <div class="tab-container" id="tabs" role="tablist" aria-label="Feature categories">
         <!-- Radio inputs for CSS-only tabs -->
         <input type="radio" name="feature-tabs" id="tab-modes" checked>
-        <input type="radio" name="feature-tabs" id="tab-editor">
+        <input type="radio" name="feature-tabs" id="tab-markdown">
+        <input type="radio" name="feature-tabs" id="tab-view">
         <input type="radio" name="feature-tabs" id="tab-notes">
-        <input type="radio" name="feature-tabs" id="tab-sync">
+        <input type="radio" name="feature-tabs" id="tab-storage">
+        <input type="radio" name="feature-tabs" id="tab-git">
+        <input type="radio" name="feature-tabs" id="tab-dual">
         <input type="radio" name="feature-tabs" id="tab-keys">
 
         <!-- Tab navigation -->
         <nav class="tab-nav" aria-label="Feature tabs">
           <label for="tab-modes" role="tab">Modes</label>
-          <label for="tab-editor" role="tab">Editor</label>
+          <label for="tab-markdown" role="tab">Markdown</label>
+          <label for="tab-view" role="tab">View</label>
           <label for="tab-notes" role="tab">Notes</label>
-          <label for="tab-sync" role="tab">Sync</label>
+          <label for="tab-storage" role="tab">Storage</label>
+          <label for="tab-git" role="tab">Git</label>
+          <label for="tab-dual" role="tab">Dual</label>
           <label for="tab-keys" role="tab">Keys</label>
         </nav>
 
@@ -79,10 +85,10 @@
             </section>
           </div>
 
-          <!-- Editor Panel -->
-          <div class="tab-panel tab-panel-editor" role="tabpanel">
-            <section aria-labelledby="editor-heading">
-              <h2 id="editor-heading">Editor</h2>
+          <!-- Markdown Panel -->
+          <div class="tab-panel tab-panel-markdown" role="tabpanel">
+            <section aria-labelledby="markdown-heading">
+              <h2 id="markdown-heading">Markdown</h2>
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>GitHub Flavored Markdown</h3>
@@ -100,6 +106,15 @@
                   <h3>Callouts</h3>
                   <p>GitHub Alerts: NOTE, TIP, IMPORTANT, WARNING, CAUTION.</p>
                 </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- View Panel -->
+          <div class="tab-panel tab-panel-view" role="tabpanel">
+            <section aria-labelledby="view-heading">
+              <h2 id="view-heading">View</h2>
+              <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>Table of Contents</h3>
                   <p>Auto-generated TOC for long documents.</p>
@@ -139,7 +154,10 @@
                 </div>
               </div>
             </section>
+          </div>
 
+          <!-- Storage Panel -->
+          <div class="tab-panel tab-panel-storage" role="tabpanel">
             <section aria-labelledby="storage-heading">
               <h2 id="storage-heading">Storage</h2>
               <div class="philosophy-list">
@@ -163,11 +181,10 @@
             </section>
           </div>
 
-          <!-- Sync Panel -->
-          <div class="tab-panel tab-panel-sync" role="tabpanel">
+          <!-- Git Panel -->
+          <div class="tab-panel tab-panel-git" role="tabpanel">
             <section aria-labelledby="git-heading">
               <h2 id="git-heading">Git Sync</h2>
-              <p>Intentional version control. You control when to sync.</p>
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>GitHub / GitLab</h3>
@@ -182,20 +199,15 @@
                   <p>Resolve conflicts side-by-side.</p>
                 </div>
                 <div class="philosophy-item">
-                  <h3>Diff viewer</h3>
-                  <p>Compare local vs remote before syncing.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Commit history</h3>
-                  <p>View past 20 commits.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Encrypted tokens</h3>
-                  <p>AES-GCM encryption. Never stored in plain text.</p>
+                  <h3>Diff & history</h3>
+                  <p>Compare versions. View past 20 commits.</p>
                 </div>
               </div>
             </section>
+          </div>
 
+          <!-- Dual Panel -->
+          <div class="tab-panel tab-panel-dual" role="tabpanel">
             <section aria-labelledby="dual-heading">
               <h2 id="dual-heading">Dual Mode</h2>
               <p>Open New Tab and Side Panel simultaneously.</p>
@@ -220,7 +232,6 @@
           <div class="tab-panel tab-panel-keys" role="tabpanel">
             <section aria-labelledby="shortcuts-heading">
               <h2 id="shortcuts-heading">Keyboard Shortcuts</h2>
-              <p>Designed to avoid browser conflicts.</p>
               <table class="shortcuts-table">
                 <thead>
                   <tr>
@@ -286,5 +297,14 @@
       </p>
     </footer>
   </div>
+
+  <!-- Tab scroll behavior -->
+  <script>
+    document.querySelectorAll('.tab-nav label').forEach(label => {
+      label.addEventListener('click', () => {
+        document.getElementById('tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
 </body>
 </html>
