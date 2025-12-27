@@ -80,10 +80,10 @@ flowchart LR
     W --> M["③ Move<br/>Organize"]
     M --> E["④ Exit<br/>Export"]
 
-    style Entry fill:#e3f2fd,stroke:#1976d2
-    style W fill:#f3e5f5,stroke:#7b1fa2
-    style M fill:#fff3e0,stroke:#f57c00
-    style E fill:#e8f5e9,stroke:#388e3c
+    style Entry fill:#1976d2,stroke:#0d47a1,color:#fff
+    style W fill:#7b1fa2,stroke:#4a148c,color:#fff
+    style M fill:#f57c00,stroke:#e65100,color:#fff
+    style E fill:#388e3c,stroke:#1b5e20,color:#fff
 \`\`\`
 
 ---
@@ -117,10 +117,10 @@ By removing features, you can focus on writing.
 |---------|:-------:|:----------:|
 | Full screen | ✅ | - |
 | Parallel with web | - | ✅ |
-| Table of Contents | Side panel | Dropdown |
+| Table of Contents | Outside/Overlay | Overlay |
 | Zen mode | ✅ | - |
 | Browser search (Ctrl+F) | ✅ | - |
-| Sidebar resize | ✅ | ✅ (narrow) |
+| Sidebar pinning | ✅ (≥1600px) | - |
 | How to open | New tab | Click icon |
 
 > [!TIP]
@@ -212,11 +212,11 @@ flowchart TD
     Next -->|Yes| Move["③ Move"]
     Next -->|Keep Editing| Work
 
-    style Work fill:#f3e5f5,stroke:#7b1fa2
-    style Basic fill:#e8f5e9,stroke:#388e3e
-    style Control fill:#fff3e0,stroke:#f57c00
-    style Advanced fill:#e3f2fd,stroke:#1976d2
-    style Next fill:#fce4ec,stroke:#c2185b
+    style Work fill:#7b1fa2,stroke:#4a148c,color:#fff
+    style Basic fill:#388e3c,stroke:#1b5e20,color:#fff
+    style Control fill:#f57c00,stroke:#e65100,color:#fff
+    style Advanced fill:#1976d2,stroke:#0d47a1,color:#fff
+    style Next fill:#c2185b,stroke:#880e4f,color:#fff
 \`\`\`
 
 > [!TIP]
@@ -425,8 +425,8 @@ Click to compare side-by-side and choose which version to keep.
 ### Table of Contents
 
 Click TOC button (top right) to navigate long documents.
-- New Tab: Side panel TOC
-- Side Panel: Dropdown TOC
+- **Wide screen (≥1600px)**: TOC outside content (right), hover right margin to preview, click to pin
+- **Narrow screen (<1600px)**: TOC overlay on content
 
 ---
 
@@ -500,15 +500,15 @@ flowchart TD
     X -->|Sync| Remote[☁️ Remote deleted]
     Remote -->|Delete Permanently| Gone[❌ Gone forever]
 
-    style Move fill:#fff3e0,stroke:#f57c00
-    style Exit fill:#e8f5e9,stroke:#388e3c
-    style Decision fill:#f3e5f5,stroke:#7b1fa2
-    style Stay fill:#e3f2fd,stroke:#1976d2
-    style T fill:#e0f2f1,stroke:#00897b
-    style A fill:#c8e6c9,stroke:#388e3c
-    style X fill:#ffebee,stroke:#d32f2f
-    style Remote fill:#ffcdd2,stroke:#c62828
-    style Gone fill:#b71c1c,stroke:#b71c1c,color:#fff
+    style Move fill:#f57c00,stroke:#e65100,color:#fff
+    style Exit fill:#388e3c,stroke:#1b5e20,color:#fff
+    style Decision fill:#7b1fa2,stroke:#4a148c,color:#fff
+    style Stay fill:#1976d2,stroke:#0d47a1,color:#fff
+    style T fill:#00897b,stroke:#004d40,color:#fff
+    style A fill:#388e3c,stroke:#1b5e20,color:#fff
+    style X fill:#d32f2f,stroke:#b71c1c,color:#fff
+    style Remote fill:#c62828,stroke:#b71c1c,color:#fff
+    style Gone fill:#b71c1c,stroke:#7f0000,color:#fff
 \`\`\`
 
 > [!IMPORTANT]
@@ -612,10 +612,10 @@ flowchart TD
         R -->|"Delete Permanently"| G2[Gone]
     end
 
-    style NeverSynced fill:#e3f2fd,stroke:#1976d2
-    style Synced fill:#fff3e0,stroke:#f57c00
-    style G1 fill:#ffebee,stroke:#d32f2f
-    style G2 fill:#ffebee,stroke:#d32f2f
+    style NeverSynced fill:#1976d2,stroke:#0d47a1,color:#fff
+    style Synced fill:#f57c00,stroke:#e65100,color:#fff
+    style G1 fill:#d32f2f,stroke:#b71c1c,color:#fff
+    style G2 fill:#d32f2f,stroke:#b71c1c,color:#fff
 \`\`\`
 
 | Scenario | Failsafe Levels |
@@ -659,12 +659,46 @@ Graduate notes to your permanent storage (Obsidian, Notion, etc.).
 > [!IMPORTANT]
 > **Use Private repository** — notes may contain sensitive information.
 
-### 3. Configure in Settings
+### 3. Configure Git Settings
 
-1. Open Settings (⚙️)
-2. Select provider (GitHub/GitLab)
-3. Enter token and repository URL
-4. Test Connection → Save
+1. Click **Git ▼** dropdown in toolbar
+2. Select **Git Settings**
+3. Choose provider (GitHub/GitLab)
+4. Enter token and repository URL
+5. Test Connection → Save
+
+---
+
+## 🔴 Advanced: Git Conflict Resolution
+
+When you edit a note locally while someone (or you on another device) edits the same note remotely, a **conflict** occurs on Pull.
+
+### What triggers a conflict?
+
+| Change Type | Example |
+|-------------|---------|
+| **Content** | Different text in the same note |
+| **Folder** | Moved to Archive locally, Template remotely |
+| **Pin status** | Pinned locally, unpinned remotely |
+
+### Resolution options
+
+| Option | Effect |
+|--------|--------|
+| **Local** | Keep your version, push to remote |
+| **Remote** | Accept remote version, discard local changes |
+| **Skip** | Decide later (conflict remains) |
+
+### Comparison tools
+
+- **Side-by-side diff** — See exactly what changed
+- **Sync Scroll** — Scroll both sides together
+- **Risk indicator** — Low/Medium/High/Critical based on change size
+
+> [!TIP]
+> **Don't worry about rapid syncs.**
+> Conflicts resolved within 5 minutes won't reappear.
+> Whitespace differences (line endings, trailing spaces) are ignored.
 
 ---
 
@@ -732,10 +766,10 @@ flowchart LR
     W --> M["③ Move<br/>整理"]
     M --> E["④ Exit<br/>卒業"]
 
-    style Entry fill:#e3f2fd,stroke:#1976d2
-    style W fill:#f3e5f5,stroke:#7b1fa2
-    style M fill:#fff3e0,stroke:#f57c00
-    style E fill:#e8f5e9,stroke:#388e3c
+    style Entry fill:#1976d2,stroke:#0d47a1,color:#fff
+    style W fill:#7b1fa2,stroke:#4a148c,color:#fff
+    style M fill:#f57c00,stroke:#e65100,color:#fff
+    style E fill:#388e3c,stroke:#1b5e20,color:#fff
 \`\`\`
 
 ---
@@ -769,10 +803,10 @@ Markdown は最も汎用的なフォーマット。
 |------|:-------:|:----------:|
 | 全画面表示 | ✅ | - |
 | Webページと並列 | - | ✅ |
-| 目次（TOC） | サイドパネル | ドロップダウン |
+| 目次（TOC） | 外側/オーバーレイ | オーバーレイ |
 | Zenモード | ✅ | - |
 | ブラウザ検索（Ctrl+F） | ✅ | - |
-| サイドバー幅調整 | ✅ | ✅（狭め） |
+| サイドバーピン留め | ✅（≥1600px） | - |
 | 開き方 | 新しいタブ | アイコンクリック |
 
 > [!TIP]
@@ -864,11 +898,11 @@ flowchart TD
     Next -->|Yes| Move["③ Move"]
     Next -->|編集継続| Work
 
-    style Work fill:#f3e5f5,stroke:#7b1fa2
-    style Basic fill:#e8f5e9,stroke:#388e3e
-    style Control fill:#fff3e0,stroke:#f57c00
-    style Advanced fill:#e3f2fd,stroke:#1976d2
-    style Next fill:#fce4ec,stroke:#c2185b
+    style Work fill:#7b1fa2,stroke:#4a148c,color:#fff
+    style Basic fill:#388e3c,stroke:#1b5e20,color:#fff
+    style Control fill:#f57c00,stroke:#e65100,color:#fff
+    style Advanced fill:#1976d2,stroke:#0d47a1,color:#fff
+    style Next fill:#c2185b,stroke:#880e4f,color:#fff
 \`\`\`
 
 > [!TIP]
@@ -1077,8 +1111,8 @@ New TabとSide Panelで同じノートを編集すると、**Merge Changes** ボ
 ### 目次（TOC）
 
 TOCボタン（右上）で長いドキュメントをナビゲート。
-- New Tab: サイドパネルTOC
-- Side Panel: ドロップダウンTOC
+- **ワイドスクリーン（≥1600px）**: コンテンツ右外側に表示、右マージンホバーでプレビュー、クリックでピン留め
+- **ナロースクリーン（<1600px）**: コンテンツ上にオーバーレイ
 
 ---
 
@@ -1152,15 +1186,15 @@ flowchart TD
     X -->|Sync| Remote[☁️ リモート削除]
     Remote -->|完全削除| Gone[❌ 永久削除]
 
-    style Move fill:#fff3e0,stroke:#f57c00
-    style Exit fill:#e8f5e9,stroke:#388e3c
-    style Decision fill:#f3e5f5,stroke:#7b1fa2
-    style Stay fill:#e3f2fd,stroke:#1976d2
-    style T fill:#e0f2f1,stroke:#00897b
-    style A fill:#c8e6c9,stroke:#388e3c
-    style X fill:#ffebee,stroke:#d32f2f
-    style Remote fill:#ffcdd2,stroke:#c62828
-    style Gone fill:#b71c1c,stroke:#b71c1c,color:#fff
+    style Move fill:#f57c00,stroke:#e65100,color:#fff
+    style Exit fill:#388e3c,stroke:#1b5e20,color:#fff
+    style Decision fill:#7b1fa2,stroke:#4a148c,color:#fff
+    style Stay fill:#1976d2,stroke:#0d47a1,color:#fff
+    style T fill:#00897b,stroke:#004d40,color:#fff
+    style A fill:#388e3c,stroke:#1b5e20,color:#fff
+    style X fill:#d32f2f,stroke:#b71c1c,color:#fff
+    style Remote fill:#c62828,stroke:#b71c1c,color:#fff
+    style Gone fill:#b71c1c,stroke:#7f0000,color:#fff
 \`\`\`
 
 > [!IMPORTANT]
@@ -1264,10 +1298,10 @@ flowchart TD
         R -->|"完全削除"| G2[消去]
     end
 
-    style NeverSynced fill:#e3f2fd,stroke:#1976d2
-    style Synced fill:#fff3e0,stroke:#f57c00
-    style G1 fill:#ffebee,stroke:#d32f2f
-    style G2 fill:#ffebee,stroke:#d32f2f
+    style NeverSynced fill:#1976d2,stroke:#0d47a1,color:#fff
+    style Synced fill:#f57c00,stroke:#e65100,color:#fff
+    style G1 fill:#d32f2f,stroke:#b71c1c,color:#fff
+    style G2 fill:#d32f2f,stroke:#b71c1c,color:#fff
 \`\`\`
 
 | シナリオ | フェイルセーフ |
@@ -1311,12 +1345,46 @@ Mark It Downは**一時的な作業場**です。
 > [!IMPORTANT]
 > **Privateリポジトリを使用** — ノートには機密情報が含まれる可能性があります。
 
-### 3. 設定で接続
+### 3. Git設定で接続
 
-1. 設定（⚙️）を開く
-2. プロバイダー（GitHub/GitLab）を選択
-3. トークンとリポジトリURLを入力
-4. 接続テスト → 保存
+1. ツールバーの **Git ▼** ドロップダウンをクリック
+2. **Git Settings** を選択
+3. プロバイダー（GitHub/GitLab）を選択
+4. トークンとリポジトリURLを入力
+5. 接続テスト → 保存
+
+---
+
+## 🔴 Advanced: Git競合の解決
+
+ローカルでノートを編集中に、他のデバイス（または他の人）が同じノートをリモートで編集すると、Pull時に**競合**が発生します。
+
+### 競合が発生する条件
+
+| 変更タイプ | 例 |
+|-----------|-----|
+| **内容** | 同じノートの異なるテキスト |
+| **フォルダ** | ローカルではArchive、リモートではTemplateに移動 |
+| **ピン留め** | ローカルでピン留め、リモートでピン解除 |
+
+### 解決オプション
+
+| オプション | 効果 |
+|-----------|------|
+| **Local** | 自分の変更を保持、リモートにプッシュ |
+| **Remote** | リモートの変更を採用、ローカルの変更を破棄 |
+| **Skip** | 後で決める（競合は残る） |
+
+### 比較ツール
+
+- **サイドバイサイド差分** — 何が変わったか正確に確認
+- **スクロール同期** — 両側を一緒にスクロール
+- **リスクインジケーター** — 変更量に基づくLow/Medium/High/Critical表示
+
+> [!TIP]
+> **連続Syncを心配する必要はありません。**
+> 5分以内に解決した競合は再出現しません。
+> 空白の違い（改行コード、行末スペース）は無視されます。
 
 ---
 

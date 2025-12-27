@@ -127,15 +127,37 @@ Mark It Downは情報を**整理しない**。
 
 ```
 ツールバーの構成:
-[Notes] [Import] [Paste] | [Undo] [Redo] | [Move] [Source Control] | [Export] [Copy]
-   ↓         ↓               ↓                    ↓                       ↓
- Entry     Entry           Work                Move                     Exit
+[Notes] [Import] [Paste] | [Edit ▼] | [Move ▼] [Git ▼] | [Export] [Copy]
+   ↓         ↓                ↓              ↓                  ↓
+ Entry     Entry            Work           Move                Exit
 ```
 
 - **Entry**: 情報の入り口（Notes, Import, Paste）
-- **Work**: 編集作業（Undo, Redo）
-- **Move**: フォルダ間移動 + Git同期（Move, Source Control）
+- **Work**: 編集メニュー（Edit ▼ → Undo, Redo, Find）
+- **Move**: フォルダ間移動 + Git同期（Move ▼, Git ▼）
 - **Exit**: 出口（Export, Copy）- 他ツールへ「卒業」
+
+**レスポンシブレイアウト** (1600px閾値):
+- **≥1600px**: サイドバー/TOCがコンテンツ外側に表示、左右マージンホバーでプレビュー、ピン留め可
+- **<1600px**: サイドバー/TOCがオーバーレイ表示、ピン留め不可（自動解除）、スライドアニメーション（200ms）
+
+**ヘッダー整理** (Phase 54):
+- New Tabヘッダーを`max-w-4xl`中央コンテナに統一
+- Theme Toggle / Zen Mode ボタンを Settings に移動
+- ヘッダーボタン: TOC, Search, Help, Settings の4つに削減
+- 768px未満の画面幅では「Mark It Down」ロゴテキストを非表示
+
+**Settings分離** (Phase 58):
+- **Settings (⚙)**: 一般設定（Auto Pair, System Folder, Theme, Storage Repair）
+- **Git Settings**: Git ▼ → Git Settings（Badge Style, 接続設定, Danger Zone）
+
+**フォルダバッジ** (Phase 51):
+- ヘッダーのフォルダ名をカラーバッジで表示（Inbox=青, Template=紫, Archive=緑, Trash=赤, System=グレー）
+- フォルダ変更時に0.6秒間ハイライトアニメーション（リングエフェクト + スケールアップ）
+
+**ドロップダウン動作** (Phase 52):
+- Edit ▼ と Move ▼ はマウスホバーで開く（クリック不要）
+- マウスリーブ時は150ms遅延後に閉じる（メニュー項目への移動を許容）
 
 **「出口は選ばない」**: Markdownはどこにでも持っていける。
 特定のツールに閉じ込めない。
@@ -170,7 +192,8 @@ Mark It Downは情報を**整理しない**。
 │   ├── app.tsx          # メインApp（viewMode: 'newtab' | 'sidepanel'）
 │   ├── components/      # UI コンポーネント
 │   │   ├── Editor.tsx   # Milkdown Crepe + カスタムペーストプラグイン
-│   │   ├── ActivityBar.tsx  # Notes ボタン（Entry グループ）- ツールバー左端
+│   │   ├── EditDropdown.tsx  # 編集メニュー（Undo, Redo, Find）
+│   │   ├── MoveDropdown.tsx  # 移動メニュー（Pin, Template, Archive, Trash）
 │   │   ├── Sidebar.tsx  # ノート一覧 + Git Section
 │   │   └── ...
 │   ├── stores/          # Zustand 状態管理
@@ -240,7 +263,7 @@ interface Note {
 }
 
 interface Settings {
-  theme: 'dark' | 'light' | 'system'
+  theme: 'dark' | 'light' | 'system'  // テーマ選択（Settings → 表示設定、Phase 54）
   sidebarCollapsed: boolean  // 非推奨: activeTabを使用（後方互換性のため保持）
   sidebarWidth?: number
   editorFontSize: number
@@ -248,12 +271,14 @@ interface Settings {
   onboardingCompleted?: boolean
   lastPushTime?: number
   gitSectionExpanded?: boolean
-  zenMode?: boolean
+  tocVisible?: boolean  // TOC表示状態
+  zenMode?: boolean  // Zenモード（Settings → 表示設定 または F11/Ctrl+Shift+Z）
   folderSortOrder?: 'name' | 'updated'
   autoPair?: boolean  // 括弧・引用符の自動補完（Phase 39）
   systemFolderVisible?: boolean  // Systemフォルダ表示/非表示（Issue #102）
   pendingSystemNoteDeletions?: string[]  // 古いシステムノートパス削除キュー（Phase 42）
   activeTab?: 'notes' | 'git' | null  // Activity Barのピン留めタブ（Phase 46）
+  gitBadgeStyle?: 'dot' | 'count' | 'off'  // Git変更インジケーター（デフォルト: 'dot'、Phase 57）
 }
 ```
 
@@ -291,6 +316,7 @@ interface Settings {
 - `chrome.storage.local` + `unlimitedStorage`権限
 - ブラウザキャッシュ削除 → データは保持される
 - 拡張機能アンインストール → データは消去される
+- **ストレージ修復**: Settings → Editor → トラブルシューティングで重複ノートを検出・削除（Phase 56）
 
 ### セキュリティ
 
@@ -356,6 +382,9 @@ interface Settings {
 > - Work: 基本編集/Undo/Redo/高度な入力の3カテゴリ
 > - Move: "Inboxに残す"を明示的な選択肢として追加
 > - Exit: Export/Copy/Git Syncの3つの卒業経路
+> 2025-12-27: Phase 59でMermaid図のダークモード配色を改善
+> - Material Design 700-800番台の濃い色 + 白文字（`color:#fff`）
+> - ライト/ダーク両モードで視認性確保
 
 ### 更新時のチェックリスト
 
