@@ -34,239 +34,236 @@
         <h2 id="intro-heading" class="visually-hidden">Introduction</h2>
         <p class="hero-tagline">Write in Markdown.</p>
         <p class="hero-subtitle">
-          No AI. No plugins. Just one pane.<br>
-          Write, see instantly. That's it.
+          No AI. No plugins. Just one pane. Write, see instantly.
         </p>
       </section>
 
-      <!-- Core Modes -->
-      <section aria-labelledby="modes-heading">
-        <h2 id="modes-heading">Two Modes</h2>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>New Tab — Full screen</h3>
-            <p>Dedicated workspace. Zen mode available (F11).</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Side Panel — Beside the web</h3>
-            <p>Write alongside AI. Write while you browse.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Open both. No sync.</h3>
-            <p>See the old version while editing the new one.</p>
-          </div>
-        </div>
-      </section>
+      <!-- Tab Navigation -->
+      <div class="tab-container" role="tablist" aria-label="Feature categories">
+        <!-- Radio inputs for CSS-only tabs -->
+        <input type="radio" name="feature-tabs" id="tab-modes" checked>
+        <input type="radio" name="feature-tabs" id="tab-editor">
+        <input type="radio" name="feature-tabs" id="tab-notes">
+        <input type="radio" name="feature-tabs" id="tab-sync">
+        <input type="radio" name="feature-tabs" id="tab-keys">
 
-      <!-- Editor Features -->
-      <section aria-labelledby="editor-heading">
-        <h2 id="editor-heading">Editor</h2>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>GitHub Flavored Markdown</h3>
-            <p>Tables, task lists, code blocks with syntax highlighting.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Mermaid diagrams</h3>
-            <p>Flowcharts, sequence diagrams, pie charts. Click to zoom.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Math (LaTeX)</h3>
-            <p>Inline <code>$E=mc^2$</code> and block <code>$$...$$</code> equations.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Callouts</h3>
-            <p>GitHub Alerts: NOTE, TIP, IMPORTANT, WARNING, CAUTION.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Table of Contents</h3>
-            <p>Auto-generated TOC for long documents. Side panel or dropdown.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Dark/Light mode</h3>
-            <p>Switch themes to match your environment.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Auto Pair</h3>
-            <p>Brackets, quotes, backticks auto-complete. Toggle in settings.</p>
-          </div>
-        </div>
-      </section>
+        <!-- Tab navigation -->
+        <nav class="tab-nav" aria-label="Feature tabs">
+          <label for="tab-modes" role="tab">Modes</label>
+          <label for="tab-editor" role="tab">Editor</label>
+          <label for="tab-notes" role="tab">Notes</label>
+          <label for="tab-sync" role="tab">Sync</label>
+          <label for="tab-keys" role="tab">Keys</label>
+        </nav>
 
-      <!-- Note Management -->
-      <section aria-labelledby="notes-heading">
-        <h2 id="notes-heading">Note Management</h2>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>Five folders. Fixed.</h3>
-            <p>Inbox / Template / Archive / Trash / System. Everything has a place.</p>
+        <!-- Tab content -->
+        <div class="tab-content">
+          <!-- Modes Panel -->
+          <div class="tab-panel tab-panel-modes" role="tabpanel">
+            <section aria-labelledby="modes-heading">
+              <h2 id="modes-heading">Two Modes</h2>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>New Tab — Full screen</h3>
+                  <p>Dedicated workspace. Zen mode available (F11).</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Side Panel — Beside the web</h3>
+                  <p>Write alongside AI. Write while you browse.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Open both. No sync.</h3>
+                  <p>See the old version while editing the new one.</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>Templates</h3>
-            <p>Store note templates. Duplicate to start fresh.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Pin notes</h3>
-            <p>Keep important notes at the top of each folder.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Drag & drop</h3>
-            <p>Move notes between folders. Simple and direct.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Sort & search</h3>
-            <p>Name or date order. Incremental search to find anything.</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Toolbar -->
-      <section aria-labelledby="toolbar-heading">
-        <h2 id="toolbar-heading">Toolbar</h2>
-        <p>Sticky toolbar follows as you scroll. Information flow: Entry → Work → Move → Exit.</p>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>Entry: Import, Paste</h3>
-            <p>Drag .md or .zip files. Or paste from clipboard.</p>
+          <!-- Editor Panel -->
+          <div class="tab-panel tab-panel-editor" role="tabpanel">
+            <section aria-labelledby="editor-heading">
+              <h2 id="editor-heading">Editor</h2>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>GitHub Flavored Markdown</h3>
+                  <p>Tables, task lists, code blocks with syntax highlighting.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Mermaid diagrams</h3>
+                  <p>Flowcharts, sequence diagrams, pie charts. Click to zoom.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Math (LaTeX)</h3>
+                  <p>Inline <code>$E=mc^2$</code> and block <code>$$...$$</code> equations.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Callouts</h3>
+                  <p>GitHub Alerts: NOTE, TIP, IMPORTANT, WARNING, CAUTION.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Table of Contents</h3>
+                  <p>Auto-generated TOC for long documents.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Dark/Light mode</h3>
+                  <p>Switch themes to match your environment.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Auto Pair</h3>
+                  <p>Brackets, quotes, backticks auto-complete.</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>Work: Undo, Redo</h3>
-            <p>Ctrl+Z / Ctrl+Y. Edit with confidence.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Move: Between folders</h3>
-            <p>Pin, Template, Archive, Trash, Restore. All in one menu.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Exit: Export, Copy</h3>
-            <p>Export as .md. Copy to clipboard. Move to other tools.</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Storage -->
-      <section aria-labelledby="storage-heading">
-        <h2 id="storage-heading">Storage</h2>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>Auto-save (0.5 seconds)</h3>
-            <p>No save button. Just type.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Chrome extension storage</h3>
-            <p>Survives browser cache clear. Instant load.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Not filesystem</h3>
-            <p>Not visible in Explorer. Use Export to get .md files.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Backup: Export or Git</h3>
-            <p>Export all as .zip. Or sync to GitHub/GitLab.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Failsafe deletion</h3>
-            <p>Synced notes need 3 steps to delete. Trash → Sync → Delete permanently.</p>
-          </div>
-        </div>
-      </section>
+          <!-- Notes Panel -->
+          <div class="tab-panel tab-panel-notes" role="tabpanel">
+            <section aria-labelledby="notes-heading">
+              <h2 id="notes-heading">Note Management</h2>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>Five folders. Fixed.</h3>
+                  <p>Inbox / Template / Archive / Trash / System.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Templates & Pin</h3>
+                  <p>Store templates. Pin important notes to the top.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Drag & drop</h3>
+                  <p>Move notes between folders.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Sort & search</h3>
+                  <p>Name or date order. Incremental search.</p>
+                </div>
+              </div>
+            </section>
 
-      <!-- Git Sync -->
-      <section aria-labelledby="git-heading">
-        <h2 id="git-heading">Git Sync</h2>
-        <p>Not auto-sync like OneDrive. Intentional version control. You control when to sync. Full commit history. No accidental overwrites.</p>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>GitHub / GitLab</h3>
-            <p>Connect with Personal Access Token. Public or private repo.</p>
+            <section aria-labelledby="storage-heading">
+              <h2 id="storage-heading">Storage</h2>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>Auto-save</h3>
+                  <p>No save button. Just type.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Chrome extension storage</h3>
+                  <p>Survives browser cache clear.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Backup</h3>
+                  <p>Export all as .zip or sync to GitHub/GitLab.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Failsafe deletion</h3>
+                  <p>Synced notes need 3 steps to delete.</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>Manual commits</h3>
-            <p>You decide when to sync. Custom or auto-generated messages.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Pull & merge</h3>
-            <p>Fetch remote changes. Resolve conflicts side-by-side.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Smart conflict resolution</h3>
-            <p>Auto-normalize whitespace. Risk level indicator. Myers diff algorithm.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Diff viewer</h3>
-            <p>Compare local vs remote before syncing.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Commit history</h3>
-            <p>View past 20 commits. See what changed.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Encrypted tokens</h3>
-            <p>AES-GCM encryption. Tokens never stored in plain text.</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Dual Mode -->
-      <section aria-labelledby="dual-heading">
-        <h2 id="dual-heading">Dual Mode</h2>
-        <p>Open New Tab and Side Panel simultaneously.</p>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>Independent windows</h3>
-            <p>Edit in one. Read in the other. No auto-sync.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Conflict resolution</h3>
-            <p>Merge Changes button blinks. Choose which to keep.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Side-by-side comparison</h3>
-            <p>See both versions. Decide manually.</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Comparison tools</h3>
-            <p>Sync scroll, diff highlight, quick scroll, TOC navigation.</p>
-          </div>
-        </div>
-      </section>
+          <!-- Sync Panel -->
+          <div class="tab-panel tab-panel-sync" role="tabpanel">
+            <section aria-labelledby="git-heading">
+              <h2 id="git-heading">Git Sync</h2>
+              <p>Intentional version control. You control when to sync.</p>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>GitHub / GitLab</h3>
+                  <p>Connect with Personal Access Token.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Manual commits</h3>
+                  <p>You decide when to sync.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Pull & merge</h3>
+                  <p>Resolve conflicts side-by-side.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Diff viewer</h3>
+                  <p>Compare local vs remote before syncing.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Commit history</h3>
+                  <p>View past 20 commits.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Encrypted tokens</h3>
+                  <p>AES-GCM encryption. Never stored in plain text.</p>
+                </div>
+              </div>
+            </section>
 
-      <!-- Keyboard Shortcuts -->
-      <section aria-labelledby="shortcuts-heading">
-        <h2 id="shortcuts-heading">Keyboard Shortcuts</h2>
-        <p>Designed to avoid browser conflicts.</p>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>Alt+N</h3>
-            <p>New note</p>
+            <section aria-labelledby="dual-heading">
+              <h2 id="dual-heading">Dual Mode</h2>
+              <p>Open New Tab and Side Panel simultaneously.</p>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>Independent windows</h3>
+                  <p>Edit in one. Read in the other.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Conflict resolution</h3>
+                  <p>Merge Changes button blinks. Choose which to keep.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Comparison tools</h3>
+                  <p>Sync scroll, diff highlight, TOC navigation.</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>Ctrl+K</h3>
-            <p>Search modal</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Ctrl+Shift+D</h3>
-            <p>Toggle sidebar</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Ctrl+Shift+S</h3>
-            <p>Git sync</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>F11 / Ctrl+Shift+Z</h3>
-            <p>Zen mode (New Tab only)</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Alt+P / T / A / X</h3>
-            <p>Pin / Template / Archive / Trash</p>
+
+          <!-- Keys Panel -->
+          <div class="tab-panel tab-panel-keys" role="tabpanel">
+            <section aria-labelledby="shortcuts-heading">
+              <h2 id="shortcuts-heading">Keyboard Shortcuts</h2>
+              <p>Designed to avoid browser conflicts.</p>
+              <table class="shortcuts-table">
+                <thead>
+                  <tr>
+                    <th>Key</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>Alt</kbd>+<kbd>N</kbd></td>
+                    <td>New note</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>K</kbd></td>
+                    <td>Search modal</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd></td>
+                    <td>Toggle sidebar</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td>
+                    <td>Git sync</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>F11</kbd></td>
+                    <td>Zen mode (New Tab)</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Alt</kbd>+<kbd>P</kbd>/<kbd>T</kbd>/<kbd>A</kbd>/<kbd>X</kbd></td>
+                    <td>Pin / Template / Archive / Trash</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- CTA Section -->
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Ready to write?</h2>
-        <p>Available as a Chrome extension.<br>No account required.</p>
+        <p>Available as a Chrome extension. No account required.</p>
         <div class="buttons">
           <a href="#" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
             Get the extension
