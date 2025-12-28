@@ -29,11 +29,12 @@
   --border-subtle: #F2F0ED;
   --border-card: rgba(45, 42, 38, 0.06);
 
-  /* Shadows - Layered for depth and warmth */
-  --shadow-sm: 0 1px 2px rgba(45, 42, 38, 0.03);
-  --shadow-md: 0 4px 16px rgba(45, 42, 38, 0.05), 0 2px 4px rgba(45, 42, 38, 0.03);
-  --shadow-lg: 0 8px 32px rgba(45, 42, 38, 0.08), 0 4px 8px rgba(45, 42, 38, 0.04);
-  --shadow-card: 0 2px 8px rgba(45, 42, 38, 0.04), 0 1px 2px rgba(45, 42, 38, 0.02);
+  /* Shadows - Layered for depth and warmth (using accent color) */
+  --shadow-sm: 0 1px 2px rgba(139, 115, 85, 0.04);
+  --shadow-md: 0 4px 16px rgba(139, 115, 85, 0.06), 0 2px 4px rgba(139, 115, 85, 0.04);
+  --shadow-lg: 0 8px 32px rgba(139, 115, 85, 0.1), 0 4px 8px rgba(139, 115, 85, 0.05);
+  --shadow-card: 0 2px 8px rgba(139, 115, 85, 0.05), 0 1px 2px rgba(139, 115, 85, 0.03);
+  --shadow-screenshot: 0 16px 48px rgba(45, 42, 38, 0.12), 0 8px 16px rgba(139, 115, 85, 0.08);
 
   /* Typography */
   --font-serif: 'Lora', Georgia, serif;
@@ -167,7 +168,8 @@ body {
 
 :focus-visible {
   outline: 2px solid var(--accent-primary);
-  outline-offset: 2px;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* ========================================
@@ -276,12 +278,12 @@ p {
 
 .hero-tagline {
   font-family: var(--font-serif);
-  font-size: var(--font-size-hero);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 400;
   color: var(--text-primary);
   line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-lg);
-  letter-spacing: var(--letter-spacing-tight);
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
@@ -374,6 +376,52 @@ p {
   grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-md);
   max-width: 800px;
+}
+
+/* Flow item with icon */
+.flow-item {
+  position: relative;
+  padding: var(--spacing-md);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.flow-item:hover {
+  border-color: var(--border-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.flow-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto var(--spacing-sm);
+  color: var(--accent-primary);
+}
+
+.flow-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Arrow between flow items */
+.flow-arrow {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .flow-section .philosophy-list {
+    position: relative;
+  }
+
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: var(--font-size-lg);
+  }
 }
 
 @media (max-width: 768px) {
@@ -482,12 +530,12 @@ a:hover {
   height: auto;
   border-radius: var(--radius-xl);
   border: 1px solid var(--border-primary);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-screenshot);
   transition: box-shadow var(--transition-slow);
 }
 
 .screenshot-section img:hover {
-  box-shadow: 0 12px 48px rgba(45, 42, 38, 0.12), 0 6px 12px rgba(45, 42, 38, 0.06);
+  box-shadow: 0 20px 60px rgba(45, 42, 38, 0.15), 0 8px 20px rgba(139, 115, 85, 0.1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -659,7 +707,46 @@ a:hover {
   border: 1px solid var(--border-primary);
 }
 
-/* Responsive: Horizontal scroll on mobile */
+/* Tab panel animation */
+.tab-panel {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-panel {
+    animation: none;
+  }
+}
+
+/* Responsive: Horizontal scroll with hint on mobile */
+@media (max-width: 768px) {
+  .tab-nav-wrapper {
+    position: relative;
+  }
+
+  .tab-nav-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: var(--spacing-xs);
+    width: 48px;
+    background: linear-gradient(to right, transparent, var(--bg-primary));
+    pointer-events: none;
+  }
+}
+
 @media (max-width: 640px) {
   .tab-nav {
     justify-content: flex-start;
@@ -800,7 +887,42 @@ footer a:hover {
 }
 
 /* ========================================
-   17. PRINT STYLES
+   17. RESPONSIVE - LARGE SCREENS (1600px+)
+   ======================================== */
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  .hero-tagline {
+    font-size: 5rem;
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-xl);
+    max-width: 600px;
+  }
+
+  header h1 {
+    font-size: var(--font-size-4xl);
+  }
+
+  .philosophy-list {
+    max-width: 600px;
+  }
+
+  .flow-section .philosophy-list {
+    max-width: 1000px;
+  }
+
+  .screenshot-section img {
+    max-width: 900px;
+  }
+}
+
+/* ========================================
+   18. PRINT STYLES
    ======================================== */
 
 @media print {

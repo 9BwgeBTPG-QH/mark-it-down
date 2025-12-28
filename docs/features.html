@@ -51,16 +51,18 @@
         <input type="radio" name="feature-tabs" id="tab-keys">
 
         <!-- Tab navigation -->
-        <nav class="tab-nav" aria-label="Feature tabs">
-          <label for="tab-modes" role="tab">Modes</label>
-          <label for="tab-markdown" role="tab">Markdown</label>
-          <label for="tab-view" role="tab">View</label>
-          <label for="tab-notes" role="tab">Notes</label>
-          <label for="tab-storage" role="tab">Storage</label>
-          <label for="tab-git" role="tab">Git</label>
-          <label for="tab-dual" role="tab">Dual</label>
-          <label for="tab-keys" role="tab">Keys</label>
-        </nav>
+        <div class="tab-nav-wrapper">
+          <nav class="tab-nav" aria-label="Feature tabs">
+            <label for="tab-modes" role="tab">Modes</label>
+            <label for="tab-markdown" role="tab">Markdown</label>
+            <label for="tab-view" role="tab">View</label>
+            <label for="tab-notes" role="tab">Notes</label>
+            <label for="tab-storage" role="tab">Storage</label>
+            <label for="tab-git" role="tab">Git</label>
+            <label for="tab-dual" role="tab">Dual</label>
+            <label for="tab-keys" role="tab">Keys</label>
+          </nav>
+        </div>
 
         <!-- Tab content -->
         <div class="tab-content">
@@ -235,8 +237,8 @@
               <table class="shortcuts-table">
                 <thead>
                   <tr>
-                    <th>Key</th>
-                    <th>Action</th>
+                    <th scope="col">Key</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>

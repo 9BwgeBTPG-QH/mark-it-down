@@ -1,0 +1,22 @@
+# Reference documents (local only)
+ref/
+
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python cache
+__pycache__/
+*.pyc

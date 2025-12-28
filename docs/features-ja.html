@@ -51,16 +51,18 @@
         <input type="radio" name="feature-tabs" id="tab-keys">
 
         <!-- Tab navigation -->
-        <nav class="tab-nav" aria-label="機能タブ">
-          <label for="tab-modes" role="tab">モード</label>
-          <label for="tab-markdown" role="tab">Markdown</label>
-          <label for="tab-view" role="tab">表示</label>
-          <label for="tab-notes" role="tab">ノート</label>
-          <label for="tab-storage" role="tab">保存</label>
-          <label for="tab-git" role="tab">Git</label>
-          <label for="tab-dual" role="tab">デュアル</label>
-          <label for="tab-keys" role="tab">キー</label>
-        </nav>
+        <div class="tab-nav-wrapper">
+          <nav class="tab-nav" aria-label="機能タブ">
+            <label for="tab-modes" role="tab">モード</label>
+            <label for="tab-markdown" role="tab">Markdown</label>
+            <label for="tab-view" role="tab">表示</label>
+            <label for="tab-notes" role="tab">ノート</label>
+            <label for="tab-storage" role="tab">保存</label>
+            <label for="tab-git" role="tab">Git</label>
+            <label for="tab-dual" role="tab">デュアル</label>
+            <label for="tab-keys" role="tab">キー</label>
+          </nav>
+        </div>
 
         <!-- Tab content -->
         <div class="tab-content">
@@ -235,8 +237,8 @@
               <table class="shortcuts-table">
                 <thead>
                   <tr>
-                    <th>キー</th>
-                    <th>アクション</th>
+                    <th scope="col">キー</th>
+                    <th scope="col">アクション</th>
                   </tr>
                 </thead>
                 <tbody>
