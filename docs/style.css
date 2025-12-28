@@ -394,9 +394,9 @@ p {
 }
 
 .flow-icon {
-  width: 32px;
-  height: 32px;
-  margin: 0 auto var(--spacing-sm);
+  width: 24px;
+  height: 24px;
+  margin: 0 auto var(--spacing-xs);
   color: var(--accent-primary);
 }
 
