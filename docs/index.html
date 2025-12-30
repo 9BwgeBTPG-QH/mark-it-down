@@ -36,7 +36,7 @@
         <h2 id="hero-heading" class="visually-hidden">Introduction</h2>
         <p class="hero-tagline">Write. Think. Move on.</p>
         <p class="hero-subtitle">
-          A distraction-free Markdown editor that sits beside AI.<br>
+          A distraction-free Markdown editor <br>sits beside AI.<br>
           Not a place to store—a place to digest.
         </p>
         <div class="buttons">
@@ -115,7 +115,10 @@
       <!-- Screenshot Section -->
       <section class="screenshot-section" aria-labelledby="screenshot-heading">
         <h2 id="screenshot-heading" class="visually-hidden">Preview</h2>
-        <img src="en-dark.png" alt="Mark It Down - New Tab and Side Panel views showing the information flow diagram" loading="lazy">
+        <picture>
+          <source srcset="en-dark.png" media="(prefers-color-scheme: dark)">
+          <img src="en-light.png" alt="Mark It Down - New Tab and Side Panel views showing the information flow diagram" loading="lazy">
+        </picture>
         <p class="screenshot-caption">New Tab for focused writing — Side Panel for working alongside AI</p>
       </section>
 
@@ -123,7 +126,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Ready to write?</h2>
         <p>Available as a Chrome extension. No account required.<br>
-        <small>Latest version under review.</small></p>
+        <small>Latest version v1.2.0 is under review.</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
             Get the extension

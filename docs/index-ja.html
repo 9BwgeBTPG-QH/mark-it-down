@@ -36,7 +36,7 @@
         <h2 id="hero-heading" class="visually-hidden">はじめに</h2>
         <p class="hero-tagline">書く。考える。次へ。</p>
         <p class="hero-subtitle">
-          AIのそばで使える、気が散らないMarkdownエディタ。<br>
+          AIのそばで使える、<br>気が散らないMarkdownエディタ。<br>
           保存する場所じゃない。咀嚼する場所。
         </p>
         <div class="buttons">
@@ -115,7 +115,10 @@
       <!-- Screenshot Section -->
       <section class="screenshot-section" aria-labelledby="screenshot-heading">
         <h2 id="screenshot-heading" class="visually-hidden">プレビュー</h2>
-        <img src="jp-dark.png" alt="Mark It Down - New TabとSide Panelの両方を表示、情報フロー図が見える" loading="lazy">
+        <picture>
+          <source srcset="jp-dark.png" media="(prefers-color-scheme: dark)">
+          <img src="jp-light.png" alt="Mark It Down - New TabとSide Panelの両方を表示、情報フロー図が見える" loading="lazy">
+        </picture>
         <p class="screenshot-caption">New Tabで集中して書く — Side PanelでAIと並行作業</p>
       </section>
 
@@ -123,7 +126,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版は現在審査中です。</small></p>
+        <small>最新版v1.2.0は現在審査中です。</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手
