@@ -18,6 +18,14 @@
   <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
   <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
   <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10BZGSVJT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V10BZGSVJT');
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
@@ -124,32 +132,28 @@
 
       <!-- Coming Soon Section -->
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
-        <h2 id="coming-soon-heading">v1.2.0 の新機能</h2>
+        <h2 id="coming-soon-heading">v1.3.0 の新機能</h2>
         <p class="coming-soon-status">現在審査中</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>ツールバー刷新</strong>
-            <span>ホバーで開くメニュー、ワンクリック減でアクセス</span>
+            <strong>Git連携の強化</strong>
+            <span>Fetch機能追加、Pull/Sync操作の競合検出を改善</span>
           </li>
           <li>
-            <strong>Git同期の強化</strong>
-            <span>競合検出の精度向上、4段階リスクレベル表示</span>
+            <strong>重複ノート管理</strong>
+            <span>同名ノートをside-by-side比較、保持するノートを選択可能</span>
           </li>
           <li>
-            <strong>Overview Ruler</strong>
-            <span>VSCode風の差分マップ、クリックでジャンプ</span>
+            <strong>スマート検索の強化</strong>
+            <span>複数キーワードAND検索、ハイライト、フォルダバッジ表示</span>
           </li>
           <li>
-            <strong>Auto Pair</strong>
-            <span>括弧・引用符の自動補完</span>
+            <strong>クイックナビゲーション</strong>
+            <span>Git設定とシステムノート間のリンクでガイドにすぐアクセス</span>
           </li>
           <li>
-            <strong>ノート検索</strong>
-            <span>サイドバーで入力ごとにフィルタリング</span>
-          </li>
-          <li>
-            <strong>ワイドスクリーン対応</strong>
-            <span>1600px以上でサイドバー・TOCがコンテンツ外に</span>
+            <strong>ピン留め機能の改善</strong>
+            <span>3状態ツールチップ（表示/固定/解除）で発見可能性を向上</span>
           </li>
         </ul>
       </section>
@@ -158,7 +162,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版v1.2.0は現在審査中です。</small></p>
+        <small>最新版v1.3.0は現在審査中です。</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手
