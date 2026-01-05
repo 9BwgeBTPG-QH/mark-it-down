@@ -26,6 +26,15 @@
     gtag('js', new Date());
     gtag('config', 'G-V10BZGSVJT');
   </script>
+  <!-- Language auto-redirect -->
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage;
+      if (!lang.startsWith('ja') && !sessionStorage.getItem('langOverride')) {
+        window.location.replace('index.html');
+      }
+    })();
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
@@ -165,7 +174,7 @@
 
     <footer role="contentinfo">
       <p>
-        <a href="index.html" hreflang="en">English</a>
+        <a href="index.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a>
         <span aria-hidden="true">·</span>
         <a href="features-ja.html">機能</a>
         <span aria-hidden="true">·</span>
