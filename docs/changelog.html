@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Changelog - Mark It Down</title>
-  <meta name="description" content="Mark It Down release history and changelog.">
-  <meta name="theme-color" content="#FAF9F7">
+  <meta name="description" content="Version history and release notes for Mark It Down.">
+  <meta name="theme-color" content="#FAFAF9">
   <!-- OGP -->
   <meta property="og:title" content="Changelog - Mark It Down">
-  <meta property="og:description" content="Mark It Down release history and changelog.">
+  <meta property="og:description" content="Version history and release notes for Mark It Down.">
   <meta property="og:type" content="website">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
@@ -16,6 +16,14 @@
   <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
   <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
   <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10BZGSVJT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V10BZGSVJT');
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -32,148 +40,142 @@
       <!-- Introduction -->
       <section class="hero" aria-labelledby="intro-heading">
         <h2 id="intro-heading" class="visually-hidden">Introduction</h2>
-        <p class="hero-tagline">Release History</p>
+        <p class="hero-tagline">What's New</p>
         <p class="hero-subtitle">
-          Track the evolution of Mark It Down.<br>
-          New features, improvements, and bug fixes.
+          Version history and release notes.
         </p>
       </section>
 
       <!-- v1.6.0 -->
-      <section aria-labelledby="v160-heading">
-        <h2 id="v160-heading">v1.6.0 — January 9, 2026</h2>
-
-        <h3>Highlights</h3>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h4>Core Web Vitals PASS — 95% Faster Startup</h4>
-            <p>Bundle optimization dramatically improved startup performance:</p>
-            <ul>
-              <li>INP: 2,446 ms → 109 ms (-95.5%)</li>
-              <li>Initial bundle (gzipped): 698 KB → 84 KB (-88%)</li>
-              <li>Startup time: 1s → 0.1s (-90%)</li>
-            </ul>
-            <p>Mermaid lazy-loading (2.3MB loaded only when needed), code splitting (vendor-milkdown, vendor-prosemirror, etc.)</p>
-          </div>
-
-          <div class="philosophy-item">
-            <h4>Command Palette — Instant Access to 50+ Commands</h4>
-            <p>VS Code-style Command Palette. <code>Ctrl+Shift+P</code> to search and execute all commands.</p>
-            <ul>
-              <li>50+ commands in one place</li>
-              <li>Incremental search by command name, description, keyword, or shortcut</li>
-              <li>8 categories: Entry, Work, Move, Git, Exit, View, Settings, Help</li>
-              <li>Keyboard-first, mouse-free operation</li>
-            </ul>
-          </div>
-
-          <div class="philosophy-item">
-            <h4>Archive Lightweight Renderer — 70% Faster</h4>
-            <p>Archive notes bypass ProseMirror, using static HTML rendering with <code>marked</code>.</p>
-            <ul>
-              <li>100KB Archive load: 3s+ → under 1s (-70%)</li>
-              <li>app.js size: 1,350 KB → 372 KB (-73%)</li>
-            </ul>
-            <p>Full feature parity: TOC integration, code block copy, Mermaid zoom, GitHub Alerts support</p>
-          </div>
-
-          <div class="philosophy-item">
-            <h4>Focus Mode — Concentrate on Writing</h4>
-            <p>New distraction-free writing mode.</p>
-            <ul>
-              <li>3-level text dimming: current paragraph emphasized, surroundings gradually faded</li>
-              <li>Typewriter scrolling: cursor always at screen center</li>
-              <li>UI auto-hide: toolbar disappears after 3s, returns on mouse movement</li>
-              <li>Shortcut: <code>Alt+F</code> to toggle</li>
-            </ul>
-          </div>
-
-          <div class="philosophy-item">
-            <h4>TOC for Large Documents</h4>
-            <p>TOC remains responsive even with 100+ headings.</p>
-            <ul>
-              <li>Collapsible hierarchy: h2 as root, h3+ collapsed (auto-enabled for 20+ headings)</li>
-              <li>TOC search: incremental filtering (shown for 15+ headings)</li>
-              <li>Keyboard navigation: PageUp/Down, Home/End</li>
-              <li>Code block bug fix: <code>#</code> no longer misidentified as heading</li>
-            </ul>
-          </div>
-        </div>
-
-        <h3>New Features</h3>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h4>Command Palette</h4>
-            <ul>
-              <li>50+ commands unified: Entry(8), Work(6), Move(6), Git(11), Exit(3), View(7), Settings(5), Help(4)</li>
-              <li>Incremental search with space-separated AND search, case-insensitive</li>
-              <li>Keyboard navigation: Arrow Up/Down, Enter, Escape</li>
-              <li>Shortcut display next to commands</li>
-              <li>Category badges with color coding</li>
-              <li>Conditional execution (e.g., Move commands disabled when no note selected)</li>
-            </ul>
-          </div>
-
-          <div class="philosophy-item">
-            <h4>Focus Mode</h4>
-            <ul>
-              <li>3-level dimming: Focus Zone (normal) → Intermediate → Dimmed</li>
-              <li>Typewriter scrolling keeps cursor at screen center</li>
-              <li>UI auto-hide after 3s, returns on mouse/key input</li>
-              <li>"Editing" badge in header</li>
-              <li>Archive integration: auto-disabled when moving to Archive</li>
-              <li>100KB+ support: dimming disabled for large documents (typewriter scroll continues)</li>
-            </ul>
-          </div>
-
-          <div class="philosophy-item">
-            <h4>Performance</h4>
-            <ul>
-              <li>Mermaid lazy-loading: 2.3MB not loaded for notes without Mermaid diagrams</li>
-              <li>Code splitting: split into vendor-milkdown, vendor-prosemirror, etc., parallel loading</li>
-              <li>ZIP parallel import: Promise.allSettled for parallel extraction, 90-98% API call reduction</li>
-              <li>Folder change optimization: skip remount when content identical</li>
-            </ul>
-          </div>
-        </div>
-
-        <h3>Bug Fixes</h3>
-        <ul>
-          <li>#132: Sidebar search keyboard navigation not working - Arrow Up/Down, Enter support added</li>
-          <li>#131: Sidebar search result order unstable - sort logic fixed</li>
-          <li>#133: White screen on initial load - loading skeleton added</li>
-          <li>#136: Focus Mode obscures context - improved to 3-level dimming</li>
-          <li>TOC misidentified <code>#</code> in code blocks - unified extractHeadingsFromMarkdown</li>
-          <li>Folder change caused unnecessary reload - content comparison check added</li>
-          <li>Multiple bugs in conflict resolution modal - improved keyboard nav and focus management</li>
-        </ul>
-
-        <h3>New Keyboard Shortcuts</h3>
-        <ul>
-          <li><code>Ctrl+Shift+P</code> — Command Palette</li>
-          <li><code>Alt+F</code> — Focus Mode toggle</li>
-          <li><code>PageUp</code> — TOC: Previous heading</li>
-          <li><code>PageDown</code> — TOC: Next heading</li>
-          <li><code>Home</code> — TOC: First heading</li>
-          <li><code>End</code> — TOC: Last heading</li>
-          <li><code>↑/↓</code> — Sidebar/TOC search: move between results</li>
-          <li><code>Enter</code> — Select/execute search result</li>
-          <li><code>Escape</code> — Close search/modal</li>
+      <section class="coming-soon-section" aria-labelledby="v160-heading">
+        <h2 id="v160-heading">v1.6.0</h2>
+        <p class="coming-soon-status">Under Review</p>
+        <ul class="coming-soon-list" role="list">
+          <li>
+            <strong>Command Palette</strong>
+            <span>VS Code-style palette with 50+ commands — <code>Ctrl+Shift+P</code></span>
+          </li>
+          <li>
+            <strong>Focus Mode</strong>
+            <span>Distraction-free writing with typewriter scroll and 3-level dimming</span>
+          </li>
+          <li>
+            <strong>95% Faster Startup</strong>
+            <span>Core Web Vitals PASS — Initial bundle: 698KB → 84KB (gzipped)</span>
+          </li>
+          <li>
+            <strong>70% Faster Archive</strong>
+            <span>Lightweight renderer for Archive notes — 100KB docs load in under 1s</span>
+          </li>
+          <li>
+            <strong>Enhanced TOC</strong>
+            <span>Collapsible headings (20+), search bar (15+), keyboard navigation</span>
+          </li>
         </ul>
       </section>
 
-      <!-- Previous versions placeholder -->
-      <section aria-labelledby="previous-heading">
-        <h2 id="previous-heading">Previous Versions</h2>
-        <p>v1.5.0 and earlier release notes will be added here.</p>
+      <!-- v1.5.0 -->
+      <section class="coming-soon-section" aria-labelledby="v150-heading">
+        <h2 id="v150-heading">v1.5.0</h2>
+        <p class="coming-soon-status">Released</p>
+        <ul class="coming-soon-list" role="list">
+          <li>
+            <strong>Large Document Support</strong>
+            <span>57% faster loading for 100KB+ files with smart optimizations</span>
+          </li>
+          <li>
+            <strong>Archive Pinned Export</strong>
+            <span>Export only pinned notes in Archive folder as .zip</span>
+          </li>
+          <li>
+            <strong>Side Panel Sticky Toolbar</strong>
+            <span>Toolbar stays visible while scrolling in Side Panel</span>
+          </li>
+          <li>
+            <strong>Enhanced Editor</strong>
+            <span>Callouts, page anchors, LaTeX math, Mermaid zoom</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- v1.4.0 -->
+      <section class="coming-soon-section" aria-labelledby="v140-heading">
+        <h2 id="v140-heading">v1.4.0</h2>
+        <p class="coming-soon-status">Released</p>
+        <ul class="coming-soon-list" role="list">
+          <li>
+            <strong>Smarter Table of Contents</strong>
+            <span>Highlights current section while scrolling, visual feedback on navigation</span>
+          </li>
+          <li>
+            <strong>Enhanced Data Safety</strong>
+            <span>3-layer protection against concurrent edits for reliable auto-save</span>
+          </li>
+          <li>
+            <strong>UX Polish</strong>
+            <span>Smooth transitions, code block height limits, unified star/pin button</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- v1.3.0 -->
+      <section class="coming-soon-section" aria-labelledby="v130-heading">
+        <h2 id="v130-heading">v1.3.0</h2>
+        <p class="coming-soon-status">Released</p>
+        <ul class="coming-soon-list" role="list">
+          <li>
+            <strong>Enhanced Git Integration</strong>
+            <span>Fetch support, improved conflict detection for Pull/Sync</span>
+          </li>
+          <li>
+            <strong>Duplicate Note Management</strong>
+            <span>Side-by-side comparison to choose which note to keep</span>
+          </li>
+          <li>
+            <strong>Smarter Search</strong>
+            <span>Multi-keyword AND search, highlights, folder badges</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- v1.2.0 -->
+      <section class="coming-soon-section" aria-labelledby="v120-heading">
+        <h2 id="v120-heading">v1.2.0</h2>
+        <p class="coming-soon-status">Released</p>
+        <ul class="coming-soon-list" role="list">
+          <li>
+            <strong>Refreshed Toolbar</strong>
+            <span>Hover-activated menus for faster access</span>
+          </li>
+          <li>
+            <strong>Smarter Git Sync</strong>
+            <span>Better conflict detection with 4-level risk indicators</span>
+          </li>
+          <li>
+            <strong>Overview Ruler</strong>
+            <span>VSCode-style diff map with click-to-jump</span>
+          </li>
+          <li>
+            <strong>Auto Pair</strong>
+            <span>Auto-complete brackets and quotes</span>
+          </li>
+          <li>
+            <strong>Note Search</strong>
+            <span>Filter notes as you type in sidebar</span>
+          </li>
+          <li>
+            <strong>Wide Screen Support</strong>
+            <span>Sidebar and TOC outside content on 1600px+</span>
+          </li>
+        </ul>
       </section>
 
       <!-- CTA Section -->
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Ready to write?</h2>
-        <p>Available as a Chrome extension.<br>No account required.</p>
+        <p>Available as a Chrome extension. No account required.</p>
         <div class="buttons">
-          <a href="#" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
+          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
             Get the extension
           </a>
         </div>
@@ -192,7 +194,7 @@
         <span aria-hidden="true">·</span>
         <a href="privacy-policy.html">Privacy</a>
         <span aria-hidden="true">·</span>
-        <span>© 2025</span>
+        <span>© 2026</span>
       </p>
     </footer>
   </div>

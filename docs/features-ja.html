@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>機能 - Mark It Down</title>
   <meta name="description" content="Mark It Downの全機能: GFM対応、Git同期、デュアルモードなど。">
-  <meta name="theme-color" content="#FAF9F7">
+  <meta name="theme-color" content="#FAFAF9">
   <!-- OGP -->
   <meta property="og:title" content="機能 - Mark It Down">
   <meta property="og:description" content="Mark It Downの全機能: GFM対応、Git同期、デュアルモードなど。">
@@ -16,6 +16,14 @@
   <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
   <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
   <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10BZGSVJT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V10BZGSVJT');
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">メインコンテンツへ</a>
@@ -34,268 +42,267 @@
         <h2 id="intro-heading" class="visually-hidden">はじめに</h2>
         <p class="hero-tagline">Markdownで書く。</p>
         <p class="hero-subtitle">
-          AI非対応。プラグインもなし。1ペイン。<br>
-          書いた瞬間に見える。それだけ。
+          AI非対応。プラグインなし。<br>1ペイン。書いて、すぐ見る。
         </p>
       </section>
 
-      <!-- What's New in v1.6.0 -->
-      <section aria-labelledby="whats-new-heading">
-        <h2 id="whats-new-heading">v1.6.0の新機能</h2>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>Command Palette</h3>
-            <p>VS Code風コマンドパレット（<code>Ctrl+Shift+P</code>）。50+のコマンドを名前、説明、ショートカットで検索。キーボード優先ナビゲーション。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Focus Mode</h3>
-            <p>タイプライタースクロールと3段階テキストdimmingによる集中執筆モード。UIは3秒後に自動非表示。<code>Alt+F</code>で切替。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>TOC拡張機能</h3>
-            <p>階層折りたたみ（20見出し以上）、検索バー（15見出し以上）、キーボードナビゲーション（<code>PageUp</code>/<code>PageDown</code>、<code>Home</code>/<code>End</code>）。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>起動時間95%改善</h3>
-            <p>Core Web Vitals合格。Mermaid遅延ロード、コード分割。初期バンドル: 698KB → 84KB（gzip圧縮後）。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Archive表示70%高速化</h3>
-            <p>Archiveノート用の軽量レンダラー。100KBのドキュメントが1秒以内にロード。</p>
-          </div>
-        </div>
-      </section>
+      <!-- Tab Navigation -->
+      <div class="tab-container" id="tabs" role="tablist" aria-label="機能カテゴリ">
+        <!-- Radio inputs for CSS-only tabs -->
+        <input type="radio" name="feature-tabs" id="tab-modes" checked>
+        <input type="radio" name="feature-tabs" id="tab-markdown">
+        <input type="radio" name="feature-tabs" id="tab-view">
+        <input type="radio" name="feature-tabs" id="tab-notes">
+        <input type="radio" name="feature-tabs" id="tab-storage">
+        <input type="radio" name="feature-tabs" id="tab-git">
+        <input type="radio" name="feature-tabs" id="tab-dual">
+        <input type="radio" name="feature-tabs" id="tab-keys">
 
-      <!-- Core Modes -->
-      <section aria-labelledby="modes-heading">
-        <h2 id="modes-heading">2つのモード</h2>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>New Tab — 全画面で</h3>
-            <p>専用ワークスペース。Zenモード利用可能（F11）。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Side Panel — Webの横で</h3>
-            <p>AIの横で書く。ブラウジングしながら書く。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>両方開ける。同期しない。</h3>
-            <p>更新前を見ながら、書き換える。</p>
-          </div>
+        <!-- Tab navigation -->
+        <div class="tab-nav-wrapper">
+          <nav class="tab-nav" aria-label="機能タブ">
+            <label for="tab-modes" role="tab">モード</label>
+            <label for="tab-markdown" role="tab">Markdown</label>
+            <label for="tab-view" role="tab">表示</label>
+            <label for="tab-notes" role="tab">ノート</label>
+            <label for="tab-storage" role="tab">保存</label>
+            <label for="tab-git" role="tab">Git</label>
+            <label for="tab-dual" role="tab">デュアル</label>
+            <label for="tab-keys" role="tab">キー</label>
+          </nav>
         </div>
-      </section>
 
-      <!-- Editor Features -->
-      <section aria-labelledby="editor-heading">
-        <h2 id="editor-heading">エディタ</h2>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>GitHub Flavored Markdown</h3>
-            <p>テーブル、タスクリスト、シンタックスハイライト付きコードブロック。</p>
+        <!-- Tab content -->
+        <div class="tab-content">
+          <!-- Modes Panel -->
+          <div class="tab-panel tab-panel-modes" role="tabpanel">
+            <section aria-labelledby="modes-heading">
+              <h2 id="modes-heading">2つのモード</h2>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>New Tab — 全画面で</h3>
+                  <p>専用ワークスペース。Zenモード利用可能（F11）。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Side Panel — Webの横で</h3>
+                  <p>AIの横で書く。ブラウジングしながら書く。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>固定ツールバー</h3>
+                  <p>Side Panelでスクロールしてもツールバーが常に表示。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>両方開ける。同期しない。</h3>
+                  <p>更新前を見ながら、書き換える。</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>Mermaid図</h3>
-            <p>フローチャート、シーケンス図、円グラフ。🔍ボタンで拡大表示。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>数式（LaTeX）</h3>
-            <p>インライン <code>$E=mc^2$</code> とブロック <code>$$...$$</code> 形式。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>コールアウト</h3>
-            <p>GitHub Alerts: NOTE、TIP、IMPORTANT、WARNING、CAUTION。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>目次（TOC）</h3>
-            <p>階層折りたたみ（20見出し以上）、検索バー（15見出し以上）、キーボードナビゲーション対応の自動生成目次。サイドパネルまたはドロップダウン。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>ダーク/ライトモード</h3>
-            <p>環境に合わせてテーマ切替。</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Note Management -->
-      <section aria-labelledby="notes-heading">
-        <h2 id="notes-heading">ノート管理</h2>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>4つのフォルダ。固定。</h3>
-            <p>Inbox / Template / Archive / Trash。すべてに居場所がある。</p>
+          <!-- Markdown Panel -->
+          <div class="tab-panel tab-panel-markdown" role="tabpanel">
+            <section aria-labelledby="markdown-heading">
+              <h2 id="markdown-heading">Markdown</h2>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>GitHub Flavored Markdown</h3>
+                  <p>テーブル、タスクリスト、シンタックスハイライト。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Mermaid図</h3>
+                  <p>フローチャート、シーケンス図、円グラフ。クリックで拡大。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>数式（LaTeX）</h3>
+                  <p>インライン <code>$E=mc^2$</code> とブロック <code>$$...$$</code> 形式。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>コールアウト</h3>
+                  <p>GitHub Alerts: NOTE、TIP、IMPORTANT、WARNING、CAUTION。</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>テンプレート</h3>
-            <p>ノートテンプレートを保存。複製して新規作成。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>ピン留め</h3>
-            <p>重要なノートを各フォルダの最上部に固定。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>ドラッグ&ドロップ</h3>
-            <p>フォルダ間でノートを移動。シンプルで直接的。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>ソート&検索</h3>
-            <p>名前順または日付順。インクリメンタル検索で何でも見つかる。</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Toolbar -->
-      <section aria-labelledby="toolbar-heading">
-        <h2 id="toolbar-heading">ツールバー</h2>
-        <p>スクロールに追従するスティッキーツールバー。情報フロー: Entry → Work → Move → Exit。</p>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>Entry: Import、Paste</h3>
-            <p>.mdや.zipファイルをドラッグ。またはクリップボードから貼り付け。</p>
+          <!-- View Panel -->
+          <div class="tab-panel tab-panel-view" role="tabpanel">
+            <section aria-labelledby="view-heading">
+              <h2 id="view-heading">表示</h2>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>目次（TOC）</h3>
+                  <p>自動生成目次。スクロール中に現在セクションをハイライト。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>ダーク/ライトモード</h3>
+                  <p>環境に合わせてテーマ切替。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>スムーズなトランジション</h3>
+                  <p>ノート切替時のフェード効果。コードブロックのスクロール対応。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Auto Pair</h3>
+                  <p>括弧・引用符・バッククォートを自動補完。</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>Work: Undo、Redo</h3>
-            <p>Ctrl+Z / Ctrl+Y。安心して編集。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Move: フォルダ間移動</h3>
-            <p>Pin、Template、Archive、Trash、Restore。すべて1つのメニューに。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Exit: Export、Copy</h3>
-            <p>.mdとしてエクスポート。クリップボードにコピー。他のツールへ移行。</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Storage -->
-      <section aria-labelledby="storage-heading">
-        <h2 id="storage-heading">保存</h2>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>自動保存（0.5秒）</h3>
-            <p>保存ボタンなし。ただ書くだけ。</p>
+          <!-- Notes Panel -->
+          <div class="tab-panel tab-panel-notes" role="tabpanel">
+            <section aria-labelledby="notes-heading">
+              <h2 id="notes-heading">ノート管理</h2>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>5つのフォルダ。固定。</h3>
+                  <p>Inbox / Template / Archive / Trash / System。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>テンプレート & ピン</h3>
+                  <p>テンプレートを保存。重要なノートを上部に固定。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>ドラッグ&ドロップ</h3>
+                  <p>フォルダ間でノートを移動。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>ソート&検索</h3>
+                  <p>名前順または日付順。インクリメンタル検索。</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>Chrome拡張機能専用ストレージ</h3>
-            <p>ブラウザキャッシュクリアでも残る。起動は一瞬。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>ファイルシステムではない</h3>
-            <p>エクスプローラーでは見えない。.mdファイルとして取り出すにはExport。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>バックアップ: ExportまたはGit</h3>
-            <p>すべてを.zipでエクスポート。またはGitHub/GitLabに同期。</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Git Sync -->
-      <section aria-labelledby="git-heading">
-        <h2 id="git-heading">Git同期</h2>
-        <p>自動同期ではなく、意図的なバージョン管理。</p>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>GitHub / GitLab</h3>
-            <p>Personal Access Tokenで接続。パブリックまたはプライベートリポジトリ。</p>
+          <!-- Storage Panel -->
+          <div class="tab-panel tab-panel-storage" role="tabpanel">
+            <section aria-labelledby="storage-heading">
+              <h2 id="storage-heading">保存</h2>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>自動保存</h3>
+                  <p>保存ボタンなし。ただ書くだけ。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>大規模ドキュメント</h3>
+                  <p>100KB超のMarkdownファイルに対応。快適に編集。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Chrome拡張機能ストレージ</h3>
+                  <p>ブラウザキャッシュクリアでも残る。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>バックアップ</h3>
+                  <p>すべてを.zipでエクスポート。またはGit同期。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Archiveピン留めエクスポート</h3>
+                  <p>ピン留めしたArchiveノートのみ出力。選別バックアップ。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>フェイルセーフ削除</h3>
+                  <p>同期済みノートは3段階で削除。</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>手動コミット</h3>
-            <p>同期タイミングはあなたが決める。カスタムまたは自動生成メッセージ。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Pull & マージ</h3>
-            <p>リモートの変更を取得。競合を並べて解決。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>差分表示</h3>
-            <p>同期前にローカルとリモートを比較。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>コミット履歴</h3>
-            <p>過去20件のコミットを表示。何が変わったか確認。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>暗号化トークン</h3>
-            <p>AES-GCM暗号化。トークンは平文保存されない。</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Dual Mode -->
-      <section aria-labelledby="dual-heading">
-        <h2 id="dual-heading">デュアルモード</h2>
-        <p>New TabとSide Panelを同時に開く。</p>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>独立したウィンドウ</h3>
-            <p>片方で編集。もう片方で読む。自動同期なし。</p>
+          <!-- Git Panel -->
+          <div class="tab-panel tab-panel-git" role="tabpanel">
+            <section aria-labelledby="git-heading">
+              <h2 id="git-heading">Git同期</h2>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>GitHub / GitLab</h3>
+                  <p>Personal Access Tokenで接続。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>手動コミット</h3>
+                  <p>同期タイミングはあなたが決める。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Pull & マージ</h3>
+                  <p>競合を並べて解決。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>差分 & 履歴</h3>
+                  <p>バージョン比較。過去20件のコミットを表示。</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>競合解決</h3>
-            <p>Merge Changesボタンが点滅。どちらを保持するか選択。</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>並べて比較</h3>
-            <p>両方のバージョンを表示。手動で決定。</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Keyboard Shortcuts -->
-      <section aria-labelledby="shortcuts-heading">
-        <h2 id="shortcuts-heading">キーボードショートカット</h2>
-        <p>ブラウザの競合を避けるよう設計。</p>
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>Ctrl+Shift+P</h3>
-            <p>Command Palette（v1.6.0）</p>
+          <!-- Dual Panel -->
+          <div class="tab-panel tab-panel-dual" role="tabpanel">
+            <section aria-labelledby="dual-heading">
+              <h2 id="dual-heading">デュアルモード</h2>
+              <p>New TabとSide Panelを同時に開く。</p>
+              <div class="philosophy-list">
+                <div class="philosophy-item">
+                  <h3>独立したウィンドウ</h3>
+                  <p>片方で編集。もう片方で読む。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>競合解決</h3>
+                  <p>Merge Changesボタンが点滅。選択して保持。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>比較ツール</h3>
+                  <p>スクロール同期、差分ハイライト、TOCナビゲーション。</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="philosophy-item">
-            <h3>Alt+F</h3>
-            <p>Focus Mode切替（v1.6.0）</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Alt+N</h3>
-            <p>新規ノート</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Ctrl+K</h3>
-            <p>検索モーダル</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Ctrl+Shift+D</h3>
-            <p>サイドバー切替</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Ctrl+Shift+S</h3>
-            <p>Git同期</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>F11 / Ctrl+Shift+Z</h3>
-            <p>Zenモード（New Tabのみ）</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Alt+P / T / A / X</h3>
-            <p>Pin / Template / Archive / Trash</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>PageUp / PageDown</h3>
-            <p>TOC: 前/次の見出し（v1.6.0）</p>
-          </div>
-          <div class="philosophy-item">
-            <h3>Home / End</h3>
-            <p>TOC: 最初/最後の見出し（v1.6.0）</p>
+
+          <!-- Keys Panel -->
+          <div class="tab-panel tab-panel-keys" role="tabpanel">
+            <section aria-labelledby="shortcuts-heading">
+              <h2 id="shortcuts-heading">キーボードショートカット</h2>
+              <table class="shortcuts-table">
+                <thead>
+                  <tr>
+                    <th scope="col">キー</th>
+                    <th scope="col">アクション</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>Alt</kbd>+<kbd>N</kbd></td>
+                    <td>新規ノート</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>K</kbd></td>
+                    <td>検索モーダル</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd></td>
+                    <td>サイドバー切替</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td>
+                    <td>Git同期</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>F11</kbd></td>
+                    <td>Zenモード（New Tab）</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Alt</kbd>+<kbd>P</kbd>/<kbd>T</kbd>/<kbd>A</kbd>/<kbd>X</kbd></td>
+                    <td>Pin / Template / Archive / Trash</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- CTA Section -->
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めよう</h2>
-        <p>Chrome拡張機能として利用可能。<br>アカウント不要。</p>
+        <p>Chrome拡張機能として利用可能。アカウント不要。</p>
         <div class="buttons">
-          <a href="#" class="btn btn-primary" aria-label="Chrome Web StoreからMark It Downを入手">
+          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web StoreからMark It Downを入手">
             拡張機能を入手
           </a>
         </div>
@@ -314,9 +321,18 @@
         <span aria-hidden="true">·</span>
         <a href="privacy-policy-ja.html">プライバシー</a>
         <span aria-hidden="true">·</span>
-        <span>© 2025</span>
+        <span>© 2026</span>
       </p>
     </footer>
   </div>
+
+  <!-- Tab scroll behavior -->
+  <script>
+    document.querySelectorAll('.tab-nav label').forEach(label => {
+      label.addEventListener('click', () => {
+        document.getElementById('tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
 </body>
 </html>

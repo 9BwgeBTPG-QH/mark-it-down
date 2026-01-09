@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mark It Down - A Quiet Space for Writing</title>
   <meta name="description" content="A distraction-free Markdown editor in your browser. Write beside AI, digest your thoughts, move on.">
-  <meta name="theme-color" content="#FAF9F7">
+  <meta name="theme-color" content="#FAFAF9">
   <!-- OGP -->
   <meta property="og:title" content="Mark It Down - A Quiet Space for Writing">
   <meta property="og:description" content="A distraction-free Markdown editor in your browser. Write beside AI, digest your thoughts, move on.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="screenshots/SidePanel.png">
+  <meta property="og:image" content="en-dark.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
@@ -18,6 +18,23 @@
   <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
   <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
   <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10BZGSVJT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V10BZGSVJT');
+  </script>
+  <!-- Language auto-redirect -->
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage;
+      if (lang.startsWith('ja') && !sessionStorage.getItem('langOverride')) {
+        window.location.replace('index-ja.html');
+      }
+    })();
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -36,12 +53,15 @@
         <h2 id="hero-heading" class="visually-hidden">Introduction</h2>
         <p class="hero-tagline">Write. Think. Move on.</p>
         <p class="hero-subtitle">
-          A distraction-free Markdown editor that sits beside AI.<br>
+          A distraction-free Markdown editor <br>sits beside AI.<br>
           Not a place to store—a place to digest.
         </p>
         <div class="buttons">
-          <a href="#" class="btn btn-primary" aria-label="Begin writing with Mark It Down">
+          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Begin writing with Mark It Down">
             Begin writing
+          </a>
+          <a href="features.html" class="btn btn-secondary" aria-label="Learn more about features">
+            Learn more
           </a>
         </div>
       </section>
@@ -52,15 +72,59 @@
         <ul class="philosophy-list" role="list">
           <li class="philosophy-item" role="listitem">
             <h3>Less tool. More space.</h3>
-            <p>No plugins, no widgets. Just a blank page and your thoughts.</p>
+            <p>No plugins, no widgets.<br>Just a blank page and your thoughts.</p>
           </li>
           <li class="philosophy-item" role="listitem">
             <h3>Not storage. Digestion.</h3>
-            <p>Copy-pasting doesn't make it yours. Rewriting does.</p>
+            <p>Copy-pasting doesn't make it yours.<br>Rewriting does.</p>
           </li>
           <li class="philosophy-item" role="listitem">
             <h3>Your words. Your rhythm.</h3>
-            <p>Side panel or new tab. Zen mode when you need focus.</p>
+            <p>Side panel or new tab.<br>Zen mode when you need focus.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Flow Section -->
+      <section class="flow-section" aria-labelledby="flow-heading">
+        <h2 id="flow-heading">Entry → Edit → Clear → Exit</h2>
+        <p class="flow-description">Information flows through, not piles up.</p>
+        <ul class="philosophy-list" role="list">
+          <li class="philosophy-item flow-item" role="listitem">
+            <div class="flow-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+              </svg>
+            </div>
+            <h3>Entry</h3>
+            <p>Paste from AI.<br>Import files.<br>Start fresh.</p>
+          </li>
+          <li class="philosophy-item flow-item" role="listitem">
+            <div class="flow-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+              </svg>
+            </div>
+            <h3>Edit</h3>
+            <p>In your own words.<br>Make it yours.</p>
+          </li>
+          <li class="philosophy-item flow-item" role="listitem">
+            <div class="flow-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+              </svg>
+            </div>
+            <h3>Clear</h3>
+            <p>To Archive, Template, or Trash.</p>
+          </li>
+          <li class="philosophy-item flow-item" role="listitem">
+            <div class="flow-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+            </div>
+            <h3>Exit</h3>
+            <p>To Obsidian, Notion,<br>or anywhere.</p>
           </li>
         </ul>
       </section>
@@ -68,16 +132,40 @@
       <!-- Screenshot Section -->
       <section class="screenshot-section" aria-labelledby="screenshot-heading">
         <h2 id="screenshot-heading" class="visually-hidden">Preview</h2>
-        <img src="screenshots/SidePanel.png" alt="Mark It Down Side Panel - writing notes alongside AI chat" loading="lazy">
-        <p class="screenshot-caption">Side Panel — write alongside AI</p>
+        <picture>
+          <source srcset="en-dark.png" media="(prefers-color-scheme: dark)">
+          <img src="en-light.png" alt="Mark It Down - New Tab and Side Panel views showing the information flow diagram" loading="lazy">
+        </picture>
+        <p class="screenshot-caption">New Tab for focused writing — Side Panel for working alongside AI</p>
+      </section>
+
+      <!-- Coming Soon Section -->
+      <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
+        <h2 id="coming-soon-heading">Coming in v1.6.0</h2>
+        <p class="coming-soon-status">Currently under review</p>
+        <ul class="coming-soon-list" role="list">
+          <li>
+            <strong>Command Palette</strong>
+            <span>VS Code-style palette with 50+ commands — <code>Ctrl+Shift+P</code></span>
+          </li>
+          <li>
+            <strong>Focus Mode</strong>
+            <span>Distraction-free writing with typewriter scroll and 3-level dimming</span>
+          </li>
+          <li>
+            <strong>95% Faster Startup</strong>
+            <span>Core Web Vitals PASS — Initial bundle down to 84KB (gzipped)</span>
+          </li>
+        </ul>
       </section>
 
       <!-- CTA Section -->
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Ready to write?</h2>
-        <p>Available as a Chrome extension. <br>No account required.</p>
+        <p>Available as a Chrome extension. No account required.<br>
+        <small>Latest version v1.6.0 is under review.</small></p>
         <div class="buttons">
-          <a href="#" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
+          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
             Get the extension
           </a>
         </div>
@@ -86,7 +174,7 @@
 
     <footer role="contentinfo">
       <p>
-        <a href="index-ja.html" hreflang="ja">日本語</a>
+        <a href="index-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a>
         <span aria-hidden="true">·</span>
         <a href="features.html">Features</a>
         <span aria-hidden="true">·</span>
@@ -96,7 +184,7 @@
         <span aria-hidden="true">·</span>
         <a href="privacy-policy.html">Privacy</a>
         <span aria-hidden="true">·</span>
-        <span>© 2025</span>
+        <span>© 2026</span>
       </p>
     </footer>
   </div>
