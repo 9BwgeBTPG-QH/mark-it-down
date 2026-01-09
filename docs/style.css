@@ -291,6 +291,22 @@ header .tagline {
   font-weight: 500;
 }
 
+/* Language switcher in header */
+.header-nav .lang-switcher {
+  margin-left: var(--spacing-xs);
+  padding-left: var(--spacing-xs);
+  border-left: 1px solid var(--border-subtle);
+}
+
+.header-nav .lang-switcher a {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.header-nav .lang-switcher a:hover {
+  color: var(--accent-primary);
+}
+
 @media (max-width: 768px) {
   .header-nav {
     margin-bottom: var(--spacing-sm);
@@ -306,6 +322,11 @@ header .tagline {
   .header-nav a {
     font-size: 0.7rem;
     padding: 0.2rem 0.4rem;
+  }
+
+  .header-nav .lang-switcher {
+    margin-left: 0.25rem;
+    padding-left: 0.25rem;
   }
 }
 
@@ -997,6 +1018,7 @@ footer p {
 footer a {
   color: var(--text-secondary);
   text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 footer a:hover {
