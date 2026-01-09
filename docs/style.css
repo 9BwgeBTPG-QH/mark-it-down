@@ -294,6 +294,34 @@ header .tagline {
 }
 
 /* ========================================
+   5.2. FEATURE BADGES
+   ======================================== */
+
+.feature-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+  margin-left: var(--spacing-xs);
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
+
+.feature-badge.pending {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #B8860B;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.feature-badge.new {
+  background-color: rgba(139, 115, 85, 0.1);
+  color: var(--accent-primary);
+  border: 1px solid rgba(139, 115, 85, 0.2);
+}
+
+/* ========================================
    6. MAIN CONTENT
    ======================================== */
 
