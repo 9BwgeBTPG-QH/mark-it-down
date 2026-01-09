@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>更新履歴 - Mark It Down</title>
+  <meta name="description" content="Mark It Downのリリース履歴と更新履歴。">
+  <meta name="theme-color" content="#FAF9F7">
+  <!-- OGP -->
+  <meta property="og:title" content="更新履歴 - Mark It Down">
+  <meta property="og:description" content="Mark It Downのリリース履歴と更新履歴。">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">メインコンテンツへ</a>
+  <div class="container">
+    <header role="banner">
+      <div class="header-logo">
+        <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+        <h1>Mark It Down</h1>
+      </div>
+      <p class="tagline">更新履歴</p>
+    </header>
+
+    <main id="main-content" role="main">
+      <!-- Introduction -->
+      <section class="hero" aria-labelledby="intro-heading">
+        <h2 id="intro-heading" class="visually-hidden">はじめに</h2>
+        <p class="hero-tagline">リリース履歴</p>
+        <p class="hero-subtitle">
+          Mark It Downの進化を追跡。<br>
+          新機能、改善、バグ修正。
+        </p>
+      </section>
+
+      <!-- v1.6.0 -->
+      <section aria-labelledby="v160-heading">
+        <h2 id="v160-heading">v1.6.0 — 2026年1月9日</h2>
+
+        <h3>ハイライト</h3>
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <h4>Core Web Vitals合格 — 起動時間95%改善</h4>
+            <p>バンドル最適化により、起動時間が劇的に改善しました：</p>
+            <ul>
+              <li>INP: 2,446 ms → 109 ms (-95.5%)</li>
+              <li>初期バンドル（gzip）: 698 KB → 84 KB (-88%)</li>
+              <li>起動時間: 1秒 → 0.1秒 (-90%)</li>
+            </ul>
+            <p>Mermaid遅延ロード（2.3MBを必要時のみロード）、コード分割（vendor-milkdown、vendor-prosemirror等）</p>
+          </div>
+
+          <div class="philosophy-item">
+            <h4>Command Palette — 50+コマンドに即アクセス</h4>
+            <p>VS Code風のCommand Palette。<code>Ctrl+Shift+P</code>で全コマンドを検索・実行。</p>
+            <ul>
+              <li>50+コマンドを1箇所に集約</li>
+              <li>インクリメンタル検索 — コマンド名、説明、キーワード、ショートカットで検索</li>
+              <li>8カテゴリ分類 — Entry, Work, Move, Git, Exit, View, Settings, Help</li>
+              <li>キーボード完結 — マウス不要で全操作可能</li>
+            </ul>
+          </div>
+
+          <div class="philosophy-item">
+            <h4>Archive軽量レンダラー — 70%高速化</h4>
+            <p>Archiveノートの表示にProseMirrorをバイパスし、<code>marked</code>による静的HTMLレンダリングを採用。</p>
+            <ul>
+              <li>100KB Archive読み込み: 3秒以上 → 1秒以下 (-70%)</li>
+              <li>app.js サイズ: 1,350 KB → 372 KB (-73%)</li>
+            </ul>
+            <p>機能パリティ完全維持: TOC連携、コードブロックコピー、Mermaid拡大、GitHub Alerts対応</p>
+          </div>
+
+          <div class="philosophy-item">
+            <h4>Focus Mode — 書くことに集中</h4>
+            <p>新しい集中執筆モードを追加。</p>
+            <ul>
+              <li>3段階テキストdimming: 現在の段落を強調、周辺は段階的に淡色化</li>
+              <li>タイプライタースクロール: カーソルが常に画面中央</li>
+              <li>UI自動非表示: 3秒後にツールバーが消え、マウス移動で復帰</li>
+              <li>ショートカット: <code>Alt+F</code>でトグル</li>
+            </ul>
+          </div>
+
+          <div class="philosophy-item">
+            <h4>TOC大規模ドキュメント対応</h4>
+            <p>100+見出しのドキュメントでもTOCが快適に。</p>
+            <ul>
+              <li>階層折りたたみ: h2をルートに、h3以下を折りたたみ（20見出し以上で自動有効）</li>
+              <li>TOC検索: インクリメンタルフィルタリング（15見出し以上で表示）</li>
+              <li>キーボードナビゲーション: PageUp/Down, Home/End</li>
+              <li>コードブロックバグ修正: <code>#</code>が見出しと誤認識される問題を解消</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>新機能</h3>
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <h4>Command Palette</h4>
+            <ul>
+              <li>50+コマンド統合: Entry(8), Work(6), Move(6), Git(11), Exit(3), View(7), Settings(5), Help(4)</li>
+              <li>インクリメンタル検索: スペース区切りでAND検索、大文字小文字無視</li>
+              <li>キーボードナビゲーション: Arrow Up/Down, Enter, Escape</li>
+              <li>ショートカット表示: コマンド横にキーボードショートカットを表示</li>
+              <li>カテゴリバッジ: 色分けで視覚的にカテゴリ識別</li>
+              <li>条件付き実行: ノート未選択時はMoveコマンド無効など</li>
+            </ul>
+          </div>
+
+          <div class="philosophy-item">
+            <h4>Focus Mode（集中執筆モード）</h4>
+            <ul>
+              <li>3段階dimming: Focus Zone（通常）→ Intermediate（中間）→ Dimmed（淡色）</li>
+              <li>タイプライタースクロール: カーソルが常に画面中央に維持</li>
+              <li>UI自動非表示: 3秒後にToolbarが消え、マウス/キー入力で復帰</li>
+              <li>Editing Badge: Headerに「Editing」バッジ表示</li>
+              <li>Archive統合: Archive移動時に自動無効化</li>
+              <li>100KB+対応: 大規模ドキュメントではdimming無効（typewriter scrollは継続）</li>
+            </ul>
+          </div>
+
+          <div class="philosophy-item">
+            <h4>パフォーマンス</h4>
+            <ul>
+              <li>Mermaid遅延ロード: Mermaid図を含まないノートでは2.3MBがロードされない</li>
+              <li>コード分割: vendor-milkdown, vendor-prosemirror等に分割、並列ロード</li>
+              <li>ZIP並列インポート: Promise.allSettledで並列抽出、API呼び出し90-98%削減</li>
+              <li>フォルダ変更最適化: コンテンツ同一時は再マウントをスキップ</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>バグ修正</h3>
+        <ul>
+          <li>#132: Sidebar検索でキーボードナビが効かない - Arrow Up/Down, Enter対応</li>
+          <li>#131: Sidebar検索結果の順序が不安定 - ソートロジック修正</li>
+          <li>#133: 初期ロード時に白画面 - ローディングスケルトン追加</li>
+          <li>#136: Focus Modeで文脈が見えない - 3段階dimmingに改善</li>
+          <li>TOCがコードブロック内<code>#</code>を誤認識 - extractHeadingsFromMarkdown統一</li>
+          <li>フォルダ変更で不要な再読み込み - コンテンツ比較チェック追加</li>
+          <li>競合解決モーダルの複数バグ - キーボードナビ、フォーカス管理改善</li>
+        </ul>
+
+        <h3>新しいキーボードショートカット</h3>
+        <ul>
+          <li><code>Ctrl+Shift+P</code> — Command Palette</li>
+          <li><code>Alt+F</code> — Focus Modeトグル</li>
+          <li><code>PageUp</code> — TOC: 前の見出しへ</li>
+          <li><code>PageDown</code> — TOC: 次の見出しへ</li>
+          <li><code>Home</code> — TOC: 最初の見出しへ</li>
+          <li><code>End</code> — TOC: 最後の見出しへ</li>
+          <li><code>↑/↓</code> — Sidebar/TOC検索: 結果間移動</li>
+          <li><code>Enter</code> — 検索結果を選択/実行</li>
+          <li><code>Escape</code> — 検索/モーダルを閉じる</li>
+        </ul>
+      </section>
+
+      <!-- Previous versions placeholder -->
+      <section aria-labelledby="previous-heading">
+        <h2 id="previous-heading">過去のバージョン</h2>
+        <p>v1.5.0以前のリリースノートはここに追加されます。</p>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">書き始めよう</h2>
+        <p>Chrome拡張機能として利用可能。<br>アカウント不要。</p>
+        <div class="buttons">
+          <a href="#" class="btn btn-primary" aria-label="Chrome Web StoreからMark It Downを入手">
+            拡張機能を入手
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>
+        <a href="changelog.html" hreflang="en">English</a>
+        <span aria-hidden="true">·</span>
+        <a href="index-ja.html">ホーム</a>
+        <span aria-hidden="true">·</span>
+        <a href="features-ja.html">機能</a>
+        <span aria-hidden="true">·</span>
+        <a href="feedback-ja.html">フィードバック</a>
+        <span aria-hidden="true">·</span>
+        <a href="privacy-policy-ja.html">プライバシー</a>
+        <span aria-hidden="true">·</span>
+        <span>© 2025</span>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
