@@ -242,9 +242,15 @@ header .tagline {
    ======================================== */
 
 .header-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-primary);
   margin-bottom: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
   border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 3px rgba(139, 115, 85, 0.05);
+  transition: box-shadow var(--transition-base);
 }
 
 .header-nav ul {
@@ -1024,6 +1030,66 @@ footer a {
 footer a:hover {
   color: var(--accent-primary);
   text-decoration: underline;
+}
+
+/* Footer navigation */
+.footer-nav {
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-nav li {
+  margin: 0;
+}
+
+.footer-nav a {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.footer-nav a:hover {
+  color: var(--accent-primary);
+  background-color: var(--accent-light);
+}
+
+.footer-nav .lang-switcher {
+  margin-left: var(--spacing-xs);
+  padding-left: var(--spacing-xs);
+  border-left: 1px solid var(--border-subtle);
+}
+
+.footer-nav .lang-switcher a {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.footer-nav .lang-switcher a:hover {
+  color: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+  .footer-nav ul {
+    gap: var(--spacing-xs);
+  }
+
+  .footer-nav a {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+  }
 }
 
 /* ========================================
