@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Troubleshooting - Mark It Down</title>
+  <meta name="description" content="Troubleshooting guide for Mark It Down.">
+  <meta name="theme-color" content="#FAFAF9">
+  <!-- OGP -->
+  <meta property="og:title" content="Troubleshooting - Mark It Down">
+  <meta property="og:description" content="Troubleshooting guide for Mark It Down.">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10BZGSVJT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V10BZGSVJT');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="container">
+    <header role="banner">
+      <div class="header-logo">
+        <a href="index.html" aria-label="Mark It Down Home">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
+      </div>
+      <p class="tagline">Troubleshooting</p>
+      <nav class="header-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="troubleshooting.html" aria-current="page">Troubleshooting</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" role="main">
+      <!-- Introduction -->
+      <section class="hero" aria-labelledby="intro-heading">
+        <h2 id="intro-heading" class="visually-hidden">Introduction</h2>
+        <p class="hero-tagline">Troubleshooting</p>
+        <p class="hero-subtitle">
+          Solutions to common issues and maintenance tools.
+        </p>
+      </section>
+
+      <!-- Storage Repair -->
+      <section aria-labelledby="storage-repair-heading">
+        <h2 id="storage-repair-heading">Storage Repair</h2>
+        <p>If duplicate notes or data inconsistencies occur, you can repair storage from the settings.</p>
+
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <h3>How to Repair Storage</h3>
+            <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li>Open <strong>⚙ Settings</strong> → <strong>Troubleshooting</strong> tab → <strong>Repair Storage</strong></li>
+              <li>Click the <strong>"Scan"</strong> button</li>
+              <li>If issues are found, select notes to delete and repair</li>
+            </ol>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>What Gets Detected</h3>
+            <table style="width: 100%; margin-top: var(--spacing-sm); border-collapse: collapse;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--border-primary);">
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">Item</th>
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);"><strong>Duplicate notes</strong></td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Notes with the same title exist in multiple folders</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="margin-top: var(--spacing-sm);"><em>💡 Rarely, ghost notes (notes that exist in storage but don't appear in the UI) may be created if Git sync is interrupted. This feature can detect and delete them.</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Storage Analysis -->
+      <section aria-labelledby="storage-analysis-heading">
+        <h2 id="storage-analysis-heading">Storage Analysis</h2>
+        <p>Check storage usage and organize old notes in bulk.</p>
+
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <h3>How to Analyze Storage</h3>
+            <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li>Open <strong>⚙ Settings</strong> → <strong>Troubleshooting</strong> tab → <strong>Storage Analysis</strong></li>
+              <li>Click the <strong>"Analyze"</strong> button</li>
+            </ol>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>What's Displayed</h3>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li><strong>Notes by folder</strong> - Number of notes and percentage per folder</li>
+              <li><strong>Top 10 largest notes</strong> - With checkboxes for bulk archive</li>
+              <li><strong>Stale notes</strong> - Notes not updated for 90+ days</li>
+            </ul>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Bulk Archive</h3>
+            <p>Select notes and move them to Archive folder in bulk with pinning. Useful for regular backups and storage cleanup.</p>
+            <p style="margin-top: var(--spacing-sm);"><em>💡 System Notes are excluded from analysis (auto-generated guide files).</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Duplicate Note Detection -->
+      <section aria-labelledby="duplicate-notes-heading">
+        <h2 id="duplicate-notes-heading">Duplicate Note Detection</h2>
+        <p>If notes with the same title are detected, a warning banner is displayed with a side-by-side comparison to choose which one to keep.</p>
+
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <h3>What Happens</h3>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li>A warning banner appears when duplicate notes are detected</li>
+              <li>Click to open a side-by-side comparison modal</li>
+              <li>Choose which note to keep</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Important: Before Uninstalling -->
+      <section aria-labelledby="uninstall-warning-heading">
+        <h2 id="uninstall-warning-heading">⚠️ Important: Before Uninstalling</h2>
+        <p><strong>Uninstalling the extension will delete all saved notes.</strong></p>
+        <p>Mark It Down data is stored in <code>chrome.storage.local</code>, and uninstalling the extension will delete the data.</p>
+        <p><strong>Before uninstalling, be sure to back up using one of the following methods:</strong></p>
+        <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+          <li><strong>Export all notes as ZIP</strong>: Settings (⚙) → "Export all notes as ZIP"</li>
+          <li><strong>Push to GitHub</strong>: Git ▼ → Sync (or Git Settings → Push)</li>
+        </ol>
+        <p style="margin-top: var(--spacing-sm);"><em>💡 We recommend regular exports to avoid losing important notes.</em></p>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">Still need help?</h2>
+        <p>Check out <a href="faq.html">FAQ</a> or <a href="feedback.html">send us feedback</a>.</p>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>
+        <a href="troubleshooting-ja.html" hreflang="ja">日本語</a>
+        <span aria-hidden="true">·</span>
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">·</span>
+        <a href="features.html">Features</a>
+        <span aria-hidden="true">·</span>
+        <a href="changelog.html">Changelog</a>
+        <span aria-hidden="true">·</span>
+        <a href="feedback.html">Feedback</a>
+        <span aria-hidden="true">·</span>
+        <a href="privacy-policy.html">Privacy</a>
+        <span aria-hidden="true">·</span>
+        <span>© 2026</span>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

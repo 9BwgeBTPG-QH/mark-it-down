@@ -30,10 +30,23 @@
   <div class="container">
     <header role="banner">
       <div class="header-logo">
-        <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
-        <h1>Mark It Down</h1>
+        <a href="index-ja.html" aria-label="Mark It Down ホーム">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
       </div>
       <p class="tagline">機能</p>
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="index-ja.html">ホーム</a></li>
+          <li><a href="features-ja.html" aria-current="page">機能</a></li>
+          <li><a href="faq-ja.html">よくある質問</a></li>
+          <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
+          <li><a href="changelog-ja.html">更新履歴</a></li>
+          <li><a href="feedback-ja.html">フィードバック</a></li>
+          <li><a href="privacy-policy-ja.html">プライバシー</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main id="main-content" role="main">
@@ -89,11 +102,19 @@
                 </div>
                 <div class="philosophy-item">
                   <h3>固定ツールバー</h3>
-                  <p>Side Panelでスクロールしてもツールバーが常に表示。</p>
+                  <p>Side Panelでスクロールしてもツールバーが常に表示。素早い操作が可能。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Zenモード（New Tabのみ）</h3>
+                  <p>F11またはCtrl+Shift+Zで全UIを非表示。書くことに集中。Escapeで解除。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Focus Mode</h3>
+                  <p>Alt+Fで切替。3秒後にUI自動非表示。タイプライタースクロールでカーソルを中央維持。テキストdimmingで集中ゾーンを強調。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>両方開ける。同期しない。</h3>
-                  <p>更新前を見ながら、書き換える。</p>
+                  <p>更新前を見ながら、書き換える。独立したウィンドウで同じデータを共有。</p>
                 </div>
               </div>
             </section>
@@ -118,7 +139,15 @@
                 </div>
                 <div class="philosophy-item">
                   <h3>コールアウト</h3>
-                  <p>GitHub Alerts: NOTE、TIP、IMPORTANT、WARNING、CAUTION。</p>
+                  <p>GitHub Alerts: NOTE、TIP、IMPORTANT、WARNING、CAUTION。ライト/ダークモードで色分け表示。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>ページ内リンク</h3>
+                  <p>内部リンク: <code>[テキスト](#見出し)</code> でページ内ジャンプ。GitHub互換の見出しID生成。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>画像</h3>
+                  <p>外部URLのみ（<code>![alt](https://...)</code>）。ストレージ制限のため直接埋め込み非対応。</p>
                 </div>
               </div>
             </section>
@@ -131,19 +160,23 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>目次（TOC）</h3>
-                  <p>自動生成目次。スクロール中に現在セクションをハイライト。</p>
+                  <p>自動生成目次。スクロール中に現在セクションをハイライト。クリックでジャンプ。競合解決でもTOCナビゲーション。</p>
                 </div>
                 <div class="philosophy-item">
-                  <h3>ダーク/ライトモード</h3>
-                  <p>環境に合わせてテーマ切替。</p>
+                  <h3>ダーク/ライト/システム連動テーマ</h3>
+                  <p>設定でテーマ切替。システム連動でOS設定に従う。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>スムーズなトランジション</h3>
-                  <p>ノート切替時のフェード効果。コードブロックのスクロール対応。</p>
+                  <p>ノート切替時に200msのフェード効果。コードブロックは20行超でスクロール可能（max-height: 400px）。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Auto Pair</h3>
-                  <p>括弧・引用符・バッククォートを自動補完。</p>
+                  <p>括弧・引用符・バッククォートを自動補完。設定でON/OFF可能。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>コードブロック高さ制限</h3>
+                  <p>長いコードブロック（20行超）はスクロール可能。CopyボタンはMarkdownソースから全コンテンツをコピー。</p>
                 </div>
               </div>
             </section>
@@ -156,19 +189,27 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>5つのフォルダ。固定。</h3>
-                  <p>Inbox / Template / Archive / Trash / System。</p>
+                  <p>Inbox（作業中）/ Template（再利用用）/ Archive（ロック）/ Trash（削除待ち）/ System（読み取り専用ガイド）。カスタムフォルダは設計上非対応。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>テンプレート & ピン</h3>
-                  <p>テンプレートを保存。重要なノートを上部に固定。</p>
+                  <p>Templateフォルダにテンプレートを保存。重要なノートを任意のフォルダの上部に固定（★ボタン）。Alt+Pショートカット。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>ドラッグ&ドロップ</h3>
-                  <p>フォルダ間でノートを移動。</p>
+                  <p>フォルダ間でノートを移動。フォルダエリア全体（フォルダ名 + ノートリスト）にドロップ可能。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>ソート&検索</h3>
-                  <p>名前順または日付順。インクリメンタル検索。</p>
+                  <p>名前順または日付順（時計アイコンで切替）。サイドバーでインクリメンタル検索（1文字入力 = 即時フィルタ）。マッチするフォルダは自動展開。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>重複ノート検出</h3>
+                  <p>同じタイトルのノート検出時に警告バナー表示。side-by-side比較で保持選択。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>サイドバーリサイズ</h3>
+                  <p>ドラッグで幅調整。ダブルクリックでリセット。Slack風の操作感。</p>
                 </div>
               </div>
             </section>
@@ -181,27 +222,35 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>自動保存</h3>
-                  <p>保存ボタンなし。ただ書くだけ。</p>
+                  <p>保存ボタンなし。入力後0.5秒で自動保存。レースコンディション対策でデバウンス処理。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>大規模ドキュメント</h3>
-                  <p>100KB超のMarkdownファイルに対応。快適に編集。</p>
+                  <p>100KB超のMarkdownファイルに対応。CodeMirror自動無効化。ローディングスケルトンでUX向上。CSS最適化で快適に編集。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Chrome拡張機能ストレージ</h3>
-                  <p>ブラウザキャッシュクリアでも残る。</p>
+                  <p>ブラウザキャッシュクリアでも残る。拡張機能アンインストールまでデータ保持。unlimitedStorage権限。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>インポート/エクスポート</h3>
+                  <p>ドラッグ&ドロップで.md/.zipファイルをインポート。エクスポート: 単一.md、全ノート.zip、Archiveピン留め.zip。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>バックアップ</h3>
-                  <p>すべてを.zipでエクスポート。またはGit同期。</p>
+                  <p>すべてを.zipでエクスポート。またはGit同期でバージョン履歴管理。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Archiveピン留めエクスポート</h3>
-                  <p>ピン留めしたArchiveノートのみ出力。選別バックアップ。</p>
+                  <p>ピン留めしたArchiveノートのみ出力。選別バックアップで定期エクスポートに便利。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>フェイルセーフ削除</h3>
-                  <p>同期済みノートは3段階で削除。</p>
+                  <p>同期済みノート: Trash → Sync → Delete（3段階）。未同期ノート: Trash → Delete（2段階）。Trash内に同期ステータスバッジ表示。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>ストレージ修復&分析</h3>
+                  <p>設定 → Troubleshooting: Repair Storage（重複検出）、Storage Analysis（使用状況、一括アーカイブ）。</p>
                 </div>
               </div>
             </section>
@@ -214,19 +263,39 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>GitHub / GitLab</h3>
-                  <p>Personal Access Tokenで接続。</p>
+                  <p>Personal Access Tokenで接続（Fine-grained PAT推奨）。AES-GCM暗号化で安全に保存。</p>
                 </div>
                 <div class="philosophy-item">
-                  <h3>手動コミット</h3>
-                  <p>同期タイミングはあなたが決める。</p>
+                  <h3>意図的なバージョン管理</h3>
+                  <p>OneDriveのような自動同期ではない。手動コミット = 意味のあるスナップショット。ローカル自動保存（履歴なし）vs リモートコミット（履歴あり）。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Commit & Sync</h3>
+                  <p>真の同期: Commit → Pull → 競合解決 → Push。カスタムコミットメッセージ。バッチコミット（全変更を1コミットに統合）。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Pull & マージ</h3>
-                  <p>競合を並べて解決。</p>
+                  <p>競合を並べて解決。リスクレベルインジケーター（Low/Medium/High/Critical）。Myers差分アルゴリズム。TOCナビゲーション。スクロール同期。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Git Fetch</h3>
+                  <p>ローカルを変更せずにリモート状態を確認。起動時自動Fetch。リモート更新時にバナー表示。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>差分 & 履歴</h3>
-                  <p>バージョン比較。過去20件のコミットを表示。</p>
+                  <p>バージョンを並べて比較。過去20件のコミットを表示。Overview Rulerで差分ナビゲーション。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>ファイル追跡</h3>
+                  <p>フォルダ移動・タイトル変更時に古いファイルを自動削除。リモートの重複ファイルを防止。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Discard Changes</h3>
+                  <p>ローカル変更を最後のPush時点に戻す。Git Settings → Danger Zone。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>システムノート</h3>
+                  <p>Git同期から除外（ローカルのみ）。Trash + Syncでリモートから削除。アップグレード時に自動クリーンアップ。</p>
                 </div>
               </div>
             </section>
@@ -244,11 +313,15 @@
                 </div>
                 <div class="philosophy-item">
                   <h3>競合解決</h3>
-                  <p>Merge Changesボタンが点滅。選択して保持。</p>
+                  <p>両方のウィンドウで同じノートを編集するとMerge Changesボタンが点滅。選択して保持。Git Pull時の競合も同じUIで操作。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>比較ツール</h3>
-                  <p>スクロール同期、差分ハイライト、TOCナビゲーション。</p>
+                  <p>スクロール同期、差分ハイライト（+緑/−赤）、Overview Ruler（クリックでジャンプ）、TOCナビゲーション、クイックスクロールボタン。</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>レスポンシブ競合UI</h3>
+                  <p>Side Panel/狭い画面: 単一ペインビュー、大きなボタン。キーボードナビゲーション（矢印キー、Escape）。</p>
                 </div>
               </div>
             </section>
@@ -283,12 +356,36 @@
                     <td>Git同期</td>
                   </tr>
                   <tr>
-                    <td><kbd>F11</kbd></td>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td>
+                    <td>コマンドパレット</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td>
+                    <td>サイドバー検索にフォーカス</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd></td>
+                    <td>TOC検索にフォーカス</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>F11</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></td>
                     <td>Zenモード（New Tab）</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Escape</kbd></td>
+                    <td>Zenモード解除</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Alt</kbd>+<kbd>F</kbd></td>
+                    <td>Focus Mode切替</td>
                   </tr>
                   <tr>
                     <td><kbd>Alt</kbd>+<kbd>P</kbd>/<kbd>T</kbd>/<kbd>A</kbd>/<kbd>X</kbd></td>
                     <td>Pin / Template / Archive / Trash</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td>
+                    <td>元に戻す / やり直す</td>
                   </tr>
                 </tbody>
               </table>
@@ -314,6 +411,12 @@
         <a href="features.html" hreflang="en">English</a>
         <span aria-hidden="true">·</span>
         <a href="index-ja.html">ホーム</a>
+        <span aria-hidden="true">·</span>
+        <a href="features-ja.html">機能</a>
+        <span aria-hidden="true">·</span>
+        <a href="faq-ja.html">よくある質問</a>
+        <span aria-hidden="true">·</span>
+        <a href="troubleshooting-ja.html">トラブルシューティング</a>
         <span aria-hidden="true">·</span>
         <a href="changelog-ja.html">更新履歴</a>
         <span aria-hidden="true">·</span>

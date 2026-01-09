@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トラブルシューティング - Mark It Down</title>
+  <meta name="description" content="Mark It Downのトラブルシューティングガイド。">
+  <meta name="theme-color" content="#FAFAF9">
+  <!-- OGP -->
+  <meta property="og:title" content="トラブルシューティング - Mark It Down">
+  <meta property="og:description" content="Mark It Downのトラブルシューティングガイド。">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10BZGSVJT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V10BZGSVJT');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
+  <div class="container">
+    <header role="banner">
+      <div class="header-logo">
+        <a href="index-ja.html" aria-label="Mark It Down ホーム">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
+      </div>
+      <p class="tagline">トラブルシューティング</p>
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="index-ja.html">ホーム</a></li>
+          <li><a href="features-ja.html">機能</a></li>
+          <li><a href="faq-ja.html">よくある質問</a></li>
+          <li><a href="troubleshooting-ja.html" aria-current="page">トラブルシューティング</a></li>
+          <li><a href="changelog-ja.html">更新履歴</a></li>
+          <li><a href="feedback-ja.html">フィードバック</a></li>
+          <li><a href="privacy-policy-ja.html">プライバシー</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" role="main">
+      <!-- Introduction -->
+      <section class="hero" aria-labelledby="intro-heading">
+        <h2 id="intro-heading" class="visually-hidden">はじめに</h2>
+        <p class="hero-tagline">トラブルシューティング</p>
+        <p class="hero-subtitle">
+          よくある問題の解決方法とメンテナンスツール。
+        </p>
+      </section>
+
+      <!-- Storage Repair -->
+      <section aria-labelledby="storage-repair-heading">
+        <h2 id="storage-repair-heading">ストレージ修復</h2>
+        <p>重複ノートやデータの不整合が発生した場合、設定画面から修復できます。</p>
+
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <h3>修復方法</h3>
+            <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li><strong>⚙ 設定</strong> → <strong>Troubleshooting</strong> タブ → <strong>Repair Storage</strong></li>
+              <li><strong>「スキャン」</strong>ボタンをクリック</li>
+              <li>問題が見つかった場合、削除するノートを選択して修復</li>
+            </ol>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>検出項目</h3>
+            <table style="width: 100%; margin-top: var(--spacing-sm); border-collapse: collapse;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--border-primary);">
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">検出項目</th>
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">説明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);"><strong>重複ノート</strong></td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">同じタイトルのノートが複数フォルダに存在</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="margin-top: var(--spacing-sm);"><em>💡 Git同期中に中断が発生した場合などに、稀にゴーストノート（UIに表示されないがストレージに存在するノート）が作成されることがあります。この機能で検出・削除できます。</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Storage Analysis -->
+      <section aria-labelledby="storage-analysis-heading">
+        <h2 id="storage-analysis-heading">ストレージ分析</h2>
+        <p>ストレージ使用状況を確認し、古いノートを一括整理できます。</p>
+
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <h3>分析方法</h3>
+            <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li><strong>⚙ 設定</strong> → <strong>Troubleshooting</strong> タブ → <strong>Storage Analysis</strong></li>
+              <li><strong>「Analyze」</strong>ボタンをクリック</li>
+            </ol>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>表示内容</h3>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li><strong>フォルダ別ノート数</strong> - フォルダ別のノート数と割合</li>
+              <li><strong>サイズの大きいTop 10ノート</strong> - チェックボックス付きで一括アーカイブ可能</li>
+              <li><strong>Stale Notes</strong> - 90日以上更新されていない古いノート</li>
+            </ul>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>一括アーカイブ</h3>
+            <p>選択したノートを一度にArchiveフォルダへ移動＆ピン留め。定期バックアップやストレージ整理に便利。</p>
+            <p style="margin-top: var(--spacing-sm);"><em>💡 System Notes除外: システムノートは分析対象外です（自動生成ガイドファイル）。</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Duplicate Note Detection -->
+      <section aria-labelledby="duplicate-notes-heading">
+        <h2 id="duplicate-notes-heading">重複ノート検出</h2>
+        <p>同じタイトルのノートが存在する場合、警告バナー表示＋side-by-side比較で保持選択。</p>
+
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <h3>動作</h3>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li>重複ノート検出時に警告バナーが表示</li>
+              <li>クリックでside-by-side比較モーダルを開く</li>
+              <li>保持するノートを選択</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Important: Before Uninstalling -->
+      <section aria-labelledby="uninstall-warning-heading">
+        <h2 id="uninstall-warning-heading">⚠️ 重要: アンインストール前の注意</h2>
+        <p><strong>拡張機能を削除すると、保存されたすべてのノートが消失します。</strong></p>
+        <p>Mark It Downのデータは<code>chrome.storage.local</code>に保存されており、拡張機能をアンインストールするとデータも削除されます。</p>
+        <p><strong>アンインストールする前に、必ず以下のいずれかでバックアップを取ってください：</strong></p>
+        <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+          <li><strong>全ノートをZIPエクスポート</strong>: 設定（⚙）→ 「全ノートをZIPでエクスポート」</li>
+          <li><strong>GitHubにプッシュ</strong>: Git ▼ → Sync（または Git Settings → Push）</li>
+        </ol>
+        <p style="margin-top: var(--spacing-sm);"><em>💡 大切なノートを失わないよう、定期的なエクスポートをお勧めします。</em></p>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">まだサポートが必要ですか？</h2>
+        <p><a href="faq-ja.html">よくある質問</a>を確認するか、<a href="feedback-ja.html">フィードバックを送信</a>してください。</p>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>
+        <a href="troubleshooting.html" hreflang="en">English</a>
+        <span aria-hidden="true">·</span>
+        <a href="index-ja.html">ホーム</a>
+        <span aria-hidden="true">·</span>
+        <a href="features-ja.html">機能</a>
+        <span aria-hidden="true">·</span>
+        <a href="changelog-ja.html">更新履歴</a>
+        <span aria-hidden="true">·</span>
+        <a href="feedback-ja.html">フィードバック</a>
+        <span aria-hidden="true">·</span>
+        <a href="privacy-policy-ja.html">プライバシー</a>
+        <span aria-hidden="true">·</span>
+        <span>© 2026</span>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

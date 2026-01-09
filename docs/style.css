@@ -199,6 +199,19 @@ header {
   margin-bottom: var(--spacing-lg);
 }
 
+.header-logo a {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity var(--transition-base);
+}
+
+.header-logo a:hover {
+  opacity: 0.8;
+}
+
 .logo-icon {
   width: 56px;
   height: 56px;
@@ -222,6 +235,62 @@ header .tagline {
   color: var(--text-secondary);
   margin-top: var(--spacing-sm);
   letter-spacing: var(--letter-spacing-wide);
+}
+
+/* ========================================
+   5.1. HEADER NAVIGATION
+   ======================================== */
+
+.header-nav {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.header-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+  align-items: center;
+}
+
+.header-nav li {
+  margin: 0;
+}
+
+.header-nav a {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+}
+
+.header-nav a:hover {
+  color: var(--accent-primary);
+  background-color: var(--accent-light);
+}
+
+.header-nav a[aria-current="page"] {
+  color: var(--accent-primary);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .header-nav ul {
+    gap: var(--spacing-sm);
+  }
+
+  .header-nav a {
+    font-size: 0.875rem;
+    padding: var(--spacing-xs);
+  }
 }
 
 /* ========================================

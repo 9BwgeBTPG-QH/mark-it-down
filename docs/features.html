@@ -30,10 +30,23 @@
   <div class="container">
     <header role="banner">
       <div class="header-logo">
-        <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
-        <h1>Mark It Down</h1>
+        <a href="index.html" aria-label="Mark It Down Home">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
       </div>
       <p class="tagline">Features</p>
+      <nav class="header-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html" aria-current="page">Features</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main id="main-content" role="main">
@@ -89,11 +102,19 @@
                 </div>
                 <div class="philosophy-item">
                   <h3>Sticky toolbar</h3>
-                  <p>Toolbar stays visible while scrolling in Side Panel.</p>
+                  <p>Toolbar stays visible while scrolling in Side Panel. Always accessible for quick actions.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Zen mode (New Tab only)</h3>
+                  <p>F11 or Ctrl+Shift+Z to hide all UI. Focus on writing. Escape to exit.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Focus Mode</h3>
+                  <p>Alt+F to toggle. Auto-hide UI after 3 seconds. Typewriter scroll keeps cursor centered. Text dimming for focus zone.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Open both. No sync.</h3>
-                  <p>See the old version while editing the new one.</p>
+                  <p>See the old version while editing the new one. Independent windows share the same data.</p>
                 </div>
               </div>
             </section>
@@ -118,7 +139,15 @@
                 </div>
                 <div class="philosophy-item">
                   <h3>Callouts</h3>
-                  <p>GitHub Alerts: NOTE, TIP, IMPORTANT, WARNING, CAUTION.</p>
+                  <p>GitHub Alerts: NOTE, TIP, IMPORTANT, WARNING, CAUTION. Color-coded for light/dark themes.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Page links</h3>
+                  <p>Internal links: <code>[Text](#heading)</code> for page navigation. GitHub-compatible heading ID generation.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Images</h3>
+                  <p>External URLs only (<code>![alt](https://...)</code>). Direct embedding not supported due to storage limits.</p>
                 </div>
               </div>
             </section>
@@ -131,19 +160,23 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>Table of Contents</h3>
-                  <p>Auto-generated TOC. Highlights current section while scrolling.</p>
+                  <p>Auto-generated TOC. Highlights current section while scrolling. Click to jump. TOC navigation in conflict resolution.</p>
                 </div>
                 <div class="philosophy-item">
-                  <h3>Dark/Light mode</h3>
-                  <p>Switch themes to match your environment.</p>
+                  <h3>Dark/Light/System theme</h3>
+                  <p>Switch themes in Settings. System theme follows OS preference.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Smooth transitions</h3>
-                  <p>Fade effect when switching notes. Scrollable code blocks.</p>
+                  <p>200ms fade effect when switching notes. Scrollable code blocks (max-height: 400px for 20+ lines).</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Auto Pair</h3>
-                  <p>Brackets, quotes, backticks auto-complete.</p>
+                  <p>Brackets, quotes, backticks auto-complete. Toggle in Settings.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Code block height limit</h3>
+                  <p>Long code blocks (20+ lines) are scrollable. Copy button copies full content from Markdown source.</p>
                 </div>
               </div>
             </section>
@@ -156,19 +189,27 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>Five folders. Fixed.</h3>
-                  <p>Inbox / Template / Archive / Trash / System.</p>
+                  <p>Inbox (working) / Template (reusable) / Archive (locked) / Trash (pending) / System (read-only guides). Custom folders not supported by design.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Templates & Pin</h3>
-                  <p>Store templates. Pin important notes to the top.</p>
+                  <p>Store templates in Template folder. Pin important notes to the top of any folder (★ button). Alt+P shortcut.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Drag & drop</h3>
-                  <p>Move notes between folders.</p>
+                  <p>Move notes between folders. Drop on folder area (folder name + note list).</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Sort & search</h3>
-                  <p>Name or date order. Incremental search.</p>
+                  <p>Name or date order (clock icon). Incremental search in sidebar (1 character = instant filter). Matching folders auto-expand.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Duplicate detection</h3>
+                  <p>Warning banner for same-title notes. Side-by-side comparison to choose which to keep.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Sidebar resize</h3>
+                  <p>Drag to adjust width. Double-click to reset. Slack-style interaction.</p>
                 </div>
               </div>
             </section>
@@ -181,27 +222,35 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>Auto-save</h3>
-                  <p>No save button. Just type.</p>
+                  <p>No save button. Auto-saves after 0.5 seconds of typing. Debounced to prevent race conditions.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Large documents</h3>
-                  <p>100KB+ Markdown files. Optimized for smooth editing.</p>
+                  <p>100KB+ Markdown files. CodeMirror disabled automatically. Loading skeleton for UX. CSS optimizations for smooth editing.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Chrome extension storage</h3>
-                  <p>Survives browser cache clear.</p>
+                  <p>Survives browser cache clear. Data persists until extension uninstall. Unlimited storage permission.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Import/Export</h3>
+                  <p>Drag & drop .md/.zip files. Export: single .md, all notes .zip, or Archive pinned .zip.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Backup</h3>
-                  <p>Export all as .zip or sync to GitHub/GitLab.</p>
+                  <p>Export all as .zip or sync to GitHub/GitLab. Git sync for version history.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Archive Pinned export</h3>
-                  <p>Export only pinned Archive notes. Selective backup.</p>
+                  <p>Export only pinned Archive notes. Selective backup for regular exports.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Failsafe deletion</h3>
-                  <p>Synced notes need 3 steps to delete.</p>
+                  <p>Synced notes: Trash → Sync → Delete (3 steps). Unsynced notes: Trash → Delete (2 steps). Sync status badges in Trash.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Storage repair & analysis</h3>
+                  <p>Settings → Troubleshooting: Repair Storage (duplicate detection), Storage Analysis (usage stats, bulk archive).</p>
                 </div>
               </div>
             </section>
@@ -214,19 +263,39 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>GitHub / GitLab</h3>
-                  <p>Connect with Personal Access Token.</p>
+                  <p>Connect with Personal Access Token (Fine-grained PAT recommended). AES-GCM encrypted storage.</p>
                 </div>
                 <div class="philosophy-item">
-                  <h3>Manual commits</h3>
-                  <p>You decide when to sync.</p>
+                  <h3>Intentional version control</h3>
+                  <p>Not automatic sync like OneDrive. Manual commits = meaningful snapshots. Local auto-save (no history) vs remote commits (full history).</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Commit & Sync</h3>
+                  <p>True synchronization: Commit → Pull → Resolve conflicts → Push. Custom commit messages. Batch commits (1 commit for all changes).</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Pull & merge</h3>
-                  <p>Resolve conflicts side-by-side.</p>
+                  <p>Resolve conflicts side-by-side. Risk level indicators (Low/Medium/High/Critical). Myers diff algorithm. TOC navigation. Scroll sync.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Git Fetch</h3>
+                  <p>Check remote status without changing local. Auto-fetch on startup. Banner shows remote updates.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Diff & history</h3>
-                  <p>Compare versions. View past 20 commits.</p>
+                  <p>Compare versions side-by-side. View past 20 commits. Overview ruler for diff navigation.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>File tracking</h3>
+                  <p>Auto-delete old files when moving folders or renaming. Prevents duplicate files on remote.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Discard Changes</h3>
+                  <p>Revert local changes to last push state. Git Settings → Danger Zone.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>System notes</h3>
+                  <p>Excluded from Git sync (local only). Trash + Sync deletes from remote. Auto-cleanup on upgrade.</p>
                 </div>
               </div>
             </section>
@@ -244,11 +313,15 @@
                 </div>
                 <div class="philosophy-item">
                   <h3>Conflict resolution</h3>
-                  <p>Merge Changes button blinks. Choose which to keep.</p>
+                  <p>Merge Changes button blinks when both windows edit same note. Choose which to keep. Same UI for Git Pull conflicts.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Comparison tools</h3>
-                  <p>Sync scroll, diff highlight, TOC navigation.</p>
+                  <p>Sync scroll, diff highlight (+green/-red), Overview Ruler (click to jump), TOC navigation, quick scroll buttons.</p>
+                </div>
+                <div class="philosophy-item">
+                  <h3>Responsive conflict UI</h3>
+                  <p>Side Panel/narrow screens: single pane view with large buttons. Keyboard navigation (Arrow keys, Escape).</p>
                 </div>
               </div>
             </section>
@@ -283,12 +356,36 @@
                     <td>Git sync</td>
                   </tr>
                   <tr>
-                    <td><kbd>F11</kbd></td>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td>
+                    <td>Command palette</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td>
+                    <td>Focus sidebar search</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd></td>
+                    <td>Focus TOC search</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>F11</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></td>
                     <td>Zen mode (New Tab)</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Escape</kbd></td>
+                    <td>Exit Zen mode</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Alt</kbd>+<kbd>F</kbd></td>
+                    <td>Focus Mode toggle</td>
                   </tr>
                   <tr>
                     <td><kbd>Alt</kbd>+<kbd>P</kbd>/<kbd>T</kbd>/<kbd>A</kbd>/<kbd>X</kbd></td>
                     <td>Pin / Template / Archive / Trash</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td>
+                    <td>Undo / Redo</td>
                   </tr>
                 </tbody>
               </table>
@@ -314,6 +411,12 @@
         <a href="features-ja.html" hreflang="ja">日本語</a>
         <span aria-hidden="true">·</span>
         <a href="index.html">Home</a>
+        <span aria-hidden="true">·</span>
+        <a href="features.html">Features</a>
+        <span aria-hidden="true">·</span>
+        <a href="faq.html">FAQ</a>
+        <span aria-hidden="true">·</span>
+        <a href="troubleshooting.html">Troubleshooting</a>
         <span aria-hidden="true">·</span>
         <a href="changelog.html">Changelog</a>
         <span aria-hidden="true">·</span>

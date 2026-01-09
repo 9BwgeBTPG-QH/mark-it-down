@@ -41,10 +41,23 @@
   <div class="container">
     <header role="banner">
       <div class="header-logo">
-        <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
-        <h1>Mark It Down</h1>
+        <a href="index-ja.html" aria-label="Mark It Down ホーム">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
       </div>
       <p class="tagline">書くための静かな場所</p>
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="index-ja.html" aria-current="page">ホーム</a></li>
+          <li><a href="features-ja.html">機能</a></li>
+          <li><a href="faq-ja.html">よくある質問</a></li>
+          <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
+          <li><a href="changelog-ja.html">更新履歴</a></li>
+          <li><a href="feedback-ja.html">フィードバック</a></li>
+          <li><a href="privacy-policy-ja.html">プライバシー</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main id="main-content" role="main">
@@ -81,6 +94,10 @@
           <li class="philosophy-item" role="listitem">
             <h3>あなたの言葉で、あなたのリズムで。</h3>
             <p>サイドパネルでも新しいタブでも。<br>集中したいときはZenモード。</p>
+          </li>
+          <li class="philosophy-item" role="listitem">
+            <h3>高速軽量。</h3>
+            <p>遅延ロードとコード分割で起動は一瞬。<br>Chrome拡張機能専用ストレージで即座にデータ取得。</p>
           </li>
         </ul>
       </section>
@@ -176,7 +193,13 @@
       <p>
         <a href="index.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a>
         <span aria-hidden="true">·</span>
+        <a href="index-ja.html">ホーム</a>
+        <span aria-hidden="true">·</span>
         <a href="features-ja.html">機能</a>
+        <span aria-hidden="true">·</span>
+        <a href="faq-ja.html">よくある質問</a>
+        <span aria-hidden="true">·</span>
+        <a href="troubleshooting-ja.html">トラブルシューティング</a>
         <span aria-hidden="true">·</span>
         <a href="changelog-ja.html">更新履歴</a>
         <span aria-hidden="true">·</span>

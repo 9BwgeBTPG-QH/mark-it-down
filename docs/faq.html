@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Mark It Down</title>
+  <meta name="description" content="Frequently asked questions about Mark It Down.">
+  <meta name="theme-color" content="#FAFAF9">
+  <!-- OGP -->
+  <meta property="og:title" content="FAQ - Mark It Down">
+  <meta property="og:description" content="Frequently asked questions about Mark It Down.">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10BZGSVJT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V10BZGSVJT');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="container">
+    <header role="banner">
+      <div class="header-logo">
+        <a href="index.html" aria-label="Mark It Down Home">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
+      </div>
+      <p class="tagline">FAQ</p>
+      <nav class="header-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="faq.html" aria-current="page">FAQ</a></li>
+          <li><a href="troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" role="main">
+      <!-- Introduction -->
+      <section class="hero" aria-labelledby="intro-heading">
+        <h2 id="intro-heading" class="visually-hidden">Introduction</h2>
+        <p class="hero-tagline">Frequently Asked Questions</p>
+        <p class="hero-subtitle">
+          Common questions about Mark It Down.
+        </p>
+      </section>
+
+      <!-- FAQ Content -->
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="visually-hidden">FAQ</h2>
+
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <h3>Q: Will my data be deleted if I clear Chrome's cache?</h3>
+            <p><strong>A: No, your data will not be deleted.</strong> Notes are stored in Chrome extension storage (<code>chrome.storage.local</code>), which is separate from browser cache.</p>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li><strong>Browser cache cleared</strong> → Data is preserved ✅</li>
+              <li><strong>Extension uninstalled</strong> → Data is deleted ⚠️</li>
+            </ul>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Q: Will the app slow down if I have too many notes?</h3>
+            <p><strong>A: Mark It Down is designed as a "workspace," not a storage system.</strong> It's not intended for storing large amounts of data.</p>
+            <p><strong>Recommended usage:</strong></p>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li>Keep around 20 active notes</li>
+              <li>Export completed notes: <strong>Archive → Export → Delete</strong></li>
+              <li>Check storage usage in the sidebar (warning at 80%+)</li>
+              <li>Use Git sync for external backup</li>
+            </ul>
+            <p style="margin-top: var(--spacing-sm);"><em>💡 Workspace cleanup: Mark It Down is a temporary workspace. Regularly "graduate" your notes to keep it running smoothly.</em></p>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Q: Why is the app so fast to start?</h3>
+            <p><strong>A: Lazy loading and code splitting reduce initial load by 86%.</strong></p>
+            <p>Mark It Down optimizes startup speed with the following strategies:</p>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li><strong>Mermaid lazy loading</strong> - The 2.3MB library doesn't load at all for notes without Mermaid diagrams</li>
+              <li><strong>Code splitting</strong> - Split into 7 chunks for parallel loading and caching</li>
+              <li><strong>Chrome extension storage</strong> - No file system access needed, instant data retrieval</li>
+            </ul>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Q: Will the editor slow down with large files (100KB+)?</h3>
+            <p><strong>A: Optimizations ensure smooth editing even for large documents.</strong></p>
+            <p>Mark It Down implements the following optimizations for large documents (100KB+, 150+ code blocks):</p>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li><strong>CodeMirror disabled</strong> - Automatically disabled for 100KB+ files (57% faster loading: 7s → 3s)</li>
+              <li><strong>Loading skeleton</strong> - Spinner + skeleton UI during initial load for 100KB+ documents</li>
+              <li><strong>CSS content-visibility</strong> - Skips rendering content outside the viewport</li>
+              <li><strong>CSS containment</strong> - Limits reflow/repaint range to the editor</li>
+              <li><strong>Decoration optimization</strong> - Recalculates only changed ranges (incremental updates)</li>
+              <li><strong>Auto spellcheck disabled</strong> - Reduces CPU load for 100KB+ documents</li>
+            </ul>
+            <p style="margin-top: var(--spacing-sm);"><strong>Note:</strong> For 100KB+ documents, code block syntax highlighting and LaTeX equations are disabled. This is an intentional trade-off prioritizing loading speed.</p>
+            <p><em>💡 Design philosophy: Mark It Down is a "place to digest." It's not for storing large raw data, but for organizing and editing before "graduating" your notes.</em></p>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Q: What does storage capacity depend on?</h3>
+            <p><strong>A: Primarily depends on available disk space.</strong></p>
+            <table style="width: 100%; margin-top: var(--spacing-sm); border-collapse: collapse;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--border-primary);">
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">Usage Pattern</th>
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">Disk Usage</th>
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">RAM Usage</th>
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">Startup Speed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Normal use (20-50 notes)</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Several MB</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Several MB</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Instant</td>
+                </tr>
+                <tr>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Unintended use (1,000+ notes)</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">-</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">-</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">May slow down → Archive/Export recommended</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="margin-top: var(--spacing-sm);"><em>💡 To use comfortably: Instead of storing many notes, maintain a cycle of "digest → organize → graduate."</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">Still have questions?</h2>
+        <p>Check out <a href="troubleshooting.html">Troubleshooting</a> or <a href="feedback.html">send us feedback</a>.</p>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>
+        <a href="faq-ja.html" hreflang="ja">日本語</a>
+        <span aria-hidden="true">·</span>
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">·</span>
+        <a href="features.html">Features</a>
+        <span aria-hidden="true">·</span>
+        <a href="changelog.html">Changelog</a>
+        <span aria-hidden="true">·</span>
+        <a href="feedback.html">Feedback</a>
+        <span aria-hidden="true">·</span>
+        <a href="privacy-policy.html">Privacy</a>
+        <span aria-hidden="true">·</span>
+        <span>© 2026</span>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

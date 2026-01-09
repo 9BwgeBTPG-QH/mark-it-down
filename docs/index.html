@@ -41,10 +41,23 @@
   <div class="container">
     <header role="banner">
       <div class="header-logo">
-        <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
-        <h1>Mark It Down</h1>
+        <a href="index.html" aria-label="Mark It Down Home">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
       </div>
       <p class="tagline">A quiet space for writing</p>
+      <nav class="header-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main id="main-content" role="main">
@@ -81,6 +94,10 @@
           <li class="philosophy-item" role="listitem">
             <h3>Your words. Your rhythm.</h3>
             <p>Side panel or new tab.<br>Zen mode when you need focus.</p>
+          </li>
+          <li class="philosophy-item" role="listitem">
+            <h3>Fast and lightweight.</h3>
+            <p>Lazy loading and code splitting for instant startup.<br>Chrome extension storage for immediate data access.</p>
           </li>
         </ul>
       </section>
@@ -176,7 +193,13 @@
       <p>
         <a href="index-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a>
         <span aria-hidden="true">·</span>
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">·</span>
         <a href="features.html">Features</a>
+        <span aria-hidden="true">·</span>
+        <a href="faq.html">FAQ</a>
+        <span aria-hidden="true">·</span>
+        <a href="troubleshooting.html">Troubleshooting</a>
         <span aria-hidden="true">·</span>
         <a href="changelog.html">Changelog</a>
         <span aria-hidden="true">·</span>

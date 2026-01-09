@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よくある質問 - Mark It Down</title>
+  <meta name="description" content="Mark It Downに関するよくある質問。">
+  <meta name="theme-color" content="#FAFAF9">
+  <!-- OGP -->
+  <meta property="og:title" content="よくある質問 - Mark It Down">
+  <meta property="og:description" content="Mark It Downに関するよくある質問。">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10BZGSVJT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V10BZGSVJT');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
+  <div class="container">
+    <header role="banner">
+      <div class="header-logo">
+        <a href="index-ja.html" aria-label="Mark It Down ホーム">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
+      </div>
+      <p class="tagline">よくある質問</p>
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="index-ja.html">ホーム</a></li>
+          <li><a href="features-ja.html">機能</a></li>
+          <li><a href="faq-ja.html" aria-current="page">よくある質問</a></li>
+          <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
+          <li><a href="changelog-ja.html">更新履歴</a></li>
+          <li><a href="feedback-ja.html">フィードバック</a></li>
+          <li><a href="privacy-policy-ja.html">プライバシー</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" role="main">
+      <!-- Introduction -->
+      <section class="hero" aria-labelledby="intro-heading">
+        <h2 id="intro-heading" class="visually-hidden">はじめに</h2>
+        <p class="hero-tagline">よくある質問</p>
+        <p class="hero-subtitle">
+          Mark It Downに関するよくある質問。
+        </p>
+      </section>
+
+      <!-- FAQ Content -->
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="visually-hidden">よくある質問</h2>
+
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <h3>Q: Chromeのキャッシュを削除してもデータは消えませんか？</h3>
+            <p><strong>A: 消えません。</strong> ノートデータは拡張機能専用ストレージ（<code>chrome.storage.local</code>）に保存されており、ブラウザのキャッシュとは別の場所です。</p>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li><strong>ブラウザキャッシュ削除</strong> → データは保持 ✅</li>
+              <li><strong>拡張機能アンインストール</strong> → データは消去 ⚠️</li>
+            </ul>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Q: ノートが増えすぎて重くなることはありますか？</h3>
+            <p><strong>A: Mark It Downは「作業場」として設計されており、大量のデータを貯め込むことは想定していません。</strong></p>
+            <p><strong>推奨される使い方:</strong></p>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li>作業中のノート20件程度を目安に</li>
+              <li>完成したノートは <strong>Archive → Export → 削除</strong></li>
+              <li>サイドバー下部のストレージゲージで使用量を確認できます（80%超で警告）</li>
+              <li>Git同期で外部バックアップも可能</li>
+            </ul>
+            <p style="margin-top: var(--spacing-sm);"><em>💡 作業場の片付け: Mark It Downは一時的な作業場です。定期的に「卒業」させることで快適に使い続けられます。</em></p>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Q: 起動が速いのはなぜですか？</h3>
+            <p><strong>A: 遅延ロードとコード分割により、初期ロードを86%削減しています。</strong></p>
+            <p>Mark It Downは起動速度を最適化するため、以下の戦略を採用：</p>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li><strong>Mermaid遅延ロード</strong> - Mermaid図を含まないノートでは2.3MBのライブラリが全くロードされない</li>
+              <li><strong>Code Splitting</strong> - 7つのチャンクに分割し、並列ロードとキャッシュを最適化</li>
+              <li><strong>Chrome専用ストレージ</strong> - ファイルシステムアクセス不要、即座にデータ取得</li>
+            </ul>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Q: 大きなファイル（100KB+）でエディタが重くなりませんか？</h3>
+            <p><strong>A: 最適化により、大規模ドキュメントでも快適に編集できます。</strong></p>
+            <p>Mark It Downは大規模ドキュメント（100KB+、150+コードブロック）向けに以下の最適化を実装しています：</p>
+            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
+              <li><strong>CodeMirror無効化</strong> - 100KB超で自動無効化（読み込み時間57%短縮：7秒→3秒）</li>
+              <li><strong>ローディングスケルトン</strong> - 100KB+の初期読み込み時にスピナー + スケルトンUI表示（UX向上）</li>
+              <li><strong>CSS content-visibility</strong> - 画面外コンテンツのレンダリングをスキップ</li>
+              <li><strong>CSS containment</strong> - reflow/repaint範囲をエディタ内に限定</li>
+              <li><strong>デコレーション最適化</strong> - 変更範囲のみ再計算（インクリメンタル更新）</li>
+              <li><strong>自動spellcheck無効化</strong> - 100KB超のドキュメントでCPU負荷を軽減</li>
+            </ul>
+            <p style="margin-top: var(--spacing-sm);"><strong>注意点：</strong> 100KB超のドキュメントではコードブロックのシンタックスハイライトが無効化されます。LaTeX数式も100KB超では無効化されます（Milkdown Crepeの依存関係による）。</p>
+            <p><em>💡 設計思想: Mark It Downは「咀嚼の場所」です。長大な生データの保管場所ではなく、整理・編集して「卒業」させる場所として使用してください。</em></p>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Q: ストレージ容量はPCの何に依存しますか？</h3>
+            <p><strong>A: 主にディスク空き容量に依存します。</strong></p>
+            <table style="width: 100%; margin-top: var(--spacing-sm); border-collapse: collapse;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--border-primary);">
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">使用パターン</th>
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">ディスク使用量</th>
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">RAM使用量</th>
+                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">起動速度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">通常使用（20-50ノート）</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">数MB</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">数MB</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">一瞬</td>
+                </tr>
+                <tr>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">想定外の使用（1,000ノート超）</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">-</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">-</td>
+                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">遅くなる可能性あり → Archive/Exportで片付けを推奨</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="margin-top: var(--spacing-sm);"><em>💡 快適に使うために: 大量のノートを保存するのではなく、「咀嚼 → 片付け → 卒業」のサイクルを回しましょう。</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" aria-labelledby="cta-heading">
+        <h2 id="cta-heading">まだ質問がありますか？</h2>
+        <p><a href="troubleshooting-ja.html">トラブルシューティング</a>を確認するか、<a href="feedback-ja.html">フィードバックを送信</a>してください。</p>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>
+        <a href="faq.html" hreflang="en">English</a>
+        <span aria-hidden="true">·</span>
+        <a href="index-ja.html">ホーム</a>
+        <span aria-hidden="true">·</span>
+        <a href="features-ja.html">機能</a>
+        <span aria-hidden="true">·</span>
+        <a href="changelog-ja.html">更新履歴</a>
+        <span aria-hidden="true">·</span>
+        <a href="feedback-ja.html">フィードバック</a>
+        <span aria-hidden="true">·</span>
+        <a href="privacy-policy-ja.html">プライバシー</a>
+        <span aria-hidden="true">·</span>
+        <span>© 2026</span>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
