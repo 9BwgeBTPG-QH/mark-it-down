@@ -187,6 +187,7 @@ body {
    ======================================== */
 
 header {
+  position: static;
   text-align: center;
   padding: var(--spacing-lg) 0 var(--spacing-2xl);
 }
@@ -251,6 +252,7 @@ header .tagline {
   border-bottom: 1px solid var(--border-subtle);
   box-shadow: 0 1px 3px rgba(139, 115, 85, 0.05);
   transition: box-shadow var(--transition-base);
+  width: 100%;
 }
 
 .header-nav ul {
