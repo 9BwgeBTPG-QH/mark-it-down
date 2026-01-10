@@ -440,7 +440,18 @@
   <script>
     document.querySelectorAll('.tab-nav label').forEach(label => {
       label.addEventListener('click', () => {
-        document.getElementById('tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const tabsElement = document.getElementById('tabs');
+        if (tabsElement) {
+          const headerNav = document.querySelector('.header-nav');
+          const headerNavHeight = headerNav ? headerNav.offsetHeight : 80;
+          const elementPosition = tabsElement.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - headerNavHeight - 10; // 10px extra spacing
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
       });
     });
   </script>

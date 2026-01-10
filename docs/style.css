@@ -772,7 +772,7 @@ a:hover {
 
 .tab-container {
   margin-bottom: var(--spacing-lg);
-  scroll-margin-top: var(--spacing-sm);
+  scroll-margin-top: 80px; /* Header-nav height + padding */
 }
 
 /* Hide radio inputs */
