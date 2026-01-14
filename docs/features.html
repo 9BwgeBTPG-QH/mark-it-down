@@ -136,7 +136,7 @@
                 </div>
                 <div class="philosophy-item">
                   <h3>Math (LaTeX)</h3>
-                  <p>Inline <code>$E=mc^2$</code> and block <code>$$...$$</code> equations.</p>
+                  <p>Inline <code>$E=mc^2$</code> and block <code>$$...$$</code> equations. GitHub/GitLab-compatible <code>```math</code> code blocks also supported (lazy-loaded KaTeX).</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Callouts</h3>
@@ -150,6 +150,10 @@
                   <h3>Images</h3>
                   <p>External URLs only (<code>![alt](https://...)</code>). Direct embedding not supported due to storage limits.</p>
                 </div>
+                <div class="philosophy-item">
+                  <h3>Auto-Linking</h3>
+                  <p>URLs and emails in plain text become clickable links automatically. Excludes code blocks and existing Markdown links.</p>
+                </div>
               </div>
             </section>
           </div>
@@ -161,7 +165,7 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>Table of Contents</h3>
-                  <p>Auto-generated TOC. Highlights current section while scrolling. Click to jump. TOC navigation in conflict resolution. Collapsible headings (20+), search bar (15+), keyboard navigation.</p>
+                  <p>Auto-generated TOC. Highlights current section while scrolling. Click to jump. TOC navigation in conflict resolution. Collapsible headings (20+), search bar (15+), keyboard navigation. Improved scrolling: two-phase scroll for distant headings (instant jump >1000px, smooth finish last 500px) with position verification.</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Dark/Light/System theme</h3>
@@ -387,6 +391,22 @@
                   <tr>
                     <td><kbd>Alt</kbd>+<kbd>F</kbd></td>
                     <td>Focus Mode toggle</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Alt</kbd>+<kbd>↑</kbd> / <kbd>Alt</kbd>+<kbd>↓</kbd></td>
+                    <td>Move line/list item up/down</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>;</kbd></td>
+                    <td>Insert date (ISO 8601)</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd></td>
+                    <td>Insert datetime (ISO 8601)</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>H</kbd></td>
+                    <td>Find & Replace (regex support)</td>
                   </tr>
                   <tr>
                     <td><kbd>Alt</kbd>+<kbd>P</kbd>/<kbd>T</kbd>/<kbd>A</kbd>/<kbd>X</kbd></td>

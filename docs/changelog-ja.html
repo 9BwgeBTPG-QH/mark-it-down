@@ -60,10 +60,50 @@
         </p>
       </section>
 
+      <!-- v1.8.0 -->
+      <section class="coming-soon-section" aria-labelledby="v180-heading">
+        <h2 id="v180-heading">v1.8.0</h2>
+        <p class="coming-soon-status">審査中</p>
+        <ul class="coming-soon-list" role="list">
+          <li>
+            <strong>エディタ強化</strong>
+            <span>行移動（<code>Alt+↑/↓</code>）、日付挿入（<code>Ctrl+;</code>）、検索・置換（<code>Ctrl+H</code>、正規表現対応）、コマンドパレットでテキストケース変更</span>
+          </li>
+          <li>
+            <strong>自動リンク化</strong>
+            <span>プレーンテキスト内のURL/メールアドレスが自動的にリンクに。コードブロックと既存Markdownリンクは除外</span>
+          </li>
+          <li>
+            <strong>数式ブロックサポート</strong>
+            <span>GitHub/GitLab互換の <code>```math</code> コードブロックがKaTeXでレンダリング（遅延読み込み）。<code>$$...$$</code> 記法と併用可能</span>
+          </li>
+          <li>
+            <strong>大きいファイルの可視化</strong>
+            <span>ファイルサイズで色分け：黄色（>100KB）、オレンジ（>200KB）、赤（>300KB）</span>
+          </li>
+          <li>
+            <strong>TOCスクロール改善</strong>
+            <span>2段階スクロール：長距離（>1000px）は瞬時にジャンプ、残り500pxをスムーズに。スクロール後の位置検証で精度向上</span>
+          </li>
+          <li>
+            <strong>ファイル名変換ロジック統一</strong>
+            <span>Git pushとExportで統一。Windows予約名を自動処理、変換時はトースト通知、100文字で切り詰め</span>
+          </li>
+          <li>
+            <strong>クリーンMarkdownコピー</strong>
+            <span>コピー時にHTMLタグなしのクリーンテキストを出力。メモ帳、Sublime Text、ChatGPT、Grokと互換</span>
+          </li>
+          <li>
+            <strong>LaTeX自動変換</strong>
+            <span>AIツールからの <code>\(...\)</code> → <code>$...$</code>、<code>\[...\]</code> → <code>$$...$$</code> を自動変換（入力・ペースト両対応）</span>
+          </li>
+        </ul>
+      </section>
+
       <!-- v1.7.0 -->
       <section class="coming-soon-section" aria-labelledby="v170-heading">
         <h2 id="v170-heading">v1.7.0</h2>
-        <p class="coming-soon-status">審査中</p>
+        <p class="coming-soon-status">リリース済</p>
         <ul class="coming-soon-list" role="list">
           <li>
             <strong>キーボードファースト設計</strong>

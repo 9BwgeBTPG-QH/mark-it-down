@@ -136,7 +136,7 @@
                 </div>
                 <div class="philosophy-item">
                   <h3>数式（LaTeX）</h3>
-                  <p>インライン <code>$E=mc^2$</code> とブロック <code>$$...$$</code> 形式。</p>
+                  <p>インライン <code>$E=mc^2$</code> とブロック <code>$$...$$</code> 形式。GitHub/GitLab互換の <code>```math</code> コードブロックにも対応（遅延読み込みKaTeX）。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>コールアウト</h3>
@@ -150,6 +150,10 @@
                   <h3>画像</h3>
                   <p>外部URLのみ（<code>![alt](https://...)</code>）。ストレージ制限のため直接埋め込み非対応。</p>
                 </div>
+                <div class="philosophy-item">
+                  <h3>自動リンク化</h3>
+                  <p>プレーンテキスト内のURL/メールアドレスが自動的にリンクに。コードブロックと既存Markdownリンクは除外。</p>
+                </div>
               </div>
             </section>
           </div>
@@ -161,7 +165,7 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>目次（TOC）</h3>
-                  <p>自動生成目次。スクロール中に現在セクションをハイライト。クリックでジャンプ。競合解決でもTOCナビゲーション。階層折りたたみ（20見出し以上）、検索バー（15見出し以上）、キーボードナビゲーション。</p>
+                  <p>自動生成目次。スクロール中に現在セクションをハイライト。クリックでジャンプ。競合解決でもTOCナビゲーション。階層折りたたみ（20見出し以上）、検索バー（15見出し以上）、キーボードナビゲーション。スクロール改善：長距離見出しは2段階スクロール（>1000pxは瞬時にジャンプ、残り500pxをスムーズに）で位置検証付き。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>ダーク/ライト/システム連動テーマ</h3>
@@ -387,6 +391,22 @@
                   <tr>
                     <td><kbd>Alt</kbd>+<kbd>F</kbd></td>
                     <td>Focus Mode切替</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Alt</kbd>+<kbd>↑</kbd> / <kbd>Alt</kbd>+<kbd>↓</kbd></td>
+                    <td>行/リストアイテムを上下に移動</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>;</kbd></td>
+                    <td>日付を挿入（ISO 8601）</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd></td>
+                    <td>日時を挿入（ISO 8601）</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>H</kbd></td>
+                    <td>検索・置換（正規表現対応）</td>
                   </tr>
                   <tr>
                     <td><kbd>Alt</kbd>+<kbd>P</kbd>/<kbd>T</kbd>/<kbd>A</kbd>/<kbd>X</kbd></td>
