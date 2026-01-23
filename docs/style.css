@@ -686,6 +686,28 @@ a:hover {
   }
 }
 
+/* Video embed container - responsive 16:9 aspect ratio */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-screenshot);
+  background: var(--bg-secondary);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .screenshot-caption {
   font-size: var(--font-size-sm);
   color: var(--text-muted);

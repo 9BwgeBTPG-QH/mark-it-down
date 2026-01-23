@@ -147,13 +147,20 @@
         </ul>
       </section>
 
-      <!-- Screenshot Section -->
-      <section class="screenshot-section" aria-labelledby="screenshot-heading">
-        <h2 id="screenshot-heading" class="visually-hidden">プレビュー</h2>
-        <picture>
-          <source srcset="jp-dark.png" media="(prefers-color-scheme: dark)">
-          <img src="jp-light.png" alt="Mark It Down - New TabとSide Panelの両方を表示、情報フロー図が見える" loading="lazy">
-        </picture>
+      <!-- Video Section -->
+      <section class="screenshot-section" aria-labelledby="video-heading">
+        <h2 id="video-heading" class="visually-hidden">デモ動画</h2>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/AdHZZKX8T_Y"
+            title="Mark It Down - プロモーション動画"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
         <p class="screenshot-caption">New Tabで集中して書く — Side PanelでAIと並行作業</p>
       </section>
 
@@ -163,20 +170,20 @@
         <p class="coming-soon-status">現在審査中</p>
         <ul class="coming-soon-list" role="list">
           <li>
+            <strong>記号パレット</strong>
+            <span>148個の記号を6カテゴリで管理。Ctrl+Shift+P → Insert Symbol。名前でインクリメンタル検索</span>
+          </li>
+          <li>
             <strong>Reading Focus</strong>
             <span>Archive/System Notesで↑/↓キーでブロック間移動。Ctrl+↑/↓で見出しジャンプ（全モード対応）</span>
           </li>
           <li>
-            <strong>テーブル挿入</strong>
-            <span>コマンドパレット → Insert Table。行数×列数を指定してEnterで挿入</span>
+            <strong>テーブルツール</strong>
+            <span>テーブル挿入、CSVエクスポート（UTF-8 BOM）、列ソート、自動整形、複数セル選択、行ドラッグ</span>
           </li>
           <li>
-            <strong>CSVエクスポート</strong>
-            <span>MarkdownテーブルをCSVでエクスポート。Excel向けUTF-8 BOM対応、全角文字サポート</span>
-          </li>
-          <li>
-            <strong>テーブルソート・整形</strong>
-            <span>指定列でソート（タイプ自動判定）、列幅自動調整、複数セル選択対応</span>
+            <strong>ページナビゲーション</strong>
+            <span>PgUp/PgDnでスムーススクロール。TOCフッターにショートカット表示</span>
           </li>
         </ul>
       </section>

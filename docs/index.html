@@ -147,13 +147,20 @@
         </ul>
       </section>
 
-      <!-- Screenshot Section -->
-      <section class="screenshot-section" aria-labelledby="screenshot-heading">
-        <h2 id="screenshot-heading" class="visually-hidden">Preview</h2>
-        <picture>
-          <source srcset="en-dark.png" media="(prefers-color-scheme: dark)">
-          <img src="en-light.png" alt="Mark It Down - New Tab and Side Panel views showing the information flow diagram" loading="lazy">
-        </picture>
+      <!-- Video Section -->
+      <section class="screenshot-section" aria-labelledby="video-heading">
+        <h2 id="video-heading" class="visually-hidden">Demo Video</h2>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/AdHZZKX8T_Y"
+            title="Mark It Down - Promotional Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
         <p class="screenshot-caption">New Tab for focused writing — Side Panel for working alongside AI</p>
       </section>
 
@@ -163,20 +170,20 @@
         <p class="coming-soon-status">Currently under review</p>
         <ul class="coming-soon-list" role="list">
           <li>
+            <strong>Symbol Palette</strong>
+            <span>148 symbols in 6 categories. Ctrl+Shift+P → Insert Symbol. Incremental search by name</span>
+          </li>
+          <li>
             <strong>Reading Focus</strong>
             <span>Navigate blocks with ↑/↓ in Archive/System Notes. Heading jump with Ctrl+↑/↓ in all modes</span>
           </li>
           <li>
-            <strong>Table Insert</strong>
-            <span>Command Palette → Insert Table. Specify rows and columns with Enter to insert</span>
+            <strong>Table Tools</strong>
+            <span>Insert Table, CSV Export (UTF-8 BOM), Sort by column, Prettify, Multi-cell selection, Row drag</span>
           </li>
           <li>
-            <strong>CSV Export</strong>
-            <span>Export Markdown tables as CSV with UTF-8 BOM for Excel. Full-width character support</span>
-          </li>
-          <li>
-            <strong>Table Sort & Prettify</strong>
-            <span>Sort by any column (auto-detect type), auto-align columns, multi-cell selection</span>
+            <strong>Page Navigation</strong>
+            <span>PgUp/PgDn for smooth scrolling. TOC footer shows keyboard hints</span>
           </li>
         </ul>
       </section>
