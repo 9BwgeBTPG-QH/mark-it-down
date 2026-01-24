@@ -60,225 +60,310 @@
         </p>
       </section>
 
-      <!-- v1.9.0 -->
-      <section class="coming-soon-section" aria-labelledby="v190-heading">
-        <h2 id="v190-heading">v1.9.0</h2>
-        <p class="coming-soon-status">審査中</p>
-        <ul class="coming-soon-list" role="list">
-          <li>
-            <strong>インライン数式トグル</strong>
-            <span><code>$...$</code> のレンダリングを制御する新設定（デフォルト: OFF）。LaTeX標準記法 <code>\(...\)</code> と <code>\[...\]</code> は常に動作</span>
-          </li>
-          <li>
-            <strong>数式拡大ボタン</strong>
-            <span>数式ブロックの🔍をクリックで拡大表示。Mermaid図と同様の操作感</span>
-          </li>
-          <li>
-            <strong>クロスプラットフォームショートカット</strong>
-            <span>プラットフォーム固有のキー記号：Mac（⌘⇧P、⌘⌥F）vs Windows/Linux（Ctrl+Shift+P、Ctrl+H）</span>
-          </li>
-          <li>
-            <strong>数式コードブロック</strong>
-            <span><code>```math</code>、<code>```latex</code>、<code>```mathematica</code> 対応。言語セレクター、Edit/Hide切替、拡大ボタン搭載</span>
-          </li>
-          <li>
-            <strong>コピーボタン修正</strong>
-            <span>誤ったコードブロックをコピーする問題を修正。インデックスベースからコンテンツベースのマッチングに変更</span>
-          </li>
-        </ul>
-      </section>
+      <!-- Changelog Timeline -->
+      <div class="changelog-timeline">
 
-      <!-- v1.8.0 -->
-      <section class="coming-soon-section" aria-labelledby="v180-heading">
-        <h2 id="v180-heading">v1.8.0</h2>
-        <p class="coming-soon-status">リリース済</p>
-        <ul class="coming-soon-list" role="list">
-          <li>
-            <strong>エディタ強化</strong>
-            <span>行移動（<code>Alt+↑/↓</code>）、日付挿入（<code>Ctrl+;</code>）、検索・置換（<code>Ctrl+H</code>、正規表現）、コマンドパレットでテキストケース変更</span>
-          </li>
-          <li>
-            <strong>自動リンク化</strong>
-            <span>プレーンテキスト内のURL/メールアドレスが自動的にリンクに。コードブロックと既存Markdownリンクは除外</span>
-          </li>
-          <li>
-            <strong>数式ブロックサポート</strong>
-            <span>GitHub/GitLab互換の <code>```math</code> コードブロックが数式としてレンダリング。<code>$$...$$</code> 記法と併用</span>
-          </li>
-          <li>
-            <strong>大きいファイルの可視化</strong>
-            <span>ファイルサイズで色分け：黄色（>100KB）、オレンジ（>200KB）、赤（>300KB）</span>
-          </li>
-          <li>
-            <strong>TOCスクロール改善</strong>
-            <span>2段階スクロール：長距離（>1000px）は瞬時にジャンプ、残り500pxをスムーズに。スクロール後の位置検証で精度向上</span>
-          </li>
-          <li>
-            <strong>ファイル名変換ロジック統一</strong>
-            <span>Git pushとExportで統一。Windows予約名を自動処理、変換時はトースト通知、100文字で切り詰め</span>
-          </li>
-          <li>
-            <strong>クリーンMarkdownコピー</strong>
-            <span>コピー時にHTMLタグなしのクリーンテキストを出力。メモ帳、Sublime Text、ChatGPT、Grokと互換</span>
-          </li>
-          <li>
-            <strong>LaTeX自動変換</strong>
-            <span>AIツールからの <code>\(...\)</code> → <code>$...$</code>、<code>\[...\]</code> → <code>$$...$$</code> を自動変換（入力・ペースト両方）</span>
-          </li>
-        </ul>
-      </section>
+        <!-- v1.9.2 - Latest -->
+        <article class="changelog-entry latest" aria-labelledby="v192-heading">
+          <div class="changelog-header">
+            <h2 id="v192-heading" class="changelog-version">v1.9.2</h2>
+            <span class="changelog-status review">審査中</span>
+          </div>
 
-      <!-- v1.7.0 -->
-      <section class="coming-soon-section" aria-labelledby="v170-heading">
-        <h2 id="v170-heading">v1.7.0</h2>
-        <p class="coming-soon-status">リリース済</p>
-        <ul class="coming-soon-list" role="list">
-          <li>
-            <strong>キーボードファースト設計</strong>
-            <span><code>Ctrl+Shift+1/2</code>でNotes/TOCパネル切替、矢印キーでリスト操作、Enter/Space/Escapeでモーダル操作</span>
-          </li>
-          <li>
-            <strong>Zen Mode廃止</strong>
-            <span><code>F11</code>（ブラウザ全画面）+ <code>Alt+F</code>（Focus Mode）で代替 — 2.76KBバンドル削減</span>
-          </li>
-          <li>
-            <strong>Git同期状態の可視化</strong>
-            <span>起動時自動Fetch、「N件のリモート更新」バナー、Trash同期バッジ（✓同期済/⚠要同期/ローカル）</span>
-          </li>
-          <li>
-            <strong>アニメーション最適化</strong>
-            <span>50-200ms範囲に最適化 — カーソルフラッシュ、TOCハイライト、見出しハイライトが瞬時に反応</span>
-          </li>
-          <li>
-            <strong>E2Eテスト</strong>
-            <span>Playwrightで19件のテスト追加（コア機能、エッジケース、キーボードショートカット）</span>
-          </li>
-        </ul>
-      </section>
+          <div class="changelog-group">
+            <h3 class="changelog-group-title">ナビゲーション & フォーカス</h3>
+            <ul class="changelog-features" role="list">
+              <li>
+                <strong>Reading Focus</strong>
+                <span>Archive/System Notesで<code>↑</code>/<code>↓</code>キーでブロック間移動。青いボーダーで現在ブロックをハイライト、スムーススクロール</span>
+              </li>
+              <li>
+                <strong>見出しジャンプ</strong>
+                <span><code>Ctrl+↑</code>/<code>Ctrl+↓</code>で見出し間を移動。Inbox含む全モードで動作、編集・読み取り専用両対応</span>
+              </li>
+              <li>
+                <strong>ページスクロール</strong>
+                <span><code>PgUp</code>/<code>PgDn</code>でビューポート単位のスムーススクロール。50pxのオーバーラップでコンテキスト維持</span>
+              </li>
+              <li>
+                <strong>TOCショートカット表示</strong>
+                <span>フッターにキーボードショートカットを表示：<code>Ctrl+↑↓</code> 見出し、<code>PgUp/PgDn</code> スクロール</span>
+              </li>
+            </ul>
+          </div>
 
-      <!-- v1.6.0 -->
-      <section class="coming-soon-section" aria-labelledby="v160-heading">
-        <h2 id="v160-heading">v1.6.0</h2>
-        <p class="coming-soon-status">リリース済</p>
-        <ul class="coming-soon-list" role="list">
-          <li>
-            <strong>Command Palette</strong>
-            <span>VS Code風パレット、50+コマンド — <code>Ctrl+Shift+P</code></span>
-          </li>
-          <li>
-            <strong>Focus Mode</strong>
-            <span>タイプライタースクロールと3段階dimmingで集中執筆</span>
-          </li>
-          <li>
-            <strong>起動時間95%改善</strong>
-            <span>Core Web Vitals合格 — 初期バンドル: 698KB → 84KB</span>
-          </li>
-          <li>
-            <strong>Archive表示70%高速化</strong>
-            <span>軽量レンダラー採用 — 100KBドキュメントが1秒以内にロード</span>
-          </li>
-          <li>
-            <strong>TOC拡張機能</strong>
-            <span>階層折りたたみ（20見出し以上）、検索バー（15見出し以上）、キーボードナビ</span>
-          </li>
-        </ul>
-      </section>
+          <div class="changelog-group">
+            <h3 class="changelog-group-title">テーブル機能</h3>
+            <ul class="changelog-features" role="list">
+              <li>
+                <strong>テーブル挿入</strong>
+                <span>コマンドパレット → Insert Table。行数×列数（各1-10）を指定してEnterで挿入</span>
+              </li>
+              <li>
+                <strong>CSVエクスポート</strong>
+                <span>MarkdownテーブルをCSVでエクスポート。Excel向けUTF-8 BOM対応、全角文字サポート</span>
+              </li>
+              <li>
+                <strong>テーブルソート</strong>
+                <span>コマンドパレットから指定列でソート。列タイプ（数値/日付/テキスト）を自動判定</span>
+              </li>
+              <li>
+                <strong>行ドラッグ並び替え</strong>
+                <span>テーブル行をドラッグして並び替え。ドラッグ中のビジュアルフィードバック付き</span>
+              </li>
+              <li>
+                <strong>テーブル自動整形</strong>
+                <span><code>Ctrl+Shift+P</code> → Prettify Tableで列幅を自動調整。全角文字対応</span>
+              </li>
+              <li>
+                <strong>複数セル選択</strong>
+                <span>クリック&ドラッグまたは<code>Shift+クリック</code>で複数セル選択。選択スタイルでハイライト</span>
+              </li>
+            </ul>
+          </div>
 
-      <!-- v1.5.0 -->
-      <section class="coming-soon-section" aria-labelledby="v150-heading">
-        <h2 id="v150-heading">v1.5.0</h2>
-        <p class="coming-soon-status">リリース済</p>
-        <ul class="coming-soon-list" role="list">
-          <li>
-            <strong>大規模ドキュメント対応</strong>
-            <span>100KB超ファイルの読み込みが57%高速化</span>
-          </li>
-          <li>
-            <strong>Archiveピン留めエクスポート</strong>
-            <span>Archiveフォルダのピン留めノートのみを.zipで出力</span>
-          </li>
-          <li>
-            <strong>Side Panel Sticky Toolbar</strong>
-            <span>Side Panelでスクロールしてもツールバーが常に表示</span>
-          </li>
-          <li>
-            <strong>エディタ機能強化</strong>
-            <span>コールアウト、ページ内リンク、LaTeX数式、Mermaid拡大表示</span>
-          </li>
-        </ul>
-      </section>
+          <div class="changelog-group">
+            <h3 class="changelog-group-title">エディタ</h3>
+            <ul class="changelog-features" role="list">
+              <li>
+                <strong>記号パレット</strong>
+                <span>148個の記号を6カテゴリ（ギリシャ文字、演算子、関係、矢印、一般、絵文字）で管理。<code>Ctrl+Shift+P</code> → Insert Symbol</span>
+              </li>
+            </ul>
+          </div>
+        </article>
 
-      <!-- v1.4.0 -->
-      <section class="coming-soon-section" aria-labelledby="v140-heading">
-        <h2 id="v140-heading">v1.4.0</h2>
-        <p class="coming-soon-status">リリース済</p>
-        <ul class="coming-soon-list" role="list">
-          <li>
-            <strong>目次（TOC）の強化</strong>
-            <span>スクロール中に現在セクションをハイライト、ナビゲーション時の視覚的フィードバック</span>
-          </li>
-          <li>
-            <strong>データ安全性の向上</strong>
-            <span>同時編集による消失を防ぐ3層防御で自動保存の信頼性向上</span>
-          </li>
-          <li>
-            <strong>UX改善</strong>
-            <span>スムーズなトランジション、コードブロック高さ制限、スター/ピンボタン統合</span>
-          </li>
-        </ul>
-      </section>
+        <!-- v1.9.1 -->
+        <article class="changelog-entry" aria-labelledby="v191-heading">
+          <div class="changelog-header">
+            <h2 id="v191-heading" class="changelog-version">v1.9.1</h2>
+            <span class="changelog-status released">リリース済</span>
+          </div>
+          <ul class="changelog-features" role="list">
+            <li>
+              <strong>Word Count統計</strong>
+              <span>TOCヘッダーの📊アイコンをホバーすると文字数・単語数（CJK対応）・読了時間を表示</span>
+            </li>
+            <li>
+              <strong>Focus Modeカーソル追従</strong>
+              <span>ハイライトがビューポートではなくカーソル位置を追従。大規模ドキュメント（100KB+）のサポート改善</span>
+            </li>
+            <li>
+              <strong>コピーボタン安定性</strong>
+              <span>編集/表示モード切替時のMermaid/Mathブロックボタンの表示問題を修正</span>
+            </li>
+            <li>
+              <strong>大ファイルSmart Loading</strong>
+              <span>300KB以上のファイルで選択ダイアログ表示：読み取り専用（Archive推奨）、そのまま開く、別のノートを選択</span>
+            </li>
+          </ul>
+        </article>
 
-      <!-- v1.3.0 -->
-      <section class="coming-soon-section" aria-labelledby="v130-heading">
-        <h2 id="v130-heading">v1.3.0</h2>
-        <p class="coming-soon-status">リリース済</p>
-        <ul class="coming-soon-list" role="list">
-          <li>
-            <strong>Git連携の強化</strong>
-            <span>Fetch機能追加、Pull/Sync操作の競合検出を改善</span>
-          </li>
-          <li>
-            <strong>重複ノート管理</strong>
-            <span>同名ノートをside-by-side比較、保持するノートを選択</span>
-          </li>
-          <li>
-            <strong>スマート検索の強化</strong>
-            <span>複数キーワードAND検索、ハイライト、フォルダバッジ表示</span>
-          </li>
-        </ul>
-      </section>
+        <!-- v1.9.0 -->
+        <article class="changelog-entry" aria-labelledby="v190-heading">
+          <div class="changelog-header">
+            <h2 id="v190-heading" class="changelog-version">v1.9.0</h2>
+            <span class="changelog-status released">リリース済</span>
+          </div>
+          <ul class="changelog-features" role="list">
+            <li>
+              <strong>インライン数式トグル</strong>
+              <span><code>$...$</code> のレンダリングを制御する新設定（デフォルト: OFF）。LaTeX標準記法は常に動作</span>
+            </li>
+            <li>
+              <strong>数式拡大ボタン</strong>
+              <span>数式ブロックの🔍をクリックで拡大表示。Mermaid図と同様の操作感</span>
+            </li>
+            <li>
+              <strong>クロスプラットフォームショートカット</strong>
+              <span>プラットフォーム固有のキー記号：Mac（⌘⇧P、⌘⌥F）vs Windows/Linux（Ctrl+Shift+P、Ctrl+H）</span>
+            </li>
+            <li>
+              <strong>数式コードブロック</strong>
+              <span><code>```math</code>、<code>```latex</code>、<code>```mathematica</code> 対応。Edit/Hide切替付き</span>
+            </li>
+          </ul>
+        </article>
 
-      <!-- v1.2.0 -->
-      <section class="coming-soon-section" aria-labelledby="v120-heading">
-        <h2 id="v120-heading">v1.2.0</h2>
-        <p class="coming-soon-status">リリース済</p>
-        <ul class="coming-soon-list" role="list">
-          <li>
-            <strong>ツールバー刷新</strong>
-            <span>ホバーで開くメニュー、ワンクリック減でアクセス</span>
-          </li>
-          <li>
-            <strong>Git同期の強化</strong>
-            <span>競合検出の精度向上、4段階リスクレベル表示</span>
-          </li>
-          <li>
-            <strong>Overview Ruler</strong>
-            <span>VSCode風の差分マップ、クリックでジャンプ</span>
-          </li>
-          <li>
-            <strong>Auto Pair</strong>
-            <span>括弧・引用符の自動補完</span>
-          </li>
-          <li>
-            <strong>ノート検索</strong>
-            <span>サイドバーで入力ごとにフィルタリング</span>
-          </li>
-          <li>
-            <strong>ワイドスクリーン対応</strong>
-            <span>1600px以上でサイドバー・TOCがコンテンツ外に</span>
-          </li>
-        </ul>
-      </section>
+        <!-- v1.8.0 -->
+        <article class="changelog-entry compact" aria-labelledby="v180-heading">
+          <div class="changelog-header">
+            <h2 id="v180-heading" class="changelog-version">v1.8.0</h2>
+            <span class="changelog-status released">リリース済</span>
+          </div>
+          <ul class="changelog-features" role="list">
+            <li>
+              <strong>エディタ強化</strong>
+              <span>行移動（<code>Alt+↑/↓</code>）、日付挿入（<code>Ctrl+;</code>）、検索・置換（<code>Ctrl+H</code>）</span>
+            </li>
+            <li>
+              <strong>自動リンク化</strong>
+              <span>URL/メールアドレスが自動的にリンクに変換</span>
+            </li>
+            <li>
+              <strong>数式ブロックサポート</strong>
+              <span>GitHub/GitLab互換の <code>```math</code> コードブロック</span>
+            </li>
+            <li>
+              <strong>大きいファイルの可視化</strong>
+              <span>色分け：黄色 >100KB、オレンジ >200KB、赤 >300KB</span>
+            </li>
+            <li>
+              <strong>TOCスクロール改善</strong>
+              <span>2段階スクロール + 位置検証で精度向上</span>
+            </li>
+            <li>
+              <strong>クリーンMarkdownコピー</strong>
+              <span>HTMLタグなし、メモ帳・ChatGPT・Grokと互換</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- v1.7.0 -->
+        <article class="changelog-entry compact" aria-labelledby="v170-heading">
+          <div class="changelog-header">
+            <h2 id="v170-heading" class="changelog-version">v1.7.0</h2>
+            <span class="changelog-status released">リリース済</span>
+          </div>
+          <ul class="changelog-features" role="list">
+            <li>
+              <strong>キーボードファースト設計</strong>
+              <span><code>Ctrl+Shift+1/2</code>でNotes/TOCパネル切替、矢印キーでナビゲーション</span>
+            </li>
+            <li>
+              <strong>Zen Mode廃止</strong>
+              <span><code>F11</code> + <code>Alt+F</code> で代替 — 2.76KBバンドル削減</span>
+            </li>
+            <li>
+              <strong>Git同期状態の可視化</strong>
+              <span>起動時自動Fetch、リモート更新バナー、Trash同期バッジ</span>
+            </li>
+            <li>
+              <strong>アニメーション最適化</strong>
+              <span>50-200ms範囲に最適化</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- v1.6.0 -->
+        <article class="changelog-entry compact" aria-labelledby="v160-heading">
+          <div class="changelog-header">
+            <h2 id="v160-heading" class="changelog-version">v1.6.0</h2>
+            <span class="changelog-status released">リリース済</span>
+          </div>
+          <ul class="changelog-features" role="list">
+            <li>
+              <strong>Command Palette</strong>
+              <span>VS Code風パレット、50+コマンド — <code>Ctrl+Shift+P</code></span>
+            </li>
+            <li>
+              <strong>Focus Mode</strong>
+              <span>タイプライタースクロールと3段階dimming</span>
+            </li>
+            <li>
+              <strong>起動時間95%改善</strong>
+              <span>初期バンドル: 698KB → 84KB</span>
+            </li>
+            <li>
+              <strong>Archive表示70%高速化</strong>
+              <span>100KBドキュメントが1秒以内にロード</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- v1.5.0 -->
+        <article class="changelog-entry compact" aria-labelledby="v150-heading">
+          <div class="changelog-header">
+            <h2 id="v150-heading" class="changelog-version">v1.5.0</h2>
+            <span class="changelog-status released">リリース済</span>
+          </div>
+          <ul class="changelog-features" role="list">
+            <li>
+              <strong>大規模ドキュメント対応</strong>
+              <span>100KB超ファイルの読み込みが57%高速化</span>
+            </li>
+            <li>
+              <strong>Archiveピン留めエクスポート</strong>
+              <span>ピン留めノートのみを.zipで出力</span>
+            </li>
+            <li>
+              <strong>Sticky Toolbar</strong>
+              <span>スクロールしてもツールバーが常に表示</span>
+            </li>
+            <li>
+              <strong>エディタ機能強化</strong>
+              <span>コールアウト、ページ内リンク、LaTeX数式、Mermaid拡大</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- v1.4.0 -->
+        <article class="changelog-entry compact" aria-labelledby="v140-heading">
+          <div class="changelog-header">
+            <h2 id="v140-heading" class="changelog-version">v1.4.0</h2>
+            <span class="changelog-status released">リリース済</span>
+          </div>
+          <ul class="changelog-features" role="list">
+            <li>
+              <strong>目次（TOC）の強化</strong>
+              <span>スクロール中に現在セクションをハイライト</span>
+            </li>
+            <li>
+              <strong>データ安全性の向上</strong>
+              <span>自動保存の3層防御</span>
+            </li>
+            <li>
+              <strong>UX改善</strong>
+              <span>スムーズなトランジション、スター/ピンボタン統合</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- v1.3.0 -->
+        <article class="changelog-entry compact" aria-labelledby="v130-heading">
+          <div class="changelog-header">
+            <h2 id="v130-heading" class="changelog-version">v1.3.0</h2>
+            <span class="changelog-status released">リリース済</span>
+          </div>
+          <ul class="changelog-features" role="list">
+            <li>
+              <strong>Git Fetch</strong>
+              <span>ローカルを変更せずにリモート状態を確認</span>
+            </li>
+            <li>
+              <strong>重複ノート管理</strong>
+              <span>side-by-side比較で保持するノートを選択</span>
+            </li>
+            <li>
+              <strong>複数キーワード検索</strong>
+              <span>AND検索、ハイライト付き</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- v1.2.0 -->
+        <article class="changelog-entry compact" aria-labelledby="v120-heading">
+          <div class="changelog-header">
+            <h2 id="v120-heading" class="changelog-version">v1.2.0</h2>
+            <span class="changelog-status released">リリース済</span>
+          </div>
+          <ul class="changelog-features" role="list">
+            <li>
+              <strong>ホバーメニュー</strong>
+              <span>Edit/Moveメニューへの高速アクセス</span>
+            </li>
+            <li>
+              <strong>競合検出</strong>
+              <span>Git同期の4段階リスクインジケーター</span>
+            </li>
+            <li>
+              <strong>ワイドスクリーン対応</strong>
+              <span>1600px以上でサイドバー・TOCがコンテンツ外に</span>
+            </li>
+          </ul>
+        </article>
+
+      </div>
 
       <!-- CTA Section -->
       <section class="cta-section" aria-labelledby="cta-heading">

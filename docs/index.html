@@ -147,40 +147,43 @@
         </ul>
       </section>
 
-      <!-- Screenshot Section -->
-      <section class="screenshot-section" aria-labelledby="screenshot-heading">
-        <h2 id="screenshot-heading" class="visually-hidden">Preview</h2>
-        <picture>
-          <source srcset="en-dark.png" media="(prefers-color-scheme: dark)">
-          <img src="en-light.png" alt="Mark It Down - New Tab and Side Panel views showing the information flow diagram" loading="lazy">
-        </picture>
+      <!-- Video Section -->
+      <section class="screenshot-section" aria-labelledby="video-heading">
+        <h2 id="video-heading" class="visually-hidden">Demo Video</h2>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/AdHZZKX8T_Y"
+            title="Mark It Down - Promotional Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
         <p class="screenshot-caption">New Tab for focused writing — Side Panel for working alongside AI</p>
       </section>
 
       <!-- Coming Soon Section -->
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
-        <h2 id="coming-soon-heading">Coming in v1.9.0</h2>
+        <h2 id="coming-soon-heading">Coming in v1.9.2</h2>
         <p class="coming-soon-status">Currently under review</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>Inline Math Toggle</strong>
-            <span>Control <code>$...$</code> rendering with a new setting. OFF by default for general use (dollar signs as text), ON for math rendering. LaTeX syntax <code>\(...\)</code> always works</span>
+            <strong>Symbol Palette</strong>
+            <span>148 symbols in 6 categories. Ctrl+Shift+P → Insert Symbol. Incremental search by name</span>
           </li>
           <li>
-            <strong>Math Enlarge Button</strong>
-            <span>Click 🔍 on math blocks to view in larger size, just like Mermaid diagrams</span>
+            <strong>Reading Focus</strong>
+            <span>Navigate blocks with ↑/↓ in Archive/System Notes. Heading jump with Ctrl+↑/↓ in all modes</span>
           </li>
           <li>
-            <strong>Cross-Platform Shortcuts</strong>
-            <span>Platform-specific key symbols displayed: Mac (⌘⇧P, ⌘⌥F) vs Windows/Linux (Ctrl+Shift+P, Ctrl+H)</span>
+            <strong>Table Tools</strong>
+            <span>Insert Table, CSV Export (UTF-8 BOM), Sort by column, Prettify, Multi-cell selection, Row drag</span>
           </li>
           <li>
-            <strong>Math Code Blocks</strong>
-            <span>Support for <code>```math</code>, <code>```latex</code>, <code>```mathematica</code> with language selector and enlarge button</span>
-          </li>
-          <li>
-            <strong>Copy Button Fix</strong>
-            <span>Fixed issue where copy button would copy wrong code block content. Now uses content-based matching</span>
+            <strong>Page Navigation</strong>
+            <span>PgUp/PgDn for smooth scrolling. TOC footer shows keyboard hints</span>
           </li>
         </ul>
       </section>
@@ -189,7 +192,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Ready to write?</h2>
         <p>Available as a Chrome extension. No account required.<br>
-        <small>Latest version v1.9.0 is under review.</small></p>
+        <small>Latest version v1.9.2 is under review.</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
             Get the extension

@@ -111,7 +111,7 @@
                 </div>
                 <div class="philosophy-item">
                   <h3>Focus Mode</h3>
-                  <p>Alt+Fで切替。タイプライタースクロールでカーソルを中央維持。テキストdimmingで集中ゾーンを強調。</p>
+                  <p>Alt+Fで切替。タイプライタースクロールでカーソルを中央維持。カーソル追従ハイライト（0-80px: 完全ハイライト、80-200px: 中間、200px+: 薄暗い）。大規模ドキュメント（100KB+）のサポート改善。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>両方開ける。同期しない。</h3>
@@ -165,7 +165,7 @@
               <div class="philosophy-list">
                 <div class="philosophy-item">
                   <h3>目次（TOC）</h3>
-                  <p>自動生成目次。スクロール中に現在セクションをハイライト。クリックでジャンプ。競合解決でもTOCナビゲーション。階層折りたたみ（20見出し以上）、検索バー（15見出し以上）、キーボードナビゲーション。長距離見出しは2段階スクロール（瞬時ジャンプ + スムーズ終了）で位置検証付き。</p>
+                  <p>自動生成目次。スクロール中に現在セクションをハイライト。クリックでジャンプ。競合解決でもTOCナビゲーション。階層折りたたみ（20見出し以上）、検索バー（15見出し以上）、キーボードナビゲーション。長距離見出しは2段階スクロール（瞬時ジャンプ + スムーズ終了）で位置検証付き。Word Count統計: TOCヘッダーの📊アイコンをホバーすると文字数・単語数（CJK対応）・読了時間を表示。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>ダーク/ライト/システム連動テーマ</h3>
@@ -231,7 +231,7 @@
                 </div>
                 <div class="philosophy-item">
                   <h3>大規模ドキュメント</h3>
-                  <p>100KB超のMarkdownファイルに対応。ローディングスケルトンでUX向上。CSS最適化で快適に編集。Archive軽量レンダラー（70%高速化）。</p>
+                  <p>100KB超のMarkdownファイルに対応。ローディングスケルトンでUX向上。CSS最適化で快適に編集。Archive軽量レンダラー（70%高速化）。Smart Loading: 300KB以上のファイルで選択ダイアログ表示（読み取り専用/Archive推奨、そのまま開く、別のノートを選択）。</p>
                 </div>
                 <div class="philosophy-item">
                   <h3>Archiveフォルダで軽くなる理由</h3>
@@ -407,6 +407,18 @@
                   <tr>
                     <td><kbd>Ctrl</kbd>+<kbd>H</kbd></td>
                     <td>検索・置換（正規表現対応）</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>Ctrl</kbd>+<kbd>↑</kbd> / <kbd>Ctrl</kbd>+<kbd>↓</kbd></td>
+                    <td>前/次の見出しにジャンプ</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>PgUp</kbd> / <kbd>PgDn</kbd></td>
+                    <td>ページスクロール（スムース）</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>↑</kbd> / <kbd>↓</kbd> (Archive内)</td>
+                    <td>ブロック間移動（Reading Focus）</td>
                   </tr>
                   <tr>
                     <td><kbd>Alt</kbd>+<kbd>P</kbd>/<kbd>T</kbd>/<kbd>A</kbd>/<kbd>X</kbd></td>
