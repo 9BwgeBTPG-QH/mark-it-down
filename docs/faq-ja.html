@@ -64,85 +64,157 @@
       <section aria-labelledby="faq-heading">
         <h2 id="faq-heading" class="visually-hidden">よくある質問</h2>
 
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>Q: Chromeのキャッシュを削除してもデータは消えませんか？</h3>
-            <p><strong>A: 消えません。</strong> ノートデータは拡張機能専用ストレージ（<code>chrome.storage.local</code>）に保存されており、ブラウザのキャッシュとは別の場所です。</p>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li><strong>ブラウザキャッシュ削除</strong> → データは保持 ✅</li>
-              <li><strong>拡張機能アンインストール</strong> → データは消去 ⚠️</li>
-            </ul>
-          </div>
+        <div class="faq-list">
+          <!-- データ & ストレージ -->
+          <h3 class="faq-category">データ & ストレージ</h3>
 
-          <div class="philosophy-item">
-            <h3>Q: ノートが増えすぎて重くなることはありますか？</h3>
-            <p><strong>A: Mark It Downは「作業場」として設計されており、大量のデータを貯め込むことは想定していません。</strong></p>
-            <p><strong>推奨される使い方:</strong></p>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li>作業中のノート20件程度を目安に</li>
-              <li>完成したノートは <strong>Archive → Export → 削除</strong></li>
-              <li>サイドバー下部のストレージゲージで使用量を確認できます（80%超で警告）</li>
-              <li>Git同期で外部バックアップも可能</li>
-            </ul>
-            <p style="margin-top: var(--spacing-sm);"><em>💡 作業場の片付け: Mark It Downは一時的な作業場です。定期的に「卒業」させることで快適に使い続けられます。</em></p>
-          </div>
+          <details class="faq-item">
+            <summary>Chromeのキャッシュを削除してもデータは消えませんか？</summary>
+            <div class="faq-answer">
+              <p><strong>消えません。</strong> ノートは拡張機能専用のストレージに保存されており、ブラウザのキャッシュとは別の場所です。</p>
+              <ul>
+                <li><strong>ブラウザキャッシュ削除</strong> → データは保持 ✅</li>
+                <li><strong>拡張機能アンインストール</strong> → データは消去 ⚠️</li>
+              </ul>
+              <p><em>ヒント: アンインストール前にGit同期で外部バックアップを取っておくと安心です。</em></p>
+            </div>
+          </details>
 
-          <div class="philosophy-item">
-            <h3>Q: 起動が速いのはなぜですか？</h3>
-            <p><strong>A: 遅延ロードとコード分割により、初期ロードを86%削減しています。</strong></p>
-            <p>Mark It Downは起動速度を最適化するため、以下の戦略を採用：</p>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li><strong>Mermaid遅延ロード</strong> - Mermaid図を含まないノートでは2.3MBのライブラリが全くロードされない</li>
-              <li><strong>Code Splitting</strong> - 7つのチャンクに分割し、並列ロードとキャッシュを最適化</li>
-              <li><strong>Chrome専用ストレージ</strong> - ファイルシステムアクセス不要、即座にデータ取得</li>
-            </ul>
-          </div>
+          <details class="faq-item">
+            <summary>オフラインでも使えますか？</summary>
+            <div class="faq-answer">
+              <p><strong>はい、ほとんどの機能がオフラインで動作します。</strong></p>
+              <p><strong>オフラインで使える機能:</strong></p>
+              <ul>
+                <li>ノートの作成・編集・削除</li>
+                <li>検索、Archive、Import/Export</li>
+                <li>New TabとSide Panelの同期（同じPC内）</li>
+              </ul>
+              <p><strong>インターネット接続が必要:</strong></p>
+              <ul>
+                <li>Git同期（Push、Pull、Fetch）</li>
+              </ul>
+            </div>
+          </details>
 
-          <div class="philosophy-item">
-            <h3>Q: 大きなファイル（100KB+）でエディタが重くなりませんか？</h3>
-            <p><strong>A: 最適化により、大規模ドキュメントでも快適に編集できます。</strong></p>
-            <p>Mark It Downは大規模ドキュメント（100KB+、150+コードブロック）向けに以下の最適化を実装しています：</p>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li><strong>CodeMirror無効化</strong> - 100KB超で自動無効化（読み込み時間57%短縮：7秒→3秒）</li>
-              <li><strong>ローディングスケルトン</strong> - 100KB+の初期読み込み時にスピナー + スケルトンUI表示（UX向上）</li>
-              <li><strong>CSS content-visibility</strong> - 画面外コンテンツのレンダリングをスキップ</li>
-              <li><strong>CSS containment</strong> - reflow/repaint範囲をエディタ内に限定</li>
-              <li><strong>デコレーション最適化</strong> - 変更範囲のみ再計算（インクリメンタル更新）</li>
-              <li><strong>自動spellcheck無効化</strong> - 100KB超のドキュメントでCPU負荷を軽減</li>
-            </ul>
-            <p style="margin-top: var(--spacing-sm);"><strong>注意点：</strong> 100KB超のドキュメントではコードブロックのシンタックスハイライトが無効化されます。LaTeX数式も100KB超では無効化されます（Milkdown Crepeの依存関係による）。</p>
-            <p><em>💡 設計思想: Mark It Downは「咀嚼の場所」です。長大な生データの保管場所ではなく、整理・編集して「卒業」させる場所として使用してください。</em></p>
-          </div>
+          <!-- ノート管理 -->
+          <h3 class="faq-category">ノート管理</h3>
 
-          <div class="philosophy-item">
-            <h3>Q: ストレージ容量はPCの何に依存しますか？</h3>
-            <p><strong>A: 主にディスク空き容量に依存します。</strong></p>
-            <table style="width: 100%; margin-top: var(--spacing-sm); border-collapse: collapse;">
-              <thead>
-                <tr style="border-bottom: 1px solid var(--border-primary);">
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">使用パターン</th>
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">ディスク使用量</th>
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">RAM使用量</th>
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">起動速度</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="border-bottom: 1px solid var(--border-subtle);">
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">通常使用（20-50ノート）</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">数MB</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">数MB</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">一瞬</td>
-                </tr>
-                <tr>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">想定外の使用（1,000ノート超）</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">-</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">-</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">遅くなる可能性あり → Archive/Exportで片付けを推奨</td>
-                </tr>
-              </tbody>
-            </table>
-            <p style="margin-top: var(--spacing-sm);"><em>💡 快適に使うために: 大量のノートを保存するのではなく、「咀嚼 → 片付け → 卒業」のサイクルを回しましょう。</em></p>
-          </div>
+          <details class="faq-item">
+            <summary>ノートを削除するには？</summary>
+            <div class="faq-answer">
+              <p><strong>安全のため、2段階の削除プロセスになっています。</strong></p>
+              <ol>
+                <li><strong>ステップ1: ゴミ箱へ移動</strong> - 削除ボタンでゴミ箱に移動（復元可能）</li>
+                <li><strong>ステップ2: 完全削除</strong> - ゴミ箱内で削除すると完全に消去</li>
+              </ol>
+              <p><strong>Git同期時:</strong> 同期済みノートはゴミ箱に移動後、Syncを実行して初めてリモートから削除されます。ゴミ箱のバッジ（Synced/Pending/Local）で同期状態を確認できます。</p>
+              <p><em>※ Systemフォルダのガイド（システムノート）は保護されており、削除・編集できません。</em></p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>ノートのタイトルを変更するには？</summary>
+            <div class="faq-answer">
+              <p><strong>タイトルはノートの内容から自動的に抽出されます。</strong></p>
+              <ul>
+                <li>最初の <code># 見出し</code> または <code>## 見出し</code> がタイトルになります</li>
+                <li>見出しがない場合は、最初の行がタイトルになります（最大50文字）</li>
+              </ul>
+              <p><strong>Git同期時:</strong> リモートのファイル名はタイトルと異なる場合があります。<code>:</code> や <code>/</code> などの特殊文字は <code>_</code> に変換されます。</p>
+              <p><em>最初の見出しを編集するだけでタイトルが変わります。</em></p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>ノートが増えすぎて重くなることはありますか？</summary>
+            <div class="faq-answer">
+              <p><strong>Mark It Downは「作業場」として設計されており、大量保存には向いていません。</strong></p>
+              <p><strong>推奨される使い方:</strong></p>
+              <ul>
+                <li>作業中のノート20件程度を目安に</li>
+                <li>完成したノートは <strong>Archive → Export → 削除</strong></li>
+                <li>サイドバー下部のストレージゲージで使用量を確認（80%超で警告）</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- 画像 & メディア -->
+          <h3 class="faq-category">画像 & メディア</h3>
+
+          <details class="faq-item">
+            <summary>画像を貼り付けられますか？</summary>
+            <div class="faq-answer">
+              <p><strong>画像ファイルを添付として保存することはできません。</strong> Mark It Downはテキストベースのマークダウンエディタです。</p>
+              <ul>
+                <li><strong>画像URL</strong>: <code>![](https://...)</code> のようなリンクは使用可能</li>
+                <li><strong>Webからの貼り付け</strong>: 画像URLがMarkdownリンクとして挿入される場合があります</li>
+                <li><strong>スクリーンショット</strong>: 一部のアプリでは <code>data:image/...</code> 形式でテキストとして挿入されます</li>
+              </ul>
+              <p><strong>画像が「貼れた」場合:</strong> ノートのソースを確認すると、外部URLかbase64のdata URLがテキストとして埋め込まれています。data URLはオフラインでも表示されますが、ノートが非常に重くなります。</p>
+              <p><em>画像を使いたい場合は、外部のホスティングサービスにアップロードしてリンクを貼り付けてください。</em></p>
+            </div>
+          </details>
+
+          <!-- Archive & 大きいファイル -->
+          <h3 class="faq-category">Archive & 大きいファイル</h3>
+
+          <details class="faq-item">
+            <summary>Archiveとは何ですか？どう使いますか？</summary>
+            <div class="faq-answer">
+              <p><strong>Archiveは完成したノートや参照用ノートのための読み取り専用フォルダです。</strong></p>
+              <ul>
+                <li>Archive内のノートは<strong>軽量ビューア</strong>で開きます（読み込みが高速）</li>
+                <li>編集したい場合は、<strong>Unlock</strong>をクリックしてInboxに戻せます</li>
+                <li>参照したいが誤って編集したくないノートの保管に最適です</li>
+                <li><strong>一括エクスポート</strong>: Archive内でピン留め（☆）したノートは、Export →「Pinned as ZIP」でまとめてダウンロードできます</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>大きなファイル（100KB以上）はどうなりますか？</summary>
+            <div class="faq-answer">
+              <p><strong>最適化された設定で読み込まれます。</strong></p>
+              <ul>
+                <li><strong>100KB以上</strong>: 一部機能（シンタックスハイライト、LaTeX）が無効化され、読み込みが速くなります</li>
+                <li><strong>300KB以上</strong>: Archiveで読み取り専用として開くオプションが表示されます</li>
+              </ul>
+              <p><em>Mark It Downは編集用のツールです。大きな生データはエクスポートして別の場所に保存することをおすすめします。</em></p>
+            </div>
+          </details>
+
+          <!-- Git & ツール -->
+          <h3 class="faq-category">Git & ツール</h3>
+
+          <details class="faq-item">
+            <summary>Git同期を設定するには？</summary>
+            <div class="faq-answer">
+              <p><strong>GitHubまたはGitLabに数ステップで接続できます。</strong></p>
+              <ol>
+                <li><strong>Git Settings</strong>を開く（コマンドパレット → 「Git Settings」）</li>
+                <li>プロバイダーを選択（GitHub または GitLab）</li>
+                <li>トークン、リポジトリURL、ブランチを入力</li>
+                <li><strong>Test Connection</strong>で確認、<strong>Save</strong>で保存</li>
+              </ol>
+              <p><em>トークンは暗号化されて安全に保存されます。</em></p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>コマンドパレットで何ができますか？</summary>
+            <div class="faq-answer">
+              <p><strong><kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> でほとんどの機能に素早くアクセスできます。</strong></p>
+              <ul>
+                <li><strong>ノート</strong>: 新規作成、検索、インポート</li>
+                <li><strong>編集</strong>: 元に戻す/やり直し、検索と置換、テーブル整形</li>
+                <li><strong>移動</strong>: ピン留め、Archive/Template/Trashへ移動</li>
+                <li><strong>Git</strong>: 同期、Pull、Push、設定</li>
+                <li><strong>表示</strong>: サイドバー、目次、フォーカスモード、テーマ切替</li>
+                <li><strong>挿入</strong>: Mermaid図、コードブロック、数式</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </section>
 

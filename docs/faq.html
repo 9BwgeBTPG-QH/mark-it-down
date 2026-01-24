@@ -64,85 +64,157 @@
       <section aria-labelledby="faq-heading">
         <h2 id="faq-heading" class="visually-hidden">FAQ</h2>
 
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>Q: Will my data be deleted if I clear Chrome's cache?</h3>
-            <p><strong>A: No, your data will not be deleted.</strong> Notes are stored in Chrome extension storage (<code>chrome.storage.local</code>), which is separate from browser cache.</p>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li><strong>Browser cache cleared</strong> → Data is preserved ✅</li>
-              <li><strong>Extension uninstalled</strong> → Data is deleted ⚠️</li>
-            </ul>
-          </div>
+        <div class="faq-list">
+          <!-- Data & Storage -->
+          <h3 class="faq-category">Data & Storage</h3>
 
-          <div class="philosophy-item">
-            <h3>Q: Will the app slow down if I have too many notes?</h3>
-            <p><strong>A: Mark It Down is designed as a "workspace," not a storage system.</strong> It's not intended for storing large amounts of data.</p>
-            <p><strong>Recommended usage:</strong></p>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li>Keep around 20 active notes</li>
-              <li>Export completed notes: <strong>Archive → Export → Delete</strong></li>
-              <li>Check storage usage in the sidebar (warning at 80%+)</li>
-              <li>Use Git sync for external backup</li>
-            </ul>
-            <p style="margin-top: var(--spacing-sm);"><em>💡 Workspace cleanup: Mark It Down is a temporary workspace. Regularly "graduate" your notes to keep it running smoothly.</em></p>
-          </div>
+          <details class="faq-item">
+            <summary>Will my data be deleted if I clear Chrome's cache?</summary>
+            <div class="faq-answer">
+              <p><strong>No.</strong> Notes are stored in a dedicated extension storage area, separate from browser cache.</p>
+              <ul>
+                <li><strong>Browser cache cleared</strong> → Data is preserved ✅</li>
+                <li><strong>Extension uninstalled</strong> → Data is deleted ⚠️</li>
+              </ul>
+              <p><em>Tip: Use Git sync for external backup before uninstalling.</em></p>
+            </div>
+          </details>
 
-          <div class="philosophy-item">
-            <h3>Q: Why is the app so fast to start?</h3>
-            <p><strong>A: Lazy loading and code splitting reduce initial load by 86%.</strong></p>
-            <p>Mark It Down optimizes startup speed with the following strategies:</p>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li><strong>Mermaid lazy loading</strong> - The 2.3MB library doesn't load at all for notes without Mermaid diagrams</li>
-              <li><strong>Code splitting</strong> - Split into 7 chunks for parallel loading and caching</li>
-              <li><strong>Chrome extension storage</strong> - No file system access needed, instant data retrieval</li>
-            </ul>
-          </div>
+          <details class="faq-item">
+            <summary>Can I use Mark It Down offline?</summary>
+            <div class="faq-answer">
+              <p><strong>Yes, almost everything works offline.</strong></p>
+              <p><strong>Works offline:</strong></p>
+              <ul>
+                <li>Creating, editing, and deleting notes</li>
+                <li>Search, Archive, Import/Export</li>
+                <li>New Tab and Side Panel sync (same device)</li>
+              </ul>
+              <p><strong>Requires internet:</strong></p>
+              <ul>
+                <li>Git sync (Push, Pull, Fetch)</li>
+              </ul>
+            </div>
+          </details>
 
-          <div class="philosophy-item">
-            <h3>Q: Will the editor slow down with large files (100KB+)?</h3>
-            <p><strong>A: Optimizations ensure smooth editing even for large documents.</strong></p>
-            <p>Mark It Down implements the following optimizations for large documents (100KB+, 150+ code blocks):</p>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li><strong>CodeMirror disabled</strong> - Automatically disabled for 100KB+ files (57% faster loading: 7s → 3s)</li>
-              <li><strong>Loading skeleton</strong> - Spinner + skeleton UI during initial load for 100KB+ documents</li>
-              <li><strong>CSS content-visibility</strong> - Skips rendering content outside the viewport</li>
-              <li><strong>CSS containment</strong> - Limits reflow/repaint range to the editor</li>
-              <li><strong>Decoration optimization</strong> - Recalculates only changed ranges (incremental updates)</li>
-              <li><strong>Auto spellcheck disabled</strong> - Reduces CPU load for 100KB+ documents</li>
-            </ul>
-            <p style="margin-top: var(--spacing-sm);"><strong>Note:</strong> For 100KB+ documents, code block syntax highlighting and LaTeX equations are disabled. This is an intentional trade-off prioritizing loading speed.</p>
-            <p><em>💡 Design philosophy: Mark It Down is a "place to digest." It's not for storing large raw data, but for organizing and editing before "graduating" your notes.</em></p>
-          </div>
+          <!-- Notes Management -->
+          <h3 class="faq-category">Notes Management</h3>
 
-          <div class="philosophy-item">
-            <h3>Q: What does storage capacity depend on?</h3>
-            <p><strong>A: Primarily depends on available disk space.</strong></p>
-            <table style="width: 100%; margin-top: var(--spacing-sm); border-collapse: collapse;">
-              <thead>
-                <tr style="border-bottom: 1px solid var(--border-primary);">
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">Usage Pattern</th>
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">Disk Usage</th>
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">RAM Usage</th>
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">Startup Speed</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="border-bottom: 1px solid var(--border-subtle);">
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Normal use (20-50 notes)</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Several MB</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Several MB</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Instant</td>
-                </tr>
-                <tr>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Unintended use (1,000+ notes)</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">-</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">-</td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">May slow down → Archive/Export recommended</td>
-                </tr>
-              </tbody>
-            </table>
-            <p style="margin-top: var(--spacing-sm);"><em>💡 To use comfortably: Instead of storing many notes, maintain a cycle of "digest → organize → graduate."</em></p>
-          </div>
+          <details class="faq-item">
+            <summary>How do I delete notes?</summary>
+            <div class="faq-answer">
+              <p><strong>Deletion is a 2-step process for safety.</strong></p>
+              <ol>
+                <li><strong>Step 1: Move to Trash</strong> - Delete button moves notes to Trash (can be restored)</li>
+                <li><strong>Step 2: Permanent delete</strong> - Delete from Trash to remove permanently</li>
+              </ol>
+              <p><strong>With Git sync:</strong> Synced notes require a Sync after moving to Trash to delete from remote. The Trash badge (Synced/Pending/Local) shows the sync status.</p>
+              <p><em>Note: System notes (guides in the System folder) are protected and cannot be deleted or edited.</em></p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do I rename a note?</summary>
+            <div class="faq-answer">
+              <p><strong>The title is automatically extracted from your note content.</strong></p>
+              <ul>
+                <li>First <code># Heading</code> or <code>## Heading</code> becomes the title</li>
+                <li>If no heading, the first line is used (max 50 characters)</li>
+              </ul>
+              <p><strong>With Git sync:</strong> Filenames on remote may differ from titles. Special characters like <code>:</code> or <code>/</code> are converted to <code>_</code> for safe file paths.</p>
+              <p><em>Simply edit the first heading to rename your note.</em></p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Will the app slow down if I have too many notes?</summary>
+            <div class="faq-answer">
+              <p><strong>Mark It Down is designed as a workspace, not a storage system.</strong></p>
+              <p><strong>Recommended usage:</strong></p>
+              <ul>
+                <li>Keep around 20 active notes</li>
+                <li>Export completed notes: <strong>Archive → Export → Delete</strong></li>
+                <li>Check storage usage in the sidebar (warning at 80%+)</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Images & Media -->
+          <h3 class="faq-category">Images & Media</h3>
+
+          <details class="faq-item">
+            <summary>Can I paste images into notes?</summary>
+            <div class="faq-answer">
+              <p><strong>Image files cannot be saved as attachments.</strong> Mark It Down is a text-based Markdown editor.</p>
+              <ul>
+                <li><strong>Image URLs</strong>: You can include image links like <code>![](https://...)</code></li>
+                <li><strong>Pasting from web</strong>: May insert the image URL as a Markdown link</li>
+                <li><strong>Screenshot paste</strong>: Some apps include image data as <code>data:image/...</code> which appears in your note as text</li>
+              </ul>
+              <p><strong>If an image "worked":</strong> Check your note source - it's either an external URL or a base64 data URL embedded as text. Data URLs work offline but make notes very large.</p>
+              <p><em>For images, use external hosting and link to them in your notes.</em></p>
+            </div>
+          </details>
+
+          <!-- Archive & Large Files -->
+          <h3 class="faq-category">Archive & Large Files</h3>
+
+          <details class="faq-item">
+            <summary>What is Archive and how does it work?</summary>
+            <div class="faq-answer">
+              <p><strong>Archive is a read-only folder for completed or reference notes.</strong></p>
+              <ul>
+                <li>Notes in Archive open in a <strong>lightweight viewer</strong> (faster loading)</li>
+                <li>To edit an archived note, click <strong>Unlock</strong> to move it back to Inbox</li>
+                <li>Great for storing completed notes you want to reference but not accidentally edit</li>
+                <li><strong>Bulk export</strong>: Pin (☆) notes in Archive, then use Export → "Pinned as ZIP" to download them together</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What happens with large files (100KB+)?</summary>
+            <div class="faq-answer">
+              <p><strong>Large files are handled with optimized settings.</strong></p>
+              <ul>
+                <li><strong>100KB+</strong>: Some features (syntax highlighting, LaTeX) are disabled for faster loading</li>
+                <li><strong>300KB+</strong>: A dialog appears with options to open as read-only in Archive</li>
+              </ul>
+              <p><em>Mark It Down is designed for editing, not storing large raw files. Consider exporting very large files.</em></p>
+            </div>
+          </details>
+
+          <!-- Git & Tools -->
+          <h3 class="faq-category">Git & Tools</h3>
+
+          <details class="faq-item">
+            <summary>How do I set up Git sync?</summary>
+            <div class="faq-answer">
+              <p><strong>Connect to GitHub or GitLab in a few steps.</strong></p>
+              <ol>
+                <li>Open <strong>Git Settings</strong> (Command Palette → "Git Settings")</li>
+                <li>Select provider (GitHub or GitLab)</li>
+                <li>Enter your token, repository URL, and branch</li>
+                <li>Click <strong>Test Connection</strong>, then <strong>Save</strong></li>
+              </ol>
+              <p><em>Your token is encrypted and stored securely.</em></p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What can I do with the Command Palette?</summary>
+            <div class="faq-answer">
+              <p><strong>Quick access to most features via <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.</strong></p>
+              <ul>
+                <li><strong>Notes</strong>: New note, search, import</li>
+                <li><strong>Edit</strong>: Undo/Redo, Find & Replace, format tables</li>
+                <li><strong>Move</strong>: Pin, move to Archive/Template/Trash</li>
+                <li><strong>Git</strong>: Sync, Pull, Push, settings</li>
+                <li><strong>View</strong>: Toggle sidebar, TOC, focus mode, themes</li>
+                <li><strong>Insert</strong>: Mermaid diagrams, code blocks, math equations</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </section>
 
