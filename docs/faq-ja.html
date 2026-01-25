@@ -64,25 +64,35 @@
       <section aria-labelledby="faq-heading">
         <h2 id="faq-heading" class="visually-hidden">よくある質問</h2>
 
-        <div class="faq-list">
+        <div class="changelog-accordion">
           <!-- データ & ストレージ -->
-          <h3 class="faq-category">データ & ストレージ</h3>
+          <div class="faq-category-header">💾 データ & ストレージ</div>
 
-          <details class="faq-item">
-            <summary>Chromeのキャッシュを削除してもデータは消えませんか？</summary>
-            <div class="faq-answer">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Chromeのキャッシュを削除してもデータは消えませんか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
               <p><strong>消えません。</strong> ノートは拡張機能専用のストレージに保存されており、ブラウザのキャッシュとは別の場所です。</p>
               <ul>
-                <li><strong>ブラウザキャッシュ削除</strong> → データは保持 ✅</li>
+                <li><strong>ブラウザキャッシュ削除</strong> → データは保持 ✓</li>
                 <li><strong>拡張機能アンインストール</strong> → データは消去 ⚠️</li>
               </ul>
               <p><em>ヒント: アンインストール前にGit同期で外部バックアップを取っておくと安心です。</em></p>
             </div>
           </details>
 
-          <details class="faq-item">
-            <summary>オフラインでも使えますか？</summary>
-            <div class="faq-answer">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">オフラインでも使えますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
               <p><strong>はい、ほとんどの機能がオフラインで動作します。</strong></p>
               <p><strong>オフラインで使える機能:</strong></p>
               <ul>
@@ -98,24 +108,34 @@
           </details>
 
           <!-- ノート管理 -->
-          <h3 class="faq-category">ノート管理</h3>
+          <div class="faq-category-header">📝 ノート管理</div>
 
-          <details class="faq-item">
-            <summary>ノートを削除するには？</summary>
-            <div class="faq-answer">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">ノートを削除するには？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
               <p><strong>安全のため、2段階の削除プロセスになっています。</strong></p>
               <ol>
-                <li><strong>ステップ1: ゴミ箱へ移動</strong> - 削除ボタンでゴミ箱に移動（復元可能）</li>
-                <li><strong>ステップ2: 完全削除</strong> - ゴミ箱内で削除すると完全に消去</li>
+                <li><strong>ステップ1: ゴミ箱へ移動</strong> — 削除ボタンでゴミ箱に移動（復元可能）</li>
+                <li><strong>ステップ2: 完全削除</strong> — ゴミ箱内で削除すると完全に消去</li>
               </ol>
               <p><strong>Git同期時:</strong> 同期済みノートはゴミ箱に移動後、Syncを実行して初めてリモートから削除されます。ゴミ箱のバッジ（Synced/Pending/Local）で同期状態を確認できます。</p>
               <p><em>※ Systemフォルダのガイド（システムノート）は保護されており、削除・編集できません。</em></p>
             </div>
           </details>
 
-          <details class="faq-item">
-            <summary>ノートのタイトルを変更するには？</summary>
-            <div class="faq-answer">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">ノートのタイトルを変更するには？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
               <p><strong>タイトルはノートの内容から自動的に抽出されます。</strong></p>
               <ul>
                 <li>最初の <code># 見出し</code> または <code>## 見出し</code> がタイトルになります</li>
@@ -126,9 +146,14 @@
             </div>
           </details>
 
-          <details class="faq-item">
-            <summary>ノートが増えすぎて重くなることはありますか？</summary>
-            <div class="faq-answer">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">ノートが増えすぎて重くなることはありますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
               <p><strong>Mark It Downは「作業場」として設計されており、大量保存には向いていません。</strong></p>
               <p><strong>推奨される使い方:</strong></p>
               <ul>
@@ -140,11 +165,16 @@
           </details>
 
           <!-- 画像 & メディア -->
-          <h3 class="faq-category">画像 & メディア</h3>
+          <div class="faq-category-header">🖼️ 画像 & メディア</div>
 
-          <details class="faq-item">
-            <summary>画像を貼り付けられますか？</summary>
-            <div class="faq-answer">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">画像を貼り付けられますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
               <p><strong>画像ファイルを添付として保存することはできません。</strong> Mark It Downはテキストベースのマークダウンエディタです。</p>
               <ul>
                 <li><strong>画像URL</strong>: <code>![](https://...)</code> のようなリンクは使用可能</li>
@@ -157,24 +187,34 @@
           </details>
 
           <!-- Archive & 大きいファイル -->
-          <h3 class="faq-category">Archive & 大きいファイル</h3>
+          <div class="faq-category-header">📦 Archive & 大きいファイル</div>
 
-          <details class="faq-item">
-            <summary>Archiveとは何ですか？どう使いますか？</summary>
-            <div class="faq-answer">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Archiveとは何ですか？どう使いますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
               <p><strong>Archiveは完成したノートや参照用ノートのための読み取り専用フォルダです。</strong></p>
               <ul>
                 <li>Archive内のノートは<strong>軽量ビューア</strong>で開きます（読み込みが高速）</li>
                 <li>編集したい場合は、<strong>Unlock</strong>をクリックしてInboxに戻せます</li>
                 <li>参照したいが誤って編集したくないノートの保管に最適です</li>
-                <li><strong>一括エクスポート</strong>: Archive内でピン留め（☆）したノートは、Export →「Pinned as ZIP」でまとめてダウンロードできます</li>
+                <li><strong>一括エクスポート</strong>: Archive内でピン留め（★）したノートは、Export →「Pinned as ZIP」でまとめてダウンロードできます</li>
               </ul>
             </div>
           </details>
 
-          <details class="faq-item">
-            <summary>大きなファイル（100KB以上）はどうなりますか？</summary>
-            <div class="faq-answer">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">大きなファイル（100KB以上）はどうなりますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
               <p><strong>最適化された設定で読み込まれます。</strong></p>
               <ul>
                 <li><strong>100KB以上</strong>: 一部機能（シンタックスハイライト、LaTeX）が無効化され、読み込みが速くなります</li>
@@ -185,11 +225,16 @@
           </details>
 
           <!-- Git & ツール -->
-          <h3 class="faq-category">Git & ツール</h3>
+          <div class="faq-category-header">⚙️ Git & ツール</div>
 
-          <details class="faq-item">
-            <summary>Git同期を設定するには？</summary>
-            <div class="faq-answer">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Git同期を設定するには？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
               <p><strong>GitHubまたはGitLabに数ステップで接続できます。</strong></p>
               <ol>
                 <li><strong>Git Settings</strong>を開く（コマンドパレット → 「Git Settings」）</li>
@@ -201,9 +246,14 @@
             </div>
           </details>
 
-          <details class="faq-item">
-            <summary>コマンドパレットで何ができますか？</summary>
-            <div class="faq-answer">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">コマンドパレットで何ができますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
               <p><strong><kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> でほとんどの機能に素早くアクセスできます。</strong></p>
               <ul>
                 <li><strong>ノート</strong>: 新規作成、検索、インポート</li>

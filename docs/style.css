@@ -878,6 +878,22 @@ a:hover {
   text-overflow: ellipsis;
 }
 
+/* FAQ category header */
+.faq-category-header {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  padding: var(--spacing-md) 0 var(--spacing-xs) 0;
+  margin-top: var(--spacing-md);
+}
+
+.faq-category-header:first-child {
+  margin-top: 0;
+}
+
 /* Status badges */
 .accordion-status {
   font-family: var(--font-sans);
