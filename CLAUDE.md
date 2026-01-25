@@ -42,10 +42,11 @@ Every page has English (`*.html`) and Japanese (`*-ja.html`). **Always update bo
 When releasing a new version:
 1. `index.html` / `index-ja.html`: Update "Coming in vX.X.X" section
 2. `changelog.html` / `changelog-ja.html`: Add new version (Under Review), change previous to "Released"
-3. `features.html` / `features-ja.html`: Remove "Under Review" badges from released features
 
-### CSS-Only Tabs
-features.html uses CSS radio inputs for tabs. No JavaScript required.
+### Design System
+- **Glassmorphism Accordion**: All content pages (Features, Changelog, FAQ, Troubleshooting) use CSS-only `<details>` accordions. No JavaScript required.
+- **Color Palette**: Notion-style warm palette
+- **Icons**: Emoji + SVG (e.g., Git official logo)
 
 ---
 
