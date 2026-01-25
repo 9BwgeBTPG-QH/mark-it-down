@@ -60,102 +60,111 @@
         </p>
       </section>
 
-      <!-- Storage Repair -->
-      <section aria-labelledby="storage-repair-heading">
-        <h2 id="storage-repair-heading">Storage Repair</h2>
-        <p>If duplicate notes or data inconsistencies occur, you can repair storage from the settings.</p>
+      <!-- Troubleshooting Content -->
+      <div class="changelog-accordion">
 
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>How to Repair Storage</h3>
-            <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li>Open <strong>⚙ Settings</strong> → <strong>Troubleshooting</strong> tab → <strong>Repair Storage</strong></li>
-              <li>Click the <strong>"Scan"</strong> button</li>
-              <li>If issues are found, select notes to delete and repair</li>
-            </ol>
+        <!-- Storage Repair -->
+        <details class="accordion-item" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">🔧 Storage Repair — Fix duplicate notes and data issues</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>If duplicate notes or data inconsistencies occur, you can repair storage from the settings.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">How to Repair</h3>
+              <ol>
+                <li>Open <strong>⚙ Settings</strong> → <strong>Troubleshooting</strong> tab → <strong>Repair Storage</strong></li>
+                <li>Click the <strong>"Scan"</strong> button</li>
+                <li>If issues are found, select notes to delete and repair</li>
+              </ol>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">What Gets Detected</h3>
+              <ul class="changelog-features">
+                <li><strong>Duplicate notes</strong> <span>Notes with the same title exist in multiple folders</span></li>
+                <li><strong>Ghost notes</strong> <span>Notes in storage but not visible in UI (rare, caused by interrupted Git sync)</span></li>
+              </ul>
+            </div>
           </div>
+        </details>
 
-          <div class="philosophy-item">
-            <h3>What Gets Detected</h3>
-            <table style="width: 100%; margin-top: var(--spacing-sm); border-collapse: collapse;">
-              <thead>
-                <tr style="border-bottom: 1px solid var(--border-primary);">
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">Item</th>
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="border-bottom: 1px solid var(--border-subtle);">
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);"><strong>Duplicate notes</strong></td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">Notes with the same title exist in multiple folders</td>
-                </tr>
-              </tbody>
-            </table>
-            <p style="margin-top: var(--spacing-sm);"><em>💡 Rarely, ghost notes (notes that exist in storage but don't appear in the UI) may be created if Git sync is interrupted. This feature can detect and delete them.</em></p>
+        <!-- Storage Analysis -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">📊 Storage Analysis — Check usage and organize notes</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>Check storage usage and organize old notes in bulk.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">How to Analyze</h3>
+              <ol>
+                <li>Open <strong>⚙ Settings</strong> → <strong>Troubleshooting</strong> tab → <strong>Storage Analysis</strong></li>
+                <li>Click the <strong>"Analyze"</strong> button</li>
+              </ol>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">What's Displayed</h3>
+              <ul class="changelog-features">
+                <li><strong>Notes by folder</strong> <span>Number of notes and percentage per folder</span></li>
+                <li><strong>Top 10 largest notes</strong> <span>With checkboxes for bulk archive</span></li>
+                <li><strong>Stale notes</strong> <span>Notes not updated for 90+ days</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bulk Archive</h3>
+              <p>Select notes and move them to Archive folder in bulk with pinning. Useful for regular backups and storage cleanup.</p>
+              <p><em>System Notes are excluded from analysis (auto-generated guide files).</em></p>
+            </div>
           </div>
-        </div>
-      </section>
+        </details>
 
-      <!-- Storage Analysis -->
-      <section aria-labelledby="storage-analysis-heading">
-        <h2 id="storage-analysis-heading">Storage Analysis</h2>
-        <p>Check storage usage and organize old notes in bulk.</p>
-
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>How to Analyze Storage</h3>
-            <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li>Open <strong>⚙ Settings</strong> → <strong>Troubleshooting</strong> tab → <strong>Storage Analysis</strong></li>
-              <li>Click the <strong>"Analyze"</strong> button</li>
-            </ol>
-          </div>
-
-          <div class="philosophy-item">
-            <h3>What's Displayed</h3>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li><strong>Notes by folder</strong> - Number of notes and percentage per folder</li>
-              <li><strong>Top 10 largest notes</strong> - With checkboxes for bulk archive</li>
-              <li><strong>Stale notes</strong> - Notes not updated for 90+ days</li>
+        <!-- Duplicate Note Detection -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">📋 Duplicate Detection — Side-by-side comparison</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>If notes with the same title are detected, a warning banner is displayed.</p>
+            <ul class="changelog-features">
+              <li><strong>Warning banner</strong> <span>Appears when duplicate notes are detected</span></li>
+              <li><strong>Side-by-side comparison</strong> <span>Click to open comparison modal</span></li>
+              <li><strong>Choose to keep</strong> <span>Select which note to keep, delete the other</span></li>
             </ul>
           </div>
+        </details>
 
-          <div class="philosophy-item">
-            <h3>Bulk Archive</h3>
-            <p>Select notes and move them to Archive folder in bulk with pinning. Useful for regular backups and storage cleanup.</p>
-            <p style="margin-top: var(--spacing-sm);"><em>💡 System Notes are excluded from analysis (auto-generated guide files).</em></p>
+        <!-- Important: Before Uninstalling -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">⚠️ Before Uninstalling — Back up your data first!</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p><strong>Uninstalling the extension will delete all saved notes.</strong></p>
+            <p>Mark It Down data is stored in <code>chrome.storage.local</code>, and uninstalling the extension will delete the data.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Backup Methods</h3>
+              <ol>
+                <li><strong>Export all notes as ZIP</strong> — Settings (⚙) → "Export all notes as ZIP"</li>
+                <li><strong>Push to GitHub</strong> — Git ▼ → Sync (or Git Settings → Push)</li>
+              </ol>
+              <p><em>We recommend regular exports to avoid losing important notes.</em></p>
+            </div>
           </div>
-        </div>
-      </section>
+        </details>
 
-      <!-- Duplicate Note Detection -->
-      <section aria-labelledby="duplicate-notes-heading">
-        <h2 id="duplicate-notes-heading">Duplicate Note Detection</h2>
-        <p>If notes with the same title are detected, a warning banner is displayed with a side-by-side comparison to choose which one to keep.</p>
-
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>What Happens</h3>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li>A warning banner appears when duplicate notes are detected</li>
-              <li>Click to open a side-by-side comparison modal</li>
-              <li>Choose which note to keep</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Important: Before Uninstalling -->
-      <section aria-labelledby="uninstall-warning-heading">
-        <h2 id="uninstall-warning-heading">⚠️ Important: Before Uninstalling</h2>
-        <p><strong>Uninstalling the extension will delete all saved notes.</strong></p>
-        <p>Mark It Down data is stored in <code>chrome.storage.local</code>, and uninstalling the extension will delete the data.</p>
-        <p><strong>Before uninstalling, be sure to back up using one of the following methods:</strong></p>
-        <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-          <li><strong>Export all notes as ZIP</strong>: Settings (⚙) → "Export all notes as ZIP"</li>
-          <li><strong>Push to GitHub</strong>: Git ▼ → Sync (or Git Settings → Push)</li>
-        </ol>
-        <p style="margin-top: var(--spacing-sm);"><em>💡 We recommend regular exports to avoid losing important notes.</em></p>
-      </section>
+      </div>
 
       <!-- CTA Section -->
       <section class="cta-section" aria-labelledby="cta-heading">

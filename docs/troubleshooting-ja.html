@@ -60,102 +60,111 @@
         </p>
       </section>
 
-      <!-- Storage Repair -->
-      <section aria-labelledby="storage-repair-heading">
-        <h2 id="storage-repair-heading">ストレージ修復</h2>
-        <p>重複ノートやデータの不整合が発生した場合、設定画面から修復できます。</p>
+      <!-- Troubleshooting Content -->
+      <div class="changelog-accordion">
 
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>修復方法</h3>
-            <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li><strong>⚙ 設定</strong> → <strong>Troubleshooting</strong> タブ → <strong>Repair Storage</strong></li>
-              <li><strong>「スキャン」</strong>ボタンをクリック</li>
-              <li>問題が見つかった場合、削除するノートを選択して修復</li>
-            </ol>
+        <!-- Storage Repair -->
+        <details class="accordion-item" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">🔧 ストレージ修復 — 重複ノートやデータ問題を修正</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>重複ノートやデータの不整合が発生した場合、設定画面から修復できます。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">修復方法</h3>
+              <ol>
+                <li><strong>⚙ 設定</strong> → <strong>Troubleshooting</strong> タブ → <strong>Repair Storage</strong></li>
+                <li><strong>「スキャン」</strong>ボタンをクリック</li>
+                <li>問題が見つかった場合、削除するノートを選択して修復</li>
+              </ol>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">検出項目</h3>
+              <ul class="changelog-features">
+                <li><strong>重複ノート</strong> <span>同じタイトルのノートが複数フォルダに存在</span></li>
+                <li><strong>ゴーストノート</strong> <span>UIに表示されないがストレージに存在（Git同期中断時に稀に発生）</span></li>
+              </ul>
+            </div>
           </div>
+        </details>
 
-          <div class="philosophy-item">
-            <h3>検出項目</h3>
-            <table style="width: 100%; margin-top: var(--spacing-sm); border-collapse: collapse;">
-              <thead>
-                <tr style="border-bottom: 1px solid var(--border-primary);">
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">検出項目</th>
-                  <th style="text-align: left; padding: var(--spacing-xs) var(--spacing-sm);">説明</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="border-bottom: 1px solid var(--border-subtle);">
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);"><strong>重複ノート</strong></td>
-                  <td style="padding: var(--spacing-xs) var(--spacing-sm);">同じタイトルのノートが複数フォルダに存在</td>
-                </tr>
-              </tbody>
-            </table>
-            <p style="margin-top: var(--spacing-sm);"><em>💡 Git同期中に中断が発生した場合などに、稀にゴーストノート（UIに表示されないがストレージに存在するノート）が作成されることがあります。この機能で検出・削除できます。</em></p>
+        <!-- Storage Analysis -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">📊 ストレージ分析 — 使用状況の確認とノート整理</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>ストレージ使用状況を確認し、古いノートを一括整理できます。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">分析方法</h3>
+              <ol>
+                <li><strong>⚙ 設定</strong> → <strong>Troubleshooting</strong> タブ → <strong>Storage Analysis</strong></li>
+                <li><strong>「Analyze」</strong>ボタンをクリック</li>
+              </ol>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">表示内容</h3>
+              <ul class="changelog-features">
+                <li><strong>フォルダ別ノート数</strong> <span>フォルダ別のノート数と割合</span></li>
+                <li><strong>サイズの大きいTop 10ノート</strong> <span>チェックボックス付きで一括アーカイブ可能</span></li>
+                <li><strong>Stale Notes</strong> <span>90日以上更新されていない古いノート</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">一括アーカイブ</h3>
+              <p>選択したノートを一度にArchiveフォルダへ移動＆ピン留め。定期バックアップやストレージ整理に便利。</p>
+              <p><em>システムノートは分析対象外です（自動生成ガイドファイル）。</em></p>
+            </div>
           </div>
-        </div>
-      </section>
+        </details>
 
-      <!-- Storage Analysis -->
-      <section aria-labelledby="storage-analysis-heading">
-        <h2 id="storage-analysis-heading">ストレージ分析</h2>
-        <p>ストレージ使用状況を確認し、古いノートを一括整理できます。</p>
-
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>分析方法</h3>
-            <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li><strong>⚙ 設定</strong> → <strong>Troubleshooting</strong> タブ → <strong>Storage Analysis</strong></li>
-              <li><strong>「Analyze」</strong>ボタンをクリック</li>
-            </ol>
-          </div>
-
-          <div class="philosophy-item">
-            <h3>表示内容</h3>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li><strong>フォルダ別ノート数</strong> - フォルダ別のノート数と割合</li>
-              <li><strong>サイズの大きいTop 10ノート</strong> - チェックボックス付きで一括アーカイブ可能</li>
-              <li><strong>Stale Notes</strong> - 90日以上更新されていない古いノート</li>
+        <!-- Duplicate Note Detection -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">📋 重複ノート検出 — side-by-side比較</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>同じタイトルのノートが存在する場合、警告バナーが表示されます。</p>
+            <ul class="changelog-features">
+              <li><strong>警告バナー</strong> <span>重複ノート検出時に表示</span></li>
+              <li><strong>side-by-side比較</strong> <span>クリックで比較モーダルを開く</span></li>
+              <li><strong>保持選択</strong> <span>どちらのノートを残すか選択、もう一方を削除</span></li>
             </ul>
           </div>
+        </details>
 
-          <div class="philosophy-item">
-            <h3>一括アーカイブ</h3>
-            <p>選択したノートを一度にArchiveフォルダへ移動＆ピン留め。定期バックアップやストレージ整理に便利。</p>
-            <p style="margin-top: var(--spacing-sm);"><em>💡 System Notes除外: システムノートは分析対象外です（自動生成ガイドファイル）。</em></p>
+        <!-- Important: Before Uninstalling -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">⚠️ アンインストール前の注意 — データをバックアップ！</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p><strong>拡張機能を削除すると、保存されたすべてのノートが消失します。</strong></p>
+            <p>Mark It Downのデータは<code>chrome.storage.local</code>に保存されており、拡張機能をアンインストールするとデータも削除されます。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バックアップ方法</h3>
+              <ol>
+                <li><strong>全ノートをZIPエクスポート</strong> — 設定（⚙）→ 「全ノートをZIPでエクスポート」</li>
+                <li><strong>GitHubにプッシュ</strong> — Git ▼ → Sync（または Git Settings → Push）</li>
+              </ol>
+              <p><em>大切なノートを失わないよう、定期的なエクスポートをお勧めします。</em></p>
+            </div>
           </div>
-        </div>
-      </section>
+        </details>
 
-      <!-- Duplicate Note Detection -->
-      <section aria-labelledby="duplicate-notes-heading">
-        <h2 id="duplicate-notes-heading">重複ノート検出</h2>
-        <p>同じタイトルのノートが存在する場合、警告バナー表示＋side-by-side比較で保持選択。</p>
-
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <h3>動作</h3>
-            <ul style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-              <li>重複ノート検出時に警告バナーが表示</li>
-              <li>クリックでside-by-side比較モーダルを開く</li>
-              <li>保持するノートを選択</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Important: Before Uninstalling -->
-      <section aria-labelledby="uninstall-warning-heading">
-        <h2 id="uninstall-warning-heading">⚠️ 重要: アンインストール前の注意</h2>
-        <p><strong>拡張機能を削除すると、保存されたすべてのノートが消失します。</strong></p>
-        <p>Mark It Downのデータは<code>chrome.storage.local</code>に保存されており、拡張機能をアンインストールするとデータも削除されます。</p>
-        <p><strong>アンインストールする前に、必ず以下のいずれかでバックアップを取ってください：</strong></p>
-        <ol style="margin-top: var(--spacing-sm); padding-left: var(--spacing-lg);">
-          <li><strong>全ノートをZIPエクスポート</strong>: 設定（⚙）→ 「全ノートをZIPでエクスポート」</li>
-          <li><strong>GitHubにプッシュ</strong>: Git ▼ → Sync（または Git Settings → Push）</li>
-        </ol>
-        <p style="margin-top: var(--spacing-sm);"><em>💡 大切なノートを失わないよう、定期的なエクスポートをお勧めします。</em></p>
-      </section>
+      </div>
 
       <!-- CTA Section -->
       <section class="cta-section" aria-labelledby="cta-heading">
