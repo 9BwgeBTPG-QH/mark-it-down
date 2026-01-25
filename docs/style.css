@@ -859,6 +859,15 @@ a:hover {
   white-space: nowrap;
 }
 
+.accordion-version.accordion-icon-svg {
+  display: flex;
+  align-items: center;
+}
+
+.accordion-version.accordion-icon-svg svg {
+  vertical-align: middle;
+}
+
 /* Highlight text */
 .accordion-highlight {
   font-family: var(--font-sans);

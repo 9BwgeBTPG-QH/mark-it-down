@@ -60,379 +60,179 @@
         </p>
       </section>
 
-      <!-- Tab Navigation -->
-      <div class="tab-container" id="tabs" role="tablist" aria-label="Feature categories">
-        <!-- Radio inputs for CSS-only tabs -->
-        <input type="radio" name="feature-tabs" id="tab-modes" checked>
-        <input type="radio" name="feature-tabs" id="tab-markdown">
-        <input type="radio" name="feature-tabs" id="tab-view">
-        <input type="radio" name="feature-tabs" id="tab-notes">
-        <input type="radio" name="feature-tabs" id="tab-storage">
-        <input type="radio" name="feature-tabs" id="tab-git">
-        <input type="radio" name="feature-tabs" id="tab-dual">
-        <input type="radio" name="feature-tabs" id="tab-keys">
+      <!-- Features Accordion -->
+      <div class="changelog-accordion">
 
-        <!-- Tab navigation -->
-        <div class="tab-nav-wrapper">
-          <nav class="tab-nav" aria-label="Feature tabs">
-            <label for="tab-modes" role="tab">Modes</label>
-            <label for="tab-markdown" role="tab">Markdown</label>
-            <label for="tab-view" role="tab">View</label>
-            <label for="tab-notes" role="tab">Notes</label>
-            <label for="tab-storage" role="tab">Storage</label>
-            <label for="tab-git" role="tab">Git</label>
-            <label for="tab-dual" role="tab">Dual</label>
-            <label for="tab-keys" role="tab">Keys</label>
-          </nav>
-        </div>
-
-        <!-- Tab content -->
-        <div class="tab-content">
-          <!-- Modes Panel -->
-          <div class="tab-panel tab-panel-modes" role="tabpanel">
-            <section aria-labelledby="modes-heading">
-              <h2 id="modes-heading">Two Modes</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>New Tab — Full screen</h3>
-                  <p>Dedicated workspace. Focus mode available (Alt+F).</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Side Panel — Beside the web</h3>
-                  <p>Write alongside AI. Write while you browse.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Sticky toolbar</h3>
-                  <p>Toolbar stays visible while scrolling in Side Panel. Always accessible for quick actions.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Browser fullscreen (F11)</h3>
-                  <p>Press F11 for native browser fullscreen. Works in all browsers.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Focus Mode</h3>
-                  <p>Alt+F to toggle. Typewriter scroll keeps cursor centered. Cursor-aware highlighting follows cursor position (0-80px: full highlight, 80-200px: intermediate, 200px+: dimmed). Better support for long documents (100KB+).</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Open both. No sync.</h3>
-                  <p>See the old version while editing the new one. Independent windows share the same data.</p>
-                </div>
-              </div>
-            </section>
+        <!-- Modes -->
+        <details class="accordion-item" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">◐</span>
+              <span class="accordion-highlight">Modes — New Tab & Side Panel</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>New Tab</strong> <span>Full screen workspace with Focus Mode (Alt+F)</span></li>
+              <li><strong>Side Panel</strong> <span>Write alongside AI or while browsing</span></li>
+              <li><strong>Focus Mode</strong> <span>Typewriter scroll, cursor-aware highlighting</span></li>
+              <li><strong>Sticky Toolbar</strong> <span>Always visible in Side Panel</span></li>
+              <li><strong>Dual Mode</strong> <span>Open both simultaneously, independent windows</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- Markdown Panel -->
-          <div class="tab-panel tab-panel-markdown" role="tabpanel">
-            <section aria-labelledby="markdown-heading">
-              <h2 id="markdown-heading">Markdown</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>GitHub Flavored Markdown</h3>
-                  <p>Tables, task lists, code blocks with syntax highlighting.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Mermaid diagrams</h3>
-                  <p>Flowcharts, sequence diagrams, pie charts. Click to zoom.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Math (LaTeX)</h3>
-                  <p>Inline <code>$E=mc^2$</code> and block <code>$$...$$</code> equations. Inline math toggle in Settings (default: OFF for general use). LaTeX standard syntax <code>\(...\)</code> and <code>\[...\]</code> always work. GitHub/GitLab-compatible <code>```math</code>, <code>```latex</code>, <code>```mathematica</code> code blocks with enlarge button.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Callouts</h3>
-                  <p>GitHub Alerts: NOTE, TIP, IMPORTANT, WARNING, CAUTION. Color-coded for light/dark themes.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Page links</h3>
-                  <p>Internal links: <code>[Text](#heading)</code> for page navigation. GitHub-compatible heading ID generation.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Images</h3>
-                  <p>External URLs only (<code>![alt](https://...)</code>). Direct embedding not supported due to storage limits.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Auto-Linking</h3>
-                  <p>URLs and emails in plain text become clickable links automatically. Excludes code blocks and existing Markdown links.</p>
-                </div>
-              </div>
-            </section>
+        <!-- Markdown -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">#</span>
+              <span class="accordion-highlight">Markdown — GFM + Mermaid + LaTeX</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>GitHub Flavored</strong> <span>Tables, task lists, syntax highlighting</span></li>
+              <li><strong>Mermaid</strong> <span>Flowcharts, sequence diagrams, click to zoom</span></li>
+              <li><strong>Math (LaTeX)</strong> <span>Inline <code>$...$</code>, block <code>$$...$$</code>, code blocks</span></li>
+              <li><strong>Callouts</strong> <span>NOTE, TIP, IMPORTANT, WARNING, CAUTION</span></li>
+              <li><strong>Auto-Linking</strong> <span>URLs and emails become clickable</span></li>
+              <li><strong>Page Links</strong> <span>Internal navigation with <code>[Text](#heading)</code></span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- View Panel -->
-          <div class="tab-panel tab-panel-view" role="tabpanel">
-            <section aria-labelledby="view-heading">
-              <h2 id="view-heading">View</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>Table of Contents</h3>
-                  <p>Auto-generated TOC. Highlights current section while scrolling. Click to jump. TOC navigation in conflict resolution. Collapsible headings (20+), search bar (15+), keyboard navigation. Improved scrolling: two-phase scroll for distant headings (instant jump >1000px, smooth finish last 500px) with position verification. Word Count Statistics: 📊 icon in TOC header shows character count, word count (CJK-aware), and reading time estimate on hover.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Dark/Light/System theme</h3>
-                  <p>Switch themes in Settings. System theme follows OS preference.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Smooth transitions</h3>
-                  <p>200ms fade effect when switching notes. Scrollable code blocks (max-height: 400px for 20+ lines).</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Auto Pair</h3>
-                  <p>Brackets, quotes, backticks auto-complete. Toggle in Settings.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Code block height limit</h3>
-                  <p>Long code blocks (20+ lines) are scrollable. Copy button copies full content from Markdown source.</p>
-                </div>
-              </div>
-            </section>
+        <!-- Notes -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">📁</span>
+              <span class="accordion-highlight">Notes — 5 folders, fixed structure</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>5 Folders</strong> <span>Inbox / Template / Archive / Trash / System</span></li>
+              <li><strong>Pin & Star</strong> <span>Pin important notes to top (Alt+P)</span></li>
+              <li><strong>Drag & Drop</strong> <span>Move notes between folders</span></li>
+              <li><strong>Search</strong> <span>Instant filter, folders auto-expand</span></li>
+              <li><strong>Duplicate Detection</strong> <span>Side-by-side comparison to choose</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- Notes Panel -->
-          <div class="tab-panel tab-panel-notes" role="tabpanel">
-            <section aria-labelledby="notes-heading">
-              <h2 id="notes-heading">Note Management</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>Five folders. Fixed.</h3>
-                  <p>Inbox (working) / Template (reusable) / Archive (locked) / Trash (pending) / System (read-only guides). Custom folders not supported by design.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Templates & Pin</h3>
-                  <p>Store templates in Template folder. Pin important notes to the top of any folder (★ button). Alt+P shortcut.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Drag & drop</h3>
-                  <p>Move notes between folders. Drop on folder area (folder name + note list).</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Sort & search</h3>
-                  <p>Name or date order (clock icon). Incremental search in sidebar (1 character = instant filter). Matching folders auto-expand.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Duplicate detection</h3>
-                  <p>Warning banner for same-title notes. Side-by-side comparison to choose which to keep.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Sidebar resize</h3>
-                  <p>Drag to adjust width. Double-click to reset. Slack-style interaction.</p>
-                </div>
-              </div>
-            </section>
+        <!-- View -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">👁</span>
+              <span class="accordion-highlight">View — TOC & themes</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>TOC</strong> <span>Auto-generated, highlights current section</span></li>
+              <li><strong>Word Count</strong> <span>Characters, words (CJK-aware), reading time</span></li>
+              <li><strong>Themes</strong> <span>Dark / Light / System</span></li>
+              <li><strong>Auto Pair</strong> <span>Brackets, quotes auto-complete</span></li>
+              <li><strong>Code Blocks</strong> <span>Scrollable (20+ lines), copy button</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- Storage Panel -->
-          <div class="tab-panel tab-panel-storage" role="tabpanel">
-            <section aria-labelledby="storage-heading">
-              <h2 id="storage-heading">Storage</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>Auto-save</h3>
-                  <p>No save button. Auto-saves after 0.5 seconds of typing. Debounced to prevent race conditions.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Large documents</h3>
-                  <p>100KB+ Markdown files. Loading skeleton for UX. CSS optimizations for smooth editing. Archive lightweight renderer (70% faster). Smart Loading: 300KB+ files show choice dialog (Open as Read-Only/Archive recommended, Open Anyway, or Select Another Note).</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Why Archive is faster</h3>
-                  <p>Archive notes are read-only, so editing features are skipped, resulting in 70% faster loading (3+ seconds → under 1 second for 100KB+ documents).</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Chrome extension storage</h3>
-                  <p>Survives browser cache clear. Data persists until extension uninstall.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Import/Export</h3>
-                  <p>Drag & drop .md/.zip files. Export: single .md, all notes .zip, or Archive pinned .zip.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Backup</h3>
-                  <p>Export all as .zip or sync to GitHub/GitLab. Git sync for version history.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Archive Pinned export</h3>
-                  <p>Export only pinned Archive notes as a .zip file. Pin important completed notes in Archive folder, then use "Export → .zip (Archive Pinned)" to back them up all at once. Useful for regular backups of important completed work.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Failsafe deletion</h3>
-                  <p>Synced notes: Trash → Sync → Delete (3 steps). Unsynced notes: Trash → Delete (2 steps). Sync status badges in Trash.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Storage repair & analysis</h3>
-                  <p>Settings → Troubleshooting: Repair Storage (duplicate detection), Storage Analysis (usage stats, bulk archive).</p>
-                </div>
-              </div>
-            </section>
+        <!-- Storage -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">💾</span>
+              <span class="accordion-highlight">Storage — Auto-save, 100KB+ support</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>Auto-save</strong> <span>0.5s debounce, no save button needed</span></li>
+              <li><strong>Large Docs</strong> <span>100KB+ files, Archive 70% faster</span></li>
+              <li><strong>Smart Loading</strong> <span>300KB+ shows choice dialog</span></li>
+              <li><strong>Chrome Storage</strong> <span>Survives cache clear</span></li>
+              <li><strong>Import/Export</strong> <span>.md, .zip, Archive Pinned</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- Git Panel -->
-          <div class="tab-panel tab-panel-git" role="tabpanel">
-            <section aria-labelledby="git-heading">
-              <h2 id="git-heading">Git Sync</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>GitHub / GitLab</h3>
-                  <p>Connect with Personal Access Token. Encrypted storage.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Intentional version control</h3>
-                  <p>Not automatic sync like OneDrive. Manual commits = meaningful snapshots. Local auto-save (no history) vs remote commits (full history).</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Commit & Sync</h3>
-                  <p>True synchronization: Commit → Pull → Resolve conflicts → Push. Custom commit messages. Batch commits (1 commit for all changes).</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Pull & merge</h3>
-                  <p>Resolve conflicts side-by-side. Risk level indicators (Low/Medium/High/Critical). TOC navigation. Scroll sync.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Git Fetch</h3>
-                  <p>Check remote status without changing local. Auto-fetch on startup. Banner shows remote updates.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Diff & history</h3>
-                  <p>Compare versions side-by-side. View past 20 commits. Overview ruler for diff navigation.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>File tracking</h3>
-                  <p>Auto-delete old files when moving folders or renaming. Prevents duplicate files on remote.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Discard Changes</h3>
-                  <p>Revert local changes to last push state. Git Settings → Danger Zone.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>System notes</h3>
-                  <p>Excluded from Git sync (local only). Trash + Sync deletes from remote. Auto-cleanup on upgrade.</p>
-                </div>
-              </div>
-            </section>
+        <!-- Git -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version accordion-icon-svg"><svg viewBox="0 0 24 24" width="18" height="18" fill="#F05032"><path d="M23.546 10.93L13.067.452a1.55 1.55 0 0 0-2.188 0L8.708 2.627l2.76 2.76a1.838 1.838 0 0 1 2.327 2.341l2.658 2.66a1.838 1.838 0 1 1-1.103 1.033l-2.479-2.48v6.535a1.839 1.839 0 1 1-1.513-.036V8.73a1.838 1.838 0 0 1-.998-2.41L7.636 3.596.45 10.782a1.55 1.55 0 0 0 0 2.188l10.48 10.477a1.55 1.55 0 0 0 2.186 0l10.43-10.43a1.55 1.55 0 0 0 0-2.187"/></svg></span>
+              <span class="accordion-highlight">Git Sync — GitHub / GitLab</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>Connect</strong> <span>Personal Access Token, encrypted storage</span></li>
+              <li><strong>Manual Commits</strong> <span>Meaningful snapshots, not auto-sync</span></li>
+              <li><strong>Conflict Resolution</strong> <span>Side-by-side, risk indicators</span></li>
+              <li><strong>Git Fetch</strong> <span>Check remote without changing local</span></li>
+              <li><strong>History</strong> <span>View past 20 commits, diff view</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- Dual Panel -->
-          <div class="tab-panel tab-panel-dual" role="tabpanel">
-            <section aria-labelledby="dual-heading">
-              <h2 id="dual-heading">Dual Mode</h2>
-              <p>Open New Tab and Side Panel simultaneously.</p>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>Independent windows</h3>
-                  <p>Edit in one. Read in the other.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Conflict resolution</h3>
-                  <p>Merge Changes button blinks when both windows edit same note. Choose which to keep. Same UI for Git Pull conflicts.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Comparison tools</h3>
-                  <p>Sync scroll, diff highlight (+green/-red), Overview Ruler (click to jump), TOC navigation, quick scroll buttons.</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Responsive conflict UI</h3>
-                  <p>Side Panel/narrow screens: single pane view with large buttons. Keyboard navigation (Arrow keys, Escape).</p>
-                </div>
-              </div>
-            </section>
+        <!-- Shortcuts -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">⌨</span>
+              <span class="accordion-highlight">Keyboard Shortcuts — Power user essentials</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Navigation</h3>
+              <ul class="changelog-features">
+                <li><strong><kbd>Ctrl</kbd>+<kbd>K</kbd></strong> <span>Search</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></strong> <span>Command Palette</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd></strong> <span>Notes panel</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>2</kbd></strong> <span>TOC panel</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Editing</h3>
+              <ul class="changelog-features">
+                <li><strong><kbd>Alt</kbd>+<kbd>N</kbd></strong> <span>New note</span></li>
+                <li><strong><kbd>Alt</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd></strong> <span>Move line</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>;</kbd></strong> <span>Insert date</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>H</kbd></strong> <span>Find & Replace</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">View</h3>
+              <ul class="changelog-features">
+                <li><strong><kbd>Alt</kbd>+<kbd>F</kbd></strong> <span>Focus Mode</span></li>
+                <li><strong><kbd>F11</kbd></strong> <span>Fullscreen</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd></strong> <span>Jump headings</span></li>
+                <li><strong><kbd>PgUp</kbd>/<kbd>PgDn</kbd></strong> <span>Page scroll</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Notes</h3>
+              <ul class="changelog-features">
+                <li><strong><kbd>Alt</kbd>+<kbd>P</kbd></strong> <span>Pin note</span></li>
+                <li><strong><kbd>Alt</kbd>+<kbd>T</kbd></strong> <span>Move to Template</span></li>
+                <li><strong><kbd>Alt</kbd>+<kbd>A</kbd></strong> <span>Move to Archive</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></strong> <span>Git sync</span></li>
+              </ul>
+            </div>
           </div>
+        </details>
 
-          <!-- Keys Panel -->
-          <div class="tab-panel tab-panel-keys" role="tabpanel">
-            <section aria-labelledby="shortcuts-heading">
-              <h2 id="shortcuts-heading">Keyboard Shortcuts</h2>
-              <table class="shortcuts-table">
-                <thead>
-                  <tr>
-                    <th scope="col">Key</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><kbd>Alt</kbd>+<kbd>N</kbd></td>
-                    <td>New note</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>K</kbd></td>
-                    <td>Search modal</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd></td>
-                    <td>Toggle sidebar</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td>
-                    <td>Git sync</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td>
-                    <td>Command palette</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td>
-                    <td>Focus sidebar search</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd></td>
-                    <td>Focus TOC search</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd></td>
-                    <td>Toggle Notes panel</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>2</kbd></td>
-                    <td>Toggle TOC</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>F11</kbd></td>
-                    <td>Browser fullscreen</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Alt</kbd>+<kbd>F</kbd></td>
-                    <td>Focus Mode toggle</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Alt</kbd>+<kbd>↑</kbd> / <kbd>Alt</kbd>+<kbd>↓</kbd></td>
-                    <td>Move line/list item up/down</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>;</kbd></td>
-                    <td>Insert date (ISO 8601)</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd></td>
-                    <td>Insert datetime (ISO 8601)</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>H</kbd></td>
-                    <td>Find & Replace (regex support)</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>↑</kbd> / <kbd>Ctrl</kbd>+<kbd>↓</kbd></td>
-                    <td>Jump to previous/next heading</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>PgUp</kbd> / <kbd>PgDn</kbd></td>
-                    <td>Page scroll (smooth)</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>↑</kbd> / <kbd>↓</kbd> (Archive)</td>
-                    <td>Navigate blocks (Reading Focus)</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Alt</kbd>+<kbd>P</kbd>/<kbd>T</kbd>/<kbd>A</kbd>/<kbd>X</kbd></td>
-                    <td>Pin / Template / Archive / Trash</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td>
-                    <td>Undo / Redo</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-          </div>
-        </div>
       </div>
 
       <!-- CTA Section -->
@@ -466,24 +266,5 @@
     </footer>
   </div>
 
-  <!-- Tab scroll behavior -->
-  <script>
-    document.querySelectorAll('.tab-nav label').forEach(label => {
-      label.addEventListener('click', () => {
-        const tabsElement = document.getElementById('tabs');
-        if (tabsElement) {
-          const headerNav = document.querySelector('.header-nav');
-          const headerNavHeight = headerNav ? headerNav.offsetHeight : 80;
-          const elementPosition = tabsElement.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerNavHeight - 10; // 10px extra spacing
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  </script>
 </body>
 </html>

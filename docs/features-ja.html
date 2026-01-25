@@ -60,379 +60,179 @@
         </p>
       </section>
 
-      <!-- Tab Navigation -->
-      <div class="tab-container" id="tabs" role="tablist" aria-label="機能カテゴリ">
-        <!-- Radio inputs for CSS-only tabs -->
-        <input type="radio" name="feature-tabs" id="tab-modes" checked>
-        <input type="radio" name="feature-tabs" id="tab-markdown">
-        <input type="radio" name="feature-tabs" id="tab-view">
-        <input type="radio" name="feature-tabs" id="tab-notes">
-        <input type="radio" name="feature-tabs" id="tab-storage">
-        <input type="radio" name="feature-tabs" id="tab-git">
-        <input type="radio" name="feature-tabs" id="tab-dual">
-        <input type="radio" name="feature-tabs" id="tab-keys">
+      <!-- Features Accordion -->
+      <div class="changelog-accordion">
 
-        <!-- Tab navigation -->
-        <div class="tab-nav-wrapper">
-          <nav class="tab-nav" aria-label="機能タブ">
-            <label for="tab-modes" role="tab">モード</label>
-            <label for="tab-markdown" role="tab">Markdown</label>
-            <label for="tab-view" role="tab">表示</label>
-            <label for="tab-notes" role="tab">ノート</label>
-            <label for="tab-storage" role="tab">保存</label>
-            <label for="tab-git" role="tab">Git</label>
-            <label for="tab-dual" role="tab">デュアル</label>
-            <label for="tab-keys" role="tab">キー</label>
-          </nav>
-        </div>
-
-        <!-- Tab content -->
-        <div class="tab-content">
-          <!-- Modes Panel -->
-          <div class="tab-panel tab-panel-modes" role="tabpanel">
-            <section aria-labelledby="modes-heading">
-              <h2 id="modes-heading">2つのモード</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>New Tab — 全画面で</h3>
-                  <p>専用ワークスペース。Focus Mode利用可能（Alt+F）。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Side Panel — Webの横で</h3>
-                  <p>AIの横で書く。ブラウジングしながら書く。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>固定ツールバー</h3>
-                  <p>Side Panelでスクロールしてもツールバーが常に表示。素早い操作が可能。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>ブラウザ全画面（F11）</h3>
-                  <p>F11でブラウザ標準の全画面表示。全ブラウザで動作。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Focus Mode</h3>
-                  <p>Alt+Fで切替。タイプライタースクロールでカーソルを中央維持。カーソル追従ハイライト（0-80px: 完全ハイライト、80-200px: 中間、200px+: 薄暗い）。大規模ドキュメント（100KB+）のサポート改善。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>両方開ける。同期しない。</h3>
-                  <p>更新前を見ながら、書き換える。独立したウィンドウで同じデータを共有。</p>
-                </div>
-              </div>
-            </section>
+        <!-- Modes -->
+        <details class="accordion-item" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">◐</span>
+              <span class="accordion-highlight">モード — New Tab & Side Panel</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>New Tab</strong> <span>全画面ワークスペース、Focus Mode (Alt+F)</span></li>
+              <li><strong>Side Panel</strong> <span>AIやブラウジングの横で書く</span></li>
+              <li><strong>Focus Mode</strong> <span>タイプライタースクロール、カーソル追従ハイライト</span></li>
+              <li><strong>固定ツールバー</strong> <span>Side Panelで常に表示</span></li>
+              <li><strong>デュアルモード</strong> <span>両方同時に開ける、独立したウィンドウ</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- Markdown Panel -->
-          <div class="tab-panel tab-panel-markdown" role="tabpanel">
-            <section aria-labelledby="markdown-heading">
-              <h2 id="markdown-heading">Markdown</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>GitHub Flavored Markdown</h3>
-                  <p>テーブル、タスクリスト、シンタックスハイライト。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Mermaid図</h3>
-                  <p>フローチャート、シーケンス図、円グラフ。クリックで拡大。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>数式（LaTeX）</h3>
-                  <p>インライン <code>$E=mc^2$</code> とブロック <code>$$...$$</code> 形式。設定でインライン数式トグル（デフォルト: OFF、一般用途向け）。LaTeX標準記法 <code>\(...\)</code> と <code>\[...\]</code> は常に動作。GitHub/GitLab互換の <code>```math</code>、<code>```latex</code>、<code>```mathematica</code> コードブロックに拡大ボタン搭載。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>コールアウト</h3>
-                  <p>GitHub Alerts: NOTE、TIP、IMPORTANT、WARNING、CAUTION。ライト/ダークモードで色分け表示。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>ページ内リンク</h3>
-                  <p>内部リンク: <code>[テキスト](#見出し)</code> でページ内ジャンプ。GitHub互換の見出しID生成。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>画像</h3>
-                  <p>外部URLのみ（<code>![alt](https://...)</code>）。ストレージ制限のため直接埋め込み非対応。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>自動リンク化</h3>
-                  <p>プレーンテキスト内のURL/メールアドレスが自動的にリンクに。コードブロックと既存Markdownリンクは除外。</p>
-                </div>
-              </div>
-            </section>
+        <!-- Markdown -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">#</span>
+              <span class="accordion-highlight">Markdown — GFM + Mermaid + LaTeX</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>GitHub Flavored</strong> <span>テーブル、タスクリスト、シンタックスハイライト</span></li>
+              <li><strong>Mermaid</strong> <span>フローチャート、シーケンス図、クリックで拡大</span></li>
+              <li><strong>数式 (LaTeX)</strong> <span>インライン <code>$...$</code>、ブロック <code>$$...$$</code>、コードブロック</span></li>
+              <li><strong>コールアウト</strong> <span>NOTE、TIP、IMPORTANT、WARNING、CAUTION</span></li>
+              <li><strong>自動リンク化</strong> <span>URLとメールアドレスが自動でリンクに</span></li>
+              <li><strong>ページ内リンク</strong> <span><code>[テキスト](#見出し)</code> で内部ナビゲーション</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- View Panel -->
-          <div class="tab-panel tab-panel-view" role="tabpanel">
-            <section aria-labelledby="view-heading">
-              <h2 id="view-heading">表示</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>目次（TOC）</h3>
-                  <p>自動生成目次。スクロール中に現在セクションをハイライト。クリックでジャンプ。競合解決でもTOCナビゲーション。階層折りたたみ（20見出し以上）、検索バー（15見出し以上）、キーボードナビゲーション。長距離見出しは2段階スクロール（瞬時ジャンプ + スムーズ終了）で位置検証付き。Word Count統計: TOCヘッダーの📊アイコンをホバーすると文字数・単語数（CJK対応）・読了時間を表示。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>ダーク/ライト/システム連動テーマ</h3>
-                  <p>設定でテーマ切替。システム連動でOS設定に従う。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>スムーズなトランジション</h3>
-                  <p>ノート切替時に200msのフェード効果。コードブロックは20行超でスクロール可能（max-height: 400px）。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Auto Pair</h3>
-                  <p>括弧・引用符・バッククォートを自動補完。設定でON/OFF可能。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>コードブロック高さ制限</h3>
-                  <p>長いコードブロック（20行超）はスクロール可能。CopyボタンはMarkdownソースから全コンテンツをコピー。</p>
-                </div>
-              </div>
-            </section>
+        <!-- Notes -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">📁</span>
+              <span class="accordion-highlight">ノート — 5フォルダ固定</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>5フォルダ</strong> <span>Inbox / Template / Archive / Trash / System</span></li>
+              <li><strong>ピン & スター</strong> <span>重要なノートを上部に固定 (Alt+P)</span></li>
+              <li><strong>ドラッグ&ドロップ</strong> <span>フォルダ間でノートを移動</span></li>
+              <li><strong>検索</strong> <span>即時フィルタ、フォルダ自動展開</span></li>
+              <li><strong>重複検出</strong> <span>side-by-side比較で選択</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- Notes Panel -->
-          <div class="tab-panel tab-panel-notes" role="tabpanel">
-            <section aria-labelledby="notes-heading">
-              <h2 id="notes-heading">ノート管理</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>5つのフォルダ。固定。</h3>
-                  <p>Inbox（作業中）/ Template（再利用用）/ Archive（ロック）/ Trash（削除待ち）/ System（読み取り専用ガイド）。カスタムフォルダは設計上非対応。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>テンプレート & ピン</h3>
-                  <p>Templateフォルダにテンプレートを保存。重要なノートを任意のフォルダの上部に固定（★ボタン）。Alt+Pショートカット。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>ドラッグ&ドロップ</h3>
-                  <p>フォルダ間でノートを移動。フォルダエリア全体（フォルダ名 + ノートリスト）にドロップ可能。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>ソート&検索</h3>
-                  <p>名前順または日付順（時計アイコンで切替）。サイドバーでインクリメンタル検索（1文字入力 = 即時フィルタ）。マッチするフォルダは自動展開。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>重複ノート検出</h3>
-                  <p>同じタイトルのノート検出時に警告バナー表示。side-by-side比較で保持選択。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>サイドバーリサイズ</h3>
-                  <p>ドラッグで幅調整。ダブルクリックでリセット。Slack風の操作感。</p>
-                </div>
-              </div>
-            </section>
+        <!-- View -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">👁</span>
+              <span class="accordion-highlight">表示 — TOC & テーマ</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>目次 (TOC)</strong> <span>自動生成、現在セクションをハイライト</span></li>
+              <li><strong>Word Count</strong> <span>文字数、単語数（CJK対応）、読了時間</span></li>
+              <li><strong>テーマ</strong> <span>ダーク / ライト / システム連動</span></li>
+              <li><strong>Auto Pair</strong> <span>括弧、引用符を自動補完</span></li>
+              <li><strong>コードブロック</strong> <span>スクロール可能（20行超）、コピーボタン</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- Storage Panel -->
-          <div class="tab-panel tab-panel-storage" role="tabpanel">
-            <section aria-labelledby="storage-heading">
-              <h2 id="storage-heading">保存</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>自動保存</h3>
-                  <p>保存ボタンなし。入力後0.5秒で自動保存。レースコンディション対策でデバウンス処理。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>大規模ドキュメント</h3>
-                  <p>100KB超のMarkdownファイルに対応。ローディングスケルトンでUX向上。CSS最適化で快適に編集。Archive軽量レンダラー（70%高速化）。Smart Loading: 300KB以上のファイルで選択ダイアログ表示（読み取り専用/Archive推奨、そのまま開く、別のノートを選択）。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Archiveフォルダで軽くなる理由</h3>
-                  <p>Archiveノートは読み取り専用のため、編集機能をスキップし、70%高速化（100KB超ドキュメントで3秒以上→1秒以下）。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Chrome拡張機能ストレージ</h3>
-                  <p>ブラウザキャッシュクリアでも残る。拡張機能アンインストールまでデータ保持。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>インポート/エクスポート</h3>
-                  <p>ドラッグ&ドロップで.md/.zipファイルをインポート。エクスポート: 単一.md、全ノート.zip、Archiveピン留め.zip。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>バックアップ</h3>
-                  <p>すべてを.zipでエクスポート。またはGit同期でバージョン履歴管理。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Archiveピン留めエクスポート</h3>
-                  <p>Archiveフォルダでピン留めしたノートのみを.zipで一括エクスポート。完成した重要なノートにピン留めを付けて、「Export → .zip (Archiveピン留め)」でまとめてバックアップ。重要な完成品の定期バックアップに最適。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>フェイルセーフ削除</h3>
-                  <p>同期済みノート: Trash → Sync → Delete（3段階）。未同期ノート: Trash → Delete（2段階）。Trash内に同期ステータスバッジ表示。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>ストレージ修復&分析</h3>
-                  <p>設定 → Troubleshooting: Repair Storage（重複検出）、Storage Analysis（使用状況、一括アーカイブ）。</p>
-                </div>
-              </div>
-            </section>
+        <!-- Storage -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">💾</span>
+              <span class="accordion-highlight">保存 — 自動保存、100KB+対応</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>自動保存</strong> <span>0.5秒デバウンス、保存ボタン不要</span></li>
+              <li><strong>大規模ドキュメント</strong> <span>100KB+対応、Archive 70%高速化</span></li>
+              <li><strong>Smart Loading</strong> <span>300KB+で選択ダイアログ表示</span></li>
+              <li><strong>Chrome Storage</strong> <span>キャッシュクリアでも残る</span></li>
+              <li><strong>インポート/エクスポート</strong> <span>.md、.zip、Archiveピン留め</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- Git Panel -->
-          <div class="tab-panel tab-panel-git" role="tabpanel">
-            <section aria-labelledby="git-heading">
-              <h2 id="git-heading">Git同期</h2>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>GitHub / GitLab</h3>
-                  <p>Personal Access Tokenで接続。暗号化で安全に保存。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>意図的なバージョン管理</h3>
-                  <p>OneDriveのような自動同期ではない。手動コミット = 意味のあるスナップショット。ローカル自動保存（履歴なし）vs リモートコミット（履歴あり）。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Commit & Sync</h3>
-                  <p>真の同期: Commit → Pull → 競合解決 → Push。カスタムコミットメッセージ。バッチコミット（全変更を1コミットに統合）。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Pull & マージ</h3>
-                  <p>競合を並べて解決。リスクレベルインジケーター（Low/Medium/High/Critical）。TOCナビゲーション。スクロール同期。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Git Fetch</h3>
-                  <p>ローカルを変更せずにリモート状態を確認。起動時自動Fetch。リモート更新時にバナー表示。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>差分 & 履歴</h3>
-                  <p>バージョンを並べて比較。過去20件のコミットを表示。Overview Rulerで差分ナビゲーション。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>ファイル追跡</h3>
-                  <p>フォルダ移動・タイトル変更時に古いファイルを自動削除。リモートの重複ファイルを防止。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>Discard Changes</h3>
-                  <p>ローカル変更を最後のPush時点に戻す。Git Settings → Danger Zone。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>システムノート</h3>
-                  <p>Git同期から除外（ローカルのみ）。Trash + Syncでリモートから削除。アップグレード時に自動クリーンアップ。</p>
-                </div>
-              </div>
-            </section>
+        <!-- Git -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version accordion-icon-svg"><svg viewBox="0 0 24 24" width="18" height="18" fill="#F05032"><path d="M23.546 10.93L13.067.452a1.55 1.55 0 0 0-2.188 0L8.708 2.627l2.76 2.76a1.838 1.838 0 0 1 2.327 2.341l2.658 2.66a1.838 1.838 0 1 1-1.103 1.033l-2.479-2.48v6.535a1.839 1.839 0 1 1-1.513-.036V8.73a1.838 1.838 0 0 1-.998-2.41L7.636 3.596.45 10.782a1.55 1.55 0 0 0 0 2.188l10.48 10.477a1.55 1.55 0 0 0 2.186 0l10.43-10.43a1.55 1.55 0 0 0 0-2.187"/></svg></span>
+              <span class="accordion-highlight">Git同期 — GitHub / GitLab</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>接続</strong> <span>Personal Access Token、暗号化保存</span></li>
+              <li><strong>手動コミット</strong> <span>意味のあるスナップショット、自動同期ではない</span></li>
+              <li><strong>競合解決</strong> <span>side-by-side、リスクインジケーター</span></li>
+              <li><strong>Git Fetch</strong> <span>ローカル変更なしでリモート確認</span></li>
+              <li><strong>履歴</strong> <span>過去20件のコミット、差分ビュー</span></li>
+            </ul>
           </div>
+        </details>
 
-          <!-- Dual Panel -->
-          <div class="tab-panel tab-panel-dual" role="tabpanel">
-            <section aria-labelledby="dual-heading">
-              <h2 id="dual-heading">デュアルモード</h2>
-              <p>New TabとSide Panelを同時に開く。</p>
-              <div class="philosophy-list">
-                <div class="philosophy-item">
-                  <h3>独立したウィンドウ</h3>
-                  <p>片方で編集。もう片方で読む。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>競合解決</h3>
-                  <p>両方のウィンドウで同じノートを編集するとMerge Changesボタンが点滅。選択して保持。Git Pull時の競合も同じUIで操作。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>比較ツール</h3>
-                  <p>スクロール同期、差分ハイライト（+緑/−赤）、Overview Ruler（クリックでジャンプ）、TOCナビゲーション、クイックスクロールボタン。</p>
-                </div>
-                <div class="philosophy-item">
-                  <h3>レスポンシブ競合UI</h3>
-                  <p>Side Panel/狭い画面: 単一ペインビュー、大きなボタン。キーボードナビゲーション（矢印キー、Escape）。</p>
-                </div>
-              </div>
-            </section>
+        <!-- Shortcuts -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">⌨</span>
+              <span class="accordion-highlight">キーボードショートカット — パワーユーザー向け</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">ナビゲーション</h3>
+              <ul class="changelog-features">
+                <li><strong><kbd>Ctrl</kbd>+<kbd>K</kbd></strong> <span>検索</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></strong> <span>コマンドパレット</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd></strong> <span>Notesパネル</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>2</kbd></strong> <span>TOCパネル</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">編集</h3>
+              <ul class="changelog-features">
+                <li><strong><kbd>Alt</kbd>+<kbd>N</kbd></strong> <span>新規ノート</span></li>
+                <li><strong><kbd>Alt</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd></strong> <span>行移動</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>;</kbd></strong> <span>日付挿入</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>H</kbd></strong> <span>検索・置換</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">表示</h3>
+              <ul class="changelog-features">
+                <li><strong><kbd>Alt</kbd>+<kbd>F</kbd></strong> <span>Focus Mode</span></li>
+                <li><strong><kbd>F11</kbd></strong> <span>全画面</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd></strong> <span>見出しジャンプ</span></li>
+                <li><strong><kbd>PgUp</kbd>/<kbd>PgDn</kbd></strong> <span>ページスクロール</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">ノート</h3>
+              <ul class="changelog-features">
+                <li><strong><kbd>Alt</kbd>+<kbd>P</kbd></strong> <span>ピン</span></li>
+                <li><strong><kbd>Alt</kbd>+<kbd>T</kbd></strong> <span>Templateへ移動</span></li>
+                <li><strong><kbd>Alt</kbd>+<kbd>A</kbd></strong> <span>Archiveへ移動</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></strong> <span>Git同期</span></li>
+              </ul>
+            </div>
           </div>
+        </details>
 
-          <!-- Keys Panel -->
-          <div class="tab-panel tab-panel-keys" role="tabpanel">
-            <section aria-labelledby="shortcuts-heading">
-              <h2 id="shortcuts-heading">キーボードショートカット</h2>
-              <table class="shortcuts-table">
-                <thead>
-                  <tr>
-                    <th scope="col">キー</th>
-                    <th scope="col">アクション</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><kbd>Alt</kbd>+<kbd>N</kbd></td>
-                    <td>新規ノート</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>K</kbd></td>
-                    <td>検索モーダル</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd></td>
-                    <td>サイドバー切替</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td>
-                    <td>Git同期</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td>
-                    <td>コマンドパレット</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td>
-                    <td>サイドバー検索にフォーカス</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd></td>
-                    <td>TOC検索にフォーカス</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd></td>
-                    <td>Notesパネル切替</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>2</kbd></td>
-                    <td>TOC切替</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>F11</kbd></td>
-                    <td>ブラウザ全画面</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Alt</kbd>+<kbd>F</kbd></td>
-                    <td>Focus Mode切替</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Alt</kbd>+<kbd>↑</kbd> / <kbd>Alt</kbd>+<kbd>↓</kbd></td>
-                    <td>行/リストアイテムを上下に移動</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>;</kbd></td>
-                    <td>日付を挿入（ISO 8601）</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd></td>
-                    <td>日時を挿入（ISO 8601）</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>H</kbd></td>
-                    <td>検索・置換（正規表現対応）</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>↑</kbd> / <kbd>Ctrl</kbd>+<kbd>↓</kbd></td>
-                    <td>前/次の見出しにジャンプ</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>PgUp</kbd> / <kbd>PgDn</kbd></td>
-                    <td>ページスクロール（スムース）</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>↑</kbd> / <kbd>↓</kbd> (Archive内)</td>
-                    <td>ブロック間移動（Reading Focus）</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Alt</kbd>+<kbd>P</kbd>/<kbd>T</kbd>/<kbd>A</kbd>/<kbd>X</kbd></td>
-                    <td>Pin / Template / Archive / Trash</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td>
-                    <td>元に戻す / やり直す</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-          </div>
-        </div>
       </div>
 
       <!-- CTA Section -->
@@ -466,24 +266,5 @@
     </footer>
   </div>
 
-  <!-- Tab scroll behavior -->
-  <script>
-    document.querySelectorAll('.tab-nav label').forEach(label => {
-      label.addEventListener('click', () => {
-        const tabsElement = document.getElementById('tabs');
-        if (tabsElement) {
-          const headerNav = document.querySelector('.header-nav');
-          const headerNavHeight = headerNav ? headerNav.offsetHeight : 80;
-          const elementPosition = tabsElement.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerNavHeight - 10; // 10px extra spacing
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  </script>
 </body>
 </html>
