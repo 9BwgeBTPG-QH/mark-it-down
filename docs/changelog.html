@@ -63,15 +63,56 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v1.9.2 - Latest -->
+        <!-- v1.9.3 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v1.9.3</span>
+              <span class="accordion-highlight">Fuzzy search & timestamp display</span>
+            </div>
+            <span class="accordion-status review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Search & Navigation</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Fuzzy Search</strong> <span>Typo-tolerant search with Fuse.js ("Meetng" matches "Meeting")</span></li>
+                <li><strong>CJK Support</strong> <span>Single character search (e.g., "会" finds "会議メモ")</span></li>
+                <li><strong>Smart Ranking</strong> <span>Title matches weighted 2x, recency bonus for recent notes</span></li>
+                <li><strong>Sidebar Close</strong> <span>Escape key, click outside, or mouse leave to close</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Editor Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Last Updated Timestamp</strong> <span>Relative time display ("3m ago") with full date tooltip</span></li>
+                <li><strong>Trailing Spaces</strong> <span>Red dot visualization, full-width space highlight, auto-trim on save</span></li>
+                <li><strong>Selection Word Count</strong> <span># button shows "X chars, Y words" (CJK-aware)</span></li>
+                <li><strong>Sentence Case</strong> <span>Command Palette → Change Case: Sentence</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Multi-Window & Git</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Cross-Instance Focus</strong> <span>Only focused instance shows "editing" badge</span></li>
+                <li><strong>Git Filename Indicator</strong> <span>Shows converted filename for special characters</span></li>
+                <li><strong>Copy Notification</strong> <span>"Copied" toast on Ctrl+C/Cmd+C</span></li>
+                <li><strong>Image Paste Warning</strong> <span>Base64 size warning for screenshot paste</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v1.9.2 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.2</span>
               <span class="accordion-highlight">Table editing & keyboard navigation</span>
             </div>
-            <span class="accordion-status review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <div class="changelog-group">

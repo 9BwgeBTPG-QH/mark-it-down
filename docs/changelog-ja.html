@@ -63,15 +63,56 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v1.9.2 - Latest -->
+        <!-- v1.9.3 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v1.9.3</span>
+              <span class="accordion-highlight">あいまい検索 & タイムスタンプ表示</span>
+            </div>
+            <span class="accordion-status review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">検索 & ナビゲーション</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>あいまい検索</strong> <span>Fuse.jsでタイポ許容（「Meetng」で「Meeting」にマッチ）</span></li>
+                <li><strong>CJK対応</strong> <span>1文字検索対応（「会」で「会議メモ」を検索）</span></li>
+                <li><strong>スマートランキング</strong> <span>タイトルマッチ2倍重み付け、最近のノートに加点</span></li>
+                <li><strong>サイドバー閉じる</strong> <span>Escキー、外側クリック、マウス離脱で閉じる</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">エディタ機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>最終更新タイムスタンプ</strong> <span>相対時間表示（「3分前」）、ホバーで完全な日時</span></li>
+                <li><strong>末尾スペース</strong> <span>赤ドットで可視化、全角スペース検出、保存時に自動削除</span></li>
+                <li><strong>選択範囲の文字数</strong> <span>#ボタンで「X文字、Y単語」を表示（CJK対応）</span></li>
+                <li><strong>Sentence Case</strong> <span>コマンドパレット → Change Case: Sentence</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">マルチウィンドウ & Git</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>クロスインスタンスフォーカス</strong> <span>フォーカス中のインスタンスのみ「editing」バッジ表示</span></li>
+                <li><strong>Gitファイル名インジケーター</strong> <span>特殊文字を含むタイトルの変換後ファイル名を表示</span></li>
+                <li><strong>コピー通知</strong> <span>Ctrl+C/Cmd+Cで「Copied」トースト表示</span></li>
+                <li><strong>画像貼り付け警告</strong> <span>スクリーンショット貼り付け時にBase64サイズ警告</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v1.9.2 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.2</span>
               <span class="accordion-highlight">テーブル編集 & キーボードナビゲーション</span>
             </div>
-            <span class="accordion-status review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <div class="changelog-group">
