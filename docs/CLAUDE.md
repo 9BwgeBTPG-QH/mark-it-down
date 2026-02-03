@@ -33,4 +33,19 @@
 | #51 | 12:17 AM | ✅ | Updated English Homepage Coming Soon Section to v1.5.0 | ~307 |
 | #52 | " | ✅ | Updated Japanese Homepage Version Reference to v1.5.0 | ~229 |
 | #50 | " | 🔵 | Japanese Homepage Content Structure Review | ~315 |
+
+### Feb 3, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #3249 | 11:35 PM | ✅ | Japanese Homepage CTA Section Updated to v1.9.6 | ~238 |
+| #3248 | " | ✅ | Japanese Homepage Coming Soon Section Updated to v1.9.6 | ~354 |
+| #3247 | " | ✅ | English Homepage CTA Section Updated to v1.9.6 | ~240 |
+| #3246 | " | ✅ | English Homepage Coming Soon Section Updated to v1.9.6 | ~367 |
+| #3245 | " | ✅ | Japanese Changelog Updated with v1.9.6 Entry | ~362 |
+| #3244 | 11:34 PM | ✅ | English Changelog Updated with v1.9.6 Entry | ~328 |
+| #3243 | " | 🔵 | Japanese Homepage Shows v1.9.5 Under Review | ~298 |
+| #3242 | " | 🔵 | Japanese Changelog Page Shows v1.9.5 Under Review | ~318 |
+| #3241 | " | 🔵 | Homepage Features "Coming in v1.9.5" Section with Under Review Status | ~287 |
+| #3240 | " | 🔵 | Current Website Changelog Shows v1.9.5 as Latest Under Review | ~323 |
 </claude-mem-context>
