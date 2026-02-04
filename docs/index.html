@@ -35,6 +35,39 @@
       }
     })();
   </script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Mark It Down",
+    "description": "A distraction-free Markdown editor in your browser. Write beside AI, digest your thoughts, move on.",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "softwareVersion": "1.9.6",
+    "author": {
+      "@type": "Person",
+      "name": "Mark It Down Developer"
+    },
+    "screenshot": "https://9bwgebptg-qh.github.io/mark-it-down/en-dark.png",
+    "url": "https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke",
+    "installUrl": "https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke",
+    "featureList": [
+      "Markdown editing with live preview",
+      "Git synchronization (GitHub, GitLab)",
+      "Keyboard shortcuts",
+      "Mermaid diagram support",
+      "Code syntax highlighting",
+      "Offline support",
+      "Bilingual (English/Japanese)"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -180,6 +213,49 @@
             <span>Fixed backslash display on Japanese Windows and improved light mode visibility</span>
           </li>
         </ul>
+      </section>
+
+      <!-- FAQ Preview Section -->
+      <section class="faq-preview-section" aria-labelledby="faq-preview-heading">
+        <h2 id="faq-preview-heading">Frequently Asked Questions</h2>
+        <div class="changelog-accordion">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Is Mark It Down free?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>Yes, completely free.</strong> No ads, no premium tier, no account required.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Can I use it offline?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>Yes, almost everything works offline.</strong> Creating, editing, searching notes—all work without internet. Only Git sync requires a connection.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Will clearing browser cache delete my notes?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>No.</strong> Notes are stored in a dedicated extension storage, separate from browser cache. Your data is safe.</p>
+            </div>
+          </details>
+        </div>
+        <p class="faq-more-link"><a href="faq.html">View all FAQ →</a></p>
       </section>
 
       <!-- CTA Section -->

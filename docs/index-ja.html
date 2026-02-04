@@ -35,6 +35,40 @@
       }
     })();
   </script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Mark It Down",
+    "description": "気が散らないMarkdownエディタ。AIのそばで書いて、考えを整理して、次へ進む。",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "softwareVersion": "1.9.6",
+    "author": {
+      "@type": "Person",
+      "name": "Mark It Down Developer"
+    },
+    "screenshot": "https://9bwgebptg-qh.github.io/mark-it-down/jp-dark.png",
+    "url": "https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke",
+    "installUrl": "https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke",
+    "inLanguage": "ja",
+    "featureList": [
+      "ライブプレビュー付きMarkdown編集",
+      "Git同期（GitHub、GitLab対応）",
+      "キーボードショートカット",
+      "Mermaidダイアグラム対応",
+      "コードシンタックスハイライト",
+      "オフライン対応",
+      "日英バイリンガル"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
@@ -180,6 +214,49 @@
             <span>日本語Windowsでのバックスラッシュ表示修正、ライトモードでの視認性改善</span>
           </li>
         </ul>
+      </section>
+
+      <!-- FAQ Preview Section -->
+      <section class="faq-preview-section" aria-labelledby="faq-preview-heading">
+        <h2 id="faq-preview-heading">よくある質問</h2>
+        <div class="changelog-accordion">
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">無料で使えますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>はい、完全無料です。</strong>広告なし、有料プランなし、アカウント登録も不要です。</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">オフラインで使えますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>はい、ほぼすべての機能がオフラインで動作します。</strong>ノートの作成、編集、検索はすべてオフラインで可能。Git同期のみインターネット接続が必要です。</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">ブラウザのキャッシュを消すとノートも消えますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>いいえ、消えません。</strong>ノートは拡張機能専用のストレージに保存されており、ブラウザキャッシュとは別です。データは安全です。</p>
+            </div>
+          </details>
+        </div>
+        <p class="faq-more-link"><a href="faq-ja.html">すべてのFAQを見る →</a></p>
       </section>
 
       <!-- CTA Section -->
