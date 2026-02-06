@@ -63,15 +63,49 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v1.9.6 - Latest -->
+        <!-- v1.9.7 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v1.9.7</span>
+              <span class="accordion-highlight">ノート移動 & インラインコードUX</span>
+            </div>
+            <span class="accordion-status review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">ナビゲーション</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ノート移動ショートカット</strong> <span><code>Ctrl+Alt+PgUp/PgDn</code>で同フォルダ内のノート間をジャンプ（ラップアラウンド対応）</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">インラインコード</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ダブルクリックコピー</strong> <span>バッククォートのコードをダブルクリックでクリップボードにコピー（パルスアニメーション付き）</span></li>
+                <li><strong>バッククォートトグル</strong> <span>バッククォートでインラインコードを作成 - Auto-pairのON/OFF設定に応じて動作</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">コードブロック & Git</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>コードブロック削除ボタン</strong> <span>ホバーで×ボタン表示、Ctrl+Zで復元可能</span></li>
+                <li><strong>Git通知抑制</strong> <span><code>.md</code>拡張子追加のみの変更は通知しない</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v1.9.6 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.6</span>
               <span class="accordion-highlight">脚注 & 絵文字ショートコード</span>
             </div>
-            <span class="accordion-status review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <div class="changelog-group">

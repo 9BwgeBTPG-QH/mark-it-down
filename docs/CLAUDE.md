@@ -48,4 +48,13 @@
 | #3242 | " | 🔵 | Japanese Changelog Page Shows v1.9.5 Under Review | ~318 |
 | #3241 | " | 🔵 | Homepage Features "Coming in v1.9.5" Section with Under Review Status | ~287 |
 | #3240 | " | 🔵 | Current Website Changelog Shows v1.9.5 as Latest Under Review | ~323 |
+
+### Feb 6, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #3563 | 8:53 PM | 🔵 | Japanese Changelog Page Localization Review | ~519 |
+| #3560 | 8:52 PM | 🔵 | Changelog Page Structure Review for Version Updates | ~545 |
+| #3559 | " | 🔵 | Japanese Homepage Localization Review | ~526 |
+| #3558 | " | 🔵 | Mark It Down Website Homepage Structure Review | ~512 |
 </claude-mem-context>
