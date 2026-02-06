@@ -53,7 +53,8 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
-| #3569 | 8:54 PM | 🔵 | Japanese Features Page Complete Localization | ~588 |
+| #3570 | 8:54 PM | ✅ | English Homepage Schema Version Update to 1.9.7 | ~349 |
+| #3569 | " | 🔵 | Japanese Features Page Complete Localization | ~588 |
 | #3567 | 8:53 PM | 🔵 | Features Page Structure and Organization Review | ~568 |
 | #3563 | " | 🔵 | Japanese Changelog Page Localization Review | ~519 |
 | #3560 | 8:52 PM | 🔵 | Changelog Page Structure Review for Version Updates | ~545 |
