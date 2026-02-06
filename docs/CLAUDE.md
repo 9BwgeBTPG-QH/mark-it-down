@@ -53,7 +53,9 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
-| #3563 | 8:53 PM | 🔵 | Japanese Changelog Page Localization Review | ~519 |
+| #3569 | 8:54 PM | 🔵 | Japanese Features Page Complete Localization | ~588 |
+| #3567 | 8:53 PM | 🔵 | Features Page Structure and Organization Review | ~568 |
+| #3563 | " | 🔵 | Japanese Changelog Page Localization Review | ~519 |
 | #3560 | 8:52 PM | 🔵 | Changelog Page Structure Review for Version Updates | ~545 |
 | #3559 | " | 🔵 | Japanese Homepage Localization Review | ~526 |
 | #3558 | " | 🔵 | Mark It Down Website Homepage Structure Review | ~512 |
