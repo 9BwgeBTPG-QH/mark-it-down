@@ -63,37 +63,90 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v1.9.7 - Latest -->
+        <!-- v1.9.8 - Latest -->
         <details class="accordion-item latest" open>
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
-              <span class="accordion-version">v1.9.7</span>
-              <span class="accordion-highlight">ノート移動 & インラインコードUX</span>
+              <span class="accordion-version">v1.9.8</span>
+              <span class="accordion-highlight">「開いた瞬間」の体験を変える</span>
             </div>
             <span class="accordion-status review">審査中</span>
           </summary>
           <div class="accordion-content">
+            <p class="changelog-theme">書き始めるまでの摩擦を削る — 高速読み込み、暖色テーマ、賢いパレット、自分の場所にできるエディタ。</p>
             <div class="changelog-group">
-              <h3 class="changelog-group-title">ナビゲーション</h3>
+              <h3 class="changelog-group-title">テーマ & カスタマイズ</h3>
               <ul class="changelog-features" role="list">
-                <li><strong>ノート移動ショートカット</strong> <span><code>Ctrl+Alt+PgUp/PgDn</code>で同フォルダ内のノート間をジャンプ（ラップアラウンド対応）</span></li>
+                <li><strong>Parchmentテーマ</strong> <span>WCAG AAA準拠の暖色パレットにトレーシングペーパー効果 — エディタは道具であり「部屋」</span></li>
+                <li><strong>CandleLightテーマ</strong> <span>Parchmentと対をなすダーク暖色 — Mermaid図・KaTeX数式も暖色で描画</span></li>
+                <li><strong>背景テクスチャ</strong> <span>自分のPNG/JPEG/WebP画像をエディタ背景にタイル敷き詰め（設定 > 表示設定）</span></li>
+                <li><strong>Wax Seal</strong> <span>初回起動時に全画面アニメーション（クリックでスキップ）。テーマ変更はCSSトランジションでスムーズに</span></li>
               </ul>
             </div>
             <div class="changelog-group">
-              <h3 class="changelog-group-title">インラインコード</h3>
+              <h3 class="changelog-group-title">パフォーマンス & 集中</h3>
               <ul class="changelog-features" role="list">
-                <li><strong>ダブルクリックコピー</strong> <span>バッククォートのコードをダブルクリックでクリップボードにコピー（パルスアニメーション付き）</span></li>
-                <li><strong>バッククォートトグル</strong> <span>バッククォートでインラインコードを作成 - Auto-pairのON/OFF設定に応じて動作</span></li>
+                <li><strong>段階的読み込み</strong> <span>50KB超が一瞬で開く — 先頭~5KBを即座描画、残りはバックグラウンド（89-96%高速化）</span></li>
+                <li><strong>Focus Mode改善</strong> <span>Glassmorphismツールバー、スクロールバー2px化、ヘッダー連動の滑らかな表示</span></li>
+                <li><strong>TOC UI改善</strong> <span>ドラッグハンドルのホバー表示、見出しレベル別フォントサイズ（H1 14px → H4+ 11px）</span></li>
               </ul>
             </div>
             <div class="changelog-group">
-              <h3 class="changelog-group-title">コードブロック & Git</h3>
+              <h3 class="changelog-group-title">コマンドパレット</h3>
               <ul class="changelog-features" role="list">
-                <li><strong>コードブロック削除ボタン</strong> <span>ホバーで×ボタン表示、Ctrl+Zで復元可能</span></li>
-                <li><strong>Git通知抑制</strong> <span><code>.md</code>拡張子追加のみの変更は通知しない</span></li>
+                <li><strong>スマート検索</strong> <span>Fuse.jsスコア順 + スニペット20%ブースト — "Table"で即座にInsert Tableが先頭に</span></li>
+                <li><strong>アラート色インジケーター</strong> <span>NOTE/TIP/WARNING等5種にテーマ別カラードットを表示</span></li>
+                <li><strong>構文プレビュー</strong> <span>スニペット説明を構文例に変更: <code>graph TD</code> — Decision flows with arrows</span></li>
+                <li><strong>設定操作</strong> <span>テーマ個別切替・エディタ設定トグルをパレットから直接操作</span></li>
               </ul>
             </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">エディタ & 図表</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Settings + Help統合</strong> <span>歯車と？を統合、4タブモーダル: 設定 / ショートカット / Markdown / Tips</span></li>
+                <li><strong>Mermaid全19種対応</strong> <span>未対応5種を修正、10種の新スニペット追加: ER図、ジャーニー、円グラフ、GitGraph、マインドマップ等</span></li>
+                <li><strong>数式PNG保存</strong> <span>KaTeXブロックをRetina 2x解像度のPNGで保存（ホバーツールバー）</span></li>
+                <li><strong>Mermaidホバーツールバー</strong> <span>別タブで自動非表示 — ビューポート上端28pxのトリガーゾーン</span></li>
+                <li><strong>Crepeメニュー改善</strong> <span>ダークモードの選択色修正、backdrop-blur、アイコンtooltip（i18n対応）</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">オンボーディング</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Welcome Note</strong> <span>初回起動時にMermaid図・ショートカット表・チェックリスト付きサンプルノートを自動配置（EN/JA自動判定）</span></li>
+                <li><strong>段階的ヒント</strong> <span>3つの初回ヒント: コマンドパレット（5分後）、Side Panel（3セッション後）、フォルダ整理</span></li>
+                <li><strong>インポートハイライト</strong> <span>インポートしたノートが開くまでサイドバーでティール色にハイライト</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Windows TOC修正</strong> <span><code>\r\n</code>改行で見出し抽出が失敗する問題を修正</span></li>
+                <li><strong>テキストコピー修正</strong> <span>LaTeX <code>$...$</code> やエスケープ文字を正しく除去</span></li>
+                <li><strong>ドル金額の誤検出</strong> <span><code>$50</code>がLaTeX数式として除去されなくなった</span></li>
+                <li><strong>複数ファイルインポート</strong> <span>一括インポートで全ファイルが正しく取り込まれるように修正</span></li>
+                <li><strong>ライトテーマツールバー</strong> <span>フローティングツールバーのアイコンがライト背景で見えるように修正</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v1.9.7 -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v1.9.7</span>
+              <span class="accordion-highlight">ノート移動 & インラインコード</span>
+            </div>
+            <span class="accordion-status released">リリース済</span>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features" role="list">
+              <li><strong>ノート移動</strong> <span><code>Ctrl+Alt+PgUp/PgDn</code>で同フォルダ内のノート間をジャンプ</span></li>
+              <li><strong>インラインコードコピー</strong> <span>バッククォートのコードをダブルクリックでコピー</span></li>
+            </ul>
           </div>
         </details>
 
@@ -108,21 +161,10 @@
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">執筆 & 書式</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>脚注サポート</strong> <span>学術スタイルの脚注、<code>[^label]</code>構文でクリックジャンプ対応</span></li>
-                <li><strong>絵文字ショートコード</strong> <span><code>:smile:</code>と入力すると😄に変換 - AI出力との互換性に最適</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">コードブロック修正</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>バックスラッシュ表示修正</strong> <span>日本語Windowsで<code>\</code>が<code>¥</code>と表示される問題を修正</span></li>
-                <li><strong>ライトモード視認性</strong> <span>明るい背景でコードが見えない問題を修正</span></li>
-                <li><strong>フォント一貫性</strong> <span>等幅フォントスタックを更新して安定したレンダリングを実現</span></li>
-              </ul>
-            </div>
+            <ul class="changelog-features" role="list">
+              <li><strong>脚注</strong> <span>学術スタイルの<code>[^label]</code>構文、クリックでジャンプ</span></li>
+              <li><strong>絵文字ショートコード</strong> <span><code>:smile:</code>で😄に変換</span></li>
+            </ul>
           </div>
         </details>
 
@@ -132,35 +174,16 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.5</span>
-              <span class="accordion-highlight">コピードロップダウン & バージョン復元</span>
+              <span class="accordion-highlight">コピーオプション & バージョン復元</span>
             </div>
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">コピー & 復元</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>コピードロップダウンメニュー</strong> <span>ホバーで展開、「MDでコピー」「テキストでコピー」を選択可能</span></li>
-                <li><strong>バージョン復元</strong> <span>Gitコミット履歴から過去のバージョンにワンクリックで復元</span></li>
-                <li><strong>Diffモーダル全画面化</strong> <span>2列比較の視認性が向上</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">テーブル & キーボードUX</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>テーブルフォーカスインジケーター</strong> <span>編集中のセルを青枠で明示</span></li>
-                <li><strong>矢印キーテーブルナビゲーション</strong> <span>↑↓でセル間移動、←→はセル内に留まる</span></li>
-                <li><strong>ペーストモーダルキーボード操作</strong> <span>Enterで適用、Shift+Enterで改行、Escでキャンセル</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Git & ビジュアル</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Git状態ドット</strong> <span>新規ノートは緑、変更ありは黄色、差分ボタン(⇄)付き</span></li>
-                <li><strong>CJK Markdown貼り付け対応</strong> <span>日本語/中国語/韓国語の太字・斜体がCtrl+V貼り付けで正しくレンダリング</span></li>
-                <li><strong>チェックボックスマイクロインタラクション</strong> <span>ホバーで拡大、クリックで縮小、チェック時にバウンスアニメーション</span></li>
-              </ul>
-            </div>
+            <ul class="changelog-features" role="list">
+              <li><strong>コピードロップダウン</strong> <span>「MDでコピー」「テキストでコピー」を1つのメニューで</span></li>
+              <li><strong>バージョン復元</strong> <span>Gitコミット履歴からワンクリックで復元</span></li>
+              <li><strong>Git状態ドット</strong> <span>新規は緑、変更ありは黄色、差分ボタン付き</span></li>
+            </ul>
           </div>
         </details>
 
@@ -175,22 +198,10 @@
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">TOC & ナビゲーション</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>TOCセクション並び替え</strong> <span>TOCパネルで見出しをドラッグ&ドロップやショートカットで並び替え（子見出しも一緒に移動）</span></li>
-                <li><strong>見出しレベル変更</strong> <span>Tab / Shift+Tabで見出しを昇格・降格（H1は保護、H6が下限）</span></li>
-                <li><strong>パンくずナビゲーション</strong> <span>現在位置の見出しと祖先見出しを表示し、クリックで一気にジャンプ</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">エディタ & UX</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>コードブロックコピー分離</strong> <span>コード本体のみコピーとMarkdownフェンス付きコピーをボタンで切り替え</span></li>
-                <li><strong>TOC見た目の調整</strong> <span>レベルごとのインデントを拡大し、ドラッグハンドルの視認性を向上</span></li>
-                <li><strong>選択状態の改善</strong> <span>スクロール追跡とキーボード選択の状態を統合し、意図した見出しを確実にハイライト</span></li>
-              </ul>
-            </div>
+            <ul class="changelog-features" role="list">
+              <li><strong>TOC並び替え</strong> <span>ドラッグ&ドロップやショートカットで見出しを構造化</span></li>
+              <li><strong>パンくずナビ</strong> <span>現在の見出しパスを表示、クリックで祖先にジャンプ</span></li>
+            </ul>
           </div>
         </details>
 
@@ -200,38 +211,16 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.3</span>
-              <span class="accordion-highlight">あいまい検索 & タイムスタンプ表示</span>
+              <span class="accordion-highlight">あいまい検索 & 文字数カウント</span>
             </div>
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">検索 & ナビゲーション</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>あいまい検索</strong> <span>タイポ許容（「Meetng」で「Meeting」にマッチ）</span></li>
-                <li><strong>CJKノート検索</strong> <span>ノート検索で1文字検索対応（「会」で「会議メモ」を検索）</span></li>
-                <li><strong>スマートランキング</strong> <span>タイトルマッチ2倍重み付け、最近のノートに加点</span></li>
-                <li><strong>サイドバー閉じる</strong> <span>Escキー、外側クリック、マウス離脱で閉じる</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">エディタ機能</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>最終更新タイムスタンプ</strong> <span>編集中マーク横に最終更新日時を表示</span></li>
-                <li><strong>末尾スペース</strong> <span>赤ドットで可視化、全角スペース検出、保存時に自動削除</span></li>
-                <li><strong>選択範囲の文字数</strong> <span>#ボタンで「X文字、Y単語」を表示（CJK対応）</span></li>
-                <li><strong>Sentence Case</strong> <span>コマンドパレット → Change Case: Sentence</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">マルチウィンドウ & Git</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>クロスインスタンスフォーカス</strong> <span>フォーカス中のインスタンスのみ「editing」バッジ表示</span></li>
-                <li><strong>Gitファイル名インジケーター</strong> <span>特殊文字を含むタイトルの変換後ファイル名を表示</span></li>
-                <li><strong>コピー通知</strong> <span>Ctrl+C/Cmd+Cで「Copied」トースト表示</span></li>
-                <li><strong>画像貼り付け警告</strong> <span>スクリーンショット貼り付け時にBase64サイズ警告</span></li>
-              </ul>
-            </div>
+            <ul class="changelog-features" role="list">
+              <li><strong>あいまい検索</strong> <span>タイポ許容、CJK1文字検索対応</span></li>
+              <li><strong>タイムスタンプ</strong> <span>ノートの最終更新日時を表示</span></li>
+              <li><strong>選択範囲カウント</strong> <span>文字数・単語数を表示（CJK対応）</span></li>
+            </ul>
           </div>
         </details>
 
@@ -241,37 +230,15 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.2</span>
-              <span class="accordion-highlight">テーブル編集 & キーボードナビゲーション</span>
+              <span class="accordion-highlight">テーブル編集</span>
             </div>
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">ナビゲーション & フォーカス</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Reading Focus</strong> <span>Archive/System Notesで<code>↑</code>/<code>↓</code>キーでブロック間移動</span></li>
-                <li><strong>見出しジャンプ</strong> <span><code>Ctrl+↑</code>/<code>Ctrl+↓</code>で見出し間を移動</span></li>
-                <li><strong>ページスクロール</strong> <span><code>PgUp</code>/<code>PgDn</code>でスムーススクロール</span></li>
-                <li><strong>TOCショートカット表示</strong> <span>フッターにキーボードショートカットを表示</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">テーブル機能</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>テーブル挿入</strong> <span>コマンドパレットからカスタム行列数で挿入</span></li>
-                <li><strong>CSVエクスポート</strong> <span>UTF-8 BOM対応でExcelにも対応</span></li>
-                <li><strong>テーブルソート</strong> <span>列タイプを自動判定してソート</span></li>
-                <li><strong>行ドラッグ並び替え</strong> <span>ドラッグで行の順序を変更</span></li>
-                <li><strong>テーブル自動整形</strong> <span><code>Ctrl+Shift+P</code>で列幅を自動調整</span></li>
-                <li><strong>複数セル選択</strong> <span>クリック&ドラッグで複数セル選択</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">エディタ</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>記号パレット</strong> <span>148個の記号を6カテゴリで管理</span></li>
-              </ul>
-            </div>
+            <ul class="changelog-features" role="list">
+              <li><strong>テーブル</strong> <span>挿入、ソート、CSVエクスポート、行ドラッグ並び替え</span></li>
+              <li><strong>キーボードナビゲーション</strong> <span>見出しジャンプ（<code>Ctrl+↑/↓</code>）、ページスクロール</span></li>
+            </ul>
           </div>
         </details>
 
@@ -281,16 +248,14 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.1</span>
-              <span class="accordion-highlight">文字数カウント & 大ファイル処理</span>
+              <span class="accordion-highlight">文字数カウント & 大ファイル</span>
             </div>
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>Word Count統計</strong> <span>文字数・単語数（CJK対応）・読了時間を表示</span></li>
-              <li><strong>Focus Modeカーソル追従</strong> <span>ハイライトがカーソル位置を追従</span></li>
-              <li><strong>コピーボタン安定性</strong> <span>Mermaid/Mathブロックのボタン表示を修正</span></li>
-              <li><strong>大ファイルSmart Loading</strong> <span>300KB以上で選択ダイアログ表示</span></li>
+              <li><strong>Word Count</strong> <span>文字数・単語数（CJK対応）・読了時間</span></li>
+              <li><strong>大ファイル</strong> <span>300KB以上で選択ダイアログ表示</span></li>
             </ul>
           </div>
         </details>
@@ -301,16 +266,14 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.0</span>
-              <span class="accordion-highlight">数式レンダリング & クロスプラットフォーム</span>
+              <span class="accordion-highlight">数式（LaTeX）サポート</span>
             </div>
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>インライン数式トグル</strong> <span>設定で<code>$...$</code>のレンダリングを制御</span></li>
-              <li><strong>数式拡大ボタン</strong> <span>🔍クリックで数式を拡大表示</span></li>
-              <li><strong>クロスプラットフォームショートカット</strong> <span>Mac vs Windows/Linuxで異なるキー記号</span></li>
-              <li><strong>数式コードブロック</strong> <span><code>```math</code>, <code>```latex</code>対応</span></li>
+              <li><strong>数式レンダリング</strong> <span>インライン<code>$...$</code>、ブロック<code>$$...$$</code>、拡大ボタン付き</span></li>
+              <li><strong>クロスプラットフォーム</strong> <span>Mac / Windows / Linuxでショートカット記号を切替</span></li>
             </ul>
           </div>
         </details>
@@ -321,18 +284,14 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.8.0</span>
-              <span class="accordion-highlight">エディタ強化 & 自動リンク化</span>
+              <span class="accordion-highlight">検索・置換 & 自動リンク</span>
             </div>
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>エディタ強化</strong> <span>行移動、日付挿入、検索・置換</span></li>
-              <li><strong>自動リンク化</strong> <span>URL/メールアドレスが自動的にリンクに</span></li>
-              <li><strong>数式ブロックサポート</strong> <span>GitHub/GitLab互換の数式ブロック</span></li>
-              <li><strong>大きいファイルの可視化</strong> <span>サイズ別の色分け表示</span></li>
-              <li><strong>TOCスクロール改善</strong> <span>2段階スクロールで精度向上</span></li>
-              <li><strong>クリーンMarkdownコピー</strong> <span>HTMLタグなしでコピー</span></li>
+              <li><strong>検索・置換</strong> <span>ノート内の文字列を検索して一括置換</span></li>
+              <li><strong>自動リンク化</strong> <span>URL/メールアドレスが自動でリンクに</span></li>
             </ul>
           </div>
         </details>
@@ -349,10 +308,8 @@
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>キーボードファースト設計</strong> <span>パネル切替と矢印キーナビゲーション</span></li>
-              <li><strong>Zen Mode廃止</strong> <span><code>F11</code> + <code>Alt+F</code>で代替</span></li>
-              <li><strong>Git同期状態の可視化</strong> <span>起動時自動Fetch、更新バナー</span></li>
-              <li><strong>アニメーション最適化</strong> <span>50-200ms範囲に最適化</span></li>
+              <li><strong>キーボードファースト</strong> <span>パネル切替と矢印キーナビゲーション</span></li>
+              <li><strong>Git同期状態</strong> <span>起動時自動Fetch、更新バナー</span></li>
             </ul>
           </div>
         </details>
@@ -372,7 +329,6 @@
               <li><strong>Command Palette</strong> <span>VS Code風パレット、50+コマンド</span></li>
               <li><strong>Focus Mode</strong> <span>タイプライタースクロールと3段階dimming</span></li>
               <li><strong>起動時間95%改善</strong> <span>バンドル: 698KB → 84KB</span></li>
-              <li><strong>Archive表示70%高速化</strong> <span>100KBドキュメントが1秒以内</span></li>
             </ul>
           </div>
         </details>
@@ -383,16 +339,14 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.5.0</span>
-              <span class="accordion-highlight">大規模ドキュメント & Sticky Toolbar</span>
+              <span class="accordion-highlight">大規模ドキュメント & Mermaid</span>
             </div>
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>大規模ドキュメント対応</strong> <span>100KB超ファイルの読み込みが57%高速化</span></li>
-              <li><strong>Archiveピン留めエクスポート</strong> <span>ピン留めノートのみを.zipで出力</span></li>
-              <li><strong>Sticky Toolbar</strong> <span>スクロールしてもツールバーが常に表示</span></li>
-              <li><strong>エディタ機能強化</strong> <span>コールアウト、アンカー、LaTeX、Mermaid拡大</span></li>
+              <li><strong>大規模ドキュメント</strong> <span>100KB超の読み込みが57%高速化</span></li>
+              <li><strong>リッチコンテンツ</strong> <span>コールアウト、アンカー、LaTeX、Mermaid拡大</span></li>
             </ul>
           </div>
         </details>
@@ -409,9 +363,8 @@
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>目次（TOC）の強化</strong> <span>スクロール中に現在セクションをハイライト</span></li>
-              <li><strong>データ安全性の向上</strong> <span>自動保存の3層防御</span></li>
-              <li><strong>UX改善</strong> <span>スムーズなトランジション、スター/ピンボタン統合</span></li>
+              <li><strong>目次（TOC）</strong> <span>スクロール中に現在セクションをハイライト</span></li>
+              <li><strong>データ安全性</strong> <span>自動保存の3層防御</span></li>
             </ul>
           </div>
         </details>
@@ -422,14 +375,13 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.3.0</span>
-              <span class="accordion-highlight">Git Fetch & 重複検出</span>
+              <span class="accordion-highlight">Git Fetch & 複数キーワード検索</span>
             </div>
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
               <li><strong>Git Fetch</strong> <span>ローカルを変更せずにリモート状態を確認</span></li>
-              <li><strong>重複ノート管理</strong> <span>side-by-side比較で保持するノートを選択</span></li>
               <li><strong>複数キーワード検索</strong> <span>AND検索、ハイライト付き</span></li>
             </ul>
           </div>
@@ -441,15 +393,14 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.2.0</span>
-              <span class="accordion-highlight">ホバーメニュー & ワイドスクリーン</span>
+              <span class="accordion-highlight">競合検出 & ワイドスクリーン</span>
             </div>
             <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>ホバーメニュー</strong> <span>Edit/Moveメニューへの高速アクセス</span></li>
               <li><strong>競合検出</strong> <span>Git同期の4段階リスクインジケーター</span></li>
-              <li><strong>ワイドスクリーン対応</strong> <span>1600px以上でサイドバー・TOCがコンテンツ外に</span></li>
+              <li><strong>ワイドスクリーン</strong> <span>1600px以上でサイドバー・TOCがコンテンツ外に</span></li>
             </ul>
           </div>
         </details>

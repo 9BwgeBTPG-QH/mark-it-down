@@ -63,37 +63,90 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v1.9.7 - Latest -->
+        <!-- v1.9.8 - Latest -->
         <details class="accordion-item latest" open>
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
-              <span class="accordion-version">v1.9.7</span>
-              <span class="accordion-highlight">Note navigation & inline code UX</span>
+              <span class="accordion-version">v1.9.8</span>
+              <span class="accordion-highlight">Redefining the moment you open</span>
             </div>
             <span class="accordion-status review">Under Review</span>
           </summary>
           <div class="accordion-content">
+            <p class="changelog-theme">Eliminating friction before you start writing — faster loading, warmer themes, smarter palette, and a place you can make your own.</p>
             <div class="changelog-group">
-              <h3 class="changelog-group-title">Navigation</h3>
+              <h3 class="changelog-group-title">Themes & Customization</h3>
               <ul class="changelog-features" role="list">
-                <li><strong>Note Navigation Shortcuts</strong> <span><code>Ctrl+Alt+PgUp/PgDn</code> to jump between notes in the same folder with wrap-around</span></li>
+                <li><strong>Parchment Theme</strong> <span>Warm-tone palette (WCAG AAA) with tracing paper effect — the editor as a room, not just a tool</span></li>
+                <li><strong>CandleLight Theme</strong> <span>Dark warm-tone companion — Mermaid and KaTeX also render in warm palette</span></li>
+                <li><strong>Background Texture</strong> <span>Tile your own PNG/JPEG/WebP as editor background (Settings > Display)</span></li>
+                <li><strong>Wax Seal</strong> <span>Full-screen animation on first launch (click to skip). Theme switching uses smooth CSS transitions</span></li>
               </ul>
             </div>
             <div class="changelog-group">
-              <h3 class="changelog-group-title">Inline Code</h3>
+              <h3 class="changelog-group-title">Performance & Focus</h3>
               <ul class="changelog-features" role="list">
-                <li><strong>Double-Click Copy</strong> <span>Double-click backtick code to copy to clipboard with pulse animation</span></li>
-                <li><strong>Backtick Toggle</strong> <span>Type backticks to create inline code - adapts to Auto-pair ON/OFF setting</span></li>
+                <li><strong>Progressive Loading</strong> <span>50KB+ docs open instantly — first ~5KB renders, rest loads in background (89-96% faster)</span></li>
+                <li><strong>Focus Mode Polish</strong> <span>Glassmorphism toolbar, 2px scrollbar, smoother header transitions</span></li>
+                <li><strong>TOC UI</strong> <span>Drag handles appear on hover, heading-level font sizing (H1 14px → H4+ 11px)</span></li>
               </ul>
             </div>
             <div class="changelog-group">
-              <h3 class="changelog-group-title">Code Blocks & Git</h3>
+              <h3 class="changelog-group-title">Command Palette</h3>
               <ul class="changelog-features" role="list">
-                <li><strong>Code Block Delete Button</strong> <span>Hover to reveal × button on any code block, with Ctrl+Z undo support</span></li>
-                <li><strong>Git Notification Suppression</strong> <span><code>.md</code> extension-only filename changes no longer trigger notifications</span></li>
+                <li><strong>Smart Search</strong> <span>Fuse.js scoring with 20% snippet boost — "Table" now finds Insert Table first</span></li>
+                <li><strong>Alert Indicators</strong> <span>Color dots for NOTE/TIP/WARNING/IMPORTANT/CAUTION before you insert</span></li>
+                <li><strong>Syntax Previews</strong> <span>Descriptions show what gets inserted: <code>graph TD</code> — Decision flows with arrows</span></li>
+                <li><strong>Settings in Palette</strong> <span>Switch themes, toggle Inline Math / Trailing Spaces without opening Settings</span></li>
               </ul>
             </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Editor & Diagrams</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Settings + Help Unified</strong> <span>Gear + ? merged into one 4-tab modal: Settings / Shortcuts / Markdown / Tips</span></li>
+                <li><strong>Mermaid All 19 Types</strong> <span>5 missing types fixed, 10 new snippets: ER, Journey, Pie, GitGraph, Mindmap, Timeline, Sankey, XY, C4, Packet</span></li>
+                <li><strong>Math PNG Export</strong> <span>Save KaTeX blocks as Retina 2x PNG from hover toolbar</span></li>
+                <li><strong>Mermaid Hover Toolbar</strong> <span>Auto-hide in separate tab — 28px trigger zone at viewport top</span></li>
+                <li><strong>Crepe Menu Polish</strong> <span>Dark mode selection fix, backdrop-blur, icon tooltips (i18n)</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Onboarding</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Welcome Note</strong> <span>First launch shows a sample note with Mermaid diagram, shortcuts, checklist — auto EN/JA</span></li>
+                <li><strong>Contextual Hints</strong> <span>3 progressive hints: Command Palette (5 min), Side Panel (3 sessions), folder tips</span></li>
+                <li><strong>Import Highlight</strong> <span>Imported notes glow teal in sidebar until opened</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>TOC on Windows</strong> <span>Fixed heading extraction failing on <code>\r\n</code> line endings</span></li>
+                <li><strong>Copy as Text</strong> <span>LaTeX <code>$...$</code> and escape characters now stripped correctly</span></li>
+                <li><strong>Dollar Amounts</strong> <span><code>$50</code> no longer misidentified as LaTeX</span></li>
+                <li><strong>Multi-file Import</strong> <span>All files now import correctly (fixed live FileList reference)</span></li>
+                <li><strong>Light Theme Toolbar</strong> <span>Floating toolbar icons now visible on light backgrounds</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v1.9.7 -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v1.9.7</span>
+              <span class="accordion-highlight">Note navigation & inline code</span>
+            </div>
+            <span class="accordion-status released">Released</span>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features" role="list">
+              <li><strong>Note Navigation</strong> <span><code>Ctrl+Alt+PgUp/PgDn</code> to jump between notes in the same folder</span></li>
+              <li><strong>Inline Code Copy</strong> <span>Double-click backtick code to copy to clipboard</span></li>
+            </ul>
           </div>
         </details>
 
@@ -108,21 +161,10 @@
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Writing & Formatting</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Footnote Support</strong> <span>Academic-style footnotes with <code>[^label]</code> syntax and click-to-jump navigation</span></li>
-                <li><strong>Emoji Shortcodes</strong> <span>Type <code>:smile:</code> to insert 😄 - perfect for AI output compatibility</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Code Block Fixes</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Backslash Display Fix</strong> <span>Fixed <code>\</code> showing as <code>¥</code> on Japanese Windows</span></li>
-                <li><strong>Light Mode Visibility</strong> <span>Fixed code text being invisible on light backgrounds</span></li>
-                <li><strong>Font Consistency</strong> <span>Updated monospace font stack for reliable rendering</span></li>
-              </ul>
-            </div>
+            <ul class="changelog-features" role="list">
+              <li><strong>Footnotes</strong> <span>Academic-style <code>[^label]</code> with click-to-jump</span></li>
+              <li><strong>Emoji Shortcodes</strong> <span>Type <code>:smile:</code> to insert 😄</span></li>
+            </ul>
           </div>
         </details>
 
@@ -132,35 +174,16 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.5</span>
-              <span class="accordion-highlight">Copy dropdown & version restore</span>
+              <span class="accordion-highlight">Copy options & version restore</span>
             </div>
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Copy & Restore</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Copy Dropdown Menu</strong> <span>Hover-to-expand dropdown with "Copy as MD" and "Copy as Text" options</span></li>
-                <li><strong>Version Restore</strong> <span>Restore notes to previous versions from Git commit history with one click</span></li>
-                <li><strong>Diff Modal Full Screen</strong> <span>Better readability for side-by-side comparison</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Table & Keyboard UX</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Table Focus Indicator</strong> <span>Blue border shows active cell for clearer editing</span></li>
-                <li><strong>Arrow Key Table Navigation</strong> <span>↑↓ moves between cells, ←→ stays within cell boundaries</span></li>
-                <li><strong>Paste Modal Keyboard</strong> <span>Enter to apply, Shift+Enter for newline, Esc to cancel</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Git & Visual</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Git Status Dots</strong> <span>Green dot for new notes, yellow for modified, with diff button (⇄)</span></li>
-                <li><strong>CJK Markdown Paste</strong> <span>Fixed bold/italic rendering for Japanese, Chinese, Korean on Ctrl+V</span></li>
-                <li><strong>Checkbox Microinteractions</strong> <span>Hover scale, click feedback, and bounce animation on check</span></li>
-              </ul>
-            </div>
+            <ul class="changelog-features" role="list">
+              <li><strong>Copy Dropdown</strong> <span>"Copy as MD" and "Copy as Text" in one menu</span></li>
+              <li><strong>Version Restore</strong> <span>Restore notes to previous versions from Git history</span></li>
+              <li><strong>Git Status Dots</strong> <span>Green for new, yellow for modified, with diff button</span></li>
+            </ul>
           </div>
         </details>
 
@@ -175,22 +198,10 @@
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">TOC & Navigation</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>TOC Section Reordering</strong> <span>Drag & drop and keyboard shortcuts to reorder headings, with children moving automatically</span></li>
-                <li><strong>Heading Level Controls</strong> <span>Promote/demote heading levels with Tab / Shift+Tab, with H1 protection and H6 limit</span></li>
-                <li><strong>Breadcrumb Navigation</strong> <span>See current heading and ancestors, and jump to any ancestor with one click</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Editor & UX</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Code Block Copy Modes</strong> <span>Separate buttons for copying code only vs Markdown fences included</span></li>
-                <li><strong>TOC Visual Tweaks</strong> <span>Deeper indent per level and more visible drag handles for clearer hierarchy</span></li>
-                <li><strong>Selection State Improvements</strong> <span>Smarter coordination between scroll tracking and keyboard selection in TOC</span></li>
-              </ul>
-            </div>
+            <ul class="changelog-features" role="list">
+              <li><strong>TOC Reordering</strong> <span>Drag & drop or keyboard shortcuts to restructure headings</span></li>
+              <li><strong>Breadcrumbs</strong> <span>See current heading path, click to jump to any ancestor</span></li>
+            </ul>
           </div>
         </details>
 
@@ -200,38 +211,16 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.3</span>
-              <span class="accordion-highlight">Fuzzy search & timestamp display</span>
+              <span class="accordion-highlight">Fuzzy search & word count</span>
             </div>
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Search & Navigation</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Fuzzy Search</strong> <span>Typo-tolerant search ("Meetng" matches "Meeting")</span></li>
-                <li><strong>CJK Note Search</strong> <span>Single character search in notes (e.g., "会" finds "会議メモ")</span></li>
-                <li><strong>Smart Ranking</strong> <span>Title matches weighted 2x, recency bonus for recent notes</span></li>
-                <li><strong>Sidebar Close</strong> <span>Escape key, click outside, or mouse leave to close</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Editor Features</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Last Updated Timestamp</strong> <span>Shows last modified date/time next to edit indicator</span></li>
-                <li><strong>Trailing Spaces</strong> <span>Red dot visualization, full-width space highlight, auto-trim on save</span></li>
-                <li><strong>Selection Word Count</strong> <span># button shows "X chars, Y words" (CJK-aware)</span></li>
-                <li><strong>Sentence Case</strong> <span>Command Palette → Change Case: Sentence</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Multi-Window & Git</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Cross-Instance Focus</strong> <span>Only focused instance shows "editing" badge</span></li>
-                <li><strong>Git Filename Indicator</strong> <span>Shows converted filename for special characters</span></li>
-                <li><strong>Copy Notification</strong> <span>"Copied" toast on Ctrl+C/Cmd+C</span></li>
-                <li><strong>Image Paste Warning</strong> <span>Base64 size warning for screenshot paste</span></li>
-              </ul>
-            </div>
+            <ul class="changelog-features" role="list">
+              <li><strong>Fuzzy Search</strong> <span>Typo-tolerant, single CJK character search</span></li>
+              <li><strong>Timestamp</strong> <span>Last modified date/time on each note</span></li>
+              <li><strong>Selection Word Count</strong> <span>Characters and words for selected text (CJK-aware)</span></li>
+            </ul>
           </div>
         </details>
 
@@ -241,37 +230,15 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.2</span>
-              <span class="accordion-highlight">Table editing & keyboard navigation</span>
+              <span class="accordion-highlight">Table editing</span>
             </div>
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Navigation & Focus</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Reading Focus</strong> <span>Navigate blocks with <code>↑</code>/<code>↓</code> in Archive/System Notes</span></li>
-                <li><strong>Heading Jump</strong> <span><code>Ctrl+↑</code>/<code>Ctrl+↓</code> to jump between headings</span></li>
-                <li><strong>Page Scroll</strong> <span><code>PgUp</code>/<code>PgDn</code> for smooth viewport scrolling</span></li>
-                <li><strong>TOC Shortcut Hints</strong> <span>Footer displays keyboard shortcuts</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Table Features</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Table Insert</strong> <span>Command Palette → Insert Table with custom rows/columns</span></li>
-                <li><strong>CSV Export</strong> <span>Export tables as CSV with UTF-8 BOM for Excel</span></li>
-                <li><strong>Table Sort</strong> <span>Sort by column with auto-detect type</span></li>
-                <li><strong>Row Drag & Drop</strong> <span>Reorder table rows by dragging</span></li>
-                <li><strong>Table Prettify</strong> <span>Auto-align columns with <code>Ctrl+Shift+P</code></span></li>
-                <li><strong>Multi-cell Selection</strong> <span>Select multiple cells with click & drag</span></li>
-              </ul>
-            </div>
-            <div class="changelog-group">
-              <h3 class="changelog-group-title">Editor</h3>
-              <ul class="changelog-features" role="list">
-                <li><strong>Symbol Palette</strong> <span>148 symbols in 6 categories via Command Palette</span></li>
-              </ul>
-            </div>
+            <ul class="changelog-features" role="list">
+              <li><strong>Tables</strong> <span>Insert, sort, CSV export, drag to reorder rows</span></li>
+              <li><strong>Keyboard Navigation</strong> <span>Heading jump (<code>Ctrl+↑/↓</code>), page scroll</span></li>
+            </ul>
           </div>
         </details>
 
@@ -281,16 +248,14 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.1</span>
-              <span class="accordion-highlight">Word count & large file handling</span>
+              <span class="accordion-highlight">Word count & large files</span>
             </div>
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>Word Count Statistics</strong> <span>Character count, word count (CJK-aware), reading time</span></li>
-              <li><strong>Focus Mode Cursor Tracking</strong> <span>Highlight follows cursor position</span></li>
-              <li><strong>Copy Button Stability</strong> <span>Fixed button visibility in Mermaid/Math blocks</span></li>
-              <li><strong>Big File Smart Loading</strong> <span>300KB+ files show choice dialog</span></li>
+              <li><strong>Word Count</strong> <span>Characters, words (CJK-aware), reading time</span></li>
+              <li><strong>Large Files</strong> <span>300KB+ shows choice dialog</span></li>
             </ul>
           </div>
         </details>
@@ -301,16 +266,14 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.0</span>
-              <span class="accordion-highlight">Math rendering & cross-platform keys</span>
+              <span class="accordion-highlight">Math (LaTeX) support</span>
             </div>
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>Inline Math Toggle</strong> <span>Control <code>$...$</code> rendering in settings</span></li>
-              <li><strong>Math Enlarge Button</strong> <span>Click 🔍 for larger math view</span></li>
-              <li><strong>Cross-Platform Shortcuts</strong> <span>Mac vs Windows/Linux key symbols</span></li>
-              <li><strong>Math Code Blocks</strong> <span>Support for <code>```math</code>, <code>```latex</code></span></li>
+              <li><strong>Math Rendering</strong> <span>Inline <code>$...$</code>, block <code>$$...$$</code>, with enlarge button</span></li>
+              <li><strong>Cross-Platform Keys</strong> <span>Mac vs Windows/Linux shortcut symbols</span></li>
             </ul>
           </div>
         </details>
@@ -321,18 +284,14 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.8.0</span>
-              <span class="accordion-highlight">Editor power-ups & auto-linking</span>
+              <span class="accordion-highlight">Find & Replace, auto-linking</span>
             </div>
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>Editor Enhancements</strong> <span>Line move, date insertion, Find & Replace</span></li>
+              <li><strong>Find & Replace</strong> <span>Search and replace across your note</span></li>
               <li><strong>Auto-Linking</strong> <span>URLs and emails become clickable automatically</span></li>
-              <li><strong>Math Block Support</strong> <span>GitHub/GitLab-compatible math blocks</span></li>
-              <li><strong>Large File Visualization</strong> <span>Color-coded size indicators</span></li>
-              <li><strong>TOC Scrolling</strong> <span>Two-phase scroll with verification</span></li>
-              <li><strong>Copy as Clean Markdown</strong> <span>No HTML tags, compatible everywhere</span></li>
             </ul>
           </div>
         </details>
@@ -349,10 +308,8 @@
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>Keyboard-First Design</strong> <span>Panel shortcuts and arrow key navigation</span></li>
-              <li><strong>Zen Mode Removed</strong> <span>Use <code>F11</code> + <code>Alt+F</code> instead</span></li>
-              <li><strong>Git Sync Status</strong> <span>Auto-fetch, remote updates banner</span></li>
-              <li><strong>Snappier Animations</strong> <span>Optimized to 50-200ms</span></li>
+              <li><strong>Keyboard-First</strong> <span>Panel shortcuts and arrow key navigation</span></li>
+              <li><strong>Git Sync Status</strong> <span>Auto-fetch on startup, remote update banner</span></li>
             </ul>
           </div>
         </details>
@@ -372,7 +329,6 @@
               <li><strong>Command Palette</strong> <span>VS Code-style with 50+ commands</span></li>
               <li><strong>Focus Mode</strong> <span>Typewriter scroll and 3-level dimming</span></li>
               <li><strong>95% Faster Startup</strong> <span>Bundle: 698KB → 84KB</span></li>
-              <li><strong>70% Faster Archive</strong> <span>100KB docs load in under 1s</span></li>
             </ul>
           </div>
         </details>
@@ -383,16 +339,14 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.5.0</span>
-              <span class="accordion-highlight">Large docs & sticky toolbar</span>
+              <span class="accordion-highlight">Large docs & Mermaid</span>
             </div>
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>Large Document Support</strong> <span>57% faster loading for 100KB+ files</span></li>
-              <li><strong>Archive Pinned Export</strong> <span>Export pinned notes as .zip</span></li>
-              <li><strong>Sticky Toolbar</strong> <span>Toolbar stays visible while scrolling</span></li>
-              <li><strong>Enhanced Editor</strong> <span>Callouts, anchors, LaTeX, Mermaid zoom</span></li>
+              <li><strong>Large Docs</strong> <span>57% faster loading for 100KB+ files</span></li>
+              <li><strong>Rich Content</strong> <span>Callouts, anchors, LaTeX, Mermaid zoom</span></li>
             </ul>
           </div>
         </details>
@@ -409,9 +363,8 @@
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>Smarter TOC</strong> <span>Highlights current section while scrolling</span></li>
-              <li><strong>Data Safety</strong> <span>3-layer protection for auto-save</span></li>
-              <li><strong>UX Polish</strong> <span>Smooth transitions, unified star/pin button</span></li>
+              <li><strong>Smart TOC</strong> <span>Highlights current section while scrolling</span></li>
+              <li><strong>Data Safety</strong> <span>3-layer auto-save protection</span></li>
             </ul>
           </div>
         </details>
@@ -422,14 +375,13 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.3.0</span>
-              <span class="accordion-highlight">Git fetch & duplicate detection</span>
+              <span class="accordion-highlight">Git fetch & multi-keyword search</span>
             </div>
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
               <li><strong>Git Fetch</strong> <span>Check remote state without modifying local</span></li>
-              <li><strong>Duplicate Detection</strong> <span>Side-by-side comparison to choose</span></li>
               <li><strong>Multi-keyword Search</strong> <span>AND search with highlights</span></li>
             </ul>
           </div>
@@ -441,13 +393,12 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.2.0</span>
-              <span class="accordion-highlight">Hover menus & wide screen</span>
+              <span class="accordion-highlight">Conflict detection & wide screen</span>
             </div>
             <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features" role="list">
-              <li><strong>Hover Menus</strong> <span>Faster access to Edit/Move menus</span></li>
               <li><strong>Conflict Detection</strong> <span>4-level risk indicators for Git sync</span></li>
               <li><strong>Wide Screen</strong> <span>Sidebar/TOC outside content on 1600px+</span></li>
             </ul>

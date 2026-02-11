@@ -12,19 +12,6 @@
 | #46 | " | 🟣 | Added Sticky Toolbar Feature to Japanese Features Page | ~268 |
 | #43 | 11:46 PM | ⚖️ | Features Page Gap Analysis for v1.5.0 Release | ~451 |
 | #42 | " | 🔵 | Japanese Features Page Already Updated with 2026 Copyright | ~243 |
-| #40 | 11:42 PM | ✅ | Updated English Privacy Policy Copyright to 2026 | ~323 |
-| #39 | " | ✅ | Updated English Homepage Copyright to 2026 | ~262 |
-| #38 | " | ✅ | Updated English Feedback Page Copyright to 2026 | ~210 |
-| #37 | 11:41 PM | ✅ | Updated English Features Page Copyright to 2026 | ~205 |
-| #36 | " | 🔵 | Japanese Homepage with Reverse Language Detection | ~312 |
-| #35 | " | 🔵 | Mark It Down Homepage Language Auto-Detection | ~366 |
-| #34 | " | 🔵 | Mark It Down Feedback Page Structure | ~279 |
-| #33 | " | 🔵 | Mark It Down Features Page Structure Review | ~442 |
-| #32 | 11:26 PM | ✅ | Updated Japanese Changelog Copyright Year and Added v1.5.0 | ~276 |
-| #31 | " | ✅ | Japanese Changelog Updated for v1.4.0 Release and v1.5.0 Announcement | ~363 |
-| #30 | " | ✅ | Updated English Changelog Copyright Year to 2026 | ~209 |
-| #29 | " | 🔵 | Mark It Down Japanese Changelog Page Structure | ~385 |
-| #28 | " | ✅ | Changelog Updated for v1.4.0 Release and v1.5.0 Announcement | ~349 |
 
 ### Jan 7, 2026
 
@@ -53,11 +40,41 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
-| #3570 | 8:54 PM | ✅ | English Homepage Schema Version Update to 1.9.7 | ~349 |
+| #3583 | 8:56 PM | ✅ | English Features Page Added Note Navigation Shortcut | ~389 |
+| #3582 | " | ✅ | Japanese Changelog Added v1.9.7 Entry with Localized Feature Descriptions | ~532 |
+| #3580 | 8:55 PM | ✅ | English Changelog Added v1.9.7 Entry and Updated v1.9.6 Status | ~569 |
+| #3576 | " | ✅ | Japanese Homepage CTA Section Version Update Complete | ~384 |
+| #3575 | " | ✅ | Japanese Homepage Coming Soon Section Updated to v1.9.7 Features | ~516 |
+| #3574 | " | ✅ | Japanese Homepage Schema Version Update to 1.9.7 | ~340 |
+| #3573 | 8:54 PM | ✅ | English Homepage CTA Section Version Update to 1.9.7 | ~364 |
+| #3570 | " | ✅ | English Homepage Schema Version Update to 1.9.7 | ~349 |
+| #3571 | " | ✅ | English Homepage Coming Soon Section Updated to v1.9.7 Features | ~476 |
 | #3569 | " | 🔵 | Japanese Features Page Complete Localization | ~588 |
 | #3567 | 8:53 PM | 🔵 | Features Page Structure and Organization Review | ~568 |
 | #3563 | " | 🔵 | Japanese Changelog Page Localization Review | ~519 |
 | #3560 | 8:52 PM | 🔵 | Changelog Page Structure Review for Version Updates | ~545 |
 | #3559 | " | 🔵 | Japanese Homepage Localization Review | ~526 |
 | #3558 | " | 🔵 | Mark It Down Website Homepage Structure Review | ~512 |
+
+### Feb 11, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #5030 | 7:26 PM | ✅ | Website Documentation Updated - 8 Files Modified with Net Reduction in Lines | ~449 |
+| #5029 | " | ✅ | Japanese Features Page Math Description Enhanced with Export Capability | ~318 |
+| #5028 | 7:25 PM | ✅ | Japanese Features Page Mermaid Description Updated for Complete Coverage | ~319 |
+| #5027 | " | ✅ | Japanese Features Page Enhanced with Command Palette Item | ~340 |
+| #5026 | " | ✅ | English Features Page Math Description Enhanced with Export Capability | ~313 |
+| #5025 | 7:24 PM | ✅ | English Features Page Mermaid Description Updated for Comprehensive Coverage | ~320 |
+| #5024 | " | ✅ | English Features Page Enhanced with Command Palette Details | ~326 |
+| #5023 | " | ✅ | Japanese Homepage v1.9.8 Preview Expanded Matching English | ~380 |
+| #5022 | " | ✅ | English Homepage v1.9.8 Preview Expanded with Additional Features | ~391 |
+| #5021 | 7:23 PM | ✅ | Japanese Changelog Expanded Matching English Structure | ~429 |
+| #5020 | " | ✅ | English Changelog Expanded with Comprehensive v1.9.8 Details | ~534 |
+| #5019 | 7:21 PM | 🔵 | Japanese Features Page Pre-Updated with v1.9.8 Content | ~344 |
+| #5018 | 7:20 PM | 🔵 | Features Page Already Updated with v1.9.8 Capabilities | ~419 |
+| #5017 | " | 🔵 | Japanese Changelog Mirrors English Structure | ~370 |
+| #5016 | " | 🔵 | Changelog Page Structure Analyzed for v1.9.8 Expansion | ~438 |
+| #5015 | 7:19 PM | 🔵 | Japanese Homepage Structure Mirrors English Version | ~345 |
+| #5014 | " | 🔵 | Current Website Homepage Structure Examined | ~342 |
 </claude-mem-context>

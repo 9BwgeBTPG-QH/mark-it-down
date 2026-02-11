@@ -77,6 +77,7 @@
               <li><strong>New Tab</strong> <span>全画面ワークスペース、Focus Mode (Alt+F)</span></li>
               <li><strong>Side Panel</strong> <span>AIやブラウジングの横で書く</span></li>
               <li><strong>Focus Mode</strong> <span>タイプライタースクロール、カーソル追従ハイライト</span></li>
+              <li><strong>コマンドパレット</strong> <span>あいまい検索、アラート色インジケーター、構文プレビュー、設定操作</span></li>
               <li><strong>固定ツールバー</strong> <span>Side Panelで常に表示</span></li>
               <li><strong>デュアルモード</strong> <span>両方同時に開ける、独立したウィンドウ</span></li>
             </ul>
@@ -95,11 +96,14 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>GitHub Flavored</strong> <span>テーブル、タスクリスト、シンタックスハイライト</span></li>
-              <li><strong>Mermaid</strong> <span>フローチャート、シーケンス図、クリックで拡大</span></li>
-              <li><strong>数式 (LaTeX)</strong> <span>インライン <code>$...$</code>、ブロック <code>$$...$$</code>、コードブロック</span></li>
+              <li><strong>Mermaid</strong> <span>全19種対応 — フローチャート、ER図、マインドマップ、ガントチャート等。クリックで拡大、PNG保存</span></li>
+              <li><strong>数式 (LaTeX)</strong> <span>インライン <code>$...$</code>、ブロック <code>$$...$$</code>。別タブで開いてRetina 2x PNGで保存</span></li>
               <li><strong>コールアウト</strong> <span>NOTE、TIP、IMPORTANT、WARNING、CAUTION</span></li>
               <li><strong>自動リンク化</strong> <span>URLとメールアドレスが自動でリンクに</span></li>
               <li><strong>ページ内リンク</strong> <span><code>[テキスト](#見出し)</code> で内部ナビゲーション</span></li>
+              <li><strong>脚注</strong> <span>学術スタイルの<code>[^label]</code>構文、クリックでジャンプ</span></li>
+              <li><strong>絵文字ショートコード</strong> <span><code>:smile:</code>で😄に変換</span></li>
+              <li><strong>テーブル</strong> <span>挿入、ソート、CSVエクスポート、行ドラッグ並び替え</span></li>
             </ul>
           </div>
         </details>
@@ -118,7 +122,7 @@
               <li><strong>5フォルダ</strong> <span>Inbox / Template / Archive / Trash / System</span></li>
               <li><strong>ピン & スター</strong> <span>重要なノートを上部に固定 (Alt+P)</span></li>
               <li><strong>ドラッグ&ドロップ</strong> <span>フォルダ間でノートを移動</span></li>
-              <li><strong>検索</strong> <span>即時フィルタ、フォルダ自動展開</span></li>
+              <li><strong>検索</strong> <span>あいまい検索、タイポ許容、CJK1文字検索対応</span></li>
               <li><strong>重複検出</strong> <span>side-by-side比較で選択</span></li>
             </ul>
           </div>
@@ -136,8 +140,11 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>目次 (TOC)</strong> <span>自動生成、現在セクションをハイライト</span></li>
+              <li><strong>TOC並び替え</strong> <span>ドラッグ&ドロップやショートカットで見出しを構造化</span></li>
+              <li><strong>パンくずナビ</strong> <span>現在の見出しパスを表示、クリックで祖先にジャンプ</span></li>
               <li><strong>Word Count</strong> <span>文字数、単語数（CJK対応）、読了時間</span></li>
-              <li><strong>テーマ</strong> <span>ダーク / ライト / システム連動</span></li>
+              <li><strong>4テーマ</strong> <span>ライト / ダーク / Parchment / CandleLight — エディタは道具であり「部屋」 <img src="wax-seal.png" alt="" class="wax-seal-accent" aria-hidden="true"></span></li>
+              <li><strong>背景テクスチャ</strong> <span>自分で選んだ画像で「自分の場所」にする</span></li>
               <li><strong>Auto Pair</strong> <span>括弧、引用符を自動補完</span></li>
               <li><strong>コードブロック</strong> <span>スクロール可能（20行超）、コピーボタン、ホバー削除</span></li>
               <li><strong>インラインコード</strong> <span>ダブルクリックでコピー、バッククォートで入力</span></li>
@@ -157,8 +164,8 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>自動保存</strong> <span>0.5秒デバウンス、保存ボタン不要</span></li>
-              <li><strong>大規模ドキュメント</strong> <span>100KB+対応、Archive 70%高速化</span></li>
-              <li><strong>Smart Loading</strong> <span>300KB+で選択ダイアログ表示</span></li>
+              <li><strong>段階的読み込み</strong> <span>50KB超でも一瞬で開く — 書き始めるまでの摩擦をゼロに</span></li>
+              <li><strong>Smart Loading</strong> <span>300KB+で選択ダイアログ表示、Archiveで高速読み取り専用表示</span></li>
               <li><strong>Chrome Storage</strong> <span>キャッシュクリアでも残る</span></li>
               <li><strong>インポート/エクスポート</strong> <span>.md、.zip、Archiveピン留め</span></li>
             </ul>
@@ -181,6 +188,7 @@
               <li><strong>競合解決</strong> <span>side-by-side、リスクインジケーター</span></li>
               <li><strong>Git Fetch</strong> <span>ローカル変更なしでリモート確認</span></li>
               <li><strong>履歴</strong> <span>過去20件のコミット、差分ビュー</span></li>
+              <li><strong>バージョン復元</strong> <span>ワンクリックで過去のバージョンに復元</span></li>
             </ul>
           </div>
         </details>
