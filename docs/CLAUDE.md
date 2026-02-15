@@ -11,12 +11,6 @@
 | #3248 | " | ✅ | Japanese Homepage Coming Soon Section Updated to v1.9.6 | ~354 |
 | #3247 | " | ✅ | English Homepage CTA Section Updated to v1.9.6 | ~240 |
 | #3246 | " | ✅ | English Homepage Coming Soon Section Updated to v1.9.6 | ~367 |
-| #3245 | " | ✅ | Japanese Changelog Updated with v1.9.6 Entry | ~362 |
-| #3244 | 11:34 PM | ✅ | English Changelog Updated with v1.9.6 Entry | ~328 |
-| #3243 | " | 🔵 | Japanese Homepage Shows v1.9.5 Under Review | ~298 |
-| #3242 | " | 🔵 | Japanese Changelog Page Shows v1.9.5 Under Review | ~318 |
-| #3241 | " | 🔵 | Homepage Features "Coming in v1.9.5" Section with Under Review Status | ~287 |
-| #3240 | " | 🔵 | Current Website Changelog Shows v1.9.5 as Latest Under Review | ~323 |
 
 ### Feb 6, 2026
 
@@ -64,6 +58,12 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
+| #6125 | 11:45 AM | 🔵 | English Homepage Exit Flow Description References Export Formats | ~498 |
+| #6122 | " | ✅ | Coming Soon Feature Updated - Parchment/CandleLight Theme Focus | ~541 |
+| #6118 | " | ✅ | Philosophy Section Streamlined - Performance Item Removed | ~493 |
+| #6115 | 11:44 AM | ✅ | Structured Data Feature List Expanded for v1.9.9 Capabilities | ~622 |
+| #6112 | " | ✅ | Japanese Homepage Meta Tags Updated - Store Description Alignment and Theme Color Fix | ~552 |
+| #6109 | 11:37 AM | 🔵 | Japanese Homepage Current State - Legacy Color References in Meta Tags | ~551 |
 | #6092 | 11:30 AM | ✅ | Legacy Color References Verification - Complete Migration Confirmed | ~442 |
 | #6091 | " | ✅ | Neutral Shadow Color Updated from Warm to True Neutral Gray | ~390 |
 | #6090 | " | 🔵 | Legacy Accent Color in Changelog Code Background | ~334 |

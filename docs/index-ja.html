@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mark It Down - 書くための静かな場所</title>
-  <meta name="description" content="気が散らないMarkdownエディタ。AIのそばで書いて、考えを整理して、次へ進む。">
-  <meta name="theme-color" content="#FAFAF9">
+  <title>Mark It Down - ブラウザが、書斎になる</title>
+  <meta name="description" content="AIが答えをくれる。書き直すことで、自分のものになる。ブラウザの中のMarkdownワークスペース。">
+  <meta name="theme-color" content="#F2EDE4">
   <!-- OGP -->
-  <meta property="og:title" content="Mark It Down - 書くための静かな場所">
-  <meta property="og:description" content="気が散らないMarkdownエディタ。AIのそばで書いて、考えを整理して、次へ進む。">
+  <meta property="og:title" content="Mark It Down - ブラウザが、書斎になる">
+  <meta property="og:description" content="AIが答えをくれる。書き直すことで、自分のものになる。ブラウザの中のMarkdownワークスペース。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="jp-dark.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -41,7 +41,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Mark It Down",
-    "description": "気が散らないMarkdownエディタ。AIのそばで書いて、考えを整理して、次へ進む。",
+    "description": "AIが答えをくれる。書き直すことで、自分のものになる。ブラウザの中のMarkdownワークスペース。",
     "applicationCategory": "BrowserApplication",
     "operatingSystem": "Chrome",
     "offers": {
@@ -60,10 +60,13 @@
     "inLanguage": "ja",
     "featureList": [
       "ライブプレビュー付きMarkdown編集",
+      "デュアルモード：新しいタブとサイドパネル",
       "Git同期（GitHub、GitLab対応）",
-      "キーボードショートカット",
-      "Mermaidダイアグラム対応",
-      "コードシンタックスハイライト",
+      "PDF・HTML・Markdownエクスポート",
+      "4テーマ：Light、Dark、Parchment、CandleLight",
+      "Focus Mode（タイプライタースクロール）",
+      "Mermaidダイアグラム・LaTeX数式対応",
+      "キーボードファースト設計",
       "オフライン対応",
       "日英バイリンガル"
     ]
@@ -92,16 +95,16 @@
           <h1>Mark It Down</h1>
         </a>
       </div>
-      <p class="tagline">書くための静かな場所</p>
+      <p class="tagline">ブラウザが、書斎になる。</p>
     </header>
 
     <main id="main-content" role="main">
       <!-- Hero Section -->
       <section class="hero" aria-labelledby="hero-heading">
         <h2 id="hero-heading" class="visually-hidden">はじめに</h2>
-        <p class="hero-tagline">書く。考える。次へ。</p>
+        <p class="hero-tagline">AIの出力を、<br>保存して満足していませんか？</p>
         <p class="hero-subtitle">
-          AIのそばで使える、<br>気が散らないMarkdownエディタ。<br>
+          貼り付けて、比較して、書き直す。それが「咀嚼」。<br>
           保存する場所じゃない。咀嚼する場所。
         </p>
         <div class="buttons">
@@ -129,10 +132,6 @@
           <li class="philosophy-item" role="listitem">
             <h3>あなたの言葉で、あなたのリズムで。</h3>
             <p>サイドパネルでも新しいタブでも。<br>集中したいときはFocus Mode。</p>
-          </li>
-          <li class="philosophy-item" role="listitem">
-            <h3>高速軽量。</h3>
-            <p>遅延ロードとコード分割で起動は一瞬。<br>Chrome拡張機能専用ストレージで即座にデータ取得。</p>
           </li>
         </ul>
       </section>
@@ -176,7 +175,7 @@
               </svg>
             </div>
             <h3>Exit</h3>
-            <p>Obsidian、Notion、<br>どこへでも。</p>
+            <p>PDF、HTML、.md。<br>書いたものは、あなたと一緒に。</p>
           </li>
         </ul>
       </section>
@@ -214,8 +213,8 @@
             <span>Archiveノートや全ノートをHTMLに変換してZIPでまとめてダウンロード。</span>
           </li>
           <li>
-            <strong>カラーシステム再構築</strong>
-            <span>48のCSS変数トークンがハードコードされた数百の色分岐を置き換え。5つ目のテーマ追加が1ファイルで完結。</span>
+            <strong>Parchment & CandleLightテーマ</strong>
+            <span>暖色テーマ2種を追加 — 昼はアンティークな羊皮紙、夜は蝋燭の灯り。初回起動時にワックスシールの演出も。</span>
           </li>
           <li>
             <strong>タブタイトル & Favicon</strong>
