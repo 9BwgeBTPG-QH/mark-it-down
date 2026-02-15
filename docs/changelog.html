@@ -63,8 +63,66 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v1.9.8 - Latest -->
+        <!-- v1.9.9 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v1.9.9</span>
+              <span class="accordion-highlight">Export your writing, paste your data</span>
+            </div>
+            <span class="accordion-status review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Structure inside, exits outside — PDF and HTML export, Excel table paste, and a color system rebuilt from the ground up.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Export Suite</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>PDF Export</strong> <span>Print to PDF via browser dialog — auto page breaks at H1, <code>---</code> converted to page breaks</span></li>
+                <li><strong>HTML Export</strong> <span>Standalone HTML with GitHub-style CSS, embedded Mermaid SVGs, KaTeX math, syntax highlighting — zero external dependencies</span></li>
+                <li><strong>Batch HTML ZIP</strong> <span>Export Archive notes or all notes as HTML in a single ZIP download</span></li>
+                <li><strong>Dark Mode</strong> <span>Exported HTML auto-adapts to OS dark/light preference</span></li>
+                <li><strong>Ctrl+Shift+E</strong> <span>Jump directly to the Export menu</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Smart Table Paste</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Excel & Sheets</strong> <span>Paste from Excel or Google Sheets — auto-detected as Markdown table</span></li>
+                <li><strong>Format Detection</strong> <span>TSV, pipe-delimited, and RFC 4180 CSV with quoted fields supported</span></li>
+                <li><strong>Preview Modal</strong> <span>Confirm before inserting — Enter to accept, Esc for plain text</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Color System</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>CSS Variable Migration</strong> <span>48 semantic color tokens in OKLCH replace hundreds of hardcoded branches — adding a 5th theme now means editing one file</span></li>
+                <li><strong>Warm Theme Polish</strong> <span>Parchment/CandleLight Mermaid diagrams and syntax highlighting now use warm palette consistently</span></li>
+                <li><strong>WCAG AA Verified</strong> <span>4.5:1 contrast ratio confirmed across all 4 themes</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">UI & UX</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Tab Title</strong> <span>Shows "Folder (count) | Mark It Down" — updates automatically</span></li>
+                <li><strong>Favicon</strong> <span>Extension icon now visible in browser tab bar</span></li>
+                <li><strong>Paste as Table</strong> <span>Command Palette command for direct clipboard-to-table conversion</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Header Scroll</strong> <span>Fixed scroll position jumping when editing H1 headings</span></li>
+                <li><strong>Focus Mode</strong> <span>Fixed first heading not reaching typewriter position and rAF scroll conflicts</span></li>
+                <li><strong>ESC Key</strong> <span>Modals now close with ESC even during IME input or when unfocused</span></li>
+                <li><strong>PDF Title</strong> <span>Tab title no longer overwritten during PDF export</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v1.9.8 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

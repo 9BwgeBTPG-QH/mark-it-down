@@ -63,8 +63,66 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v1.9.8 - Latest -->
+        <!-- v1.9.9 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v1.9.9</span>
+              <span class="accordion-highlight">書いたものを外に出す、データを貼り付ける</span>
+            </div>
+            <span class="accordion-status review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">中身を整えて、外に出せるようにする — PDF・HTMLエクスポート、Excelテーブル貼り付け、カラーシステムの全面再構築。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">エクスポートスイート</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>PDF出力</strong> <span>ブラウザの印刷ダイアログからPDFへ — H1で自動改ページ、<code>---</code>を改ページに変換</span></li>
+                <li><strong>HTML出力</strong> <span>GitHub風CSSを埋め込んだスタンドアロンHTML。Mermaid SVG、KaTeX数式、シンタックスハイライト込み — 外部依存ゼロ</span></li>
+                <li><strong>一括HTML ZIP</strong> <span>Archiveノートや全ノートをHTMLに変換してZIPダウンロード</span></li>
+                <li><strong>ダークモード対応</strong> <span>エクスポートしたHTMLがOS設定に応じてダーク/ライトに自動対応</span></li>
+                <li><strong>Ctrl+Shift+E</strong> <span>エクスポートメニューへ直接アクセス</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">スマートテーブル貼り付け</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Excel & Sheets対応</strong> <span>ExcelやGoogle Sheetsから貼り付け — 自動でMarkdownテーブルに変換</span></li>
+                <li><strong>形式自動検出</strong> <span>TSV、パイプ区切り、RFC 4180準拠CSVをサポート</span></li>
+                <li><strong>プレビューモーダル</strong> <span>挿入前に確認 — Enterで挿入、Escでテキスト貼り付け</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">カラーシステム</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>CSS変数移行</strong> <span>48のセマンティックカラートークン（OKLCH）でハードコードを一掃 — 5つ目のテーマ追加が1ファイルで完結</span></li>
+                <li><strong>暖色テーマ統一</strong> <span>Parchment/CandleLightのMermaid図・シンタックスハイライトが暖色パレットに統一</span></li>
+                <li><strong>WCAG AA検証</strong> <span>全4テーマで4.5:1コントラスト比を確認</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">UI & UX</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>タブタイトル</strong> <span>「Folder (count) | Mark It Down」形式で自動更新</span></li>
+                <li><strong>Favicon</strong> <span>ブラウザのタブバーに拡張機能アイコンを表示</span></li>
+                <li><strong>Paste as Table</strong> <span>コマンドパレットからクリップボードを直接テーブルに変換</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ヘッダースクロール</strong> <span>H1編集時のスクロール位置ジャンプを修正</span></li>
+                <li><strong>Focus Mode</strong> <span>文書先頭の見出しがタイプライター位置に来ない問題とrAF競合を修正</span></li>
+                <li><strong>ESCキー</strong> <span>IME入力中やフォーカス外でもモーダルがESCで閉じるように修正</span></li>
+                <li><strong>PDFタイトル</strong> <span>PDF出力時にタブタイトルが上書きされる問題を修正</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v1.9.8 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
