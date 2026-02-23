@@ -10,7 +10,6 @@
 | #3249 | 11:35 PM | ✅ | Japanese Homepage CTA Section Updated to v1.9.6 | ~238 |
 | #3248 | " | ✅ | Japanese Homepage Coming Soon Section Updated to v1.9.6 | ~354 |
 | #3247 | " | ✅ | English Homepage CTA Section Updated to v1.9.6 | ~240 |
-| #3246 | " | ✅ | English Homepage Coming Soon Section Updated to v1.9.6 | ~367 |
 
 ### Feb 6, 2026
 
@@ -72,4 +71,10 @@
 | #6087 | " | ✅ | Website Color Palette Updated to Parchment Theme Colors | ~536 |
 | #6086 | " | 🔵 | Website Color Palette Extraction - Direct Match with Parchment Theme | ~487 |
 | #6084 | 11:25 AM | 🔵 | Current Website Design System Analysis - Warm Minimalism with Earth Tones | ~415 |
+
+### Feb 23, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #7344 | 5:39 PM | ✅ | Mark It Down v2.0.0 Website Update - Complete bilingual documentation | ~573 |
 </claude-mem-context>

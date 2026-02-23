@@ -63,15 +63,77 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v1.9.9 - Latest -->
+        <!-- v2.0.0 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.0</span>
+              <span class="accordion-highlight">Write it, then ship it</span>
+            </div>
+            <span class="accordion-status review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Everything you need to take your Markdown out of the browser — PDF, DOCX, PNG, HTML. Plus cleaner toolbars, smarter tables, and cross-window conflict resolution.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Export Suite</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>PDF Export</strong> <span>Page numbers, clickable table of contents, custom paper size (A4/Letter/A3) and margin presets — powered by Paged.js</span></li>
+                <li><strong>DOCX Export</strong> <span>Images, Mermaid diagrams, math equations, and syntax highlighting all embedded. Open in Word and it just works</span></li>
+                <li><strong>PNG Export</strong> <span>Capture any note as a high-resolution 2x Retina image</span></li>
+                <li><strong>HTML Export</strong> <span>3 CSS templates (GitHub / Compact / Academic). Self-contained: KaTeX and highlight.js inlined, no internet needed</span></li>
+                <li><strong>New Export Panel</strong> <span>Pick format, scope (single note / archive / all notes), and settings in one place. Trash after export option included</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Toolbar Redesign</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>L1 / L2 Structure</strong> <span>Common actions up front, advanced actions behind <code>···</code> — less clutter, same power</span></li>
+                <li><strong>Unified Icon System</strong> <span>All icons migrated to Lucide — ~200 inline SVGs replaced with one consistent library</span></li>
+                <li><strong>22 New Commands</strong> <span>Word count, heading transforms, table operations, callout cycling — all accessible from the Command Palette</span></li>
+                <li><strong>Callout Type Switcher</strong> <span>Cycle through NOTE/TIP/IMPORTANT/WARNING/CAUTION with <code>Ctrl+Shift+A</code> or the hover toolbar</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Tables & UX</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Table Toolbar Expanded</strong> <span>Sort columns, copy as CSV or Markdown, prettify alignment, and switch layout (Auto / Full Width / Equal Columns)</span></li>
+                <li><strong>Row & Column Highlight</strong> <span>Active cell row and column both tinted — you always know where you are</span></li>
+                <li><strong>Footnotes</strong> <span>Click a reference to jump to its definition, click back to return. Rebuilt with 4-layer guard against false positives in code blocks</span></li>
+                <li><strong>Appearance Popover</strong> <span>Color theme and Typography (Standard / Compact / Academic) now in one popover — what you see is what exports</span></li>
+                <li><strong>Mode Popover</strong> <span>Focus Mode, Fullscreen, Compare & Edit, and Open Side Panel unified into one header button</span></li>
+                <li><strong>Learn by Touch</strong> <span>Empty notes show random tips, toolbar buttons show keyboard shortcuts on hover</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Cross-Instance Compare</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Conflict Detection</strong> <span>New Tab and Side Panel editing the same note? Changes are compared automatically when either window closes</span></li>
+                <li><strong>Visual Diff</strong> <span>Inline green highlights for additions, side-by-side modal with character/word count and change-rate statistics</span></li>
+                <li><strong>Smart Normalization</strong> <span>Trailing whitespace, line endings, and blank lines normalized — no false positives</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Strikethrough Typing</strong> <span><code>~~text~~</code> now converts immediately as you type, including after IME input</span></li>
+                <li><strong>PDF Warm Theme Borders</strong> <span>Parchment/CandleLight themes no longer show stray borders in PDF output</span></li>
+                <li><strong>Mermaid Labels in HTML Export</strong> <span>Diagram text labels no longer vanish after DOMPurify sanitization</span></li>
+                <li><strong>Syntax Highlighting in Export</strong> <span>Code block colors now render correctly in all 3 HTML templates</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v1.9.9 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.9</span>
               <span class="accordion-highlight">Export your writing, paste your data</span>
             </div>
-            <span class="accordion-status review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Structure inside, exits outside — PDF and HTML export, Excel table paste, and a color system rebuilt from the ground up.</p>
@@ -129,7 +191,7 @@
               <span class="accordion-version">v1.9.8</span>
               <span class="accordion-highlight">Redefining the moment you open</span>
             </div>
-            <span class="accordion-status review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Eliminating friction before you start writing — faster loading, warmer themes, smarter palette, and a place you can make your own.</p>

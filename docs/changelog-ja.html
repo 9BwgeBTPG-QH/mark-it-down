@@ -63,15 +63,86 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v1.9.9 - Latest -->
+        <!-- v2.0.0 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.0</span>
+              <span class="accordion-highlight">書いたものを、ちゃんと外に出す</span>
+            </div>
+            <span class="accordion-status review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">出力と表現力の拡張 — Export Suite 4フォーマット、ツールバー全面リデザイン、Cross-Instance Compare、脚注復活。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Export Suite — 4フォーマットで「外に出す」を完成させる</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>PDFエクスポート</strong> <span>iframe + blob URL方式でエディタCSSの漏れを根本解決。Paged.jsでページ番号・目次を自動生成。用紙サイズ（A4/Letter/A3）と余白プリセットをカスタマイズ可能</span></li>
+                <li><strong>DOCXエクスポート</strong> <span>画像・Mermaid図・数式・シンタックスハイライトをすべて埋め込み。Pre-processing Patternで非同期レンダリングを並列実行し、Wordで開いてそのまま使える</span></li>
+                <li><strong>PNGエクスポート</strong> <span>ノートを2x Retina品質の画像としてキャプチャ。srcdoc iframeでCSS隔離、10,000px超にはメモリガード</span></li>
+                <li><strong>HTMLエクスポート拡張</strong> <span>3テンプレート（GitHub/Compact/Academic）、Self-Contained（CDN依存ゼロ）、バッチDOCX ZIPも対応</span></li>
+                <li><strong>新しいエクスポートパネル</strong> <span>Format × Scope × Settings のパネルUIに再構成。フォーマットをチップで選択、対象（1ノート／Archive／全ノート）を指定。Trash after exportも可能</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">ツールバー全面リデザイン</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>L1/L2の2層構造</strong> <span>L1（基本操作）は日常的なボタンのみ。L2（詳細操作）は<code>···</code>で展開 — すっきりしたまま、機能はそのまま</span></li>
+                <li><strong>ボタン順序の統一</strong> <span>全ツールバーで「機能ボタン → Copy → Delete（赤）」に統一。重複していたDeleteを1つに整理</span></li>
+                <li><strong>コマンドパレット拡張</strong> <span>22コマンド追加 — Word Count、ブロック変換（H1–H6）、リスト変換、テーブル操作、Callout Cycleなど</span></li>
+                <li><strong>Lucideアイコン統一</strong> <span>~200個のインラインSVGを<code>lucide-preact</code>ライブラリに統一。バンドルサイズ10.44KB削減</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Cross-Instance Compare & Edit</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ウィンドウ間の衝突を検知</strong> <span>New TabとSide Panelで同じノートを開いても、片方の編集が消えない。<code>chrome.storage.session</code>にスナップショットを自動保存（3秒throttle）</span></li>
+                <li><strong>ConflictResolutionModal</strong> <span>差分を左右に並べて表示。矢印キー＋Enterでどちらの内容を採用するか選択できる</span></li>
+                <li><strong>変更統計</strong> <span>文字数・単語数・変更率をCJK対応でカウント。増加は緑、減少は赤で色分け</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">テーブルUX全面改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ツールバー拡張（9→17ボタン）</strong> <span>列ソート（昇順/降順）、CSV/Markdownコピー、テーブル整形（Prettify）、削除をツールバーから直接実行</span></li>
+                <li><strong>行/列クロスハイライト</strong> <span>カーソル位置の行と列を薄い背景色で明示。4テーマ対応</span></li>
+                <li><strong>Layout Toggle</strong> <span>テーブルごとにAuto→全幅→均等列の3モードを循環切り替え</span></li>
+                <li><strong>Smart Defaults</strong> <span><code>max-width: 400px</code>で長文自動折り返し、<code>min-width: 3ch/4ch</code>でセルの潰れ防止</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>脚注プラグイン復活</strong> <span>4層ガード（code_block、fence、codeプレフィックス、spec.code）で堅牢にスキップ。参照クリックで定義へ、定義ラベルクリックで参照へ戻れる</span></li>
+                <li><strong>Appearance Popover</strong> <span>テーマ選択をColor（4テーマ）とTypography（Standard/Compact/Academic）の2セクション構成に拡張</span></li>
+                <li><strong>Mode Popover</strong> <span>Focus Mode・Fullscreen・Compare & Edit・Open Side Panelを1つのポップオーバーに統合</span></li>
+                <li><strong>Calloutタイプ切り替え</strong> <span><code>Ctrl+Shift+A</code>でNOTE→TIP→IMPORTANT→WARNING→CAUTIONを循環。ツールバーとコマンドパレットからも操作可能</span></li>
+                <li><strong>使い方を自然に学べる</strong> <span>空のノートにランダムTipsを表示。Contextual Hints、ツールバーショートカット表示、テーブル挿入モーダル改善</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>取り消し線</strong> <span><code>~~text~~</code>が入力中にすぐ反映されるように。IMEでも対応</span></li>
+                <li><strong>PDFの余分な枠線</strong> <span>暖色テーマでPDF出力時に枠線が表示される問題を根本解決（iframe + blob URL方式）</span></li>
+                <li><strong>PDFファイル名</strong> <span>ノート名でPDFが保存されるように修正</span></li>
+                <li><strong>Mermaid図のラベル消失</strong> <span>HTMLエクスポート時にDOMPurifyがforeignObjectを除去する問題を修正</span></li>
+                <li><strong>コードシンタックスハイライト</strong> <span>3テンプレートの<code>color: inherit !important</code>がCodeMirrorのスタイルを上書きする問題を修正</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v1.9.9 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v1.9.9</span>
               <span class="accordion-highlight">書いたものを外に出す、データを貼り付ける</span>
             </div>
-            <span class="accordion-status review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">中身を整えて、外に出せるようにする — PDF・HTMLエクスポート、Excelテーブル貼り付け、カラーシステムの全面再構築。</p>
@@ -129,7 +200,7 @@
               <span class="accordion-version">v1.9.8</span>
               <span class="accordion-highlight">「開いた瞬間」の体験を変える</span>
             </div>
-            <span class="accordion-status review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">書き始めるまでの摩擦を削る — 高速読み込み、暖色テーマ、賢いパレット、自分の場所にできるエディタ。</p>
