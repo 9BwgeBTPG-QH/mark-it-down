@@ -9,7 +9,6 @@
 |----|------|---|-------|------|
 | #3249 | 11:35 PM | ✅ | Japanese Homepage CTA Section Updated to v1.9.6 | ~238 |
 | #3248 | " | ✅ | Japanese Homepage Coming Soon Section Updated to v1.9.6 | ~354 |
-| #3247 | " | ✅ | English Homepage CTA Section Updated to v1.9.6 | ~240 |
 
 ### Feb 6, 2026
 
@@ -76,5 +75,6 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
+| #7345 | 5:42 PM | ✅ | Icon Image Replacement with Improved Assets | ~309 |
 | #7344 | 5:39 PM | ✅ | Mark It Down v2.0.0 Website Update - Complete bilingual documentation | ~573 |
 </claude-mem-context>
