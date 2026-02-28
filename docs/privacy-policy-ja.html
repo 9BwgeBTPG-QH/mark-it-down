@@ -42,14 +42,35 @@
     </header>
 
     <main id="main-content">
-      <p><strong>最終更新日: 2024年12月</strong></p>
+      <p><strong>最終更新日: 2026年2月</strong></p>
 
       <section>
         <h2>概要</h2>
         <p>
-          Mark It Downは、新しいタブとサイドパネルでWYSIWYGマークダウンメモ体験を提供するChrome拡張機能です。
+          Mark It Downは、新しいタブとサイドパネルでMarkdownメモ体験を提供するChrome拡張機能です。
+          v2.0.2より、右クリックメニューからWebページやテキスト選択をMarkdownとして取り込む「Web Clipper」機能が追加されました。
           このプライバシーポリシーでは、お客様のデータの取り扱いについて説明します。
         </p>
+      </section>
+
+      <section>
+        <h2>Web Clipper（v2.0.2で追加）</h2>
+        <p>Web Clipper機能は、ユーザーが右クリックメニューから操作を実行したときのみ動作します。</p>
+
+        <h3>動作の仕組み</h3>
+        <ul>
+          <li>ユーザーが右クリックメニューからクリップ操作を選択すると、拡張機能は<strong>現在のタブのページ内容（HTML）を読み取り</strong>、Markdownに変換します</li>
+          <li>変換されたMarkdownはノートとしてローカルに保存されます</li>
+          <li>一部のプラットフォームでは、変換精度を向上させるために、そのプラットフォーム上でのお客様の認証済みセッション（Cookie）を利用してページ内容を取得する場合があります</li>
+        </ul>
+
+        <h3>Web Clipperが行わないこと</h3>
+        <ul>
+          <li><strong>バックグラウンドでのページ読み取りは行いません</strong> — ユーザーの明示的な操作時のみ動作します</li>
+          <li><strong>認証情報の収集・送信は行いません</strong> — Cookieはブラウザ内の同一オリジン通信にのみ使用され、外部に送信されることはありません</li>
+          <li><strong>閲覧履歴の追跡は行いません</strong> — どのページを訪問したかの記録は一切保持しません</li>
+          <li><strong>他のタブへのアクセスは行いません</strong> — 操作対象のタブのみにアクセスします</li>
+        </ul>
       </section>
 
       <section>
@@ -134,6 +155,18 @@
             <tr>
               <td>sidePanel</td>
               <td>ブラウジング中にメモを取るためのサイドパネル機能を有効にするため</td>
+            </tr>
+            <tr>
+              <td>contextMenus</td>
+              <td>Web Clipper用の右クリックメニュー項目を追加するため</td>
+            </tr>
+            <tr>
+              <td>activeTab</td>
+              <td>ユーザーがクリップ操作を実行した際に、現在のタブのページ内容を読み取るため</td>
+            </tr>
+            <tr>
+              <td>scripting</td>
+              <td>ユーザーがクリップ操作を実行した際に、ページのDOM読み取りスクリプトを注入するため</td>
             </tr>
           </tbody>
         </table>

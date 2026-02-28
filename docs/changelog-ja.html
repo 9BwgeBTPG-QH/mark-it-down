@@ -63,8 +63,61 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.0 - Latest -->
+        <!-- v2.0.2 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.2</span>
+              <span class="accordion-highlight">Webの情報をMarkdownに取り込む</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">ページやAIチャットを右クリック→きれいなMarkdownでノートに保存。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Clipper</strong> <span>右クリックでページやテキスト選択をMarkdownとして保存・コピー。保存後はSide Panelに自動遷移</span></li>
+                <li><strong>AIチャット抽出</strong> <span>Claude・ChatGPT・Grok・Geminiの出力をMarkdownで取得。数式・コード・テーブル・Artifactをそのまま保持</span></li>
+                <li><strong>コメントスレッド抽出</strong> <span>HackerNews・Reddit・GitHubから構造化Markdownを生成。ネスト・著者・日時を保持</span></li>
+                <li><strong>テーブル出力形式変更</strong> <span>CSV→TSV（タブ区切り）に変更。Excel・Google Sheets・Slackへの貼り付けがスムーズに</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>選択ツールバー</strong> <span>タスクリスト変換が箇条書きになる問題を修正</span></li>
+                <li><strong>Compare & Edit</strong> <span>改行差異によるfalse positive検出を修正</span></li>
+                <li><strong>複数テーブル</strong> <span>ツールバーが間違ったテーブルに操作する問題を修正</span></li>
+                <li><strong>Parchment・CandleLightテーマ</strong> <span>リストマーカーが見えない問題を修正</span></li>
+                <li><strong>Light・Darkテーマ</strong> <span>テーブルセル背景が透明になる問題を修正</span></li>
+                <li><strong>検索置換</strong> <span>日本語訳の誤りと空文字置換時のクラッシュを修正</span></li>
+                <li><strong>セキュリティ</strong> <span>ホスト検証の厳格化、HTMLサニタイズ、正規表現DoS対策、Cookie値バリデーション</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.1 -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.1</span>
+              <span class="accordion-highlight">小さな修正、大きな互換性</span>
+            </div>
+            <span class="accordion-status released">リリース済</span>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features" role="list">
+              <li><strong>DOCXエクスポート</strong> <span>タスクリストがチェックボックス記号（☐/☑）で出力されるように改善</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- v2.0.0 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

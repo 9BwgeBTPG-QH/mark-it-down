@@ -63,8 +63,61 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.0 - Latest -->
+        <!-- v2.0.2 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.2</span>
+              <span class="accordion-highlight">Clip the web. Capture AI.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Right-click any page or AI chat and save it as clean Markdown — directly into your notes.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Clipper</strong> <span>Right-click to save or copy any page or selected text as Markdown. Saved notes open automatically in Side Panel</span></li>
+                <li><strong>AI Chat Extraction</strong> <span>Captures output from Claude, ChatGPT, Grok, and Gemini as clean Markdown. Math, code, tables, and artifacts all preserved</span></li>
+                <li><strong>Comment Thread Extraction</strong> <span>Structured Markdown from Hacker News, Reddit, and GitHub. Preserves nesting, authors, and timestamps</span></li>
+                <li><strong>Table Export: TSV Format</strong> <span>Switched from CSV to TSV (tab-separated) for better paste compatibility with Excel, Google Sheets, and Slack</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Task List Conversion</strong> <span>Converting selection to task list from toolbar no longer produces bullet lists instead</span></li>
+                <li><strong>Compare &amp; Edit</strong> <span>No longer shows false positives caused by invisible line break differences</span></li>
+                <li><strong>Table Toolbar</strong> <span>Actions now target the correct table when multiple tables are present</span></li>
+                <li><strong>List Markers</strong> <span>Parchment and CandleLight theme list markers are now visible</span></li>
+                <li><strong>Table Cell Backgrounds</strong> <span>Light and Dark theme table cells are no longer transparent</span></li>
+                <li><strong>Find &amp; Replace</strong> <span>Fixed Japanese mistranslation and crash when replacing with empty text</span></li>
+                <li><strong>Security</strong> <span>Stricter host validation, innerHTML sanitization, regex DoS protection, cookie value validation</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.1 -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.1</span>
+              <span class="accordion-highlight">Small fix, big compatibility</span>
+            </div>
+            <span class="accordion-status released">Released</span>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features" role="list">
+              <li><strong>DOCX Task Lists</strong> <span>DOCX export now renders task lists with checkbox symbols (☐/☑) instead of plain bullets</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- v2.0.0 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

@@ -49,7 +49,7 @@
       "price": "0",
       "priceCurrency": "JPY"
     },
-    "softwareVersion": "2.0.0",
+    "softwareVersion": "2.0.2",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -61,6 +61,7 @@
     "featureList": [
       "ライブプレビュー付きMarkdown編集",
       "デュアルモード：新しいタブとサイドパネル",
+      "Web Clipper（右クリックでページをMarkdownに変換）",
       "Git同期（GitHub、GitLab対応）",
       "PDF（ページ番号・目次付き）・DOCX・PNG・HTMLエクスポート",
       "4テーマ：Light、Dark、Parchment、CandleLight",
@@ -148,7 +149,7 @@
               </svg>
             </div>
             <h3>Entry</h3>
-            <p>AIから貼り付け。<br>インポート。<br>新規作成。</p>
+            <p>AIから貼り付け。<br>右クリックで取り込み。<br>インポート。<br>新規作成。</p>
           </li>
           <li class="philosophy-item flow-item" role="listitem">
             <div class="flow-icon" aria-hidden="true">
@@ -197,28 +198,24 @@
 
       <!-- Coming Soon Section -->
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
-        <h2 id="coming-soon-heading">v2.0.0 の新機能</h2>
-        <p class="coming-soon-status">リリース済み</p>
+        <h2 id="coming-soon-heading">v2.0.2 の新機能</h2>
+        <p class="coming-soon-status">審査中</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>Export Suite — PDF・DOCX・PNG・HTML</strong>
-            <span>書いたMarkdownをブラウザの外へ。PDFにはページ番号と目次、DOCXには画像・Mermaid図・数式をすべて埋め込み。PNGは高解像度キャプチャ。HTMLは3テンプレートでネット不要の1ファイル完結型。</span>
+            <strong>Web Clipper — 右クリックでページをMarkdownに</strong>
+            <span>ページやテキスト選択を右クリックするだけでMarkdownとしてノートに保存・コピー。保存後はSide Panelに自動遷移。</span>
           </li>
           <li>
-            <strong>ツールバー全面リデザイン</strong>
-            <span>L1（基本操作）とL2（<code>···</code>で展開）の2層構造に統一。全アイコンをLucideに統一し、コマンドパレットに22コマンドを追加。</span>
+            <strong>AIチャット抽出</strong>
+            <span>Claude・ChatGPT・Grok・Geminiの出力をMarkdownで取得。数式・コード・テーブル・Artifactをそのまま保持。</span>
           </li>
           <li>
-            <strong>Cross-Instance Compare & Edit</strong>
-            <span>New TabとSide Panelで同じノートを開いても、片方の編集が消えない。差分を並べて比較し、どちらを採用するか選択できる。</span>
+            <strong>コメントスレッド抽出</strong>
+            <span>HackerNews・Reddit・GitHubから構造化Markdownを生成。ネスト・著者・日時・パーマリンクを保持。</span>
           </li>
           <li>
-            <strong>テーブルUX全面改善</strong>
-            <span>ツールバーが9→17ボタンに拡張。列ソート、CSV/Markdownコピー、Layout Toggle（自動/全幅/均等）、行/列クロスハイライト。</span>
-          </li>
-          <li>
-            <strong>脚注・Callout強化・使い方ヒント</strong>
-            <span>脚注が復活（クリックでジャンプ）。Calloutタイプを<code>Ctrl+Shift+A</code>で循環切り替え。空のノートにランダムTipsを表示。</span>
+            <strong>テーブル出力形式変更（CSV→TSV）</strong>
+            <span>Excel・Google Sheets・Slackへの貼り付けがスムーズに。</span>
           </li>
         </ul>
       </section>
@@ -270,7 +267,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版: v2.0.0</small></p>
+        <small>最新版: v2.0.2（審査中）</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手
