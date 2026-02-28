@@ -93,16 +93,21 @@
               </div>
             </summary>
             <div class="accordion-content">
-              <p><strong>はい、ほとんどの機能がオフラインで動作します。</strong></p>
+              <p><strong>はい — 日常の執筆作業は完全オフラインで動作します。</strong></p>
               <p><strong>オフラインで使える機能:</strong></p>
               <ul>
-                <li>ノートの作成・編集・削除</li>
-                <li>検索、Archive、Import/Export</li>
-                <li>New TabとSide Panelの同期（同じPC内）</li>
+                <li>編集・保存・ノート管理（chrome.storage.local完結）</li>
+                <li>Mermaid図・KaTeX数式・シンタックスハイライト（全てバンドル済み）</li>
+                <li>エクスポート: PDF / PNG / DOCX / .md — ローカル処理</li>
+                <li>テーマ切り替え・Find &amp; Replace・TOC・コマンドパレット</li>
+                <li>Cross-Instance Compare &amp; Edit</li>
               </ul>
               <p><strong>インターネット接続が必要:</strong></p>
               <ul>
+                <li>Web Clipper（対象Webページへのアクセスが前提）</li>
+                <li>AI会話抽出（Claude、ChatGPT、Grok、Gemini）</li>
                 <li>Git同期（Push、Pull、Fetch）</li>
+                <li>HTMLエクスポート（非Self-Contained）・数式の拡大表示 — KaTeX CSSのCDN参照</li>
               </ul>
             </div>
           </details>
