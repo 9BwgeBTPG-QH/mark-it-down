@@ -63,15 +63,48 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.2 - Latest -->
+        <!-- v2.0.3 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.3</span>
+              <span class="accordion-highlight">執筆のリズムを整える。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">書く手を止めない、小さなツールの積み重ね。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>脚注挿入モーダル</strong> <span>コマンドパレットやスラッシュメニューから脚注を挿入。ラベル自動採番、参照と定義を1トランザクションで同時挿入。ホバーツールバーで編集・削除</span></li>
+                <li><strong>カスタムスニペット</strong> <span>よく使う記法をテンプレートとして保存・挿入。ビルトイン3種（YAML Frontmatter・折りたたみ・定義リスト）。コマンドパレット・ツールバー・設定から管理</span></li>
+                <li><strong>改行タイプ切り替え</strong> <span>選択テキストの段落改行と行内改行を一括変換。変換方向を自動検出</span></li>
+                <li><strong>コードブロックコピー改善</strong> <span>ProseMirror優先の3層フォールバックで確実に抽出。4+バッククォート対応。Copy as Markdownを常時表示に昇格</span></li>
+                <li><strong>バッジ挿入モーダル</strong> <span>コマンドパレットからshields.ioバッジのMarkdownを生成・挿入。8色プリセット+カスタムカラー。リアルタイムプレビュー</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>HTMLエクスポート</strong> <span>GitHub Alerts（コールアウト）が正しいスタイルで描画されるように修正</span></li>
+                <li><strong>デバッグログ漏洩</strong> <span>キー入力のたびにリンクURLがコンソールに出力されるデバッグログの漏洩を修正</span></li>
+                <li><strong>HTMLサニタイズ</strong> <span>クリップしたコンテンツのHTMLサニタイズルールを拡充</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.2 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.0.2</span>
               <span class="accordion-highlight">Webの情報をMarkdownに取り込む</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">ページやAIチャットを右クリック→きれいなMarkdownでノートに保存。</p>

@@ -63,15 +63,48 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.2 - Latest -->
+        <!-- v2.0.3 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.3</span>
+              <span class="accordion-highlight">Refine the writing rhythm.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Small tools that stay out of your way while you write.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Footnote Insert Modal</strong> <span>Insert footnotes from the command palette or slash menu. Labels auto-numbered, reference and definition inserted in one transaction. Edit and delete from hover toolbar</span></li>
+                <li><strong>Custom Snippets</strong> <span>Save your own Markdown templates. 3 built-in presets (YAML Frontmatter, Details, Definition List). Manage from command palette, toolbar, or Settings</span></li>
+                <li><strong>Toggle Line Breaks</strong> <span>Switch between paragraph breaks and hard breaks in selected text. Direction auto-detected</span></li>
+                <li><strong>Code Block Copy</strong> <span>ProseMirror-first 3-layer fallback for reliable extraction. 4+ backtick fences supported. Copy as Markdown promoted to always-visible</span></li>
+                <li><strong>Badge Insert Modal</strong> <span>Generate shields.io badge Markdown from the command palette. 8 color presets + custom. Live preview before insert</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>HTML Export Alerts</strong> <span>GitHub Alerts (callouts) now render with correct styling in HTML export</span></li>
+                <li><strong>Debug Log Leak</strong> <span>Fixed debug log that leaked link URLs to console on every keystroke</span></li>
+                <li><strong>HTML Sanitization</strong> <span>Expanded sanitization rules for clipped web content</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.2 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.0.2</span>
               <span class="accordion-highlight">Clip the web. Capture AI.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Right-click any page or AI chat and save it as clean Markdown — directly into your notes.</p>
