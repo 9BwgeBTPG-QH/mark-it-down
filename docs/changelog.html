@@ -63,15 +63,57 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.3 - Latest -->
+        <!-- v2.0.4 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.4</span>
+              <span class="accordion-highlight">Big documents, no lag.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Typed 300KB and it didn't stutter. That's the difference.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Performance</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>INP Optimization</strong> <span>300KB doc typing: 272ms → 120ms. Slash menu: 184ms → 24ms. Command palette: 200ms → 32ms. First click in 50KB docs: 160ms → 24ms. All measured and verified in CI</span></li>
+                <li><strong>Decoration Rebuild</strong> <span>300KB Presentation Delay: 105ms → 68ms (-35%). Autolink and trailing space decorations skipped in large docs</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Batch Note Selection</strong> <span>Shift+Click range select, Ctrl+Click toggle. Drag-and-drop, Delete, and Stage multiple notes at once</span></li>
+                <li><strong>Selective Git Push</strong> <span>Push only staged notes with per-note lastPushedAt tracking. Sync (Ctrl+Shift+S) still pushes everything</span></li>
+                <li><strong>Git Conflict Merge in Editor</strong> <span>"Merge in Editor" opens Compare &amp; Edit with WYSIWYG diff highlighting. Resolve conflicts manually, then auto-push</span></li>
+                <li><strong>Diff Navigation</strong> <span>▲2/5▼ nav controls in Compare &amp; Edit banner. F5/Shift+F5 keyboard navigation. WYSIWYG reference view</span></li>
+                <li><strong>List Type Toggle</strong> <span>Switch between Bullet, Ordered, and Task lists from selection toolbar L2. Active state highlighting</span></li>
+                <li><strong>Sort 4-State Cycle</strong> <span>Name↑, Name↓, Updated↑, Updated↓. Fixed order field override bug</span></li>
+                <li><strong>Badge Double-Click Copy</strong> <span>Double-click a shields.io badge to copy its Markdown</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>False Conflict Detection</strong> <span>Fixed false conflicts between New Tab and Side Panel caused by tight/loose list serialization differences</span></li>
+                <li><strong>Sidebar Flickering</strong> <span>Fixed 3-4 unnecessary re-renders per click when selecting notes</span></li>
+                <li><strong>Reference Mode</strong> <span>Fixed diff highlighting mismatch with code fences</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.3 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.0.3</span>
               <span class="accordion-highlight">Refine the writing rhythm.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Small tools that stay out of your way while you write.</p>

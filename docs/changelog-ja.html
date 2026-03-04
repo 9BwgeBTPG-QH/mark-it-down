@@ -63,15 +63,57 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.3 - Latest -->
+        <!-- v2.0.4 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.4</span>
+              <span class="accordion-highlight">大きな文書が、重くなくなった。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">300KBの文書でも、タイピングが詰まらない。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">パフォーマンス</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>INP最適化</strong> <span>300KB文書タイピング: 272ms→120ms。スラッシュメニュー: 184ms→24ms。コマンドパレット: 200ms→32ms。50KB初回クリック: 160ms→24ms。すべてCIで自動検証</span></li>
+                <li><strong>Decoration再構築最適化</strong> <span>300KB文書のPresentation Delay: 105ms→68ms（-35%）。大きな文書でオートリンク・トレーリングスペースのdecorationをスキップ</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ノート一括選択</strong> <span>Shift+Clickで範囲選択、Ctrl+Clickで個別トグル。まとめてD&amp;D、削除、ステージング</span></li>
+                <li><strong>選択的Git Push</strong> <span>ステージしたノートだけPush。ノート単位のlastPushedAtで変更追跡。Sync（Ctrl+Shift+S）は従来通り全件Push</span></li>
+                <li><strong>Git競合をエディタで手動マージ</strong> <span>「Merge in Editor」でCompare &amp; Editモードを起動。WYSIWYG差分ハイライト付きで手動編集→自動Push</span></li>
+                <li><strong>Diffナビゲーション</strong> <span>Compare &amp; Editバナーに▲2/5▼ナビコントロール。F5/Shift+F5キーボードナビ。参照ビューWYSIWYG化</span></li>
+                <li><strong>リスト種別トグル</strong> <span>選択ツールバーL2からBullet/Ordered/Taskリストを切り替え。アクティブ表示付き</span></li>
+                <li><strong>ソート4状態サイクル</strong> <span>名前↑、名前↓、更新↑、更新↓。orderフィールド上書きバグも同時修正</span></li>
+                <li><strong>バッジダブルクリックコピー</strong> <span>shields.ioバッジをダブルクリックでMarkdownをコピー</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>偽衝突検出</strong> <span>New TabとSide Panel間のtight/looseリスト差異による偽衝突を修正</span></li>
+                <li><strong>サイドバーのちらつき</strong> <span>ノート選択時にクリックごとに3-4回の不要再レンダーが発生する問題を修正</span></li>
+                <li><strong>Reference Mode</strong> <span>コードフェンスを含む差分ハイライト表示ズレを修正</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.3 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.0.3</span>
               <span class="accordion-highlight">執筆のリズムを整える。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">書く手を止めない、小さなツールの積み重ね。</p>
