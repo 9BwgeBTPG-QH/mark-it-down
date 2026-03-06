@@ -49,7 +49,7 @@
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "2.0.4",
+    "softwareVersion": "2.0.5",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -185,6 +185,7 @@
       <section class="screenshot-section" aria-labelledby="screenshot-heading">
         <h2 id="screenshot-heading" class="visually-hidden">Screenshot</h2>
         <div class="video-container">
+          <p class="video-context">See Mark It Down in action — 30 seconds in the Side Panel</p>
           <iframe
             src="https://player.vimeo.com/video/1158112276"
             title="Mark It Down - Promotional Video"
@@ -196,30 +197,57 @@
         </div>
       </section>
 
+      <!-- Workflow Section -->
+      <section class="workflow-section" aria-labelledby="workflow-heading">
+        <h2 id="workflow-heading">How people use it</h2>
+        <ul class="workflow-list" role="list">
+          <li>
+            <strong>Rewrite AI output</strong>
+            <span class="workflow-for">For ChatGPT / Claude users</span>
+            <span>Side Panel → right-click capture → rewrite → export</span>
+          </li>
+          <li>
+            <strong>Structure web research</strong>
+            <span class="workflow-for">For HN / Reddit readers</span>
+            <span>Clip thread → organize → Git push</span>
+          </li>
+          <li>
+            <strong>Write technical docs</strong>
+            <span class="workflow-for">For engineers</span>
+            <span>Slash commands → Mermaid → HTML export</span>
+          </li>
+          <li>
+            <strong>Streamline recurring work</strong>
+            <span class="workflow-for">For weekly reports</span>
+            <span>Template folder → copy → Archive → ZIP export</span>
+          </li>
+        </ul>
+      </section>
+
       <!-- Coming Soon Section -->
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
-        <h2 id="coming-soon-heading">Coming in v2.0.4</h2>
-        <p class="coming-soon-status">Under review</p>
+        <h2 id="coming-soon-heading">Recently Added</h2>
+        <p class="coming-soon-status">v2.0.4 – v2.0.5</p>
         <ul class="coming-soon-list" role="list">
           <li>
+            <strong>Fine-grained PAT</strong>
+            <span>GitHub's github_pat_xxx tokens now accepted for Git sync.</span>
+          </li>
+          <li>
             <strong>INP Optimization</strong>
-            <span>300KB doc typing: 272ms → 120ms. Slash menu: 184ms → 24ms. Command palette: 200ms → 32ms. All measured in CI.</span>
+            <span>300KB doc typing: 272ms → 120ms. Slash menu: 184ms → 24ms.</span>
           </li>
           <li>
             <strong>Batch Note Selection</strong>
-            <span>Shift+Click range select, Ctrl+Click toggle. Drag-and-drop, Delete, and Stage multiple notes at once.</span>
+            <span>Shift+Click range, Ctrl+Click toggle. Drag, delete, stage in bulk.</span>
           </li>
           <li>
             <strong>Selective Git Push</strong>
-            <span>Push only staged notes. Per-note tracking with lastPushedAt timestamps. Sync still pushes everything.</span>
+            <span>Push only staged notes with per-note change tracking.</span>
           </li>
           <li>
-            <strong>Git Conflict Merge in Editor</strong>
-            <span>"Merge in Editor" opens Compare &amp; Edit with WYSIWYG diff highlighting. Resolve manually, then auto-push.</span>
-          </li>
-          <li>
-            <strong>Diff Navigation &amp; List Toggle</strong>
-            <span>▲2/5▼ nav controls in Compare &amp; Edit. Switch Bullet/Ordered/Task lists from selection toolbar.</span>
+            <strong>Git Conflict Merge</strong>
+            <span>"Merge in Editor" with WYSIWYG diff. Resolve, then auto-push.</span>
           </li>
         </ul>
       </section>
@@ -271,7 +299,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Ready to write?</h2>
         <p>Available as a Chrome extension. No account required.<br>
-        <small>Latest version: v2.0.4</small></p>
+        <small>Latest version: v2.0.5</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
             Get the extension

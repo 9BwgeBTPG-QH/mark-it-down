@@ -49,7 +49,7 @@
       "price": "0",
       "priceCurrency": "JPY"
     },
-    "softwareVersion": "2.0.4",
+    "softwareVersion": "2.0.5",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -103,7 +103,7 @@
       <!-- Hero Section -->
       <section class="hero" aria-labelledby="hero-heading">
         <h2 id="hero-heading" class="visually-hidden">はじめに</h2>
-        <p class="hero-tagline">AIの出力を、<br>保存して満足していませんか？</p>
+        <p class="hero-tagline">AIの出力を保存して満足していませんか？</p>
         <p class="hero-subtitle">
           貼り付けて、比較して、書き直す。それが「咀嚼」。<br>
           保存する場所じゃない。咀嚼する場所。
@@ -185,6 +185,7 @@
       <section class="screenshot-section" aria-labelledby="screenshot-heading">
         <h2 id="screenshot-heading" class="visually-hidden">スクリーンショット</h2>
         <div class="video-container">
+          <p class="video-context">30秒でわかるMark It Down — Side Panelでの実際の動作</p>
           <iframe
             src="https://player.vimeo.com/video/1158112276"
             title="Mark It Down - プロモーション動画"
@@ -196,30 +197,57 @@
         </div>
       </section>
 
+      <!-- Workflow Section -->
+      <section class="workflow-section" aria-labelledby="workflow-heading">
+        <h2 id="workflow-heading">こんな使い方ができます</h2>
+        <ul class="workflow-list" role="list">
+          <li>
+            <strong>AI出力を自分の言葉に変える</strong>
+            <span class="workflow-for">ChatGPT / Claude利用者向け</span>
+            <span>Side Panel → 右クリック取り込み → 書き直し → エクスポート</span>
+          </li>
+          <li>
+            <strong>Web調査をその場で構造化する</strong>
+            <span class="workflow-for">HN / Reddit読者向け</span>
+            <span>スレッドをクリップ → 整理 → Git push</span>
+          </li>
+          <li>
+            <strong>技術ドキュメントを素早く書く</strong>
+            <span class="workflow-for">エンジニア向け</span>
+            <span>スラッシュコマンド → Mermaid → HTMLエクスポート</span>
+          </li>
+          <li>
+            <strong>テンプレートで繰り返し作業を効率化する</strong>
+            <span class="workflow-for">定型文書作成者向け</span>
+            <span>Templateフォルダ → コピー → Archive → ZIPエクスポート</span>
+          </li>
+        </ul>
+      </section>
+
       <!-- Coming Soon Section -->
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
-        <h2 id="coming-soon-heading">v2.0.4 の新機能</h2>
-        <p class="coming-soon-status">審査中</p>
+        <h2 id="coming-soon-heading">最近の追加機能</h2>
+        <p class="coming-soon-status">v2.0.4 – v2.0.5</p>
         <ul class="coming-soon-list" role="list">
           <li>
+            <strong>Fine-grained PAT</strong>
+            <span>GitHubのgithub_pat_xxxトークンがGit同期で使えるようになった。</span>
+          </li>
+          <li>
             <strong>INP最適化</strong>
-            <span>300KB文書タイピング: 272ms→120ms。スラッシュメニュー: 184ms→24ms。コマンドパレット: 200ms→32ms。CIで自動検証。</span>
+            <span>300KB文書タイピング: 272ms→120ms。スラッシュメニュー: 184ms→24ms。</span>
           </li>
           <li>
             <strong>ノート一括選択</strong>
-            <span>Shift+Clickで範囲選択、Ctrl+Clickで個別トグル。まとめてD&amp;D、削除、ステージング。</span>
+            <span>Shift+Clickで範囲選択、Ctrl+Clickで個別トグル。まとめて操作。</span>
           </li>
           <li>
             <strong>選択的Git Push</strong>
-            <span>ステージしたノートだけPush。ノート単位のlastPushedAtで変更追跡。Syncは従来通り全件Push。</span>
+            <span>ステージしたノートだけPush。ノート単位で変更を追跡。</span>
           </li>
           <li>
-            <strong>Git競合をエディタで手動マージ</strong>
-            <span>「Merge in Editor」でCompare &amp; Editモードを起動。WYSIWYG差分ハイライト付き。解決後に自動Push。</span>
-          </li>
-          <li>
-            <strong>Diffナビゲーション &amp; リスト種別トグル</strong>
-            <span>Compare &amp; Editに▲2/5▼ナビコントロール。選択ツールバーからBullet/Ordered/Taskリストを切り替え。</span>
+            <strong>Git競合マージ</strong>
+            <span>「Merge in Editor」でWYSIWYG差分表示。手動解決後に自動Push。</span>
           </li>
         </ul>
       </section>
@@ -271,7 +299,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版: v2.0.4（審査中）</small></p>
+        <small>最新版: v2.0.5</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手
