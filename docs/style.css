@@ -547,6 +547,10 @@ p {
   height: 100%;
 }
 
+.flow-item p {
+  text-wrap: balance;
+}
+
 /* Arrow between flow items */
 .flow-arrow {
   display: none;
