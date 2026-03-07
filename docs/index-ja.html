@@ -30,8 +30,7 @@
   <script>
     (function() {
       var lang = navigator.language || navigator.userLanguage;
-      if (!lang.startsWith('ja') && !sessionStorage.getItem('langOverride')
-          && !(document.referrer && document.referrer.includes('mark-it-down'))) {
+      if (!lang.startsWith('ja') && !sessionStorage.getItem('langOverride')) {
         window.location.replace('index.html');
       }
     })();
