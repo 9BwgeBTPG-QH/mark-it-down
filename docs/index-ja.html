@@ -19,18 +19,19 @@
   <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
   <link rel="stylesheet" href="style.css">
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V10BZGSVJT"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-V10BZGSVJT');
+    gtag('config', 'G-BGZ2T3RGJW');
   </script>
   <!-- Language auto-redirect -->
   <script>
     (function() {
       var lang = navigator.language || navigator.userLanguage;
-      if (!lang.startsWith('ja') && !sessionStorage.getItem('langOverride')) {
+      if (!lang.startsWith('ja') && !sessionStorage.getItem('langOverride')
+          && !(document.referrer && document.referrer.includes('mark-it-down'))) {
         window.location.replace('index.html');
       }
     })();
@@ -109,13 +110,13 @@
           保存する場所じゃない。咀嚼する場所。
         </p>
         <div class="buttons">
-          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Mark It Downで書き始める">
-            書き始める
-          </a>
-          <a href="features-ja.html" class="btn btn-secondary" aria-label="機能について詳しく見る">
-            詳しく見る
+          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja"
+             class="btn btn-primary" aria-label="Chrome Web Storeで入手する"
+             onclick="gtag('event','cta_click',{event_category:'engagement',event_label:'hero'})">
+            拡張機能を入手
           </a>
         </div>
+        <p class="hero-link"><a href="features-ja.html">機能を見る →</a></p>
       </section>
 
       <!-- Philosophy Section -->
