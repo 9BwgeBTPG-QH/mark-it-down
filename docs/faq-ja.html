@@ -65,6 +65,51 @@
         <h2 id="faq-heading" class="visually-hidden">よくある質問</h2>
 
         <div class="changelog-accordion">
+          <!-- 他ツールとの比較 -->
+          <div class="faq-category-header">🔄 他ツールとの比較</div>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">ObsidianのWeb Clipperとの違いは？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>ObsidianのWeb Clipperはページをvaultに保存します。保存が目的なら最適です。Mark It Downは違うワークフローを想定しています。ページをクリップするとSide Panelが即座に開き、その場で書き直しを始められます。取り込みと編集が一つの流れになっています。</p>
+              <p>クリッパーはReadabilityでページの本文を抽出し、見出し・リンク・コードブロックを保持したクリーンなMarkdownに変換します。</p>
+              <p>ページをそのまま保存したいだけなら汎用クリッパーで十分。Mark It Downは読んだものを<em>咀嚼</em>したいとき — 書き直し、構成変更、そしてMarkdown・PDF・HTML・DOCXへのエクスポートまで一気に行いたいときのためのツールです。</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Heynoteとの比較は？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>HeynoteはMark It Downの「一時的なワークスペース」という思想に直接インスピレーションを与えた、優れた開発者向けスクラッチパッドです。</p>
+              <p>大きな違いは、Heynoteは別途起動するデスクトップアプリである点。Mark It DownはChromeの中に住んでいるので、URLを入力する必要も、アプリを開く手間もありません。拡張機能ボタンを押すか、<code>chrome://extensions/shortcuts</code>で設定したキーボードショートカットを叩けば、閲覧中のページの横にSide Panelがすぐ開きます。全画面で集中して書きたいときはNew Tabモードも使えます。</p>
+              <p>さらに完全オフライン対応 — すべてブラウザ内でローカル処理されるため、インターネット接続なしでも動作します。棲む場所は違いますが、精神は重なっています。</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">NotionやObsidianを使えばいいのでは？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Mark It Downはワークフローの中でNotionやObsidianの<em>前</em>に来るツールです。置き換えるものではありません。生の素材を加工する場所：AIの回答を書き直す、クリップした記事を再構成する、ノートの下書きを作る。</p>
+              <p>きれいになったらエクスポート（Markdown・PDF・HTML・DOCX、一括エクスポートはZIP）して、長期保存する場所に移します。</p>
+              <p>ツール固有の構文（Dataviewクエリ、Notionデータベースなど）はレンダリングされませんが、標準Markdown、LaTeX数式、Mermaidダイアグラム、GFMテーブルは完璧に動作します。</p>
+            </div>
+          </details>
+
           <!-- データ & ストレージ -->
           <div class="faq-category-header">💾 データ & ストレージ</div>
 
@@ -151,24 +196,6 @@
             </div>
           </details>
 
-          <details class="accordion-item">
-            <summary class="accordion-header">
-              <div class="accordion-title">
-                <span class="accordion-icon"></span>
-                <span class="accordion-highlight">ノートが増えすぎて重くなることはありますか？</span>
-              </div>
-            </summary>
-            <div class="accordion-content">
-              <p><strong>Mark It Downは「作業場」として設計されており、大量保存には向いていません。</strong></p>
-              <p><strong>推奨される使い方:</strong></p>
-              <ul>
-                <li>作業中のノート20件程度を目安に</li>
-                <li>完成したノートは <strong>Archive → Export → 削除</strong></li>
-                <li>サイドバー下部のストレージゲージで使用量を確認（80%超で警告）</li>
-              </ul>
-            </div>
-          </details>
-
           <!-- 画像 & メディア -->
           <div class="faq-category-header">🖼️ 画像 & メディア</div>
 
@@ -229,6 +256,56 @@
             </div>
           </details>
 
+          <!-- 技術的な質問 -->
+          <div class="faq-category-header">🔧 技術的な質問</div>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">ストレージの上限は？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Mark It Downは<code>chrome.storage.local</code>に<code>unlimitedStorage</code>権限を付けて使用しているため、Chrome側のハードリミットはありません。</p>
+              <p>サイドバーにはフォルダ別（Inbox / Template / Archive / Trash）のノート数を積み上げバーで表示し、合計件数とサイズも確認できます。どこにノートが溜まっているか一目でわかります。</p>
+              <p><strong>ドキュメントサイズに応じたパフォーマンス最適化:</strong></p>
+              <ul>
+                <li><strong>50KB以上</strong>: 装飾の簡略化</li>
+                <li><strong>100KB以上</strong>: より重い最適化（debounce延長、コードブロック処理の遅延実行）</li>
+                <li><strong>300KB以上</strong>: 最大最適化モード</li>
+              </ul>
+              <p>Archiveフォルダのノートは軽量な読み取り専用レンダラーで表示されます。Mark It Downはワークスペースであり、ストレージシステムではありません。長期保存にはGit同期やエクスポートを使ってください。</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Electronアプリではなく、なぜChrome拡張機能？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Electronアプリは重い。それ以上に、作業はブラウザの中で起きています — AIチャット、リサーチ、読書。</p>
+              <p>開いているタブの横に常駐するSide Panelが、アーキテクチャとして正しい形です。コンテキストスイッチなし、別ウィンドウの管理なし。アプリ全体はPreact（3KB）で構築されているので、一瞬で起動します。</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">対応エクスポート形式は？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>単体:</strong> Markdown (.md)、PDF、HTML、DOCX（Word）、PNG。</p>
+              <p><strong>一括エクスポート:</strong> 複数ノートを選択してMarkdown・HTML・DOCXのZIPアーカイブとして出力できます。</p>
+              <p>PDFエクスポートは目次、ページ番号、Paged.jsによる適切なページ分割に対応しています。</p>
+            </div>
+          </details>
+
           <!-- Git & ツール -->
           <div class="faq-category-header">⚙️ Git & ツール</div>
 
@@ -268,6 +345,50 @@
                 <li><strong>表示</strong>: サイドバー、目次、フォーカスモード、テーマ切替</li>
                 <li><strong>挿入</strong>: Mermaid図、コードブロック、数式</li>
               </ul>
+            </div>
+          </details>
+
+          <!-- 設計思想 -->
+          <div class="faq-category-header">💡 設計思想</div>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">フォルダが4つだけ？ 少なすぎない？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>固定構造（Inbox / Template / Archive / Trash）は、製造業の「定位置管理」から来ています。すべてに決まった場所があり、どこを見ればいいか常に分かります。</p>
+              <p>無制限にフォルダを作れると、意図なくものが溜まっていきます。ツールを使うのではなく、整理のための仕組みを維持する羽目になる。制約こそが機能です。</p>
+              <p>なお、組み込みリファレンスノート（Getting Started、Markdown Referenceなど）用の非表示Systemフォルダもあります。管理する必要はなく、必要なときにそこにあるだけです。</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Git同期の「意図的なコミット」とは？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Google DriveやiCloudのような自動同期ツールは、あらゆる変更を自動的に同期します。Mark It Downはローカルへのオートセーブは毎秒行いますが、Gitへのpushは意識的なアクションです。</p>
+              <p>全ノートを一括ではなく、特定のノートだけを選んでpushすることもできます。まず整理して、それからコミットする。リモートの履歴は読みやすく意味のあるものになり、キーストロークごとのログにはなりません。</p>
+              <p>Pullも手動で、コンフリクト解決機能（手動マージ用のCompare &amp; Editモード含む）を内蔵しています。</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">AI機能が内蔵されていないのはなぜ？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>意図的な設計です。Mark It Downは<em>書く</em>ためのツールであり、生成するツールではありません。思想は「咀嚼」 — ChatGPT、Claude、Geminiなどから生成されたAI出力を貼り付けて、自分の言葉で書き直します。</p>
+              <p>エディタはAI出力を完璧にレンダリングしますが（LaTeX数式、Mermaidダイアグラム、構文ハイライト付きコードブロック、GFMテーブル）、コンテンツの生成は一切しません。思考はツールの中ではなく、あなたの頭の中で起きるものです。</p>
             </div>
           </details>
         </div>

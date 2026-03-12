@@ -65,6 +65,51 @@
         <h2 id="faq-heading" class="visually-hidden">FAQ</h2>
 
         <div class="changelog-accordion">
+          <!-- Comparison -->
+          <div class="faq-category-header">🔄 Comparison</div>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">How is this different from Obsidian's Web Clipper?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Obsidian's Web Clipper saves pages to your vault — great if storing is the goal. Mark It Down is built around a different workflow: clip a page, the Side Panel opens instantly, and you start rewriting right there. Capture and edit happen in a single flow.</p>
+              <p>The clipper uses Readability to extract article content and converts it to clean Markdown with proper headings, links, and code blocks preserved.</p>
+              <p>If you just want to save a page as-is, a generic clipper works fine. Mark It Down is for when you want to <em>process</em> what you've read — rewrite, restructure, then export to Markdown, PDF, HTML, or DOCX.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">How does it compare to Heynote?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Heynote is an excellent developer scratchpad — and a direct inspiration for Mark It Down's "temporary workspace" philosophy.</p>
+              <p>The key differences: Heynote is a desktop app you launch separately. Mark It Down lives in Chrome itself, so there's no URL to type, no app to open. Press the extension button (or a keyboard shortcut via <code>chrome://extensions/shortcuts</code>) and the Side Panel appears beside whatever you're reading. Or open a New Tab for full-screen distraction-free writing.</p>
+              <p>It also works fully offline — everything runs locally in the browser, no server involved. Different habitat, overlapping spirit.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Why not just use Notion or Obsidian?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Mark It Down is meant to come <em>before</em> Notion or Obsidian in your workflow — not replace them. It's where you process raw material: rewrite an AI answer, restructure a clipped article, draft a note.</p>
+              <p>Once it's clean, export it (Markdown, PDF, HTML, DOCX, or ZIP for batch export) and move it to wherever you store things long-term.</p>
+              <p>Tool-specific syntax (Dataview queries, Notion databases, etc.) won't render here — but standard Markdown, LaTeX math, Mermaid diagrams, and GFM tables all work perfectly.</p>
+            </div>
+          </details>
+
           <!-- Data & Storage -->
           <div class="faq-category-header">💾 Data & Storage</div>
 
@@ -151,24 +196,6 @@
             </div>
           </details>
 
-          <details class="accordion-item">
-            <summary class="accordion-header">
-              <div class="accordion-title">
-                <span class="accordion-icon"></span>
-                <span class="accordion-highlight">Will the app slow down if I have too many notes?</span>
-              </div>
-            </summary>
-            <div class="accordion-content">
-              <p><strong>Mark It Down is designed as a workspace, not a storage system.</strong></p>
-              <p><strong>Recommended usage:</strong></p>
-              <ul>
-                <li>Keep around 20 active notes</li>
-                <li>Export completed notes: <strong>Archive → Export → Delete</strong></li>
-                <li>Check storage usage in the sidebar (warning at 80%+)</li>
-              </ul>
-            </div>
-          </details>
-
           <!-- Images & Media -->
           <div class="faq-category-header">🖼️ Images & Media</div>
 
@@ -229,6 +256,56 @@
             </div>
           </details>
 
+          <!-- Technical -->
+          <div class="faq-category-header">🔧 Technical</div>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">What's the storage limit?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Mark It Down uses <code>chrome.storage.local</code> with the <code>unlimitedStorage</code> permission — there's no hard cap from Chrome.</p>
+              <p>The sidebar shows a stacked bar with your note counts by folder (Inbox, Template, Archive, Trash) along with total notes and size, so you can see at a glance where things are accumulating.</p>
+              <p><strong>Performance tiers by document size:</strong></p>
+              <ul>
+                <li><strong>50KB+</strong>: Some cosmetic decorations are simplified</li>
+                <li><strong>100KB+</strong>: Heavier optimizations (longer debounce, deferred code block processing)</li>
+                <li><strong>300KB+</strong>: Maximum optimization mode</li>
+              </ul>
+              <p>Archived notes use a lightweight read-only renderer. Mark It Down is designed as a workspace, not a storage system — for long-term archiving, use Git sync or Export.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Why a Chrome extension instead of an Electron app?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Electron apps are heavy. More importantly, the work happens in the browser — AI chats, research, reading.</p>
+              <p>A Side Panel that stays open beside whatever tab you're on is architecturally the right fit. No context switch, no separate window to manage. The entire app is built on Preact (3KB), so it loads instantly.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">What export formats are supported?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>Single note:</strong> Markdown (.md), PDF, HTML, DOCX (Word), and PNG.</p>
+              <p><strong>Batch export:</strong> Select multiple notes and export them as a ZIP archive containing Markdown, HTML, or DOCX files.</p>
+              <p>PDF export supports table of contents, page numbers, and proper pagination via Paged.js.</p>
+            </div>
+          </details>
+
           <!-- Git & Tools -->
           <div class="faq-category-header">⚙️ Git & Tools</div>
 
@@ -268,6 +345,50 @@
                 <li><strong>View</strong>: Toggle sidebar, TOC, focus mode, themes</li>
                 <li><strong>Insert</strong>: Mermaid diagrams, code blocks, math equations</li>
               </ul>
+            </div>
+          </details>
+
+          <!-- Design Philosophy -->
+          <div class="faq-category-header">💡 Design Philosophy</div>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Why only 4 folders? Isn't that too restrictive?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>The fixed structure (Inbox / Template / Archive / Trash) comes from a manufacturing principle called <em>fixed-position management</em> (定位置管理): everything has a designated place, and you always know where to look.</p>
+              <p>When you can create unlimited folders, things accumulate without intention. You end up with an organizational system you have to maintain rather than a tool you use. The constraint is the feature.</p>
+              <p>There's also a hidden System folder for built-in reference notes (Getting Started, Markdown Reference, etc.) — you don't manage it; it's just there when you need it.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">What does "intentional commits" mean for Git sync?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Auto-sync tools (like Google Drive or iCloud) sync every change automatically. Mark It Down auto-saves locally every second — but pushing to Git is a deliberate action.</p>
+              <p>You can even select specific notes to push, rather than pushing everything at once. The idea is that you tidy up first, then commit. Your remote history stays readable and meaningful, not a log of every keystroke.</p>
+              <p>Pull is also manual, with conflict resolution built in (including a Compare &amp; Edit mode for manual merging).</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Why is there no AI feature built in?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>By design. Mark It Down is a <em>writing</em> tool, not a generating tool. The philosophy is "digestion" (咀嚼) — you take AI-generated output from ChatGPT, Claude, Gemini, or wherever, paste it in, and rewrite it in your own words.</p>
+              <p>The editor renders AI output perfectly (LaTeX math, Mermaid diagrams, code blocks with syntax highlighting, GFM tables), but it never generates content for you. The thinking happens in your head, not in the tool.</p>
             </div>
           </details>
         </div>
