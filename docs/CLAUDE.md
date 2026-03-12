@@ -16,10 +16,6 @@
 | #3573 | 8:54 PM | ✅ | English Homepage CTA Section Version Update to 1.9.7 | ~364 |
 | #3570 | " | ✅ | English Homepage Schema Version Update to 1.9.7 | ~349 |
 | #3571 | " | ✅ | English Homepage Coming Soon Section Updated to v1.9.7 Features | ~476 |
-| #3569 | " | 🔵 | Japanese Features Page Complete Localization | ~588 |
-| #3567 | 8:53 PM | 🔵 | Features Page Structure and Organization Review | ~568 |
-| #3563 | " | 🔵 | Japanese Changelog Page Localization Review | ~519 |
-| #3560 | 8:52 PM | 🔵 | Changelog Page Structure Review for Version Updates | ~545 |
 
 ### Feb 11, 2026
 
@@ -77,4 +73,13 @@
 | #7822 | 7:40 PM | 🔵 | Changelog shows v2.0.2 as latest with "Under Review" status, missing v2.0.3 | ~878 |
 | #7821 | 7:39 PM | 🔵 | Features page presents Web Clipper as current capability, not future | ~879 |
 | #7820 | " | 🔵 | Current homepage content structure and version discrepancy | ~844 |
+
+### Mar 12, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #8372 | 9:27 PM | ✅ | Japanese homepage CTA section version updated | ~239 |
+| #8370 | 9:26 PM | ✅ | Japanese homepage structured data version updated | ~208 |
+| #8368 | " | ✅ | English homepage updated with v2.0.6 features | ~441 |
+| #8367 | " | ✅ | Japanese changelog updated for v2.0.6 release | ~450 |
 </claude-mem-context>
