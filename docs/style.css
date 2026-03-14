@@ -119,6 +119,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Parchment grain texture — gives materiality to the flat background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
 /* ========================================
    3. ACCESSIBILITY
    ======================================== */
@@ -423,9 +436,10 @@ p {
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 400;
   color: var(--text-primary);
-  line-height: var(--line-height-tight);
+  line-height: 1.2;
   margin-bottom: var(--spacing-lg);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
 .hero-subtitle {
@@ -448,6 +462,59 @@ p {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-primary);
   box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   8.1. ENTRANCE ANIMATIONS
+   ======================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered page load — each section fades in sequentially */
+.hero              { animation: fadeUp 800ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.philosophy        { animation: fadeUp 800ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both; }
+.flow-section      { animation: fadeUp 800ms cubic-bezier(0.16, 1, 0.3, 1) 300ms both; }
+.screenshot-section { animation: fadeUp 800ms cubic-bezier(0.16, 1, 0.3, 1) 400ms both; }
+
+/* Scroll-triggered reveal for below-fold sections */
+.workflow-section,
+.coming-soon-section,
+.faq-preview-section,
+.cta-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.workflow-section.is-visible,
+.coming-soon-section.is-visible,
+.faq-preview-section.is-visible,
+.cta-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero decorative ornament — a typographic flourish */
+.hero-ornament {
+  display: block;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--border-primary);
+  letter-spacing: 0.3em;
+  margin-top: var(--spacing-lg);
+  user-select: none;
+  opacity: 0.5;
 }
 
 /* ========================================
