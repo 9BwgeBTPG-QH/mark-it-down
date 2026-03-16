@@ -63,15 +63,65 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.6 - Latest -->
+        <!-- v2.0.7 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.7</span>
+              <span class="accordion-highlight">Big files load fast. Clipper gets smarter.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Set a size threshold and large notes automatically open in Archive's read-only view. When you unlock to edit, the transition is smoother than opening in the editor from the start.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Auto-Archive Threshold</strong> <span>Set a threshold (100/200/300KB) in Settings. Oversized notes open in read-only Archive mode instantly. Unlock to edit anytime</span></li>
+                <li><strong>Copy for LLM</strong> <span>YAML frontmatter (title/source/date) prepended on copy. Web Clip metadata included automatically. Available from Copy dropdown and command palette</span></li>
+                <li><strong>Token Count on Copy/Export</strong> <span>Estimated token count shown in toast notifications (e.g. "Copied! (~1,234 tokens)"). Heuristic: ~4 chars/token for Latin, ~1.5 for CJK</span></li>
+                <li><strong>llms.txt Auto-Detection</strong> <span>Web Clipper checks /llms-full.txt and /llms.txt before Readability extraction. 24h session cache, 5s timeout, 500KB limit</span></li>
+                <li><strong>Progressive Code Highlighting</strong> <span>Files with 30+ code blocks highlight viewport-first, then batch the rest via requestIdleCallback. 8s → 1.1s for 226 blocks</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Web Clipper Improvements</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Quality Benchmark</strong> <span>19 sites, 35 fixtures, 8-dimension scoring. Adaptive pipeline (Readability → Defuddle fallback) achieves avg 99</span></li>
+                <li><strong>Heading Protection</strong> <span>h2-h6 preserved through Readability extraction. Substack score: 77 → 98</span></li>
+                <li><strong>Adaptive Fallback</strong> <span>Quality gate auto-switches from Readability to Defuddle when heading ratio is low. Zero cost for normal cases</span></li>
+                <li><strong>Lazy Image Extraction</strong> <span>data-src, data-original, data-lazy-src attributes and srcset now captured</span></li>
+                <li><strong>Noise Reduction</strong> <span>30 → 41 selectors. GitHub and Reddit-specific noise elements removed</span></li>
+                <li><strong>Dynamic Fence</strong> <span>Code blocks with backticks inside auto-adjust fence length. No more broken syntax</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">UI Improvements</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Code Block Language Selector</strong> <span>Improved visibility across all 4 themes: background, border, hover/selected states, and z-index/containment fixes</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Footnote Clipping</strong> <span>Superscript footnote references no longer clipped at paragraph top edge</span></li>
+                <li><strong>x.com Callouts</strong> <span>Grok's [!NOTE]/[!WARNING] callouts now preserved when clipping from x.com</span></li>
+                <li><strong>Sidebar Flickering</strong> <span>Fixed 3 re-render paths triggered by editor input: batched setImmediateContent, removed useEffect dependency, split Zustand selectors</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.6 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.0.6</span>
               <span class="accordion-highlight">Polished, piece by piece.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">No new workflows. Just a smoother experience — tooltips that show shortcuts, better sorting, loading indicators, and a theme system with no gaps.</p>

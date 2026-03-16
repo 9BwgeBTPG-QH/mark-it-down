@@ -63,15 +63,65 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.6 - Latest -->
+        <!-- v2.0.7 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.7</span>
+              <span class="accordion-highlight">大きなファイルも速く。Clipperも賢く。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">閾値を設定すると、大きなノートが自動的にArchiveの読み取り専用ビューで開く。Unlockして編集に切り替えるときも、最初からエディタで開くよりスムーズに始められる。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>大容量ノート自動アーカイブ</strong> <span>設定で閾値（100/200/300KB）を指定。超過ノートを自動的に読み取り専用Archiveで表示。Unlockでいつでも編集再開</span></li>
+                <li><strong>LLM向けコピー</strong> <span>YAML frontmatter（title/source/date）を自動付与してコピー。Web Clipメタデータも自動含有。コマンドパレットからも操作可能</span></li>
+                <li><strong>コピー/エクスポート時にトークン数表示</strong> <span>Toast通知に推定トークン数を表示（例: 「Copied! (~1,234 tokens)」）。Latin約4文字/token、CJK約1.5文字/token</span></li>
+                <li><strong>llms.txt自動検出</strong> <span>Web Clipperがクリップ時に/llms-full.txt・/llms.txtを自動検出。24時間キャッシュ、5秒タイムアウト、500KB上限</span></li>
+                <li><strong>コードハイライト段階的適用</strong> <span>30個超のコードブロックでビューポート内を優先ハイライト。残りをidle時にバッチ処理。226ブロックで8秒→1.1秒</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Web Clipper改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>品質ベンチマーク</strong> <span>19サイト・35フィクスチャで8次元スコアリング。Adaptiveパイプライン（Readability→Defuddle自動切替）で平均99</span></li>
+                <li><strong>見出し保護</strong> <span>Readability抽出でh2-h6が失われなくなった。Substackスコア: 77→98</span></li>
+                <li><strong>Adaptiveフォールバック</strong> <span>heading ratioが低い場合のみDefuddleに自動切替。通常ケースへの追加コストゼロ</span></li>
+                <li><strong>遅延読み込み画像の抽出改善</strong> <span>data-src・data-original・data-lazy-src属性とsrcsetを確実にキャプチャ</span></li>
+                <li><strong>ノイズ除去拡充</strong> <span>30→41セレクタ。GitHub・Reddit固有のノイズ要素を除去</span></li>
+                <li><strong>動的フェンス</strong> <span>コード内にバッククォートがある場合、フェンス長を自動調整。構文が壊れなくなった</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">UI改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>コードブロック言語セレクタ</strong> <span>全4テーマで背景色・ボーダー・ホバー/選択状態の視認性を改善。z-index/containment問題を修正</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>脚注のクリッピング</strong> <span>上付き文字の脚注参照が段落上端で切れなくなった</span></li>
+                <li><strong>x.comのCallout</strong> <span>Grokの[!NOTE]/[!WARNING]等のCalloutがx.comからのクリップで保持されるようになった</span></li>
+                <li><strong>サイドバーのちらつき</strong> <span>エディタ入力時の3つの不要再レンダリング経路を修正: setImmediateContentのバッチ化、useEffect依存配列修正、Zustandセレクタ分離</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.6 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.0.6</span>
               <span class="accordion-highlight">見た目も、中身も、整えた。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">新しいワークフローはない。使い心地の改善だ。ツールチップにショートカット表示、ソート操作の直感化、読み込み表示、テーマの抜けを全て補完。</p>
