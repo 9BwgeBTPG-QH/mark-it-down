@@ -63,15 +63,65 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.7 - Latest -->
+        <!-- v2.0.8 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.8</span>
+              <span class="accordion-highlight">Big files, instant editing. UI feels alive.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Progressive Crepe Initialization loads only the first 5KB to start the editor instantly — the rest streams in behind the scenes. 100KB docs open 19.8x faster. Toast notifications, checkbox interactions, and the selection toolbar all got a tactile redesign.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Highlights</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Progressive Editor Loading</strong> <span>First 5KB loads the editor instantly; remaining content streams via requestIdleCallback. 50KB: 271ms (5.7x), 100KB: 263ms (19.8x), 200KB: 519ms (36.6x faster)</span></li>
+                <li><strong>Toast Stacking Redesign</strong> <span>Multiple toasts stack with depth and perspective. Hover pauses the timer. Progress bar shows time remaining. Larger corner radius, theme-aware buttons</span></li>
+                <li><strong>Checkbox Micro-Interactions</strong> <span>Spring animation on check, fade on completed text, hover hint. Respects prefers-reduced-motion</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Glassmorphism Selection Toolbar</strong> <span>Blur 12px backdrop, 28x28 square buttons, custom tooltips. L2 tools layer above L1. Heading dropdown opens upward. All 4 themes</span></li>
+                <li><strong>HelpModal Reorganized</strong> <span>4 tabs → 3 tabs (Settings / Guide / About). Guide now covers Slash Commands, Selection Toolbar, and Command Palette with collapsible sections</span></li>
+                <li><strong>Footnote Multi-Reference Backlinks</strong> <span>When the same footnote is referenced multiple times, the back-link returns to the exact reference you clicked — not always the first one</span></li>
+                <li><strong>Timestamp Headings</strong> <span>/now inserts current time as H2 or H3. Ctrl+Alt+; inserts inline HH:MM. Combine with TOC for a timeline view</span></li>
+                <li><strong>HTML → Markdown Paste</strong> <span>Ctrl+Shift+V converts clipboard HTML to Markdown. Three paste modes (markdown / plain text / default) in Settings</span></li>
+                <li><strong>Copy as Markdown</strong> <span>New button in L1 selection toolbar. Copies selected text as Markdown with estimated token count in toast</span></li>
+                <li><strong>Copy for LLM Normalization</strong> <span>3-stage pipeline: heading hierarchy fix, auto language tags on code blocks (13 languages), excess blank line compression</span></li>
+                <li><strong>Spellcheck Control</strong> <span>auto (disabled above 50KB) / always / never. Set to "never" to hide red squiggles for non-English writing</span></li>
+                <li><strong>Code Language Auto-Detection</strong> <span>16 languages detected from shebang, DOCTYPE, and keyword patterns. Feeds into Copy for LLM normalization</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Performance</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Lazy Component Loading</strong> <span>13 components (including Editor modals) load on demand. app.js reduced from 836KB to 729KB (-13%)</span></li>
+                <li><strong>Visibility Fix</strong> <span>Editor uses visibility:hidden instead of display:none when note list is shown — prevents Progressive Loading queue from being cancelled</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Background Texture Atomicity</strong> <span>Texture image data and flag now saved atomically via setStorageMulti() — no more half-written state on browser crash</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.7 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.0.7</span>
               <span class="accordion-highlight">Big files load fast. Clipper gets smarter.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Set a size threshold and large notes automatically open in Archive's read-only view. When you unlock to edit, the transition is smoother than opening in the editor from the start.</p>

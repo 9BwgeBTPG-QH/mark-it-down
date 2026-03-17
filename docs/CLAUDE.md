@@ -15,7 +15,6 @@
 | #3574 | " | ✅ | Japanese Homepage Schema Version Update to 1.9.7 | ~340 |
 | #3573 | 8:54 PM | ✅ | English Homepage CTA Section Version Update to 1.9.7 | ~364 |
 | #3570 | " | ✅ | English Homepage Schema Version Update to 1.9.7 | ~349 |
-| #3571 | " | ✅ | English Homepage Coming Soon Section Updated to v1.9.7 Features | ~476 |
 
 ### Feb 11, 2026
 
@@ -82,4 +81,10 @@
 | #8370 | 9:26 PM | ✅ | Japanese homepage structured data version updated | ~208 |
 | #8368 | " | ✅ | English homepage updated with v2.0.6 features | ~441 |
 | #8367 | " | ✅ | Japanese changelog updated for v2.0.6 release | ~450 |
+
+### Mar 17, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #9360 | 9:25 PM | ✅ | Website updated for v2.0.8 release submission | ~741 |
 </claude-mem-context>

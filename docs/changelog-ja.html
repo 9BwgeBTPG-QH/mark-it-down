@@ -63,15 +63,65 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.7 - Latest -->
+        <!-- v2.0.8 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.8</span>
+              <span class="accordion-highlight">大きなファイルでも、指は止まらない。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Progressive Crepe Initializationで最初の5KBだけでエディタを即座に起動。残りはバックグラウンドで流し込む。100KBで19.8倍高速。Toast、チェックボックス、選択ツールバーの触り心地も一新。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">ハイライト</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>エディタ段階的読み込み</strong> <span>最初の5KBでエディタ起動、残りをrequestIdleCallbackでバックグラウンド読み込み。50KB: 271ms（5.7倍）、100KB: 263ms（19.8倍）、200KB: 519ms（36.6倍高速）</span></li>
+                <li><strong>Toast通知リデザイン</strong> <span>複数Toastが奥行き効果で積み重なる。ホバーでタイマー停止。プログレスバーで残り時間表示。大きな角丸、テーマ対応ボタン</span></li>
+                <li><strong>チェックボックスのマイクロインタラクション</strong> <span>スプリングアニメーション、完了テキストのフェード、ホバーヒント。prefers-reduced-motion対応</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>選択ツールバー刷新</strong> <span>Glassmorphism風blur 12pxの半透明背景、28x28正方形ボタン、カスタムツールチップ。L2ツールはL1上に配置。見出しドロップダウンは上方向展開。全4テーマ対応</span></li>
+                <li><strong>HelpModal再編</strong> <span>4タブ→3タブ（Settings / Guide / About）。GuideにSlash Commands・Selection Toolbar・Command Paletteセクション新設。アコーディオン形式</span></li>
+                <li><strong>脚注の複数参照バックリンク</strong> <span>同一脚注の複数参照から、クリックした参照元に正確に戻れるようになった</span></li>
+                <li><strong>タイムスタンプ見出し</strong> <span>/nowで現在時刻をH2/H3見出しとして挿入。Ctrl+Alt+;でインラインHH:MM挿入。TOCと組み合わせてタイムライン表示</span></li>
+                <li><strong>HTML → Markdownペースト</strong> <span>Ctrl+Shift+VでクリップボードのHTMLをMarkdownに変換。3つのペーストモード（markdown/プレーンテキスト/通常）を設定で選択</span></li>
+                <li><strong>Markdownとしてコピー</strong> <span>L1選択ツールバーに新ボタン。選択範囲のMarkdownをコピー、Toastにトークン数概算を表示</span></li>
+                <li><strong>LLMコピー正規化パイプライン</strong> <span>3段階: 見出し階層の正規化、コードブロック言語自動付与（13言語）、過剰空行の圧縮</span></li>
+                <li><strong>スペルチェック制御</strong> <span>auto（50KB超で自動無効）/ always / never。日本語で書く場合はneverで赤波線を非表示に</span></li>
+                <li><strong>コードブロック言語自動検出</strong> <span>16言語対応。shebang・DOCTYPE・キーワードパターンで判定。LLMコピー正規化と連携</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">パフォーマンス</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>コンポーネント遅延読み込み</strong> <span>13コンポーネント（Editorモーダル含む）をオンデマンド読み込み。app.jsが836KB→729KB（-13%）</span></li>
+                <li><strong>表示方式の修正</strong> <span>ノートリスト表示時のEditorをdisplay:noneからvisibility:hiddenに変更。Progressive Loadingキューのキャンセルを防止</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>背景テクスチャのアトミック保存</strong> <span>テクスチャ画像データとフラグをsetStorageMulti()で一括保存。ブラウザクラッシュ時の不完全状態を防止</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.7 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.0.7</span>
               <span class="accordion-highlight">大きなファイルも速く。Clipperも賢く。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済み</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">閾値を設定すると、大きなノートが自動的にArchiveの読み取り専用ビューで開く。Unlockして編集に切り替えるときも、最初からエディタで開くよりスムーズに始められる。</p>
