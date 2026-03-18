@@ -63,15 +63,38 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.8 - Latest -->
+        <!-- v2.0.9 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.9</span>
+              <span class="accordion-highlight">No more freezes. That's the whole point.</span>
+            </div>
+            <span class="accordion-status released">Released</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.0.8 made big files open fast in the Editor. v2.0.9 finishes the job — Archive and drag-and-drop no longer freeze.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Archive Freeze on Large Files</strong> <span>Opening 200KB+ Markdown in Archive no longer freezes the browser. Progressive rendering applied to the read-only viewer</span></li>
+                <li><strong>Drag &amp; Drop Freeze</strong> <span>Moving notes between folders via drag-and-drop no longer causes UI freezes</span></li>
+                <li><strong>Batch Storage for Multi-Note Operations</strong> <span>Moving or deleting multiple notes at once is now a single storage write instead of one per note</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.8 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.0.8</span>
               <span class="accordion-highlight">Big files, instant editing. UI feels alive.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Progressive Crepe Initialization loads only the first 5KB to start the editor instantly — the rest streams in behind the scenes. 100KB docs open 19.8x faster. Toast notifications, checkbox interactions, and the selection toolbar all got a tactile redesign.</p>

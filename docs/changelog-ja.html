@@ -63,15 +63,38 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.8 - Latest -->
+        <!-- v2.0.9 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.0.9</span>
+              <span class="accordion-highlight">フリーズしない。それだけのバージョン。</span>
+            </div>
+            <span class="accordion-status released">リリース済</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.0.8でEditorの大容量ファイル対応を完了。v2.0.9ではArchiveとドラッグ&ドロップのフリーズを修正。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Archiveで大容量ファイルを開くとフリーズ</strong> <span>200KB超のMarkdownをArchiveで開いてもブラウザが固まらなくなった。読み取り専用ビューアにProgressive Renderingを適用</span></li>
+                <li><strong>ドラッグ&ドロップでUIがフリーズ</strong> <span>ノートをフォルダ間でドラッグ移動してもUIが固まらなくなった</span></li>
+                <li><strong>複数ノート一括操作の効率化</strong> <span>複数ノートの移動・削除がノートごとではなく1回のStorage書き込みで完了するようになった</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.8 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.0.8</span>
               <span class="accordion-highlight">大きなファイルでも、指は止まらない。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Progressive Crepe Initializationで最初の5KBだけでエディタを即座に起動。残りはバックグラウンドで流し込む。100KBで19.8倍高速。Toast、チェックボックス、選択ツールバーの触り心地も一新。</p>
