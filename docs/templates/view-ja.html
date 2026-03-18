@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>テンプレートプレビュー - Mark It Down</title>
+  <meta name="description" content="Mark It Down用Markdownテンプレートのプレビュー。">
+  <meta name="theme-color" content="#FAFAF9">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="../icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="../icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="../icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="../icon-128.png">
+  <link rel="stylesheet" href="../style.css">
+  <link id="md-alternate" rel="alternate" type="text/markdown" href="">
+  <!-- highlight.js github theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/styles/github.min.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BGZ2T3RGJW');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">メインコンテンツへ</a>
+  <div class="container">
+    <nav class="header-nav" aria-label="メインナビゲーション">
+      <ul>
+        <li><a href="../index-ja.html">ホーム</a></li>
+        <li><a href="../features-ja.html">機能</a></li>
+        <li><a href="../templates-ja.html" aria-current="page">テンプレート</a></li>
+        <li><a href="../faq-ja.html">よくある質問</a></li>
+        <li><a href="../troubleshooting-ja.html">トラブルシューティング</a></li>
+        <li><a href="../changelog-ja.html">更新履歴</a></li>
+        <li><a href="../feedback-ja.html">フィードバック</a></li>
+        <li><a href="../privacy-policy-ja.html">プライバシー</a></li>
+        <li class="lang-switcher"><a id="lang-switch" href="view.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a></li>
+      </ul>
+    </nav>
+    <header role="banner">
+      <div class="header-logo">
+        <a href="../index-ja.html" aria-label="Mark It Down ホーム">
+          <img src="../icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
+      </div>
+      <p class="tagline">テンプレートプレビュー</p>
+    </header>
+
+    <main id="main-content" role="main">
+      <!-- Top bar -->
+      <div class="template-viewer-bar">
+        <a href="../templates-ja.html" class="template-viewer-back">&larr; ギャラリーに戻る</a>
+        <span id="viewer-badge" class="category-badge"></span>
+        <span id="viewer-title" class="template-viewer-title"></span>
+      </div>
+
+      <!-- Rendered content -->
+      <article id="template-content" class="template-viewer-content" aria-live="polite">
+        <div class="template-viewer-loading">テンプレートを読み込み中...</div>
+      </article>
+
+      <!-- Error state -->
+      <div id="template-error" class="template-viewer-error" hidden>
+        <p>テンプレートが見つかりません。</p>
+        <a href="../templates-ja.html">ギャラリーに戻る</a>
+      </div>
+
+      <!-- Action bar -->
+      <div id="template-actions" class="template-viewer-actions" hidden>
+        <button id="copy-md-btn" class="copy-btn">📋 コピー</button>
+      </div>
+    </main>
+
+    <footer role="contentinfo">
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <ul>
+          <li><a href="../index-ja.html">ホーム</a></li>
+          <li><a href="../features-ja.html">機能</a></li>
+          <li><a href="../templates-ja.html">テンプレート</a></li>
+          <li><a href="../faq-ja.html">よくある質問</a></li>
+          <li><a href="../troubleshooting-ja.html">トラブルシューティング</a></li>
+          <li><a href="../changelog-ja.html">更新履歴</a></li>
+          <li><a href="../feedback-ja.html">フィードバック</a></li>
+          <li><a href="../privacy-policy-ja.html">プライバシー</a></li>
+          <li class="lang-switcher"><a id="lang-switch-footer" href="view.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a></li>
+        </ul>
+      </nav>
+      <p>
+        <span>&copy; 2026 Mark It Down</span>
+      </p>
+    </footer>
+  </div>
+
+  <!-- CDN dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@15/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+
+  <script>
+    (function () {
+      // --- Config ---
+      var VALID_PATH = /^[a-z]+\/[a-z0-9-]+$/;
+      var BADGE_MAP = {
+        ai:           { label: 'AI',         cls: 'badge-ai' },
+        productivity: { label: '生産性',     cls: 'badge-productivity' },
+        dev:          { label: '開発',       cls: 'badge-dev' },
+        content:      { label: 'コンテンツ', cls: 'badge-content' },
+        thinking:     { label: '思考',       cls: 'badge-thinking' }
+      };
+
+      // --- Elements ---
+      var contentEl  = document.getElementById('template-content');
+      var errorEl    = document.getElementById('template-error');
+      var actionsEl  = document.getElementById('template-actions');
+      var badgeEl    = document.getElementById('viewer-badge');
+      var titleEl    = document.getElementById('viewer-title');
+      var copyBtn    = document.getElementById('copy-md-btn');
+      var altLink    = document.getElementById('md-alternate');
+      var langSwitch = document.getElementById('lang-switch');
+      var langSwitchFooter = document.getElementById('lang-switch-footer');
+
+      // --- Parse ?t= ---
+      var params = new URLSearchParams(location.search);
+      var t = params.get('t');
+
+      if (!t || !VALID_PATH.test(t)) {
+        showError();
+        return;
+      }
+
+      // Set lang switcher hrefs with ?t= preserved
+      var enUrl = 'view.html?t=' + encodeURIComponent(t);
+      langSwitch.href = enUrl;
+      langSwitchFooter.href = enUrl;
+
+      // Set <link rel="alternate"> (points to original EN .md for Clipper)
+      altLink.href = t + '.md';
+
+      // Japanese version path
+      var mdPath = t + '-ja.md';
+
+      // Determine category
+      var category = t.split('/')[0];
+      var badge = BADGE_MAP[category];
+      if (badge) {
+        badgeEl.textContent = badge.label;
+        badgeEl.className = 'category-badge ' + badge.cls;
+      }
+
+      // --- Fetch & Render ---
+      var rawMarkdown = '';
+
+      fetch(mdPath)
+        .then(function (res) {
+          if (!res.ok) throw new Error(res.status);
+          return res.text();
+        })
+        .then(function (md) {
+          rawMarkdown = md;
+
+          // Strip YAML frontmatter
+          var body = md.replace(/^---[\s\S]*?---\s*/, '');
+
+          // Extract title from first # heading
+          var titleMatch = body.match(/^#\s+(.+)$/m);
+          if (titleMatch) {
+            titleEl.textContent = titleMatch[1];
+            document.title = titleMatch[1] + ' - Mark It Down';
+          }
+
+          // Configure marked
+          marked.setOptions({
+            gfm: true,
+            breaks: false,
+            highlight: function (code, lang) {
+              if (lang && hljs.getLanguage(lang)) {
+                return hljs.highlight(code, { language: lang }).value;
+              }
+              return hljs.highlightAuto(code).value;
+            }
+          });
+
+          // Render
+          contentEl.innerHTML = marked.parse(body);
+
+          // Post-process: GitHub-style callouts
+          contentEl.querySelectorAll('blockquote').forEach(function (bq) {
+            var first = bq.querySelector('p');
+            if (!first) return;
+            var m = first.innerHTML.match(/^\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]/i);
+            if (!m) return;
+            var type = m[1].toLowerCase();
+            bq.classList.add('callout', 'callout-' + type);
+            first.innerHTML = first.innerHTML.replace(/^\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]\s*/i, '<strong class="callout-label">' + m[1] + '</strong><br>');
+          });
+
+          // Post-process: Task lists
+          contentEl.querySelectorAll('li').forEach(function (li) {
+            var html = li.innerHTML.trimStart();
+            if (html.startsWith('<input')) {
+              li.classList.add('task-list-item');
+              li.parentElement.classList.add('task-list');
+            }
+          });
+
+          // Post-process: Mermaid
+          var mermaidBlocks = contentEl.querySelectorAll('pre code.language-mermaid');
+          if (mermaidBlocks.length > 0) {
+            mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
+            mermaidBlocks.forEach(function (codeEl, i) {
+              var pre = codeEl.parentElement;
+              var div = document.createElement('div');
+              div.className = 'mermaid';
+              div.textContent = codeEl.textContent;
+              pre.replaceWith(div);
+            });
+            mermaid.run();
+          }
+
+          // Show actions
+          actionsEl.hidden = false;
+        })
+        .catch(function () {
+          showError();
+        });
+
+      // --- Copy ---
+      copyBtn.addEventListener('click', function () {
+        navigator.clipboard.writeText(rawMarkdown).then(function () {
+          copyBtn.textContent = '✓ コピーしました！';
+          copyBtn.classList.add('copied');
+          setTimeout(function () {
+            copyBtn.textContent = '📋 コピー';
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        }).catch(function () {
+          copyBtn.textContent = '✗ 失敗';
+          setTimeout(function () {
+            copyBtn.textContent = '📋 コピー';
+          }, 2000);
+        });
+      });
+
+      function showError() {
+        contentEl.hidden = true;
+        errorEl.hidden = false;
+        actionsEl.hidden = true;
+      }
+    })();
+  </script>
+</body>
+</html>
