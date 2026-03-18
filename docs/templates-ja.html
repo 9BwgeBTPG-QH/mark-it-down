@@ -369,7 +369,7 @@
       btn.addEventListener('click', async () => {
         const path = btn.dataset.template;
         try {
-          const res = await fetch('templates/' + path + '.md');
+          const res = await fetch('templates/' + path + '-ja.md');
           const markdown = await res.text();
           await navigator.clipboard.writeText(markdown);
           const original = btn.textContent;
