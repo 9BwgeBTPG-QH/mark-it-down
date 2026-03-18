@@ -172,20 +172,15 @@
             document.title = titleMatch[1] + ' - Mark It Down';
           }
 
-          // Configure marked
-          marked.setOptions({
-            gfm: true,
-            breaks: false,
-            highlight: function (code, lang) {
-              if (lang && hljs.getLanguage(lang)) {
-                return hljs.highlight(code, { language: lang }).value;
-              }
-              return hljs.highlightAuto(code).value;
+          // Render with marked
+          contentEl.innerHTML = marked.parse(body);
+
+          // Apply syntax highlighting after render
+          contentEl.querySelectorAll('pre code').forEach(function (block) {
+            if (!block.classList.contains('language-mermaid')) {
+              hljs.highlightElement(block);
             }
           });
-
-          // Render
-          contentEl.innerHTML = marked.parse(body);
 
           // Post-process: GitHub-style callouts
           contentEl.querySelectorAll('blockquote').forEach(function (bq) {
