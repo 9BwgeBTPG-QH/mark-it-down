@@ -1,9 +1,3 @@
----
-title: デイリーノート
-date:
-tags: [daily, journal, productivity]
----
-
 ![生産性](https://img.shields.io/badge/%E7%94%9F%E7%94%A3%E6%80%A7-blue) ![デイリー](https://img.shields.io/badge/%E3%83%87%E3%82%A4%E3%83%AA%E3%83%BC-orange) ![5分](https://img.shields.io/badge/5%E5%88%86-green)
 
 # デイリーノート

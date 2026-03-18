@@ -1,9 +1,3 @@
----
-title: API Documentation
-date:
-tags: [api, rest, documentation]
----
-
 ![Dev](https://img.shields.io/badge/Dev-blue) ![API](https://img.shields.io/badge/API-grey)
 
 # API Documentation

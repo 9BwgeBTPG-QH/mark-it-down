@@ -1,9 +1,3 @@
----
-title: Decision Log
-date:
-tags: [decision, log, thinking]
----
-
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Decision](https://img.shields.io/badge/Decision-orange)
 
 # Decision Log

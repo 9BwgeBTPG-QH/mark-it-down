@@ -1,12 +1,3 @@
----
-title: Prompt Library
-date:
-tags: [ai, prompts, library, reference]
-source: "[Your prompt collection]"
-model: "[Primary model used]"
-status: draft
----
-
 ![AI](https://img.shields.io/badge/AI-blue) ![Reference](https://img.shields.io/badge/Reference-grey)
 
 # Prompt Library

@@ -1,9 +1,3 @@
----
-title: Changelog
-date:
-tags: [changelog, release, versioning]
----
-
 ![Dev](https://img.shields.io/badge/Dev-blue) ![Changelog](https://img.shields.io/badge/Changelog-grey)
 
 # Changelog

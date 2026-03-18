@@ -1,9 +1,3 @@
----
-title: プロジェクトREADME
-date:
-tags: [readme, documentation, project]
----
-
 ![開発](https://img.shields.io/badge/%E9%96%8B%E7%99%BA-blue) ![README](https://img.shields.io/badge/README-grey)
 
 # プロジェクトREADME

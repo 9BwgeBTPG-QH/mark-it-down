@@ -1,12 +1,3 @@
----
-title: ChatGPT出力オーガナイザー
-date:
-tags: [ai, llm, rewrite, capture]
-source: "[URLを貼り付けるか、会話の説明を記入]"
-model: "[例: GPT-4o, Claude 3.5, Gemini]"
-status: draft
----
-
 ![AI](https://img.shields.io/badge/AI-blue) ![リライト](https://img.shields.io/badge/%E3%83%AA%E3%83%A9%E3%82%A4%E3%83%88-orange) ![15分](https://img.shields.io/badge/15%E5%88%86-green)
 
 # ChatGPT出力オーガナイザー

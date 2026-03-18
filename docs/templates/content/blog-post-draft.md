@@ -1,9 +1,3 @@
----
-title: Blog Post Draft
-date:
-tags: [blog, draft, content]
----
-
 ![Content](https://img.shields.io/badge/Content-blue) ![Blog](https://img.shields.io/badge/Blog-orange) ![20 min](https://img.shields.io/badge/20_min-green)
 
 # Blog Post Draft

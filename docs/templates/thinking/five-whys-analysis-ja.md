@@ -1,9 +1,3 @@
----
-title: なぜなぜ分析
-date:
-tags: [root-cause, analysis, five-whys]
----
-
 ![思考](https://img.shields.io/badge/%E6%80%9D%E8%80%83-blue) ![根本原因](https://img.shields.io/badge/%E6%A0%B9%E6%9C%AC%E5%8E%9F%E5%9B%A0-orange)
 
 # なぜなぜ分析

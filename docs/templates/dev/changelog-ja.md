@@ -1,9 +1,3 @@
----
-title: チェンジログ
-date:
-tags: [changelog, release, versioning]
----
-
 ![開発](https://img.shields.io/badge/%E9%96%8B%E7%99%BA-blue) ![チェンジログ](https://img.shields.io/badge/%E3%83%81%E3%82%A7%E3%83%B3%E3%82%B8%E3%83%AD%E3%82%B0-grey)
 
 # チェンジログ

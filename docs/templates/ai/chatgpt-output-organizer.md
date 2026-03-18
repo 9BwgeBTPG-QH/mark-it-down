@@ -1,12 +1,3 @@
----
-title: ChatGPT Output Organizer
-date:
-tags: [ai, llm, rewrite, capture]
-source: "[Paste URL or describe the conversation]"
-model: "[e.g., GPT-4o, Claude 3.5, Gemini]"
-status: draft
----
-
 ![AI](https://img.shields.io/badge/AI-blue) ![Rewrite](https://img.shields.io/badge/Rewrite-orange) ![15 min](https://img.shields.io/badge/15_min-green)
 
 # ChatGPT Output Organizer

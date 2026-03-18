@@ -1,9 +1,3 @@
----
-title: アトミックノート
-date:
-tags: [zettelkasten, idea, atomic]
----
-
 ![生産性](https://img.shields.io/badge/%E7%94%9F%E7%94%A3%E6%80%A7-blue) ![ツェッテルカステン](https://img.shields.io/badge/%E3%83%84%E3%82%A7%E3%83%83%E3%83%86%E3%83%AB%E3%82%AB%E3%82%B9%E3%83%86%E3%83%B3-orange)
 
 # アトミックノート

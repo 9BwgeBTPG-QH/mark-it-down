@@ -1,9 +1,3 @@
----
-title: Problem Statement
-date:
-tags: [problem, analysis, thinking]
----
-
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Analysis](https://img.shields.io/badge/Analysis-orange)
 
 # Problem Statement

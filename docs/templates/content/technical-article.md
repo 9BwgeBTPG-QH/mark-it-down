@@ -1,9 +1,3 @@
----
-title: Technical Article
-date:
-tags: [technical, tutorial, guide]
----
-
 ![Content](https://img.shields.io/badge/Content-blue) ![Tutorial](https://img.shields.io/badge/Tutorial-orange) ![30 min](https://img.shields.io/badge/30_min-green)
 
 # Technical Article

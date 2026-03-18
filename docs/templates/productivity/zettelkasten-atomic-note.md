@@ -1,9 +1,3 @@
----
-title: Atomic Note
-date:
-tags: [zettelkasten, idea, atomic]
----
-
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Zettelkasten](https://img.shields.io/badge/Zettelkasten-orange)
 
 # Atomic Note

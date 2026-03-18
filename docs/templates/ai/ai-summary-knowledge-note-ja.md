@@ -1,12 +1,3 @@
----
-title: "[ナレッジトピック]"
-date:
-tags: [ai, knowledge, summary]
-source: "[URLまたは説明]"
-model: "[使用モデル]"
-status: draft
----
-
 ![AI](https://img.shields.io/badge/AI-blue) ![ナレッジ](https://img.shields.io/badge/%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8-orange)
 
 # [ナレッジトピック]

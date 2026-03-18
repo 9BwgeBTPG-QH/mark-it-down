@@ -1,9 +1,3 @@
----
-title: Meeting Notes
-date:
-tags: [meeting, notes, action-items]
----
-
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Meeting](https://img.shields.io/badge/Meeting-orange) ![5 min](https://img.shields.io/badge/5_min-green)
 
 # Meeting Notes

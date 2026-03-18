@@ -1,9 +1,3 @@
----
-title: ブログ記事の下書き
-date:
-tags: [blog, draft, content]
----
-
 ![コンテンツ](https://img.shields.io/badge/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84-blue) ![ブログ](https://img.shields.io/badge/%E3%83%96%E3%83%AD%E3%82%B0-orange) ![20分](https://img.shields.io/badge/20%E5%88%86-green)
 
 # ブログ記事の下書き

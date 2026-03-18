@@ -1,9 +1,3 @@
----
-title: 問題定義
-date:
-tags: [problem, analysis, thinking]
----
-
 ![思考](https://img.shields.io/badge/%E6%80%9D%E8%80%83-blue) ![分析](https://img.shields.io/badge/%E5%88%86%E6%9E%90-orange)
 
 # 問題定義

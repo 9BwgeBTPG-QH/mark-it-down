@@ -1,9 +1,3 @@
----
-title: Weekly Review
-date:
-tags: [weekly, review, productivity]
----
-
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Weekly](https://img.shields.io/badge/Weekly-orange) ![15 min](https://img.shields.io/badge/15_min-green)
 
 # Weekly Review

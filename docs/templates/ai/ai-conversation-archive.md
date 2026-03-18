@@ -1,12 +1,3 @@
----
-title: AI Conversation Archive
-date:
-tags: [ai, conversation, archive]
-source: "[URL or platform where the conversation happened]"
-model: "[Model used]"
-status: draft
----
-
 ![AI](https://img.shields.io/badge/AI-blue) ![Archive](https://img.shields.io/badge/Archive-orange)
 
 # AI Conversation Archive

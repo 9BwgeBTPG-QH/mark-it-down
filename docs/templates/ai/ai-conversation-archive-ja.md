@@ -1,12 +1,3 @@
----
-title: AI会話アーカイブ
-date:
-tags: [ai, conversation, archive]
-source: "[会話が行われたURLまたはプラットフォーム]"
-model: "[使用モデル]"
-status: draft
----
-
 ![AI](https://img.shields.io/badge/AI-blue) ![アーカイブ](https://img.shields.io/badge/%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96-orange)
 
 # AI会話アーカイブ

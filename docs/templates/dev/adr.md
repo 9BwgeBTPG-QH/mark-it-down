@@ -1,9 +1,3 @@
----
-title: Architecture Decision Record
-date:
-tags: [adr, architecture, decision]
----
-
 ![Dev](https://img.shields.io/badge/Dev-blue) ![Architecture](https://img.shields.io/badge/Architecture-orange)
 
 # ADR-[Number]: [Decision Title]

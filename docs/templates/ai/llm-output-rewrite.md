@@ -1,12 +1,3 @@
----
-title: LLM Output Rewrite
-date:
-tags: [ai, rewrite, learning]
-source: "[URL or description of the original conversation]"
-model: "[Model used]"
-status: draft
----
-
 ![AI](https://img.shields.io/badge/AI-blue) ![Rewrite](https://img.shields.io/badge/Rewrite-orange) ![10 min](https://img.shields.io/badge/10_min-green)
 
 # LLM Output Rewrite

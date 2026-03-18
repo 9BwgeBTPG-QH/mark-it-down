@@ -1,12 +1,3 @@
----
-title: "[Knowledge topic]"
-date:
-tags: [ai, knowledge, summary]
-source: "[URL or description]"
-model: "[Model used]"
-status: draft
----
-
 ![AI](https://img.shields.io/badge/AI-blue) ![Knowledge](https://img.shields.io/badge/Knowledge-orange)
 
 # [Knowledge Topic]

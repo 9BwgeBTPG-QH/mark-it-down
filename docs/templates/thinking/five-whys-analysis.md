@@ -1,9 +1,3 @@
----
-title: Five Whys Analysis
-date:
-tags: [root-cause, analysis, five-whys]
----
-
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Root Cause](https://img.shields.io/badge/Root_Cause-orange)
 
 # Five Whys Analysis

@@ -1,9 +1,3 @@
----
-title: アーキテクチャ決定記録
-date:
-tags: [adr, architecture, decision]
----
-
 ![開発](https://img.shields.io/badge/%E9%96%8B%E7%99%BA-blue) ![アーキテクチャ](https://img.shields.io/badge/%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3-orange)
 
 # ADR-[番号]: [決定タイトル]

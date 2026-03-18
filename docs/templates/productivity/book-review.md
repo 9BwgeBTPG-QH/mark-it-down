@@ -1,9 +1,3 @@
----
-title: Book Review
-date:
-tags: [book, review, reading]
----
-
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Review](https://img.shields.io/badge/Review-orange)
 
 # Book Review

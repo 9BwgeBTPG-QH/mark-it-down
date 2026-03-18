@@ -1,9 +1,3 @@
----
-title: 意思決定ログ
-date:
-tags: [decision, log, thinking]
----
-
 ![思考](https://img.shields.io/badge/%E6%80%9D%E8%80%83-blue) ![意思決定](https://img.shields.io/badge/%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A-orange)
 
 # 意思決定ログ

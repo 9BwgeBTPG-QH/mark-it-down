@@ -1,9 +1,3 @@
----
-title: Daily Note
-date:
-tags: [daily, journal, productivity]
----
-
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Daily](https://img.shields.io/badge/Daily-orange) ![5 min](https://img.shields.io/badge/5_min-green)
 
 # Daily Note

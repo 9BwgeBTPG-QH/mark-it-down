@@ -1,9 +1,3 @@
----
-title: Project Brief
-date:
-tags: [project, brief, planning]
----
-
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Planning](https://img.shields.io/badge/Planning-orange)
 
 # Project Brief

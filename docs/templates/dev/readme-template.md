@@ -1,9 +1,3 @@
----
-title: Project README
-date:
-tags: [readme, documentation, project]
----
-
 ![Dev](https://img.shields.io/badge/Dev-blue) ![README](https://img.shields.io/badge/README-grey)
 
 # Project README

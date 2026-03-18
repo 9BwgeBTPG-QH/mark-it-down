@@ -1,9 +1,3 @@
----
-title: ウィークリーレビュー
-date:
-tags: [weekly, review, productivity]
----
-
 ![生産性](https://img.shields.io/badge/%E7%94%9F%E7%94%A3%E6%80%A7-blue) ![週次](https://img.shields.io/badge/%E9%80%B1%E6%AC%A1-orange) ![15分](https://img.shields.io/badge/15%E5%88%86-green)
 
 # ウィークリーレビュー

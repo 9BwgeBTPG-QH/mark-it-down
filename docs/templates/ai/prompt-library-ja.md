@@ -1,12 +1,3 @@
----
-title: プロンプトライブラリ
-date:
-tags: [ai, prompts, library, reference]
-source: "[プロンプトコレクション]"
-model: "[主に使用するモデル]"
-status: draft
----
-
 ![AI](https://img.shields.io/badge/AI-blue) ![リファレンス](https://img.shields.io/badge/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9-grey)
 
 # プロンプトライブラリ

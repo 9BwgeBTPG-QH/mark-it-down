@@ -1,9 +1,3 @@
----
-title: ミーティングノート
-date:
-tags: [meeting, notes, action-items]
----
-
 ![生産性](https://img.shields.io/badge/%E7%94%9F%E7%94%A3%E6%80%A7-blue) ![ミーティング](https://img.shields.io/badge/%E3%83%9F%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0-orange) ![5分](https://img.shields.io/badge/5%E5%88%86-green)
 
 # ミーティングノート
