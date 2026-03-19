@@ -603,6 +603,7 @@ p {
 .flow-section {
   padding: var(--spacing-2xl) var(--spacing-lg);
   margin: 0 calc(-1 * var(--spacing-lg));
+  margin-bottom: var(--spacing-xl);
   text-align: center;
   background: var(--bg-secondary);
   border-radius: var(--radius-lg);
@@ -1293,6 +1294,7 @@ a:hover {
   text-align: center;
   padding: var(--spacing-2xl) var(--spacing-lg);
   margin: 0 calc(-1 * var(--spacing-lg));
+  margin-bottom: var(--spacing-xl);
   background: var(--bg-secondary);
   border-radius: var(--radius-lg);
 }
@@ -1449,6 +1451,7 @@ a:hover {
 .faq-preview-section {
   text-align: center;
   padding: var(--spacing-2xl) 0;
+  margin-bottom: var(--spacing-xl);
 }
 
 .faq-preview-section h2 {
@@ -2745,6 +2748,7 @@ footer a:hover {
   :root {
     --spacing-section: 4rem;
     --spacing-hero: 5rem;
+    --spacing-2xl: 3rem;
   }
 
   .container {
@@ -2800,8 +2804,9 @@ footer a:hover {
 
 @media (max-width: 480px) {
   :root {
-    --spacing-section: 3rem;
+    --spacing-section: 2.5rem;
     --spacing-hero: 4rem;
+    --spacing-2xl: 2.5rem;
   }
 
   .container {
