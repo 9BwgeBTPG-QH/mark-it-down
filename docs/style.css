@@ -1108,7 +1108,7 @@ a:hover {
 
 /* Accordion Content */
 .accordion-content {
-  padding: 0 var(--spacing-lg) var(--spacing-lg);
+  padding: var(--spacing-xs) var(--spacing-lg) var(--spacing-lg);
   animation: slideDown 0.3s ease;
 }
 
@@ -1272,7 +1272,7 @@ a:hover {
   }
 
   .accordion-content {
-    padding: 0 var(--spacing-md) var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-md) var(--spacing-sm);
   }
 
   .changelog-group {
