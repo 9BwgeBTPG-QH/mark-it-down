@@ -56,6 +56,11 @@
         <a href="../templates.html" class="template-viewer-back">&larr; Back to Gallery</a>
         <span id="viewer-badge" class="category-badge"></span>
         <span id="viewer-title" class="template-viewer-title"></span>
+        <nav class="template-viewer-nav" aria-label="Template navigation">
+          <button id="nav-prev" class="template-nav-btn" aria-label="Previous template" disabled>&lsaquo;</button>
+          <span id="nav-counter" class="template-nav-counter"></span>
+          <button id="nav-next" class="template-nav-btn" aria-label="Next template" disabled>&rsaquo;</button>
+        </nav>
       </div>
 
       <!-- Rendered content -->
@@ -112,6 +117,37 @@
         thinking:     { label: 'Thinking',     cls: 'badge-thinking' }
       };
 
+      // Template list (same order as gallery)
+      var TEMPLATES = [
+        'ai/chatgpt-output-organizer',
+        'ai/prompt-library',
+        'ai/ai-conversation-archive',
+        'ai/llm-output-rewrite',
+        'ai/ai-summary-knowledge-note',
+        'productivity/daily-note',
+        'productivity/weekly-review',
+        'productivity/zettelkasten-atomic-note',
+        'productivity/book-review',
+        'productivity/meeting-notes',
+        'productivity/kpt-retrospective',
+        'productivity/start-stop-continue',
+        'productivity/four-ls-retrospective',
+        'productivity/starfish-retrospective',
+        'dev/readme-template',
+        'dev/changelog',
+        'dev/adr',
+        'dev/api-documentation',
+        'content/blog-post-draft',
+        'content/technical-article',
+        'thinking/problem-statement',
+        'thinking/decision-log',
+        'thinking/five-whys-analysis',
+        'thinking/project-brief',
+        'thinking/fishbone-diagram',
+        'thinking/a3-report',
+        'thinking/is-is-not-analysis'
+      ];
+
       // --- Elements ---
       var contentEl  = document.getElementById('template-content');
       var errorEl    = document.getElementById('template-error');
@@ -122,6 +158,13 @@
       var altLink    = document.getElementById('md-alternate');
       var langSwitch = document.getElementById('lang-switch');
       var langSwitchFooter = document.getElementById('lang-switch-footer');
+      var prevBtn    = document.getElementById('nav-prev');
+      var nextBtn    = document.getElementById('nav-next');
+      var counterEl  = document.getElementById('nav-counter');
+
+      // --- State ---
+      var rawMarkdown = '';
+      var navigating = false;
 
       // --- Parse ?t= ---
       var params = new URLSearchParams(location.search);
@@ -132,107 +175,203 @@
         return;
       }
 
-      // Set lang switcher hrefs with ?t= preserved
-      var jaUrl = 'view-ja.html?t=' + encodeURIComponent(t);
-      langSwitch.href = jaUrl;
-      langSwitchFooter.href = jaUrl;
+      loadTemplate(t, false);
 
-      // Set <link rel="alternate">
-      altLink.href = t + '.md';
-
-      // Determine category
-      var category = t.split('/')[0];
-      var badge = BADGE_MAP[category];
-      if (badge) {
-        badgeEl.textContent = badge.label;
-        badgeEl.className = 'category-badge ' + badge.cls;
+      // --- Navigation ---
+      function currentIndex() {
+        return TEMPLATES.indexOf(t);
       }
 
-      // --- Fetch & Render ---
-      var rawMarkdown = '';
+      function updateNavButtons() {
+        var idx = currentIndex();
+        prevBtn.disabled = idx <= 0;
+        nextBtn.disabled = idx < 0 || idx >= TEMPLATES.length - 1;
+        if (idx >= 0) {
+          counterEl.textContent = (idx + 1) + ' / ' + TEMPLATES.length;
+        }
+      }
 
-      fetch(t + '.md')
-        .then(function (res) {
-          if (!res.ok) throw new Error(res.status);
-          return res.text();
-        })
-        .then(function (md) {
-          rawMarkdown = md;
+      function navigate(direction) {
+        if (navigating) return;
+        var idx = currentIndex();
+        var newIdx = idx + direction;
+        if (newIdx < 0 || newIdx >= TEMPLATES.length) return;
 
-          // Strip YAML frontmatter
-          var body = md.replace(/^---[\s\S]*?---\s*/, '');
+        navigating = true;
+        var outClass = direction > 0 ? 'slide-out-left' : 'slide-out-right';
+        var inClass  = direction > 0 ? 'slide-in-left' : 'slide-in-right';
 
-          // Extract title from first # heading
-          var titleMatch = body.match(/^#\s+(.+)$/m);
-          if (titleMatch) {
-            titleEl.textContent = titleMatch[1];
-            document.title = titleMatch[1] + ' - Mark It Down';
-          }
+        // If reduced motion, skip animation
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          t = TEMPLATES[newIdx];
+          history.pushState({ t: t }, '', 'view.html?t=' + encodeURIComponent(t));
+          loadTemplate(t, true);
+          navigating = false;
+          return;
+        }
 
-          // Render with marked
-          contentEl.innerHTML = marked.parse(body);
+        contentEl.classList.add(outClass);
+        contentEl.addEventListener('animationend', function onOut() {
+          contentEl.removeEventListener('animationend', onOut);
+          contentEl.classList.remove(outClass);
 
-          // Apply syntax highlighting after render
-          contentEl.querySelectorAll('pre code').forEach(function (block) {
-            if (!block.classList.contains('language-mermaid')) {
-              hljs.highlightElement(block);
-            }
+          t = TEMPLATES[newIdx];
+          history.pushState({ t: t }, '', 'view.html?t=' + encodeURIComponent(t));
+          loadTemplate(t, true);
+
+          contentEl.classList.add(inClass);
+          contentEl.addEventListener('animationend', function onIn() {
+            contentEl.removeEventListener('animationend', onIn);
+            contentEl.classList.remove(inClass);
+            navigating = false;
           });
-
-          // Post-process: GitHub-style callouts
-          contentEl.querySelectorAll('blockquote').forEach(function (bq) {
-            var first = bq.querySelector('p');
-            if (!first) return;
-            var m = first.innerHTML.match(/^\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]/i);
-            if (!m) return;
-            var type = m[1].toLowerCase();
-            bq.classList.add('callout', 'callout-' + type);
-            first.innerHTML = first.innerHTML.replace(/^\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]\s*/i, '<strong class="callout-label">' + m[1] + '</strong><br>');
-          });
-
-          // Post-process: Task lists
-          contentEl.querySelectorAll('li').forEach(function (li) {
-            var html = li.innerHTML.trimStart();
-            if (html.startsWith('<input')) {
-              li.classList.add('task-list-item');
-              li.parentElement.classList.add('task-list');
-            }
-          });
-
-          // Post-process: Mermaid
-          var mermaidBlocks = contentEl.querySelectorAll('pre code.language-mermaid');
-          if (mermaidBlocks.length > 0) {
-            mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
-            mermaidBlocks.forEach(function (codeEl, i) {
-              var pre = codeEl.parentElement;
-              var div = document.createElement('div');
-              div.className = 'mermaid';
-              div.textContent = codeEl.textContent;
-              pre.replaceWith(div);
-            });
-            mermaid.run();
-          }
-
-          // Show actions
-          actionsEl.hidden = false;
-        })
-        .catch(function () {
-          showError();
         });
+      }
+
+      prevBtn.addEventListener('click', function () { navigate(-1); });
+      nextBtn.addEventListener('click', function () { navigate(1); });
+
+      // Keyboard arrows
+      document.addEventListener('keydown', function (e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); navigate(-1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); navigate(1); }
+      });
+
+      // Touch swipe
+      var touchStartX = 0;
+      var touchStartY = 0;
+      contentEl.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+      }, { passive: true });
+
+      contentEl.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+          if (dx < 0) navigate(1);
+          else navigate(-1);
+        }
+      }, { passive: true });
+
+      // Browser back/forward
+      window.addEventListener('popstate', function (e) {
+        if (e.state && e.state.t) {
+          t = e.state.t;
+          loadTemplate(t, true);
+        }
+      });
+
+      // --- Load template ---
+      function loadTemplate(templateId, isNav) {
+        var jaUrl = 'view-ja.html?t=' + encodeURIComponent(templateId);
+        langSwitch.href = jaUrl;
+        langSwitchFooter.href = jaUrl;
+        altLink.href = templateId + '.md';
+
+        var category = templateId.split('/')[0];
+        var badge = BADGE_MAP[category];
+        if (badge) {
+          badgeEl.textContent = badge.label;
+          badgeEl.className = 'category-badge ' + badge.cls;
+        }
+
+        updateNavButtons();
+
+        if (isNav) {
+          contentEl.textContent = '';
+          var loadingDiv = document.createElement('div');
+          loadingDiv.className = 'template-viewer-loading';
+          loadingDiv.textContent = 'Loading template\u2026';
+          contentEl.appendChild(loadingDiv);
+        }
+
+        fetch(templateId + '.md')
+          .then(function (res) {
+            if (!res.ok) throw new Error(res.status);
+            return res.text();
+          })
+          .then(function (md) {
+            rawMarkdown = md;
+            var body = md.replace(/^---[\s\S]*?---\s*/, '');
+
+            var titleMatch = body.match(/^#\s+(.+)$/m);
+            if (titleMatch) {
+              titleEl.textContent = titleMatch[1];
+              document.title = titleMatch[1] + ' - Mark It Down';
+            }
+
+            // Render markdown (trusted local .md files only)
+            var rendered = document.createElement('div');
+            rendered.innerHTML = marked.parse(body);
+
+            // Syntax highlighting
+            rendered.querySelectorAll('pre code').forEach(function (block) {
+              if (!block.classList.contains('language-mermaid')) {
+                hljs.highlightElement(block);
+              }
+            });
+
+            // GitHub-style callouts
+            rendered.querySelectorAll('blockquote').forEach(function (bq) {
+              var first = bq.querySelector('p');
+              if (!first) return;
+              var m = first.innerHTML.match(/^\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]/i);
+              if (!m) return;
+              var type = m[1].toLowerCase();
+              bq.classList.add('callout', 'callout-' + type);
+              first.innerHTML = first.innerHTML.replace(/^\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]\s*/i, '<strong class="callout-label">' + m[1] + '</strong><br>');
+            });
+
+            // Task lists
+            rendered.querySelectorAll('li').forEach(function (li) {
+              var html = li.innerHTML.trimStart();
+              if (html.startsWith('<input')) {
+                li.classList.add('task-list-item');
+                li.parentElement.classList.add('task-list');
+              }
+            });
+
+            // Replace content
+            contentEl.textContent = '';
+            while (rendered.firstChild) {
+              contentEl.appendChild(rendered.firstChild);
+            }
+
+            // Mermaid
+            var mermaidBlocks = contentEl.querySelectorAll('pre code.language-mermaid');
+            if (mermaidBlocks.length > 0) {
+              mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
+              mermaidBlocks.forEach(function (codeEl) {
+                var pre = codeEl.parentElement;
+                var div = document.createElement('div');
+                div.className = 'mermaid';
+                div.textContent = codeEl.textContent;
+                pre.replaceWith(div);
+              });
+              mermaid.run();
+            }
+
+            actionsEl.hidden = false;
+            if (isNav) window.scrollTo({ top: 0, behavior: 'smooth' });
+          })
+          .catch(function () { showError(); });
+      }
 
       // --- Copy ---
       copyBtn.addEventListener('click', function () {
         navigator.clipboard.writeText(rawMarkdown).then(function () {
-          copyBtn.textContent = '✓ Copied!';
+          copyBtn.textContent = '\u2713 Copied!';
           copyBtn.classList.add('copied');
           setTimeout(function () {
-            copyBtn.textContent = '📋 Copy Markdown';
+            copyBtn.textContent = '\uD83D\uDCCB Copy Markdown';
             copyBtn.classList.remove('copied');
           }, 2000);
         }).catch(function () {
-          copyBtn.textContent = '✗ Failed';
+          copyBtn.textContent = '\u2717 Failed';
           setTimeout(function () {
-            copyBtn.textContent = '📋 Copy Markdown';
+            copyBtn.textContent = '\uD83D\uDCCB Copy Markdown';
           }, 2000);
         });
       });

@@ -56,6 +56,11 @@
         <a href="../templates-ja.html" class="template-viewer-back">&larr; ギャラリーに戻る</a>
         <span id="viewer-badge" class="category-badge"></span>
         <span id="viewer-title" class="template-viewer-title"></span>
+        <nav class="template-viewer-nav" aria-label="テンプレートナビゲーション">
+          <button id="nav-prev" class="template-nav-btn" aria-label="前のテンプレート" disabled>&lsaquo;</button>
+          <span id="nav-counter" class="template-nav-counter"></span>
+          <button id="nav-next" class="template-nav-btn" aria-label="次のテンプレート" disabled>&rsaquo;</button>
+        </nav>
       </div>
 
       <!-- Rendered content -->
@@ -102,17 +107,45 @@
 
   <script>
     (function () {
-      // --- Config ---
       var VALID_PATH = /^[a-z]+\/[a-z0-9-]+$/;
       var BADGE_MAP = {
         ai:           { label: 'AI',         cls: 'badge-ai' },
-        productivity: { label: '生産性',     cls: 'badge-productivity' },
-        dev:          { label: '開発',       cls: 'badge-dev' },
-        content:      { label: 'コンテンツ', cls: 'badge-content' },
-        thinking:     { label: '思考',       cls: 'badge-thinking' }
+        productivity: { label: '\u751F\u7523\u6027', cls: 'badge-productivity' },
+        dev:          { label: '\u958B\u767A',       cls: 'badge-dev' },
+        content:      { label: '\u30B3\u30F3\u30C6\u30F3\u30C4', cls: 'badge-content' },
+        thinking:     { label: '\u601D\u8003',       cls: 'badge-thinking' }
       };
 
-      // --- Elements ---
+      var TEMPLATES = [
+        'ai/chatgpt-output-organizer',
+        'ai/prompt-library',
+        'ai/ai-conversation-archive',
+        'ai/llm-output-rewrite',
+        'ai/ai-summary-knowledge-note',
+        'productivity/daily-note',
+        'productivity/weekly-review',
+        'productivity/zettelkasten-atomic-note',
+        'productivity/book-review',
+        'productivity/meeting-notes',
+        'productivity/kpt-retrospective',
+        'productivity/start-stop-continue',
+        'productivity/four-ls-retrospective',
+        'productivity/starfish-retrospective',
+        'dev/readme-template',
+        'dev/changelog',
+        'dev/adr',
+        'dev/api-documentation',
+        'content/blog-post-draft',
+        'content/technical-article',
+        'thinking/problem-statement',
+        'thinking/decision-log',
+        'thinking/five-whys-analysis',
+        'thinking/project-brief',
+        'thinking/fishbone-diagram',
+        'thinking/a3-report',
+        'thinking/is-is-not-analysis'
+      ];
+
       var contentEl  = document.getElementById('template-content');
       var errorEl    = document.getElementById('template-error');
       var actionsEl  = document.getElementById('template-actions');
@@ -122,129 +155,172 @@
       var altLink    = document.getElementById('md-alternate');
       var langSwitch = document.getElementById('lang-switch');
       var langSwitchFooter = document.getElementById('lang-switch-footer');
+      var prevBtn    = document.getElementById('nav-prev');
+      var nextBtn    = document.getElementById('nav-next');
+      var counterEl  = document.getElementById('nav-counter');
 
-      // --- Parse ?t= ---
+      var rawMarkdown = '';
+      var navigating = false;
+
       var params = new URLSearchParams(location.search);
       var t = params.get('t');
 
-      if (!t || !VALID_PATH.test(t)) {
-        showError();
-        return;
+      if (!t || !VALID_PATH.test(t)) { showError(); return; }
+
+      loadTemplate(t, false);
+
+      function currentIndex() { return TEMPLATES.indexOf(t); }
+
+      function updateNavButtons() {
+        var idx = currentIndex();
+        prevBtn.disabled = idx <= 0;
+        nextBtn.disabled = idx < 0 || idx >= TEMPLATES.length - 1;
+        if (idx >= 0) counterEl.textContent = (idx + 1) + ' / ' + TEMPLATES.length;
       }
 
-      // Set lang switcher hrefs with ?t= preserved
-      var enUrl = 'view.html?t=' + encodeURIComponent(t);
-      langSwitch.href = enUrl;
-      langSwitchFooter.href = enUrl;
+      function navigate(direction) {
+        if (navigating) return;
+        var idx = currentIndex();
+        var newIdx = idx + direction;
+        if (newIdx < 0 || newIdx >= TEMPLATES.length) return;
 
-      // Set <link rel="alternate"> (points to JA .md for Clipper)
-      altLink.href = t + '-ja.md';
+        navigating = true;
+        var outClass = direction > 0 ? 'slide-out-left' : 'slide-out-right';
+        var inClass  = direction > 0 ? 'slide-in-left' : 'slide-in-right';
 
-      // Japanese version path
-      var mdPath = t + '-ja.md';
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          t = TEMPLATES[newIdx];
+          history.pushState({ t: t }, '', 'view-ja.html?t=' + encodeURIComponent(t));
+          loadTemplate(t, true);
+          navigating = false;
+          return;
+        }
 
-      // Determine category
-      var category = t.split('/')[0];
-      var badge = BADGE_MAP[category];
-      if (badge) {
-        badgeEl.textContent = badge.label;
-        badgeEl.className = 'category-badge ' + badge.cls;
-      }
-
-      // --- Fetch & Render ---
-      var rawMarkdown = '';
-
-      fetch(mdPath)
-        .then(function (res) {
-          if (!res.ok) throw new Error(res.status);
-          return res.text();
-        })
-        .then(function (md) {
-          rawMarkdown = md;
-
-          // Strip YAML frontmatter
-          var body = md.replace(/^---[\s\S]*?---\s*/, '');
-
-          // Extract title from first # heading
-          var titleMatch = body.match(/^#\s+(.+)$/m);
-          if (titleMatch) {
-            titleEl.textContent = titleMatch[1];
-            document.title = titleMatch[1] + ' - Mark It Down';
-          }
-
-          // Render with marked
-          contentEl.innerHTML = marked.parse(body);
-
-          // Apply syntax highlighting after render
-          contentEl.querySelectorAll('pre code').forEach(function (block) {
-            if (!block.classList.contains('language-mermaid')) {
-              hljs.highlightElement(block);
-            }
+        contentEl.classList.add(outClass);
+        contentEl.addEventListener('animationend', function onOut() {
+          contentEl.removeEventListener('animationend', onOut);
+          contentEl.classList.remove(outClass);
+          t = TEMPLATES[newIdx];
+          history.pushState({ t: t }, '', 'view-ja.html?t=' + encodeURIComponent(t));
+          loadTemplate(t, true);
+          contentEl.classList.add(inClass);
+          contentEl.addEventListener('animationend', function onIn() {
+            contentEl.removeEventListener('animationend', onIn);
+            contentEl.classList.remove(inClass);
+            navigating = false;
           });
-
-          // Post-process: GitHub-style callouts
-          contentEl.querySelectorAll('blockquote').forEach(function (bq) {
-            var first = bq.querySelector('p');
-            if (!first) return;
-            var m = first.innerHTML.match(/^\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]/i);
-            if (!m) return;
-            var type = m[1].toLowerCase();
-            bq.classList.add('callout', 'callout-' + type);
-            first.innerHTML = first.innerHTML.replace(/^\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]\s*/i, '<strong class="callout-label">' + m[1] + '</strong><br>');
-          });
-
-          // Post-process: Task lists
-          contentEl.querySelectorAll('li').forEach(function (li) {
-            var html = li.innerHTML.trimStart();
-            if (html.startsWith('<input')) {
-              li.classList.add('task-list-item');
-              li.parentElement.classList.add('task-list');
-            }
-          });
-
-          // Post-process: Mermaid
-          var mermaidBlocks = contentEl.querySelectorAll('pre code.language-mermaid');
-          if (mermaidBlocks.length > 0) {
-            mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
-            mermaidBlocks.forEach(function (codeEl, i) {
-              var pre = codeEl.parentElement;
-              var div = document.createElement('div');
-              div.className = 'mermaid';
-              div.textContent = codeEl.textContent;
-              pre.replaceWith(div);
-            });
-            mermaid.run();
-          }
-
-          // Show actions
-          actionsEl.hidden = false;
-        })
-        .catch(function () {
-          showError();
         });
+      }
 
-      // --- Copy ---
+      prevBtn.addEventListener('click', function () { navigate(-1); });
+      nextBtn.addEventListener('click', function () { navigate(1); });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); navigate(-1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); navigate(1); }
+      });
+
+      var touchStartX = 0, touchStartY = 0;
+      contentEl.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+      }, { passive: true });
+      contentEl.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+          if (dx < 0) navigate(1); else navigate(-1);
+        }
+      }, { passive: true });
+
+      window.addEventListener('popstate', function (e) {
+        if (e.state && e.state.t) { t = e.state.t; loadTemplate(t, true); }
+      });
+
+      function loadTemplate(templateId, isNav) {
+        var enUrl = 'view.html?t=' + encodeURIComponent(templateId);
+        langSwitch.href = enUrl;
+        langSwitchFooter.href = enUrl;
+        altLink.href = templateId + '-ja.md';
+
+        var category = templateId.split('/')[0];
+        var badge = BADGE_MAP[category];
+        if (badge) { badgeEl.textContent = badge.label; badgeEl.className = 'category-badge ' + badge.cls; }
+
+        updateNavButtons();
+
+        if (isNav) {
+          contentEl.textContent = '';
+          var ld = document.createElement('div');
+          ld.className = 'template-viewer-loading';
+          ld.textContent = '\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\u3092\u8AAD\u307F\u8FBC\u307F\u4E2D\u2026';
+          contentEl.appendChild(ld);
+        }
+
+        fetch(templateId + '-ja.md')
+          .then(function (res) { if (!res.ok) throw new Error(res.status); return res.text(); })
+          .then(function (md) {
+            rawMarkdown = md;
+            var body = md.replace(/^---[\s\S]*?---\s*/, '');
+            var titleMatch = body.match(/^#\s+(.+)$/m);
+            if (titleMatch) { titleEl.textContent = titleMatch[1]; document.title = titleMatch[1] + ' - Mark It Down'; }
+
+            var rendered = document.createElement('div');
+            rendered.innerHTML = marked.parse(body);
+
+            rendered.querySelectorAll('pre code').forEach(function (block) {
+              if (!block.classList.contains('language-mermaid')) hljs.highlightElement(block);
+            });
+
+            rendered.querySelectorAll('blockquote').forEach(function (bq) {
+              var first = bq.querySelector('p');
+              if (!first) return;
+              var m = first.innerHTML.match(/^\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]/i);
+              if (!m) return;
+              bq.classList.add('callout', 'callout-' + m[1].toLowerCase());
+              first.innerHTML = first.innerHTML.replace(/^\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]\s*/i, '<strong class="callout-label">' + m[1] + '</strong><br>');
+            });
+
+            rendered.querySelectorAll('li').forEach(function (li) {
+              var html = li.innerHTML.trimStart();
+              if (html.startsWith('<input')) { li.classList.add('task-list-item'); li.parentElement.classList.add('task-list'); }
+            });
+
+            contentEl.textContent = '';
+            while (rendered.firstChild) contentEl.appendChild(rendered.firstChild);
+
+            var mermaidBlocks = contentEl.querySelectorAll('pre code.language-mermaid');
+            if (mermaidBlocks.length > 0) {
+              mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
+              mermaidBlocks.forEach(function (codeEl) {
+                var pre = codeEl.parentElement;
+                var div = document.createElement('div');
+                div.className = 'mermaid';
+                div.textContent = codeEl.textContent;
+                pre.replaceWith(div);
+              });
+              mermaid.run();
+            }
+
+            actionsEl.hidden = false;
+            if (isNav) window.scrollTo({ top: 0, behavior: 'smooth' });
+          })
+          .catch(function () { showError(); });
+      }
+
       copyBtn.addEventListener('click', function () {
         navigator.clipboard.writeText(rawMarkdown).then(function () {
-          copyBtn.textContent = '✓ コピーしました！';
+          copyBtn.textContent = '\u2713 \u30B3\u30D4\u30FC\u3057\u307E\u3057\u305F\uFF01';
           copyBtn.classList.add('copied');
-          setTimeout(function () {
-            copyBtn.textContent = '📋 コピー';
-            copyBtn.classList.remove('copied');
-          }, 2000);
+          setTimeout(function () { copyBtn.textContent = '\uD83D\uDCCB \u30B3\u30D4\u30FC'; copyBtn.classList.remove('copied'); }, 2000);
         }).catch(function () {
-          copyBtn.textContent = '✗ 失敗';
-          setTimeout(function () {
-            copyBtn.textContent = '📋 コピー';
-          }, 2000);
+          copyBtn.textContent = '\u2717 \u5931\u6557';
+          setTimeout(function () { copyBtn.textContent = '\uD83D\uDCCB \u30B3\u30D4\u30FC'; }, 2000);
         });
       });
 
-      function showError() {
-        contentEl.hidden = true;
-        errorEl.hidden = false;
-        actionsEl.hidden = true;
-      }
+      function showError() { contentEl.hidden = true; errorEl.hidden = false; actionsEl.hidden = true; }
     })();
   </script>
 </body>
