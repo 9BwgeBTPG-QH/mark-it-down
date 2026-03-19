@@ -3,7 +3,7 @@
 # Atomic Note
 
 > [!TIP]
-> One idea per note. State clearly, provide evidence, then link related notes. Press `Ctrl+K` to search existing notes and `Alt+N` to create new atomic notes.
+> One idea per note. State clearly, provide evidence, then link related notes. Press `Ctrl+K` to search existing notes, `Ctrl+;` to date your note, and `Alt+N` to create new atomic notes.
 
 ---
 

@@ -3,7 +3,7 @@
 # Starfish Retrospective
 
 > [!TIP]
-> Run this at the end of a sprint or project phase. Insert today's date with `Ctrl+;`. Use `Ctrl+K` to link related action items to tickets or docs.
+> Run this at the end of a sprint or project phase. Insert today's date with `Ctrl+;`. Use `Ctrl+K` to link related action items to tickets or docs. When done, press `Alt+A` to archive.
 
 ---
 

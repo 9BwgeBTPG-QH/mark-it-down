@@ -4,7 +4,7 @@
 
 > [!TIP]
 > One ADR per significant technical decision. Fill in Status, Context, and Decision first.
-> Use `Ctrl+Shift+P` to insert code blocks for technical details.
+> Use `Ctrl+Shift+P` to insert code blocks for technical details. Insert dates with `Ctrl+;`.
 
 ## Status
 

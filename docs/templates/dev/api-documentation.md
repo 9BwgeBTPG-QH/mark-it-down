@@ -4,7 +4,7 @@
 
 > [!TIP]
 > Document each endpoint as its own H2 section. Duplicate the GET /users example pattern.
-> Use `Ctrl+Shift+P` to insert code blocks for request/response examples.
+> Use `Ctrl+Shift+P` to insert code blocks for request/response examples. Insert dates with `Ctrl+;`.
 
 ## Overview
 

@@ -3,7 +3,7 @@
 # Daily Note
 
 > [!TIP]
-> Start each day by filling in your focus and tasks. Press `Ctrl+Alt+;` to insert timestamp headings throughout the day. Review and reflect before closing out.
+> Start each day by filling in your focus and tasks. Press `Ctrl+Shift+;` for the date header and `Ctrl+Alt+;` to insert timestamp headings throughout the day. Review and reflect before closing out.
 
 ---
 

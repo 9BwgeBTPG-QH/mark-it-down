@@ -3,7 +3,7 @@
 # KPT Retrospective
 
 > [!TIP]
-> Insert today's date with `Ctrl+;`. Link related tickets or docs with `Ctrl+K`. Run this at the end of each sprint or project phase.
+> Insert today's date with `Ctrl+;`. Link related tickets or docs with `Ctrl+K`. Run this at the end of each sprint or project phase. When done, press `Alt+A` to archive.
 
 ---
 

@@ -3,7 +3,7 @@
 # Start-Stop-Continue Retrospective
 
 > [!TIP]
-> Run this at the end of a sprint or period. Insert today's date with `Ctrl+;`. Use `Ctrl+K` to link related notes or action items.
+> Run this at the end of a sprint or period. Insert today's date with `Ctrl+;`. Use `Ctrl+K` to link related notes or action items. When done, press `Alt+A` to archive.
 
 ---
 

@@ -4,7 +4,7 @@
 
 > [!TIP]
 > Fill in each section for your project. Remove any that don't apply.
-> Use `Ctrl+Shift+P` to open the slash menu for code blocks and snippets.
+> Use `Ctrl+Shift+P` to open the slash menu for code blocks and snippets. Insert dates with `Ctrl+;`.
 
 ---
 

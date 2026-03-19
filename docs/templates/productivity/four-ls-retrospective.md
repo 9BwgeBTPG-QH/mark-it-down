@@ -3,7 +3,7 @@
 # 4Ls Retrospective
 
 > [!TIP]
-> Run this at the end of a sprint or project period. Insert today's date with `Ctrl+;`. Use `Ctrl+K` to link related notes, tickets, or decisions.
+> Run this at the end of a sprint or project period. Insert today's date with `Ctrl+;`. Use `Ctrl+K` to link related notes, tickets, or decisions. When done, press `Alt+A` to archive.
 
 ---
 

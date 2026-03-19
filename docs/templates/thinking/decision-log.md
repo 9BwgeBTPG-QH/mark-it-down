@@ -4,7 +4,7 @@
 
 > [!TIP]
 > Document decisions when they are made, not after. Fill in Context and Options first.
-> Use `Ctrl+;` to stamp the date and `Ctrl+K` to find related decisions.
+> Use `Ctrl+Shift+;` for precise datetime and `Ctrl+;` for the date. Press `Ctrl+K` to find related decisions.
 
 ---
 

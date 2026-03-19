@@ -3,7 +3,7 @@
 # [Knowledge Topic]
 
 > [!TIP]
-> Find connected notes with `Ctrl+K`. Insert today's date with `Ctrl+;`. Link related topics in the Connections section to build your knowledge graph.
+> Find connected notes with `Ctrl+K`. Insert today's date with `Ctrl+;`. **Paste AI output with `Ctrl+Shift+V`.** Link related topics in the Connections section to build your knowledge graph.
 
 ---
 

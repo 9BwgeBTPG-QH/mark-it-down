@@ -3,7 +3,7 @@
 # Book Review
 
 > [!TIP]
-> Fill in metadata first. Capture quotes as you read. Complete reflection and rating last. Insert dates with `Ctrl+;`. Press `Alt+A` to archive when done.
+> Fill in metadata first. Capture quotes as you read. Complete reflection and rating last. Insert dates with `Ctrl+;`. Paste quotes from the web with `Ctrl+Shift+V`. Press `Alt+A` to archive when done.
 
 ---
 
