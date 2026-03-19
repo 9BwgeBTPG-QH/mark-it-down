@@ -78,6 +78,8 @@
               <li><strong>Web Clipper（コンテキストメニュー）</strong> <span>ページやテキスト選択を右クリック→Markdownとして保存またはコピー。保存後はSide Panelに自動遷移</span></li>
               <li><strong>AIチャット抽出</strong> <span>Claude・ChatGPT・Grok・Geminiの出力をMarkdownで取得。数式・コード・テーブル・Artifactをそのまま保持</span></li>
               <li><strong>コメントスレッド抽出</strong> <span>HackerNews・Reddit・GitHubから構造化Markdownを生成。ネスト・著者・日時を保持</span></li>
+              <li><strong>llms.txt検出</strong> <span>Readabilityフォールバック前に /llms-full.txt と /llms.txt を自動チェック。24時間キャッシュ、5秒タイムアウト</span></li>
+              <li><strong>Mermaid保持</strong> <span>Mermaid.jsの図のソースコードを復元し、<code>```mermaid</code> コードブロックとして保存</span></li>
             </ul>
           </div>
         </details>
@@ -126,6 +128,11 @@
               <li><strong>絵文字ショートコード</strong> <span><code>:smile:</code>で😄に変換</span></li>
               <li><strong>テーブル</strong> <span>挿入、ソート（昇順/降順）、CSV/Markdownコピー、Prettify、行ドラッグ並び替え、Layout Toggle（自動/全幅/均等）。Excel/Google Sheetsから貼り付けで自動変換。行/列クロスハイライト付き</span></li>
               <li><strong>カスタムスニペット</strong> <span>よく使う記法をテンプレート保存・挿入。ビルトイン3種（YAML、折りたたみ、定義リスト）</span></li>
+              <li><strong>目次挿入</strong> <span>/tocで見出しからカーソル位置に目次を生成</span></li>
+              <li><strong>Smart Paste</strong> <span>Ctrl+Shift+VでHTML→Markdown、JSON→テーブル/リスト変換。LLM出力のHTMLタグも自動クリーン</span></li>
+              <li><strong>スラッシュメニュー</strong> <span>/now、/toc、/h1–h6、/list、/task、/quote、/code、/table、/hr、/image、/mermaid、/math、/alert、/footnote。100KBまで対応</span></li>
+              <li><strong>コード言語検出</strong> <span>shebang・DOCTYPE・キーワードから16言語を自動判定</span></li>
+              <li><strong>タイムスタンプ見出し</strong> <span>/nowでH2/H3タイムスタンプ、Ctrl+Alt+;でインラインHH:MM</span></li>
             </ul>
           </div>
         </details>
@@ -148,6 +155,7 @@
               <li><strong>一括選択</strong> <span>Shift+Clickで範囲選択、Ctrl+Clickで個別トグル。まとめてD&amp;D、削除、ステージング</span></li>
               <li><strong>ソート</strong> <span>名前↑、名前↓、更新↑、更新↓ — 4状態サイクル</span></li>
               <li><strong>重複検出</strong> <span>side-by-side比較で選択</span></li>
+              <li><strong>テンプレートギャラリー</strong> <span>ギャラリーページから20種類以上のテンプレートを閲覧。Templateフォルダのホバーでリンク表示</span></li>
             </ul>
           </div>
         </details>
@@ -173,6 +181,7 @@
               <li><strong>Auto Pair</strong> <span>括弧、引用符を自動補完</span></li>
               <li><strong>コードブロック</strong> <span>スクロール対応（20行超）、ProseMirror優先の確実なコピー、Copy Code / Copy as Markdown。ホバーで削除</span></li>
               <li><strong>インラインコード</strong> <span>ダブルクリックでコピー、バッククォートで入力</span></li>
+              <li><strong>引用ホバー削除</strong> <span>ホバー時のゴミ箱アイコンで引用ブロックを削除。アラート・テーブル・脚注と同じパターン</span></li>
             </ul>
           </div>
         </details>
@@ -183,7 +192,7 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">💾</span>
-              <span class="accordion-highlight">保存 — 自動保存、100KB+対応</span>
+              <span class="accordion-highlight">保存 — 自動保存、300KB+対応</span>
             </div>
           </summary>
           <div class="accordion-content">
@@ -194,6 +203,9 @@
               <li><strong>Chrome Storage</strong> <span>キャッシュクリアでも残る</span></li>
               <li><strong>インポート/エクスポート</strong> <span>.md、.zip、Archiveピン留め</span></li>
               <li><strong>エクスポート</strong> <span>PDF（ページ番号・目次・用紙サイズカスタム）、DOCX（画像・Mermaid図・数式・シンタックスハイライト埋め込み）、PNG（2x Retina）、HTML（3テンプレート・Self-Contained） — フォーマット × 対象 × 設定をひとつのパネルで（Ctrl+Shift+E）</span></li>
+              <li><strong>LLMコピー</strong> <span>YAMLフロントマター（タイトル/ソース/日付）を先頭に付与。コピードロップダウンまたはコマンドパレットから</span></li>
+              <li><strong>トークンカウント</strong> <span>コピー/エクスポート時に推定トークン数をtoastで表示</span></li>
+              <li><strong>一括エクスポート</strong> <span>複数ノートを選択 → ZIPアーカイブ（Markdown/HTML/DOCX）</span></li>
             </ul>
           </div>
         </details>

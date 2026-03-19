@@ -64,8 +64,42 @@
       <!-- Changelog Accordion -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.9 - Latest -->
+
+        <!-- v2.1.0 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.0</span>
+              <span class="accordion-highlight">エディタは広く、クリッパーは正確に。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.0.8で「速く開く」、v2.0.9で「フリーズしない」を実現。v2.1.0では、エディタで使える機能の範囲を広げ、Web Clipperが取りこぼしていたものを修正。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>テンプレートギャラリーリンク</strong> <span>Templateフォルダのヘッダーにホバーすると、20種類以上のテンプレートを閲覧できる外部ギャラリーページへのリンクが表示</span></li>
+                <li><strong>目次の自動生成</strong> <span>/tocまたはコマンドパレットで、見出しからカーソル位置にTOCを自動生成</span></li>
+                <li><strong>スラッシュメニュー100KB対応</strong> <span>スラッシュメニューとドラッグハンドルの対応上限を50KBから100KBに引き上げ</span></li>
+                <li><strong>引用ブロックのホバー削除</strong> <span>アラート・テーブル・脚注と同様、ホバー時のゴミ箱アイコンで引用ブロックを削除</span></li>
+                <li><strong>JSON → Markdownペースト</strong> <span>Ctrl+Shift+VでJSONを自動変換 — 配列はテーブル、オブジェクトはリスト、ネスト構造は箇条書きに</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Clipper見出し消失</strong> <span>特定サイトでH2以降の見出しが消える問題を修正。前処理で見出し要素を保持するよう改善</span></li>
+                <li><strong>Web Clipper Mermaid消失</strong> <span>クリップ時にMermaid図（SVG）が消える問題を修正。3段階のソース復元を実装</span></li>
+                <li><strong>選択ツールバーの画面外表示</strong> <span>100KB超ドキュメントでツールバーボタンが画面外に描画される問題を修正</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.9 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

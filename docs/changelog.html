@@ -64,8 +64,42 @@
       <!-- Changelog Timeline -->
       <div class="changelog-accordion">
 
-        <!-- v2.0.9 - Latest -->
+
+        <!-- v2.1.0 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.0</span>
+              <span class="accordion-highlight">More room to work. Smarter clipping.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.0.8 made big files open fast. v2.0.9 eliminated freezes. v2.1.0 expands what the editor can do and fixes what the Web Clipper was missing.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Template Gallery Link</strong> <span>Hover the Template folder header to open an external gallery page with 20+ ready-to-use templates</span></li>
+                <li><strong>Insert Table of Contents</strong> <span>Type /toc or use the command palette to auto-generate a TOC from your headings at the cursor position</span></li>
+                <li><strong>Slash Menu up to 100KB</strong> <span>Slash menu and drag handle threshold raised from 50KB to 100KB for larger documents</span></li>
+                <li><strong>Blockquote Hover Delete</strong> <span>Remove blockquotes with the hover trash icon, same pattern as alerts, tables, and footnotes</span></li>
+                <li><strong>JSON to Markdown Paste</strong> <span>Ctrl+Shift+V auto-converts JSON — arrays become tables, objects become lists, nested structures become bullets</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Clipper Heading Loss</strong> <span>H2+ headings disappeared on certain sites. Fixed preprocessing to preserve heading elements</span></li>
+                <li><strong>Web Clipper Mermaid Loss</strong> <span>Mermaid diagrams (SVG) vanished during clipping. 3-stage source recovery implemented</span></li>
+                <li><strong>Selection Toolbar Off-Screen</strong> <span>Toolbar buttons rendered off-screen on 100KB+ documents. Fixed optimization scope</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.0.9 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

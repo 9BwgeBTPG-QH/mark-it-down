@@ -78,6 +78,8 @@
               <li><strong>Web Clipper</strong> <span>Right-click any page or selected text to save or copy it as clean Markdown. Saved notes open automatically in Side Panel</span></li>
               <li><strong>AI Chat Extraction</strong> <span>Captures output from Claude, ChatGPT, Grok, and Gemini as clean Markdown. Math, code, tables, and artifacts all preserved</span></li>
               <li><strong>Comment Thread Extraction</strong> <span>Structured Markdown from Hacker News, Reddit, and GitHub. Preserves nesting, authors, and timestamps</span></li>
+              <li><strong>llms.txt Detection</strong> <span>Auto-checks /llms-full.txt and /llms.txt before Readability fallback. 24h cache, 5s timeout</span></li>
+              <li><strong>Mermaid Preservation</strong> <span>Mermaid.js diagram source code recovered and saved as <code>```mermaid</code> code blocks</span></li>
             </ul>
           </div>
         </details>
@@ -126,6 +128,11 @@
               <li><strong>Emoji Shortcodes</strong> <span>Type <code>:smile:</code> to insert 😄</span></li>
               <li><strong>Tables</strong> <span>Insert, sort columns, copy as CSV or Markdown, layout toggle (Auto / Full Width / Equal Columns), drag to reorder rows. Paste from Excel/Google Sheets</span></li>
               <li><strong>Custom Snippets</strong> <span>Save and insert your own Markdown templates. 3 built-in presets (YAML, Details, Definition List)</span></li>
+              <li><strong>Insert TOC</strong> <span>/toc generates table of contents from headings at cursor position</span></li>
+              <li><strong>Smart Paste</strong> <span>Ctrl+Shift+V converts HTML→Markdown, JSON→tables/lists, auto-cleans LLM output HTML tags</span></li>
+              <li><strong>Slash Menu</strong> <span>/now, /toc, /h1–h6, /list, /task, /quote, /code, /table, /hr, /image, /mermaid, /math, /alert, /footnote. Works up to 100KB</span></li>
+              <li><strong>Code Language Detection</strong> <span>16 languages auto-detected from shebang, DOCTYPE, and keywords</span></li>
+              <li><strong>Timestamp Headings</strong> <span>/now for H2/H3 timestamp, Ctrl+Alt+; for inline HH:MM</span></li>
             </ul>
           </div>
         </details>
@@ -148,6 +155,7 @@
               <li><strong>Batch Selection</strong> <span>Shift+Click range select, Ctrl+Click toggle. Drag-and-drop, Delete, and Stage multiple notes at once</span></li>
               <li><strong>Sort</strong> <span>Name↑, Name↓, Updated↑, Updated↓ — 4-state cycle</span></li>
               <li><strong>Duplicate Detection</strong> <span>Side-by-side comparison to choose</span></li>
+              <li><strong>Template Gallery</strong> <span>Browse 20+ templates from the gallery page. Link appears on Template folder hover</span></li>
             </ul>
           </div>
         </details>
@@ -173,6 +181,7 @@
               <li><strong>Auto Pair</strong> <span>Brackets, quotes auto-complete</span></li>
               <li><strong>Code Blocks</strong> <span>Scrollable (20+ lines), reliable copy with ProseMirror-first extraction, Copy Code / Copy as Markdown. Hover delete</span></li>
               <li><strong>Inline Code</strong> <span>Double-click to copy, backtick toggle input</span></li>
+              <li><strong>Blockquote Hover Delete</strong> <span>Remove blockquotes with hover trash icon, same pattern as alerts/tables/footnotes</span></li>
             </ul>
           </div>
         </details>
@@ -183,7 +192,7 @@
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">💾</span>
-              <span class="accordion-highlight">Storage — Auto-save, 100KB+ support</span>
+              <span class="accordion-highlight">Storage — Auto-save, 300KB+ support</span>
             </div>
           </summary>
           <div class="accordion-content">
@@ -194,6 +203,9 @@
               <li><strong>Chrome Storage</strong> <span>Survives cache clear</span></li>
               <li><strong>Import/Export</strong> <span>.md, .zip, Archive Pinned</span></li>
               <li><strong>Export</strong> <span>PDF (page numbers, TOC, custom margins), DOCX (images, diagrams, math embedded), PNG (2x Retina), HTML (3 templates, self-contained) — write here, ship anywhere (<kbd>Ctrl+Shift+E</kbd>)</span></li>
+              <li><strong>Copy for LLM</strong> <span>YAML frontmatter (title/source/date) prepended. From Copy dropdown or command palette</span></li>
+              <li><strong>Token Count</strong> <span>Estimated token count shown in toast on copy/export</span></li>
+              <li><strong>Batch Export</strong> <span>Select multiple notes → ZIP archive (Markdown/HTML/DOCX)</span></li>
             </ul>
           </div>
         </details>

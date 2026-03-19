@@ -197,6 +197,24 @@
             </div>
           </details>
 
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">テンプレートはどこで入手できる？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>Templateフォルダのヘッダーにホバーすると、ギャラリーリンクアイコンが表示されます。</strong></p>
+              <ul>
+                <li>5カテゴリ・20種類以上のテンプレートが揃った<strong>テンプレートギャラリー</strong>ページが開きます</li>
+                <li>Webサイトから直接ギャラリーページにアクセスすることもできます</li>
+                <li>ノート、議事録、開発ドキュメントなど、すぐに使えるMarkdownテンプレートが揃っています</li>
+              </ul>
+            </div>
+          </details>
+
           <!-- 画像 & メディア -->
           <div class="faq-category-header">🖼️ 画像 & メディア</div>
 
@@ -250,7 +268,8 @@
             <div class="accordion-content">
               <p><strong>最適化された設定で読み込まれます。</strong></p>
               <ul>
-                <li><strong>100KB以上</strong>: 一部機能（シンタックスハイライト、LaTeX）が無効化され、読み込みが速くなります</li>
+                <li><strong>50KB以上</strong>: コードエディタとLaTeX数式エディタがパフォーマンスのため無効化されます</li>
+                <li><strong>100KB以上</strong>: スラッシュメニューとドラッグハンドルが無効化されます</li>
                 <li><strong>300KB以上</strong>: Archiveで読み取り専用として開くオプションが表示されます</li>
               </ul>
               <p><em>Mark It Downは編集用のツールです。大きな生データはエクスポートして別の場所に保存することをおすすめします。</em></p>
@@ -344,8 +363,27 @@
                 <li><strong>移動</strong>: ピン留め、Archive/Template/Trashへ移動</li>
                 <li><strong>Git</strong>: 同期、Pull、Push、設定</li>
                 <li><strong>表示</strong>: サイドバー、目次、フォーカスモード、テーマ切替</li>
-                <li><strong>挿入</strong>: Mermaid図、コードブロック、数式</li>
+                <li><strong>挿入</strong>: Mermaid図、コードブロック、数式、目次（/toc）、タイムスタンプ（/now、Ctrl+Alt+;）</li>
               </ul>
+            </div>
+          </details>
+
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">ペーストモードの違いは？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>Ctrl+Shift+VでSmart Pasteが起動します。</strong></p>
+              <ul>
+                <li><strong>Markdownモード</strong>: HTMLやJSONをクリーンなMarkdownに変換（デフォルト）</li>
+                <li><strong>プレーンテキストモード</strong>: すべての書式を除去</li>
+                <li><strong>デフォルトモード</strong>: ブラウザ標準のペースト動作</li>
+              </ul>
+              <p>JSON配列はテーブルに、オブジェクトはリストに、ネスト構造は箇条書き階層に自動変換されます。デフォルトは設定で変更できます。</p>
             </div>
           </details>
 
