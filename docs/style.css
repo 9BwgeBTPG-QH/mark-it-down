@@ -1233,19 +1233,33 @@ a:hover {
 @media (max-width: 640px) {
   .accordion-header {
     padding: var(--spacing-sm) var(--spacing-md);
-    flex-wrap: wrap;
     gap: var(--spacing-xs);
   }
 
-  .accordion-title {
+  /*
+   * Changelog items have [+icon] [version] [highlight] [status] — needs wrap.
+   * FAQ/Features items have [+icon] [highlight] only — must NOT wrap,
+   * otherwise the icon sits alone on one line with the text below it.
+   */
+  .accordion-header:has(.accordion-status) {
     flex-wrap: wrap;
   }
 
-  .accordion-highlight {
+  .accordion-title:has(.accordion-version) {
+    flex-wrap: wrap;
+  }
+
+  /* Only drop highlight below version when a version is present */
+  .accordion-version ~ .accordion-highlight {
     width: 100%;
     order: 3;
     padding-left: 28px;
     margin-top: 4px;
+  }
+
+  /* Without version: let highlight text wrap naturally on the same line as icon */
+  .accordion-title:not(:has(.accordion-version)) .accordion-highlight {
+    white-space: normal;
   }
 
   .accordion-status {
