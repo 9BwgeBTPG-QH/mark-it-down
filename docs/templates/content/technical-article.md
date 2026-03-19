@@ -4,7 +4,7 @@
 
 > [!TIP]
 > Define the Problem, then walk through the Solution step by step.
-> Use `Ctrl+Shift+P` for slash menu (code blocks, callouts) and `Ctrl+Shift+E` to export.
+> Paste code and content with `Ctrl+Shift+V` (Smart Paste). Use `Ctrl+Shift+P` for slash menu (code blocks, callouts) and `Ctrl+Shift+E` to export.
 
 ---
 

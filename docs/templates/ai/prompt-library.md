@@ -3,7 +3,7 @@
 # Prompt Library
 
 > [!TIP]
-> Search across all your prompts with `Ctrl+K`. Copy prompt code blocks with one click on the copy icon.
+> Search across all your prompts with `Ctrl+K`. Copy prompt code blocks with one click on the copy icon. Insert today's date with `Ctrl+;`.
 
 ---
 

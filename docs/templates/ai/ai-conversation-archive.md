@@ -3,7 +3,7 @@
 # AI Conversation Archive
 
 > [!TIP]
-> Paste LLM responses with `Ctrl+Shift+V` (auto-converts HTML to Markdown). Insert today's date with `Ctrl+;`.
+> Paste LLM responses with `Ctrl+Shift+V` (auto-converts HTML to Markdown). Insert today's date with `Ctrl+;`. Move completed archives with `Alt+A`.
 
 ---
 

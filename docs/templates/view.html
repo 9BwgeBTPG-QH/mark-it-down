@@ -6,6 +6,10 @@
   <title>Template Preview - Mark It Down</title>
   <meta name="description" content="Preview a Markdown template for Mark It Down.">
   <meta name="theme-color" content="#FAFAF9">
+  <meta property="og:title" content="Template Preview - Mark It Down">
+  <meta property="og:description" content="Preview a Markdown template for Mark It Down.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://9bwgebptg-qh.github.io/mark-it-down/icon-128.png">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="../icon-16.png">
   <link rel="icon" type="image/png" sizes="48x48" href="../icon-48.png">
@@ -53,9 +57,17 @@
     <main id="main-content" role="main">
       <!-- Top bar -->
       <div class="template-viewer-bar">
-        <a href="../templates.html" class="template-viewer-back">&larr; Back to Gallery</a>
-        <span id="viewer-badge" class="category-badge"></span>
-        <span id="viewer-title" class="template-viewer-title"></span>
+        <nav class="template-breadcrumb" aria-label="Breadcrumb">
+          <a href="../templates.html">Templates</a>
+          <span class="breadcrumb-sep">&rsaquo;</span>
+          <span id="breadcrumb-category"></span>
+          <span class="breadcrumb-sep">&rsaquo;</span>
+          <span id="breadcrumb-title" class="breadcrumb-current"></span>
+        </nav>
+        <div class="template-view-toggle">
+          <button id="toggle-preview" class="view-toggle-btn active">Preview</button>
+          <button id="toggle-raw" class="view-toggle-btn">Raw</button>
+        </div>
         <nav class="template-viewer-nav" aria-label="Template navigation">
           <button id="nav-prev" class="template-nav-btn" aria-label="Previous template" disabled>&lsaquo;</button>
           <span id="nav-counter" class="template-nav-counter"></span>
@@ -109,13 +121,6 @@
     (function () {
       // --- Config ---
       var VALID_PATH = /^[a-z]+\/[a-z0-9-]+$/;
-      var BADGE_MAP = {
-        ai:           { label: 'AI',           cls: 'badge-ai' },
-        productivity: { label: 'Productivity', cls: 'badge-productivity' },
-        dev:          { label: 'Dev',          cls: 'badge-dev' },
-        content:      { label: 'Content',      cls: 'badge-content' },
-        thinking:     { label: 'Thinking',     cls: 'badge-thinking' }
-      };
 
       // Template list (same order as gallery)
       var TEMPLATES = [
@@ -148,12 +153,15 @@
         'thinking/is-is-not-analysis'
       ];
 
+      var CATEGORY_NAMES = {
+        ai: 'AI', productivity: 'Productivity', dev: 'Dev',
+        content: 'Content', thinking: 'Thinking'
+      };
+
       // --- Elements ---
       var contentEl  = document.getElementById('template-content');
       var errorEl    = document.getElementById('template-error');
       var actionsEl  = document.getElementById('template-actions');
-      var badgeEl    = document.getElementById('viewer-badge');
-      var titleEl    = document.getElementById('viewer-title');
       var copyBtn    = document.getElementById('copy-md-btn');
       var altLink    = document.getElementById('md-alternate');
       var langSwitch = document.getElementById('lang-switch');
@@ -161,6 +169,10 @@
       var prevBtn    = document.getElementById('nav-prev');
       var nextBtn    = document.getElementById('nav-next');
       var counterEl  = document.getElementById('nav-counter');
+      var bcCategory = document.getElementById('breadcrumb-category');
+      var bcTitle    = document.getElementById('breadcrumb-title');
+      var togglePreview = document.getElementById('toggle-preview');
+      var toggleRaw     = document.getElementById('toggle-raw');
 
       // --- State ---
       var rawMarkdown = '';
@@ -268,6 +280,45 @@
         }
       });
 
+      // --- View Toggle ---
+      var renderedHTML = '';
+      var isRawView = false;
+
+      togglePreview.addEventListener('click', function () {
+        if (!isRawView) return;
+        isRawView = false;
+        togglePreview.classList.add('active');
+        toggleRaw.classList.remove('active');
+        contentEl.classList.remove('raw-view');
+        // Restore rendered content from saved DOM nodes
+        restoreRendered();
+      });
+
+      toggleRaw.addEventListener('click', function () {
+        if (isRawView) return;
+        isRawView = true;
+        toggleRaw.classList.add('active');
+        togglePreview.classList.remove('active');
+        contentEl.classList.add('raw-view');
+        contentEl.textContent = rawMarkdown;
+      });
+
+      var savedRenderedNodes = null;
+
+      function saveRendered() {
+        savedRenderedNodes = [];
+        while (contentEl.firstChild) {
+          savedRenderedNodes.push(contentEl.removeChild(contentEl.firstChild));
+        }
+      }
+
+      function restoreRendered() {
+        contentEl.textContent = '';
+        if (savedRenderedNodes) {
+          savedRenderedNodes.forEach(function (node) { contentEl.appendChild(node); });
+        }
+      }
+
       // --- Load template ---
       function loadTemplate(templateId, isNav) {
         var jaUrl = 'view-ja.html?t=' + encodeURIComponent(templateId);
@@ -276,11 +327,13 @@
         altLink.href = templateId + '.md';
 
         var category = templateId.split('/')[0];
-        var badge = BADGE_MAP[category];
-        if (badge) {
-          badgeEl.textContent = badge.label;
-          badgeEl.className = 'category-badge ' + badge.cls;
-        }
+        bcCategory.textContent = CATEGORY_NAMES[category] || category;
+
+        // Reset to preview mode on navigation
+        isRawView = false;
+        togglePreview.classList.add('active');
+        toggleRaw.classList.remove('active');
+        contentEl.classList.remove('raw-view');
 
         updateNavButtons();
 
@@ -303,7 +356,7 @@
 
             var titleMatch = body.match(/^#\s+(.+)$/m);
             if (titleMatch) {
-              titleEl.textContent = titleMatch[1];
+              bcTitle.textContent = titleMatch[1];
               document.title = titleMatch[1] + ' - Mark It Down';
             }
 
@@ -360,6 +413,8 @@
             }
 
             actionsEl.hidden = false;
+            saveRendered();
+            restoreRendered();
             if (isNav) window.scrollTo({ top: 0, behavior: 'smooth' });
           })
           .catch(function () { showError(); });

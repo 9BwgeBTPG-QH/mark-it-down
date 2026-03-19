@@ -3,7 +3,7 @@
 # Meeting Notes
 
 > [!TIP]
-> Insert meeting datetime with `Ctrl+Shift+;`. During the meeting, press `Ctrl+Alt+;` to add timestamp headings for each discussion point.
+> Insert meeting datetime with `Ctrl+Shift+;`. During the meeting, press `Ctrl+Alt+;` to add timestamp headings for each discussion point. Search past meeting notes with `Ctrl+K`.
 
 ---
 

@@ -3,7 +3,7 @@
 # Weekly Review
 
 > [!TIP]
-> Complete this at the end of each week. Insert the week's date range with `Ctrl+;`. When done, press `Alt+A` to archive completed weeks.
+> Complete this at the end of each week. Insert the week's date range with `Ctrl+;`. Search past reviews with `Ctrl+K`. When done, press `Alt+A` to archive completed weeks.
 
 ---
 

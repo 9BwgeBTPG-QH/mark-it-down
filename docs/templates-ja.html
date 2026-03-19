@@ -10,6 +10,8 @@
   <meta property="og:title" content="テンプレートギャラリー - Mark It Down">
   <meta property="og:description" content="Mark It Down用の28のMarkdownテンプレート。AI、生産性、開発、コンテンツ、思考の5カテゴリ。">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://9bwgebptg-qh.github.io/mark-it-down/templates-ja.html">
+  <meta property="og:image" content="https://9bwgebptg-qh.github.io/mark-it-down/icon-128.png">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
   <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
@@ -58,6 +60,9 @@
         <p class="hero-tagline">テンプレートギャラリー</p>
         <p class="hero-subtitle">白紙からではなく、構造から始めよう。</p>
       </section>
+
+      <!-- Search -->
+      <input type="text" class="template-search-input" placeholder="テンプレートを検索..." aria-label="テンプレートを検索">
 
       <!-- Filter Tabs -->
       <nav class="filter-tabs" aria-label="カテゴリでフィルター">
@@ -448,14 +453,35 @@
   </div>
 
   <script>
+    // Search
+    const searchInput = document.querySelector('.template-search-input');
+    const allCards = document.querySelectorAll('.template-card');
+
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase().trim();
+      const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+      allCards.forEach(card => {
+        const title = card.querySelector('.template-card-title').textContent.toLowerCase();
+        const desc = card.querySelector('.template-card-desc').textContent.toLowerCase();
+        const matchesSearch = !q || title.includes(q) || desc.includes(q);
+        const matchesFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
+        card.style.display = (matchesSearch && matchesFilter) ? '' : 'none';
+      });
+    });
+
     // Category filter
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const filter = btn.dataset.filter;
-        document.querySelectorAll('.template-card').forEach(card => {
-          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+        const q = searchInput.value.toLowerCase().trim();
+        allCards.forEach(card => {
+          const title = card.querySelector('.template-card-title').textContent.toLowerCase();
+          const desc = card.querySelector('.template-card-desc').textContent.toLowerCase();
+          const matchesSearch = !q || title.includes(q) || desc.includes(q);
+          const matchesFilter = filter === 'all' || card.dataset.category === filter;
+          card.style.display = (matchesSearch && matchesFilter) ? '' : 'none';
         });
       });
     });

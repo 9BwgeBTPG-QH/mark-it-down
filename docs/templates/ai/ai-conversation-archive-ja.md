@@ -3,7 +3,7 @@
 # AI会話アーカイブ
 
 > [!TIP]
-> LLMの回答を `Ctrl+Shift+V` で貼り付け（HTMLを自動でMarkdownに変換）。今日の日付は `Ctrl+;` で挿入。
+> LLMの回答を `Ctrl+Shift+V` で貼り付け（HTMLを自動でMarkdownに変換）。今日の日付は `Ctrl+;` で挿入。完了したアーカイブは `Alt+A` で移動。
 
 ---
 

@@ -4,7 +4,7 @@
 
 > [!TIP]
 > まずフックから始め、ポイントを展開し、最後にCTA（行動喚起）でまとめましょう。
-> 公開準備ができたら `Ctrl+Shift+E` でPDF/HTML/DOCXにエクスポート。
+> 他のソースからのコンテンツは `Ctrl+Shift+V`（Smart Paste）で貼り付けると自動でMarkdownに変換。公開準備ができたら `Ctrl+Shift+E` でPDF/HTML/DOCXにエクスポート。
 
 ---
 

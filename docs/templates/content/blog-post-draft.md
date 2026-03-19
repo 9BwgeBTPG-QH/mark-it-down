@@ -4,7 +4,7 @@
 
 > [!TIP]
 > Start with the Hook, expand Key Points, then wrap up with a Call to Action.
-> Use `Ctrl+Shift+E` to export as PDF/HTML/DOCX when ready to publish.
+> Paste content from other sources with `Ctrl+Shift+V` (Smart Paste auto-converts to Markdown). Use `Ctrl+Shift+E` to export as PDF/HTML/DOCX when ready to publish.
 
 ---
 

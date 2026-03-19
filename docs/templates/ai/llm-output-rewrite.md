@@ -3,7 +3,7 @@
 # LLM Output Rewrite
 
 > [!TIP]
-> Paste the original LLM output with `Ctrl+Shift+V` to auto-convert HTML to clean Markdown. Then rewrite from scratch below.
+> Paste the original LLM output with `Ctrl+Shift+V` to auto-convert HTML to clean Markdown. Insert today's date with `Ctrl+;`. Then rewrite from scratch below.
 
 ---
 
