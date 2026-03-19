@@ -235,7 +235,14 @@
       }, { passive: true });
 
       window.addEventListener('popstate', function (e) {
-        if (e.state && e.state.t) { t = e.state.t; loadTemplate(t, true); }
+        if (e.state && e.state.t) {
+          navigating = false;
+          contentEl.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-left', 'slide-in-right');
+          contentEl.style.opacity = '';
+          contentEl.style.transform = '';
+          t = e.state.t;
+          loadTemplate(t, true);
+        }
       });
 
       function loadTemplate(templateId, isNav) {

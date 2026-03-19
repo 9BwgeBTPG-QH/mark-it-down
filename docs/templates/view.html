@@ -258,6 +258,11 @@
       // Browser back/forward
       window.addEventListener('popstate', function (e) {
         if (e.state && e.state.t) {
+          // Cancel any in-flight navigation animation
+          navigating = false;
+          contentEl.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-left', 'slide-in-right');
+          contentEl.style.opacity = '';
+          contentEl.style.transform = '';
           t = e.state.t;
           loadTemplate(t, true);
         }
