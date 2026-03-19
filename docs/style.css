@@ -1233,23 +1233,25 @@ a:hover {
 @media (max-width: 640px) {
   .accordion-header {
     padding: var(--spacing-sm) var(--spacing-md);
+    flex-wrap: wrap;
     gap: var(--spacing-xs);
   }
 
+  .accordion-title {
+    flex-wrap: wrap;
+  }
+
   /*
-   * Changelog items have [+icon] [version] [highlight] [status] — needs wrap.
-   * FAQ/Features items have [+icon] [highlight] only — must NOT wrap,
-   * otherwise the icon sits alone on one line with the text below it.
+   * Changelog: [+icon] [v2.1.0] [highlight] [status]
+   *   → version ~ highlight gets width:100% to force line break below version.
+   *
+   * FAQ / Features: [+icon] [highlight]  (no version)
+   *   → icon + highlight stays inline. white-space:normal lets text soft-wrap
+   *     within the element, keeping min-content width tiny so flex won't
+   *     push it to a new row.
    */
-  .accordion-header:has(.accordion-status) {
-    flex-wrap: wrap;
-  }
 
-  .accordion-title:has(.accordion-version) {
-    flex-wrap: wrap;
-  }
-
-  /* Only drop highlight below version when a version is present */
+  /* Changelog: highlight drops below version */
   .accordion-version ~ .accordion-highlight {
     width: 100%;
     order: 3;
@@ -1257,9 +1259,11 @@ a:hover {
     margin-top: 4px;
   }
 
-  /* Without version: let highlight text wrap naturally on the same line as icon */
-  .accordion-title:not(:has(.accordion-version)) .accordion-highlight {
+  /* FAQ / Features: icon + highlight on same row, text wraps naturally */
+  .accordion-icon + .accordion-highlight {
     white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
   }
 
   .accordion-status {
