@@ -353,6 +353,7 @@
                 var div = document.createElement('div');
                 div.className = 'mermaid';
                 div.textContent = codeEl.textContent;
+                div.setAttribute('data-mermaid-source', codeEl.textContent);
                 pre.replaceWith(div);
               });
               mermaid.run();
