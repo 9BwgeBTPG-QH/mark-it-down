@@ -2748,6 +2748,7 @@ footer a:hover {
   :root {
     --spacing-section: 4rem;
     --spacing-hero: 5rem;
+    --spacing-xl: 2.5rem;
     --spacing-2xl: 3rem;
   }
 
@@ -2806,6 +2807,7 @@ footer a:hover {
   :root {
     --spacing-section: 2.5rem;
     --spacing-hero: 4rem;
+    --spacing-xl: 2rem;
     --spacing-2xl: 2.5rem;
   }
 
