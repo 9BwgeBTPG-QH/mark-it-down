@@ -342,7 +342,10 @@ header .tagline {
 
   .header-nav a {
     font-size: 0.7rem;
-    padding: 0.2rem 0.4rem;
+    padding: 0.5rem 0.4rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 
   .header-nav .lang-switcher {
@@ -1204,7 +1207,12 @@ a:hover {
   font-size: var(--font-size-sm);
   font-weight: 600;
   color: var(--text-primary);
-  white-space: nowrap;
+}
+
+@media (min-width: 641px) {
+  .changelog-features strong {
+    white-space: nowrap;
+  }
 }
 
 .changelog-features span {
@@ -1665,6 +1673,9 @@ a:hover {
   .tab-nav label {
     padding: var(--spacing-xs) var(--spacing-xs);
     font-size: 0.8rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 }
 
@@ -1820,10 +1831,16 @@ a:hover {
   .faq-item summary {
     padding: var(--spacing-sm);
     font-size: var(--font-size-sm);
+    min-height: 44px;
   }
 
   .faq-answer {
     padding: 0 var(--spacing-sm) var(--spacing-sm);
+  }
+
+  .faq-answer ul,
+  .faq-answer ol {
+    padding-left: var(--spacing-md);
   }
 }
 
@@ -1871,6 +1888,7 @@ a:hover {
   font-size: var(--font-size-sm);
   font-weight: 500;
   padding: 8px 20px;
+  min-height: 44px;
   border-radius: 999px;
   border: 1px solid var(--border-subtle);
   background: var(--bg-accent);
@@ -2020,6 +2038,7 @@ a:hover {
   font-size: var(--font-size-sm);
   font-weight: 500;
   padding: 8px 12px;
+  min-height: 44px;
   border: none;
   border-radius: var(--radius-md);
   background: var(--accent-primary);
@@ -2040,7 +2059,8 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
+  width: 44px;
+  min-height: 44px;
   font-size: var(--font-size-base);
   border-radius: var(--radius-md);
   background: var(--bg-secondary);
@@ -2107,6 +2127,7 @@ a:hover {
   font-size: var(--font-size-sm);
   font-weight: 500;
   padding: 6px 16px;
+  min-height: 44px;
   border: none;
   border-radius: 999px;
   background: transparent;
@@ -2537,8 +2558,8 @@ a:hover {
   }
 
   .template-nav-btn {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     font-size: var(--font-size-base);
   }
 
@@ -2691,7 +2712,10 @@ footer a:hover {
 
   .footer-nav a {
     font-size: 0.75rem;
-    padding: 0.2rem 0.4rem;
+    padding: 0.5rem 0.4rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 }
 
@@ -2707,6 +2731,26 @@ footer a:hover {
 
   .container {
     padding: var(--spacing-md);
+  }
+
+  /* Full-bleed sections: match negative margins to container padding */
+  .flow-section,
+  .coming-soon-section {
+    margin-left: calc(-1 * var(--spacing-md));
+    margin-right: calc(-1 * var(--spacing-md));
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+
+  .cta-section {
+    margin-left: calc(-1 * var(--spacing-md));
+    margin-right: calc(-1 * var(--spacing-md));
+  }
+
+  .video-container {
+    width: calc(100% + 2 * var(--spacing-md));
+    margin-left: calc(-1 * var(--spacing-md));
+    margin-right: calc(-1 * var(--spacing-md));
   }
 
   header {
@@ -2744,6 +2788,26 @@ footer a:hover {
 
   .container {
     padding: var(--spacing-sm);
+  }
+
+  /* Full-bleed sections: match negative margins to container padding */
+  .flow-section,
+  .coming-soon-section {
+    margin-left: calc(-1 * var(--spacing-sm));
+    margin-right: calc(-1 * var(--spacing-sm));
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+
+  .cta-section {
+    margin-left: calc(-1 * var(--spacing-sm));
+    margin-right: calc(-1 * var(--spacing-sm));
+  }
+
+  .video-container {
+    width: calc(100% + 2 * var(--spacing-sm));
+    margin-left: calc(-1 * var(--spacing-sm));
+    margin-right: calc(-1 * var(--spacing-sm));
   }
 
   header h1 {
