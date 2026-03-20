@@ -2110,7 +2110,16 @@ a:hover {
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   color: var(--text-muted);
-  flex-wrap: wrap;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.template-breadcrumb .breadcrumb-current {
+  color: var(--text-primary);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .template-breadcrumb a {
@@ -2128,11 +2137,6 @@ a:hover {
   user-select: none;
 }
 
-.template-breadcrumb .breadcrumb-current {
-  color: var(--text-primary);
-  font-weight: 500;
-}
-
 /* View toggle: Preview / Raw */
 .template-view-toggle {
   display: flex;
@@ -2147,8 +2151,8 @@ a:hover {
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: 500;
-  padding: 6px 16px;
-  min-height: 44px;
+  padding: 4px 14px;
+  min-height: 32px;
   border: none;
   border-radius: 999px;
   background: transparent;
@@ -2181,20 +2185,27 @@ a:hover {
   color: var(--text-secondary);
 }
 
-/* Top bar: back link + badge + title */
+/* Sticky toolbar */
 .template-viewer-bar {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  flex-wrap: wrap;
-  padding: var(--spacing-sm) var(--spacing-md);
-  background: var(--bg-card);
+  padding: 8px var(--spacing-md);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   position: sticky;
   top: 0;
   z-index: 20;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.template-viewer-bar.scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--border-primary);
 }
 
 .template-viewer-back {
@@ -2471,8 +2482,8 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   background: var(--bg-card);
@@ -2514,8 +2525,8 @@ a:hover {
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  width: 44px;
-  height: 36px;
+  width: 40px;
+  height: 32px;
   text-align: center;
   padding: 0 2px;
   -moz-appearance: textfield;
@@ -2737,51 +2748,51 @@ a:hover {
 /* Responsive — template viewer mobile */
 @media (max-width: 640px) {
   .template-viewer-bar {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0;
-    padding: 0;
-    overflow: hidden;
+    padding: 6px 10px;
+    border-radius: 0;
+    margin-left: calc(-1 * var(--spacing-md));
+    margin-right: calc(-1 * var(--spacing-md));
+    border-left: none;
+    border-right: none;
   }
 
-  /* Row 1: breadcrumb spans full width */
+  /* Row 1: breadcrumb full width */
   .template-breadcrumb {
-    grid-column: 1 / -1;
-    padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-xs);
+    width: 100%;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
     font-size: var(--font-size-xs);
     border-bottom: 1px solid var(--border-subtle);
   }
 
-  /* Row 2: toggle left, nav right */
+  /* Row 2: toggle + nav inline */
   .template-view-toggle {
-    grid-column: 1;
-    grid-row: 2;
-    margin: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-sm);
     padding: 2px;
+    margin-left: 0;
   }
 
   .view-toggle-btn {
-    padding: 4px 12px;
-    min-height: 36px;
+    padding: 3px 10px;
+    min-height: 30px;
     font-size: var(--font-size-xs);
   }
 
   .template-viewer-nav {
-    grid-column: 2;
-    grid-row: 2;
-    margin: var(--spacing-xs) var(--spacing-sm) var(--spacing-xs) 0;
+    margin-left: auto;
   }
 
   .template-nav-btn {
-    width: 36px;
-    height: 36px;
-    font-size: var(--font-size-base);
+    width: 30px;
+    height: 30px;
+    font-size: var(--font-size-sm);
   }
 
   .template-nav-input {
-    width: 38px;
-    height: 36px;
+    width: 34px;
+    height: 30px;
     font-size: var(--font-size-xs);
   }
 

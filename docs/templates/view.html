@@ -208,6 +208,19 @@
       var navTotalBottom = document.getElementById('nav-total-bottom');
       var edgePrev = document.getElementById('edge-prev');
       var edgeNext = document.getElementById('edge-next');
+      var viewerBar = document.querySelector('.template-viewer-bar');
+
+      // --- Scroll shadow ---
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(function () {
+            viewerBar.classList.toggle('scrolled', window.scrollY > 10);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
 
       // --- Parse ?t= ---
       var params = new URLSearchParams(location.search);
