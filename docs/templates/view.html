@@ -79,6 +79,7 @@
       <!-- Rendered content -->
       <article id="template-content" class="template-viewer-content" aria-live="polite">
         <div class="template-viewer-loading">Loading template...</div>
+        <pre id="raw-content" class="template-raw-content" hidden></pre>
       </article>
 
       <!-- Error state -->
@@ -206,6 +207,7 @@
       var nextBtnBottom  = document.getElementById('nav-next-bottom');
       var navInputBottom = document.getElementById('nav-input-bottom');
       var navTotalBottom = document.getElementById('nav-total-bottom');
+      var rawContentEl = document.getElementById('raw-content');
       var edgePrev = document.getElementById('edge-prev');
       var edgeNext = document.getElementById('edge-next');
       var viewerBar = document.querySelector('.template-viewer-bar');
@@ -472,7 +474,6 @@
       });
 
       // --- View Toggle ---
-      var renderedHTML = '';
       var isRawView = false;
 
       togglePreview.addEventListener('click', function () {
@@ -481,8 +482,11 @@
         togglePreview.classList.add('active');
         toggleRaw.classList.remove('active');
         contentEl.classList.remove('raw-view');
-        // Restore rendered content from saved DOM nodes
-        restoreRendered();
+        // Show rendered children, hide raw
+        rawContentEl.hidden = true;
+        Array.prototype.forEach.call(contentEl.children, function (child) {
+          if (child !== rawContentEl) child.hidden = false;
+        });
       });
 
       toggleRaw.addEventListener('click', function () {
@@ -491,27 +495,13 @@
         toggleRaw.classList.add('active');
         togglePreview.classList.remove('active');
         contentEl.classList.add('raw-view');
-        contentEl.textContent = rawMarkdown;
-      });
-
-      var savedRenderedNodes = null;
-
-      function saveRendered() {
-        // Clone nodes so the live DOM is not disturbed (preserves in-flight image loads)
-        savedRenderedNodes = [];
-        contentEl.childNodes.forEach(function (node) {
-          savedRenderedNodes.push(node.cloneNode(true));
+        // Hide rendered children, show raw
+        Array.prototype.forEach.call(contentEl.children, function (child) {
+          if (child !== rawContentEl) child.hidden = true;
         });
-      }
-
-      function restoreRendered() {
-        contentEl.textContent = '';
-        if (savedRenderedNodes) {
-          savedRenderedNodes.forEach(function (node) {
-            contentEl.appendChild(node.cloneNode(true));
-          });
-        }
-      }
+        rawContentEl.textContent = rawMarkdown;
+        rawContentEl.hidden = false;
+      });
 
       // --- Load template ---
       function loadTemplate(templateId, isNav) {
@@ -532,11 +522,14 @@
         updateNavButtons();
 
         if (isNav) {
-          contentEl.textContent = '';
+          // Remove all children except rawContentEl
+          Array.prototype.slice.call(contentEl.children).forEach(function (child) {
+            if (child !== rawContentEl) contentEl.removeChild(child);
+          });
           var loadingDiv = document.createElement('div');
           loadingDiv.className = 'template-viewer-loading';
           loadingDiv.textContent = 'Loading template\u2026';
-          contentEl.appendChild(loadingDiv);
+          contentEl.insertBefore(loadingDiv, rawContentEl);
         }
 
         fetch(templateId + '.md')
@@ -585,10 +578,12 @@
               }
             });
 
-            // Replace content
-            contentEl.textContent = '';
+            // Replace content (preserve rawContentEl)
+            Array.prototype.slice.call(contentEl.children).forEach(function (child) {
+              if (child !== rawContentEl) contentEl.removeChild(child);
+            });
             while (rendered.firstChild) {
-              contentEl.appendChild(rendered.firstChild);
+              contentEl.insertBefore(rendered.firstChild, rawContentEl);
             }
 
             // Mermaid
@@ -652,7 +647,7 @@
 
             actionsEl.hidden = false;
             bottomNav.hidden = false;
-            saveRendered();
+            rawContentEl.hidden = true;
             if (isNav) document.querySelector('.template-viewer-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
           })
           .catch(function () { showError(); });

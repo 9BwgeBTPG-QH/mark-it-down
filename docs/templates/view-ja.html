@@ -79,6 +79,7 @@
       <!-- Rendered content -->
       <article id="template-content" class="template-viewer-content" aria-live="polite">
         <div class="template-viewer-loading">テンプレートを読み込み中...</div>
+        <pre id="raw-content" class="template-raw-content" hidden></pre>
       </article>
 
       <!-- Error state -->
@@ -204,6 +205,7 @@
       var nextBtnBottom  = document.getElementById('nav-next-bottom');
       var navInputBottom = document.getElementById('nav-input-bottom');
       var navTotalBottom = document.getElementById('nav-total-bottom');
+      var rawContentEl = document.getElementById('raw-content');
       var edgePrev = document.getElementById('edge-prev');
       var edgeNext = document.getElementById('edge-next');
       var viewerBar = document.querySelector('.template-viewer-bar');
@@ -460,7 +462,6 @@
       });
 
       // --- View Toggle ---
-      var renderedHTML = '';
       var isRawView = false;
 
       togglePreview.addEventListener('click', function () {
@@ -469,7 +470,10 @@
         togglePreview.classList.add('active');
         toggleRaw.classList.remove('active');
         contentEl.classList.remove('raw-view');
-        restoreRendered();
+        rawContentEl.hidden = true;
+        Array.prototype.forEach.call(contentEl.children, function (child) {
+          if (child !== rawContentEl) child.hidden = false;
+        });
       });
 
       toggleRaw.addEventListener('click', function () {
@@ -478,26 +482,12 @@
         toggleRaw.classList.add('active');
         togglePreview.classList.remove('active');
         contentEl.classList.add('raw-view');
-        contentEl.textContent = rawMarkdown;
-      });
-
-      var savedRenderedNodes = null;
-
-      function saveRendered() {
-        savedRenderedNodes = [];
-        contentEl.childNodes.forEach(function (node) {
-          savedRenderedNodes.push(node.cloneNode(true));
+        Array.prototype.forEach.call(contentEl.children, function (child) {
+          if (child !== rawContentEl) child.hidden = true;
         });
-      }
-
-      function restoreRendered() {
-        contentEl.textContent = '';
-        if (savedRenderedNodes) {
-          savedRenderedNodes.forEach(function (node) {
-            contentEl.appendChild(node.cloneNode(true));
-          });
-        }
-      }
+        rawContentEl.textContent = rawMarkdown;
+        rawContentEl.hidden = false;
+      });
 
       function loadTemplate(templateId, isNav) {
         var enUrl = 'view.html?t=' + encodeURIComponent(templateId);
@@ -517,11 +507,13 @@
         updateNavButtons();
 
         if (isNav) {
-          contentEl.textContent = '';
+          Array.prototype.slice.call(contentEl.children).forEach(function (child) {
+            if (child !== rawContentEl) contentEl.removeChild(child);
+          });
           var ld = document.createElement('div');
           ld.className = 'template-viewer-loading';
           ld.textContent = '\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\u3092\u8AAD\u307F\u8FBC\u307F\u4E2D\u2026';
-          contentEl.appendChild(ld);
+          contentEl.insertBefore(ld, rawContentEl);
         }
 
         fetch(templateId + '-ja.md')
@@ -553,8 +545,10 @@
               if (html.startsWith('<input')) { li.classList.add('task-list-item'); li.parentElement.classList.add('task-list'); }
             });
 
-            contentEl.textContent = '';
-            while (rendered.firstChild) contentEl.appendChild(rendered.firstChild);
+            Array.prototype.slice.call(contentEl.children).forEach(function (child) {
+              if (child !== rawContentEl) contentEl.removeChild(child);
+            });
+            while (rendered.firstChild) contentEl.insertBefore(rendered.firstChild, rawContentEl);
 
             var mermaidBlocks = contentEl.querySelectorAll('pre code.language-mermaid');
             if (mermaidBlocks.length > 0) {
@@ -616,7 +610,7 @@
 
             actionsEl.hidden = false;
             bottomNav.hidden = false;
-            saveRendered();
+            rawContentEl.hidden = true;
             if (isNav) document.querySelector('.template-viewer-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
           })
           .catch(function () { showError(); });
