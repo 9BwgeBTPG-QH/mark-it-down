@@ -21,7 +21,7 @@
 
 ```mermaid
 quadrantChart
-    title "KPT (Impact vs Feasibility)"
+    title "KPTマッピング（影響度 vs 実行可能性）"
     x-axis "実行困難" --> "実行容易"
     y-axis "影響小" --> "影響大"
     quadrant-1 "優先Try"
