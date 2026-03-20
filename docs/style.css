@@ -2186,7 +2186,7 @@ a:hover {
   color: var(--text-secondary);
 }
 
-/* Sticky toolbar */
+/* Sticky toolbar — top is set dynamically via JS to clear header-nav */
 .template-viewer-bar {
   display: flex;
   align-items: center;
@@ -2200,7 +2200,7 @@ a:hover {
   margin-bottom: var(--spacing-md);
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 50;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 

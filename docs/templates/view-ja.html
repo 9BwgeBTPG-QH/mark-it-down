@@ -207,6 +207,15 @@
       var edgePrev = document.getElementById('edge-prev');
       var edgeNext = document.getElementById('edge-next');
       var viewerBar = document.querySelector('.template-viewer-bar');
+      var headerNav = document.querySelector('.header-nav');
+
+      // --- Sticky offset below header-nav ---
+      function updateStickyOffset() {
+        var h = headerNav ? headerNav.offsetHeight : 0;
+        viewerBar.style.top = h + 'px';
+      }
+      updateStickyOffset();
+      window.addEventListener('resize', updateStickyOffset);
 
       // --- Scroll shadow ---
       var ticking = false;
