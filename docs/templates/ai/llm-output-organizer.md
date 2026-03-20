@@ -1,6 +1,6 @@
 ![AI](https://img.shields.io/badge/AI-blue) ![Rewrite](https://img.shields.io/badge/Rewrite-orange) ![15 min](https://img.shields.io/badge/15_min-green)
 
-# ChatGPT Output Organizer
+# LLM Output Organizer
 
 > [!TIP]
 > Paste LLM output with `Ctrl+Shift+V` (auto-converts to Markdown). Date entries with `Ctrl+;`. Save as reusable template with `Alt+T`.
