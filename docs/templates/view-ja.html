@@ -283,7 +283,12 @@
           return;
         }
 
-        contentEl.scrollIntoView({ block: 'start' });
+        var stickyTop = parseInt(viewerBar.style.top, 10) || 0;
+        var barNatural = viewerBar.offsetTop;
+        var targetScroll = barNatural - stickyTop;
+        if (window.scrollY < targetScroll) {
+          window.scrollTo(0, targetScroll);
+        }
         contentEl.style.minHeight = contentEl.offsetHeight + 'px';
 
         contentEl.classList.add(outClass);
@@ -299,6 +304,9 @@
             contentEl.removeEventListener('animationend', onIn);
             contentEl.classList.remove(inClass);
             contentEl.style.minHeight = '';
+            var st = parseInt(viewerBar.style.top, 10) || 0;
+            var bn = viewerBar.offsetTop;
+            if (window.scrollY < bn - st) window.scrollTo(0, bn - st);
             navigating = false;
           });
         });

@@ -2110,6 +2110,7 @@ a:hover {
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   color: var(--text-muted);
+  flex: 1;
   min-width: 0;
   overflow: hidden;
 }
@@ -2142,23 +2143,24 @@ a:hover {
 .template-view-toggle {
   position: relative;
   display: flex;
+  flex-shrink: 0;
   background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
   border-radius: 999px;
-  padding: 3px;
-  margin-left: auto;
+  padding: 4px;
 }
 
 .template-view-toggle::before {
   content: '';
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: calc(50% - 3px);
-  height: calc(100% - 6px);
+  top: 4px;
+  left: 4px;
+  width: 80px;
+  height: calc(100% - 8px);
   background: var(--bg-card);
   border-radius: 999px;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 0;
 }
 
@@ -2169,21 +2171,24 @@ a:hover {
 .view-toggle-btn {
   position: relative;
   z-index: 1;
+  width: 80px;
   font-family: var(--font-sans);
-  font-size: var(--font-size-sm);
+  font-size: 13px;
   font-weight: 500;
-  padding: 4px 14px;
-  min-height: 32px;
+  padding: 8px 0;
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   cursor: pointer;
   transition: color 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 
 .view-toggle-btn:hover {
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .view-toggle-btn.active {
@@ -2199,14 +2204,14 @@ a:hover {
 .template-viewer-bar {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  padding: 8px var(--spacing-md);
+  gap: 24px;
+  padding: 16px 24px;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 16px;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -2484,9 +2489,9 @@ a:hover {
 /* Swipe navigation */
 .template-viewer-nav {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
-  gap: var(--spacing-xs);
-  margin-left: auto;
+  gap: 8px;
 }
 
 .template-nav-btn {
@@ -2536,10 +2541,10 @@ a:hover {
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  width: 40px;
+  width: 48px;
   height: 32px;
   text-align: center;
-  padding: 0 2px;
+  padding: 0 4px;
   -moz-appearance: textfield;
   appearance: textfield;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -2794,7 +2799,7 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 0;
-    padding: 6px 10px;
+    padding: 8px 16px;
     border-radius: 0;
     margin-left: calc(-1 * var(--spacing-md));
     margin-right: calc(-1 * var(--spacing-md));
@@ -2805,21 +2810,19 @@ a:hover {
   /* Row 1: breadcrumb full width */
   .template-breadcrumb {
     width: 100%;
-    padding-bottom: 6px;
-    margin-bottom: 6px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
     font-size: var(--font-size-xs);
     border-bottom: 1px solid var(--border-subtle);
   }
 
   /* Row 2: toggle + nav inline */
   .template-view-toggle {
-    padding: 2px;
-    margin-left: 0;
+    padding: 4px;
   }
 
   .view-toggle-btn {
-    padding: 3px 10px;
-    min-height: 30px;
+    padding: 4px 12px;
     font-size: var(--font-size-xs);
   }
 
