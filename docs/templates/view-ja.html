@@ -70,9 +70,18 @@
         </div>
         <nav class="template-viewer-nav" aria-label="テンプレートナビゲーション">
           <button id="nav-prev" class="template-nav-btn" aria-label="前のテンプレート" disabled>&lsaquo;</button>
-          <span id="nav-counter" class="template-nav-counter"></span>
+          <input id="nav-input" class="template-nav-input" type="number" min="1" aria-label="テンプレート番号を入力">
+          <span id="nav-total" class="template-nav-total"></span>
           <button id="nav-next" class="template-nav-btn" aria-label="次のテンプレート" disabled>&rsaquo;</button>
         </nav>
+        <div class="template-viewer-categories" role="group" aria-label="カテゴリでフィルター">
+          <button class="viewer-cat-btn active" data-cat="all">すべて</button>
+          <button class="viewer-cat-btn" data-cat="ai">AI</button>
+          <button class="viewer-cat-btn" data-cat="productivity">生産性</button>
+          <button class="viewer-cat-btn" data-cat="dev">開発</button>
+          <button class="viewer-cat-btn" data-cat="content">コンテンツ</button>
+          <button class="viewer-cat-btn" data-cat="thinking">思考</button>
+        </div>
       </div>
 
       <!-- Rendered content -->
@@ -84,6 +93,14 @@
       <div id="template-error" class="template-viewer-error" hidden>
         <p>テンプレートが見つかりません。</p>
         <a href="../templates-ja.html">ギャラリーに戻る</a>
+      </div>
+
+      <!-- Bottom navigation -->
+      <div id="bottom-nav" class="template-viewer-bar-bottom" hidden>
+        <button id="nav-prev-bottom" class="template-nav-btn" aria-label="前のテンプレート" disabled>&lsaquo;</button>
+        <input id="nav-input-bottom" class="template-nav-input" type="number" min="1" aria-label="テンプレート番号を入力">
+        <span id="nav-total-bottom" class="template-nav-total"></span>
+        <button id="nav-next-bottom" class="template-nav-btn" aria-label="次のテンプレート" disabled>&rsaquo;</button>
       </div>
 
       <!-- Action bar -->
@@ -121,7 +138,7 @@
     (function () {
       var VALID_PATH = /^[a-z]+\/[a-z0-9-]+$/;
 
-      var TEMPLATES = [
+      var ALL_TEMPLATES = [
         'ai/chatgpt-output-organizer',
         'ai/prompt-library',
         'ai/ai-conversation-archive',
@@ -163,6 +180,12 @@
         content: '\u30B3\u30F3\u30C6\u30F3\u30C4', thinking: '\u601D\u8003'
       };
 
+      // --- State ---
+      var activeCategory = 'all';
+      var filteredTemplates = ALL_TEMPLATES.slice();
+      var rawMarkdown = '';
+      var navigating = false;
+
       var contentEl  = document.getElementById('template-content');
       var errorEl    = document.getElementById('template-error');
       var actionsEl  = document.getElementById('template-actions');
@@ -172,14 +195,17 @@
       var langSwitchFooter = document.getElementById('lang-switch-footer');
       var prevBtn    = document.getElementById('nav-prev');
       var nextBtn    = document.getElementById('nav-next');
-      var counterEl  = document.getElementById('nav-counter');
+      var navInput   = document.getElementById('nav-input');
+      var navTotal   = document.getElementById('nav-total');
       var bcCategory = document.getElementById('breadcrumb-category');
       var bcTitle    = document.getElementById('breadcrumb-title');
       var togglePreview = document.getElementById('toggle-preview');
       var toggleRaw     = document.getElementById('toggle-raw');
-
-      var rawMarkdown = '';
-      var navigating = false;
+      var bottomNav     = document.getElementById('bottom-nav');
+      var prevBtnBottom  = document.getElementById('nav-prev-bottom');
+      var nextBtnBottom  = document.getElementById('nav-next-bottom');
+      var navInputBottom = document.getElementById('nav-input-bottom');
+      var navTotalBottom = document.getElementById('nav-total-bottom');
 
       var params = new URLSearchParams(location.search);
       var t = params.get('t');
@@ -188,27 +214,66 @@
 
       loadTemplate(t, false);
 
-      function currentIndex() { return TEMPLATES.indexOf(t); }
+      // --- Category filtering ---
+      function filterTemplates(cat) {
+        activeCategory = cat;
+        if (cat === 'all') {
+          filteredTemplates = ALL_TEMPLATES.slice();
+        } else {
+          filteredTemplates = ALL_TEMPLATES.filter(function (id) {
+            return id.split('/')[0] === cat;
+          });
+        }
+        document.querySelectorAll('.viewer-cat-btn').forEach(function (btn) {
+          btn.classList.toggle('active', btn.dataset.cat === cat);
+        });
+        updateNavButtons();
+      }
+
+      document.querySelectorAll('.viewer-cat-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterTemplates(btn.dataset.cat);
+        });
+      });
+
+      // --- Navigation ---
+      function currentIndex() { return filteredTemplates.indexOf(t); }
 
       function updateNavButtons() {
         var idx = currentIndex();
-        prevBtn.disabled = idx <= 0;
-        nextBtn.disabled = idx < 0 || idx >= TEMPLATES.length - 1;
-        if (idx >= 0) counterEl.textContent = (idx + 1) + ' / ' + TEMPLATES.length;
+        var len = filteredTemplates.length;
+        var hasPrev = idx > 0;
+        var hasNext = idx >= 0 && idx < len - 1;
+        prevBtn.disabled = !hasPrev;
+        nextBtn.disabled = !hasNext;
+        prevBtnBottom.disabled = !hasPrev;
+        nextBtnBottom.disabled = !hasNext;
+        if (idx >= 0) {
+          navInput.value = idx + 1;
+          navInput.max = len;
+          navTotal.textContent = '/ ' + len;
+          navInputBottom.value = idx + 1;
+          navInputBottom.max = len;
+          navTotalBottom.textContent = '/ ' + len;
+        }
       }
 
-      function navigate(direction) {
+      function navigateTo(newIdx, direction) {
         if (navigating) return;
+        if (newIdx < 0 || newIdx >= filteredTemplates.length) return;
         var idx = currentIndex();
-        var newIdx = idx + direction;
-        if (newIdx < 0 || newIdx >= TEMPLATES.length) return;
+        if (newIdx === idx) return;
+
+        if (typeof direction === 'undefined') {
+          direction = newIdx > idx ? 1 : -1;
+        }
 
         navigating = true;
         var outClass = direction > 0 ? 'slide-out-left' : 'slide-out-right';
         var inClass  = direction > 0 ? 'slide-in-left' : 'slide-in-right';
 
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          t = TEMPLATES[newIdx];
+          t = filteredTemplates[newIdx];
           history.pushState({ t: t }, '', 'view-ja.html?t=' + encodeURIComponent(t));
           loadTemplate(t, true);
           navigating = false;
@@ -219,7 +284,7 @@
         contentEl.addEventListener('animationend', function onOut() {
           contentEl.removeEventListener('animationend', onOut);
           contentEl.classList.remove(outClass);
-          t = TEMPLATES[newIdx];
+          t = filteredTemplates[newIdx];
           history.pushState({ t: t }, '', 'view-ja.html?t=' + encodeURIComponent(t));
           loadTemplate(t, true);
           contentEl.classList.add(inClass);
@@ -231,8 +296,35 @@
         });
       }
 
+      function navigate(direction) {
+        var idx = currentIndex();
+        navigateTo(idx + direction, direction);
+      }
+
+      // Direct page input
+      function handlePageInput(inputEl) {
+        var val = parseInt(inputEl.value, 10);
+        if (isNaN(val) || val < 1 || val > filteredTemplates.length) {
+          var idx = currentIndex();
+          inputEl.value = idx >= 0 ? idx + 1 : 1;
+          return;
+        }
+        navigateTo(val - 1);
+      }
+
+      navInput.addEventListener('change', function () { handlePageInput(navInput); });
+      navInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); handlePageInput(navInput); navInput.blur(); }
+      });
+      navInputBottom.addEventListener('change', function () { handlePageInput(navInputBottom); });
+      navInputBottom.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); handlePageInput(navInputBottom); navInputBottom.blur(); }
+      });
+
       prevBtn.addEventListener('click', function () { navigate(-1); });
       nextBtn.addEventListener('click', function () { navigate(1); });
+      prevBtnBottom.addEventListener('click', function () { navigate(-1); });
+      nextBtnBottom.addEventListener('click', function () { navigate(1); });
 
       document.addEventListener('keydown', function (e) {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
@@ -374,6 +466,7 @@
             }
 
             actionsEl.hidden = false;
+            bottomNav.hidden = false;
             saveRendered();
             restoreRendered();
             if (isNav) window.scrollTo({ top: 0, behavior: 'smooth' });

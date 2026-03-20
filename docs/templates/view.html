@@ -70,9 +70,18 @@
         </div>
         <nav class="template-viewer-nav" aria-label="Template navigation">
           <button id="nav-prev" class="template-nav-btn" aria-label="Previous template" disabled>&lsaquo;</button>
-          <span id="nav-counter" class="template-nav-counter"></span>
+          <input id="nav-input" class="template-nav-input" type="number" min="1" aria-label="Go to template number">
+          <span id="nav-total" class="template-nav-total"></span>
           <button id="nav-next" class="template-nav-btn" aria-label="Next template" disabled>&rsaquo;</button>
         </nav>
+        <div class="template-viewer-categories" role="group" aria-label="Filter by category">
+          <button class="viewer-cat-btn active" data-cat="all">All</button>
+          <button class="viewer-cat-btn" data-cat="ai">AI</button>
+          <button class="viewer-cat-btn" data-cat="productivity">Productivity</button>
+          <button class="viewer-cat-btn" data-cat="dev">Dev</button>
+          <button class="viewer-cat-btn" data-cat="content">Content</button>
+          <button class="viewer-cat-btn" data-cat="thinking">Thinking</button>
+        </div>
       </div>
 
       <!-- Rendered content -->
@@ -84,6 +93,14 @@
       <div id="template-error" class="template-viewer-error" hidden>
         <p>Template not found.</p>
         <a href="../templates.html">Back to Gallery</a>
+      </div>
+
+      <!-- Bottom navigation -->
+      <div id="bottom-nav" class="template-viewer-bar-bottom" hidden>
+        <button id="nav-prev-bottom" class="template-nav-btn" aria-label="Previous template" disabled>&lsaquo;</button>
+        <input id="nav-input-bottom" class="template-nav-input" type="number" min="1" aria-label="Go to template number">
+        <span id="nav-total-bottom" class="template-nav-total"></span>
+        <button id="nav-next-bottom" class="template-nav-btn" aria-label="Next template" disabled>&rsaquo;</button>
       </div>
 
       <!-- Action bar -->
@@ -122,8 +139,8 @@
       // --- Config ---
       var VALID_PATH = /^[a-z]+\/[a-z0-9-]+$/;
 
-      // Template list (same order as gallery)
-      var TEMPLATES = [
+      // All templates (same order as gallery)
+      var ALL_TEMPLATES = [
         'ai/chatgpt-output-organizer',
         'ai/prompt-library',
         'ai/ai-conversation-archive',
@@ -164,6 +181,12 @@
         content: 'Content', thinking: 'Thinking'
       };
 
+      // --- State ---
+      var activeCategory = 'all';
+      var filteredTemplates = ALL_TEMPLATES.slice();
+      var rawMarkdown = '';
+      var navigating = false;
+
       // --- Elements ---
       var contentEl  = document.getElementById('template-content');
       var errorEl    = document.getElementById('template-error');
@@ -174,15 +197,17 @@
       var langSwitchFooter = document.getElementById('lang-switch-footer');
       var prevBtn    = document.getElementById('nav-prev');
       var nextBtn    = document.getElementById('nav-next');
-      var counterEl  = document.getElementById('nav-counter');
+      var navInput   = document.getElementById('nav-input');
+      var navTotal   = document.getElementById('nav-total');
       var bcCategory = document.getElementById('breadcrumb-category');
       var bcTitle    = document.getElementById('breadcrumb-title');
       var togglePreview = document.getElementById('toggle-preview');
       var toggleRaw     = document.getElementById('toggle-raw');
-
-      // --- State ---
-      var rawMarkdown = '';
-      var navigating = false;
+      var bottomNav     = document.getElementById('bottom-nav');
+      var prevBtnBottom  = document.getElementById('nav-prev-bottom');
+      var nextBtnBottom  = document.getElementById('nav-next-bottom');
+      var navInputBottom = document.getElementById('nav-input-bottom');
+      var navTotalBottom = document.getElementById('nav-total-bottom');
 
       // --- Parse ?t= ---
       var params = new URLSearchParams(location.search);
@@ -195,33 +220,68 @@
 
       loadTemplate(t, false);
 
+      // --- Category filtering ---
+      function filterTemplates(cat) {
+        activeCategory = cat;
+        if (cat === 'all') {
+          filteredTemplates = ALL_TEMPLATES.slice();
+        } else {
+          filteredTemplates = ALL_TEMPLATES.filter(function (id) {
+            return id.split('/')[0] === cat;
+          });
+        }
+        document.querySelectorAll('.viewer-cat-btn').forEach(function (btn) {
+          btn.classList.toggle('active', btn.dataset.cat === cat);
+        });
+        updateNavButtons();
+      }
+
+      document.querySelectorAll('.viewer-cat-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterTemplates(btn.dataset.cat);
+        });
+      });
+
       // --- Navigation ---
       function currentIndex() {
-        return TEMPLATES.indexOf(t);
+        return filteredTemplates.indexOf(t);
       }
 
       function updateNavButtons() {
         var idx = currentIndex();
-        prevBtn.disabled = idx <= 0;
-        nextBtn.disabled = idx < 0 || idx >= TEMPLATES.length - 1;
+        var len = filteredTemplates.length;
+        var hasPrev = idx > 0;
+        var hasNext = idx >= 0 && idx < len - 1;
+        prevBtn.disabled = !hasPrev;
+        nextBtn.disabled = !hasNext;
+        prevBtnBottom.disabled = !hasPrev;
+        nextBtnBottom.disabled = !hasNext;
         if (idx >= 0) {
-          counterEl.textContent = (idx + 1) + ' / ' + TEMPLATES.length;
+          navInput.value = idx + 1;
+          navInput.max = len;
+          navTotal.textContent = '/ ' + len;
+          navInputBottom.value = idx + 1;
+          navInputBottom.max = len;
+          navTotalBottom.textContent = '/ ' + len;
         }
       }
 
-      function navigate(direction) {
+      function navigateTo(newIdx, direction) {
         if (navigating) return;
+        if (newIdx < 0 || newIdx >= filteredTemplates.length) return;
         var idx = currentIndex();
-        var newIdx = idx + direction;
-        if (newIdx < 0 || newIdx >= TEMPLATES.length) return;
+        if (newIdx === idx) return;
+
+        if (typeof direction === 'undefined') {
+          direction = newIdx > idx ? 1 : -1;
+        }
 
         navigating = true;
         var outClass = direction > 0 ? 'slide-out-left' : 'slide-out-right';
         var inClass  = direction > 0 ? 'slide-in-left' : 'slide-in-right';
 
-        // If reduced motion, skip animation
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          t = TEMPLATES[newIdx];
+          t = filteredTemplates[newIdx];
           history.pushState({ t: t }, '', 'view.html?t=' + encodeURIComponent(t));
           loadTemplate(t, true);
           navigating = false;
@@ -233,7 +293,7 @@
           contentEl.removeEventListener('animationend', onOut);
           contentEl.classList.remove(outClass);
 
-          t = TEMPLATES[newIdx];
+          t = filteredTemplates[newIdx];
           history.pushState({ t: t }, '', 'view.html?t=' + encodeURIComponent(t));
           loadTemplate(t, true);
 
@@ -246,8 +306,35 @@
         });
       }
 
+      function navigate(direction) {
+        var idx = currentIndex();
+        navigateTo(idx + direction, direction);
+      }
+
+      // Direct page input
+      function handlePageInput(inputEl) {
+        var val = parseInt(inputEl.value, 10);
+        if (isNaN(val) || val < 1 || val > filteredTemplates.length) {
+          var idx = currentIndex();
+          inputEl.value = idx >= 0 ? idx + 1 : 1;
+          return;
+        }
+        navigateTo(val - 1);
+      }
+
+      navInput.addEventListener('change', function () { handlePageInput(navInput); });
+      navInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); handlePageInput(navInput); navInput.blur(); }
+      });
+      navInputBottom.addEventListener('change', function () { handlePageInput(navInputBottom); });
+      navInputBottom.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); handlePageInput(navInputBottom); navInputBottom.blur(); }
+      });
+
       prevBtn.addEventListener('click', function () { navigate(-1); });
       nextBtn.addEventListener('click', function () { navigate(1); });
+      prevBtnBottom.addEventListener('click', function () { navigate(-1); });
+      nextBtnBottom.addEventListener('click', function () { navigate(1); });
 
       // Keyboard arrows
       document.addEventListener('keydown', function (e) {
@@ -276,7 +363,6 @@
       // Browser back/forward
       window.addEventListener('popstate', function (e) {
         if (e.state && e.state.t) {
-          // Cancel any in-flight navigation animation
           navigating = false;
           contentEl.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-left', 'slide-in-right');
           contentEl.style.opacity = '';
@@ -419,6 +505,7 @@
             }
 
             actionsEl.hidden = false;
+            bottomNav.hidden = false;
             saveRendered();
             restoreRendered();
             if (isNav) window.scrollTo({ top: 0, behavior: 'smooth' });
