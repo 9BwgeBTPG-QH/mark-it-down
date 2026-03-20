@@ -2638,7 +2638,6 @@ a:hover {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 120px;
   display: flex;
   align-items: center;
   z-index: 15;
@@ -2667,14 +2666,18 @@ a:hover {
 
 .template-edge-arrow.edge-prev {
   left: 0;
-  justify-content: flex-start;
-  padding-left: 12px;
+  width: calc((100vw - 800px) / 2);
+  min-width: 120px;
+  justify-content: flex-end;
+  padding-right: 12px;
 }
 
 .template-edge-arrow.edge-next {
   right: 0;
-  justify-content: flex-end;
-  padding-right: 12px;
+  width: calc((100vw - 800px) / 2);
+  min-width: 120px;
+  justify-content: flex-start;
+  padding-left: 12px;
 }
 
 .template-edge-arrow .edge-arrow-icon {
@@ -3168,6 +3171,11 @@ footer a:hover {
 
   .screenshot-section img {
     max-width: 900px;
+  }
+
+  .template-edge-arrow.edge-prev,
+  .template-edge-arrow.edge-next {
+    width: calc((100vw - 1000px) / 2);
   }
 }
 
