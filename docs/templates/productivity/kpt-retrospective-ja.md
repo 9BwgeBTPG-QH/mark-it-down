@@ -21,16 +21,16 @@
 
 ```mermaid
 quadrantChart
-    title KPT Mapping
-    x-axis Difficult --> Easy
-    y-axis Low Impact --> High Impact
-    quadrant-1 Priority Try
-    quadrant-2 Needs Discussion
-    quadrant-3 On Hold
-    quadrant-4 Quick Win
-    Keep A: [0.8, 0.7]
-    Try B: [0.6, 0.8]
-    Problem C: [0.3, 0.6]
+    title "KPT (Impact vs Feasibility)"
+    x-axis "実行困難" --> "実行容易"
+    y-axis "影響小" --> "影響大"
+    quadrant-1 "優先Try"
+    quadrant-2 "検討Try"
+    quadrant-3 "保留"
+    quadrant-4 "Quick Win"
+    "Keep A": [0.8, 0.7]
+    "Try B": [0.6, 0.8]
+    "Problem C": [0.3, 0.6]
 ```
 
 ## Keep（継続すること）
