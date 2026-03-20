@@ -21,9 +21,9 @@
 
 ```mermaid
 quadrantChart
-    title KPTマッピング（影響度 vs 実行可能性）
-    x-axis 実行困難 --> 実行容易
-    y-axis 影響小 --> 影響大
+    title KPTマッピング(影響度 vs 実行可能性)
+    x-axis "実行困難" --> "実行容易"
+    y-axis "影響小" --> "影響大"
     quadrant-1 優先Try
     quadrant-2 検討Try
     quadrant-3 保留
