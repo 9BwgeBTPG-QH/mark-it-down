@@ -80,16 +80,16 @@
 
 ```mermaid
 quadrantChart
-    title RPNリスクマトリクス（重篤度 vs 発生率）
-    x-axis 低発生率 --> 高発生率
-    y-axis 低重篤度 --> 高重篤度
-    quadrant-1 即時対応必須
-    quadrant-2 重点監視
-    quadrant-3 許容範囲
-    quadrant-4 発生抑制優先
-    Item A: [0.7, 0.8]
-    Item B: [0.3, 0.6]
-    Item C: [0.5, 0.4]
+    title "RPNリスクマトリクス（重篤度 vs 発生率）"
+    x-axis "低発生率" --> "高発生率"
+    y-axis "低重篤度" --> "高重篤度"
+    quadrant-1 "即時対応必須"
+    quadrant-2 "重点監視"
+    quadrant-3 "許容範囲"
+    quadrant-4 "発生抑制優先"
+    "Item A": [0.7, 0.8]
+    "Item B": [0.3, 0.6]
+    "Item C": [0.5, 0.4]
 ```
 
 ---
