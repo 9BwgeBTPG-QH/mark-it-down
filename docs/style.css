@@ -2604,6 +2604,18 @@ a:hover {
 /* Slide transition */
 .template-viewer-content {
   position: relative;
+  touch-action: pan-y pinch-zoom;
+  will-change: transform, opacity;
+}
+
+.template-viewer-content.swiping {
+  transition: none;
+  cursor: grabbing;
+}
+
+.template-viewer-content.snap-back {
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .template-viewer-content.slide-out-left {
@@ -2624,22 +2636,63 @@ a:hover {
 
 @keyframes slideOutLeft {
   from { opacity: 1; transform: translateX(0); }
-  to   { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 0; transform: translateX(-60px); }
 }
 
 @keyframes slideOutRight {
   from { opacity: 1; transform: translateX(0); }
-  to   { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 0; transform: translateX(60px); }
 }
 
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(40px); }
+  from { opacity: 0; transform: translateX(60px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(-40px); }
+  from { opacity: 0; transform: translateX(-60px); }
   to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Swipe edge hints */
+.template-swipe-hint {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
+}
+
+.template-swipe-hint.hint-prev {
+  left: 6px;
+}
+
+.template-swipe-hint.hint-next {
+  right: 6px;
+}
+
+.template-swipe-hint.visible {
+  opacity: 0.7;
+}
+
+.template-swipe-hint.active {
+  opacity: 1;
+  background: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2650,6 +2703,14 @@ a:hover {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+
+  .template-viewer-content.snap-back {
+    transition: none;
+  }
+
+  .template-swipe-hint {
+    display: none;
   }
 }
 
@@ -2689,11 +2750,21 @@ a:hover {
 
   .template-viewer-categories {
     gap: 4px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .template-viewer-categories::-webkit-scrollbar {
+    display: none;
   }
 
   .viewer-cat-btn {
     padding: 4px 10px;
     min-height: 32px;
+    flex-shrink: 0;
   }
 
   .template-nav-input {
@@ -2703,6 +2774,19 @@ a:hover {
 
   .template-viewer-bar-bottom {
     padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .template-breadcrumb {
+    width: 100%;
+    order: -1;
+  }
+
+  .template-view-toggle {
+    margin-left: 0;
+  }
+
+  .template-viewer-nav {
+    margin-left: auto;
   }
 }
 

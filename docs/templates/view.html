@@ -343,21 +343,116 @@
         if (e.key === 'ArrowRight') { e.preventDefault(); navigate(1); }
       });
 
-      // Touch swipe
-      var touchStartX = 0;
-      var touchStartY = 0;
+      // Touch swipe with finger tracking
+      var touchStartX = 0, touchStartY = 0, touchStartTime = 0;
+      var isSwiping = false, swipeLocked = false;
+      var SWIPE_THRESHOLD = 50, SWIPE_VELOCITY = 0.3, SWIPE_MAX = 120;
+
+      // Edge hint elements
+      var hintPrev = document.createElement('div');
+      hintPrev.className = 'template-swipe-hint hint-prev';
+      hintPrev.textContent = '\u2039';
+      var hintNext = document.createElement('div');
+      hintNext.className = 'template-swipe-hint hint-next';
+      hintNext.textContent = '\u203A';
+      document.body.appendChild(hintPrev);
+      document.body.appendChild(hintNext);
+
+      function updateSwipeHints(dx) {
+        var idx = currentIndex();
+        var hasPrev = idx > 0;
+        var hasNext = idx >= 0 && idx < filteredTemplates.length - 1;
+        if (dx > 20 && hasPrev) {
+          hintPrev.classList.add('visible');
+          hintPrev.classList.toggle('active', dx > SWIPE_THRESHOLD);
+        } else {
+          hintPrev.classList.remove('visible', 'active');
+        }
+        if (dx < -20 && hasNext) {
+          hintNext.classList.add('visible');
+          hintNext.classList.toggle('active', dx < -SWIPE_THRESHOLD);
+        } else {
+          hintNext.classList.remove('visible', 'active');
+        }
+      }
+
+      function clearSwipeHints() {
+        hintPrev.classList.remove('visible', 'active');
+        hintNext.classList.remove('visible', 'active');
+      }
+
       contentEl.addEventListener('touchstart', function (e) {
+        if (navigating) return;
         touchStartX = e.changedTouches[0].clientX;
         touchStartY = e.changedTouches[0].clientY;
+        touchStartTime = Date.now();
+        isSwiping = false;
+        swipeLocked = false;
+        contentEl.classList.remove('snap-back');
+      }, { passive: true });
+
+      contentEl.addEventListener('touchmove', function (e) {
+        if (navigating || swipeLocked) return;
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+
+        if (!isSwiping) {
+          if (Math.abs(dy) > Math.abs(dx) * 0.8) { swipeLocked = true; return; }
+          if (Math.abs(dx) > 10) isSwiping = true;
+          else return;
+        }
+
+        var idx = currentIndex();
+        var hasPrev = idx > 0;
+        var hasNext = idx >= 0 && idx < filteredTemplates.length - 1;
+        if ((dx > 0 && !hasPrev) || (dx < 0 && !hasNext)) {
+          dx = dx * 0.2;
+        }
+
+        var clamped = Math.max(-SWIPE_MAX, Math.min(SWIPE_MAX, dx));
+        var progress = Math.abs(clamped) / SWIPE_MAX;
+        var opacity = 1 - progress * 0.3;
+
+        contentEl.classList.add('swiping');
+        contentEl.style.transform = 'translateX(' + clamped + 'px)';
+        contentEl.style.opacity = opacity;
+        updateSwipeHints(dx);
       }, { passive: true });
 
       contentEl.addEventListener('touchend', function (e) {
-        var dx = e.changedTouches[0].clientX - touchStartX;
-        var dy = e.changedTouches[0].clientY - touchStartY;
-        if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
-          if (dx < 0) navigate(1);
-          else navigate(-1);
+        if (!isSwiping || navigating) {
+          clearSwipeHints();
+          return;
         }
+
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dt = Date.now() - touchStartTime;
+        var velocity = Math.abs(dx) / dt;
+
+        contentEl.classList.remove('swiping');
+        clearSwipeHints();
+
+        var shouldNavigate = Math.abs(dx) > SWIPE_THRESHOLD || velocity > SWIPE_VELOCITY;
+        var direction = dx < 0 ? 1 : -1;
+        var idx = currentIndex();
+        var canNavigate = direction > 0
+          ? (idx >= 0 && idx < filteredTemplates.length - 1)
+          : (idx > 0);
+
+        if (shouldNavigate && canNavigate) {
+          contentEl.style.transform = '';
+          contentEl.style.opacity = '';
+          navigate(direction);
+        } else {
+          contentEl.classList.add('snap-back');
+          contentEl.style.transform = '';
+          contentEl.style.opacity = '';
+          contentEl.addEventListener('transitionend', function onSnap() {
+            contentEl.removeEventListener('transitionend', onSnap);
+            contentEl.classList.remove('snap-back');
+          });
+        }
+        isSwiping = false;
       }, { passive: true });
 
       // Browser back/forward
