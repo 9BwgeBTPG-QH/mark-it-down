@@ -74,14 +74,6 @@
           <span id="nav-total" class="template-nav-total"></span>
           <button id="nav-next" class="template-nav-btn" aria-label="次のテンプレート" disabled>&rsaquo;</button>
         </nav>
-        <div class="template-viewer-categories" role="group" aria-label="カテゴリでフィルター">
-          <button class="viewer-cat-btn active" data-cat="all">すべて</button>
-          <button class="viewer-cat-btn" data-cat="ai">AI</button>
-          <button class="viewer-cat-btn" data-cat="productivity">生産性</button>
-          <button class="viewer-cat-btn" data-cat="dev">開発</button>
-          <button class="viewer-cat-btn" data-cat="content">コンテンツ</button>
-          <button class="viewer-cat-btn" data-cat="thinking">思考</button>
-        </div>
       </div>
 
       <!-- Rendered content -->
@@ -181,8 +173,6 @@
       };
 
       // --- State ---
-      var activeCategory = 'all';
-      var filteredTemplates = ALL_TEMPLATES.slice();
       var rawMarkdown = '';
       var navigating = false;
 
@@ -214,34 +204,12 @@
 
       loadTemplate(t, false);
 
-      // --- Category filtering ---
-      function filterTemplates(cat) {
-        activeCategory = cat;
-        if (cat === 'all') {
-          filteredTemplates = ALL_TEMPLATES.slice();
-        } else {
-          filteredTemplates = ALL_TEMPLATES.filter(function (id) {
-            return id.split('/')[0] === cat;
-          });
-        }
-        document.querySelectorAll('.viewer-cat-btn').forEach(function (btn) {
-          btn.classList.toggle('active', btn.dataset.cat === cat);
-        });
-        updateNavButtons();
-      }
-
-      document.querySelectorAll('.viewer-cat-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          filterTemplates(btn.dataset.cat);
-        });
-      });
-
       // --- Navigation ---
-      function currentIndex() { return filteredTemplates.indexOf(t); }
+      function currentIndex() { return ALL_TEMPLATES.indexOf(t); }
 
       function updateNavButtons() {
         var idx = currentIndex();
-        var len = filteredTemplates.length;
+        var len = ALL_TEMPLATES.length;
         var hasPrev = idx > 0;
         var hasNext = idx >= 0 && idx < len - 1;
         prevBtn.disabled = !hasPrev;
@@ -260,7 +228,7 @@
 
       function navigateTo(newIdx, direction) {
         if (navigating) return;
-        if (newIdx < 0 || newIdx >= filteredTemplates.length) return;
+        if (newIdx < 0 || newIdx >= ALL_TEMPLATES.length) return;
         var idx = currentIndex();
         if (newIdx === idx) return;
 
@@ -273,7 +241,7 @@
         var inClass  = direction > 0 ? 'slide-in-left' : 'slide-in-right';
 
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          t = filteredTemplates[newIdx];
+          t = ALL_TEMPLATES[newIdx];
           history.pushState({ t: t }, '', 'view-ja.html?t=' + encodeURIComponent(t));
           loadTemplate(t, true);
           navigating = false;
@@ -284,7 +252,7 @@
         contentEl.addEventListener('animationend', function onOut() {
           contentEl.removeEventListener('animationend', onOut);
           contentEl.classList.remove(outClass);
-          t = filteredTemplates[newIdx];
+          t = ALL_TEMPLATES[newIdx];
           history.pushState({ t: t }, '', 'view-ja.html?t=' + encodeURIComponent(t));
           loadTemplate(t, true);
           contentEl.classList.add(inClass);
@@ -304,7 +272,7 @@
       // Direct page input
       function handlePageInput(inputEl) {
         var val = parseInt(inputEl.value, 10);
-        if (isNaN(val) || val < 1 || val > filteredTemplates.length) {
+        if (isNaN(val) || val < 1 || val > ALL_TEMPLATES.length) {
           var idx = currentIndex();
           inputEl.value = idx >= 0 ? idx + 1 : 1;
           return;
@@ -350,7 +318,7 @@
       function updateSwipeHints(dx) {
         var idx = currentIndex();
         var hasPrev = idx > 0;
-        var hasNext = idx >= 0 && idx < filteredTemplates.length - 1;
+        var hasNext = idx >= 0 && idx < ALL_TEMPLATES.length - 1;
         if (dx > 20 && hasPrev) {
           hintPrev.classList.add('visible');
           hintPrev.classList.toggle('active', dx > SWIPE_THRESHOLD);
@@ -393,7 +361,7 @@
 
         var idx = currentIndex();
         var hasPrev = idx > 0;
-        var hasNext = idx >= 0 && idx < filteredTemplates.length - 1;
+        var hasNext = idx >= 0 && idx < ALL_TEMPLATES.length - 1;
         if ((dx > 0 && !hasPrev) || (dx < 0 && !hasNext)) {
           dx = dx * 0.2;
         }
@@ -425,7 +393,7 @@
         var direction = dx < 0 ? 1 : -1;
         var idx = currentIndex();
         var canNavigate = direction > 0
-          ? (idx >= 0 && idx < filteredTemplates.length - 1)
+          ? (idx >= 0 && idx < ALL_TEMPLATES.length - 1)
           : (idx > 0);
 
         if (shouldNavigate && canNavigate) {
@@ -612,7 +580,7 @@
             bottomNav.hidden = false;
             saveRendered();
             restoreRendered();
-            if (isNav) contentEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (isNav) document.querySelector('.template-viewer-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
           })
           .catch(function () { showError(); });
       }
