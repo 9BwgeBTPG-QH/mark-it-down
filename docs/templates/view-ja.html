@@ -101,6 +101,14 @@
       </div>
     </main>
 
+    <!-- Edge hover arrows -->
+    <div id="edge-prev" class="template-edge-arrow edge-prev" aria-label="前のテンプレート" aria-disabled="true">
+      <span class="edge-arrow-icon">&lsaquo;</span>
+    </div>
+    <div id="edge-next" class="template-edge-arrow edge-next" aria-label="次のテンプレート" aria-disabled="true">
+      <span class="edge-arrow-icon">&rsaquo;</span>
+    </div>
+
     <footer role="contentinfo">
       <nav class="footer-nav" aria-label="フッターナビゲーション">
         <ul>
@@ -196,6 +204,8 @@
       var nextBtnBottom  = document.getElementById('nav-next-bottom');
       var navInputBottom = document.getElementById('nav-input-bottom');
       var navTotalBottom = document.getElementById('nav-total-bottom');
+      var edgePrev = document.getElementById('edge-prev');
+      var edgeNext = document.getElementById('edge-next');
 
       var params = new URLSearchParams(location.search);
       var t = params.get('t');
@@ -216,6 +226,8 @@
         nextBtn.disabled = !hasNext;
         prevBtnBottom.disabled = !hasPrev;
         nextBtnBottom.disabled = !hasNext;
+        edgePrev.setAttribute('aria-disabled', !hasPrev);
+        edgeNext.setAttribute('aria-disabled', !hasNext);
         if (idx >= 0) {
           navInput.value = idx + 1;
           navInput.max = len;
@@ -293,6 +305,8 @@
       nextBtn.addEventListener('click', function () { navigate(1); });
       prevBtnBottom.addEventListener('click', function () { navigate(-1); });
       nextBtnBottom.addEventListener('click', function () { navigate(1); });
+      edgePrev.addEventListener('click', function () { navigate(-1); });
+      edgeNext.addEventListener('click', function () { navigate(1); });
 
       document.addEventListener('keydown', function (e) {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;

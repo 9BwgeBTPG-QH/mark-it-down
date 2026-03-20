@@ -2192,6 +2192,9 @@ a:hover {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   margin-bottom: var(--spacing-lg);
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .template-viewer-back {
@@ -2609,6 +2612,66 @@ a:hover {
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(-60px); }
   to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Desktop edge hover arrows */
+.template-edge-arrow {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.template-edge-arrow:hover {
+  opacity: 1;
+}
+
+.template-edge-arrow.edge-prev {
+  left: 0;
+}
+
+.template-edge-arrow.edge-next {
+  right: 0;
+}
+
+.template-edge-arrow .edge-arrow-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 18px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.15s ease;
+}
+
+.template-edge-arrow:hover .edge-arrow-icon {
+  background: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+  transform: scale(1.1);
+}
+
+.template-edge-arrow[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .template-edge-arrow {
+    display: none;
+  }
 }
 
 /* Swipe edge hints */
