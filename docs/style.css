@@ -2631,14 +2631,13 @@ a:hover {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 48px;
+  width: 120px;
   display: flex;
   align-items: center;
-  justify-content: center;
   z-index: 15;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.15s ease;
 }
 
 .template-edge-arrow:hover {
@@ -2647,10 +2646,14 @@ a:hover {
 
 .template-edge-arrow.edge-prev {
   left: 0;
+  justify-content: flex-start;
+  padding-left: 12px;
 }
 
 .template-edge-arrow.edge-next {
   right: 0;
+  justify-content: flex-end;
+  padding-right: 12px;
 }
 
 .template-edge-arrow .edge-arrow-icon {

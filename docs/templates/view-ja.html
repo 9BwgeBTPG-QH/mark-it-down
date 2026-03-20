@@ -485,15 +485,17 @@
 
       function saveRendered() {
         savedRenderedNodes = [];
-        while (contentEl.firstChild) {
-          savedRenderedNodes.push(contentEl.removeChild(contentEl.firstChild));
-        }
+        contentEl.childNodes.forEach(function (node) {
+          savedRenderedNodes.push(node.cloneNode(true));
+        });
       }
 
       function restoreRendered() {
         contentEl.textContent = '';
         if (savedRenderedNodes) {
-          savedRenderedNodes.forEach(function (node) { contentEl.appendChild(node); });
+          savedRenderedNodes.forEach(function (node) {
+            contentEl.appendChild(node.cloneNode(true));
+          });
         }
       }
 
@@ -615,7 +617,6 @@
             actionsEl.hidden = false;
             bottomNav.hidden = false;
             saveRendered();
-            restoreRendered();
             if (isNav) document.querySelector('.template-viewer-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
           })
           .catch(function () { showError(); });
