@@ -568,7 +568,7 @@
             bottomNav.hidden = false;
             saveRendered();
             restoreRendered();
-            if (isNav) window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (isNav) contentEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
           })
           .catch(function () { showError(); });
       }
