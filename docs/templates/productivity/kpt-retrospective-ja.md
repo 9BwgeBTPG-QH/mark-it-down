@@ -18,6 +18,7 @@
 ## KPTボード
 
 > *全体像 ― 不要なら削除してください。*
+> *Mermaid の quadrantChart で日本語を使う場合はダブルクォートで囲んでください（例: `"ラベル名"`）。*
 
 ```mermaid
 quadrantChart
