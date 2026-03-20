@@ -2140,15 +2140,35 @@ a:hover {
 
 /* View toggle: Preview / Raw */
 .template-view-toggle {
+  position: relative;
   display: flex;
-  gap: 4px;
   background: var(--bg-secondary);
   border-radius: 999px;
   padding: 3px;
   margin-left: auto;
 }
 
+.template-view-toggle::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  height: calc(100% - 6px);
+  background: var(--bg-card);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.template-view-toggle.raw-active::before {
+  transform: translateX(100%);
+}
+
 .view-toggle-btn {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: 500;
@@ -2159,7 +2179,7 @@ a:hover {
   background: transparent;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: color 0.2s ease;
 }
 
 .view-toggle-btn:hover {
@@ -2167,23 +2187,12 @@ a:hover {
 }
 
 .view-toggle-btn.active {
-  background: var(--bg-card);
   color: var(--text-primary);
-  box-shadow: var(--shadow-sm);
 }
 
 .view-toggle-btn:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
-}
-
-/* Raw markdown view */
-.template-viewer-content.raw-view {
-  white-space: pre-wrap;
-  font-family: ui-monospace, SFMono-Regular, monospace;
-  font-size: var(--font-size-sm);
-  line-height: 1.6;
-  color: var(--text-secondary);
 }
 
 /* Sticky toolbar — top is set dynamically via JS to clear header-nav */
@@ -2239,6 +2248,7 @@ a:hover {
   line-height: var(--line-height-relaxed);
   color: var(--text-primary);
   overflow-x: auto;
+  scroll-margin-top: 130px;
 }
 
 .template-viewer-content h1 {

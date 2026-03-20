@@ -200,6 +200,7 @@
       var bcTitle    = document.getElementById('breadcrumb-title');
       var togglePreview = document.getElementById('toggle-preview');
       var toggleRaw     = document.getElementById('toggle-raw');
+      var toggleWrap    = document.querySelector('.template-view-toggle');
       var bottomNav     = document.getElementById('bottom-nav');
       var prevBtnBottom  = document.getElementById('nav-prev-bottom');
       var nextBtnBottom  = document.getElementById('nav-next-bottom');
@@ -244,14 +245,12 @@
       function updateNavButtons() {
         var idx = currentIndex();
         var len = ALL_TEMPLATES.length;
-        var hasPrev = idx > 0;
-        var hasNext = idx >= 0 && idx < len - 1;
-        prevBtn.disabled = !hasPrev;
-        nextBtn.disabled = !hasNext;
-        prevBtnBottom.disabled = !hasPrev;
-        nextBtnBottom.disabled = !hasNext;
-        edgePrev.setAttribute('aria-disabled', !hasPrev);
-        edgeNext.setAttribute('aria-disabled', !hasNext);
+        prevBtn.disabled = false;
+        nextBtn.disabled = false;
+        prevBtnBottom.disabled = false;
+        nextBtnBottom.disabled = false;
+        edgePrev.setAttribute('aria-disabled', false);
+        edgeNext.setAttribute('aria-disabled', false);
         if (idx >= 0) {
           navInput.value = idx + 1;
           navInput.max = len;
@@ -284,10 +283,14 @@
           return;
         }
 
+        contentEl.scrollIntoView({ block: 'start' });
+        contentEl.style.minHeight = contentEl.offsetHeight + 'px';
+
         contentEl.classList.add(outClass);
         contentEl.addEventListener('animationend', function onOut() {
           contentEl.removeEventListener('animationend', onOut);
           contentEl.classList.remove(outClass);
+
           t = ALL_TEMPLATES[newIdx];
           history.pushState({ t: t }, '', 'view-ja.html?t=' + encodeURIComponent(t));
           loadTemplate(t, true);
@@ -295,6 +298,7 @@
           contentEl.addEventListener('animationend', function onIn() {
             contentEl.removeEventListener('animationend', onIn);
             contentEl.classList.remove(inClass);
+            contentEl.style.minHeight = '';
             navigating = false;
           });
         });
@@ -302,7 +306,9 @@
 
       function navigate(direction) {
         var idx = currentIndex();
-        navigateTo(idx + direction, direction);
+        var len = ALL_TEMPLATES.length;
+        var newIdx = (idx + direction + len) % len;
+        navigateTo(newIdx, direction);
       }
 
       // Direct page input
@@ -354,16 +360,13 @@
       document.body.appendChild(hintNext);
 
       function updateSwipeHints(dx) {
-        var idx = currentIndex();
-        var hasPrev = idx > 0;
-        var hasNext = idx >= 0 && idx < ALL_TEMPLATES.length - 1;
-        if (dx > 20 && hasPrev) {
+        if (dx > 20) {
           hintPrev.classList.add('visible');
           hintPrev.classList.toggle('active', dx > SWIPE_THRESHOLD);
         } else {
           hintPrev.classList.remove('visible', 'active');
         }
-        if (dx < -20 && hasNext) {
+        if (dx < -20) {
           hintNext.classList.add('visible');
           hintNext.classList.toggle('active', dx < -SWIPE_THRESHOLD);
         } else {
@@ -397,13 +400,6 @@
           else return;
         }
 
-        var idx = currentIndex();
-        var hasPrev = idx > 0;
-        var hasNext = idx >= 0 && idx < ALL_TEMPLATES.length - 1;
-        if ((dx > 0 && !hasPrev) || (dx < 0 && !hasNext)) {
-          dx = dx * 0.2;
-        }
-
         var clamped = Math.max(-SWIPE_MAX, Math.min(SWIPE_MAX, dx));
         var progress = Math.abs(clamped) / SWIPE_MAX;
         var opacity = 1 - progress * 0.3;
@@ -430,9 +426,7 @@
         var shouldNavigate = Math.abs(dx) > SWIPE_THRESHOLD || velocity > SWIPE_VELOCITY;
         var direction = dx < 0 ? 1 : -1;
         var idx = currentIndex();
-        var canNavigate = direction > 0
-          ? (idx >= 0 && idx < ALL_TEMPLATES.length - 1)
-          : (idx > 0);
+        var canNavigate = idx >= 0;
 
         if (shouldNavigate && canNavigate) {
           contentEl.style.transform = '';
@@ -469,6 +463,7 @@
         isRawView = false;
         togglePreview.classList.add('active');
         toggleRaw.classList.remove('active');
+        toggleWrap.classList.remove('raw-active');
         rawContentEl.hidden = true;
         Array.prototype.forEach.call(contentEl.children, function (child) {
           if (child !== rawContentEl) child.hidden = false;
@@ -480,10 +475,13 @@
         isRawView = true;
         toggleRaw.classList.add('active');
         togglePreview.classList.remove('active');
+        toggleWrap.classList.add('raw-active');
         Array.prototype.forEach.call(contentEl.children, function (child) {
           if (child !== rawContentEl) child.hidden = true;
         });
         rawContentEl.textContent = rawMarkdown;
+        rawContentEl.className = 'template-raw-content language-markdown';
+        hljs.highlightElement(rawContentEl);
         rawContentEl.hidden = false;
       });
 
@@ -500,6 +498,7 @@
         isRawView = false;
         togglePreview.classList.add('active');
         toggleRaw.classList.remove('active');
+        toggleWrap.classList.remove('raw-active');
         rawContentEl.hidden = true;
 
         updateNavButtons();
@@ -609,7 +608,7 @@
             actionsEl.hidden = false;
             bottomNav.hidden = false;
             rawContentEl.hidden = true;
-            if (isNav) document.querySelector('.template-viewer-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (isNav && !navigating) contentEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
           })
           .catch(function () { showError(); });
       }
