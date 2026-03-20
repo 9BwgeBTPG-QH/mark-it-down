@@ -552,7 +552,51 @@
 
             var mermaidBlocks = contentEl.querySelectorAll('pre code.language-mermaid');
             if (mermaidBlocks.length > 0) {
-              mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
+              mermaid.initialize({
+                startOnLoad: false,
+                theme: 'base',
+                themeVariables: {
+                  primaryColor: '#f3f4f6',
+                  primaryTextColor: '#1f2937',
+                  primaryBorderColor: '#d1d5db',
+                  lineColor: '#6b7280',
+                  secondaryColor: '#f9fafb',
+                  tertiaryColor: '#ffffff',
+                  background: 'transparent',
+                  textColor: '#1f2937',
+                  mainBkg: '#f3f4f6',
+                  nodeBorder: '#d1d5db',
+                  clusterBkg: '#f9fafb',
+                  clusterBorder: '#e5e7eb',
+                  titleColor: '#1f2937',
+                  edgeLabelBackground: '#f9fafb',
+                  actorBkg: '#f3f4f6',
+                  actorBorder: '#d1d5db',
+                  actorTextColor: '#1f2937',
+                  actorLineColor: '#e5e7eb',
+                  signalColor: '#1f2937',
+                  signalTextColor: '#1f2937',
+                  labelBoxBkgColor: '#f9fafb',
+                  labelBoxBorderColor: '#e5e7eb',
+                  labelTextColor: '#4b5563',
+                  loopTextColor: '#4b5563',
+                  noteBkgColor: '#f3f4f6',
+                  noteTextColor: '#1f2937',
+                  noteBorderColor: '#d1d5db',
+                  pie1: '#94a3b8',
+                  pie2: '#a1a1aa',
+                  pie3: '#9ca3af',
+                  pie4: '#a3a3a3',
+                  pie5: '#a8a29e',
+                  pie6: '#86efac',
+                  pie7: '#93c5fd',
+                  pie8: '#fcd34d',
+                  pie9: '#f9a8d4',
+                  pie10: '#c4b5fd',
+                  pie11: '#6ee7b7',
+                  pie12: '#fdba74',
+                }
+              });
               mermaidBlocks.forEach(function (codeEl) {
                 var pre = codeEl.parentElement;
                 var div = document.createElement('div');
