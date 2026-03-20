@@ -481,6 +481,7 @@
         });
         rawContentEl.textContent = rawMarkdown;
         rawContentEl.className = 'template-raw-content language-markdown';
+        rawContentEl.removeAttribute('data-highlighted');
         hljs.highlightElement(rawContentEl);
         rawContentEl.hidden = false;
       });
