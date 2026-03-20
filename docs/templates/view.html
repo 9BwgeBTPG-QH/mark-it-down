@@ -481,7 +481,6 @@
         isRawView = false;
         togglePreview.classList.add('active');
         toggleRaw.classList.remove('active');
-        contentEl.classList.remove('raw-view');
         // Show rendered children, hide raw
         rawContentEl.hidden = true;
         Array.prototype.forEach.call(contentEl.children, function (child) {
@@ -494,7 +493,6 @@
         isRawView = true;
         toggleRaw.classList.add('active');
         togglePreview.classList.remove('active');
-        contentEl.classList.add('raw-view');
         // Hide rendered children, show raw
         Array.prototype.forEach.call(contentEl.children, function (child) {
           if (child !== rawContentEl) child.hidden = true;
@@ -517,7 +515,6 @@
         isRawView = false;
         togglePreview.classList.add('active');
         toggleRaw.classList.remove('active');
-        contentEl.classList.remove('raw-view');
         rawContentEl.hidden = true;
 
         updateNavButtons();
