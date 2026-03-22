@@ -65,15 +65,50 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.0 - Latest -->
+        <!-- v2.1.1 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.1</span>
+              <span class="accordion-highlight">軽く、速く、まとめて。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.1.0でエディタの使える範囲を広げた。v2.1.1では、アプリ全体をもう一段軽くした。起動が速くなるのは不要なものを削ったから。操作が一貫しているのは細部を統一したから。ノートを分けてまとめられるのは、長いノートをどう扱うかをずっと考えていたから。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>アプリが20%軽くなった</strong> <span>コードハイライトを192言語フルセットから34言語のカスタム構成に絞り込み、読み込みサイズを約193KB削減。Markdown、JavaScript、Python、HTML、SQLなどよく使う言語はすべてカバー</span></li>
+                <li><strong>長いノートを見出しで分割</strong> <span>見出し単位でノートを2つに分割。キーワード絞り込み、見出しレベルフィルタ、分割後サイズプレビュー付き。元ノートはゴミ箱に移動し、自動で名前が付く</span></li>
+                <li><strong>複数ノートを1つに結合</strong> <span>Ctrl+クリックで選択した複数ノートを結合。ドラッグで並び替え、タイトル編集、結合後サイズを確認してから確定</span></li>
+                <li><strong>リッチツールチップ</strong> <span>すべてのボタンに独自ツールチップを表示。キーボードショートカット付き。サイドバー、ツールバー、モーダル内の約40箇所を統一</span></li>
+                <li><strong>ノート情報のホバー表示</strong> <span>サイドバーでノート名にホバーするとファイルサイズと更新日時を表示。大きなノートはカラードットで警告</span></li>
+                <li><strong>Mermaidダイアグラムの配色統一</strong> <span>フロー図やシーケンス図の色をアプリのニュートラルなカラーシステムに統一。4テーマすべてで一貫した見た目に</span></li>
+                <li><strong>Git競合「両方を結合」にドラッグ並び替え</strong> <span>リモートとローカルがぶつかったとき、結合モーダルでドラッグ並び替えしてから確定。結合後はInboxに、元の2ノートはゴミ箱に</span></li>
+                <li><strong>タイトル重複をRenameで解消</strong> <span>GitプルやSplit・Mergeで重複タイトルが発生した場合、「Rename」で新しい名前を入力。リアルタイム重複チェック付き</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>数式の貼り付けが正しくなかった</strong> <span>$...$形式のインライン数式を含むMarkdownの貼り付けで数式として認識されない問題を修正。Smart Pasteの変換ロジックに数式パターン検出を追加</span></li>
+                <li><strong>Gitプルでシステムノートが上書きされた</strong> <span>Getting StartedやMarkdown Referenceがリモートからのプルで上書きされる可能性があった。プッシュ側と対称的な除外処理を追加して修正</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.0 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.1.0</span>
               <span class="accordion-highlight">エディタは広く、クリッパーは正確に。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.0.8で「速く開く」、v2.0.9で「フリーズしない」を実現。v2.1.0では、エディタで使える機能の範囲を広げ、Web Clipperが取りこぼしていたものを修正。</p>

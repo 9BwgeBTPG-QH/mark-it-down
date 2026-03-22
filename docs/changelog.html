@@ -65,15 +65,50 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.0 - Latest -->
+        <!-- v2.1.1 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.1</span>
+              <span class="accordion-highlight">Lighter, faster, and ready to reorganize.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.1.0 expanded what the editor can do. v2.1.1 makes the whole app a step lighter — faster startup from trimming what's unused, consistent UX from unifying the details, and note splitting and merging from rethinking how long notes should work.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>20% Lighter App</strong> <span>Code highlighting bundle reduced from 192 languages to a custom set of 34, cutting app size by ~193KB. Markdown, JavaScript, Python, HTML, SQL and all commonly used languages are still covered</span></li>
+                <li><strong>Split Note by Heading</strong> <span>Break a long note into two parts at any heading. Filter by keyword or heading level, preview split sizes before confirming. Original goes to Trash, parts are auto-named</span></li>
+                <li><strong>Merge Selected Notes</strong> <span>Ctrl+click to select multiple notes, then combine into one. Drag to reorder, edit the title, and preview the merged size before confirming</span></li>
+                <li><strong>Rich Tooltips</strong> <span>All buttons now show custom tooltips with keyboard shortcuts. Unified across 12 components and ~40 locations — sidebar, toolbar, and modal actions</span></li>
+                <li><strong>Note Info on Hover</strong> <span>Hover a note name in the sidebar to see file size and last updated date. Large notes show a colored dot warning</span></li>
+                <li><strong>Mermaid Theme Unification</strong> <span>Flowcharts and sequence diagrams now match the app's neutral color system instead of Mermaid's default blue/pink palette. Consistent across all 4 themes</span></li>
+                <li><strong>Git Conflict "Merge Both" Reorder</strong> <span>When remote and local notes conflict, "Merge Both" now opens a modal where you can drag to reorder before confirming. Merged note goes to Inbox, originals to Trash</span></li>
+                <li><strong>Rename on Title Collision</strong> <span>When Git pull, Split, or Merge creates a duplicate title, a new "Rename" option lets you enter a new name with real-time duplicate checking</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Math Paste Broken</strong> <span>Inline math ($...$) in pasted Markdown was not recognized as math. Fixed Smart Paste conversion logic to detect math patterns</span></li>
+                <li><strong>System Notes Overwritten on Git Pull</strong> <span>Getting Started and Markdown Reference could be overwritten by remote pull. Added symmetric exclusion to match the push-side filter</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.0 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.1.0</span>
               <span class="accordion-highlight">More room to work. Smarter clipping.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.0.8 made big files open fast. v2.0.9 eliminated freezes. v2.1.0 expands what the editor can do and fixes what the Web Clipper was missing.</p>
