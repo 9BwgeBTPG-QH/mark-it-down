@@ -6,17 +6,14 @@
   <title>Welcome - Mark It Down</title>
   <meta name="description" content="Welcome to Mark It Down. Set up your new Markdown workspace in your browser.">
   <meta name="theme-color" content="#F2EDE4">
-  <!-- OGP -->
   <meta property="og:title" content="Welcome - Mark It Down">
   <meta property="og:description" content="Welcome to Mark It Down. Set up your new Markdown workspace in your browser.">
   <meta property="og:type" content="website">
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
   <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
   <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
   <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
   <link rel="stylesheet" href="style.css">
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -24,7 +21,6 @@
     gtag('js', new Date());
     gtag('config', 'G-BGZ2T3RGJW');
   </script>
-  <!-- Language auto-redirect -->
   <script>
     (function() {
       var lang = navigator.language || navigator.userLanguage;
@@ -33,189 +29,6 @@
       }
     })();
   </script>
-  <style>
-    /* Welcome page — compact single-screen design */
-    .welcome-hero {
-      text-align: center;
-      padding: var(--spacing-xl) 0 var(--spacing-lg);
-    }
-
-    .welcome-hero h2 {
-      font-family: var(--font-serif);
-      font-size: var(--font-size-3xl);
-      font-weight: 500;
-      color: var(--text-primary);
-      margin: 0 0 var(--spacing-xs) 0;
-      line-height: var(--line-height-tight);
-    }
-
-    .welcome-hero p {
-      color: var(--text-secondary);
-      font-size: var(--font-size-lg);
-      line-height: var(--line-height-normal);
-      margin: 0;
-    }
-
-    .welcome-body {
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 0 var(--spacing-sm);
-    }
-
-    /* Primary action card — the Chrome dialog */
-    .dialog-card {
-      background: #FFF8E1;
-      border: 1px solid #E8C547;
-      border-radius: var(--radius-md);
-      padding: var(--spacing-lg);
-      margin-bottom: var(--spacing-md);
-      text-align: left;
-    }
-
-    .dialog-card h3 {
-      font-family: var(--font-serif);
-      font-size: var(--font-size-xl);
-      font-weight: 500;
-      color: var(--text-primary);
-      margin: 0 0 var(--spacing-xs) 0;
-    }
-
-    .dialog-card p {
-      color: var(--text-secondary);
-      line-height: var(--line-height-normal);
-      margin: 0 0 var(--spacing-xs) 0;
-    }
-
-    .dialog-card .screenshot {
-      margin: var(--spacing-sm) 0 0;
-      text-align: center;
-    }
-
-    .dialog-card .screenshot img {
-      max-width: 100%;
-      height: auto;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-primary);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .dialog-card .screenshot-fallback {
-      padding: var(--spacing-md);
-      background: var(--bg-secondary);
-      border-radius: var(--radius-sm);
-      border: 1px dashed var(--border-primary);
-      color: var(--text-muted);
-      font-size: var(--font-size-sm);
-    }
-
-    .revert-note {
-      color: var(--text-muted);
-      font-size: var(--font-size-sm);
-      margin: var(--spacing-xs) 0 0;
-      line-height: var(--line-height-normal);
-    }
-
-    /* Quick summary */
-    .quick-summary {
-      text-align: center;
-      padding: var(--spacing-md) 0;
-      color: var(--text-secondary);
-      line-height: var(--line-height-relaxed);
-    }
-
-    .quick-summary strong {
-      color: var(--text-primary);
-    }
-
-    .quick-summary kbd {
-      font-family: var(--font-sans);
-      font-size: var(--font-size-sm);
-      background: var(--bg-secondary);
-      padding: 2px 8px;
-      border-radius: 4px;
-      border: 1px solid var(--border-primary);
-      box-shadow: 0 1px 0 var(--border-primary);
-    }
-
-    /* Expandable details */
-    .welcome-details {
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .welcome-details summary {
-      cursor: pointer;
-      padding: var(--spacing-sm) var(--spacing-md);
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      color: var(--text-primary);
-      font-family: var(--font-sans);
-      font-size: var(--font-size-base);
-      font-weight: 500;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-xs);
-      transition: background var(--transition-fast);
-    }
-
-    .welcome-details summary:hover {
-      background: var(--bg-secondary);
-    }
-
-    .welcome-details summary::before {
-      content: '▸';
-      font-size: var(--font-size-sm);
-      transition: transform var(--transition-fast);
-    }
-
-    .welcome-details[open] summary::before {
-      transform: rotate(90deg);
-    }
-
-    .welcome-details .detail-content {
-      padding: var(--spacing-sm) var(--spacing-md);
-      color: var(--text-secondary);
-      line-height: var(--line-height-normal);
-      font-size: var(--font-size-sm);
-    }
-
-    .welcome-details .detail-content ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .welcome-details .detail-content li {
-      padding: 4px 0;
-    }
-
-    .welcome-details .detail-content li strong {
-      color: var(--text-primary);
-    }
-
-    .icon-yes {
-      color: #16A34A;
-      margin-right: 4px;
-    }
-
-    .icon-warn {
-      color: #D97706;
-      margin-right: 4px;
-    }
-
-    /* Footer */
-    .welcome-footer {
-      text-align: center;
-      padding: var(--spacing-lg) 0 var(--spacing-md);
-      color: var(--text-muted);
-      font-size: var(--font-size-sm);
-    }
-
-    .welcome-footer a {
-      color: var(--accent-primary);
-    }
-  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -230,19 +43,25 @@
     </header>
 
     <main id="main-content" role="main">
-      <!-- Hero — compact -->
-      <section class="welcome-hero">
+
+      <!-- 1. Hero -->
+      <section class="welcome-hero stagger stagger-1">
         <h2>Thanks for installing</h2>
-        <p>Your new tab is now a Markdown workspace.</p>
+        <p>A Markdown note-taking app that lives entirely in your browser.</p>
       </section>
 
       <div class="welcome-body">
 
-        <!-- Primary: Chrome dialog explanation -->
-        <div class="dialog-card">
-          <h3>If Chrome shows a dialog</h3>
+        <!-- 2. First action — Chrome dialog -->
+        <div class="first-action stagger stagger-2">
+          <p class="first-action-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            First things first
+          </p>
+          <h3>If you see this dialog</h3>
           <p>
-            Click <strong>"Keep it"</strong> to start Mark It Down in your new tab.
+            Chrome may show a confirmation dialog right after installation.
+            To use Mark It Down, click <strong>"Keep it"</strong>.
           </p>
           <div class="screenshot">
             <img src="screenshots/chrome-dialog-en.png"
@@ -252,32 +71,58 @@
               "Did you mean to change this page?" &rarr; Click <strong>Keep it</strong>
             </div>
           </div>
-          <p class="revert-note">
-            Changed your mind? Click "Change it back" in the dialog, or simply remove the extension — your new tab will return to normal instantly.
+          <p class="subtle-note">
+            Want to go back to your previous extension? Just turn off Mark It Down at <strong>chrome://extensions</strong>.
           </p>
         </div>
 
-        <!-- Quick summary — what it does + next action -->
-        <div class="quick-summary">
-          <p>
-            Try pressing <kbd>Ctrl</kbd> + <kbd>T</kbd> to open a new tab.<br>
-            <strong>Web Clipper</strong> &middot; <strong>Markdown Editor</strong> &middot; <strong>Side Panel</strong> — a note-taking app that lives entirely in your browser.
+        <!-- 3. CTA — try it now -->
+        <div class="welcome-cta stagger stagger-3">
+          <p class="cta-instruction">
+            Press <kbd>Ctrl</kbd> + <kbd>T</kbd> to open a new tab
+          </p>
+          <p class="cta-success">
+            <span class="success-marker">&#10003;</span> You'll see a note called "<strong>Welcome to Mark It Down</strong>" — that means it's working
           </p>
         </div>
 
-        <!-- Expandable: more details (below the fold) -->
-        <details class="welcome-details">
-          <summary>What you can do</summary>
-          <div class="detail-content">
-            <ul>
-              <li><strong>Web Clipper</strong> — Right-click any page to save it as Markdown</li>
-              <li><strong>Markdown Editor</strong> — Write and format with live preview, LaTeX math, Mermaid diagrams</li>
-              <li><strong>Side Panel</strong> — Open beside any webpage for side-by-side editing (click the toolbar icon)</li>
-            </ul>
+        <!-- 4. Three ways to use -->
+        <div class="ways-section">
+          <p class="ways-label stagger stagger-4">Three ways to use</p>
+
+          <div class="way-card stagger stagger-5">
+            <span class="way-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
+            </span>
+            <div class="way-content">
+              <h3>New Tab</h3>
+              <p>Press <kbd>Ctrl</kbd> + <kbd>T</kbd> anytime — the editor opens like a notepad.</p>
+            </div>
           </div>
-        </details>
 
-        <details class="welcome-details">
+          <div class="way-card stagger stagger-6">
+            <span class="way-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M15 3v18"/></svg>
+            </span>
+            <div class="way-content">
+              <h3>Side Panel</h3>
+              <p>Click the Mark It Down icon in the toolbar (pin it via the Extensions puzzle icon). Opens the editor beside any webpage. Set up a keyboard shortcut at <strong>chrome://extensions/shortcuts</strong>.</p>
+            </div>
+          </div>
+
+          <div class="way-card stagger stagger-7">
+            <span class="way-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg>
+            </span>
+            <div class="way-content">
+              <h3>Web Clipper</h3>
+              <p>Right-click &rarr; "Save selection" or "Save page" to clip any webpage as Markdown. The Side Panel opens automatically.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Expandable details -->
+        <details class="welcome-details stagger stagger-8">
           <summary>About your data</summary>
           <div class="detail-content">
             <ul>
@@ -289,16 +134,43 @@
           </div>
         </details>
 
+        <details class="welcome-details stagger stagger-8">
+          <summary>What else you can do</summary>
+          <div class="detail-content">
+            <ul>
+              <li><strong>Markdown Editor</strong> — Live preview, LaTeX math, Mermaid diagrams</li>
+              <li><strong>Git Sync</strong> — Back up to GitHub / GitLab</li>
+              <li><strong>Export</strong> — Save as PDF, DOCX, HTML, or PNG</li>
+              <li><strong>4 Themes</strong> — Light, Dark, Parchment, Candlelight</li>
+              <li><strong>Focus Mode</strong> — Typewriter scroll for distraction-free writing</li>
+            </ul>
+          </div>
+        </details>
+
       </div>
     </main>
 
-    <footer class="welcome-footer" role="contentinfo">
+    <footer role="contentinfo">
+      <div class="footer-brand">
+        <img src="icon-128.png" alt="" aria-hidden="true">
+        <span>Mark It Down</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="templates.html">Templates</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+          <li class="lang-switcher"><a href="welcome-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a></li>
+        </ul>
+      </nav>
       <p>
-        <a href="features.html">See how it works</a> &middot;
-        <a href="index.html">Website</a> &middot;
-        <a href="welcome-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a>
+        <span>&copy; 2026 Mark It Down</span>
       </p>
-      <p>&copy; 2026 Mark It Down</p>
     </footer>
   </div>
 </body>
