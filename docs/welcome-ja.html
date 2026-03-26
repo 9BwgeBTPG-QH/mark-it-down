@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ようこそ - Mark It Down</title>
+  <meta name="description" content="Mark It Down へようこそ。ブラウザの中に Markdown ワークスペースをセットアップしましょう。">
+  <meta name="theme-color" content="#F2EDE4">
+  <!-- OGP -->
+  <meta property="og:title" content="ようこそ - Mark It Down">
+  <meta property="og:description" content="Mark It Down へようこそ。ブラウザの中に Markdown ワークスペースをセットアップしましょう。">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BGZ2T3RGJW');
+  </script>
+  <!-- Language auto-redirect -->
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage;
+      if (!lang.startsWith('ja') && !sessionStorage.getItem('langOverride')) {
+        window.location.replace('welcome.html');
+      }
+    })();
+  </script>
+  <style>
+    /* Welcome page — compact single-screen design */
+    .welcome-hero {
+      text-align: center;
+      padding: var(--spacing-xl) 0 var(--spacing-lg);
+    }
+
+    .welcome-hero h2 {
+      font-family: var(--font-serif);
+      font-size: var(--font-size-3xl);
+      font-weight: 500;
+      color: var(--text-primary);
+      margin: 0 0 var(--spacing-xs) 0;
+      line-height: var(--line-height-tight);
+    }
+
+    .welcome-hero p {
+      color: var(--text-secondary);
+      font-size: var(--font-size-lg);
+      line-height: var(--line-height-normal);
+      margin: 0;
+    }
+
+    .welcome-body {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-sm);
+    }
+
+    /* Primary action card — the Chrome dialog */
+    .dialog-card {
+      background: #FFF8E1;
+      border: 1px solid #E8C547;
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-md);
+      text-align: left;
+    }
+
+    .dialog-card h3 {
+      font-family: var(--font-serif);
+      font-size: var(--font-size-xl);
+      font-weight: 500;
+      color: var(--text-primary);
+      margin: 0 0 var(--spacing-xs) 0;
+    }
+
+    .dialog-card p {
+      color: var(--text-secondary);
+      line-height: var(--line-height-normal);
+      margin: 0 0 var(--spacing-xs) 0;
+    }
+
+    .dialog-card .screenshot {
+      margin: var(--spacing-sm) 0 0;
+      text-align: center;
+    }
+
+    .dialog-card .screenshot img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .dialog-card .screenshot-fallback {
+      padding: var(--spacing-md);
+      background: var(--bg-secondary);
+      border-radius: var(--radius-sm);
+      border: 1px dashed var(--border-primary);
+      color: var(--text-muted);
+      font-size: var(--font-size-sm);
+    }
+
+    .revert-note {
+      color: var(--text-muted);
+      font-size: var(--font-size-sm);
+      margin: var(--spacing-xs) 0 0;
+      line-height: var(--line-height-normal);
+    }
+
+    /* Quick summary */
+    .quick-summary {
+      text-align: center;
+      padding: var(--spacing-md) 0;
+      color: var(--text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+
+    .quick-summary strong {
+      color: var(--text-primary);
+    }
+
+    .quick-summary kbd {
+      font-family: var(--font-sans);
+      font-size: var(--font-size-sm);
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border-primary);
+      box-shadow: 0 1px 0 var(--border-primary);
+    }
+
+    /* Expandable details */
+    .welcome-details {
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .welcome-details summary {
+      cursor: pointer;
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: var(--font-size-base);
+      font-weight: 500;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      transition: background var(--transition-fast);
+    }
+
+    .welcome-details summary:hover {
+      background: var(--bg-secondary);
+    }
+
+    .welcome-details summary::before {
+      content: '▸';
+      font-size: var(--font-size-sm);
+      transition: transform var(--transition-fast);
+    }
+
+    .welcome-details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .welcome-details .detail-content {
+      padding: var(--spacing-sm) var(--spacing-md);
+      color: var(--text-secondary);
+      line-height: var(--line-height-normal);
+      font-size: var(--font-size-sm);
+    }
+
+    .welcome-details .detail-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .welcome-details .detail-content li {
+      padding: 4px 0;
+    }
+
+    .welcome-details .detail-content li strong {
+      color: var(--text-primary);
+    }
+
+    .icon-yes {
+      color: #16A34A;
+      margin-right: 4px;
+    }
+
+    .icon-warn {
+      color: #D97706;
+      margin-right: 4px;
+    }
+
+    /* Footer */
+    .welcome-footer {
+      text-align: center;
+      padding: var(--spacing-lg) 0 var(--spacing-md);
+      color: var(--text-muted);
+      font-size: var(--font-size-sm);
+    }
+
+    .welcome-footer a {
+      color: var(--accent-primary);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">メインコンテンツへ</a>
+  <div class="container">
+    <header role="banner">
+      <div class="header-logo">
+        <a href="index-ja.html" aria-label="Mark It Down ホーム">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
+      </div>
+    </header>
+
+    <main id="main-content" role="main">
+      <!-- Hero — compact -->
+      <section class="welcome-hero">
+        <h2>インストールありがとうございます</h2>
+        <p>新しいタブが Markdown ワークスペースになりました。</p>
+      </section>
+
+      <div class="welcome-body">
+
+        <!-- Primary: Chrome dialog explanation -->
+        <div class="dialog-card">
+          <h3>Chrome がダイアログを表示したら</h3>
+          <p>
+            <strong>「そのままにする」</strong>をクリックすると、新しいタブで Mark It Down が起動します。
+          </p>
+          <div class="screenshot">
+            <img src="screenshots/chrome-dialog-ja.png"
+                 alt="Chrome ダイアログ：「そのままにする」をクリック"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <div class="screenshot-fallback" style="display:none">
+              「このページを変更するつもりでしたか？」→ <strong>「そのままにする」</strong>
+            </div>
+          </div>
+          <p class="revert-note">
+            気が変わったら「元に戻す」をクリック、または拡張機能を削除すればいつでも元の新しいタブに戻ります。
+          </p>
+        </div>
+
+        <!-- Quick summary — what it does + next action -->
+        <div class="quick-summary">
+          <p>
+            <kbd>Ctrl</kbd> + <kbd>T</kbd> で新しいタブを開いてみてください。<br>
+            <strong>Web Clipper</strong>・<strong>Markdown エディタ</strong>・<strong>サイドパネル</strong> ── ブラウザだけで完結するノートアプリです。
+          </p>
+        </div>
+
+        <!-- Expandable: more details (below the fold) -->
+        <details class="welcome-details">
+          <summary>できること</summary>
+          <div class="detail-content">
+            <ul>
+              <li><strong>Web Clipper</strong> — 右クリックで Web ページを Markdown として保存</li>
+              <li><strong>Markdown エディタ</strong> — ライブプレビュー、LaTeX 数式、Mermaid 図表に対応</li>
+              <li><strong>サイドパネル</strong> — Web ページの横に並べて編集（ツールバーアイコンから起動）</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="welcome-details">
+          <summary>データについて</summary>
+          <div class="detail-content">
+            <ul>
+              <li><span class="icon-yes" aria-hidden="true">&#10003;</span> すべてのノートはブラウザ内にローカル保存</li>
+              <li><span class="icon-yes" aria-hidden="true">&#10003;</span> クラウド同期はデフォルトで無効（Git バックアップはオプション）</li>
+              <li><span class="icon-yes" aria-hidden="true">&#10003;</span> ブラウザのキャッシュ削除ではノートは消えません</li>
+              <li><span class="icon-warn" aria-hidden="true">&#9888;</span> 拡張機能を削除するとデータも消えます — <a href="features-ja.html">エクスポート機能</a>をご利用ください</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+    </main>
+
+    <footer class="welcome-footer" role="contentinfo">
+      <p>
+        <a href="features-ja.html">使い方を見る</a> &middot;
+        <a href="index-ja.html">ウェブサイト</a> &middot;
+        <a href="welcome.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a>
+      </p>
+      <p>&copy; 2026 Mark It Down</p>
+    </footer>
+  </div>
+</body>
+</html>

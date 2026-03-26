@@ -1046,3 +1046,119 @@ _**Agent (default)**_
 <summary>Tool use: **edit_file_v2**</summary>
 
 </details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "glob": "{index.html,index-ja.html,changelog.html,changelog-ja.html}",
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs",
+  "pattern": "89%|3,500ms|390ms|under 400ms"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs",
+  "pattern": "89%|3,500ms|390ms|under 400ms",
+  "topFiles": [],
+  "totalFiles": 0,
+  "totalMatches": 0
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "c:\\Users\\asano\\mark-it-down\\docs\\index.html",
+    "c:\\Users\\asano\\mark-it-down\\docs\\index-ja.html",
+    "c:\\Users\\asano\\mark-it-down\\docs\\changelog.html",
+    "c:\\Users\\asano\\mark-it-down\\docs\\changelog-ja.html"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "c:\\Users\\asano\\mark-it-down\\docs\\index.html"
+    },
+    {
+      "relativeWorkspacePath": "c:\\Users\\asano\\mark-it-down\\docs\\index-ja.html"
+    },
+    {
+      "relativeWorkspacePath": "c:\\Users\\asano\\mark-it-down\\docs\\changelog.html"
+    },
+    {
+      "relativeWorkspacePath": "c:\\Users\\asano\\mark-it-down\\docs\\changelog-ja.html"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints"><details>
+<summary>Tool use: **read_lints**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+✅ 全体をユーザー目線で、短く読みやすい表現に直しました。  
+使用エージェント: なし
+
+変更したポイント:
+
+- `docs/index.html` / `docs/index-ja.html`
+  - 「Recently Added / 最近の追加機能」を**7項目→5項目**に圧縮
+  - 技術説明を減らして、体感ベースの文言に変更
+  - **89%削減・ミリ秒などの細かい数値を削除**
+
+- `docs/changelog.html` / `docs/changelog-ja.html`
+  - v2.1.2の説明を簡潔化
+  - セクションを整理（詳細すぎる内訳を減らし、読みやすく）
+  - バグ修正もユーザーが理解しやすい表現へ統一
+
+追加確認:
+
+- 4ファイルとも linter エラーなし
+- `89%` / `3,500ms` / `390ms` などの数値表現は対象ファイルから除去済み
+
+この方向で、さらに「もっと短く（3項目だけ）」にもできます。
