@@ -65,15 +65,59 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.4 - Latest -->
+        <!-- v2.1.5 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.5</span>
+              <span class="accordion-highlight">書いたものを、どこへでも。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Markdownには方言がある。Zennで書いた記法はHugoでは動かない。Slackからコピーしたテキストはアスタリスクがそのまま残る。v2.1.5はその問題を解決する。主要プラットフォームへの記法変換、チャットアプリからのスマートペーストに対応し、サイドバーも全面再設計した。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Portability Hub</strong> <span>CommonMark・Obsidian・Hugo・Jekyll・GFM・Zenn・Qiita・Docusaurus・MkDocs の8ターゲットに対応する記法変換。バッチエクスポート時に非標準記法が含まれる場合は「そのまま / 全正規化 / 1件ずつ確認」の3択で対処できる。</span></li>
+                <li><strong>Chat Format Smart Paste</strong> <span>Slack・Discord・WhatsApp からのペーストで、固有記法（<code>&lt;url|テキスト&gt;</code>、<code>||スポイラー||</code>、<code>&gt;&gt;&gt;</code> 引用など）を標準 Markdown に自動変換。</span></li>
+                <li><strong>EPUBエクスポート</strong> <span>Mermaid図・数式・コードハイライトを含む EPUB 3.0 形式で出力。単一ノートとバッチ出力に対応。</span></li>
+                <li><strong>LaTeXエクスポート</strong> <span>Markdown を LaTeX に変換して <code>.tex</code> ファイルとして出力。学術文書・論文の下書きに。</span></li>
+                <li><strong>Frontmatter対応</strong> <span>ノートのメタデータ（タイトル・タグ・日付など）を本文と分離して管理。Detail Panel の「Frontmatter」タブで編集し、エクスポート時に自動合成される。</span></li>
+                <li><strong>サイドバー全面再設計</strong> <span>NoteItem をタイトルのみの表示にシンプル化。Previewボタンで Detail Panel（Preview・Frontmatter・Info の3タブ）を開く。ピン留めノートは「★ Pinned」エリアに表示。Remote Sidebar でリモートリポジトリのノートを直接閲覧・取り込み可能。</span></li>
+                <li><strong>Web Clipper強化</strong> <span>YouTube字幕をタイムスタンプ付き Markdown として取り込み。Shadow DOM・同一サイト iframe のコンテンツも取り込み対応。Zenn・Qiita・はてなブログの専用抽出ロジックを追加。</span></li>
+                <li><strong>Writer Modeタイポグラフィプリセット</strong> <span>フォントサイズ18px・行間1.8・最大幅720px中央揃えの長文執筆向けレイアウト。スラッシュメニューから切替可能。</span></li>
+                <li><strong>見出し自動番号付け</strong> <span>H2〜H6 に CSS カウンターで自動連番を付ける。スラッシュメニュー <code>/num</code> でオン/オフを切替。</span></li>
+                <li><strong>数学ブロック内LaTeXコマンド補完</strong> <span>数式ブロック内で <code>\</code> を入力すると108種類のコマンド候補を表示。ギリシャ文字・演算子・矢印など。</span></li>
+                <li><strong>TOC強化</strong> <span>子見出しを持つ見出しに折りたたみボタンを追加。TOC下部に「先頭・末尾・前後見出し・ページアップ/ダウン」の6ナビゲーションボタンを設置。</span></li>
+                <li><strong>全ノート横断 Find &amp; Replace</strong> <span><code>Ctrl+Shift+H</code> で全ノートを横断して検索・置換。フォルダフィルターチップ、「3 / 17」形式の現在位置表示、<code>Ctrl+F</code> で検索専用モードを追加。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">変更</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>フォントをsystem-uiに変更</strong> <span>本文フォントを Inter から OS 標準のフォントスタック（system-ui）に変更。日本語・CJK 文字の表示が改善される。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">削除</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Source Control サイドバータブを廃止</strong> <span>Git 操作は画面上部の Git メニューに一本化。サイドバーの最小幅が 256px になりすっきりした。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.4 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.1.4</span>
               <span class="accordion-highlight">はじめて使う人が、迷わない一歩目を。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済み</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">New Tabを上書きする拡張機能のインストールは、何が起きるかわからず不安になる。このリリースは、最初の30秒を明確にする。</p>

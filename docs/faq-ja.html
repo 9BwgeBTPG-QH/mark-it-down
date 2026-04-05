@@ -144,7 +144,7 @@
               <ul>
                 <li>編集・保存・ノート管理（chrome.storage.local完結）</li>
                 <li>Mermaid図・KaTeX数式・シンタックスハイライト（全てバンドル済み）</li>
-                <li>エクスポート: PDF / PNG / DOCX / .md — ローカル処理</li>
+                <li>エクスポート: PDF / PNG / DOCX / .md / EPUB / LaTeX — ローカル処理</li>
                 <li>テーマ切り替え・Find &amp; Replace・TOC・コマンドパレット</li>
                 <li>Cross-Instance Compare &amp; Edit</li>
               </ul>
@@ -212,6 +212,20 @@
                 <li>Webサイトから直接ギャラリーページにアクセスすることもできます</li>
                 <li>ノート、議事録、開発ドキュメントなど、すぐに使えるMarkdownテンプレートが揃っています</li>
               </ul>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">Frontmatter（フロントマター）とは何ですか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Hugo・Zenn・Jekyllなどのプラットフォームが記事のタイトル・タグ・日付などを読み取るために使うYAML形式のメタデータです（ノートの冒頭に <code>---</code> で囲んで書くもの）。</p>
+              <p>v2.1.5ではFrontmatterをノート本文とは別のフィールドで管理できるようになりました。エディタ本文はクリーンに保たれ、エクスポート時に先頭へ自動合成されます。サイドバーのDetail Panel「Frontmatter」タブで直接編集でき、タグなどの配列型はチップUIで操作できます。</p>
+              <p>対応エクスポート形式: Markdown・HTML・EPUB・LaTeX・DOCX。</p>
             </div>
           </details>
 
@@ -320,9 +334,27 @@
               </div>
             </summary>
             <div class="accordion-content">
-              <p><strong>単体:</strong> Markdown (.md)、PDF、HTML、DOCX（Word）、PNG。</p>
-              <p><strong>一括エクスポート:</strong> 複数ノートを選択してMarkdown・HTML・DOCXのZIPアーカイブとして出力できます。</p>
+              <p><strong>単体:</strong> Markdown (.md)、PDF、HTML、DOCX（Word）、PNG、EPUB（電子書籍）、LaTeX (.tex)。</p>
+              <p>リッチテキストとしてクリップボードにコピーも可能（<kbd>Ctrl+Shift+C</kbd>）。Word・Notion・Google Docsに書式を保ったまま貼り付けできます。</p>
+              <p><strong>一括エクスポート:</strong> 複数ノートを選択してMarkdown・HTML・DOCXのZIPアーカイブとして出力できます。非標準記法が含まれる場合は「そのまま出力 / 全て正規化 / 1件ずつ確認」のダイアログが表示されます。</p>
               <p>PDFエクスポートは目次、ページ番号、Paged.jsによる適切なページ分割に対応しています。</p>
+            </div>
+          </details>
+
+          <!-- ポータビリティ -->
+          <div class="faq-category-header">🔀 ポータビリティ</div>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">書いたノートをZennやHugo向けに変換できますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>はい。「Portability Hub」機能で出力先のプラットフォームを選ぶと、記法の問題箇所が検出されて変換できます。</p>
+              <p>対応ターゲット: CommonMark・Obsidian・Hugo/Jekyll・GFM・Zenn・Qiita・Docusaurus・MkDocs（8種類）。</p>
+              <p>複数のノートを一括エクスポートする際、非標準の記法が含まれていれば「そのまま出力 / 全て正規化 / 1件ずつ確認」のダイアログが表示されます。</p>
             </div>
           </details>
 
@@ -384,6 +416,20 @@
                 <li><strong>デフォルトモード</strong>: ブラウザ標準のペースト動作</li>
               </ul>
               <p>JSON配列はテーブルに、オブジェクトはリストに、ネスト構造は箇条書き階層に自動変換されます。デフォルトは設定で変更できます。</p>
+              <p><strong>Slack / Discord / WhatsApp からの自動変換:</strong></p>
+              <p>これらのアプリからコピーしたテキストを貼り付けると、各アプリ固有の記法が自動で標準Markdownに変換されます（<kbd>Ctrl+Shift+V</kbd> の操作は不要）。<code>&lt;url|テキスト&gt;</code> 形式のリンク、<code>||スポイラー||</code>、<code>&gt;&gt;&gt;</code> 引用ブロックなどが対象です。</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">サイドバーのGitタブがなくなりましたか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>はい、v2.1.5でSource Control専用のサイドバータブを廃止しました。Git操作（Push・Pull・Fetch・設定・履歴）は引き続き画面上部のGitメニューから行えます。機能は変わっていません。</p>
             </div>
           </details>
 

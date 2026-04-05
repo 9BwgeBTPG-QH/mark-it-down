@@ -80,6 +80,27 @@
               <li><strong>Comment Thread Extraction</strong> <span>Structured Markdown from Hacker News, Reddit, and GitHub. Preserves nesting, authors, and timestamps</span></li>
               <li><strong>llms.txt Detection</strong> <span>Auto-checks /llms-full.txt and /llms.txt before Readability fallback. 24h cache, 5s timeout</span></li>
               <li><strong>Mermaid Preservation</strong> <span>Mermaid.js diagram source code recovered and saved as <code>```mermaid</code> code blocks</span></li>
+              <li><strong>YouTube Subtitles</strong> <span>Clips subtitles from YouTube videos as timestamped Markdown — auto-detected when captions are available</span></li>
+              <li><strong>Shadow DOM / iframe Support</strong> <span>Extracts content from Shadow DOM internals and same-site iframes, reducing failures on modern SPAs</span></li>
+              <li><strong>Zenn / Qiita / Hatena Blog</strong> <span>Platform-specific embed syntax recognized and converted to standard Markdown</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Portability -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">🔀</span>
+              <span class="accordion-highlight">Portability — Solve Markdown "dialects"</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>Portability Hub</strong> <span>Convert notes to the syntax of any target platform. Supported: CommonMark, Obsidian, Hugo/Jekyll, GFM, Zenn, Qiita, Docusaurus, MkDocs (8 targets)</span></li>
+              <li><strong>Batch Conversion</strong> <span>On ZIP export, non-standard syntax triggers a 3-choice dialog: output as-is / normalize all / confirm one-by-one</span></li>
+              <li><strong>Chat Format Smart Paste</strong> <span>Paste from Slack, Discord, or WhatsApp — app-specific syntax auto-converts to standard Markdown. Covers links, spoilers, and quote blocks</span></li>
             </ul>
           </div>
         </details>
@@ -133,6 +154,10 @@
               <li><strong>Slash Menu</strong> <span>/now, /toc, /h1–h6, /list, /task, /quote, /code, /table, /hr, /image, /mermaid, /math, /alert, /footnote. Works under 100KB</span></li>
               <li><strong>Code Language Detection</strong> <span>16 languages auto-detected from shebang, DOCTYPE, and keywords</span></li>
               <li><strong>Timestamp Headings</strong> <span>/now for H2/H3 timestamp, Ctrl+Alt+; for inline HH:MM</span></li>
+              <li><strong>Collapsible Blocks</strong> <span><code>&lt;details&gt;/&lt;summary&gt;</code> click-to-expand. Insert via slash menu <code>/details</code></span></li>
+              <li><strong>Heading Auto-Numbering</strong> <span>Auto-number H2–H6 with CSS counters. Toggle from the slash menu — great for academic documents</span></li>
+              <li><strong>LaTeX Autocomplete</strong> <span>Type <code>\</code> inside a math block for 108 LaTeX command suggestions (Greek letters, operators, arrows, etc.)</span></li>
+              <li><strong>All-Notes Find &amp; Replace</strong> <span>Search and replace across every note (Ctrl+Shift+H). Match position shown (3/17), folder filter chips, before/after preview</span></li>
             </ul>
           </div>
         </details>
@@ -149,7 +174,11 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>5 Folders</strong> <span>Inbox / Template / Archive / Trash / System</span></li>
-              <li><strong>Pin & Star</strong> <span>Pin important notes to top (Alt+P)</span></li>
+              <li><strong>Pinned Area</strong> <span>Pinned notes grouped in a dedicated "★ Pinned" area at the top. Hidden when empty (Alt+P)</span></li>
+              <li><strong>Frontmatter</strong> <span>Manage Hugo/Zenn/Jekyll metadata separately from note body. Edit in the Detail Panel Frontmatter tab; auto-merged on export</span></li>
+              <li><strong>Detail Panel</strong> <span>Preview, Frontmatter, and Info tabs inside the sidebar — inspect and edit without opening a note. Drag to resize</span></li>
+              <li><strong>NoteItem Simplification</strong> <span>Each note row shows only checkbox and title. Actions consolidated in the Detail Panel</span></li>
+              <li><strong>Remote Sidebar</strong> <span>Local/Remote toggle in Notes tab when Git is connected. Browse remote notes with folder grouping and Pull</span></li>
               <li><strong>Drag & Drop</strong> <span>Move notes between folders</span></li>
               <li><strong>Search</strong> <span>Fuzzy, typo-tolerant with CJK single-character support</span></li>
               <li><strong>Batch Selection</strong> <span>Shift+Click range select, Ctrl+Click toggle. Drag-and-drop, Delete, and Stage multiple notes at once</span></li>
@@ -158,7 +187,6 @@
               <li><strong>Template Gallery</strong> <span>Browse 20+ templates from the gallery page. Link appears on Template folder hover</span></li>
               <li><strong>Split Note</strong> <span>Break a long note at any heading into two parts</span></li>
               <li><strong>Merge Notes</strong> <span>Ctrl+Click to select, drag to reorder, combine into one</span></li>
-              <li><strong>Note Info on Hover</strong> <span>File size and last updated shown on sidebar hover</span></li>
             </ul>
           </div>
         </details>
@@ -174,12 +202,13 @@
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features">
-              <li><strong>TOC</strong> <span>Auto-generated, highlights current section</span></li>
+              <li><strong>TOC</strong> <span>Auto-generated, highlights current section. Collapsible child headings, 6 navigation buttons (top, prev/next heading, PgUp/PgDn, bottom)</span></li>
               <li><strong>TOC Reordering</strong> <span>Drag & drop or keyboard shortcuts to restructure headings</span></li>
               <li><strong>Breadcrumbs</strong> <span>Current heading path with click-to-jump ancestors</span></li>
               <li><strong>Word Count</strong> <span>Characters, words (CJK-aware), reading time</span></li>
               <li><strong>4 Themes</strong> <span>Light / Dark / Parchment / CandleLight — the editor is a room, not just a tool <img src="wax-seal.png" alt="" class="wax-seal-accent" aria-hidden="true"></span></li>
-              <li><strong>Typography Presets</strong> <span>Standard / Compact / Academic — applies consistently to editor and all exports</span></li>
+              <li><strong>Typography Presets</strong> <span>Standard / Compact / Academic / Writer — Writer is 18px, 1.8 line height, 720px centered layout for long-form writing</span></li>
+              <li><strong>system-ui Font</strong> <span>Body font switched to the OS default stack. CJK rendering improved (Mac: San Francisco, Windows: Segoe UI)</span></li>
               <li><strong>Background Texture</strong> <span>Bring your own texture to make the space feel personal</span></li>
               <li><strong>Auto Pair</strong> <span>Brackets, quotes auto-complete</span></li>
               <li><strong>Code Blocks</strong> <span>Scrollable (20+ lines), reliable copy with ProseMirror-first extraction, Copy Code / Copy as Markdown. Hover delete</span></li>
@@ -205,10 +234,12 @@
               <li><strong>Smart Loading</strong> <span>300KB+ shows choice dialog, Archive for fast read-only view</span></li>
               <li><strong>Chrome Storage</strong> <span>Survives cache clear</span></li>
               <li><strong>Import/Export</strong> <span>.md, .zip, Archive Pinned</span></li>
-              <li><strong>Export</strong> <span>PDF (page numbers, TOC, custom margins), DOCX (images, diagrams, math embedded), PNG (2x Retina), HTML (3 templates, self-contained) — write here, ship anywhere (<kbd>Ctrl+Shift+E</kbd>)</span></li>
+              <li><strong>Export</strong> <span>PDF (page numbers, TOC, custom margins), DOCX (images, diagrams, math embedded), PNG (2x Retina), HTML (3 templates, self-contained), EPUB (Mermaid, math, code highlighting), LaTeX (.tex, heading→\section mapping) — <kbd>Ctrl+Shift+E</kbd></span></li>
+              <li><strong>Rich Text Copy</strong> <span>Copy entire note or selection as rich text (<kbd>Ctrl+Shift+C</kbd>). Paste into Word, Notion, or Google Docs with formatting intact</span></li>
+              <li><strong>Frontmatter Auto-Merge</strong> <span>When Frontmatter is set, it is automatically prepended on export to MD, HTML, EPUB, LaTeX, and DOCX</span></li>
               <li><strong>Copy for LLM</strong> <span>YAML frontmatter (title/source/date) prepended. From Copy dropdown or command palette</span></li>
               <li><strong>Token Count</strong> <span>Estimated token count shown in toast on copy/export</span></li>
-              <li><strong>Batch Export</strong> <span>Select multiple notes → ZIP archive (Markdown/HTML/DOCX)</span></li>
+              <li><strong>Batch Export</strong> <span>Select multiple notes → ZIP archive (Markdown/HTML/DOCX). Non-standard syntax triggers a 3-choice Portability dialog</span></li>
             </ul>
           </div>
         </details>
@@ -263,7 +294,9 @@
                 <li><strong><kbd>Alt</kbd>+<kbd>N</kbd></strong> <span>New note</span></li>
                 <li><strong><kbd>Alt</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd></strong> <span>Move line</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>;</kbd></strong> <span>Insert date</span></li>
-                <li><strong><kbd>Ctrl</kbd>+<kbd>H</kbd></strong> <span>Find & Replace</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>F</kbd></strong> <span>Search (no replace)</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>H</kbd></strong> <span>Find & Replace (current note)</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd></strong> <span>All-notes Find &amp; Replace</span></li>
               </ul>
             </div>
             <div class="changelog-group">

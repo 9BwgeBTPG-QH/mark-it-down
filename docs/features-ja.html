@@ -80,6 +80,27 @@
               <li><strong>コメントスレッド抽出</strong> <span>HackerNews・Reddit・GitHubから構造化Markdownを生成。ネスト・著者・日時を保持</span></li>
               <li><strong>llms.txt検出</strong> <span>Readabilityフォールバック前に /llms-full.txt と /llms.txt を自動チェック。24時間キャッシュ、5秒タイムアウト</span></li>
               <li><strong>Mermaid保持</strong> <span>Mermaid.jsの図のソースコードを復元し、<code>```mermaid</code> コードブロックとして保存</span></li>
+              <li><strong>YouTube字幕取り込み</strong> <span>動画ページでClipperを使うと字幕をタイムスタンプ付きMarkdownとして保存</span></li>
+              <li><strong>Shadow DOM / iframe対応</strong> <span>モダンWebアプリの内部DOM構造や同一サイトiframeのコンテンツも取り込み可能</span></li>
+              <li><strong>Zenn・Qiita・はてなブログ</strong> <span>プラットフォーム固有の埋め込み構文を認識し標準Markdownに変換</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Portability -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">🔀</span>
+              <span class="accordion-highlight">ポータビリティ — Markdownの「方言」を解決する</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>Portability Hub</strong> <span>出力先を選んで記法を変換。対応: CommonMark・Obsidian・Hugo/Jekyll・GFM・Zenn・Qiita・Docusaurus・MkDocs（8種類）</span></li>
+              <li><strong>バッチ変換</strong> <span>ZIP一括エクスポート時、非標準記法を含むノートに「そのまま / 全正規化 / 1件ずつ確認」の3択ダイアログ</span></li>
+              <li><strong>Chat Format Smart Paste</strong> <span>Slack・Discord・WhatsAppからのペーストを自動で標準Markdownに変換。リンク・スポイラー・引用ブロック等が対象</span></li>
             </ul>
           </div>
         </details>
@@ -133,6 +154,10 @@
               <li><strong>スラッシュメニュー</strong> <span>/now、/toc、/h1–h6、/list、/task、/quote、/code、/table、/hr、/image、/mermaid、/math、/alert、/footnote。100KB未満で対応</span></li>
               <li><strong>コード言語検出</strong> <span>shebang・DOCTYPE・キーワードから16言語を自動判定</span></li>
               <li><strong>タイムスタンプ見出し</strong> <span>/nowでH2/H3タイムスタンプ、Ctrl+Alt+;でインラインHH:MM</span></li>
+              <li><strong>折りたたみブロック</strong> <span><code>&lt;details&gt;/&lt;summary&gt;</code> をクリックで開閉。スラッシュメニュー <code>/details</code> で挿入</span></li>
+              <li><strong>見出し自動番号付け</strong> <span>H2〜H6に自動連番。スラッシュメニューからオン/オフ切替。論文・レポート向け</span></li>
+              <li><strong>LaTeXコマンド補完</strong> <span>数学ブロック内で <code>\</code> を入力すると108種類のコマンド候補を表示（ギリシャ文字・演算子・矢印等）</span></li>
+              <li><strong>全ノート横断 Find &amp; Replace</strong> <span>全ノートを横断して検索・置換（Ctrl+Shift+H）。マッチ位置表示（3/17）、フォルダフィルターチップ、置換前後プレビュー対応</span></li>
             </ul>
           </div>
         </details>
@@ -149,7 +174,11 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>5フォルダ</strong> <span>Inbox / Template / Archive / Trash / System</span></li>
-              <li><strong>ピン & スター</strong> <span>重要なノートを上部に固定 (Alt+P)</span></li>
+              <li><strong>Pinned Area</strong> <span>ピン留めノートを「★ Pinned」エリアに集約表示。0件時は非表示 (Alt+P)</span></li>
+              <li><strong>Frontmatter管理</strong> <span>Hugo・Zenn・Jekyll向けメタデータを本文と分離。Detail PanelのFrontmatterタブで編集、エクスポート時に自動合成</span></li>
+              <li><strong>Detail Panel</strong> <span>サイドバー内でPreview・Frontmatter・Infoの3タブ。ノートを開かずに確認・編集。高さドラッグ調整可能</span></li>
+              <li><strong>NoteItemシンプル化</strong> <span>各ノート行をチェックボックスとタイトルのみに。アクションはDetail Panelに集約</span></li>
+              <li><strong>Remote Sidebar</strong> <span>Git連携時にLocal/Remoteトグル。リモートノート一覧の閲覧・フォルダグループ化・Pull取り込み</span></li>
               <li><strong>ドラッグ&ドロップ</strong> <span>フォルダ間でノートを移動</span></li>
               <li><strong>検索</strong> <span>あいまい検索、タイポ許容、CJK1文字検索対応</span></li>
               <li><strong>一括選択</strong> <span>Shift+Clickで範囲選択、Ctrl+Clickで個別トグル。まとめてD&amp;D、削除、ステージング</span></li>
@@ -158,7 +187,6 @@
               <li><strong>テンプレートギャラリー</strong> <span>ギャラリーページから20種類以上のテンプレートを閲覧。Templateフォルダのホバーでリンク表示</span></li>
               <li><strong>ノート分割</strong> <span>見出し単位でノートを2つに分割</span></li>
               <li><strong>ノート結合</strong> <span>Ctrl+クリックで選択、ドラッグで並び替え、1つに結合</span></li>
-              <li><strong>ノート情報</strong> <span>サイドバーでホバーするとサイズ・更新日時を表示</span></li>
             </ul>
           </div>
         </details>
@@ -174,12 +202,13 @@
           </summary>
           <div class="accordion-content">
             <ul class="changelog-features">
-              <li><strong>目次 (TOC)</strong> <span>自動生成、現在セクションをハイライト</span></li>
+              <li><strong>目次 (TOC)</strong> <span>自動生成、現在セクションをハイライト。子見出しの折りたたみ、6ナビゲーションボタン（先頭・前後見出し・PgUp/PgDn・末尾）</span></li>
               <li><strong>TOC並び替え</strong> <span>ドラッグ&ドロップやショートカットで見出しを構造化</span></li>
               <li><strong>パンくずナビ</strong> <span>現在の見出しパスを表示、クリックで祖先にジャンプ</span></li>
               <li><strong>Word Count</strong> <span>文字数、単語数（CJK対応）、読了時間</span></li>
               <li><strong>4テーマ</strong> <span>ライト / ダーク / Parchment / CandleLight — エディタは道具であり「部屋」 <img src="wax-seal.png" alt="" class="wax-seal-accent" aria-hidden="true"></span></li>
-              <li><strong>タイポグラフィプリセット</strong> <span>Standard / Compact / Academic — エディタとエクスポートで統一された見た目</span></li>
+              <li><strong>タイポグラフィプリセット</strong> <span>Standard / Compact / Academic / Writer — Writerは18px・行間1.8・720px中央揃えの長文向け</span></li>
+              <li><strong>system-uiフォント</strong> <span>本文フォントをOS標準（system-ui）に変更。CJK文字の表示が改善（Mac: San Francisco、Windows: Segoe UI）</span></li>
               <li><strong>背景テクスチャ</strong> <span>自分で選んだ画像で「自分の場所」にする</span></li>
               <li><strong>Auto Pair</strong> <span>括弧、引用符を自動補完</span></li>
               <li><strong>コードブロック</strong> <span>スクロール対応（20行超）、ProseMirror優先の確実なコピー、Copy Code / Copy as Markdown。ホバーで削除</span></li>
@@ -205,10 +234,12 @@
               <li><strong>Smart Loading</strong> <span>300KB+で選択ダイアログ表示、Archiveで高速読み取り専用表示</span></li>
               <li><strong>Chrome Storage</strong> <span>キャッシュクリアでも残る</span></li>
               <li><strong>インポート/エクスポート</strong> <span>.md、.zip、Archiveピン留め</span></li>
-              <li><strong>エクスポート</strong> <span>PDF（ページ番号・目次・用紙サイズカスタム）、DOCX（画像・Mermaid図・数式・シンタックスハイライト埋め込み）、PNG（2x Retina）、HTML（3テンプレート・Self-Contained） — フォーマット × 対象 × 設定をひとつのパネルで（Ctrl+Shift+E）</span></li>
+              <li><strong>エクスポート</strong> <span>PDF（ページ番号・目次・用紙サイズカスタム）、DOCX（画像・Mermaid図・数式・シンタックスハイライト埋め込み）、PNG（2x Retina）、HTML（3テンプレート・Self-Contained）、EPUB（Mermaid・数式・コードハイライト含む電子書籍）、LaTeX（.tex、見出し→\section等にマッピング） — Ctrl+Shift+E</span></li>
+              <li><strong>リッチテキストコピー</strong> <span>Ctrl+Shift+Cでノート全体または選択テキストをリッチテキスト形式でコピー。Word・Notion・Google Docsに書式を保ったまま貼り付け</span></li>
+              <li><strong>Frontmatter自動合成</strong> <span>Frontmatter設定時、MD・HTML・EPUB・LaTeX・DOCXエクスポートで本文先頭に自動合成</span></li>
               <li><strong>LLMコピー</strong> <span>YAMLフロントマター（タイトル/ソース/日付）を先頭に付与。コピードロップダウンまたはコマンドパレットから</span></li>
               <li><strong>トークンカウント</strong> <span>コピー/エクスポート時に推定トークン数をtoastで表示</span></li>
-              <li><strong>一括エクスポート</strong> <span>複数ノートを選択 → ZIPアーカイブ（Markdown/HTML/DOCX）</span></li>
+              <li><strong>一括エクスポート</strong> <span>複数ノートを選択 → ZIPアーカイブ（Markdown/HTML/DOCX）。非標準記法検出時は「そのまま / 全正規化 / 1件ずつ確認」の3択ダイアログ</span></li>
             </ul>
           </div>
         </details>
@@ -263,7 +294,9 @@
                 <li><strong><kbd>Alt</kbd>+<kbd>N</kbd></strong> <span>新規ノート</span></li>
                 <li><strong><kbd>Alt</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd></strong> <span>行移動</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>;</kbd></strong> <span>日付挿入</span></li>
-                <li><strong><kbd>Ctrl</kbd>+<kbd>H</kbd></strong> <span>検索・置換</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>F</kbd></strong> <span>検索（置換欄なし）</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>H</kbd></strong> <span>検索・置換（現在のノート）</span></li>
+                <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd></strong> <span>全ノート横断 Find &amp; Replace</span></li>
               </ul>
             </div>
             <div class="changelog-group">

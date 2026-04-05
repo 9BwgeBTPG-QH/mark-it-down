@@ -65,15 +65,59 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.4 - Latest -->
+        <!-- v2.1.5 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.5</span>
+              <span class="accordion-highlight">Take your writing anywhere.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Markdown has dialects. Zenn syntax breaks in Hugo. Slack pastes leave behind raw symbols. v2.1.5 fixes that — with platform conversion for 8 targets, smart paste from chat apps, and a fully redesigned sidebar.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Portability Hub</strong> <span>Convert notes to CommonMark, Obsidian, Hugo, Jekyll, GFM, Zenn, Qiita, Docusaurus, or MkDocs syntax. On batch export, non-standard markup is flagged: keep as-is, normalize all, or review one by one.</span></li>
+                <li><strong>Chat Format Smart Paste</strong> <span>Pastes from Slack, Discord, and WhatsApp auto-convert to standard Markdown. Handles <code>&lt;url|text&gt;</code> links, <code>||spoiler||</code>, and <code>&gt;&gt;&gt;</code> blockquotes.</span></li>
+                <li><strong>EPUB Export</strong> <span>Export notes as EPUB 3.0 with Mermaid diagrams, math, and code highlighting included. Single note and batch export supported.</span></li>
+                <li><strong>LaTeX Export</strong> <span>Convert Markdown to LaTeX and output as a <code>.tex</code> file. Designed for academic writing and reports.</span></li>
+                <li><strong>Frontmatter Support</strong> <span>Manage note metadata (title, tags, date, etc.) separately from the body. Edit in the Detail Panel's Frontmatter tab; auto-merged on export.</span></li>
+                <li><strong>Sidebar Redesign</strong> <span>Note list simplified to title-only. Preview button opens Detail Panel with Preview, Frontmatter, and Info tabs. Pinned notes get a dedicated "★ Pinned" area. Remote Sidebar lets you browse and pull notes from your Git repository.</span></li>
+                <li><strong>Web Clipper Enhancements</strong> <span>Clip YouTube subtitles as timestamped Markdown. Shadow DOM and same-site iframe content now supported. Dedicated extraction for Zenn, Qiita, and Hatena Blog.</span></li>
+                <li><strong>Writer Mode Typography Preset</strong> <span>18px font, 1.8 line height, 720px centered layout for long-form writing. Toggle from the slash menu.</span></li>
+                <li><strong>Heading Auto-Numbering</strong> <span>Automatically number H2–H6 headings with CSS counters. Toggle with <code>/num</code> in the slash menu.</span></li>
+                <li><strong>LaTeX Autocomplete in Math Blocks</strong> <span>Type <code>\</code> inside a math block to see 108 LaTeX command suggestions — Greek letters, operators, arrows, and more.</span></li>
+                <li><strong>TOC Enhancements</strong> <span>Collapsible headings in the TOC for long documents. Navigation button bar at the bottom: first, last, previous heading, next heading, page up, page down.</span></li>
+                <li><strong>Cross-Note Find &amp; Replace</strong> <span><code>Ctrl+Shift+H</code> to search and replace across all notes. Folder filter chips, match counter ("3 / 17"), and <code>Ctrl+F</code> for search-only mode.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Changed</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Font changed to system-ui</strong> <span>Replaced Inter with the OS system font stack. Improves CJK (Japanese, Chinese, Korean) display. San Francisco on Mac, Segoe UI on Windows.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Removed</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Source Control sidebar tab removed</strong> <span>Git operations are now consolidated in the Git menu at the top. Sidebar minimum width reduced to 256px.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.4 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.1.4</span>
               <span class="accordion-highlight">A clear first step for new users.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Installing an extension that replaces your New Tab can feel uncertain. This release makes the first 30 seconds clear.</p>
