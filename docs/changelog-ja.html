@@ -65,8 +65,54 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.5 - Latest -->
+        <!-- v2.1.6 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.6</span>
+              <span class="accordion-highlight">速く、滑らかに。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.1.5で土台を作り直した。v2.1.6はその仕上げ — 起動を速く、ペーストを賢く、UIは邪魔にならないように。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Clipper CSSセレクター指定</strong> <span>ドロップダウンでページセクション（<code>main</code>、<code>article</code>、<code>#content</code>）を選んでクリップ。長いページから必要な部分だけを正確に取り込める。</span></li>
+                <li><strong>自動非表示UI</strong> <span>執筆中はヘッダーとツールバーが自動で非表示に。スクロールすると消え、マウスを上端に近づけると再表示。画面を広く使って書くことに集中できる。</span></li>
+                <li><strong>Git同期ステータスインジケーター</strong> <span>サイドバー下部にリアルタイム同期状態を表示 — 同期中・完了・オフライン・エラーがひと目でわかる。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>起動速度の最適化</strong> <span>ダウンロードサイズ 143KB→136KB（−5%）。大きなノート（100KB以上）の表示が最大29%高速化。</span></li>
+                <li><strong>AIペースト：テーブル+コードブロック</strong> <span>Claude、ChatGPTなどのAI出力をペーストした際、テーブルセル内のコードブロックが自動整形されるように。</span></li>
+                <li><strong>AI残留HTMLタグの自動除去</strong> <span>AI出力に紛れ込む不要なHTMLタグをペースト時に自動除去。</span></li>
+                <li><strong>サイドバーDetail Panel</strong> <span>プレビュー・情報・Frontmatterの3タブに統合。最後に開いていたタブを記憶。</span></li>
+                <li><strong>サイドバー描画パフォーマンス</strong> <span>DOM更新を最適化し、サイドバーリストの描画が高速化。</span></li>
+                <li><strong>アニメーション改善</strong> <span>ドロワーの開閉、ツールチップの表示、ホバー時の反応が自然で滑らかに。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>コールアウト+リスト混在表示</strong> <span>コールアウトとリストを併用した際の表示崩れを修正。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">変更</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>アーカイブ移動メッセージ</strong> <span>ノートをアーカイブに移動する際のメッセージ文言を改善。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.5 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

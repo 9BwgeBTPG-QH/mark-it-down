@@ -49,7 +49,7 @@
       "price": "0",
       "priceCurrency": "JPY"
     },
-    "softwareVersion": "2.1.5",
+    "softwareVersion": "2.1.6",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -72,7 +72,10 @@
       "キーボードファースト設計",
       "オフライン対応",
       "日英バイリンガル",
-      "Frontmatter管理（メタデータを本文と分離・エクスポート時に自動合成）"
+      "Frontmatter管理（メタデータを本文と分離・エクスポート時に自動合成）",
+      "Web Clipper CSSセレクター指定（ページセクションを選んでクリップ）",
+      "自動非表示UI（執筆中にヘッダーとツールバーが自動で隠れる）",
+      "Git同期ステータスインジケーター"
     ]
   }
   </script>
@@ -252,27 +255,27 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">最近の追加機能</h2>
-        <p class="coming-soon-status">v2.1.5 — 書いたものを、どこへでも。</p>
+        <p class="coming-soon-status">v2.1.6 — 速く、滑らかに。</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>Portability Hub</strong>
-            <span>Zenn・Qiita・Hugo・Jekyll・Docusaurus・MkDocs・Obsidian など8プラットフォームへの記法変換。バッチエクスポート時に非標準記法を検出し「そのまま / 全正規化 / 1件ずつ」の3択で対処。</span>
+            <strong>起動速度の最適化</strong>
+            <span>ダウンロードサイズ −5%。大きなノート（100KB以上）の表示が最大29%高速化。</span>
           </li>
           <li>
-            <strong>サイドバー全面再設計</strong>
-            <span>ノート一覧をタイトルのみにシンプル化。Detail Panel でプレビュー・Frontmatter編集・ファイル情報を表示。ピン留めは「★ Pinned」エリアに集約。</span>
+            <strong>AIペースト改善</strong>
+            <span>テーブルセル内のコードブロックが自動整形。AI出力に残るHTMLタグもペースト時に自動除去。</span>
           </li>
           <li>
-            <strong>EPUB・LaTeXエクスポート</strong>
-            <span>EPUB 3.0 形式と LaTeX 形式が新たな出力フォーマットに加わった。</span>
+            <strong>Web Clipper CSSセレクター指定</strong>
+            <span>ドロップダウンでページセクション（main、article、#content）を選んでクリップ。</span>
           </li>
           <li>
-            <strong>Chat Format Smart Paste</strong>
-            <span>Slack・Discord・WhatsApp からのペーストで、チャット固有の記法を標準 Markdown に自動変換。</span>
+            <strong>自動非表示UI</strong>
+            <span>執筆中はヘッダーとツールバーが自動で非表示。マウスを上端に近づけると再表示。</span>
           </li>
           <li>
-            <strong>Frontmatter対応</strong>
-            <span>ノートのメタデータ（タイトル・タグ・日付）を本文と分離して管理。Hugo・Zenn などへのエクスポート時に自動合成。</span>
+            <strong>サイドバーDetail Panel</strong>
+            <span>プレビュー・情報・Frontmatterの3タブに統合。最後に開いたタブを記憶。</span>
           </li>
         </ul>
       </section>
@@ -325,7 +328,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版: v2.1.5</small></p></invoke>
+        <small>最新版: v2.1.6</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手
