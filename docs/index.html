@@ -49,7 +49,7 @@
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "2.1.6",
+    "softwareVersion": "2.1.7",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -74,7 +74,11 @@
       "Frontmatter support — manage metadata separately from note body",
       "Web Clipper CSS selector targeting for precise page section clipping",
       "Auto-hide UI — header and toolbar hide while writing",
-      "Git sync status indicator in sidebar"
+      "Git sync status indicator in sidebar",
+      "Table keyboard navigation — Excel-like Enter/Tab/Alt+Enter cell movement",
+      "Hold-to-delete — deliberate press-and-hold to permanently remove notes",
+      "Web Clipper preview — select sections before saving a clip",
+      "Export presets — auto-attach YAML/TOML/JSON frontmatter on export"
     ]
   }
   </script>
@@ -255,27 +259,27 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">Recently Added</h2>
-        <p class="coming-soon-status">v2.1.6 — Faster. Smoother.</p>
+        <p class="coming-soon-status">v2.1.7 — Smarter controls.</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>Startup Speed</strong>
-            <span>Download size reduced 5%. Large notes (100KB+) open up to 29% faster.</span>
+            <strong>Table Keyboard Navigation</strong>
+            <span>Enter moves down, Tab moves right, Alt+Enter for line breaks inside cells. Click and press Enter to start typing.</span>
           </li>
           <li>
-            <strong>AI Paste Intelligence</strong>
-            <span>Code blocks in table cells auto-format on paste. Leftover HTML tags from AI output stripped automatically.</span>
+            <strong>Hold-to-Delete</strong>
+            <span>Permanently removing notes from Trash requires a deliberate hold. No accidental deletions.</span>
           </li>
           <li>
-            <strong>Web Clipper CSS Selector</strong>
-            <span>Select page sections (main, article, #content) from a dropdown before clipping.</span>
+            <strong>Web Clipper Preview</strong>
+            <span>Preview and select sections before saving a web clip. Exclude what you don't need.</span>
           </li>
           <li>
-            <strong>Auto-Hide UI</strong>
-            <span>Header and toolbar hide while writing. Move mouse to the top to reveal.</span>
+            <strong>Export Presets</strong>
+            <span>Attach YAML, TOML, or JSON frontmatter automatically when exporting Markdown.</span>
           </li>
           <li>
-            <strong>Sidebar Detail Panel</strong>
-            <span>Unified into 3 tabs — Preview, Info, Frontmatter. Remembers your last-used tab.</span>
+            <strong>Faster Startup</strong>
+            <span>Download size reduced another 5% — from 136KB to 129KB.</span>
           </li>
         </ul>
       </section>
@@ -328,7 +332,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Ready to write?</h2>
         <p>Available as a Chrome extension. No account required.<br>
-        <small>Latest version: v2.1.6</small></p>
+        <small>Latest version: v2.1.7</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
             Get the extension

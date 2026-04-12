@@ -65,15 +65,54 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.6 - Latest -->
+        <!-- v2.1.7 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.7</span>
+              <span class="accordion-highlight">操作が、手に馴染む。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.1.6で起動を速くした。v2.1.7は操作の「確かさ」を磨く — テーブル編集がキーボードで完結し、削除には意思を求め、クリップは中身を確認してから保存する。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>テーブルキーボードナビゲーション</strong> <span>Enterで下のセルへ移動、Tabで右へ、Alt+Enterでセル内改行。セルをクリックしてEnterを押すだけで入力開始。最終行でEnterを押すとテーブルの外へ。</span></li>
+                <li><strong>長押し削除</strong> <span>Trashからの完全削除は長押しで意思確認。途中で離せばキャンセル。うっかり削除を防ぐ設計。</span></li>
+                <li><strong>Web Clipperプレビュー</strong> <span>クリップ前にセクションをプレビューして選択。広告やナビゲーションなど不要な要素を除外して保存できる。</span></li>
+                <li><strong>エクスポートプリセット</strong> <span>MarkdownエクスポートにYAML・TOML・JSONフロントマターを自動付加。タイトル・日付・タグを一度設定すれば毎回の手入力が不要に。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>起動速度の最適化</strong> <span>ダウンロードサイズ 136KB→129KB（−5%）。継続的な最適化でアプリがさらに軽く。</span></li>
+                <li><strong>テーブルツールバー</strong> <span>行操作ボタンの順序をスプレッドシートの慣例に合わせて見直し。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ネストリスト内の引用ブロック</strong> <span>ネストしたリスト内のblockquoteが崩れる問題を修正。</span></li>
+                <li><strong>スラッシュコマンド</strong> <span>エディタ再表示後に<code>/</code>コマンドが反応しなくなる問題を修正。</span></li>
+                <li><strong>Web Clipperセッション</strong> <span>クリップ保存時にセッション情報が壊れることがあった問題を修正。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.6 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.1.6</span>
               <span class="accordion-highlight">速く、滑らかに。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.1.5で土台を作り直した。v2.1.6はその仕上げ — 起動を速く、ペーストを賢く、UIは邪魔にならないように。</p>
