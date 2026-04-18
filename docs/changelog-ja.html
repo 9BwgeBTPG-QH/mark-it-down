@@ -65,15 +65,58 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.7 - Latest -->
+        <!-- v2.1.8 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.8</span>
+              <span class="accordion-highlight">日本語を、もっと美しく。操作を、もっと気持ちよく。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.1.7で操作の確かさを磨いた。v2.1.8は、日本語テキストの表示品質と、細部の使い心地を仕上げるバージョンだ。目次パネルの全面刷新、なめらかなフォーカスモード、そして起動時間のほぼ半減。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>矢印・em-dash 自動変換</strong> <span><code>-&gt;</code> で <code>→</code>、<code>--</code> で <code>—</code> に変換。コードブロック内は変換されない。</span></li>
+                <li><strong>Mermaid セマンティックカラー</strong> <span><code>:::frontend</code>、<code>:::backend</code>、<code>:::database</code> などのクラス名でテーマに合わせた色が自動付与。</span></li>
+                <li><strong>テーブルセル編集バッジ</strong> <span>入力を開始したセルに「Editing」バッジが表示。列数の多いテーブルで現在位置が一目でわかる。</span></li>
+                <li><strong>タグ入力 Tab ナビゲーション</strong> <span>Tab で Key → Value → 次の行へ移動。マウスに触れずにタグをまとめて入力できる。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>目次パネル全面刷新</strong> <span>ナビゲーションボタンを常に表示。位置カウンター（「3/12」など）をクリックして任意の見出しに直接ジャンプ。Notes サイドバーとスタイル統一。</span></li>
+                <li><strong>固定表示インジケーター</strong> <span>Notes / TOC パネルを固定しているとき、ボタンがピン留めアイコンに切り替わる。クリックせずに確認できる。</span></li>
+                <li><strong>設定ボタン統合</strong> <span>外観設定とモード設定を 1 ボタンに統合。ヘッダーがすっきり。</span></li>
+                <li><strong>フォーカスモードアニメーション</strong> <span>ヘッダーとツールバーが上方向にスライドしながらフェードアウト。サイドバーの動きと統一。</span></li>
+                <li><strong>日本語テキスト表示改善</strong> <span>禁則処理・見出しの字間・フォント表示を改善。Windows の Academic テーマでシステムフォントを正しく利用。</span></li>
+                <li><strong>起動速度</strong> <span>並列初期化で起動時間約 45% 短縮（189ms → 104ms）。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>目次ナビゲーションハイライト</strong> <span>ナビゲーションボタン使用後にハイライトが意図しない見出しに飛ぶバグを修正。</span></li>
+                <li><strong>フォーカスモードプログレスバー</strong> <span>フォーカスモード中にプログレスバーが消える問題を修正。</span></li>
+                <li><strong>テーブルセルのカーソル</strong> <span>一部テーマでカーソルが見えにくかった問題を修正。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.7 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.1.7</span>
               <span class="accordion-highlight">操作が、手に馴染む。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.1.6で起動を速くした。v2.1.7は操作の「確かさ」を磨く — テーブル編集がキーボードで完結し、削除には意思を求め、クリップは中身を確認してから保存する。</p>
