@@ -65,15 +65,57 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.8 - Latest -->
+        <!-- v2.1.9 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.9</span>
+              <span class="accordion-highlight">Find. Return. Paste.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.1.8 tuned how Japanese renders and how the TOC moves. v2.1.9 takes aim at two moments: the instant you paste something into a note, and the moments you move between notes. Smart Paste covers more ground (LaTeX environments, JSON on plain Ctrl+V, HTML formatting tags). Search grew a live preview pane. Alt+←/→ walks back through the notes you just visited.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Note History Navigation</strong> <span>Alt+← and Alt+→ move through previously visited notes, like browser back/forward. Tooltip shows the title of the note you'll land on.</span></li>
+                <li><strong>Search Two-Column Preview</strong> <span>Hit list on the left, full note preview on the right. Inline keyword highlighting lets you decide before you open. Arrow keys move, Enter jumps. Side Panel keeps the compact 1-column layout.</span></li>
+                <li><strong>LaTeX Environment Paste</strong> <span>Paste <code>\begin{equation|align|aligned|gather|cases}</code> and it becomes <code>$$...$$</code> automatically. Pure LaTeX (no surrounding Markdown) now converts on plain Ctrl+V too.</span></li>
+                <li><strong>JSON on Plain Ctrl+V</strong> <span>JSON → Markdown was Ctrl+Shift+V only. Now plain paste works. Arrays become tables, objects become key-value lists. Objects nested 3+ deep fall back to a <code>```json</code> fenced block.</span></li>
+                <li><strong>HTML Formatting Tags</strong> <span><code>&lt;strong&gt;</code>/<code>&lt;b&gt;</code>/<code>&lt;em&gt;</code>/<code>&lt;i&gt;</code>/<code>&lt;code&gt;</code> now convert to <code>**</code>/<code>*</code>/<code>`</code> instead of being stripped. Web and AI clips keep their emphasis.</span></li>
+                <li><strong>Hunk-Level Conflict Navigation</strong> <span>In the Conflict Resolution modal, <code>j</code>/<code>k</code> move between hunks and <code>Shift+←</code>/<code>Shift+→</code> cherry-pick the focused hunk as local or remote. Partial merges stay keyboard-only.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Improvements</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Clipper Adaptive Engine</strong> <span>When the default Readability + toMd extraction scores below threshold, Clipper automatically falls back to Defuddle + toMd. Adaptive average score stays at 99+.</span></li>
+                <li><strong>Code-Block Paste Protection</strong> <span>Smart Table / JSON / LaTeX conversions skip when the target is inside a code block and defer to CodeMirror's native paste. Code stays as code.</span></li>
+                <li><strong>Open in Editor Unified</strong> <span>Conflict Resolution Modal's dropdown collapsed into a single button — Local opens in New Tab (editable), Remote opens in Side Panel (reference).</span></li>
+                <li><strong>Smart Typography Performance</strong> <span>Cut <code>state.doc.resolve(from)</code> calls from twice-per-keystroke to once, and folded ancestor checks into an inline loop. A small fix on a hot path.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Bug Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Double Paste Processing</strong> <span>Fixed Crepe's internal handler consuming paste events before Smart Paste ran. Resolved by promoting to a capture-phase window listener.</span></li>
+                <li><strong>Math Block Placeholder</strong> <span>Fixed math blocks displaying as raw placeholders after <code>```math</code> fence conversion, by re-detecting the converted string and scheduling CodeMirror init.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.8 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.1.8</span>
               <span class="accordion-highlight">Better Japanese. Smoother focus.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.1.7 refined how controls feel. v2.1.8 focuses on Japanese text quality and the small moments between keystrokes — a redesigned TOC panel, smoother focus mode, and startup time cut nearly in half.</p>

@@ -65,15 +65,57 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.8 - Latest -->
+        <!-- v2.1.9 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.1.9</span>
+              <span class="accordion-highlight">貼る、探す、戻る。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.1.8 で「日本語の見え方」と「目次の動き」を整えた。v2.1.9 は、ノートに情報を入れる瞬間と、ノート間を動き回る瞬間に向き合ったバージョンだ。Smart Paste の守備範囲を広げ（LaTeX 環境、通常 Ctrl+V での JSON、HTML 書式タグ）、検索にはプレビュー、ノート間移動には履歴を加えた。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ノート履歴ナビゲーション</strong> <span>Alt+← / Alt+→ で直前に見ていたノートを行き来。ブラウザの戻る／進むと同じ感覚。次に移動するノートのタイトルがツールチップで出る。</span></li>
+                <li><strong>検索 2 カラムプレビュー</strong> <span>左にヒット一覧、右にノート本文プレビュー。キーワードがインラインでハイライトされ、開く前に中身を確かめられる。矢印キーで移動、Enter で開く。Side Panel は従来通り 1 カラム。</span></li>
+                <li><strong>LaTeX 環境形式のペースト</strong> <span><code>\begin{equation|align|aligned|gather|cases}</code> が自動で <code>$$...$$</code> に変換され数式レンダリング。Markdown を含まない純粋な LaTeX も通常 Ctrl+V で変換されるように。</span></li>
+                <li><strong>JSON 通常 Ctrl+V 対応</strong> <span>JSON → Markdown 変換が通常ペーストでも動作。配列はテーブル、オブジェクトは Key-Value リストに。3 階層以上の深ネストは <code>```json</code> フェンスブロックにフォールバック。</span></li>
+                <li><strong>HTML 書式タグの Markdown 変換</strong> <span><code>&lt;strong&gt;</code>/<code>&lt;b&gt;</code>/<code>&lt;em&gt;</code>/<code>&lt;i&gt;</code>/<code>&lt;code&gt;</code> を除去せず <code>**</code>/<code>*</code>/<code>`</code> に変換。Web や AI 出力の書式情報が失われなくなった。</span></li>
+                <li><strong>ハンクレベルのコンフリクト解決</strong> <span>ConflictResolutionModal で <code>j</code>/<code>k</code> によるハンク移動、<code>Shift+←</code>/<code>Shift+→</code> でフォーカス中のハンクを cherry-pick（ローカル／リモート採用）。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Clipper Adaptive Engine</strong> <span>既定の Readability + toMd 抽出スコアが閾値未満のとき Defuddle + toMd に自動フォールバック。Adaptive 平均スコア 99+ を維持。</span></li>
+                <li><strong>コードブロック内ペーストの保護</strong> <span>Smart Table / JSON / LaTeX 変換はコードブロック内ではスキップし CodeMirror ネイティブペーストに委譲。コードはコードのまま貼れる。</span></li>
+                <li><strong>Open in Editor の統一</strong> <span>ConflictResolutionModal のドロップダウンを 1 ボタンに集約。ローカル = New Tab（編集可）、リモート = Side Panel（参照用）で固定。</span></li>
+                <li><strong>Smart Typography パフォーマンス改善</strong> <span>入力イベント毎の <code>state.doc.resolve(from)</code> 呼び出しを 2 回から 1 回に。全祖先チェックをインラインループに畳み込み。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ペーストのダブル処理</strong> <span>Crepe 内部ハンドラに先行消費される問題を capture-phase window listener への昇格で解消。</span></li>
+                <li><strong>math block が placeholder のまま表示</strong> <span><code>```math</code> フェンス変換後に converted 文字列で再判定して CodeMirror init をスケジュールする形に修正。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.8 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.1.8</span>
               <span class="accordion-highlight">日本語を、もっと美しく。操作を、もっと気持ちよく。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済み</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.1.7で操作の確かさを磨いた。v2.1.8は、日本語テキストの表示品質と、細部の使い心地を仕上げるバージョンだ。目次パネルの全面刷新、なめらかなフォーカスモード、そして起動時間のほぼ半減。</p>
