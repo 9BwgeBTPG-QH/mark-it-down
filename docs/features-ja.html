@@ -77,12 +77,33 @@
             <ul class="changelog-features">
               <li><strong>Web Clipper（コンテキストメニュー）</strong> <span>ページやテキスト選択を右クリック→Markdownとして保存またはコピー。保存後はSide Panelに自動遷移</span></li>
               <li><strong>AIチャット抽出</strong> <span>Claude・ChatGPT・Grok・Geminiの出力をMarkdownで取得。数式・コード・テーブル・Artifactをそのまま保持</span></li>
-              <li><strong>コメントスレッド抽出</strong> <span>HackerNews・Reddit・GitHubから構造化Markdownを生成。ネスト・著者・日時を保持</span></li>
+              <li><strong>コメントスレッド抽出</strong> <span>HackerNews・Reddit・GitHubから構造化Markdownを生成。ネスト・著者・日時・会話の文脈を保持</span></li>
               <li><strong>llms.txt検出</strong> <span>Readabilityフォールバック前に /llms-full.txt と /llms.txt を自動チェック。24時間キャッシュ、5秒タイムアウト</span></li>
               <li><strong>Mermaid保持</strong> <span>Mermaid.jsの図のソースコードを復元し、<code>```mermaid</code> コードブロックとして保存</span></li>
-              <li><strong>YouTube字幕取り込み</strong> <span>動画ページでClipperを使うと字幕をタイムスタンプ付きMarkdownとして保存</span></li>
+              <li><strong>YouTube字幕取り込み</strong> <span>利用できる字幕をタイムスタンプ付きMarkdownリンクとして保存。動画の該当箇所へ戻りやすい形で残せる</span></li>
               <li><strong>Shadow DOM / iframe対応</strong> <span>モダンWebアプリの内部DOM構造や同一サイトiframeのコンテンツも取り込み可能</span></li>
-              <li><strong>Zenn・Qiita・はてなブログ</strong> <span>プラットフォーム固有の埋め込み構文を認識し標準Markdownに変換</span></li>
+              <li><strong>ソーシャル / パブリッシングサイト</strong> <span>LinkedIn、Bluesky、Threads、Medium、Discourse に専用抽出を追加。クリップ後の手直しを減らせる</span></li>
+              <li><strong>Zenn・Qiita・はてなブログ</strong> <span>プラットフォーム固有の埋め込み構文を認識し標準Markdownに変換。RSS経由のはてなブログ脚注はMarkdown footnoteに変換</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- RSS Reader -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">RSS</span>
+              <span class="accordion-highlight">RSS Reader — 読む、残す、同期する</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>フィードビューア</strong> <span>サイドバー、コマンドパレット、<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> からRSSを開ける。<kbd>j</kbd>/<kbd>k</kbd>で移動、<kbd>Enter</kbd>または<kbd>o</kbd>で開き、<kbd>i</kbd>で保存</span></li>
+              <li><strong>Reading Pane</strong> <span>記事HTMLのプレビュー、既読/保存済み状態、クリップ後に保存されたMarkdownの全文表示に対応</span></li>
+              <li><strong>OPMLインポート / エクスポート</strong> <span>Feedly、Inoreader、NetNewsWire など OPML 2.0 対応リーダーから購読リストを移行できる</span></li>
+              <li><strong>RSS設定のGit同期</strong> <span>feeds と denylist を端末間で同期。権限状態は端末ごとに扱うため、同期で壊れにくい</span></li>
+              <li><strong>Feed Health Indicator</strong> <span>最終取得時刻、取得失敗、権限要否、保存済み状態を見て、次に読むものを判断できる</span></li>
             </ul>
           </div>
         </details>
@@ -99,7 +120,10 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>Portability Hub</strong> <span>出力先を選んで記法を変換。対応: CommonMark・Obsidian・Hugo/Jekyll・GFM・Zenn・Qiita・Docusaurus・MkDocs（8種類）</span></li>
+              <li><strong>CommonMark / GFM / Hugo / Obsidian向けコピー</strong> <span>エクスポートメニューから出力先の方言を選んでコピー。公開先での手直しを減らせる</span></li>
               <li><strong>バッチ変換</strong> <span>ZIP一括エクスポート時、非標準記法を含むノートに「そのまま / 全正規化 / 1件ずつ確認」の3択ダイアログ</span></li>
+              <li><strong>テーブル列幅の保持</strong> <span>列幅をMarkdown attr-listとして保存し、HTML / PDF / DOCX exportに反映</span></li>
+              <li><strong>Pin / Star frontmatter</strong> <span>ピン留めやスター状態をexport/importの境界で失いにくくする</span></li>
               <li><strong>Chat Format Smart Paste</strong> <span>Slack・Discord・WhatsAppからのペーストを自動で標準Markdownに変換。リンク・スポイラー・引用ブロック等が対象</span></li>
             </ul>
           </div>
@@ -177,6 +201,7 @@
               <li><strong>Pinned Area</strong> <span>ピン留めノートを「★ Pinned」エリアに集約表示。0件時は非表示 (Alt+P)</span></li>
               <li><strong>Frontmatter管理</strong> <span>Hugo・Zenn・Jekyll向けメタデータを本文と分離。Detail PanelのFrontmatterタブで編集、エクスポート時に自動合成</span></li>
               <li><strong>Detail Panel</strong> <span>サイドバー内でPreview・Frontmatter・Infoの3タブ。ノートを開かずに確認・編集。高さドラッグ調整可能</span></li>
+              <li><strong>ホバーカードとプレビューパネル</strong> <span>ノートを開く前に、サイドバー上で本文やメタ情報を確認できる</span></li>
               <li><strong>NoteItemシンプル化</strong> <span>各ノート行をチェックボックスとタイトルのみに。アクションはDetail Panelに集約</span></li>
               <li><strong>Remote Sidebar</strong> <span>Git連携時にLocal/Remoteトグル。リモートノート一覧の閲覧・フォルダグループ化・Pull取り込み</span></li>
               <li><strong>ドラッグ&ドロップ</strong> <span>フォルダ間でノートを移動</span></li>
@@ -235,6 +260,7 @@
               <li><strong>Chrome Storage</strong> <span>キャッシュクリアでも残る</span></li>
               <li><strong>インポート/エクスポート</strong> <span>.md、.zip、Archiveピン留め</span></li>
               <li><strong>エクスポート</strong> <span>PDF（ページ番号・目次・用紙サイズカスタム）、DOCX（画像・Mermaid図・数式・シンタックスハイライト埋め込み）、PNG（2x Retina）、HTML（3テンプレート・Self-Contained）、EPUB（Mermaid・数式・コードハイライト含む電子書籍）、LaTeX（.tex、見出し→\section等にマッピング） — Ctrl+Shift+E</span></li>
+              <li><strong>出力先別コピー</strong> <span>CommonMark、GFM、Hugo、Obsidian 向けに、用途に合わせたMarkdownとしてコピー</span></li>
               <li><strong>リッチテキストコピー</strong> <span>Ctrl+Shift+Cでノート全体または選択テキストをリッチテキスト形式でコピー。Word・Notion・Google Docsに書式を保ったまま貼り付け</span></li>
               <li><strong>Frontmatter自動合成</strong> <span>Frontmatter設定時、MD・HTML・EPUB・LaTeX・DOCXエクスポートで本文先頭に自動合成</span></li>
               <li><strong>LLMコピー</strong> <span>YAMLフロントマター（タイトル/ソース/日付）を先頭に付与。コピードロップダウンまたはコマンドパレットから</span></li>
@@ -286,6 +312,7 @@
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></strong> <span>サイドバー検索にフォーカス</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd></strong> <span>TOC検索にフォーカス</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd></strong> <span>エクスポートメニュー</span></li>
+                <li><strong><kbd>I</kbd>/<kbd>A</kbd>/<kbd>T</kbd>/<kbd>M</kbd></strong> <span>選択中のノートを Inbox / Archive / Trash / Template へ振り分け</span></li>
               </ul>
             </div>
             <div class="changelog-group">

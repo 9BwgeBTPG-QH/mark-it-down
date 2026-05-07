@@ -49,7 +49,7 @@
       "price": "0",
       "priceCurrency": "JPY"
     },
-    "softwareVersion": "2.1.9",
+    "softwareVersion": "2.2.0",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -60,9 +60,13 @@
     "inLanguage": "ja",
     "featureList": [
       "ライブプレビュー付きMarkdown編集",
+      "RSS Reader（フィードを読み、必要な記事だけInboxへ保存）",
+      "OPMLインポート/エクスポート（RSS購読リストを他のリーダーと移行）",
+      "RSS Git同期（feeds / denylist設定を端末間で共有）",
       "デュアルモード：新しいタブとサイドパネル",
       "Web Clipper（右クリックでページをMarkdownに変換）",
       "Portability Hub（Zenn・Hugo・Obsidian 等8プラットフォームへの記法変換）",
+      "CommonMark・GFM・Hugo・Obsidian向けコピー",
       "Chat Format Smart Paste（Slack・Discord・WhatsApp の自動正規化）",
       "Git同期（GitHub、GitLab対応）",
       "PDF（ページ番号・目次付き）・DOCX・PNG・HTML・EPUB・LaTeXエクスポート",
@@ -79,6 +83,7 @@
       "テーブルキーボードナビゲーション（ExcelライクなEnter/Tab/Alt+Enter操作）",
       "長押し削除（Trashからの完全削除に意思確認）",
       "Web Clipperプレビュー（クリップ前にセクション選択）",
+      "サイドバーのホバーカードとプレビューパネル",
       "エクスポートプリセット（YAML/TOML/JSONフロントマター自動付加）"
     ]
   }
@@ -259,27 +264,27 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">最近の追加機能</h2>
-        <p class="coming-soon-status">v2.1.9 — 探す。戻る。貼る。</p>
+        <p class="coming-soon-status">v2.2.0 — 読む、残す、運ぶ。</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>検索に、プレビューを</strong>
-            <span>検索パネルでヒット一覧の横にノート全文を表示。キーワードはインラインでハイライトされるので、開く前に読める。矢印キーで移動、Enter でジャンプ。</span>
+            <strong>ノートの中でRSSを読む</strong>
+            <span>サイドバー、コマンドパレット、Ctrl+Shift+R からフィードを開ける。j/k で移動、Enter で読む、必要な記事だけ Inbox に保存。</span>
           </li>
           <li>
-            <strong>さっきのノートへ戻る</strong>
-            <span>Alt+← / Alt+→ で直前に見ていたノートを行き来。テンプレートを確認して、アーカイブを覗いて、また戻る。履歴が追いかけてくる。</span>
+            <strong>購読リストを持ち運ぶ</strong>
+            <span>Feedly、Inoreader、NetNewsWire などから OPML をインポート/エクスポート。RSS feeds と denylist は Git sync で端末間共有できる。</span>
           </li>
           <li>
-            <strong>LaTeX、そのままで</strong>
-            <span>チャットから <code>\begin{equation}</code> や <code>\begin{align}</code> をコピペすると数式としてレンダリング。<code>$$...$$</code> に手で書き換える必要なし。</span>
+            <strong>Web Clipperの守備範囲を拡大</strong>
+            <span>YouTube字幕、Reddit / Hacker News コメント、LinkedIn、Bluesky、Threads、Medium、Discourse をよりきれいな Markdown に変換。</span>
           </li>
           <li>
-            <strong>JSON、読める形に</strong>
-            <span>API レスポンスを普通の Ctrl+V で貼るだけでテーブルやリストに変換。深くネストされたオブジェクトもクリーンなコードブロックに収まる。</span>
+            <strong>外へ出しても壊れにくく</strong>
+            <span>CommonMark、GFM、Hugo、Obsidian 向けコピーに対応。テーブル列幅、Pin、Star も export/import の境界で失いにくくなった。</span>
           </li>
           <li>
-            <strong>HTML ペーストが、もっと素直に</strong>
-            <span>Web からコピーした太字・斜体・インラインコードが Markdown として残る。貼った結果が、見ていた通りに。</span>
+            <strong>ノートを開く前に確認する</strong>
+            <span>サイドバーのホバーカード、プレビューパネル、I/A/T/M の振り分けショートカットで、読む・残す・整理する流れを短く。</span>
           </li>
         </ul>
       </section>
@@ -332,7 +337,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版: v2.1.9</small></p>
+        <small>最新版: v2.2.0</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手

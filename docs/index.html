@@ -49,7 +49,7 @@
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "2.1.9",
+    "softwareVersion": "2.2.0",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -59,6 +59,9 @@
     "installUrl": "https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke",
     "featureList": [
       "Web Clipper — right-click to save any page or AI chat as Markdown",
+      "RSS Reader — read feeds, open articles, and save selected items to Inbox",
+      "OPML import/export for moving RSS subscriptions between readers",
+      "RSS Git sync — keep feed lists and denylist settings across devices",
       "Markdown editing with live preview",
       "Dual mode: New Tab and Side Panel",
       "Git synchronization (GitHub, GitLab)",
@@ -70,6 +73,7 @@
       "Offline support",
       "Bilingual (English/Japanese)",
       "Portability Hub — convert to Obsidian, Hugo, Jekyll, Docusaurus, MkDocs, Zenn, or Qiita syntax",
+      "Copy as CommonMark, GFM, Hugo, or Obsidian before publishing",
       "Chat Format Smart Paste — auto-convert Slack, Discord, and WhatsApp pastes",
       "Frontmatter support — manage metadata separately from note body",
       "Web Clipper CSS selector targeting for precise page section clipping",
@@ -78,6 +82,7 @@
       "Table keyboard navigation — Excel-like Enter/Tab/Alt+Enter cell movement",
       "Hold-to-delete — deliberate press-and-hold to permanently remove notes",
       "Web Clipper preview — select sections before saving a clip",
+      "Sidebar hover cards and preview panel for checking notes before opening",
       "Export presets — auto-attach YAML/TOML/JSON frontmatter on export"
     ]
   }
@@ -259,27 +264,27 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">Recently Added</h2>
-        <p class="coming-soon-status">v2.1.9 — Find. Return. Paste.</p>
+        <p class="coming-soon-status">v2.2.0 — Read. Save. Carry.</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>Search, with preview</strong>
-            <span>The search panel shows the full note beside the hit list. Your keyword is highlighted inline — read before you open. Arrow keys to move, Enter to jump in.</span>
+            <strong>RSS Reader inside your notes</strong>
+            <span>Open feeds from the sidebar, command palette, or Ctrl+Shift+R. Move with j/k, open with Enter, and save only the articles worth keeping to Inbox.</span>
           </li>
           <li>
-            <strong>Go back to where you were</strong>
-            <span>Alt+← and Alt+→ walk through the notes you just visited. Browse a template, check an archive, return. History keeps up with you.</span>
+            <strong>Bring your feeds with you</strong>
+            <span>Import and export OPML from Feedly, Inoreader, NetNewsWire, and other readers. Git sync can now carry RSS feeds and denylist settings across devices.</span>
           </li>
           <li>
-            <strong>LaTeX that just works</strong>
-            <span>Paste <code>\begin{equation}</code> or <code>\begin{align}</code> from any chat and it renders as math. No manual rewrap to <code>$$...$$</code>.</span>
+            <strong>Clip more of the web</strong>
+            <span>YouTube transcripts, Reddit and Hacker News comments, LinkedIn, Bluesky, Threads, Medium, and Discourse now convert into cleaner Markdown.</span>
           </li>
           <li>
-            <strong>JSON, ready to read</strong>
-            <span>Paste an API response with plain Ctrl+V and it becomes a table or list. Deeply nested objects fall back to a clean fenced code block.</span>
+            <strong>Copy for where it goes next</strong>
+            <span>Copy as CommonMark, GFM, Hugo, or Obsidian. Table column widths, pinned notes, and starred state survive more export/import round trips.</span>
           </li>
           <li>
-            <strong>Richer HTML paste</strong>
-            <span>Bold, italic, and inline code from copied web content now survive as real Markdown. Clips look the way the source did.</span>
+            <strong>Move faster through notes</strong>
+            <span>Sidebar hover cards, preview panel, and I/A/T/M triage shortcuts help you check and file notes without breaking flow.</span>
           </li>
         </ul>
       </section>
@@ -332,7 +337,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Ready to write?</h2>
         <p>Available as a Chrome extension. No account required.<br>
-        <small>Latest version: v2.1.9</small></p>
+        <small>Latest version: v2.2.0</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
             Get the extension

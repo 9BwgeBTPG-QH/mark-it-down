@@ -65,15 +65,58 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.9 - Latest -->
+        <!-- v2.2.0 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.0</span>
+              <span class="accordion-highlight">読む、残す、運ぶ。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.1.9 は貼る瞬間と探す瞬間を整えた。v2.2.0 はそこから一歩進めて、日々流れてくる情報を読み、必要な部分だけをノートに残し、別の場所へ持ち出すためのバージョンだ。RSS が入口になり、Web Clipper の守備範囲が広がり、コピーやエクスポートで構造が壊れにくくなった。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>RSS Reader</strong> <span>Mark It Down の中でフィードを読み、<code>j</code>/<code>k</code> で移動、<code>Enter</code> で開き、必要な記事だけ Inbox に Markdown として保存できる。</span></li>
+                <li><strong>OPML インポート / エクスポート</strong> <span>Feedly、Inoreader、NetNewsWire などの購読リストを OPML 2.0 で移行できる。</span></li>
+                <li><strong>RSS Git同期</strong> <span>RSS feeds と denylist 設定を端末間で同期。名前変更、削除、重複したフィードは専用の conflict resolution UI で解決できる。</span></li>
+                <li><strong>CommonMark / GFM / Hugo / Obsidian 向けコピー</strong> <span>公開先の Markdown 方言に合わせてからコピーできるので、持ち出した後の手直しを減らせる。</span></li>
+                <li><strong>サイドバープレビューと振り分け</strong> <span>ホバーカード、プレビューパネル、I/A/T/M ショートカットで、ノートを開く前に確認して Inbox / Archive / Trash / Template へ素早く移動できる。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Web Clipper改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>YouTube字幕</strong> <span>利用できる字幕をタイムスタンプ付き Markdown リンクとして保存できる。</span></li>
+                <li><strong>コメントとスレッド</strong> <span>Reddit と Hacker News の会話構造、著者、文脈をより確実に Markdown として残せる。</span></li>
+                <li><strong>対応サイトの拡大</strong> <span>LinkedIn、Bluesky、Threads、Medium、Discourse に専用の抽出経路を追加し、汎用変換よりきれいに取り込める。</span></li>
+                <li><strong>RSSクリップの脚注</strong> <span>Hatena Blog の脚注を RSS clip 時に Markdown footnote へ変換する。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">ポータビリティと修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>テーブル列幅のエクスポート反映</strong> <span>列幅を Markdown attr-list として保持し、HTML / PDF / DOCX export に反映する。</span></li>
+                <li><strong>Pin / Star の frontmatter round-trip</strong> <span>ピン留めやスター状態を export/import の境界で失いにくくした。</span></li>
+                <li><strong>RSSの安定性</strong> <span>RSS clip 後に editor が空表示になる問題、Viewer のキーボード競合、sync 後の permission drift を修正。</span></li>
+                <li><strong>脚注と編集体験の細部</strong> <span>テーブル内脚注参照、複数段落の脚注 popover、コードブロック行番号トグル、hard block 前後の Ctrl+Enter 挿入を整えた。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.9 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.1.9</span>
               <span class="accordion-highlight">貼る、探す、戻る。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.1.8 で「日本語の見え方」と「目次の動き」を整えた。v2.1.9 は、ノートに情報を入れる瞬間と、ノート間を動き回る瞬間に向き合ったバージョンだ。Smart Paste の守備範囲を広げ（LaTeX 環境、通常 Ctrl+V での JSON、HTML 書式タグ）、検索にはプレビュー、ノート間移動には履歴を加えた。</p>
@@ -243,7 +286,7 @@
               <span class="accordion-version">v2.1.5</span>
               <span class="accordion-highlight">書いたものを、どこへでも。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Markdownには方言がある。Zennで書いた記法はHugoでは動かない。Slackからコピーしたテキストはアスタリスクがそのまま残る。v2.1.5はその問題を解決する。主要プラットフォームへの記法変換、チャットアプリからのスマートペーストに対応し、サイドバーも全面再設計した。</p>

@@ -77,12 +77,33 @@
             <ul class="changelog-features">
               <li><strong>Web Clipper</strong> <span>Right-click any page or selected text to save or copy it as clean Markdown. Saved notes open automatically in Side Panel</span></li>
               <li><strong>AI Chat Extraction</strong> <span>Captures output from Claude, ChatGPT, Grok, and Gemini as clean Markdown. Math, code, tables, and artifacts all preserved</span></li>
-              <li><strong>Comment Thread Extraction</strong> <span>Structured Markdown from Hacker News, Reddit, and GitHub. Preserves nesting, authors, and timestamps</span></li>
+              <li><strong>Comment Thread Extraction</strong> <span>Structured Markdown from Hacker News, Reddit, and GitHub. Preserves nesting, authors, timestamps, and conversation context</span></li>
               <li><strong>llms.txt Detection</strong> <span>Auto-checks /llms-full.txt and /llms.txt before Readability fallback. 24h cache, 5s timeout</span></li>
               <li><strong>Mermaid Preservation</strong> <span>Mermaid.js diagram source code recovered and saved as <code>```mermaid</code> code blocks</span></li>
-              <li><strong>YouTube Subtitles</strong> <span>Clips subtitles from YouTube videos as timestamped Markdown — auto-detected when captions are available</span></li>
+              <li><strong>YouTube Transcripts</strong> <span>Clips available YouTube captions as timestamped Markdown links — useful for returning to exact moments in a video</span></li>
               <li><strong>Shadow DOM / iframe Support</strong> <span>Extracts content from Shadow DOM internals and same-site iframes, reducing failures on modern SPAs</span></li>
-              <li><strong>Zenn / Qiita / Hatena Blog</strong> <span>Japanese blogging platform embed syntax recognized and converted to standard Markdown</span></li>
+              <li><strong>Social and Publishing Sites</strong> <span>Dedicated extractors for LinkedIn, Bluesky, Threads, Medium, and Discourse reduce cleanup after clipping</span></li>
+              <li><strong>Zenn / Qiita / Hatena Blog</strong> <span>Japanese blogging platform embed syntax recognized and converted to standard Markdown. Hatena Blog footnotes become Markdown footnotes when clipped from RSS</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- RSS Reader -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">rss</span>
+              <span class="accordion-highlight">RSS Reader — Read, save, and sync feeds</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>Feed Viewer</strong> <span>Open RSS from the sidebar, command palette, or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>. Move with <kbd>j</kbd>/<kbd>k</kbd>, open with <kbd>Enter</kbd> or <kbd>o</kbd>, save with <kbd>i</kbd></span></li>
+              <li><strong>Reading Pane</strong> <span>Preview article HTML, track read and saved state, and view the saved Markdown immediately after clipping</span></li>
+              <li><strong>OPML Import / Export</strong> <span>Bring subscription lists from Feedly, Inoreader, NetNewsWire, and other OPML 2.0 readers</span></li>
+              <li><strong>Git Sync for RSS Settings</strong> <span>Sync feeds and denylist settings across devices while keeping per-device permissions separate</span></li>
+              <li><strong>Feed Health Indicators</strong> <span>See last fetch time, failed fetches, permission needs, and saved state before deciding what to read next</span></li>
             </ul>
           </div>
         </details>
@@ -99,7 +120,10 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>Portability Hub</strong> <span>Convert notes to the syntax of any target platform. Supported: CommonMark, Obsidian, Hugo/Jekyll, Docusaurus, MkDocs, GFM, Zenn, Qiita (8 targets)</span></li>
+              <li><strong>Copy as CommonMark / GFM / Hugo / Obsidian</strong> <span>Choose a target dialect from the export menu before copying. Notes arrive closer to the format your publishing tool expects</span></li>
               <li><strong>Batch Conversion</strong> <span>On ZIP export, non-standard syntax triggers a 3-choice dialog: output as-is / normalize all / confirm one-by-one</span></li>
+              <li><strong>Table Width Preservation</strong> <span>Table column widths are stored in Markdown attr-list data and reflected in HTML, PDF, and DOCX export</span></li>
+              <li><strong>Pin / Star Frontmatter</strong> <span>Pinned and starred state can round-trip through export/import instead of being lost at the boundary</span></li>
               <li><strong>Chat Format Smart Paste</strong> <span>Paste from Slack, Discord, or WhatsApp — app-specific syntax auto-converts to standard Markdown. Covers links, spoilers, and quote blocks</span></li>
             </ul>
           </div>
@@ -177,6 +201,7 @@
               <li><strong>Pinned Area</strong> <span>Pinned notes grouped in a dedicated "★ Pinned" area at the top. Hidden when empty (Alt+P)</span></li>
               <li><strong>Frontmatter</strong> <span>Manage Hugo/Jekyll/Obsidian metadata separately from note body. Edit in the Detail Panel Frontmatter tab; auto-merged on export</span></li>
               <li><strong>Detail Panel</strong> <span>Preview, Frontmatter, and Info tabs inside the sidebar — inspect and edit without opening a note. Drag to resize</span></li>
+              <li><strong>Hover Cards and Preview Panel</strong> <span>Check note content and metadata from the sidebar before opening the note</span></li>
               <li><strong>NoteItem Simplification</strong> <span>Each note row shows only checkbox and title. Actions consolidated in the Detail Panel</span></li>
               <li><strong>Remote Sidebar</strong> <span>Local/Remote toggle in Notes tab when Git is connected. Browse remote notes with folder grouping and Pull</span></li>
               <li><strong>Drag & Drop</strong> <span>Move notes between folders</span></li>
@@ -235,6 +260,7 @@
               <li><strong>Chrome Storage</strong> <span>Survives cache clear</span></li>
               <li><strong>Import/Export</strong> <span>.md, .zip, Archive Pinned</span></li>
               <li><strong>Export</strong> <span>PDF (page numbers, TOC, custom margins), DOCX (images, diagrams, math embedded), PNG (2x Retina), HTML (3 templates, self-contained), EPUB (Mermaid, math, code highlighting), LaTeX (.tex, heading→\section mapping) — <kbd>Ctrl+Shift+E</kbd></span></li>
+              <li><strong>Portable Copy Targets</strong> <span>Copy as CommonMark, GFM, Hugo, or Obsidian when you need Markdown shaped for a specific destination</span></li>
               <li><strong>Rich Text Copy</strong> <span>Copy entire note or selection as rich text (<kbd>Ctrl+Shift+C</kbd>). Paste into Word, Notion, or Google Docs with formatting intact</span></li>
               <li><strong>Frontmatter Auto-Merge</strong> <span>When Frontmatter is set, it is automatically prepended on export to MD, HTML, EPUB, LaTeX, and DOCX</span></li>
               <li><strong>Copy for LLM</strong> <span>YAML frontmatter (title/source/date) prepended. From Copy dropdown or command palette</span></li>
@@ -286,6 +312,7 @@
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></strong> <span>Sidebar search focus</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd></strong> <span>TOC search focus</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd></strong> <span>Export menu</span></li>
+                <li><strong><kbd>I</kbd>/<kbd>A</kbd>/<kbd>T</kbd>/<kbd>M</kbd></strong> <span>Triage selected notes to Inbox, Archive, Trash, or Template</span></li>
               </ul>
             </div>
             <div class="changelog-group">

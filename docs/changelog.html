@@ -65,15 +65,58 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.1.9 - Latest -->
+        <!-- v2.2.0 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.0</span>
+              <span class="accordion-highlight">Read. Save. Carry.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.1.9 made paste and search smoother. v2.2.0 turns Mark It Down into a place to read incoming information, keep only what matters, and carry your writing to the next tool without losing structure. RSS becomes a first-class entry point, Web Clipper covers more real-world sites, and export/copy paths preserve more of the work you already did.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>RSS Reader</strong> <span>Read feeds in Mark It Down, move through items with <code>j</code>/<code>k</code>, open with <code>Enter</code>, and save selected articles to Inbox as Markdown.</span></li>
+                <li><strong>OPML Import / Export</strong> <span>Move subscriptions from Feedly, Inoreader, NetNewsWire, or another RSS reader using standard OPML 2.0.</span></li>
+                <li><strong>RSS Git Sync</strong> <span>Sync RSS feeds and denylist settings across devices. Dedicated conflict resolution handles renamed, deleted, or duplicated feed entries.</span></li>
+                <li><strong>Copy as CommonMark / GFM / Hugo / Obsidian</strong> <span>Choose the Markdown dialect before copying so published notes need less cleanup later.</span></li>
+                <li><strong>Sidebar Preview and Triage</strong> <span>Hover cards, preview panel, and I/A/T/M shortcuts make it faster to inspect notes and move them to Inbox, Archive, Trash, or Template.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Web Clipper Improvements</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>YouTube Transcripts</strong> <span>Save available captions as timestamped Markdown links so video notes stay navigable.</span></li>
+                <li><strong>Comments and Threads</strong> <span>Reddit and Hacker News extraction preserves conversation structure, authors, and context more reliably.</span></li>
+                <li><strong>More Site-Specific Extractors</strong> <span>LinkedIn, Bluesky, Threads, Medium, and Discourse now get dedicated extraction paths instead of generic cleanup.</span></li>
+                <li><strong>RSS Clip Footnotes</strong> <span>Hatena Blog footnotes are converted into Markdown footnotes when saved through RSS clipping.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Portability and Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Table Column Widths in Export</strong> <span>Column widths are preserved in Markdown attr-list data and reflected in HTML, PDF, and DOCX export.</span></li>
+                <li><strong>Pin / Star Frontmatter Round Trip</strong> <span>Pinned and starred state can survive export and import instead of disappearing at the boundary.</span></li>
+                <li><strong>RSS Reliability</strong> <span>Fixed empty editor display after RSS clipping, keyboard race conditions in the viewer, and permission drift after sync.</span></li>
+                <li><strong>Footnote and Editor Polish</strong> <span>Table-cell footnote references, multi-paragraph footnote popovers, code block line-number toggles, and Ctrl+Enter around hard blocks were tightened.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.1.9 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.1.9</span>
               <span class="accordion-highlight">Find. Return. Paste.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.1.8 tuned how Japanese renders and how the TOC moves. v2.1.9 takes aim at two moments: the instant you paste something into a note, and the moments you move between notes. Smart Paste covers more ground (LaTeX environments, JSON on plain Ctrl+V, HTML formatting tags). Search grew a live preview pane. Alt+←/→ walks back through the notes you just visited.</p>
@@ -243,7 +286,7 @@
               <span class="accordion-version">v2.1.5</span>
               <span class="accordion-highlight">Take your writing anywhere.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Markdown has dialects. Obsidian syntax breaks in Hugo. Slack pastes leave behind raw symbols. v2.1.5 fixes that — with platform conversion for 8 targets, smart paste from chat apps, and a fully redesigned sidebar.</p>
