@@ -43,7 +43,7 @@
     </header>
 
     <main id="main-content">
-      <p><strong>Last Updated: February 2026</strong></p>
+      <p><strong>Last Updated: May 2026 (v2.2.0)</strong></p>
 
       <section>
         <h2>Overview</h2>
@@ -51,6 +51,9 @@
           Mark It Down is a Chrome extension that provides a WYSIWYG Markdown note-taking experience
           in your new tab and side panel. Starting with v2.0.2, it also includes a Web Clipper
           that lets you save any web page or AI chat output as Markdown directly into your notes.
+          As of v2.2.0, the extension also lets you subscribe to user-registered RSS feeds and uses a
+          per-origin dynamic host permission flow so you can grant or revoke access to clip targets
+          and feed sources individually.
           This privacy policy explains how we handle your data.
         </p>
       </section>
@@ -110,10 +113,34 @@
 
         <h3>What the Web Clipper Does NOT Do</h3>
         <ul>
-          <li>No background reading — pages are only read when you explicitly trigger a clip action</li>
+          <li>No automatic background reading — pages are only read when you explicitly trigger a user action (clip command, or the RSS fetch action described below)</li>
           <li>No credential collection or transmission of any kind</li>
           <li>No browsing history tracking</li>
           <li>No access to other tabs or windows</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>RSS Feeds (Added in v2.2.0)</h2>
+        <p>
+          The RSS feature only operates on feed URLs that you yourself register in
+          <em>Settings &gt; RSS Feeds</em>. The extension never autonomously contacts URLs you have not
+          registered or origins you have not authorized.
+        </p>
+
+        <h3>How It Works</h3>
+        <ul>
+          <li><strong>Per-origin grant</strong>: When you register a feed URL, Chrome prompts you to grant access to that feed's origin only (e.g. <code>https://example.com</code>). The extension never requests broad permissions like <code>&lt;all_urls&gt;</code></li>
+          <li><strong>Feed fetching</strong>: When you press the refresh button, or when scheduled refresh is enabled, the extension issues HTTPS requests to the registered origin to retrieve the RSS XML</li>
+          <li><strong>Article clipping</strong>: When you save an article from a feed, if the article URL's origin has not been granted yet, you are prompted again for that origin only. You can decline</li>
+          <li><strong>Local conversion</strong>: Retrieved RSS XML and article HTML are converted to Markdown entirely inside your browser. They are never sent to our servers (we don't have any) or to any third-party server</li>
+          <li><strong>Revocation</strong>: Removing a registered feed automatically revokes its host permission. You can also revoke permissions individually from Chrome's extension settings</li>
+        </ul>
+
+        <h3>Things to Note</h3>
+        <ul>
+          <li>The feed publisher's server will see normal HTTP access logs (IP address, User-Agent, timestamp, etc.) just like any web request. This is between you and that publisher</li>
+          <li>Registered feed URLs and retrieved article data are stored only locally (chrome.storage.local) and are deleted when the extension is uninstalled</li>
         </ul>
       </section>
 
@@ -170,6 +197,10 @@
               <td>scripting</td>
               <td>Run the content extraction script on the active tab during a clip action</td>
             </tr>
+            <tr>
+              <td>optional_host_permissions (http/https)</td>
+              <td>Per-origin dynamic access for RSS feed URLs and Web Clipper article URLs. Granted only when you register a feed or clip a new origin, scoped to that single origin, and revocable at any time. The extension never pre-grants broad host access</td>
+            </tr>
           </tbody>
         </table>
       </section>
@@ -179,9 +210,15 @@
         <p>
           Mark It Down does not integrate with any third-party analytics, advertising, or data collection services.
         </p>
+        <p>The only external services involved are listed below. In every case, your browser communicates directly with the service — nothing passes through any server we operate:</p>
+        <ul>
+          <li><strong>GitHub / GitLab</strong> (only if you enable Git synchronization) — destination for note sync</li>
+          <li><strong>RSS feed publishers you register</strong> (v2.2.0+) — source of feed XML</li>
+          <li><strong>Hosts of articles you clip with Web Clipper</strong> — source of article HTML</li>
+        </ul>
         <p>
-          The only external services involved are GitHub/GitLab (optional), and communication is direct between
-          your browser and the Git service.
+          All three are limited to destinations you explicitly registered or acted upon. The extension never
+          autonomously contacts origins you have not authorized.
         </p>
       </section>
 
