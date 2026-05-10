@@ -84,6 +84,7 @@
               <li><strong>Shadow DOM / iframe Support</strong> <span>Extracts content from Shadow DOM internals and same-site iframes, reducing failures on modern SPAs</span></li>
               <li><strong>Social and Publishing Sites</strong> <span>Dedicated extractors for LinkedIn, Bluesky, Threads, Medium, and Discourse reduce cleanup after clipping</span></li>
               <li><strong>Zenn / Qiita / Hatena Blog</strong> <span>Japanese blogging platform embed syntax recognized and converted to standard Markdown. Hatena Blog footnotes become Markdown footnotes when clipped from RSS</span></li>
+              <li><strong>Save Selection — Unified Quote Format</strong> <span>Saving selected text via right-click or RSS Quote Selection always produces the same structure: frontmatter (source URL + timestamp) + blockquote + attribution link + disclaimer footer</span></li>
             </ul>
           </div>
         </details>
@@ -104,6 +105,9 @@
               <li><strong>OPML Import / Export</strong> <span>Bring subscription lists from Feedly, Inoreader, NetNewsWire, and other OPML 2.0 readers</span></li>
               <li><strong>Git Sync for RSS Settings</strong> <span>Sync feeds and denylist settings across devices while keeping per-device permissions separate</span></li>
               <li><strong>Feed Health Indicators</strong> <span>See last fetch time, failed fetches, permission needs, and saved state before deciding what to read next</span></li>
+              <li><strong>Web Subscription (RSS-free Sites)</strong> <span>Subscribe to Qiita, Zenn, or any site without a public feed. Article URLs and titles are fetched automatically; body text saves only when you explicitly clip — no bulk ingestion</span></li>
+              <li><strong>Auto-Tagging on Clip</strong> <span>After clipping an RSS article, tags are auto-generated from its title, URL, and feed name. Can be turned off in settings</span></li>
+              <li><strong>Permission Badge</strong> <span>When feeds need host permissions, the extension icon badge shows the pending count and the fetch button shows a toast notification</span></li>
             </ul>
           </div>
         </details>
@@ -125,6 +129,9 @@
               <li><strong>Table Width Preservation</strong> <span>Table column widths are stored in Markdown attr-list data and reflected in HTML, PDF, and DOCX export</span></li>
               <li><strong>Pin / Star Frontmatter</strong> <span>Pinned and starred state can round-trip through export/import instead of being lost at the boundary</span></li>
               <li><strong>Chat Format Smart Paste</strong> <span>Paste from Slack, Discord, or WhatsApp — app-specific syntax auto-converts to standard Markdown. Covers links, spoilers, and quote blocks</span></li>
+              <li><strong>Obsidian Wikilinks</strong> <span>Write <code>[[Note Title]]</code> or <code>[[Title|Alias]]</code>. Resolved links are green, unresolved red, ambiguous amber. Ctrl+Click navigates directly to the target note</span></li>
+              <li><strong>Obsidian Properties + Logseq Export Presets</strong> <span>Built-in presets for Obsidian Properties format and Logseq <code>::</code> notation, alongside the existing CommonMark / GFM / Hugo / Obsidian copy targets</span></li>
+              <li><strong>Custom Export Preset Manager</strong> <span>Create, edit, duplicate, and delete custom export presets from a dedicated UI — accessible from the right panel and the Markdown export menu</span></li>
             </ul>
           </div>
         </details>
@@ -148,6 +155,7 @@
               <li><strong>Dual Mode</strong> <span>Open both simultaneously, independent windows</span></li>
               <li><strong>Cross-Instance Compare</strong> <span>Edit the same note in New Tab and Side Panel — conflicts detected automatically when either closes, resolved with a visual diff modal</span></li>
               <li><strong>Diff Navigation</strong> <span>▲2/5▼ nav controls in Compare &amp; Edit banner. F5/Shift+F5 keyboard navigation. WYSIWYG reference view</span></li>
+              <li><strong>New Tab / Side Panel Interface Parity</strong> <span>Header actions, panel pin vs. overlay behavior, and search preview availability are determined by screen role — removing subtle inconsistencies between the two views</span></li>
             </ul>
           </div>
         </details>
@@ -175,7 +183,7 @@
               <li><strong>Custom Snippets</strong> <span>Save and insert your own Markdown templates. 3 built-in presets (YAML, Details, Definition List)</span></li>
               <li><strong>Insert TOC</strong> <span>/toc generates table of contents from headings at cursor position</span></li>
               <li><strong>Smart Paste</strong> <span>Ctrl+Shift+V converts HTML→Markdown, JSON→tables/lists, auto-cleans LLM output HTML tags</span></li>
-              <li><strong>Slash Menu</strong> <span>/now, /toc, /h1–h6, /list, /task, /quote, /code, /table, /hr, /image, /mermaid, /math, /alert, /footnote. Works under 100KB</span></li>
+              <li><strong>Slash Menu</strong> <span>/now, /toc, /h1–h6, /list, /task, /quote, /code, /table, /hr, /image, /mermaid, /math, /alert, /footnote. Works under 150KB</span></li>
               <li><strong>Code Language Detection</strong> <span>16 languages auto-detected from shebang, DOCTYPE, and keywords</span></li>
               <li><strong>Timestamp Headings</strong> <span>/now for H2/H3 timestamp, Ctrl+Alt+; for inline HH:MM</span></li>
               <li><strong>Collapsible Blocks</strong> <span><code>&lt;details&gt;/&lt;summary&gt;</code> click-to-expand. Insert via slash menu <code>/details</code></span></li>
@@ -212,6 +220,8 @@
               <li><strong>Template Gallery</strong> <span>Browse 20+ templates from the gallery page. Link appears on Template folder hover</span></li>
               <li><strong>Split Note</strong> <span>Break a long note at any heading into two parts</span></li>
               <li><strong>Merge Notes</strong> <span>Ctrl+Click to select, drag to reorder, combine into one</span></li>
+              <li><strong>Right Panel Note Details</strong> <span>Hover a note name in the list to see its creation date, modification date, file size, and Git status in the right panel — without opening the note</span></li>
+              <li><strong>Frontmatter Edit from Right Panel</strong> <span>Right-click a note name to open frontmatter editing in the right panel. Drag fields to reorder, add and remove tags, apply export presets. Archive notes show read-only</span></li>
             </ul>
           </div>
         </details>
@@ -305,6 +315,7 @@
             <div class="changelog-group">
               <h3 class="changelog-group-title">Navigation</h3>
               <ul class="changelog-features">
+                <li><strong>Line Number Jump</strong> <span>Command Palette → "Go to line" — jump the cursor to any line number. Useful in long technical notes</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>K</kbd></strong> <span>Search</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></strong> <span>Command Palette</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd></strong> <span>Notes panel</span></li>
@@ -338,6 +349,7 @@
             <div class="changelog-group">
               <h3 class="changelog-group-title">TOC & Structure</h3>
               <ul class="changelog-features">
+                <li><strong>TOC Reading Progress + Number Key Jump</strong> <span>TOC shows scroll progress as a percentage. Press 1–9 while the TOC is open to jump directly to that numbered heading</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd></strong> <span>Reorder headings in TOC (same level)</span></li>
                 <li><strong><kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd></strong> <span>Demote / promote heading level in TOC</span></li>
               </ul>

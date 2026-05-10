@@ -84,6 +84,7 @@
               <li><strong>Shadow DOM / iframe対応</strong> <span>モダンWebアプリの内部DOM構造や同一サイトiframeのコンテンツも取り込み可能</span></li>
               <li><strong>ソーシャル / パブリッシングサイト</strong> <span>LinkedIn、Bluesky、Threads、Medium、Discourse に専用抽出を追加。クリップ後の手直しを減らせる</span></li>
               <li><strong>Zenn・Qiita・はてなブログ</strong> <span>プラットフォーム固有の埋め込み構文を認識し標準Markdownに変換。RSS経由のはてなブログ脚注はMarkdown footnoteに変換</span></li>
+              <li><strong>Save Selection — 引用フォーマット統一</strong> <span>右クリック「選択テキストを保存」と RSS Quote Selection はどちらも同じ形で出力される。frontmatter（保存元 URL・日時）+ blockquote + 出典リンク + フッター免責文</span></li>
             </ul>
           </div>
         </details>
@@ -104,6 +105,9 @@
               <li><strong>OPMLインポート / エクスポート</strong> <span>Feedly、Inoreader、NetNewsWire など OPML 2.0 対応リーダーから購読リストを移行できる</span></li>
               <li><strong>RSS設定のGit同期</strong> <span>feeds と denylist を端末間で同期。権限状態は端末ごとに扱うため、同期で壊れにくい</span></li>
               <li><strong>Feed Health Indicator</strong> <span>最終取得時刻、取得失敗、権限要否、保存済み状態を見て、次に読むものを判断できる</span></li>
+              <li><strong>Web Subscription（RSS なしサイトの購読）</strong> <span>Qiita や Zenn など RSS フィードを公開していないサイトを購読リストに追加し、記事一覧を取得できる。本文保存は明示的なクリップ操作のみ</span></li>
+              <li><strong>クリップ時の自動タグ付け</strong> <span>RSS 記事をクリップすると title・URL・フィード名からタグを自動生成する。設定でオフにできる</span></li>
+              <li><strong>権限バッジ通知</strong> <span>権限が必要なフィードがある場合に、拡張機能アイコンバッジに件数を表示し、取得ボタンにトーストを出す</span></li>
             </ul>
           </div>
         </details>
@@ -125,6 +129,9 @@
               <li><strong>テーブル列幅の保持</strong> <span>列幅をMarkdown attr-listとして保存し、HTML / PDF / DOCX exportに反映</span></li>
               <li><strong>Pin / Star frontmatter</strong> <span>ピン留めやスター状態をexport/importの境界で失いにくくする</span></li>
               <li><strong>Chat Format Smart Paste</strong> <span>Slack・Discord・WhatsAppからのペーストを自動で標準Markdownに変換。リンク・スポイラー・引用ブロック等が対象</span></li>
+              <li><strong>Obsidian wikilink サポート</strong> <span><code>[[タイトル]]</code> / <code>[[タイトル|表示名]]</code> で書ける。resolved は緑、unresolved は赤、ambiguous は黄色で表示。Ctrl+Click でリンク先ノートに移動</span></li>
+              <li><strong>Obsidian Properties + Logseq エクスポートプリセット</strong> <span>Obsidian の Properties 形式と Logseq の <code>::</code> 記法に対応したプリセットを追加。既存の CommonMark / GFM / Hugo / Obsidian コピーと組み合わせて使える</span></li>
+              <li><strong>カスタムエクスポートプリセットマネージャー</strong> <span>カスタムプリセットの作成・編集・削除・組み込み複製を専用 UI で管理できる。右パネルと Markdown export メニューから導線を追加</span></li>
             </ul>
           </div>
         </details>
@@ -148,6 +155,7 @@
               <li><strong>デュアルモード</strong> <span>両方同時に開ける、独立したウィンドウ</span></li>
               <li><strong>Cross-Instance Compare & Edit</strong> <span>New TabとSide Panelで同じノートを編集しても衝突しない。差分を並べて比較・統合できる</span></li>
               <li><strong>Diffナビゲーション</strong> <span>Compare &amp; Editバナーに▲2/5▼ナビコントロール。F5/Shift+F5キーボードナビ。参照ビューWYSIWYG化</span></li>
+              <li><strong>New Tab / Side Panel のインターフェース統一</strong> <span>ヘッダーのボタン配置、パネルの固定/オーバーレイ、検索プレビューの可否を「画面の役割」に基づいて整理し直した。2つのビュー間の細かなズレを解消</span></li>
             </ul>
           </div>
         </details>
@@ -175,7 +183,7 @@
               <li><strong>カスタムスニペット</strong> <span>よく使う記法をテンプレート保存・挿入。ビルトイン3種（YAML、折りたたみ、定義リスト）</span></li>
               <li><strong>目次挿入</strong> <span>/tocで見出しからカーソル位置に目次を生成</span></li>
               <li><strong>Smart Paste</strong> <span>Ctrl+Shift+VでHTML→Markdown、JSON→テーブル/リスト変換。LLM出力のHTMLタグも自動クリーン</span></li>
-              <li><strong>スラッシュメニュー</strong> <span>/now、/toc、/h1–h6、/list、/task、/quote、/code、/table、/hr、/image、/mermaid、/math、/alert、/footnote。100KB未満で対応</span></li>
+              <li><strong>スラッシュメニュー</strong> <span>/now、/toc、/h1–h6、/list、/task、/quote、/code、/table、/hr、/image、/mermaid、/math、/alert、/footnote。150KB未満で対応</span></li>
               <li><strong>コード言語検出</strong> <span>shebang・DOCTYPE・キーワードから16言語を自動判定</span></li>
               <li><strong>タイムスタンプ見出し</strong> <span>/nowでH2/H3タイムスタンプ、Ctrl+Alt+;でインラインHH:MM</span></li>
               <li><strong>折りたたみブロック</strong> <span><code>&lt;details&gt;/&lt;summary&gt;</code> をクリックで開閉。スラッシュメニュー <code>/details</code> で挿入</span></li>
@@ -212,6 +220,8 @@
               <li><strong>テンプレートギャラリー</strong> <span>ギャラリーページから20種類以上のテンプレートを閲覧。Templateフォルダのホバーでリンク表示</span></li>
               <li><strong>ノート分割</strong> <span>見出し単位でノートを2つに分割</span></li>
               <li><strong>ノート結合</strong> <span>Ctrl+クリックで選択、ドラッグで並び替え、1つに結合</span></li>
+              <li><strong>右パネル ノート詳細</strong> <span>ノート一覧でノート名にカーソルを合わせると、作成日時・更新日時・サイズ・Git 状態が右パネルに表示される。ノートを開かずに確認できる</span></li>
+              <li><strong>右パネルから frontmatter 編集</strong> <span>ノート名を右クリックして frontmatter を直接編集。フィールドのドラッグで並び替え、tags の追加・削除、エクスポートプリセットの適用もここから。Archive のノートは読み取り専用</span></li>
             </ul>
           </div>
         </details>
@@ -305,6 +315,7 @@
             <div class="changelog-group">
               <h3 class="changelog-group-title">ナビゲーション</h3>
               <ul class="changelog-features">
+                <li><strong>行番号ジャンプ</strong> <span>コマンドパレット →「指定行へ移動」で任意の行にカーソルを飛ばせる。長い技術メモで便利</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>K</kbd></strong> <span>検索</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></strong> <span>コマンドパレット</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd></strong> <span>Notesパネル</span></li>
@@ -338,6 +349,7 @@
             <div class="changelog-group">
               <h3 class="changelog-group-title">TOC & 構造</h3>
               <ul class="changelog-features">
+                <li><strong>目次スクロール進捗とキーボードジャンプ</strong> <span>目次に読み進めた割合（%）を表示。目次を開いた状態で数字キー（1–9）を押すと、その番号の見出しに直接ジャンプできる</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd></strong> <span>TOC内の見出しを並び替え（同レベルのみ）</span></li>
                 <li><strong><kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd></strong> <span>TOC内の見出しレベルを降格 / 昇格</span></li>
               </ul>

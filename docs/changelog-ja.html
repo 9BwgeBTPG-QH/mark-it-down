@@ -65,15 +65,60 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.0 - Latest -->
+        <!-- v2.2.1 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.1</span>
+              <span class="accordion-highlight">整える、広げる、速くする。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.0 で RSS の骨格を作った。v2.2.1 はその骨格に肉をつけ、使いながら感じていた小さな摩擦を一つひとつ取り除くバージョンだ。RSS のないサイトも購読できるようになった。Obsidian との往き来がよりスムーズになった。エディタのどこにいるかがわかるようになった。ノートの情報を右パネルから直接編集できるようになった。New Tab と Side Panel のインターフェースが統一された。起動が速くなった。YouTube の文字起こしが正確に取れるようになった。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Subscription（RSS なしサイトの購読）</strong> <span>Qiita や Zenn など RSS フィードを公開していないサイトを購読リストに追加し、記事一覧を取得できる。本文保存は明示的なクリップ操作のみ——自動で大量の本文を取り込まない設計。</span></li>
+                <li><strong>Obsidian wikilink サポート</strong> <span><code>[[タイトル]]</code> / <code>[[タイトル|表示名]]</code> で書ける。リンク先が存在するかは色で判別でき（resolved / unresolved / ambiguous）、Ctrl+Click でそのノートに移動できる。</span></li>
+                <li><strong>Obsidian / Logseq エクスポートプリセット</strong> <span>Obsidian の Properties 形式と Logseq の <code>::</code> 記法に対応したプリセットを追加。既存の CommonMark / GFM / Hugo / Obsidian コピーと合わせて使える。</span></li>
+                <li><strong>カスタムエクスポートプリセット UI</strong> <span>カスタムプリセットの作成・編集・削除・組み込み複製を UI から管理できる。右パネルと Markdown export メニューから導線を追加。</span></li>
+                <li><strong>行番号ジャンプ（Command Palette）</strong> <span>コマンドパレットから「指定行へ移動」で任意の行に一発でカーソルを飛ばせる。3,000 行のドキュメントでも目的の場所に素早くたどり着ける。</span></li>
+                <li><strong>目次スクロール進捗とキーボードジャンプ</strong> <span>目次に読み進めた割合（パーセンテージ）を表示。目次を開いた状態でキーボードの数字キー（1–9）を押すと、その番号の見出しに直接ジャンプできる。</span></li>
+                <li><strong>右パネル ノート詳細と frontmatter 編集</strong> <span>ノート一覧でノート名にカーソルを合わせると、作成日時・更新日時・サイズ・Git 状態・frontmatter の中身が右パネルに表示される。右クリックで frontmatter 編集、フィールドのドラッグで並び替え、tags の追加・削除も右パネルから直接できる。Archive のノートは読み取り専用。</span></li>
+                <li><strong>記事への自動タグ付け（オプション）</strong> <span>RSS クリップ後に title / URL / フィード名からタグを自動生成する。設定でオフにできる。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>引用ノートのフォーマット統一</strong> <span>Save Selection と RSS Quote Selection の出力形式を統一した。どの経路で保存しても frontmatter（保存元 URL・日時）+ blockquote + 出典リンク + フッター免責文の形になる。</span></li>
+                <li><strong>New Tab / Side Panel のインターフェース統一</strong> <span>ヘッダーのボタン配置、検索プレビューの表示可否、ノート詳細の開き方を「画面の広さ」と「その画面で何ができるか」に基づいて整理し直した。細かなズレを解消。</span></li>
+                <li><strong>RSS 権限不足のお知らせ改善</strong> <span>権限が必要なフィードがある場合に、取得ボタンのトースト通知と拡張機能アイコンバッジで件数を表示するようにした。</span></li>
+                <li><strong>大容量ドキュメントの機能制限を緩和</strong> <span>コードブロック入力支援・数式の無効化境界を 50KB → 100KB に、スラッシュメニュー・ドラッグハンドルを 100KB → 150KB に引き上げた。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">高速化と修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>起動が v2.2.0 より速くなった</strong> <span>v2.2.0 で RSS 機能を追加したとき起動時に読み込まれるようになっていたコード（最大 +21%）を、起動後の空き時間に遅延読み込みするよう変更した。全 13 シナリオで v2.2.0 より高速化。</span></li>
+                <li><strong>YouTube 文字起こし取得の失敗を修正</strong> <span>CC（字幕）ボタンを文字起こしボタンと誤検出していた問題を修正。正しいボタンを優先的に探すよう改善した。</span></li>
+                <li><strong>ダークテーマの静的プレビュー表示を修正</strong> <span>dark / parchment / candlelight のノートプレビューで色が適用されない箇所を修正した。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.0 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.0</span>
               <span class="accordion-highlight">読む、残す、運ぶ。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.1.9 は貼る瞬間と探す瞬間を整えた。v2.2.0 はそこから一歩進めて、日々流れてくる情報を読み、必要な部分だけをノートに残し、別の場所へ持ち出すためのバージョンだ。RSS が入口になり、Web Clipper の守備範囲が広がり、コピーやエクスポートで構造が壊れにくくなった。</p>

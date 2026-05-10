@@ -65,15 +65,60 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.0 - Latest -->
+        <!-- v2.2.1 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.1</span>
+              <span class="accordion-highlight">Polish. Extend. Speed up.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.0 added the RSS skeleton. v2.2.1 fills it out and removes small daily friction points one by one — subscribing to sites without feeds, writing Obsidian-style wikilinks, editing note metadata in the right panel, managing custom export presets, and making startup faster than before.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Subscription (RSS-free sites)</strong> <span>Subscribe to Qiita, Zenn, or any site without a public feed. Article URLs and titles are fetched automatically; body text saves only on explicit clip — no bulk ingestion.</span></li>
+                <li><strong>Obsidian Wikilinks</strong> <span>Write <code>[[Note Title]]</code> or <code>[[Title|Alias]]</code>. Resolved links are green, unresolved red, ambiguous amber. Ctrl+Click navigates directly to the target note.</span></li>
+                <li><strong>Obsidian Properties + Logseq Export Presets</strong> <span>New built-in presets for Obsidian Properties format and Logseq <code>::</code> notation, alongside the existing CommonMark / GFM / Hugo / Obsidian copy targets.</span></li>
+                <li><strong>Custom Export Preset Manager</strong> <span>Create, edit, duplicate, and delete custom export presets from a dedicated UI — accessible from the right panel and the Markdown export menu.</span></li>
+                <li><strong>Line Number Jump</strong> <span>Command Palette → "Go to line" jumps the cursor to any line number in a single keystroke — useful in long technical notes.</span></li>
+                <li><strong>TOC Reading Progress + Keyboard Jump</strong> <span>The table of contents shows your scroll progress as a percentage. Press a number key (1–9) while the TOC is open to jump directly to that heading.</span></li>
+                <li><strong>Note Details and Frontmatter Edit in Right Panel</strong> <span>Hover a note name in the list to see creation date, size, Git status, and frontmatter. Right-click to edit frontmatter, drag fields to reorder, add and remove tags — without opening the note. Archive notes show read-only.</span></li>
+                <li><strong>RSS Auto-Tagging on Clip</strong> <span>After clipping an RSS article, tags are auto-generated from its title, URL, and feed name. Can be turned off in settings.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Polish</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Quote Format Unified</strong> <span>Save Selection and RSS Quote Selection now always produce frontmatter (source URL + timestamp) + blockquote + attribution link + disclaimer footer — regardless of which path was used.</span></li>
+                <li><strong>New Tab / Side Panel Interface Parity</strong> <span>Header actions, panel pin vs. overlay behavior, and search preview availability are now determined by screen role rather than code path, removing subtle inconsistencies between the two views.</span></li>
+                <li><strong>RSS Permission Badge</strong> <span>When feeds need host permissions, the extension icon badge shows the pending count and the fetch button shows a toast — making permission gaps visible without diving into settings.</span></li>
+                <li><strong>Larger Document Thresholds</strong> <span>Code block assistance and math stay enabled up to 100 KB (was 50 KB). Slash menu and drag handles stay enabled up to 150 KB (was 100 KB).</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Speed &amp; Fixes</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Startup Faster Than v2.2.0</strong> <span>RSS code is now lazy-loaded after startup, recovering the +21% regression introduced in v2.2.0. All 13 benchmark scenarios are faster than v2.2.0.</span></li>
+                <li><strong>YouTube Transcript Detection Fixed</strong> <span>The CC subtitle button was being misidentified as the transcript button on some videos. The correct button is now prioritized.</span></li>
+                <li><strong>Dark Theme Static Preview Colors</strong> <span>Note previews in dark, parchment, and candlelight themes now apply theme colors correctly.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.0 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.0</span>
               <span class="accordion-highlight">Read. Save. Carry.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.1.9 made paste and search smoother. v2.2.0 turns Mark It Down into a place to read incoming information, keep only what matters, and carry your writing to the next tool without losing structure. RSS becomes a first-class entry point, Web Clipper covers more real-world sites, and export/copy paths preserve more of the work you already did.</p>
