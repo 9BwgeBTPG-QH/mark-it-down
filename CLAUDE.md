@@ -42,6 +42,8 @@ Every page has English (`*.html`) and Japanese (`*-ja.html`). **Always update bo
 When releasing a new version:
 1. `index.html` / `index-ja.html`: Update "Coming in vX.X.X" section
 2. `changelog.html` / `changelog-ja.html`: Add new version (Under Review), change previous to "Released"
+3. `index.html` / `index-ja.html`: Update `"softwareVersion"` and `"dateModified"` in the JSON-LD `<script type="application/ld+json">` block
+4. `sitemap.xml`: Update `<lastmod>` for changed pages
 
 ### Design System
 - **Glassmorphism Accordion**: All content pages (Features, Changelog, FAQ, Troubleshooting) use CSS-only `<details>` accordions. No JavaScript required.
