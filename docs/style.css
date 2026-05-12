@@ -445,6 +445,17 @@ p {
   text-wrap: balance;
 }
 
+.hero-fact {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  opacity: 0.72;
+  max-width: 520px;
+  margin: 0 auto var(--spacing-lg);
+  letter-spacing: 0.01em;
+}
+
 .hero-subtitle {
   font-family: var(--font-sans);
   font-size: var(--font-size-lg);
