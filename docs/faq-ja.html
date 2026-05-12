@@ -88,7 +88,7 @@
       {
         "@type": "Question",
         "name": "大きなファイル（100KB以上）はどうなりますか？",
-        "acceptedAnswer": { "@type": "Answer", "text": "最適化された設定で読み込まれます。50KB以上: コードエディタとLaTeX数式エディタが無効化されます。100KB以上: スラッシュメニューとドラッグハンドルが無効化されます。300KB以上: Archiveで読み取り専用として開くオプションが表示されます。Mark It Downは編集用のツールです。大きな生データはエクスポートして別の場所に保存することをおすすめします。" }
+        "acceptedAnswer": { "@type": "Answer", "text": "最適化された設定で読み込まれます。100KB以上: コードエディタとLaTeX数式エディタが無効化されます。150KB以上: スラッシュメニューとドラッグハンドルが無効化されます。300KB以上: Archiveで読み取り専用として開くオプションが表示されます。Mark It Downは編集用のツールです。大きな生データはエクスポートして別の場所に保存することをおすすめします。" }
       },
       {
         "@type": "Question",
@@ -406,8 +406,8 @@
             <div class="accordion-content">
               <p><strong>最適化された設定で読み込まれます。</strong></p>
               <ul>
-                <li><strong>50KB以上</strong>: コードエディタとLaTeX数式エディタがパフォーマンスのため無効化されます</li>
-                <li><strong>100KB以上</strong>: スラッシュメニューとドラッグハンドルが無効化されます</li>
+                <li><strong>100KB以上</strong>: コードエディタとLaTeX数式エディタがパフォーマンスのため無効化されます</li>
+                <li><strong>150KB以上</strong>: スラッシュメニューとドラッグハンドルが無効化されます</li>
                 <li><strong>300KB以上</strong>: Archiveで読み取り専用として開くオプションが表示されます</li>
               </ul>
               <p><em>Mark It Downは編集用のツールです。大きな生データはエクスポートして別の場所に保存することをおすすめします。</em></p>
@@ -429,9 +429,9 @@
               <p>サイドバーにはフォルダ別（Inbox / Template / Archive / Trash）のノート数を積み上げバーで表示し、合計件数とサイズも確認できます。どこにノートが溜まっているか一目でわかります。</p>
               <p><strong>ドキュメントサイズに応じたパフォーマンス最適化:</strong></p>
               <ul>
-                <li><strong>50KB以上</strong>: 装飾の簡略化</li>
-                <li><strong>100KB以上</strong>: より重い最適化（debounce延長、コードブロック処理の遅延実行）</li>
-                <li><strong>300KB以上</strong>: 最大最適化モード</li>
+                <li><strong>100KB以上</strong>: 装飾の簡略化・コードエディタと数式エディタを無効化</li>
+                <li><strong>150KB以上</strong>: スラッシュメニューとドラッグハンドルを無効化・debounce延長</li>
+                <li><strong>300KB以上</strong>: 最大最適化モード（debounce 800ms）</li>
               </ul>
               <p>Archiveフォルダのノートは軽量な読み取り専用レンダラーで表示されます。Mark It Downはワークスペースであり、ストレージシステムではありません。長期保存にはGit同期やエクスポートを使ってください。</p>
             </div>

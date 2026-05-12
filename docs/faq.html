@@ -88,7 +88,7 @@
       {
         "@type": "Question",
         "name": "What happens with large files (100KB+)?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Large files are handled with optimized settings. 50KB+: Code editor and LaTeX equation editor are disabled. 100KB+: Slash menu and drag handle are disabled. 300KB+: A dialog appears with options to open as read-only in Archive. Mark It Down is designed for editing, not storing large raw files." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Large files are handled with optimized settings. 100KB+: Code editor and LaTeX equation editor are disabled. 150KB+: Slash menu and drag handle are disabled. 300KB+: A dialog appears with options to open as read-only in Archive. Mark It Down is designed for editing, not storing large raw files." }
       },
       {
         "@type": "Question",
@@ -409,8 +409,8 @@
             <div class="accordion-content">
               <p><strong>Large files are handled with optimized settings.</strong></p>
               <ul>
-                <li><strong>50KB+</strong>: Code editor and LaTeX equation editor are disabled for performance</li>
-                <li><strong>100KB+</strong>: Slash menu and drag handle are disabled</li>
+                <li><strong>100KB+</strong>: Code editor and LaTeX equation editor are disabled for performance</li>
+                <li><strong>150KB+</strong>: Slash menu and drag handle are disabled</li>
                 <li><strong>300KB+</strong>: A dialog appears with options to open as read-only in Archive</li>
               </ul>
               <p><em>Mark It Down is designed for editing, not storing large raw files. Consider exporting very large files.</em></p>
@@ -432,9 +432,9 @@
               <p>The sidebar shows a stacked bar with your note counts by folder (Inbox, Template, Archive, Trash) along with total notes and size, so you can see at a glance where things are accumulating.</p>
               <p><strong>Performance tiers by document size:</strong></p>
               <ul>
-                <li><strong>50KB+</strong>: Some cosmetic decorations are simplified</li>
-                <li><strong>100KB+</strong>: Heavier optimizations (longer debounce, deferred code block processing)</li>
-                <li><strong>300KB+</strong>: Maximum optimization mode</li>
+                <li><strong>100KB+</strong>: Cosmetic decorations simplified; code editor and math disabled</li>
+                <li><strong>150KB+</strong>: Slash menu and drag handles disabled; longer debounce</li>
+                <li><strong>300KB+</strong>: Maximum optimization mode (800ms debounce)</li>
               </ul>
               <p>Archived notes use a lightweight read-only renderer. Mark It Down is designed as a workspace, not a storage system — for long-term archiving, use Git sync or Export.</p>
             </div>
