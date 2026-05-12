@@ -73,7 +73,7 @@
               <span class="accordion-version">v2.2.1</span>
               <span class="accordion-highlight">整える、広げる、速くする。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.2.0 で RSS の骨格を作った。v2.2.1 はその骨格に肉をつけ、使いながら感じていた小さな摩擦を一つひとつ取り除くバージョンだ。RSS のないサイトも購読できるようになった。Obsidian との往き来がよりスムーズになった。エディタのどこにいるかがわかるようになった。ノートの情報を右パネルから直接編集できるようになった。New Tab と Side Panel のインターフェースが統一された。起動が速くなった。YouTube の文字起こしが正確に取れるようになった。</p>
@@ -81,7 +81,9 @@
               <h3 class="changelog-group-title">新機能</h3>
               <ul class="changelog-features" role="list">
                 <li><strong>Web Subscription（RSS なしサイトの購読）</strong> <span>Qiita や Zenn など RSS フィードを公開していないサイトを購読リストに追加し、記事一覧を取得できる。本文保存は明示的なクリップ操作のみ——自動で大量の本文を取り込まない設計。</span></li>
-                <li><strong>Obsidian wikilink サポート</strong> <span><code>[[タイトル]]</code> / <code>[[タイトル|表示名]]</code> で書ける。リンク先が存在するかは色で判別でき（resolved / unresolved / ambiguous）、Ctrl+Click でそのノートに移動できる。</span></li>
+                <li><strong>Obsidian Wikilink ＋ オートコンプリート</strong> <span><code>[[タイトル]]</code> / <code>[[タイトル|表示名]]</code> で書ける。<code>[[</code> と入力するとファジー検索のオートコンプリートポップオーバーが開き、矢印/Enter/Tab で確定、Esc でキャンセル。resolved は緑、unresolved は赤、ambiguous は黄色で表示。Ctrl+Click でリンク先ノートに移動。</span></li>
+                <li><strong>バックリンクパネル</strong> <span>現在のノートへの被リンク（<code>[[links]]</code>）が目次下部と右パネルに表示される。クリックまたは Enter でリンク元ノートへジャンプ。バックリンクが 0 件のときは非表示。</span></li>
+                <li><strong>RSS Allow-Keywords（Google アラート風）</strong> <span>フィードごとにキーワードフィルターを設定し、title・URL・RSS description に一致する記事だけを通す。フィード行のチップエディター、Any / All 切り替え、入力候補サジェスト機能付き。</span></li>
                 <li><strong>Obsidian / Logseq エクスポートプリセット</strong> <span>Obsidian の Properties 形式と Logseq の <code>::</code> 記法に対応したプリセットを追加。既存の CommonMark / GFM / Hugo / Obsidian コピーと合わせて使える。</span></li>
                 <li><strong>カスタムエクスポートプリセット UI</strong> <span>カスタムプリセットの作成・編集・削除・組み込み複製を UI から管理できる。右パネルと Markdown export メニューから導線を追加。</span></li>
                 <li><strong>行番号ジャンプ（Command Palette）</strong> <span>コマンドパレットから「指定行へ移動」で任意の行に一発でカーソルを飛ばせる。3,000 行のドキュメントでも目的の場所に素早くたどり着ける。</span></li>

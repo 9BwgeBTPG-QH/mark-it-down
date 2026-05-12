@@ -107,6 +107,7 @@
               <li><strong>Feed Health Indicator</strong> <span>最終取得時刻、取得失敗、権限要否、保存済み状態を見て、次に読むものを判断できる</span></li>
               <li><strong>Web Subscription（RSS なしサイトの購読）</strong> <span>Qiita や Zenn など RSS フィードを公開していないサイトを購読リストに追加し、記事一覧を取得できる。本文保存は明示的なクリップ操作のみ</span></li>
               <li><strong>クリップ時の自動タグ付け</strong> <span>RSS 記事をクリップすると title・URL・フィード名からタグを自動生成する。設定でオフにできる</span></li>
+              <li><strong>Allow-Keywords フィルター</strong> <span>フィードごとにキーワードを設定し、title・URL・RSS description に一致する記事だけを通す（Google アラート風）。フィード行のチップエディター、Any / All 切り替え対応</span></li>
               <li><strong>権限バッジ通知</strong> <span>権限が必要なフィードがある場合に、拡張機能アイコンバッジに件数を表示し、取得ボタンにトーストを出す</span></li>
             </ul>
           </div>
@@ -129,7 +130,7 @@
               <li><strong>テーブル列幅の保持</strong> <span>列幅をMarkdown attr-listとして保存し、HTML / PDF / DOCX exportに反映</span></li>
               <li><strong>Pin / Star frontmatter</strong> <span>ピン留めやスター状態をexport/importの境界で失いにくくする</span></li>
               <li><strong>Chat Format Smart Paste</strong> <span>Slack・Discord・WhatsAppからのペーストを自動で標準Markdownに変換。リンク・スポイラー・引用ブロック等が対象</span></li>
-              <li><strong>Obsidian wikilink サポート</strong> <span><code>[[タイトル]]</code> / <code>[[タイトル|表示名]]</code> で書ける。resolved は緑、unresolved は赤、ambiguous は黄色で表示。Ctrl+Click でリンク先ノートに移動</span></li>
+              <li><strong>Obsidian Wikilink ＋ オートコンプリート</strong> <span><code>[[タイトル]]</code> / <code>[[タイトル|表示名]]</code> で書ける。<code>[[</code> と入力するとファジー検索のポップオーバーが開く。resolved は緑、unresolved は赤、ambiguous は黄色で表示。Ctrl+Click でリンク先ノートに移動</span></li>
               <li><strong>Obsidian Properties + Logseq エクスポートプリセット</strong> <span>Obsidian の Properties 形式と Logseq の <code>::</code> 記法に対応したプリセットを追加。既存の CommonMark / GFM / Hugo / Obsidian コピーと組み合わせて使える</span></li>
               <li><strong>カスタムエクスポートプリセットマネージャー</strong> <span>カスタムプリセットの作成・編集・削除・組み込み複製を専用 UI で管理できる。右パネルと Markdown export メニューから導線を追加</span></li>
             </ul>
@@ -238,6 +239,7 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>目次 (TOC)</strong> <span>自動生成、現在セクションをハイライト。子見出しの折りたたみ、6ナビゲーションボタン（先頭・前後見出し・PgUp/PgDn・末尾）</span></li>
+              <li><strong>バックリンクパネル</strong> <span>現在のノートへの被リンク（<code>[[links]]</code>）が目次下部と右パネルに表示される。クリックまたは Enter でリンク元ノートへジャンプ。バックリンクが 0 件のときは非表示</span></li>
               <li><strong>TOC並び替え</strong> <span>ドラッグ&ドロップやショートカットで見出しを構造化</span></li>
               <li><strong>パンくずナビ</strong> <span>現在の見出しパスを表示、クリックで祖先にジャンプ</span></li>
               <li><strong>Word Count</strong> <span>文字数、単語数（CJK対応）、読了時間</span></li>

@@ -24,6 +24,9 @@
     gtag('js', new Date());
     gtag('config', 'G-BGZ2T3RGJW');
   </script>
+  <link rel="alternate" hreflang="en" href="https://9bwgebptg-qh.github.io/mark-it-down/changelog.html">
+  <link rel="alternate" hreflang="ja" href="https://9bwgebptg-qh.github.io/mark-it-down/changelog-ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://9bwgebptg-qh.github.io/mark-it-down/changelog.html">
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -73,7 +76,7 @@
               <span class="accordion-version">v2.2.1</span>
               <span class="accordion-highlight">Polish. Extend. Speed up.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.2.0 added the RSS skeleton. v2.2.1 fills it out and removes small daily friction points one by one — subscribing to sites without feeds, writing Obsidian-style wikilinks, editing note metadata in the right panel, managing custom export presets, and making startup faster than before.</p>
@@ -81,7 +84,9 @@
               <h3 class="changelog-group-title">New Features</h3>
               <ul class="changelog-features" role="list">
                 <li><strong>Web Subscription (RSS-free sites)</strong> <span>Subscribe to Qiita, Zenn, or any site without a public feed. Article URLs and titles are fetched automatically; body text saves only on explicit clip — no bulk ingestion.</span></li>
-                <li><strong>Obsidian Wikilinks</strong> <span>Write <code>[[Note Title]]</code> or <code>[[Title|Alias]]</code>. Resolved links are green, unresolved red, ambiguous amber. Ctrl+Click navigates directly to the target note.</span></li>
+                <li><strong>Obsidian Wikilinks + Autocomplete</strong> <span>Write <code>[[Note Title]]</code> or <code>[[Title|Alias]]</code>. Resolved links are green, unresolved red, ambiguous amber. Ctrl+Click navigates directly to the target note. Type <code>[[</code> to open a fuzzy-search autocomplete popover — Arrow/Enter/Tab to confirm, Esc to dismiss.</span></li>
+                <li><strong>Backlink Panel</strong> <span>Inbound <code>[[links]]</code> pointing to the current note appear at the bottom of the TOC and in the Right Panel. Click or press Enter to jump to the source note. Hidden when there are no backlinks.</span></li>
+                <li><strong>RSS Allow-Keywords (Google Alerts Mode)</strong> <span>Set per-feed keyword filters to let through only articles whose title, URL, or RSS description matches your terms. Chip editor in the Feeds row, Any / All toggle, and input suggestions from past allow-keywords.</span></li>
                 <li><strong>Obsidian Properties + Logseq Export Presets</strong> <span>New built-in presets for Obsidian Properties format and Logseq <code>::</code> notation, alongside the existing CommonMark / GFM / Hugo / Obsidian copy targets.</span></li>
                 <li><strong>Custom Export Preset Manager</strong> <span>Create, edit, duplicate, and delete custom export presets from a dedicated UI — accessible from the right panel and the Markdown export menu.</span></li>
                 <li><strong>Line Number Jump</strong> <span>Command Palette → "Go to line" jumps the cursor to any line number in a single keystroke — useful in long technical notes.</span></li>

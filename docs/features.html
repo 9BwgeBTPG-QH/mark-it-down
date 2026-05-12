@@ -24,6 +24,9 @@
     gtag('js', new Date());
     gtag('config', 'G-BGZ2T3RGJW');
   </script>
+  <link rel="alternate" hreflang="en" href="https://9bwgebptg-qh.github.io/mark-it-down/features.html">
+  <link rel="alternate" hreflang="ja" href="https://9bwgebptg-qh.github.io/mark-it-down/features-ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://9bwgebptg-qh.github.io/mark-it-down/features.html">
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -107,6 +110,7 @@
               <li><strong>Feed Health Indicators</strong> <span>See last fetch time, failed fetches, permission needs, and saved state before deciding what to read next</span></li>
               <li><strong>Web Subscription (RSS-free Sites)</strong> <span>Subscribe to Qiita, Zenn, or any site without a public feed. Article URLs and titles are fetched automatically; body text saves only when you explicitly clip — no bulk ingestion</span></li>
               <li><strong>Auto-Tagging on Clip</strong> <span>After clipping an RSS article, tags are auto-generated from its title, URL, and feed name. Can be turned off in settings</span></li>
+              <li><strong>Allow-Keywords Filter</strong> <span>Set per-feed keyword filters (Google Alerts–style) to let through only articles whose title, URL, or RSS description matches your terms. Chip editor in the Feeds row, Any / All toggle</span></li>
               <li><strong>Permission Badge</strong> <span>When feeds need host permissions, the extension icon badge shows the pending count and the fetch button shows a toast notification</span></li>
             </ul>
           </div>
@@ -129,7 +133,7 @@
               <li><strong>Table Width Preservation</strong> <span>Table column widths are stored in Markdown attr-list data and reflected in HTML, PDF, and DOCX export</span></li>
               <li><strong>Pin / Star Frontmatter</strong> <span>Pinned and starred state can round-trip through export/import instead of being lost at the boundary</span></li>
               <li><strong>Chat Format Smart Paste</strong> <span>Paste from Slack, Discord, or WhatsApp — app-specific syntax auto-converts to standard Markdown. Covers links, spoilers, and quote blocks</span></li>
-              <li><strong>Obsidian Wikilinks</strong> <span>Write <code>[[Note Title]]</code> or <code>[[Title|Alias]]</code>. Resolved links are green, unresolved red, ambiguous amber. Ctrl+Click navigates directly to the target note</span></li>
+              <li><strong>Obsidian Wikilinks + Autocomplete</strong> <span>Write <code>[[Note Title]]</code> or <code>[[Title|Alias]]</code>. Type <code>[[</code> for a fuzzy-search autocomplete popover. Resolved links are green, unresolved red, ambiguous amber. Ctrl+Click to navigate</span></li>
               <li><strong>Obsidian Properties + Logseq Export Presets</strong> <span>Built-in presets for Obsidian Properties format and Logseq <code>::</code> notation, alongside the existing CommonMark / GFM / Hugo / Obsidian copy targets</span></li>
               <li><strong>Custom Export Preset Manager</strong> <span>Create, edit, duplicate, and delete custom export presets from a dedicated UI — accessible from the right panel and the Markdown export menu</span></li>
             </ul>
@@ -238,6 +242,7 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>TOC</strong> <span>Auto-generated, highlights current section. Collapsible child headings, 6 navigation buttons (top, prev/next heading, PgUp/PgDn, bottom)</span></li>
+              <li><strong>Backlink Panel</strong> <span>Inbound <code>[[links]]</code> pointing to the current note appear at the bottom of the TOC and in the Right Panel. Click or Enter to jump to the source note. Hidden when there are no backlinks</span></li>
               <li><strong>TOC Reordering</strong> <span>Drag & drop or keyboard shortcuts to restructure headings</span></li>
               <li><strong>Breadcrumbs</strong> <span>Current heading path with click-to-jump ancestors</span></li>
               <li><strong>Word Count</strong> <span>Characters, words (CJK-aware), reading time</span></li>
