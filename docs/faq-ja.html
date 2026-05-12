@@ -24,6 +24,130 @@
     gtag('js', new Date());
     gtag('config', 'G-BGZ2T3RGJW');
   </script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ObsidianのWeb Clipperとの違いは？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ObsidianのWeb Clipperはページをvaultに保存します。Mark It Downは違うワークフローを想定しています。ページをクリップするとSide Panelが即座に開き、その場で書き直しを始められます。取り込みと編集が一つの流れになっています。クリッパーはReadabilityでページの本文を抽出し、見出し・リンク・コードブロックを保持したクリーンなMarkdownに変換します。Mark It Downは読んだものを咀嚼したいとき — 書き直し、構成変更、エクスポートまで一気に行いたいときのためのツールです。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Heynoteとの比較は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "HeynoteはMark It Downの「一時的なワークスペース」という思想に直接インスピレーションを与えた優れた開発者向けスクラッチパッドです。Heynoteは別途起動するデスクトップアプリである一方、Mark It DownはChromeの中に住んでいます。拡張機能ボタンを押すかショートカットを叩けば、閲覧中のページの横にSide Panelがすぐ開きます。全画面で集中して書きたいときはNew Tabモードも使えます。完全オフライン対応で、すべてブラウザ内でローカル処理されます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "NotionやObsidianを使えばいいのでは？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Mark It Downはワークフローの中でNotionやObsidianの前に来るツールです。置き換えるものではありません。生の素材を加工する場所：AIの回答を書き直す、クリップした記事を再構成する、ノートの下書きを作る。きれいになったらエクスポートして、長期保存する場所に移します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Chromeのキャッシュを削除してもデータは消えませんか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "消えません。ノートは拡張機能専用のストレージに保存されており、ブラウザのキャッシュとは別の場所です。ブラウザキャッシュ削除 → データは保持。拡張機能アンインストール → データは消去。アンインストール前にGit同期で外部バックアップを取っておくと安心です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "オフラインでも使えますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい — 日常の執筆作業は完全オフラインで動作します。編集・保存・ノート管理、Mermaid図・KaTeX数式・シンタックスハイライト、PDF / PNG / DOCX / .md / EPUB / LaTeX エクスポートがオフラインで使えます。インターネット接続が必要なもの: Web Clipper、AI会話抽出、Git同期、CDN参照のHTMLエクスポート。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ノートを削除するには？",
+        "acceptedAnswer": { "@type": "Answer", "text": "安全のため、2段階の削除プロセスになっています。ステップ1: 削除ボタンでゴミ箱に移動（復元可能）。ステップ2: ゴミ箱内で削除すると完全に消去。Git同期時: 同期済みノートはゴミ箱に移動後、Syncを実行して初めてリモートから削除されます。Systemフォルダのシステムノートは保護されており削除できません。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ノートのタイトルを変更するには？",
+        "acceptedAnswer": { "@type": "Answer", "text": "タイトルはノートの内容から自動的に抽出されます。最初の# 見出しまたは## 見出しがタイトルになります。見出しがない場合は最初の行がタイトルになります（最大50文字）。最初の見出しを編集するだけでタイトルが変わります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "テンプレートはどこで入手できる？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Templateフォルダのヘッダーにホバーすると、ギャラリーリンクアイコンが表示されます。5カテゴリ・20種類以上のテンプレートが揃ったテンプレートギャラリーページが開きます。ノート、議事録、開発ドキュメントなどすぐに使えるMarkdownテンプレートが揃っています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Frontmatter（フロントマター）とは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hugo・Zenn・Jekyllなどのプラットフォームが記事のタイトル・タグ・日付などを読み取るために使うYAML形式のメタデータです。v2.1.5ではFrontmatterをノート本文とは別のフィールドで管理できるようになりました。エクスポート時に先頭へ自動合成されます。サイドバーのDetail Panel「Frontmatter」タブで編集できます。対応エクスポート形式: Markdown・HTML・EPUB・LaTeX・DOCX。" }
+      },
+      {
+        "@type": "Question",
+        "name": "画像を貼り付けられますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "画像ファイルを添付として保存することはできません。Mark It Downはテキストベースのマークダウンエディタです。![](https://...) のような画像URLリンクは使用可能です。base64のdata URLも使えますが、ノートが非常に重くなります。画像を使いたい場合は外部のホスティングサービスにアップロードしてリンクを貼り付けてください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Archiveとは何ですか？どう使いますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Archiveは完成したノートや参照用ノートのための読み取り専用フォルダです。Archive内のノートは軽量ビューアで開きます。編集したい場合はUnlockをクリックしてInboxに戻せます。Archive内でピン留め（★）したノートは、Export → 'Pinned as ZIP' でまとめてダウンロードできます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "大きなファイル（100KB以上）はどうなりますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "最適化された設定で読み込まれます。50KB以上: コードエディタとLaTeX数式エディタが無効化されます。100KB以上: スラッシュメニューとドラッグハンドルが無効化されます。300KB以上: Archiveで読み取り専用として開くオプションが表示されます。Mark It Downは編集用のツールです。大きな生データはエクスポートして別の場所に保存することをおすすめします。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ストレージの上限は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Mark It Downはchrome.storage.localにunlimitedStorage権限を付けて使用しているため、Chrome側のハードリミットはありません。サイドバーにはフォルダ別のノート数と合計サイズを表示します。Mark It Downはワークスペースであり、ストレージシステムではありません。長期保存にはGit同期やエクスポートを使ってください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Electronアプリではなく、なぜChrome拡張機能？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Electronアプリは重い。それ以上に、作業はブラウザの中で起きています — AIチャット、リサーチ、読書。開いているタブの横に常駐するSide Panelが、アーキテクチャとして正しい形です。コンテキストスイッチなし、別ウィンドウの管理なし。アプリ全体はPreact（3KB）で構築されているので、一瞬で起動します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "対応エクスポート形式は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "単体: Markdown (.md)、PDF、HTML、DOCX（Word）、PNG、EPUB（電子書籍）、LaTeX (.tex)。リッチテキストとしてクリップボードにコピーも可能（Ctrl+Shift+C）。一括エクスポート: 複数ノートを選択してMarkdown・HTML・DOCXのZIPアーカイブとして出力。PDFエクスポートは目次・ページ番号・Paged.jsによるページ分割に対応。" }
+      },
+      {
+        "@type": "Question",
+        "name": "書いたノートをZennやHugo向けに変換できますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい。「Portability Hub」機能で出力先のプラットフォームを選ぶと、記法の問題箇所が検出されて変換できます。対応ターゲット: CommonMark・Obsidian・Hugo/Jekyll・GFM・Zenn・Qiita・Docusaurus・MkDocs（8種類）。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Git同期を設定するには？",
+        "acceptedAnswer": { "@type": "Answer", "text": "コマンドパレット → 「Git Settings」でGit設定を開きます。プロバイダー（GitHub または GitLab）を選択。トークン、リポジトリURL、ブランチを入力。Test Connectionで確認、Saveで保存。トークンは暗号化されて安全に保存されます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "コマンドパレットで何ができますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cmd/Ctrl + Shift + P でほとんどの機能に素早くアクセスできます。ノート: 新規作成、検索、インポート。編集: 元に戻す/やり直し、検索と置換、テーブル整形。移動: ピン留め、Archive/Template/Trashへ移動。Git: 同期、Pull、Push、設定。表示: サイドバー、目次、フォーカスモード、テーマ切替。挿入: Mermaid図、コードブロック、数式、目次（/toc）、タイムスタンプ。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ペーストモードの違いは？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ctrl+Shift+VでSmart Pasteが起動します。Markdownモード: HTMLやJSONをクリーンなMarkdownに変換（デフォルト）。プレーンテキストモード: すべての書式を除去。デフォルトモード: ブラウザ標準のペースト動作。JSON配列はテーブルに、オブジェクトはリストに自動変換されます。Slack・Discord・WhatsAppからのテキストは自動で標準Markdownに変換されます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "サイドバーのGitタブがなくなりましたか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい、v2.1.5でSource Control専用のサイドバータブを廃止しました。Git操作（Push・Pull・Fetch・設定・履歴）は引き続き画面上部のGitメニューから行えます。機能は変わっていません。" }
+      },
+      {
+        "@type": "Question",
+        "name": "フォルダが4つだけ？ 少なすぎない？",
+        "acceptedAnswer": { "@type": "Answer", "text": "固定構造（Inbox / Template / Archive / Trash）は、製造業の「定位置管理」から来ています。すべてに決まった場所があり、どこを見ればいいか常に分かります。無制限にフォルダを作れると、意図なくものが溜まっていきます。制約こそが機能です。組み込みリファレンスノート用の非表示Systemフォルダもあります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Git同期の「意図的なコミット」とは？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Google DriveやiCloudのような自動同期ツールとは違い、Mark It DownはローカルへのオートセーブはしますがGitへのpushは意識的なアクションです。全ノートを一括ではなく、特定のノートだけを選んでpushすることもできます。まず整理して、それからコミットする。リモートの履歴は読みやすく意味のあるものになります。Pullも手動で、コンフリクト解決機能を内蔵しています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "AI機能が内蔵されていないのはなぜ？",
+        "acceptedAnswer": { "@type": "Answer", "text": "意図的な設計です。Mark It Downは書くためのツールであり、生成するツールではありません。思想は「咀嚼」 — ChatGPT、Claude、Geminiなどから生成されたAI出力を貼り付けて、自分の言葉で書き直します。エディタはAI出力を完璧にレンダリングしますが（LaTeX数式、Mermaidダイアグラム、構文ハイライト付きコードブロック、GFMテーブル）、コンテンツの生成は一切しません。思考はツールの中ではなく、あなたの頭の中で起きるものです。" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>

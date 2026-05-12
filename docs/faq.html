@@ -24,6 +24,130 @@
     gtag('js', new Date());
     gtag('config', 'G-BGZ2T3RGJW');
   </script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is this different from Obsidian's Web Clipper?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Obsidian's Web Clipper saves pages to your vault — great if storing is the goal. Mark It Down is built around a different workflow: clip a page, the Side Panel opens instantly, and you start rewriting right there. Capture and edit happen in a single flow. The clipper uses Readability to extract article content and converts it to clean Markdown with proper headings, links, and code blocks preserved. Mark It Down is for when you want to process what you've read — rewrite, restructure, then export to Markdown, PDF, HTML, or DOCX." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does it compare to Heynote?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Heynote is an excellent developer scratchpad — and a direct inspiration for Mark It Down's 'temporary workspace' philosophy. Heynote is a desktop app you launch separately. Mark It Down lives in Chrome itself — press the extension button and the Side Panel appears beside whatever you're reading, or open a New Tab for full-screen writing. It works fully offline. Different habitat, overlapping spirit." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why not just use Notion or Obsidian?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Mark It Down is meant to come before Notion or Obsidian in your workflow — not replace them. It's where you process raw material: rewrite an AI answer, restructure a clipped article, draft a note. Once it's clean, export it (Markdown, PDF, HTML, DOCX, or ZIP for batch export) and move it to wherever you store things long-term." }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my data be deleted if I clear Chrome's cache?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Notes are stored in a dedicated extension storage area, separate from browser cache. Browser cache cleared → Data is preserved. Extension uninstalled → Data is deleted. Use Git sync for external backup before uninstalling." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Mark It Down offline?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — everyday writing is fully offline. Editing, saving, note management, Mermaid diagrams, KaTeX math, syntax highlighting, and all export formats (PDF, PNG, DOCX, .md, EPUB, LaTeX) work offline. Requires internet: Web Clipper, AI Chat Extraction, Git sync, and CDN-based HTML export." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I delete notes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Deletion is a 2-step process for safety. Step 1: Delete button moves notes to Trash (can be restored). Step 2: Delete from Trash to remove permanently. With Git sync: Synced notes require a Sync after moving to Trash to delete from remote. System notes in the System folder are protected and cannot be deleted." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I rename a note?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The title is automatically extracted from your note content. The first # Heading or ## Heading becomes the title. If no heading, the first line is used (max 50 characters). Simply edit the first heading to rename your note." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I find templates?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hover over the Template folder header to reveal a gallery link icon. It opens the Template Gallery page with 20+ templates in 5 categories. Templates are ready-to-use Markdown files for notes, meetings, dev docs, and more." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Frontmatter?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Frontmatter is YAML metadata placed at the top of a file (between --- delimiters) that platforms like Hugo, Jekyll, and Docusaurus use to read a note's title, tags, date, and other properties. Since v2.1.5, Frontmatter is managed separately from the note body — edit it in the sidebar Detail Panel under the Frontmatter tab. It is automatically merged on export. Supported formats: Markdown, HTML, EPUB, LaTeX, DOCX." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I paste images into notes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Image files cannot be saved as attachments — Mark It Down is a text-based Markdown editor. You can include image links like ![](https://...) or embed base64 data URLs (these work offline but make notes large). For images, use external hosting and link to them in your notes." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Archive and how does it work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Archive is a read-only folder for completed or reference notes. Notes in Archive open in a lightweight viewer for faster loading. To edit an archived note, click Unlock to move it back to Inbox. Pin (★) notes in Archive and use Export → 'Pinned as ZIP' for bulk download." }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens with large files (100KB+)?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Large files are handled with optimized settings. 50KB+: Code editor and LaTeX equation editor are disabled. 100KB+: Slash menu and drag handle are disabled. 300KB+: A dialog appears with options to open as read-only in Archive. Mark It Down is designed for editing, not storing large raw files." }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the storage limit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Mark It Down uses chrome.storage.local with the unlimitedStorage permission — there's no hard cap from Chrome. The sidebar shows your note counts and total size by folder. Mark It Down is designed as a workspace, not a storage system — for long-term archiving, use Git sync or Export." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why a Chrome extension instead of an Electron app?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Electron apps are heavy. More importantly, the work happens in the browser — AI chats, research, reading. A Side Panel that stays open beside whatever tab you're on is architecturally the right fit. No context switch, no separate window to manage. The entire app is built on Preact (3KB), so it loads instantly." }
+      },
+      {
+        "@type": "Question",
+        "name": "What export formats are supported?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Single note: Markdown (.md), PDF, HTML, DOCX (Word), PNG, EPUB (ebook), LaTeX (.tex). You can also copy as rich text (Ctrl+Shift+C) and paste into Word, Notion, or Google Docs with formatting preserved. Batch export: Select multiple notes and export as a ZIP archive. PDF export supports table of contents and page numbers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert notes for Hugo, Obsidian, or other platforms?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the Portability Hub to select a target platform — it detects problematic syntax and lets you convert it before exporting. Supported targets: CommonMark, Obsidian, Hugo/Jekyll, Docusaurus, MkDocs, GFM, Zenn, Qiita (8 total)." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I set up Git sync?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Open Git Settings (Command Palette → 'Git Settings'). Select provider (GitHub or GitLab). Enter your token, repository URL, and branch. Click Test Connection, then Save. Your token is encrypted and stored securely." }
+      },
+      {
+        "@type": "Question",
+        "name": "What can I do with the Command Palette?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Quick access to most features via Cmd/Ctrl + Shift + P. Notes: New note, search, import. Edit: Undo/Redo, Find & Replace, format tables. Move: Pin, move to Archive/Template/Trash. Git: Sync, Pull, Push, settings. View: Toggle sidebar, TOC, focus mode, themes. Insert: Mermaid diagrams, code blocks, math equations, TOC (/toc), timestamps." }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the paste modes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ctrl+Shift+V activates Smart Paste. Markdown mode: Converts HTML and JSON to clean Markdown (default). Plain text mode: Strips all formatting. Default mode: Standard browser paste behavior. JSON arrays auto-convert to tables, objects to lists. Auto-conversion from Slack, Discord, and WhatsApp pastes app-specific syntax to standard Markdown automatically." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Git tab in the sidebar gone?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — the Source Control sidebar tab was removed in v2.1.5. All Git operations (Push, Pull, Fetch, Settings, History) are still available from the Git menu at the top of the screen. Nothing was removed functionally." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why only 4 folders? Isn't that too restrictive?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The fixed structure (Inbox / Template / Archive / Trash) comes from a manufacturing principle called fixed-position management: everything has a designated place, and you always know where to look. When you can create unlimited folders, things accumulate without intention. The constraint is the feature. There is also a hidden System folder for built-in reference notes." }
+      },
+      {
+        "@type": "Question",
+        "name": "What does 'intentional commits' mean for Git sync?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Auto-sync tools (like Google Drive or iCloud) sync every change automatically. Mark It Down auto-saves locally every second — but pushing to Git is a deliberate action. You can select specific notes to push rather than pushing everything at once. The idea is to tidy up first, then commit. Your remote history stays readable and meaningful." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is there no AI feature built in?",
+        "acceptedAnswer": { "@type": "Answer", "text": "By design. Mark It Down is a writing tool, not a generating tool. The philosophy is 'digestion' (咀嚼) — you take AI-generated output from ChatGPT, Claude, Gemini, or wherever, paste it in, and rewrite it in your own words. The editor renders AI output perfectly (LaTeX math, Mermaid diagrams, code blocks, GFM tables), but it never generates content for you. The thinking happens in your head, not in the tool." }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>

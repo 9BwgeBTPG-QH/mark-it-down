@@ -7,6 +7,29 @@
 > your browser or as a New Tab. Bilingual (English / Japanese). No account,
 > no server, no telemetry — everything stays in Chrome's local storage.
 
+## What it is
+- A Chrome extension Markdown editor that runs in New Tab and Side Panel
+- A Web Clipper that converts web articles to Markdown with a right-click
+- Obsidian-style `[[wikilinks]]`, templates, Git sync, RSS reader
+- PDF / DOCX / HTML / EPUB / LaTeX / .md export
+- Free, no ads, no account, offline
+
+## What it is not
+- Not a long-term note vault (Obsidian / Notion are better for that)
+- Not a knowledge base (built for digestion, not storage)
+- Not an AI assistant (runs in front of the AI, as a pre-processing layer)
+- Not a cloud sync service (local + optional Git only)
+
+## Philosophy
+- Fewer tools, more whitespace (no plugins, no widgets)
+- Digestion over storage (copy-paste doesn't make it yours)
+- A workshop, not a warehouse
+
+## Audience
+Developers, researchers, and knowledge workers who use multiple AI tools
+(ChatGPT / Claude / Gemini) and need a neutral pre-processing layer before
+committing notes to their long-term system (Obsidian, Notion, etc.).
+
 ## Pages
 
 - [Home (English)](https://9bwgebptg-qh.github.io/mark-it-down/index.html)
