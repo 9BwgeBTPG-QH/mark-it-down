@@ -1,0 +1,31 @@
+# Mark It Down
+
+> A free Chrome extension — Markdown editor and Web Clipper that turns your
+> browser into a workspace for digesting AI output. Paste from ChatGPT or
+> Claude, clip any web page, rewrite in your own words, sync via Git, and
+> export to PDF, DOCX, EPUB, HTML, or LaTeX. Works as a Side Panel beside
+> your browser or as a New Tab. Bilingual (English / Japanese). No account,
+> no server, no telemetry — everything stays in Chrome's local storage.
+
+## Pages
+
+- [Home (English)](https://9bwgebptg-qh.github.io/mark-it-down/index.html)
+- [Home (Japanese)](https://9bwgebptg-qh.github.io/mark-it-down/index-ja.html)
+- [Features](https://9bwgebptg-qh.github.io/mark-it-down/features.html)
+- [Features (Japanese)](https://9bwgebptg-qh.github.io/mark-it-down/features-ja.html)
+- [Templates](https://9bwgebptg-qh.github.io/mark-it-down/templates.html)
+- [Templates (Japanese)](https://9bwgebptg-qh.github.io/mark-it-down/templates-ja.html)
+- [Changelog](https://9bwgebptg-qh.github.io/mark-it-down/changelog.html)
+- [Changelog (Japanese)](https://9bwgebptg-qh.github.io/mark-it-down/changelog-ja.html)
+- [FAQ](https://9bwgebptg-qh.github.io/mark-it-down/faq.html)
+- [FAQ (Japanese)](https://9bwgebptg-qh.github.io/mark-it-down/faq-ja.html)
+- [Troubleshooting](https://9bwgebptg-qh.github.io/mark-it-down/troubleshooting.html)
+- [Privacy Policy](https://9bwgebptg-qh.github.io/mark-it-down/privacy-policy.html)
+
+## Install
+
+- [Chrome Web Store](https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke)
+
+## Source
+
+- [GitHub](https://github.com/9BwgeBTPG-QH/mark-it-down)
