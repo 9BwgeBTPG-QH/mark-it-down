@@ -68,8 +68,53 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.1 - Latest -->
+        <!-- v2.2.2 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.2</span>
+              <span class="accordion-highlight">Read in the background. Catch up on your terms.</span>
+            </div>
+            <span class="accordion-status released">Released</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.1 added web subscriptions and wikilinks. v2.2.2 makes the RSS layer proactive: feeds refresh while you're away, notifications surface new articles when they arrive, and your read state follows you across devices. The editor gains a scratchpad, deeper knowledge connections between notes, and polished Mermaid diagrams.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Background RSS polling</strong> <span>Enable scheduled refresh in RSS settings and feeds update automatically in the background at your configured interval. No need to keep the tab open.</span></li>
+                <li><strong>Desktop notifications for new articles</strong> <span>Opt in to desktop notifications from RSS settings. When a scheduled fetch finds new items, a local notification lists the titles — generated from feed data already in your browser, nothing sent externally.</span></li>
+                <li><strong>Cross-device read-state sync</strong> <span>Articles marked as read on one device show up as read on every device signed into the same Chrome profile. Article content stays local; only the read identifiers sync.</span></li>
+                <li><strong>RSS quote toolbar</strong> <span>Select text in an RSS article preview to reveal a floating toolbar. One click quotes the selection to Inbox with source URL and timestamp attached.</span></li>
+                <li><strong>RSS storage footprint display</strong> <span>The RSS modal header now shows how much local storage your feeds occupy, with a tooltip breakdown. Helps you manage retention settings with real numbers.</span></li>
+                <li><strong>RSS Welcome Panel</strong> <span>First-time RSS users see an onboarding panel that walks through adding a feed, enabling notifications, and understanding the reading flow.</span></li>
+                <li><strong>Scratchpad workspace</strong> <span>A persistent scratchpad lives alongside your notes for rough thinking, scratch calculations, and temporary outlines — separate from your note list.</span></li>
+                <li><strong>Knowledge connection layer</strong> <span>The right panel and TOC now show backlink counts. A connection layer visualises which notes reference each other without leaving the editor.</span></li>
+                <li><strong>Export action presets</strong> <span>Save frequently used export configurations as named presets. Presets appear in the export menu for one-click reuse.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Polish</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Dead feed cleanup suggestions</strong> <span>When a feed fails repeatedly, Mark It Down surfaces a prompt to remove it or update the URL — keeping your subscription list healthy without manual audits.</span></li>
+                <li><strong>Mermaid rendering v2</strong> <span>Diagram rendering is more reliable across complex graph types and large charts, with better error recovery when syntax is incomplete.</span></li>
+                <li><strong>OPML robustness</strong> <span>Import and export handle edge-case feed structures, dead feeds, and duplicate entries more gracefully.</span></li>
+                <li><strong>Retention split</strong> <span>Set separate retention periods for read and unread articles — keep unread items longer, prune read ones sooner.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Speed &amp; Robustness</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>RSS Conditional GET</strong> <span>Feeds now send <code>If-None-Match</code> / <code>If-Modified-Since</code> headers. Unchanged feeds return a 304 and skip parsing entirely — less bandwidth, faster refresh cycles.</span></li>
+                <li><strong>Service worker alarm reliability</strong> <span>Background alarms survive browser restarts and extension updates. The polling schedule is re-registered automatically on startup.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.1 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

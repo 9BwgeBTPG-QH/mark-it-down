@@ -65,8 +65,53 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.1 - Latest -->
+        <!-- v2.2.2 - Latest -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.2</span>
+              <span class="accordion-highlight">読み続ける。気づかせる。整える。</span>
+            </div>
+            <span class="accordion-status released">リリース済</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.1 でウェブ購読とウィキリンクを追加した。v2.2.2 は RSS レイヤーを能動的にするバージョンだ。離れている間もフィードが更新され、新着が来たら知らせてくれ、既読状態がデバイスをまたいで引き継がれる。エディタにはスクラッチパッドと、ノート間のつながりを可視化する接続レイヤーが加わった。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>バックグラウンドRSS定期取得</strong> <span>RSS設定で定期取得を有効にすると、設定した間隔でフィードがバックグラウンドで自動更新される。タブを開いたままにしなくていい。</span></li>
+                <li><strong>新着記事のデスクトップ通知</strong> <span>RSS設定でオプトインすると、定期取得で新着記事が見つかったときにローカル通知でタイトル一覧を表示。通知内容はブラウザ内で生成され、外部には何も送らない。</span></li>
+                <li><strong>既読状態のデバイス間同期</strong> <span>あるデバイスで読んだ記事が、同じChromeプロファイルの別デバイスでも既読として表示される。同期されるのは既読識別子のみ、本文はローカルのまま。</span></li>
+                <li><strong>RSS引用ツールバー</strong> <span>記事プレビューでテキストを選択するとフローティングツールバーが現れる。ワンクリックで選択範囲を引用ノートとしてInboxへ送信（出典URLとタイムスタンプ付き）。</span></li>
+                <li><strong>RSSストレージ占有量の表示</strong> <span>RSSモーダルのヘッダーに、フィードが使用しているローカルストレージの合計サイズを常時表示。ホバーで内訳を確認でき、保持期間設定の見直しに役立つ。</span></li>
+                <li><strong>RSSウェルカムパネル</strong> <span>初めてRSS機能を使うユーザー向けに、フィード追加・通知設定・読み方フローをガイドするオンボーディングパネルを表示。</span></li>
+                <li><strong>スクラッチパッドワークスペース</strong> <span>ノートリストとは別に、思考の粗削り・計算メモ・一時的なアウトラインを書くための常駐スクラッチパッドが追加された。</span></li>
+                <li><strong>ナレッジ接続レイヤー</strong> <span>右パネルと目次にバックリンク数が表示される。接続レイヤーによりどのノートが参照し合っているかを、エディタを離れずに把握できる。</span></li>
+                <li><strong>エクスポートアクションプリセット</strong> <span>よく使うエクスポート設定を名前付きプリセットとして保存。エクスポートメニューにプリセットが並び、ワンクリックで再利用できる。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>死んだフィードのクリーンアップ提案</strong> <span>フィードが連続して失敗すると、削除またはURL更新を促すプロンプトを表示。購読リストを手動でチェックしなくても健全に保てる。</span></li>
+                <li><strong>Mermaidレンダリングv2</strong> <span>複雑なグラフや大きなチャートでの描画安定性を向上。構文が不完全なときのエラー回復も改善した。</span></li>
+                <li><strong>OPMLの堅牢化</strong> <span>エッジケースなフィード構造・死んだフィード・重複エントリを含むOPMLのインポート/エクスポートを改善。</span></li>
+                <li><strong>保持期間の分割設定</strong> <span>既読記事と未読記事の保持期間を個別に設定できるようになった。未読は長く、既読は短くといった運用が可能。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">高速化と堅牢化</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>RSS Conditional GET</strong> <span>フィードリクエストに <code>If-None-Match</code> / <code>If-Modified-Since</code> ヘッダーを送信するようになった。更新のないフィードは 304 を返しパースをスキップ——通信量削減、取得サイクル高速化。</span></li>
+                <li><strong>サービスワーカーのアラーム信頼性向上</strong> <span>バックグラウンドアラームがブラウザ再起動や拡張機能アップデートを経ても失われないよう、起動時に自動で再登録するようにした。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.1 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

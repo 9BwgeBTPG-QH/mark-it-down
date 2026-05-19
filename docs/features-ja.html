@@ -109,6 +109,14 @@
               <li><strong>クリップ時の自動タグ付け</strong> <span>RSS 記事をクリップすると title・URL・フィード名からタグを自動生成する。設定でオフにできる</span></li>
               <li><strong>Allow-Keywords フィルター</strong> <span>フィードごとにキーワードを設定し、title・URL・RSS description に一致する記事だけを通す（Google アラート風）。フィード行のチップエディター、Any / All 切り替え対応</span></li>
               <li><strong>権限バッジ通知</strong> <span>権限が必要なフィードがある場合に、拡張機能アイコンバッジに件数を表示し、取得ボタンにトーストを出す</span></li>
+              <li><strong>バックグラウンド定期取得</strong> <span>RSS設定で定期取得を有効にすると、設定した間隔でフィードがバックグラウンドで自動更新される。タブを開いたままにしなくていい。Chromeの<code>alarms</code> APIを使用。ブラウザ再起動後も自動で再登録される</span></li>
+              <li><strong>デスクトップ通知</strong> <span>RSS設定でオプトインすると、定期取得で新着記事が見つかったときにタイトル一覧をローカル通知で表示。外部への送信なし</span></li>
+              <li><strong>既読状態のデバイス間同期</strong> <span>あるデバイスで読んだ記事が、同じChromeプロファイルの別デバイスでも既読になる。同期されるのは既読識別子のみ、本文はローカルのまま</span></li>
+              <li><strong>引用ツールバー</strong> <span>Reading Paneでテキストを選択するとフローティングツールバーが現れる。ワンクリックで出典URL・タイムスタンプ付き引用ノートとしてInboxへ送信</span></li>
+              <li><strong>ストレージ占有量表示</strong> <span>RSSモーダルヘッダーにフィードが使用しているローカルストレージサイズを常時表示。ホバーで内訳確認でき保持期間設定の調整に役立つ</span></li>
+              <li><strong>死んだフィードのクリーンアップ</strong> <span>フィードが連続して失敗すると削除またはURL更新を促すプロンプトを表示。購読リストを手動で監視しなくても健全に保てる</span></li>
+              <li><strong>Conditional GET（ETag / Last-Modified）</strong> <span>フィードリクエストに <code>If-None-Match</code> / <code>If-Modified-Since</code> ヘッダーを送信。未更新フィードは 304 を返しパースをスキップ——通信量削減、取得サイクル高速化</span></li>
+              <li><strong>保持期間の分割設定</strong> <span>既読記事と未読記事の保持期間を個別に設定できる。未読は長く、既読は短くといった運用が可能</span></li>
             </ul>
           </div>
         </details>

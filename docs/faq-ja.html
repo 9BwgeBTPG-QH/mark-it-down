@@ -600,6 +600,32 @@
               <p>エディタはAI出力を完璧にレンダリングしますが（LaTeX数式、Mermaidダイアグラム、構文ハイライト付きコードブロック、GFMテーブル）、コンテンツの生成は一切しません。思考はツールの中ではなく、あなたの頭の中で起きるものです。</p>
             </div>
           </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">RSS新着記事の通知を受け取るには？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>RSSモーダルの設定（歯車アイコン）を開き、<strong>デスクトップ通知</strong>を有効にします。また<strong>定期取得</strong>も有効にする必要があります — バックグラウンド取得で新着が見つかったときに通知が送られます。</p>
+              <p>両方を有効にしても通知が届かない場合は、Chromeの通知設定（<code>chrome://settings/content/notifications</code>）でこの拡張機能からの通知が許可されているか確認してください。またOSの通知設定でChromeの通知が有効になっているかも確認してください。</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">RSS自動取得はどのくらいの頻度で動きますか？</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>RSS設定 &gt; 取得間隔</strong>で設定した間隔（最小30分）で動作します。Chromeの内蔵アラームAPIを使用するため、Mark It Downのタブを閉じていても、Chromeが起動している間はバックグラウンドで取得が行われます。</p>
+              <p>定期取得を無効にするとアラームはすぐに解除されます。再度有効にすると再登録されます。拡張機能の起動時にも自動で再登録されます。</p>
+            </div>
+          </details>
         </div>
       </section>
 

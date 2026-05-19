@@ -165,6 +165,48 @@
           </div>
         </details>
 
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">🔔 RSS通知が届かない</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>RSS設定でデスクトップ通知を有効にしたのに通知が届かない場合は、以下の順番で確認してください：</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">チェックリスト</h3>
+              <ol>
+                <li><strong>定期取得も有効になっていますか？</strong> — 通知はバックグラウンド取得によって送られます。<em>RSS設定 &gt; 定期取得</em>も通知と合わせて有効にしてください。</li>
+                <li><strong>Chromeの通知許可</strong> — <code>chrome://settings/content/notifications</code>を開き、この拡張機能がブロックされていないか確認してください。</li>
+                <li><strong>OSの通知設定</strong> — Windowsの場合は<em>システム &gt; 通知とアクション &gt; Chrome</em>、macOSの場合は<em>システム設定 &gt; 通知 &gt; Google Chrome</em>でChromeの通知が許可されているか確認してください。</li>
+                <li><strong>フィードに新着はありますか？</strong> — 通知は前回チェック以降に新着記事が見つかった場合のみ送られます。更新頻度の高いフィードを追加して動作確認してみてください。</li>
+              </ol>
+            </div>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">⏱️ RSSバックグラウンド取得が動いていない</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>定期取得を有効にしてもフィードが自動更新されない場合：</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">チェックリスト</h3>
+              <ol>
+                <li><strong>Chromeは起動していますか？</strong> — バックグラウンド取得にはChromeが起動している必要があります。Chrome自体を完全に閉じると動作しません。</li>
+                <li><strong>アラームの登録確認</strong> — <code>chrome://extensions</code>から拡張機能のService Workerを開き（「Service Worker」リンクをクリック）、アラーム関連のログを確認してください。Service Workerが非アクティブの場合は、Mark It Downのタブを開くと起動し直してアラームが再登録されます。</li>
+                <li><strong>設定を一度オフ→オンにする</strong> — RSS設定で定期取得を一度無効にして再度有効にすると、アラームが強制再登録されます。</li>
+                <li><strong>ホスト権限は付与されていますか？</strong> — バックグラウンド取得には登録済み各フィードへのホスト権限が必要です。権限が不足している場合は拡張機能アイコンのバッジに件数が表示されます。バッジをクリックするかRSS設定を開いて権限を付与してください。</li>
+              </ol>
+            </div>
+          </div>
+        </details>
+
       </div>
 
       <!-- CTA Section -->
