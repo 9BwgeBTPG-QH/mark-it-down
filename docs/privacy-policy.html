@@ -46,7 +46,7 @@
     </header>
 
     <main id="main-content">
-      <p><strong>Last Updated: May 2026 (v2.2.0)</strong></p>
+      <p><strong>Last Updated: May 2026 (v2.2.2)</strong></p>
 
       <section>
         <h2>Overview</h2>
@@ -57,6 +57,7 @@
           As of v2.2.0, the extension also lets you subscribe to user-registered RSS feeds and uses a
           per-origin dynamic host permission flow so you can grant or revoke access to clip targets
           and feed sources individually.
+          v2.2.2 adds opt-in background polling and desktop notifications for new RSS articles.
           This privacy policy explains how we handle your data.
         </p>
       </section>
@@ -140,6 +141,17 @@
           <li><strong>Revocation</strong>: Removing a registered feed automatically revokes its host permission. You can also revoke permissions individually from Chrome's extension settings</li>
         </ul>
 
+        <h3>Background Polling and Notifications (Added in v2.2.2)</h3>
+        <p>
+          When you enable scheduled refresh in RSS settings, the extension uses Chrome's <code>alarms</code> API
+          to wake the background service worker at your configured interval and fetch registered feeds.
+          If you also enable desktop notifications, the extension uses Chrome's <code>notifications</code> API
+          to show a local notification listing new article titles when new items arrive.
+          Both features are opt-in and can be disabled independently in RSS settings — disabling scheduled
+          refresh cancels the alarm; disabling notifications suppresses the local alert.
+          No data leaves your browser as a result of either feature.
+        </p>
+
         <h3>Things to Note</h3>
         <ul>
           <li>The feed publisher's server will see normal HTTP access logs (IP address, User-Agent, timestamp, etc.) just like any web request. This is between you and that publisher</li>
@@ -199,6 +211,14 @@
             <tr>
               <td>scripting</td>
               <td>Run the content extraction script on the active tab during a clip action</td>
+            </tr>
+            <tr>
+              <td>alarms</td>
+              <td>Schedule periodic RSS feed polling at your configured interval. The schedule runs entirely inside your browser using Chrome's built-in alarm API; no remote scheduler is contacted</td>
+            </tr>
+            <tr>
+              <td>notifications</td>
+              <td>Show a desktop notification when new RSS articles arrive, only if you opt in from RSS settings. Notification content (new article titles) is generated locally from feed data already stored in your browser</td>
             </tr>
             <tr>
               <td>optional_host_permissions (http/https)</td>

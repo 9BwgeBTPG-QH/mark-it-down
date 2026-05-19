@@ -603,6 +603,32 @@
               <p>The editor renders AI output perfectly (LaTeX math, Mermaid diagrams, code blocks with syntax highlighting, GFM tables), but it never generates content for you. The thinking happens in your head, not in the tool.</p>
             </div>
           </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">How do I get notified when new RSS articles arrive?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>Open RSS settings (gear icon in the RSS modal) and enable <strong>Desktop notifications</strong>. You also need to enable <strong>Scheduled refresh</strong> — notifications are sent when a background fetch finds new items.</p>
+              <p>If notifications don't appear after enabling both, check that Chrome has permission to show notifications from this extension: go to <code>chrome://settings/content/notifications</code> and make sure the extension's origin is allowed. Also verify that your OS notification settings allow Chrome notifications.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-title">
+                <span class="accordion-icon"></span>
+                <span class="accordion-highlight">How often does automatic RSS polling run?</span>
+              </div>
+            </summary>
+            <div class="accordion-content">
+              <p>You set the interval in <strong>RSS settings &gt; Polling interval</strong>. The minimum is 30 minutes. Polling uses Chrome's built-in alarm API and runs even when Mark It Down tabs are closed — as long as Chrome itself is running.</p>
+              <p>Disabling scheduled refresh cancels the alarm immediately. Re-enabling it re-registers the alarm. The alarm is also re-registered automatically each time the extension starts up.</p>
+            </div>
+          </details>
         </div>
       </section>
 

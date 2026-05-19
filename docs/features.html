@@ -112,6 +112,14 @@
               <li><strong>Auto-Tagging on Clip</strong> <span>After clipping an RSS article, tags are auto-generated from its title, URL, and feed name. Can be turned off in settings</span></li>
               <li><strong>Allow-Keywords Filter</strong> <span>Set per-feed keyword filters (Google Alerts–style) to let through only articles whose title, URL, or RSS description matches your terms. Chip editor in the Feeds row, Any / All toggle</span></li>
               <li><strong>Permission Badge</strong> <span>When feeds need host permissions, the extension icon badge shows the pending count and the fetch button shows a toast notification</span></li>
+              <li><strong>Background Polling</strong> <span>Enable scheduled refresh in RSS settings and feeds update automatically at your configured interval — no need to keep the tab open. Uses Chrome's <code>alarms</code> API; the schedule survives browser restarts</span></li>
+              <li><strong>Desktop Notifications</strong> <span>Opt in from RSS settings to receive a desktop notification listing new article titles when a scheduled fetch finds fresh items. Content is generated locally — nothing sent externally</span></li>
+              <li><strong>Cross-Device Read Sync</strong> <span>Articles marked as read on one device appear as read on every device in the same Chrome profile. Only read identifiers sync; article content stays local</span></li>
+              <li><strong>Quote Toolbar</strong> <span>Select text in the article reading pane to reveal a floating toolbar. One click quotes the selection to Inbox with source URL and timestamp</span></li>
+              <li><strong>Storage Footprint Display</strong> <span>The RSS modal header shows how much local storage your feeds occupy, with a hover tooltip breakdown. Helps calibrate retention settings</span></li>
+              <li><strong>Dead Feed Cleanup</strong> <span>When a feed fails repeatedly, a prompt surfaces to remove it or update the URL — keeping your subscription list healthy without manual audits</span></li>
+              <li><strong>Conditional GET (ETag / Last-Modified)</strong> <span>Feed requests include <code>If-None-Match</code> and <code>If-Modified-Since</code> headers. Unchanged feeds return 304 and skip parsing — less bandwidth, faster cycles</span></li>
+              <li><strong>Retention Split</strong> <span>Set separate retention periods for read and unread articles. Keep unread items longer, prune read ones sooner</span></li>
             </ul>
           </div>
         </details>

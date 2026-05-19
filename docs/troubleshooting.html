@@ -168,6 +168,48 @@
           </div>
         </details>
 
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">🔔 RSS Notifications Not Appearing</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>If you've enabled desktop notifications in RSS settings but aren't seeing them, check the following in order:</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Checklist</h3>
+              <ol>
+                <li><strong>Scheduled refresh also enabled?</strong> — Notifications are sent by background polling. Make sure <em>RSS settings &gt; Scheduled refresh</em> is also turned on, not just notifications.</li>
+                <li><strong>Chrome notification permission</strong> — Open <code>chrome://settings/content/notifications</code> and confirm the extension is not blocked.</li>
+                <li><strong>OS notification settings</strong> — On Windows, check <em>System &gt; Notifications &gt; Chrome</em>. On macOS, check <em>System Settings &gt; Notifications &gt; Google Chrome</em>. Make sure Chrome notifications are allowed.</li>
+                <li><strong>Feed has new items?</strong> — Notifications only appear when a fetch finds articles newer than the last check. Try adding a feed that updates frequently to confirm the flow works.</li>
+              </ol>
+            </div>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-highlight">⏱️ Background RSS Fetch Not Running</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>If feeds aren't updating automatically even with scheduled refresh enabled:</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Checklist</h3>
+              <ol>
+                <li><strong>Is Chrome running?</strong> — Background polling requires Chrome to be open. It does not run while Chrome is fully closed.</li>
+                <li><strong>Check alarm registration</strong> — Open the extension's background service worker in <code>chrome://extensions</code> (click "Service Worker" link) and look for alarm-related log entries. If the service worker is inactive, opening any Mark It Down tab will wake it up and re-register the alarm.</li>
+                <li><strong>Re-toggle the setting</strong> — Turn scheduled refresh off and back on in RSS settings to force alarm re-registration.</li>
+                <li><strong>Host permissions granted?</strong> — Background fetch requires host permissions for each registered feed origin. The extension icon badge shows a count if permissions are missing. Click the badge or open RSS settings to grant them.</li>
+              </ol>
+            </div>
+          </div>
+        </details>
+
       </div>
 
       <!-- CTA Section -->
