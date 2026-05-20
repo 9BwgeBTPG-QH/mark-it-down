@@ -1988,6 +1988,7 @@ a:hover {
 /* Category color borders */
 .template-card[data-category="ai"]           { border-left-color: #4338CA; }
 .template-card[data-category="productivity"] { border-left-color: #047857; }
+.template-card[data-category="journaling"]   { border-left-color: #0F766E; }
 .template-card[data-category="dev"]          { border-left-color: #B45309; }
 .template-card[data-category="content"]      { border-left-color: #BE185D; }
 .template-card[data-category="thinking"]     { border-left-color: var(--accent-primary); }
@@ -2022,6 +2023,11 @@ a:hover {
 .badge-productivity {
   background: rgba(16, 185, 129, 0.12);
   color: #047857;
+}
+
+.badge-journaling {
+  background: rgba(20, 184, 166, 0.12);
+  color: #0F766E;
 }
 
 .badge-dev {
