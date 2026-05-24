@@ -65,8 +65,44 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.2 - Latest -->
+        <!-- v2.2.3 - 審査中 -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.3</span>
+              <span class="accordion-highlight">ノートと読書が、つながった。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.2 で RSS を能動的にした。v2.2.3 は読書レイヤーと執筆レイヤーをつなぐバージョンだ。記事のタグがそのまま Inbox ノートに入り、スプレッドシートのデータが貼るだけでテーブルになり、今日の日記エントリが自動で開く。設定とスニペットも Git 経由で端末間を移動するようになった。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>RSSタグ管理</strong> <span>記事を読みながらタグを追加・削除できる。タグをクリックするとInboxノートに付与され、複数タグのANDフィルタで記事を絞り込める。手入力でも追加でき、&#x2715;ボタンで外せる。</span></li>
+                <li><strong>CSVをそのままテーブルに</strong> <span>スプレッドシートからコピーした内容を貼り付けると、すぐに編集できるMarkdownテーブルになる。列のリサイズやセル編集もすぐに行える。</span></li>
+                <li><strong>Twitter / Xスレッドの取り込み</strong> <span>スレッドURLを貼ると、スレッド内容がMarkdownのブロック引用として取り込まれる。取得失敗時はURLがそのまま挿入される。</span></li>
+                <li><strong>BearメモのMarkdown変換</strong> <span>Bearからコピーした内容を貼ると、見出しやハイライトがMarkdownとして正しく変換される。</span></li>
+                <li><strong>日記エントリーフロー</strong> <span>サイドパネルを開くと今日の日付のノートが自動で選択される。未作成の場合はワンクリックで作成できる（設定でオフにできる）。</span></li>
+                <li><strong>日記テンプレート</strong> <span>テンプレートギャラリーに「Journaling」カテゴリが追加。Five Minute Journal、Stoic Journal、Daily Reflection、CBT Thought Recordの4種類（日英対応）。</span></li>
+                <li><strong>設定とスニペットのGit同期</strong> <span>テーマ、エディタ設定、カスタムスニペットがGit同期の対象になった。1台で変えれば他の端末にも反映される。</span></li>
+                <li><strong>段落ブロックリンクのコピー</strong> <span>フローティングツールバーから「ブロックリンクをコピー」を選ぶと、その段落への直接リンク（<code>[[ノート名#^id]]</code>）がクリップボードに入る。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ウィキリンクが入力後すぐに表示されない問題</strong> <span><code>[[ノート名]]</code>を入力した直後にリンクの装飾が反映されず、リロードが必要だったバグを修正。</span></li>
+                <li><strong>逐次入力での水平線挿入不具合</strong> <span><code>-</code>を3回連続して入力しても水平線が挿入されなかった問題を修正。ペーストでは問題なかったが、キーボードからの入力が壊れていた。</span></li>
+                <li><strong>/now の日付ズレ修正</strong> <span>タイムスタンプ見出しがUTC日付を使っていたため、日本時間などで深夜帯に前日の日付が入ることがあった。ローカル日付で挿入するよう修正。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.2 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

@@ -68,8 +68,44 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.2 - Latest -->
+        <!-- v2.2.3 - Under Review -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.3</span>
+              <span class="accordion-highlight">Your notes and your reading, connected.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.2 made RSS proactive. v2.2.3 connects the reading layer to the writing layer: tags from the reading pane land directly in Inbox notes, spreadsheet data pastes as editable tables, and a journaling flow brings today&#39;s note to the front automatically. Settings and snippets now travel with you across devices via Git sync.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>RSS tag management</strong> <span>Add and remove tags from the reading pane. Click a tag to attach it to an Inbox note. Multiple tags AND-filter the article list. Type new tags by hand; remove with the &#x2715; button.</span></li>
+                <li><strong>CSV paste to table</strong> <span>Paste spreadsheet data and it becomes an editable Markdown table instantly. No reformatting needed — resize columns and edit cells right away.</span></li>
+                <li><strong>Twitter / X thread import</strong> <span>Paste a thread URL and Mark It Down pulls the thread into a Markdown block quote with source attribution. Falls back to the URL if the fetch fails.</span></li>
+                <li><strong>Bear note paste</strong> <span>Content copied from Bear pastes with headings and highlights correctly converted to Markdown.</span></li>
+                <li><strong>Journaling entry flow</strong> <span>Opening the Side Panel selects today&#39;s dated note automatically. If none exists, one-click creates it. Can be disabled in settings.</span></li>
+                <li><strong>Journaling templates</strong> <span>Four templates added to the Template Gallery: Five Minute Journal, Stoic Journal, Daily Reflection, CBT Thought Record (EN &amp; JA).</span></li>
+                <li><strong>Settings and snippets in Git sync</strong> <span>Theme, editor settings, and custom snippets are now included in Git sync. Changes on one device appear on others automatically.</span></li>
+                <li><strong>Paragraph block link copy</strong> <span>Select text in the floating toolbar and choose &#34;Copy block link&#34; to copy a direct link to that paragraph (<code>[[Note#^id]]</code>).</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Fixed</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Wikilinks not rendering on input</strong> <span>Typing <code>[[note name]]</code> now renders the link decoration immediately without requiring a page reload.</span></li>
+                <li><strong>Horizontal rule not inserting on sequential input</strong> <span>Typing <code>---</code> one character at a time now correctly inserts a horizontal rule. Paste was unaffected; keyboard entry was broken.</span></li>
+                <li><strong>/now date off by one in non-UTC timezones</strong> <span>The timestamp heading used UTC date, causing yesterday&#39;s date to appear for late-night sessions in JST and similar zones. Fixed to use local date.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.2 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

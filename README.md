@@ -22,7 +22,7 @@ Mark It Down の紹介サイト（GitHub Pages）
 
 ## 公開URL
 
-https://9bwgebptg-qh.github.io/mark-it-down/
+https://markitdown.reduktion.dev/
 
 ## デプロイ
 

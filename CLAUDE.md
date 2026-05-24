@@ -88,4 +88,4 @@ When releasing a new version:
 ## Deployment
 
 GitHub Pages from `/docs` on `main` branch.
-URL: `https://9bwgebptg-qh.github.io/mark-it-down/`
+URL: `https://markitdown.reduktion.dev/`
