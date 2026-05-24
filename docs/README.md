@@ -25,7 +25,7 @@ docs/
 4. Select `main` branch and `/docs` folder
 5. Click **Save**
 6. Wait a few minutes for deployment
-7. Published URL: `https://9bwgebptg-qh.github.io/mark-it-down/`
+7. Published URL: `https://markitdown.reduktion.dev/`
 
 ## Purpose
 
@@ -61,7 +61,7 @@ docs/
    - **Category**: Productivity
    - **Language**: English (add Japanese if needed)
 5. Upload screenshots and promotional images
-6. Set **Privacy Policy URL**: `https://9bwgebptg-qh.github.io/mark-it-down/privacy-policy.html`
+6. Set **Privacy Policy URL**: `https://markitdown.reduktion.dev/privacy-policy.html`
 7. Fill in **Privacy Practices** questionnaire
 8. Submit for review (typically 1-3 business days)
 
