@@ -1,3 +1,11 @@
+---
+title: 特性要因図（フィッシュボーン）
+category: thinking
+tags: [root-cause, time]
+summary: 石川図（特性要因図）で根本原因を構造的に分析する。
+use-case: [analysis]
+---
+
 ![思考](https://img.shields.io/badge/%E6%80%9D%E8%80%83-blue) ![根本原因](https://img.shields.io/badge/%E6%A0%B9%E6%9C%AC%E5%8E%9F%E5%9B%A0-orange) ![時間](https://img.shields.io/badge/30--60%E5%88%86-lightgrey)
 
 # 特性要因図（フィッシュボーン）

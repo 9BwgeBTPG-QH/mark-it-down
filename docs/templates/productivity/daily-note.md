@@ -1,3 +1,11 @@
+---
+title: Daily Note
+category: productivity
+tags: [daily]
+summary: Daily journal with focus, tasks, and reflection.
+use-case: [personal]
+time: 5
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Daily](https://img.shields.io/badge/Daily-orange) ![5 min](https://img.shields.io/badge/5_min-green)
 
 # Daily Note

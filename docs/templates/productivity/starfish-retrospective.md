@@ -1,3 +1,11 @@
+---
+title: Starfish Retrospective
+category: productivity
+tags: [retrospective]
+summary: Five-point deep analysis for team improvement.
+use-case: [team]
+time: 30
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Retrospective](https://img.shields.io/badge/Retrospective-orange) ![30 min](https://img.shields.io/badge/30_min-green)
 
 # Starfish Retrospective

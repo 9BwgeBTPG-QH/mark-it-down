@@ -1,3 +1,11 @@
+---
+title: Prompt Library
+category: ai
+tags: [reference]
+summary: Catalog and rate your most-used prompts.
+use-case: [knowledge]
+---
+
 ![AI](https://img.shields.io/badge/AI-blue) ![Reference](https://img.shields.io/badge/Reference-grey)
 
 # Prompt Library

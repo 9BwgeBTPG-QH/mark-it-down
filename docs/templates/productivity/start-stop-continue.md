@@ -1,3 +1,11 @@
+---
+title: Start-Stop-Continue
+category: productivity
+tags: [retrospective]
+summary: Simple behavior change retrospective framework.
+use-case: [team]
+time: 15
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Retrospective](https://img.shields.io/badge/Retrospective-orange) ![15 min](https://img.shields.io/badge/15_min-green)
 
 # Start-Stop-Continue Retrospective

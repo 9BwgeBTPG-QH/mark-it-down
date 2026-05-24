@@ -1,3 +1,11 @@
+---
+title: FMEA
+category: thinking
+tags: [quality]
+summary: Failure mode and effects analysis with RPN scoring.
+use-case: [analysis]
+---
+
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Quality](https://img.shields.io/badge/Quality-orange)
 
 # FMEA (Failure Mode and Effects Analysis)

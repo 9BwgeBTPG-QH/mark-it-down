@@ -1,3 +1,10 @@
+---
+title: RACI Matrix
+category: productivity
+tags: [responsibility]
+summary: Responsibility assignment matrix for role clarity.
+use-case: [team]
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Responsibility](https://img.shields.io/badge/Responsibility-orange)
 
 # RACI Matrix

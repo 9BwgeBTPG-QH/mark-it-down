@@ -1,3 +1,11 @@
+---
+title: 5分ジャーナル
+category: journaling
+tags: [daily]
+summary: 朝と夜に分けて使います。
+use-case: [personal]
+time: 5
+---
 ![ジャーナリング](https://img.shields.io/badge/%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8A%E3%83%AA%E3%83%B3%E3%82%B0-blue) ![デイリー](https://img.shields.io/badge/%E3%83%87%E3%82%A4%E3%83%AA%E3%83%BC-orange) ![5分](https://img.shields.io/badge/5%E5%88%86-green)
 
 # 5分ジャーナル

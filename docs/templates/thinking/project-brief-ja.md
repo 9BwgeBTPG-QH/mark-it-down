@@ -1,3 +1,11 @@
+---
+title: プロジェクト概要
+category: thinking
+tags: [planning]
+summary: Project overview with scope, timeline, and risks.
+use-case: [analysis]
+---
+
 ![思考](https://img.shields.io/badge/%E6%80%9D%E8%80%83-blue) ![計画](https://img.shields.io/badge/%E8%A8%88%E7%94%BB-orange)
 
 # プロジェクト概要

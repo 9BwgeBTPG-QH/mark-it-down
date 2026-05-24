@@ -16,6 +16,7 @@
   <link rel="icon" type="image/png" sizes="128x128" href="../icon-128.png">
   <link rel="apple-touch-icon" sizes="128x128" href="../icon-128.png">
   <link rel="stylesheet" href="../style.css">
+  <script src="../assets/template-frontmatter.js"></script>
   <link id="md-alternate" rel="alternate" type="text/markdown" href="">
   <!-- highlight.js github theme -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/styles/github.min.css">
@@ -158,6 +159,7 @@
         'productivity/starfish-retrospective',
         'productivity/okr',
         'productivity/raci-matrix',
+        'productivity/ywt-retrospective',
         'journaling/five-minute-journal',
         'journaling/stoic-journal',
         'journaling/daily-reflection',
@@ -550,10 +552,15 @@
           })
           .then(function (md) {
             rawMarkdown = md;
-            var body = md.replace(/^---[\s\S]*?---\s*/, '');
+            var parsed = TemplateFrontmatter.parseFrontmatter(md);
+            var body = parsed.body;
 
+            var titleText = (parsed.data && parsed.data.title) || null;
             var titleMatch = body.match(/^#\s+(.+)$/m);
-            if (titleMatch) {
+            if (titleText) {
+              bcTitle.textContent = titleText;
+              document.title = titleText + ' - Mark It Down';
+            } else if (titleMatch) {
               bcTitle.textContent = titleMatch[1];
               document.title = titleMatch[1] + ' - Mark It Down';
             }
@@ -561,6 +568,21 @@
             // Render markdown (trusted local .md files only)
             var rendered = document.createElement('div');
             rendered.innerHTML = marked.parse(body);
+
+            // Insert summary from frontmatter after H1
+            if (parsed.data && parsed.data.summary) {
+              var firstH1 = rendered.querySelector('h1');
+              var summaryEl = document.createElement('p');
+              summaryEl.className = 'template-summary-line';
+              summaryEl.textContent = parsed.data.summary;
+              if (firstH1 && firstH1.nextSibling) {
+                rendered.insertBefore(summaryEl, firstH1.nextSibling);
+              } else if (firstH1) {
+                rendered.appendChild(summaryEl);
+              } else {
+                rendered.insertBefore(summaryEl, rendered.firstChild);
+              }
+            }
 
             // Syntax highlighting
             rendered.querySelectorAll('pre code').forEach(function (block) {

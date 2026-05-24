@@ -75,6 +75,9 @@
         <button class="filter-btn" data-filter="thinking">思考 (10)</button>
       </nav>
 
+      <!-- Tag Facets -->
+      <div class="tag-facets" id="tag-facets" role="group" aria-label="タグで絞り込む"></div>
+
       <!-- Template Grid -->
       <div class="template-grid">
 
@@ -575,36 +578,88 @@
   </div>
 
   <script>
-    // Search
     const searchInput = document.querySelector('.template-search-input');
     const allCards = document.querySelectorAll('.template-card');
+    let activeTags = new Set();
+    let activeCategory = 'all';
+    let searchQuery = '';
 
-    searchInput.addEventListener('input', () => {
-      const q = searchInput.value.toLowerCase().trim();
-      const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+    function filterCards() {
       allCards.forEach(card => {
         const title = card.querySelector('.template-card-title').textContent.toLowerCase();
         const desc = card.querySelector('.template-card-desc').textContent.toLowerCase();
-        const matchesSearch = !q || title.includes(q) || desc.includes(q);
-        const matchesFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
-        card.style.display = (matchesSearch && matchesFilter) ? '' : 'none';
+        const summary = card.dataset.summary || '';
+        const tagStr = card.dataset.tags || '';
+        const matchesSearch = !searchQuery || title.includes(searchQuery) || desc.includes(searchQuery) || summary.includes(searchQuery) || tagStr.includes(searchQuery);
+        const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+        const matchesTags = activeTags.size === 0 || tagStr.split(' ').some(t => t && activeTags.has(t));
+        card.style.display = (matchesSearch && matchesCategory && matchesTags) ? '' : 'none';
       });
+    }
+
+    function buildTagFacets(templates, taxonomy) {
+      const tagCounts = {};
+      templates.forEach(t => { t.tags.forEach(tag => { tagCounts[tag] = (tagCounts[tag] || 0) + 1; }); });
+      const container = document.getElementById('tag-facets');
+      if (!container) return;
+      Object.keys(tagCounts).sort().forEach(tag => {
+        const label = (taxonomy.tags[tag] && taxonomy.tags[tag].ja) || tag;
+        const btn = document.createElement('button');
+        btn.className = 'tag-facet-btn';
+        btn.dataset.tag = tag;
+        btn.textContent = label;
+        btn.addEventListener('click', () => {
+          if (activeTags.has(tag)) { activeTags.delete(tag); btn.classList.remove('active'); }
+          else { activeTags.add(tag); btn.classList.add('active'); }
+          filterCards();
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    function injectTagChips(templates, taxonomy) {
+      const metaMap = {};
+      templates.forEach(t => { metaMap[t.slug] = t; });
+      allCards.forEach(card => {
+        const copyBtn = card.querySelector('.copy-btn');
+        if (!copyBtn) return;
+        const slug = copyBtn.dataset.template;
+        const meta = metaMap[slug];
+        if (!meta) return;
+        card.dataset.summary = (meta.summary && meta.summary.ja || '').toLowerCase();
+        card.dataset.tags = meta.tags.join(' ');
+        if (!meta.tags.length) return;
+        const chips = document.createElement('div');
+        chips.className = 'template-tag-chips';
+        meta.tags.forEach(tag => {
+          const chip = document.createElement('span');
+          chip.className = 'template-tag-chip';
+          chip.textContent = (taxonomy.tags[tag] && taxonomy.tags[tag].ja) || tag;
+          chips.appendChild(chip);
+        });
+        const actions = card.querySelector('.template-card-actions');
+        card.insertBefore(chips, actions);
+      });
+    }
+
+    fetch('templates/index.json')
+      .then(r => r.json())
+      .then(data => {
+        injectTagChips(data.templates, data.taxonomy);
+        buildTagFacets(data.templates, data.taxonomy);
+      });
+
+    searchInput.addEventListener('input', () => {
+      searchQuery = searchInput.value.toLowerCase().trim();
+      filterCards();
     });
 
-    // Category filter
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        const q = searchInput.value.toLowerCase().trim();
-        allCards.forEach(card => {
-          const title = card.querySelector('.template-card-title').textContent.toLowerCase();
-          const desc = card.querySelector('.template-card-desc').textContent.toLowerCase();
-          const matchesSearch = !q || title.includes(q) || desc.includes(q);
-          const matchesFilter = filter === 'all' || card.dataset.category === filter;
-          card.style.display = (matchesSearch && matchesFilter) ? '' : 'none';
-        });
+        activeCategory = btn.dataset.filter;
+        filterCards();
       });
     });
 
@@ -619,10 +674,7 @@
           const original = btn.textContent;
           btn.textContent = '✓ コピーしました！';
           btn.classList.add('copied');
-          setTimeout(() => {
-            btn.textContent = original;
-            btn.classList.remove('copied');
-          }, 2000);
+          setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 2000);
         } catch (e) {
           btn.textContent = '✗ 失敗';
           setTimeout(() => { btn.textContent = '📋 コピー'; }, 2000);

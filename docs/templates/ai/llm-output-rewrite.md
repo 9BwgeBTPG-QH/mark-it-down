@@ -1,3 +1,12 @@
+---
+title: LLM Output Rewrite
+category: ai
+tags: [rewrite]
+summary: Rewrite AI output in your own words.
+use-case: [personal, knowledge]
+time: 10
+---
+
 ![AI](https://img.shields.io/badge/AI-blue) ![Rewrite](https://img.shields.io/badge/Rewrite-orange) ![10 min](https://img.shields.io/badge/10_min-green)
 
 # LLM Output Rewrite

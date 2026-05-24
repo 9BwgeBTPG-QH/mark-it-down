@@ -1,3 +1,10 @@
+---
+title: README Template
+category: dev
+tags: [readme]
+summary: Project README with quick start and API reference.
+use-case: [development]
+---
 ![Dev](https://img.shields.io/badge/Dev-blue) ![README](https://img.shields.io/badge/README-grey)
 
 # Project README

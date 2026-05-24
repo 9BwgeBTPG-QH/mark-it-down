@@ -1,3 +1,10 @@
+---
+title: OKR — 目標と主要な成果
+category: productivity
+tags: [goal-setting]
+summary: "`Ctrl+;` で今日の日付を挿入。"
+use-case: [team]
+---
 ![生産性](https://img.shields.io/badge/%E7%94%9F%E7%94%A3%E6%80%A7-blue) ![目標管理](https://img.shields.io/badge/%E7%9B%AE%E6%A8%99%E7%AE%A1%E7%90%86-orange)
 
 # OKR — 目標と主要な成果

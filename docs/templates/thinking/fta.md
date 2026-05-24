@@ -1,3 +1,11 @@
+---
+title: FTA (Fault Tree Analysis)
+category: thinking
+tags: [quality]
+summary: Top-down failure decomposition with AND/OR gates.
+use-case: [analysis]
+---
+
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Quality](https://img.shields.io/badge/Quality-orange)
 
 # FTA (Fault Tree Analysis)

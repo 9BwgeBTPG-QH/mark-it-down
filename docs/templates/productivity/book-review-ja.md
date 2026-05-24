@@ -1,3 +1,10 @@
+---
+title: 読書レビュー
+category: productivity
+tags: [review]
+summary: まずメタデータを記入。
+use-case: [personal, knowledge]
+---
 ![生産性](https://img.shields.io/badge/%E7%94%9F%E7%94%A3%E6%80%A7-blue) ![レビュー](https://img.shields.io/badge/%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC-orange)
 
 # 読書レビュー

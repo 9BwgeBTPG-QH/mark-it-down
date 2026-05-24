@@ -1,3 +1,10 @@
+---
+title: Zettelkasten Atomic Note
+category: productivity
+tags: [zettelkasten]
+summary: One idea per note for knowledge building.
+use-case: [personal, knowledge]
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Zettelkasten](https://img.shields.io/badge/Zettelkasten-orange)
 
 # Atomic Note

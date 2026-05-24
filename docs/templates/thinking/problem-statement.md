@@ -1,3 +1,11 @@
+---
+title: Problem Statement
+category: thinking
+tags: [analysis]
+summary: Define a problem with impact and constraints.
+use-case: [analysis]
+---
+
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Analysis](https://img.shields.io/badge/Analysis-orange)
 
 # Problem Statement

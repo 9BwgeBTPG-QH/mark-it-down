@@ -1,3 +1,12 @@
+---
+title: LLM Output Organizer
+category: ai
+tags: [rewrite]
+summary: Capture, rewrite, and act on LLM responses.
+use-case: [knowledge]
+time: 15
+---
+
 ![AI](https://img.shields.io/badge/AI-blue) ![Rewrite](https://img.shields.io/badge/Rewrite-orange) ![15 min](https://img.shields.io/badge/15_min-green)
 
 # LLM Output Organizer

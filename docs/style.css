@@ -2116,6 +2116,68 @@ a:hover {
 }
 
 /* ========================================
+   13.6b TAG CHIPS & FACETS
+   ======================================== */
+
+.template-tag-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 6px 0 8px;
+}
+
+.template-tag-chip {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  line-height: 1.6;
+}
+
+.tag-facets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 4px;
+  padding: 0 2px;
+}
+
+.tag-facet-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.tag-facet-btn:hover {
+  background: var(--bg-accent);
+  color: var(--text-primary);
+  border-color: var(--border-primary);
+}
+
+.tag-facet-btn.active {
+  background: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+}
+
+.tag-facet-btn:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
    13.7 TEMPLATE VIEWER
    ======================================== */
 
@@ -2154,6 +2216,14 @@ a:hover {
 .template-breadcrumb .breadcrumb-sep {
   color: var(--border-primary);
   user-select: none;
+}
+
+/* Template summary line below title */
+.template-summary-line {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: -4px 0 16px;
+  font-style: italic;
 }
 
 /* View toggle: Preview / Raw */

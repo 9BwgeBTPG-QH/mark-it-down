@@ -1,3 +1,10 @@
+---
+title: Changelog
+category: dev
+tags: [changelog]
+summary: Keep a Changelog format version history.
+use-case: [development]
+---
 ![Dev](https://img.shields.io/badge/Dev-blue) ![Changelog](https://img.shields.io/badge/Changelog-grey)
 
 # Changelog

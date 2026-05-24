@@ -1,3 +1,11 @@
+---
+title: Is / Is Not Analysis
+category: thinking
+tags: [problem-boundary]
+summary: Define problem boundaries by elimination.
+use-case: [analysis]
+---
+
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Problem Boundary](https://img.shields.io/badge/Problem_Boundary-orange)
 
 # Is / Is Not Analysis

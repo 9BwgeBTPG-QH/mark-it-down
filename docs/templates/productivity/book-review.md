@@ -1,3 +1,10 @@
+---
+title: Book Review
+category: productivity
+tags: [review]
+summary: Structured reading review with quotes and rating.
+use-case: [personal, knowledge]
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Review](https://img.shields.io/badge/Review-orange)
 
 # Book Review

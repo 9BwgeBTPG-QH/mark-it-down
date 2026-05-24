@@ -1,3 +1,10 @@
+---
+title: RACIマトリクス
+category: productivity
+tags: [responsibility]
+summary: "`Ctrl+;` で日付を挿入。"
+use-case: [team]
+---
 ![生産性](https://img.shields.io/badge/%E7%94%9F%E7%94%A3%E6%80%A7-blue) ![責任分担](https://img.shields.io/badge/%E8%B2%AC%E4%BB%BB%E5%88%86%E6%8B%85-orange)
 
 # RACIマトリクス

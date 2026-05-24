@@ -1,3 +1,11 @@
+---
+title: ストア派ジャーナル
+category: journaling
+tags: [stoic]
+summary: 自分でコントロールできることと、できないことを分けて書きます。
+use-case: [personal]
+time: 10
+---
 ![ジャーナリング](https://img.shields.io/badge/%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8A%E3%83%AA%E3%83%B3%E3%82%B0-blue) ![ストア派](https://img.shields.io/badge/%E3%82%B9%E3%83%88%E3%82%A2%E6%B4%BE-orange) ![10分](https://img.shields.io/badge/10%E5%88%86-green)
 
 # ストア派ジャーナル

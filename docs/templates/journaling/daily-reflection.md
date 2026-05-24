@@ -1,3 +1,11 @@
+---
+title: Daily Reflection
+category: journaling
+tags: [reflection]
+summary: Three short prompts to close out the day.
+use-case: [personal]
+time: 5
+---
 ![Journaling](https://img.shields.io/badge/Journaling-blue) ![Reflection](https://img.shields.io/badge/Reflection-orange) ![5 min](https://img.shields.io/badge/5_min-green)
 
 # Daily Reflection

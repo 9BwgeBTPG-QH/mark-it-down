@@ -1,3 +1,11 @@
+---
+title: Fishbone Diagram
+category: thinking
+tags: [root-cause, time]
+summary: Ishikawa cause-and-effect root cause analysis.
+use-case: [analysis]
+---
+
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Root Cause](https://img.shields.io/badge/Root_Cause-orange) ![Time](https://img.shields.io/badge/30--60_min-lightgrey)
 
 # Fishbone Diagram (Ishikawa / Cause-and-Effect)

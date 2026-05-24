@@ -1,3 +1,11 @@
+---
+title: Five Whys Analysis
+category: thinking
+tags: [root-cause]
+summary: Root cause analysis using the 5 Whys method.
+use-case: [analysis]
+---
+
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Root Cause](https://img.shields.io/badge/Root_Cause-orange)
 
 # Five Whys Analysis

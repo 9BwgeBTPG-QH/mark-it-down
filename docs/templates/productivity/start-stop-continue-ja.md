@@ -1,3 +1,11 @@
+---
+title: スタート・ストップ・コンティニュー 振り返り
+category: productivity
+tags: [retrospective]
+summary: スプリントや期間の終わりに記入しましょう。
+use-case: [team]
+time: 15
+---
 ![生産性](https://img.shields.io/badge/%E7%94%9F%E7%94%A3%E6%80%A7-blue) ![振り返り](https://img.shields.io/badge/%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A-orange) ![15分](https://img.shields.io/badge/15%E5%88%86-green)
 
 # スタート・ストップ・コンティニュー 振り返り

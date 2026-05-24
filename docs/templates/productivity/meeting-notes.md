@@ -1,3 +1,11 @@
+---
+title: Meeting Notes
+category: productivity
+tags: [meeting]
+summary: Structured meeting capture with action items.
+use-case: [team]
+time: 5
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Meeting](https://img.shields.io/badge/Meeting-orange) ![5 min](https://img.shields.io/badge/5_min-green)
 
 # Meeting Notes

@@ -1,3 +1,11 @@
+---
+title: Weekly Review
+category: productivity
+tags: [weekly]
+summary: Reflect on the week and plan ahead.
+use-case: [personal]
+time: 15
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Weekly](https://img.shields.io/badge/Weekly-orange) ![15 min](https://img.shields.io/badge/15_min-green)
 
 # Weekly Review

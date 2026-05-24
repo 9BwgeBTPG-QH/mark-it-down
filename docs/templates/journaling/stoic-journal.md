@@ -1,3 +1,11 @@
+---
+title: Stoic Journal
+category: journaling
+tags: [stoic]
+summary: Set intentions and review actions with clarity.
+use-case: [personal]
+time: 10
+---
 ![Journaling](https://img.shields.io/badge/Journaling-blue) ![Stoic](https://img.shields.io/badge/Stoic-orange) ![10 min](https://img.shields.io/badge/10_min-green)
 
 # Stoic Journal

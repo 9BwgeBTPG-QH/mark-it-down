@@ -1,3 +1,11 @@
+---
+title: Technical Article
+category: content
+tags: [tutorial]
+summary: Step-by-step technical tutorial structure.
+use-case: [writing]
+time: 30
+---
 ![Content](https://img.shields.io/badge/Content-blue) ![Tutorial](https://img.shields.io/badge/Tutorial-orange) ![30 min](https://img.shields.io/badge/30_min-green)
 
 # Technical Article

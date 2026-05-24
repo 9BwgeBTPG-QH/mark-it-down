@@ -1,3 +1,11 @@
+---
+title: 8Dレポート
+category: thinking
+tags: [quality]
+summary: Eight-discipline structured problem-solving report.
+use-case: [analysis]
+---
+
 ![思考](https://img.shields.io/badge/%E6%80%9D%E8%80%83-blue) ![品質](https://img.shields.io/badge/%E5%93%81%E8%B3%AA-orange)
 
 # 8Dレポート

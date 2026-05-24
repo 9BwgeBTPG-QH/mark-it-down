@@ -1,3 +1,11 @@
+---
+title: AI Conversation Archive
+category: ai
+tags: [archive]
+summary: Preserve multi-turn conversations with context.
+use-case: [knowledge]
+---
+
 ![AI](https://img.shields.io/badge/AI-blue) ![Archive](https://img.shields.io/badge/Archive-orange)
 
 # AI Conversation Archive

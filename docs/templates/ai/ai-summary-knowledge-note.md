@@ -1,3 +1,11 @@
+---
+title: AI Summary to Knowledge Note
+category: ai
+tags: [knowledge]
+summary: Convert AI summaries into permanent notes.
+use-case: [knowledge]
+---
+
 ![AI](https://img.shields.io/badge/AI-blue) ![Knowledge](https://img.shields.io/badge/Knowledge-orange)
 
 # [Knowledge Topic]

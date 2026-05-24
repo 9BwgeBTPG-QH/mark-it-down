@@ -1,3 +1,11 @@
+---
+title: AIサマリーからナレッジノートへ
+category: ai
+tags: [knowledge]
+summary: 関連ノートは `Ctrl+K` で検索。
+use-case: [knowledge]
+---
+
 ![AI](https://img.shields.io/badge/AI-blue) ![ナレッジ](https://img.shields.io/badge/%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8-orange)
 
 # [ナレッジトピック]

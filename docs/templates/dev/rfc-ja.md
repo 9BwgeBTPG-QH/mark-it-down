@@ -1,3 +1,10 @@
+---
+title: RFC（コメント募集）
+category: dev
+tags: [design-proposal]
+summary: 1つのRFCに1つの設計提案。
+use-case: [development, writing]
+---
 ![開発](https://img.shields.io/badge/%E9%96%8B%E7%99%BA-blue) ![設計提案](https://img.shields.io/badge/%E8%A8%AD%E8%A8%88%E6%8F%90%E6%A1%88-orange)
 
 # RFC-[番号]: [タイトル]

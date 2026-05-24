@@ -1,0 +1,906 @@
+{
+  "generatedAt": "2026-05-24T13:45:11.686Z",
+  "templates": [
+    {
+      "slug": "ai/ai-conversation-archive",
+      "category": "ai",
+      "tags": [
+        "archive"
+      ],
+      "useCases": [
+        "knowledge"
+      ],
+      "time": null,
+      "title": {
+        "en": "AI Conversation Archive",
+        "ja": "AI会話アーカイブ"
+      },
+      "summary": {
+        "en": "Preserve multi-turn conversations with context.",
+        "ja": "LLMの回答を `Ctrl+Shift+V` で貼り付け（HTMLを自動でMarkdownに変換）。"
+      }
+    },
+    {
+      "slug": "ai/ai-summary-knowledge-note",
+      "category": "ai",
+      "tags": [
+        "knowledge"
+      ],
+      "useCases": [
+        "knowledge"
+      ],
+      "time": null,
+      "title": {
+        "en": "AI Summary to Knowledge Note",
+        "ja": "AIサマリーからナレッジノートへ"
+      },
+      "summary": {
+        "en": "Convert AI summaries into permanent notes.",
+        "ja": "関連ノートは `Ctrl+K` で検索。"
+      }
+    },
+    {
+      "slug": "ai/llm-output-organizer",
+      "category": "ai",
+      "tags": [
+        "rewrite"
+      ],
+      "useCases": [
+        "knowledge"
+      ],
+      "time": 15,
+      "title": {
+        "en": "LLM Output Organizer",
+        "ja": "LLM出力オーガナイザー"
+      },
+      "summary": {
+        "en": "Capture, rewrite, and act on LLM responses.",
+        "ja": "LLMの出力を `Ctrl+Shift+V` で貼り付け（自動でMarkdownに変換）。"
+      }
+    },
+    {
+      "slug": "ai/llm-output-rewrite",
+      "category": "ai",
+      "tags": [
+        "rewrite"
+      ],
+      "useCases": [
+        "personal",
+        "knowledge"
+      ],
+      "time": 10,
+      "title": {
+        "en": "LLM Output Rewrite",
+        "ja": "LLM出力リライト"
+      },
+      "summary": {
+        "en": "Rewrite AI output in your own words.",
+        "ja": "元のLLM出力を `Ctrl+Shift+V` で貼り付けると、HTMLがクリーンなMarkdownに自動変換されます。"
+      }
+    },
+    {
+      "slug": "ai/prompt-library",
+      "category": "ai",
+      "tags": [
+        "reference"
+      ],
+      "useCases": [
+        "knowledge"
+      ],
+      "time": null,
+      "title": {
+        "en": "Prompt Library",
+        "ja": "プロンプトライブラリ"
+      },
+      "summary": {
+        "en": "Catalog and rate your most-used prompts.",
+        "ja": "すべてのプロンプトを `Ctrl+K` で横断検索。"
+      }
+    },
+    {
+      "slug": "content/blog-post-draft",
+      "category": "content",
+      "tags": [
+        "blog"
+      ],
+      "useCases": [
+        "writing"
+      ],
+      "time": 20,
+      "title": {
+        "en": "Blog Post Draft",
+        "ja": "ブログ記事の下書き"
+      },
+      "summary": {
+        "en": "Outline and draft a blog post.",
+        "ja": "まずフックから始め、ポイントを展開し、最後にCTA（行動喚起）でまとめましょう。"
+      }
+    },
+    {
+      "slug": "content/technical-article",
+      "category": "content",
+      "tags": [
+        "tutorial"
+      ],
+      "useCases": [
+        "writing"
+      ],
+      "time": 30,
+      "title": {
+        "en": "Technical Article",
+        "ja": "技術記事"
+      },
+      "summary": {
+        "en": "Step-by-step technical tutorial structure.",
+        "ja": "まず問題を定義し、次に解決策をステップバイステップで解説しましょう。"
+      }
+    },
+    {
+      "slug": "dev/adr",
+      "category": "dev",
+      "tags": [
+        "architecture"
+      ],
+      "useCases": [
+        "development",
+        "writing"
+      ],
+      "time": null,
+      "title": {
+        "en": "Architecture Decision Record",
+        "ja": "アーキテクチャ決定記録"
+      },
+      "summary": {
+        "en": "Lightweight ADR for technical decisions.",
+        "ja": "重要な技術的決定ごとに1つのADRを作成。"
+      }
+    },
+    {
+      "slug": "dev/api-documentation",
+      "category": "dev",
+      "tags": [
+        "api"
+      ],
+      "useCases": [
+        "development"
+      ],
+      "time": null,
+      "title": {
+        "en": "API Documentation",
+        "ja": "APIドキュメント"
+      },
+      "summary": {
+        "en": "REST API endpoint documentation.",
+        "ja": "各エンドポイントをH2セクションとしてドキュメント化してください。"
+      }
+    },
+    {
+      "slug": "dev/changelog",
+      "category": "dev",
+      "tags": [
+        "changelog"
+      ],
+      "useCases": [
+        "development"
+      ],
+      "time": null,
+      "title": {
+        "en": "Changelog",
+        "ja": "チェンジログ"
+      },
+      "summary": {
+        "en": "Keep a Changelog format version history.",
+        "ja": "新しいバージョンを上に追加してください。"
+      }
+    },
+    {
+      "slug": "dev/readme-template",
+      "category": "dev",
+      "tags": [
+        "readme"
+      ],
+      "useCases": [
+        "development"
+      ],
+      "time": null,
+      "title": {
+        "en": "README Template",
+        "ja": "プロジェクトREADME"
+      },
+      "summary": {
+        "en": "Project README with quick start and API reference.",
+        "ja": "プロジェクトに合わせて各セクションを記入してください。"
+      }
+    },
+    {
+      "slug": "dev/rfc",
+      "category": "dev",
+      "tags": [
+        "design-proposal"
+      ],
+      "useCases": [
+        "development",
+        "writing"
+      ],
+      "time": null,
+      "title": {
+        "en": "RFC (Request for Comments)",
+        "ja": "RFC（コメント募集）"
+      },
+      "summary": {
+        "en": "Design proposal with alternatives and review process.",
+        "ja": "1つのRFCに1つの設計提案。"
+      }
+    },
+    {
+      "slug": "journaling/cbt-thought-record",
+      "category": "journaling",
+      "tags": [
+        "cbt"
+      ],
+      "useCases": [
+        "personal"
+      ],
+      "time": 15,
+      "title": {
+        "en": "CBT Thought Record",
+        "ja": "CBT思考記録"
+      },
+      "summary": {
+        "en": "Separate thoughts, emotions, and actions for reflection.",
+        "ja": "状況・思考・感情・行動を分けて整理するセルフリフレクション用テンプレートです。"
+      }
+    },
+    {
+      "slug": "journaling/daily-reflection",
+      "category": "journaling",
+      "tags": [
+        "reflection"
+      ],
+      "useCases": [
+        "personal"
+      ],
+      "time": 5,
+      "title": {
+        "en": "Daily Reflection",
+        "ja": "デイリーリフレクション"
+      },
+      "summary": {
+        "en": "Three short prompts to close out the day.",
+        "ja": "夜に軽く振り返りたいときに使います。"
+      }
+    },
+    {
+      "slug": "journaling/five-minute-journal",
+      "category": "journaling",
+      "tags": [
+        "daily"
+      ],
+      "useCases": [
+        "personal"
+      ],
+      "time": 5,
+      "title": {
+        "en": "Five Minute Journal",
+        "ja": "5分ジャーナル"
+      },
+      "summary": {
+        "en": "Morning gratitude and evening reflection prompts.",
+        "ja": "朝と夜に分けて使います。"
+      }
+    },
+    {
+      "slug": "journaling/stoic-journal",
+      "category": "journaling",
+      "tags": [
+        "stoic"
+      ],
+      "useCases": [
+        "personal"
+      ],
+      "time": 10,
+      "title": {
+        "en": "Stoic Journal",
+        "ja": "ストア派ジャーナル"
+      },
+      "summary": {
+        "en": "Set intentions and review actions with clarity.",
+        "ja": "自分でコントロールできることと、できないことを分けて書きます。"
+      }
+    },
+    {
+      "slug": "productivity/book-review",
+      "category": "productivity",
+      "tags": [
+        "review"
+      ],
+      "useCases": [
+        "personal",
+        "knowledge"
+      ],
+      "time": null,
+      "title": {
+        "en": "Book Review",
+        "ja": "読書レビュー"
+      },
+      "summary": {
+        "en": "Structured reading review with quotes and rating.",
+        "ja": "まずメタデータを記入。"
+      }
+    },
+    {
+      "slug": "productivity/daily-note",
+      "category": "productivity",
+      "tags": [
+        "daily"
+      ],
+      "useCases": [
+        "personal"
+      ],
+      "time": 5,
+      "title": {
+        "en": "Daily Note",
+        "ja": "デイリーノート"
+      },
+      "summary": {
+        "en": "Daily journal with focus, tasks, and reflection.",
+        "ja": "毎日、フォーカスとタスクを記入して始めましょう。"
+      }
+    },
+    {
+      "slug": "productivity/four-ls-retrospective",
+      "category": "productivity",
+      "tags": [
+        "retrospective"
+      ],
+      "useCases": [
+        "team"
+      ],
+      "time": 20,
+      "title": {
+        "en": "4Ls Retrospective",
+        "ja": "4Ls 振り返り"
+      },
+      "summary": {
+        "en": "Liked, Learned, Lacked, Longed for — positive reflection framework.",
+        "ja": "スプリントやプロジェクト期間の終わりに実施してください。"
+      }
+    },
+    {
+      "slug": "productivity/kpt-retrospective",
+      "category": "productivity",
+      "tags": [
+        "retrospective"
+      ],
+      "useCases": [
+        "team"
+      ],
+      "time": 15,
+      "title": {
+        "en": "KPT Retrospective",
+        "ja": "KPT振り返り"
+      },
+      "summary": {
+        "en": "Keep, Problem, Try — structured sprint retrospective.",
+        "ja": "`Ctrl+;` で今日の日付を挿入。"
+      }
+    },
+    {
+      "slug": "productivity/meeting-notes",
+      "category": "productivity",
+      "tags": [
+        "meeting"
+      ],
+      "useCases": [
+        "team"
+      ],
+      "time": 5,
+      "title": {
+        "en": "Meeting Notes",
+        "ja": "ミーティングノート"
+      },
+      "summary": {
+        "en": "Structured meeting capture with action items.",
+        "ja": "`Ctrl+Shift+;` で会議の日時を挿入。"
+      }
+    },
+    {
+      "slug": "productivity/okr",
+      "category": "productivity",
+      "tags": [
+        "goal-setting"
+      ],
+      "useCases": [
+        "team"
+      ],
+      "time": null,
+      "title": {
+        "en": "OKR",
+        "ja": "OKR — 目標と主要な成果"
+      },
+      "summary": {
+        "en": "Objectives and Key Results for quarterly goal setting.",
+        "ja": "`Ctrl+;` で今日の日付を挿入。"
+      }
+    },
+    {
+      "slug": "productivity/raci-matrix",
+      "category": "productivity",
+      "tags": [
+        "responsibility"
+      ],
+      "useCases": [
+        "team"
+      ],
+      "time": null,
+      "title": {
+        "en": "RACI Matrix",
+        "ja": "RACIマトリクス"
+      },
+      "summary": {
+        "en": "Responsibility assignment matrix for role clarity.",
+        "ja": "`Ctrl+;` で日付を挿入。"
+      }
+    },
+    {
+      "slug": "productivity/starfish-retrospective",
+      "category": "productivity",
+      "tags": [
+        "retrospective"
+      ],
+      "useCases": [
+        "team"
+      ],
+      "time": 30,
+      "title": {
+        "en": "Starfish Retrospective",
+        "ja": "スターフィッシュ振り返り"
+      },
+      "summary": {
+        "en": "Five-point deep analysis for team improvement.",
+        "ja": "スプリントやフェーズの終わりに実施してください。"
+      }
+    },
+    {
+      "slug": "productivity/start-stop-continue",
+      "category": "productivity",
+      "tags": [
+        "retrospective"
+      ],
+      "useCases": [
+        "team"
+      ],
+      "time": 15,
+      "title": {
+        "en": "Start-Stop-Continue",
+        "ja": "スタート・ストップ・コンティニュー 振り返り"
+      },
+      "summary": {
+        "en": "Simple behavior change retrospective framework.",
+        "ja": "スプリントや期間の終わりに記入しましょう。"
+      }
+    },
+    {
+      "slug": "productivity/weekly-review",
+      "category": "productivity",
+      "tags": [
+        "weekly"
+      ],
+      "useCases": [
+        "personal"
+      ],
+      "time": 15,
+      "title": {
+        "en": "Weekly Review",
+        "ja": "ウィークリーレビュー"
+      },
+      "summary": {
+        "en": "Reflect on the week and plan ahead.",
+        "ja": "毎週末に記入してください。"
+      }
+    },
+    {
+      "slug": "productivity/ywt-retrospective",
+      "category": "productivity",
+      "tags": [
+        "retrospective"
+      ],
+      "useCases": [
+        "team",
+        "personal"
+      ],
+      "time": 15,
+      "title": {
+        "en": "YWT Retrospective",
+        "ja": "YWT振り返り"
+      },
+      "summary": {
+        "en": "Reflect on what you did, what you learned, and what to do next.",
+        "ja": "スプリントや期間の終わりに記入してください。"
+      }
+    },
+    {
+      "slug": "productivity/zettelkasten-atomic-note",
+      "category": "productivity",
+      "tags": [
+        "zettelkasten"
+      ],
+      "useCases": [
+        "personal",
+        "knowledge"
+      ],
+      "time": null,
+      "title": {
+        "en": "Zettelkasten Atomic Note",
+        "ja": "アトミックノート"
+      },
+      "summary": {
+        "en": "One idea per note for knowledge building.",
+        "ja": "1ノートにつき1アイデア。"
+      }
+    },
+    {
+      "slug": "thinking/decision-log",
+      "category": "thinking",
+      "tags": [
+        "decision"
+      ],
+      "useCases": [
+        "analysis"
+      ],
+      "time": null,
+      "title": {
+        "en": "Decision Log",
+        "ja": "意思決定ログ"
+      },
+      "summary": {
+        "en": "Record decisions with context and rationale.",
+        "ja": "Record decisions with context and rationale."
+      }
+    },
+    {
+      "slug": "thinking/decision-matrix",
+      "category": "thinking",
+      "tags": [
+        "decision"
+      ],
+      "useCases": [
+        "analysis"
+      ],
+      "time": null,
+      "title": {
+        "en": "Decision Matrix",
+        "ja": "意思決定マトリクス"
+      },
+      "summary": {
+        "en": "Weighted multi-criteria evaluation for structured decisions.",
+        "ja": "Weighted multi-criteria evaluation for structured decisions."
+      }
+    },
+    {
+      "slug": "thinking/eight-d-report",
+      "category": "thinking",
+      "tags": [
+        "quality"
+      ],
+      "useCases": [
+        "analysis"
+      ],
+      "time": null,
+      "title": {
+        "en": "8D Report",
+        "ja": "8Dレポート"
+      },
+      "summary": {
+        "en": "Eight-discipline structured problem-solving report.",
+        "ja": "Eight-discipline structured problem-solving report."
+      }
+    },
+    {
+      "slug": "thinking/fishbone-diagram",
+      "category": "thinking",
+      "tags": [
+        "root-cause",
+        "time"
+      ],
+      "useCases": [
+        "analysis"
+      ],
+      "time": null,
+      "title": {
+        "en": "Fishbone Diagram",
+        "ja": "特性要因図（フィッシュボーン）"
+      },
+      "summary": {
+        "en": "Ishikawa cause-and-effect root cause analysis.",
+        "ja": "石川図（特性要因図）で根本原因を構造的に分析する。"
+      }
+    },
+    {
+      "slug": "thinking/five-whys-analysis",
+      "category": "thinking",
+      "tags": [
+        "root-cause"
+      ],
+      "useCases": [
+        "analysis"
+      ],
+      "time": null,
+      "title": {
+        "en": "Five Whys Analysis",
+        "ja": "なぜなぜ分析"
+      },
+      "summary": {
+        "en": "Root cause analysis using the 5 Whys method.",
+        "ja": "Root cause analysis using the 5 Whys method."
+      }
+    },
+    {
+      "slug": "thinking/fmea",
+      "category": "thinking",
+      "tags": [
+        "quality"
+      ],
+      "useCases": [
+        "analysis"
+      ],
+      "time": null,
+      "title": {
+        "en": "FMEA",
+        "ja": "FMEA（故障モード影響解析）"
+      },
+      "summary": {
+        "en": "Failure mode and effects analysis with RPN scoring.",
+        "ja": "Failure mode and effects analysis with RPN scoring."
+      }
+    },
+    {
+      "slug": "thinking/fta",
+      "category": "thinking",
+      "tags": [
+        "quality"
+      ],
+      "useCases": [
+        "analysis"
+      ],
+      "time": null,
+      "title": {
+        "en": "FTA (Fault Tree Analysis)",
+        "ja": "FTA（故障の木解析）"
+      },
+      "summary": {
+        "en": "Top-down failure decomposition with AND/OR gates.",
+        "ja": "Top-down failure decomposition with AND/OR gates."
+      }
+    },
+    {
+      "slug": "thinking/is-is-not-analysis",
+      "category": "thinking",
+      "tags": [
+        "problem-boundary"
+      ],
+      "useCases": [
+        "analysis"
+      ],
+      "time": null,
+      "title": {
+        "en": "Is / Is Not Analysis",
+        "ja": "Is / Is Not 分析"
+      },
+      "summary": {
+        "en": "Define problem boundaries by elimination.",
+        "ja": "Define problem boundaries by elimination."
+      }
+    },
+    {
+      "slug": "thinking/problem-statement",
+      "category": "thinking",
+      "tags": [
+        "analysis"
+      ],
+      "useCases": [
+        "analysis"
+      ],
+      "time": null,
+      "title": {
+        "en": "Problem Statement",
+        "ja": "問題定義"
+      },
+      "summary": {
+        "en": "Define a problem with impact and constraints.",
+        "ja": "Define a problem with impact and constraints."
+      }
+    },
+    {
+      "slug": "thinking/project-brief",
+      "category": "thinking",
+      "tags": [
+        "planning"
+      ],
+      "useCases": [
+        "analysis"
+      ],
+      "time": null,
+      "title": {
+        "en": "Project Brief",
+        "ja": "プロジェクト概要"
+      },
+      "summary": {
+        "en": "Project overview with scope, timeline, and risks.",
+        "ja": "Project overview with scope, timeline, and risks."
+      }
+    }
+  ],
+  "taxonomy": {
+    "categories": {
+      "ai": {
+        "en": "AI",
+        "ja": "AI"
+      },
+      "content": {
+        "en": "Content",
+        "ja": "コンテンツ"
+      },
+      "dev": {
+        "en": "Dev",
+        "ja": "開発"
+      },
+      "journaling": {
+        "en": "Journaling",
+        "ja": "ジャーナリング"
+      },
+      "productivity": {
+        "en": "Productivity",
+        "ja": "生産性"
+      },
+      "thinking": {
+        "en": "Thinking",
+        "ja": "思考"
+      }
+    },
+    "tags": {
+      "archive": {
+        "en": "Archive",
+        "ja": "アーカイブ"
+      },
+      "knowledge": {
+        "en": "Knowledge",
+        "ja": "ナレッジ"
+      },
+      "rewrite": {
+        "en": "Rewrite",
+        "ja": "リライト"
+      },
+      "reference": {
+        "en": "Reference",
+        "ja": "リファレンス"
+      },
+      "blog": {
+        "en": "Blog",
+        "ja": "ブログ"
+      },
+      "tutorial": {
+        "en": "Tutorial",
+        "ja": "チュートリアル"
+      },
+      "architecture": {
+        "en": "Architecture",
+        "ja": "アーキテクチャ"
+      },
+      "api": {
+        "en": "API",
+        "ja": "API"
+      },
+      "changelog": {
+        "en": "Changelog",
+        "ja": "チェンジログ"
+      },
+      "readme": {
+        "en": "README",
+        "ja": "README"
+      },
+      "design-proposal": {
+        "en": "Design Proposal",
+        "ja": "設計提案"
+      },
+      "cbt": {
+        "en": "CBT",
+        "ja": "認知行動療法"
+      },
+      "reflection": {
+        "en": "Reflection",
+        "ja": "内省"
+      },
+      "daily": {
+        "en": "Daily",
+        "ja": "デイリー"
+      },
+      "stoic": {
+        "en": "Stoic",
+        "ja": "ストア派"
+      },
+      "review": {
+        "en": "Review",
+        "ja": "レビュー"
+      },
+      "retrospective": {
+        "en": "Retrospective",
+        "ja": "振り返り"
+      },
+      "meeting": {
+        "en": "Meeting",
+        "ja": "ミーティング"
+      },
+      "goal-setting": {
+        "en": "Goal Setting",
+        "ja": "目標設定"
+      },
+      "responsibility": {
+        "en": "Responsibility",
+        "ja": "責任分担"
+      },
+      "weekly": {
+        "en": "Weekly",
+        "ja": "ウィークリー"
+      },
+      "zettelkasten": {
+        "en": "Zettelkasten",
+        "ja": "ツェッテルカステン"
+      },
+      "decision": {
+        "en": "Decision",
+        "ja": "意思決定"
+      },
+      "quality": {
+        "en": "Quality",
+        "ja": "品質"
+      },
+      "root-cause": {
+        "en": "Root Cause",
+        "ja": "根本原因"
+      },
+      "problem-boundary": {
+        "en": "Problem Boundary",
+        "ja": "問題境界"
+      },
+      "analysis": {
+        "en": "Analysis",
+        "ja": "分析"
+      },
+      "planning": {
+        "en": "Planning",
+        "ja": "計画"
+      },
+      "time": {
+        "en": "Time",
+        "ja": "時間"
+      }
+    },
+    "useCases": {
+      "personal": {
+        "en": "Personal",
+        "ja": "個人"
+      },
+      "team": {
+        "en": "Team",
+        "ja": "チーム"
+      },
+      "writing": {
+        "en": "Writing",
+        "ja": "執筆"
+      },
+      "development": {
+        "en": "Development",
+        "ja": "開発"
+      },
+      "analysis": {
+        "en": "Analysis",
+        "ja": "分析"
+      },
+      "knowledge": {
+        "en": "Knowledge Mgmt",
+        "ja": "知識管理"
+      }
+    }
+  }
+}

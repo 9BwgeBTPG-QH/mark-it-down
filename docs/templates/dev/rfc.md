@@ -1,3 +1,10 @@
+---
+title: RFC (Request for Comments)
+category: dev
+tags: [design-proposal]
+summary: Design proposal with alternatives and review process.
+use-case: [development, writing]
+---
 ![Dev](https://img.shields.io/badge/Dev-blue) ![Design Proposal](https://img.shields.io/badge/Design_Proposal-orange)
 
 # RFC-[Number]: [Title]

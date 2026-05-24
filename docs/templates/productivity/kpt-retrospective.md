@@ -1,3 +1,11 @@
+---
+title: KPT Retrospective
+category: productivity
+tags: [retrospective]
+summary: Keep, Problem, Try — structured sprint retrospective.
+use-case: [team]
+time: 15
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Retrospective](https://img.shields.io/badge/Retrospective-orange) ![15 min](https://img.shields.io/badge/15_min-green)
 
 # KPT Retrospective

@@ -1,3 +1,11 @@
+---
+title: CBT Thought Record
+category: journaling
+tags: [cbt]
+summary: Separate thoughts, emotions, and actions for reflection.
+use-case: [personal]
+time: 15
+---
 ![Journaling](https://img.shields.io/badge/Journaling-blue) ![CBT](https://img.shields.io/badge/CBT-orange) ![15 min](https://img.shields.io/badge/15_min-green)
 
 # CBT Thought Record

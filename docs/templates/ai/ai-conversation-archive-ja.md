@@ -1,3 +1,11 @@
+---
+title: AI会話アーカイブ
+category: ai
+tags: [archive]
+summary: LLMの回答を `Ctrl+Shift+V` で貼り付け（HTMLを自動でMarkdownに変換）。
+use-case: [knowledge]
+---
+
 ![AI](https://img.shields.io/badge/AI-blue) ![アーカイブ](https://img.shields.io/badge/%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96-orange)
 
 # AI会話アーカイブ

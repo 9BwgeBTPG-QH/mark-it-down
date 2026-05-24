@@ -1,3 +1,10 @@
+---
+title: Architecture Decision Record
+category: dev
+tags: [architecture]
+summary: Lightweight ADR for technical decisions.
+use-case: [development, writing]
+---
 ![Dev](https://img.shields.io/badge/Dev-blue) ![Architecture](https://img.shields.io/badge/Architecture-orange)
 
 # ADR-[Number]: [Decision Title]

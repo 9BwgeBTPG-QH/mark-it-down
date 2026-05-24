@@ -1,3 +1,11 @@
+---
+title: Decision Matrix
+category: thinking
+tags: [decision]
+summary: Weighted multi-criteria evaluation for structured decisions.
+use-case: [analysis]
+---
+
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Decision](https://img.shields.io/badge/Decision-orange)
 
 # Decision Matrix

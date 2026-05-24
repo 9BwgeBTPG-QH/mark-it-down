@@ -1,3 +1,11 @@
+---
+title: CBT思考記録
+category: journaling
+tags: [cbt]
+summary: 状況・思考・感情・行動を分けて整理するセルフリフレクション用テンプレートです。
+use-case: [personal]
+time: 15
+---
 ![ジャーナリング](https://img.shields.io/badge/%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8A%E3%83%AA%E3%83%B3%E3%82%B0-blue) ![CBT](https://img.shields.io/badge/CBT-orange) ![15分](https://img.shields.io/badge/15%E5%88%86-green)
 
 # CBT思考記録

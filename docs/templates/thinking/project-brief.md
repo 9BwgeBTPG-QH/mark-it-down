@@ -1,3 +1,11 @@
+---
+title: Project Brief
+category: thinking
+tags: [planning]
+summary: Project overview with scope, timeline, and risks.
+use-case: [analysis]
+---
+
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Planning](https://img.shields.io/badge/Planning-orange)
 
 # Project Brief

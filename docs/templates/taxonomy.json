@@ -1,0 +1,49 @@
+{
+  "categories": {
+    "ai":           { "en": "AI",           "ja": "AI" },
+    "content":      { "en": "Content",      "ja": "コンテンツ" },
+    "dev":          { "en": "Dev",          "ja": "開発" },
+    "journaling":   { "en": "Journaling",   "ja": "ジャーナリング" },
+    "productivity": { "en": "Productivity", "ja": "生産性" },
+    "thinking":     { "en": "Thinking",     "ja": "思考" }
+  },
+  "tags": {
+    "archive":          { "en": "Archive",          "ja": "アーカイブ" },
+    "knowledge":        { "en": "Knowledge",        "ja": "ナレッジ" },
+    "rewrite":          { "en": "Rewrite",          "ja": "リライト" },
+    "reference":        { "en": "Reference",        "ja": "リファレンス" },
+    "blog":             { "en": "Blog",             "ja": "ブログ" },
+    "tutorial":         { "en": "Tutorial",         "ja": "チュートリアル" },
+    "architecture":     { "en": "Architecture",     "ja": "アーキテクチャ" },
+    "api":              { "en": "API",              "ja": "API" },
+    "changelog":        { "en": "Changelog",        "ja": "チェンジログ" },
+    "readme":           { "en": "README",           "ja": "README" },
+    "design-proposal":  { "en": "Design Proposal",  "ja": "設計提案" },
+    "cbt":              { "en": "CBT",              "ja": "認知行動療法" },
+    "reflection":       { "en": "Reflection",       "ja": "内省" },
+    "daily":            { "en": "Daily",            "ja": "デイリー" },
+    "stoic":            { "en": "Stoic",            "ja": "ストア派" },
+    "review":           { "en": "Review",           "ja": "レビュー" },
+    "retrospective":    { "en": "Retrospective",    "ja": "振り返り" },
+    "meeting":          { "en": "Meeting",          "ja": "ミーティング" },
+    "goal-setting":     { "en": "Goal Setting",     "ja": "目標設定" },
+    "responsibility":   { "en": "Responsibility",   "ja": "責任分担" },
+    "weekly":           { "en": "Weekly",           "ja": "ウィークリー" },
+    "zettelkasten":     { "en": "Zettelkasten",     "ja": "ツェッテルカステン" },
+    "decision":         { "en": "Decision",         "ja": "意思決定" },
+    "quality":          { "en": "Quality",          "ja": "品質" },
+    "root-cause":       { "en": "Root Cause",       "ja": "根本原因" },
+    "problem-boundary": { "en": "Problem Boundary", "ja": "問題境界" },
+    "analysis":         { "en": "Analysis",         "ja": "分析" },
+    "planning":         { "en": "Planning",         "ja": "計画" },
+    "time":             { "en": "Time",             "ja": "時間" }
+  },
+  "useCases": {
+    "personal":     { "en": "Personal",      "ja": "個人" },
+    "team":         { "en": "Team",          "ja": "チーム" },
+    "writing":      { "en": "Writing",       "ja": "執筆" },
+    "development":  { "en": "Development",   "ja": "開発" },
+    "analysis":     { "en": "Analysis",      "ja": "分析" },
+    "knowledge":    { "en": "Knowledge Mgmt","ja": "知識管理" }
+  }
+}

@@ -1,3 +1,11 @@
+---
+title: Is / Is Not 分析
+category: thinking
+tags: [problem-boundary]
+summary: Define problem boundaries by elimination.
+use-case: [analysis]
+---
+
 ![思考](https://img.shields.io/badge/%E6%80%9D%E8%80%83-blue) ![問題の境界](https://img.shields.io/badge/%E5%95%8F%E9%A1%8C%E3%81%AE%E5%A2%83%E7%95%8C-orange)
 
 # Is / Is Not 分析

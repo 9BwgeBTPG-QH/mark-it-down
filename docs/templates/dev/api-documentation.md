@@ -1,3 +1,10 @@
+---
+title: API Documentation
+category: dev
+tags: [api]
+summary: REST API endpoint documentation.
+use-case: [development]
+---
 ![Dev](https://img.shields.io/badge/Dev-blue) ![API](https://img.shields.io/badge/API-grey)
 
 # API Documentation

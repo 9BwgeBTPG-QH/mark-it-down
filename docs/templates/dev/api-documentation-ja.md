@@ -1,3 +1,10 @@
+---
+title: APIドキュメント
+category: dev
+tags: [api]
+summary: 各エンドポイントをH2セクションとしてドキュメント化してください。
+use-case: [development]
+---
 ![開発](https://img.shields.io/badge/%E9%96%8B%E7%99%BA-blue) ![API](https://img.shields.io/badge/API-grey)
 
 # APIドキュメント

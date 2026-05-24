@@ -1,3 +1,11 @@
+---
+title: 8D Report
+category: thinking
+tags: [quality]
+summary: Eight-discipline structured problem-solving report.
+use-case: [analysis]
+---
+
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Quality](https://img.shields.io/badge/Quality-orange)
 
 # 8D Report

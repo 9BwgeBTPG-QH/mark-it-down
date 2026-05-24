@@ -1,3 +1,11 @@
+---
+title: Decision Log
+category: thinking
+tags: [decision]
+summary: Record decisions with context and rationale.
+use-case: [analysis]
+---
+
 ![Thinking](https://img.shields.io/badge/Thinking-blue) ![Decision](https://img.shields.io/badge/Decision-orange)
 
 # Decision Log

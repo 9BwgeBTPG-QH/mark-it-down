@@ -1,3 +1,11 @@
+---
+title: Blog Post Draft
+category: content
+tags: [blog]
+summary: Outline and draft a blog post.
+use-case: [writing]
+time: 20
+---
 ![Content](https://img.shields.io/badge/Content-blue) ![Blog](https://img.shields.io/badge/Blog-orange) ![20 min](https://img.shields.io/badge/20_min-green)
 
 # Blog Post Draft

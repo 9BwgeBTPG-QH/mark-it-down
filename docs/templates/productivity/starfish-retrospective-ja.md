@@ -1,3 +1,11 @@
+---
+title: スターフィッシュ振り返り
+category: productivity
+tags: [retrospective]
+summary: スプリントやフェーズの終わりに実施してください。
+use-case: [team]
+time: 30
+---
 ![生産性](https://img.shields.io/badge/%E7%94%9F%E7%94%A3%E6%80%A7-blue) ![振り返り](https://img.shields.io/badge/%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A-orange) ![30分](https://img.shields.io/badge/30%E5%88%86-green)
 
 # スターフィッシュ振り返り

@@ -1,3 +1,12 @@
+---
+title: LLM出力オーガナイザー
+category: ai
+tags: [rewrite]
+summary: LLMの出力を `Ctrl+Shift+V` で貼り付け（自動でMarkdownに変換）。
+use-case: [knowledge]
+time: 15
+---
+
 ![AI](https://img.shields.io/badge/AI-blue) ![リライト](https://img.shields.io/badge/%E3%83%AA%E3%83%A9%E3%82%A4%E3%83%88-orange) ![15分](https://img.shields.io/badge/15%E5%88%86-green)
 
 # LLM出力オーガナイザー

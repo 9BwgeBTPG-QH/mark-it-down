@@ -1,3 +1,10 @@
+---
+title: OKR
+category: productivity
+tags: [goal-setting]
+summary: Objectives and Key Results for quarterly goal setting.
+use-case: [team]
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Goal Setting](https://img.shields.io/badge/Goal_Setting-orange)
 
 # OKR — Objectives and Key Results

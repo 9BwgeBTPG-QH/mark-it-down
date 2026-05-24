@@ -1,3 +1,10 @@
+---
+title: プロジェクトREADME
+category: dev
+tags: [readme]
+summary: プロジェクトに合わせて各セクションを記入してください。
+use-case: [development]
+---
 ![開発](https://img.shields.io/badge/%E9%96%8B%E7%99%BA-blue) ![README](https://img.shields.io/badge/README-grey)
 
 # プロジェクトREADME

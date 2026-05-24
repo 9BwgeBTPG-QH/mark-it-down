@@ -1,3 +1,11 @@
+---
+title: 4Ls Retrospective
+category: productivity
+tags: [retrospective]
+summary: Liked, Learned, Lacked, Longed for — positive reflection framework.
+use-case: [team]
+time: 20
+---
 ![Productivity](https://img.shields.io/badge/Productivity-blue) ![Retrospective](https://img.shields.io/badge/Retrospective-orange) ![20 min](https://img.shields.io/badge/20_min-green)
 
 # 4Ls Retrospective

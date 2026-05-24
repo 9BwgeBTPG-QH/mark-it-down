@@ -1,3 +1,11 @@
+---
+title: Five Minute Journal
+category: journaling
+tags: [daily]
+summary: Morning gratitude and evening reflection prompts.
+use-case: [personal]
+time: 5
+---
 ![Journaling](https://img.shields.io/badge/Journaling-blue) ![Daily](https://img.shields.io/badge/Daily-orange) ![5 min](https://img.shields.io/badge/5_min-green)
 
 # Five Minute Journal
