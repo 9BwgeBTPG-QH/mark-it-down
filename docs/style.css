@@ -88,7 +88,6 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -116,7 +115,6 @@ body {
   color: var(--text-primary);
   line-height: var(--line-height-relaxed);
   min-height: 100vh;
-  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -300,7 +298,7 @@ header .tagline {
   text-decoration: none;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-sm);
-  transition: color var(--transition-base), opacity var(--transition-base), background-color var(--transition-base);
+  transition: all var(--transition-base);
   white-space: nowrap;
 }
 
@@ -432,7 +430,7 @@ p {
    ======================================== */
 
 .hero {
-  text-align: left;
+  text-align: center;
   padding: var(--spacing-lg) 0 var(--spacing-xl);
 }
 
@@ -539,7 +537,7 @@ p {
 
 .philosophy {
   padding: var(--spacing-2xl) 0;
-  text-align: left;
+  text-align: center;
 }
 
 .philosophy-list {
@@ -560,12 +558,10 @@ p {
   cursor: default;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .philosophy-item:hover {
-    border-color: var(--border-primary);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
+.philosophy-item:hover {
+  border-color: var(--border-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .philosophy-item::before {
@@ -619,7 +615,7 @@ p {
   padding: var(--spacing-2xl) var(--spacing-lg);
   margin: 0 calc(-1 * var(--spacing-lg));
   margin-bottom: var(--spacing-xl);
-  text-align: left;
+  text-align: center;
   background: var(--bg-secondary);
   border-radius: var(--radius-lg);
 }
@@ -641,7 +637,7 @@ p {
 
 .flow-section .philosophy-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-md);
   max-width: 800px;
 }
@@ -761,13 +757,11 @@ p {
   pointer-events: none;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .btn-primary:hover {
-    background: var(--accent-hover);
-    color: white;
-    box-shadow: 0 6px 20px rgba(107, 78, 55, 0.3);
-    transform: translateY(-2px);
-  }
+.btn-primary:hover {
+  background: var(--accent-hover);
+  color: white;
+  box-shadow: 0 6px 20px rgba(107, 78, 55, 0.3);
+  transform: translateY(-2px);
 }
 
 .btn-primary:hover::after {
@@ -812,14 +806,12 @@ p {
   border: 1px solid var(--border-primary);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .btn-secondary:hover {
-    border-color: var(--accent-primary);
-    color: var(--accent-primary);
-    background: var(--accent-light);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(107, 78, 55, 0.1);
-  }
+.btn-secondary:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--accent-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(107, 78, 55, 0.1);
 }
 
 .btn-secondary:active {
@@ -1356,12 +1348,10 @@ a:hover {
   cursor: default;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .coming-soon-list li:hover {
-    border-color: var(--border-primary);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
+.coming-soon-list li:hover {
+  border-color: var(--border-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .coming-soon-list strong {
@@ -1420,12 +1410,10 @@ a:hover {
   cursor: default;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .workflow-list li:hover {
-    border-color: var(--border-primary);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
+.workflow-list li:hover {
+  border-color: var(--border-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .workflow-list strong {
@@ -2989,7 +2977,7 @@ a:hover {
    ======================================== */
 
 .cta-section {
-  text-align: left;
+  text-align: center;
   padding: var(--spacing-2xl) var(--spacing-lg);
   margin: var(--spacing-xl) calc(-1 * var(--spacing-lg));
   border-radius: var(--radius-lg);
@@ -3019,7 +3007,7 @@ a:hover {
    ======================================== */
 
 footer {
-  text-align: left;
+  text-align: center;
   padding: var(--spacing-2xl) 0 var(--spacing-xl);
   margin-top: var(--spacing-2xl);
 }
@@ -3097,7 +3085,7 @@ footer a:hover {
   text-decoration: none;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-sm);
-  transition: color var(--transition-fast), opacity var(--transition-fast), background-color var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
 .footer-nav a:hover {
