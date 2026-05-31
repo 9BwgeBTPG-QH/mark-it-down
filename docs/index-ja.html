@@ -51,13 +51,13 @@
     "inLanguage": "ja",
     "isAccessibleForFree": true,
     "keywords": "Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし",
-    "dateModified": "2026-05-24",
+    "dateModified": "2026-05-31",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "JPY"
     },
-    "softwareVersion": "2.2.3",
+    "softwareVersion": "2.2.4",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -277,27 +277,27 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">最近の追加機能</h2>
-        <p class="coming-soon-status">v2.2.3 — ノートと読書が、つながった。</p>
+        <p class="coming-soon-status">v2.2.4 — Web Clipper が、取り込みの入口になる。</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>読みながらタグをつける</strong>
-            <span>記事を読みながら、ノートに追加したいタグをクリックするだけで取り込める。複数タグのANDフィルタで記事を絞り込み、✕ボタンで外せる。手入力でも追加できる。</span>
+            <strong>保存前に取り込み方を選べる</strong>
+            <span>クリップのプレビュー画面で「本文のみ」「ページ全体」「CSSセレクタ指定」の3択を切り替えられる。切り替えるとプレビューがその場で更新されるので、保存前に仕上がりを確認できる。</span>
           </li>
           <li>
-            <strong>CSVをそのままテーブルに</strong>
-            <span>スプレッドシートからコピーした内容を貼り付けると、すぐに編集できるMarkdownテーブルになる。書き直し不要。</span>
+            <strong>欲しいメタデータだけを追加する</strong>
+            <span>著者名・公開日・カテゴリなど、ページから取得したメタデータがノート詳細に一覧表示される。気に入った項目だけクリックすれば frontmatter に追加できる。既存の内容は上書きされない。</span>
           </li>
           <li>
-            <strong>スレッドやBearメモをそのまま取り込む</strong>
-            <span>Twitter / XのスレッドURLを貼ると、スレッド内容がブロック引用として取り込まれる。BearのメモをコピーするとMarkdownとして正しく変換される。</span>
+            <strong>Obsidianでそのまま開けるエクスポート</strong>
+            <span>Markdownに書き出す際、改行の記法をObsidian互換の形式に自動変換するようになった。ZIPエクスポートのタイムスタンプもノートの最終更新日時に揃った。</span>
           </li>
           <li>
-            <strong>日記機能を追加</strong>
-            <span>サイドパネルを開くと今日のエントリーが自動で選択される。テンプレートも4種類追加（Five Minute Journal、Stoic Journal、Daily Reflection、CBT Thought Record）。</span>
+            <strong>静かなエディタ</strong>
+            <span>スクロールバーはスクロール中だけ現れる。ブロック操作ハンドルはホバー時のみ表示される。空のノートにはスラッシュコマンドの案内が1行だけ表示され、書き始めると消える。</span>
           </li>
           <li>
-            <strong>設定とスニペットも同期</strong>
-            <span>テーマ、エディタ設定、カスタムスニペットがGit同期の対象になった。1台で変えれば、他の端末にも反映される。</span>
+            <strong>Git同期が安定した</strong>
+            <span>RSSフィードと通常ノートが同時に変更された状態で同期したとき、プッシュが止まることがあった。このデッドロックを解消した。</span>
           </li>
         </ul>
       </section>
@@ -350,7 +350,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版: v2.2.3</small></p>
+        <small>最新版: v2.2.4</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手

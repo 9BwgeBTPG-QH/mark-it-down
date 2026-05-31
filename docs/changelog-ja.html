@@ -65,15 +65,55 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.3 - 審査中 -->
+        <!-- v2.2.4 - 審査中 -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.4</span>
+              <span class="accordion-highlight">Web Clipper が、取り込みの入口になる。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.3 でメモ帳を「思考の場所」として深化させた。v2.2.4 はその入口——Web Clipper を中心に、「取り込む」体験を一段引き上げるバージョンだ。サイトから取得したメタデータを frontmatter に選んで追加でき、保存前にコンテンツの取り込み方を切り替えられ、Markdown に書き出すときに Obsidian で開いてそのまま読める。スクロールバーは使うときだけ現れ、エディタの静けさを邪魔しない。地味だが重要な修正もした——Git 同期で RSS が絡んだときにプッシュが止まるデッドロックが解消された。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>サイトのメタデータを frontmatter に選んで追加</strong> <span>取得したページの著者名・公開日・カテゴリなどの情報が、ノート詳細のサイドパネルに一覧表示されるようになった。気に入った項目だけクリックすれば frontmatter に追加できる。既存の frontmatter は上書きされない。</span></li>
+                <li><strong>保存前にコンテンツの取り込み方を選択</strong> <span>Clip のプレビュー画面で「本文のみ（記事抽出）」「ページ全体」「CSS セレクタ指定」の3択を切り替えられるようになった。切り替えるとその場でプレビューが更新されるので、保存前に仕上がりを確認できる。右クリックメニューは「Save page」のみに統一し、プレビューから全モードにアクセスできる。</span></li>
+                <li><strong>CSS セレクタで独自フィールドを取り込む</strong> <span>CSS セレクタとキー名のペアを指定すると、サイト固有の情報（価格・著者・タグなど）をメタデータとして抽出できる。抽出された値は保存後にサイドパネルから frontmatter に追加できる。</span></li>
+                <li><strong>コピー後にノートを Trash へ移動</strong> <span>コピーメニューに「コピー後に Trash へ移動」トグルを追加した。テンプレートとして使ったノートや、他のツールへ転送し終えたメモをその場で片付けられる。誤操作時は Undo トーストで元のフォルダに戻せる。</span></li>
+                <li><strong>保存先フォルダを指定して書き出す</strong> <span>Markdown 単体 / ZIP エクスポートで、保存先フォルダをあらかじめ指定できるようになった（New Tab のみ）。最近使ったフォルダは最大5件まで履歴に残る。</span></li>
+                <li><strong>Obsidian で開いたときに改行が正しく表示される</strong> <span>Markdown に書き出す際、改行の記法を Obsidian 互換の形式に自動変換するようになった。これまでバックスラッシュが文末に残って見えることがあった。</span></li>
+                <li><strong>ZIP 内のファイルに正しい日時が記録される</strong> <span>ZIP エクスポートでファイルのタイムスタンプがノートの最終更新日時に揃うよう修正した。これまでエクスポートを実行した日時が入っていた。</span></li>
+                <li><strong>空のエディタにスラッシュコマンドの案内を表示</strong> <span>新しいノートを開いたとき、「&#x300C;/&#x300D;でスラッシュコマンド」というヒントが先頭行に表示されるようになった。文章を書き始めると消える。</span></li>
+                <li><strong>ブロック操作ハンドルをホバー時のみ表示</strong> <span>見出しを入力した直後に画面左端のハンドルが常時表示されていた問題を解消した。マウスをブロックに近づけたときだけ現れる。</span></li>
+                <li><strong>スクロールバーをスクロール中だけ表示</strong> <span>エディタを操作していないときはスクロールバーが消え、画面が静かになった。スクロール中だけ細いバーが現れる。</span></li>
+                <li><strong>日時の表示がブラウザの言語設定に合う</strong> <span>ノート詳細やコミット履歴などで表示される日時が、ブラウザに設定した言語（日本語 / 英語など）に合わせた形式で表示されるようになった。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Git 同期で RSS が絡んだときにプッシュが止まる問題を修正</strong> <span>RSS フィードと通常ノートが同時に変更された状態で同期すると、プッシュが完了せずに止まってしまうことがあった。このデッドロックを解消した。</span></li>
+                <li><strong>RSS 変更のみの場合も同期の競合メッセージが表示されるよう修正</strong> <span>RSS の変更だけが残っている状態で競合が起きても、通知が画面に出ないことがあった。</span></li>
+                <li><strong>ノートにカーソルを合わせたとき正しいノートが表示されるよう修正</strong> <span>ホバープレビューで意図しないノートが表示されることがあった。</span></li>
+                <li><strong>ホバーカードの表示・非表示タイミングを改善</strong> <span>サイドパネル右エリアのホバーカードが意図しないタイミングで出入りすることがあった。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.3 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.3</span>
               <span class="accordion-highlight">ノートと読書が、つながった。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.2.2 で RSS を能動的にした。v2.2.3 は読書レイヤーと執筆レイヤーをつなぐバージョンだ。記事のタグがそのまま Inbox ノートに入り、スプレッドシートのデータが貼るだけでテーブルになり、今日の日記エントリが自動で開く。設定とスニペットも Git 経由で端末間を移動するようになった。</p>
