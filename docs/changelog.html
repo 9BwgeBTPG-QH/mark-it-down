@@ -68,15 +68,53 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.4 - Under Review -->
+        <!-- v2.2.5 - Under Review -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.5</span>
+              <span class="accordion-highlight">Cleaner handoff, sharper command flow.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.4 sharpened the entry point — how things get in. v2.2.5 cleans up what comes after: where clips trace back to, how commands flow, and how exports reach their destination. The editor and security surface tighten quietly alongside.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>RSS clip source URL in frontmatter</strong> <span>Saved RSS articles now include <code>source_url</code> in frontmatter automatically. The save success toast also includes an Undo action to back out without losing the trail.</span></li>
+                <li><strong>Web Subscription recipes</strong> <span>Pre-built RSS recipes for Hacker News, Lobsters, Hashnode, freeCodeCamp, Smashing Magazine, CSS-Tricks, Stack Overflow Blog, GitHub Blog, GitLab Blog, Vercel Blog, Cloudflare Blog, and Mozilla Hacks — subscribe with one click.</span></li>
+                <li><strong>Command Palette: Recently Used</strong> <span>The three most recently invoked commands appear at the top of the palette, so your most common actions are always one keystroke away.</span></li>
+                <li><strong>Command Palette: Snippet preview</strong> <span>Snippets show a live preview before insertion. Mermaid snippets render as an actual diagram so you can confirm the shape before committing.</span></li>
+                <li><strong>Command Palette: Settings commands</strong> <span>Common settings — theme, font size, Git sync toggle — are now reachable directly from the Command Palette.</span></li>
+                <li><strong>Markdown target presets</strong> <span>Save a target format (Zenn, Hugo, Obsidian, plain Markdown) as a preset and reuse it across exports without reconfiguring each time.</span></li>
+                <li><strong>Notion ZIP import</strong> <span>Drop a Notion export ZIP into Mark It Down to import the contained Markdown files directly. Internal links and frontmatter are preserved where possible.</span></li>
+                <li><strong>Shift-JIS export opt-in</strong> <span>Markdown and ZIP exports can write files in Shift-JIS encoding — useful for workflows that target tools or scripts expecting that encoding.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Fixed</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Export consistency across scope and options</strong> <span>Folder, selected-notes, and all-notes export paths now apply the same set of options and correctly exclude system notes.</span></li>
+                <li><strong>Portability cache isolation</strong> <span>Running portability checks against multiple targets in the same session no longer mixes cached results between targets.</span></li>
+                <li><strong>Copy failure notification</strong> <span>When a clipboard write fails, an error toast now appears instead of silently succeeding.</span></li>
+                <li><strong>Sidebar overlay close routing</strong> <span>Closing the sidebar in Side Panel or narrow overlay mode now also closes any open note detail panel, so the two panels close together as expected.</span></li>
+                <li><strong>Highlight color per theme</strong> <span>The <code>==highlight==</code> background color is now correctly tuned for each of the four themes.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.4 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.4</span>
               <span class="accordion-highlight">Web Clipper, your gateway for what matters.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.2.3 deepened notes as a place for thinking. v2.2.4 sharpens the entry point: centered on the Web Clipper, it raises the quality of how things get captured. Pick which metadata goes into frontmatter, switch how content is captured before saving, and write to Markdown that opens cleanly in Obsidian. The scrollbar appears only when you need it, keeping the editor quiet. A small but important fix lands too — a Git sync deadlock involving RSS has been resolved.</p>

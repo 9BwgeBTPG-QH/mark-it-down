@@ -51,13 +51,13 @@
     "inLanguage": "ja",
     "isAccessibleForFree": true,
     "keywords": "Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし",
-    "dateModified": "2026-05-31",
+    "dateModified": "2026-06-06",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "JPY"
     },
-    "softwareVersion": "2.2.4",
+    "softwareVersion": "2.2.5",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -273,27 +273,27 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">最近の追加機能</h2>
-        <p class="coming-soon-status">v2.2.4 — Web Clipper が、取り込みの入口になる。</p>
+        <p class="coming-soon-status">v2.2.5 — 受け渡しをきれいに、操作を速く。</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>保存前に取り込み方を選べる</strong>
-            <span>クリップのプレビュー画面で「本文のみ」「ページ全体」「CSSセレクタ指定」の3択を切り替えられる。切り替えるとプレビューがその場で更新されるので、保存前に仕上がりを確認できる。</span>
+            <strong>RSSクリップの出典が残る</strong>
+            <span>RSS記事を保存すると frontmatter に <code>source_url</code> が入り、保存トーストから Undo できるようになった。出典を保ったまま、必要ならすぐ取り消せる。</span>
           </li>
           <li>
-            <strong>欲しいメタデータだけを追加する</strong>
-            <span>著者名・公開日・カテゴリなど、ページから取得したメタデータがノート詳細に一覧表示される。気に入った項目だけクリックすれば frontmatter に追加できる。既存の内容は上書きされない。</span>
+            <strong>コマンドパレットが速くなった</strong>
+            <span>最近使ったコマンドが上に出るようになり、スニペットは挿入前にプレビューできる。Mermaid スニペットも実際の図として確認できる。</span>
           </li>
           <li>
-            <strong>Obsidianでそのまま開けるエクスポート</strong>
-            <span>Markdownに書き出す際、改行の記法をObsidian互換の形式に自動変換するようになった。ZIPエクスポートのタイムスタンプもノートの最終更新日時に揃った。</span>
+            <strong>エクスポートの受け渡しを改善</strong>
+            <span>Markdown target preset、ZIPファイル名修正、Shift-JIS opt-in、Notion ZIP import、タイムスタンプ整合で、複数ツール・複数OSへの書き出しが安定した。</span>
           </li>
           <li>
-            <strong>静かなエディタ</strong>
-            <span>スクロールバーはスクロール中だけ現れる。ブロック操作ハンドルはホバー時のみ表示される。空のノートにはスラッシュコマンドの案内が1行だけ表示され、書き始めると消える。</span>
+            <strong>エディタが邪魔をしない</strong>
+            <span>新規ノートは自動でエディタにフォーカスし、Today Entry 判定はより厳密に。コンパクト時のツールバーラベルや narrow overlay Notes の開閉も落ち着いた。</span>
           </li>
           <li>
-            <strong>Git同期が安定した</strong>
-            <span>RSSフィードと通常ノートが同時に変更された状態で同期したとき、プッシュが止まることがあった。このデッドロックを解消した。</span>
+            <strong>セキュリティを強化</strong>
+            <span>PAT暗号化の fail-closed、KaTeX/Mermaid のローカルバンドル、明示的な CSP で、リモートサービスやトラッキングを増やさず審査リスクを下げた。</span>
           </li>
         </ul>
       </section>
@@ -346,7 +346,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版: v2.2.4</small></p>
+        <small>最新版: v2.2.5</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手

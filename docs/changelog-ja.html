@@ -65,15 +65,53 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.4 - 審査中 -->
+        <!-- v2.2.5 - 審査中 -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.5</span>
+              <span class="accordion-highlight">受け渡しをきれいに、操作を速く。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.4 が「取り込む」体験を引き上げたなら、v2.2.5 は「残す」と「渡す」を整えるバージョンだ。RSSクリップに出典が残り、コマンドパレットが速さを取り戻し、エクスポートが相手先と噛み合う。エディタの落ち着きとセキュリティの地固めも同時に進んだ。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>RSSクリップに出典 URL を自動記録</strong> <span>RSS記事を保存すると frontmatter に <code>source_url</code> が自動的に入るようになった。保存トーストには Undo アクションも追加され、すぐ取り消せる。</span></li>
+                <li><strong>Web Subscription レシピを追加</strong> <span>Hacker News、Lobsters、Hashnode、freeCodeCamp、Smashing Magazine、CSS-Tricks、Stack Overflow Blog、GitHub/GitLab/Vercel/Cloudflare Blog、Mozilla Hacks のプリセットを追加。ワンクリックで購読できる。</span></li>
+                <li><strong>コマンドパレット: 最近使ったコマンドを優先表示</strong> <span>直近3件のコマンドがパレット上部に常に表示されるようになり、よく使う操作がすぐ呼び出せる。</span></li>
+                <li><strong>コマンドパレット: スニペットのプレビュー表示</strong> <span>スニペットを挿入する前にプレビューが表示される。Mermaid スニペットは実際の図としてレンダリングされるので、形を確認してから選べる。</span></li>
+                <li><strong>コマンドパレット: 設定コマンドを追加</strong> <span>テーマ切り替え・フォントサイズ・Git同期トグルなど、よく使う設定がコマンドパレットから直接操作できるようになった。</span></li>
+                <li><strong>Markdown target preset</strong> <span>Zenn・Hugo・Obsidian・plain Markdown など、書き出し先の設定をプリセットとして保存し使い回せる。エクスポートのたびに設定し直す必要がなくなった。</span></li>
+                <li><strong>Notion ZIP import</strong> <span>Notion のエクスポート ZIP をそのまま読み込んで Markdown ファイルを取り込める。内部リンクと frontmatter は可能な範囲で保持される。</span></li>
+                <li><strong>Shift-JIS エクスポート opt-in</strong> <span>Markdown / ZIP を Shift-JIS エンコーディングで書き出すオプションを追加した。Shift-JIS を期待するツールやスクリプトに渡すワークフローに対応する。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>エクスポートの一貫性を修正</strong> <span>フォルダ・選択ノート・全ノートのいずれのエクスポートでも同じオプションが適用され、システムノートが正しく除外されるようになった。</span></li>
+                <li><strong>Portability キャッシュの分離を修正</strong> <span>同一セッションで複数の target に対して portability チェックを実行したとき、キャッシュが混在する問題を修正した。</span></li>
+                <li><strong>コピー失敗時にエラートーストを表示</strong> <span>クリップボードへの書き込みが失敗したとき、無音で成功扱いになっていた問題を修正した。エラートーストが表示される。</span></li>
+                <li><strong>サイドバーのオーバーレイ閉じるルートを統一</strong> <span>Side Panel や narrow overlay でサイドバーを閉じると、ノート詳細パネルも同時に閉じるように修正した。</span></li>
+                <li><strong>ハイライト色をテーマ別に調整</strong> <span><code>==ハイライト==</code> の背景色が4テーマそれぞれで適切に表示されるよう調整した。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.4 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.4</span>
               <span class="accordion-highlight">Web Clipper が、取り込みの入口になる。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.2.3 でメモ帳を「思考の場所」として深化させた。v2.2.4 はその入口——Web Clipper を中心に、「取り込む」体験を一段引き上げるバージョンだ。サイトから取得したメタデータを frontmatter に選んで追加でき、保存前にコンテンツの取り込み方を切り替えられ、Markdown に書き出すときに Obsidian で開いてそのまま読める。スクロールバーは使うときだけ現れ、エディタの静けさを邪魔しない。地味だが重要な修正もした——Git 同期で RSS が絡んだときにプッシュが止まるデッドロックが解消された。</p>
