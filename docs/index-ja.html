@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#F2EDE4">
   <!-- OGP -->
   <meta property="og:title" content="Mark It Down - ブラウザが、書斎になる">
-  <meta property="og:description" content="AIが答えをくれる。書き直すことで、自分のものになる。ブラウザの中のMarkdownワークスペース。">
+  <meta property="og:description" content="AIの出力、Web記事、RSS、断片メモを取り込み、必要な部分を書き直し、作業場を片付けてから外へ送り出すMarkdownワークスペース。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="jp-dark.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -130,12 +130,13 @@
     <main id="main-content" role="main">
       <!-- Hero Section -->
       <section class="hero" aria-labelledby="hero-heading">
-        <h2 id="hero-heading" class="visually-hidden">Mark It Down — AI 出力を咀嚼するための Chrome 拡張 Markdown エディタ ＆ Web クリッパー</h2>
-        <p class="hero-tagline">AIの出力を保存して満足していませんか？</p>
-        <p class="hero-fact">Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力を「咀嚼」するために。</p>
+        <h2 id="hero-heading" class="visually-hidden">Mark It Down — AI 出力や Web 記事を咀嚼するための Chrome 拡張 Markdown エディタ ＆ Web クリッパー</h2>
+        <p class="hero-tagline">取り込む。<br>必要な部分を書き直す。<br>次へ送り出す。</p>
+        <p class="hero-fact">Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力、Web 記事、RSS、断片メモを扱う作業場です。</p>
         <p class="hero-subtitle">
-          貼り付けて、比較して、書き直す。それが「咀嚼」。<br>
-          保存する場所じゃない。咀嚼する場所。
+          すべてのノートをブラウザに置き続ける必要はありません。<br>
+          Mark It Down は、素材が自分の言葉になるまでの静かな場所です。<br>
+          できあがったら、Export、Git、長期保存先へ送り出します。
         </p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja"
@@ -161,8 +162,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
               </svg>
             </div>
-            <h3>道具を減らして、余白を増やす。</h3>
-            <p>プラグインもウィジェットもない。<br>空白のページとあなたの思考だけ。</p>
+            <h3>まず取り込む。分類はあとで。</h3>
+            <p>クリップ、フィード、貼り付けた下書きは Inbox へ。<br>分類は、読んでからでも間に合います。</p>
           </li>
           <li class="philosophy-item" role="listitem">
             <div class="philosophy-icon" aria-hidden="true">
@@ -179,8 +180,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
               </svg>
             </div>
-            <h3>ノートと読書が、つながる。</h3>
-            <p>RSS で読んだ記事のタグがそのままノートに入る。<br>サイドパネルでも新しいタブでも。集中したいときはFocus Mode。</p>
+            <h3>ローカルに保存し、意図して送り出す。</h3>
+            <p>下書きは自動保存で手元に残ります。<br>Export と Git 同期は、ノートの準備ができたときに実行します。</p>
           </li>
         </ul>
       </section>
@@ -189,7 +190,7 @@
       <section class="flow-section" aria-labelledby="flow-heading">
         <span class="section-label">Workflow</span>
         <h2 id="flow-heading">Entry → Edit → Clear → Exit</h2>
-        <p class="flow-description">情報は溜めるんじゃない、流す。</p>
+        <p class="flow-description">情報はブラウザに溜め込むだけでなく、通過させることもできます。</p>
         <ul class="philosophy-list" role="list">
           <li class="philosophy-item flow-item" role="listitem">
             <div class="flow-icon" aria-hidden="true">
@@ -198,7 +199,7 @@
               </svg>
             </div>
             <h3>Entry</h3>
-            <p>Markdownで書く。<br>WebやAIの出力も右クリックで変換・取り込み。</p>
+            <p>AI出力を貼り付ける。<br>ページをクリップする。RSSを保存する。空白から書く。</p>
           </li>
           <li class="philosophy-item flow-item" role="listitem">
             <div class="flow-icon" aria-hidden="true">
@@ -216,7 +217,7 @@
               </svg>
             </div>
             <h3>Clear</h3>
-            <p>残すものはArchiveへ。☆で一括エクスポート。<br>再利用はTemplateへ。あとはTrashで削除。</p>
+            <p>終わったものはArchiveへ。<br>繰り返す型はTemplateへ。不要なものはTrashへ。</p>
           </li>
           <li class="philosophy-item flow-item" role="listitem">
             <div class="flow-icon" aria-hidden="true">
@@ -225,7 +226,7 @@
               </svg>
             </div>
             <h3>Exit</h3>
-            <p>PDF、DOCX、HTML、EPUB、LaTeX、.md。<br>書き出したら、机を片付ける。</p>
+            <p>PDF、DOCX、HTML、EPUB、LaTeX、.md、Git。<br>できあがったノートを、次の場所へ送ります。</p>
           </li>
         </ul>
       </section>
