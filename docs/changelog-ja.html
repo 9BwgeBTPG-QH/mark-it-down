@@ -65,15 +65,52 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.5 - 審査中 -->
+        <!-- v2.2.6 - 審査中 -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.6</span>
+              <span class="accordion-highlight">取り込みを丁寧に、図を使いやすく、ノートを育てる。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.5 が「出す」体験を整えたなら、v2.2.6 は「出す価値のあるもの」を作る体験を引き上げるバージョンだ。図を拡大して確かめ、長文を分割して育て、ルビ付きの文章をそのまま取り込む。情報を自分のものにするまでのサイクルが、また一歩速くなった。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>アドレスバーからノートを開く（omnibox 連携）</strong> <span>Chrome のアドレスバーで <code>mid</code> と入力してスペースを押すと、ノートをタイトルで検索できる。Enter を押すと新規タブで開く。マウス不要。</span></li>
+                <li><strong>Today テンプレート</strong> <span>Template フォルダに「Today」というノートを置くと、今日のノートがそのひな型で始まる。毎日自動で適用される。</span></li>
+                <li><strong>Mermaid 図の拡大・ズーム・全画面・SVG 保存</strong> <span>Mermaid 図をクリックすると拡大ビューアが開く。Ctrl+スクロールで 25〜400% ズームでき、全画面表示や SVG ファイルとしての保存も可能。</span></li>
+                <li><strong>見出しベースのノート分割（シリーズ機能）</strong> <span>長いノートを見出し単位で分割してシリーズにまとめられる。サイドバーでグループ表示され、Alt+PageUp/PageDown で移動、結合、シリーズ全体のエクスポートも可能。</span></li>
+                <li><strong>Web Clipper：ルビ付き文章を青空文庫記法に変換</strong> <span><code>&lt;ruby&gt;</code> タグを含むページを取り込むと、<code>漢字《かんじ》</code> 形式に自動変換される。脚注・表・コードブロック・画像を含む長文ページの取り込み品質も改善した。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Clipper：タイトルへの脚注記号混入を修正</strong> <span>引用・出典付きのページをクリップすると、脚注参照記号がノートタイトルやファイル名に混入する問題があった。H1 は常にクリーンなタイトルになるよう修正。</span></li>
+                <li><strong>Web Clipper：長文ページの取り込み品質を改善</strong> <span>脚注・表・コードブロック・画像が混在する長文ページを取り込んだとき、Markdown の構造が崩れにくくなった。</span></li>
+                <li><strong>Mermaid：黒塗り問題を修正</strong> <span>拡大ビューアやアーカイブプレビューで図が真っ黒に塗りつぶされる問題を修正。全テーマ・全図タイプで確認済み。</span></li>
+                <li><strong>Mermaid：日本語を含む図のフォント不揃いを修正</strong> <span>日本語テキストを含む図でフォントが混在していた問題を修正。フォント描画が統一された。</span></li>
+                <li><strong>Git 同期：書き込み競合ガードを追加</strong> <span>同期中の並行書き込みが保存データを破損することがあった。書き込み競合ガードを追加し、衝突解決後の同期途切れも次回操作で確実に回復するようにした。</span></li>
+                <li><strong>設定同期：field レベルの 3-way merge に改善</strong> <span>設定がデバイス間で異なる場合、以前は一方をまるごと選んでいた。フィールドごとに判断する 3-way merge により、各デバイスの意図した変更が保たれるようになった。</span></li>
+                <li><strong>カスタム Export プリセットを Git 同期対象に追加</strong> <span>ユーザーが作成したエクスポートプリセットが Git 同期の対象外だった。対象に加えることで、あるデバイスで作成したプリセットが他のデバイスにも反映される。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.5 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.5</span>
               <span class="accordion-highlight">受け渡しをきれいに、操作を速く。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.2.4 が「取り込む」体験を引き上げたなら、v2.2.5 は「残す」と「渡す」を整えるバージョンだ。RSSクリップに出典が残り、コマンドパレットが速さを取り戻し、エクスポートが相手先と噛み合う。エディタの落ち着きとセキュリティの地固めも同時に進んだ。</p>

@@ -68,15 +68,52 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.5 - Under Review -->
+        <!-- v2.2.6 - Under Review -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.6</span>
+              <span class="accordion-highlight">Open from the address bar, zoom diagrams, grow notes into a series.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">v2.2.5 cleaned up what goes out. v2.2.6 makes it worth taking out: diagrams you can inspect at full resolution, notes you can grow by splitting, clips you can actually read. The tools for shaping information — zoom, divide, convert — now feel as capable as the tools for bringing it in.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Open notes from Chrome's address bar</strong> <span>Type <code>mid</code> and press Space in the address bar to search notes by title. Press Enter to open in a new tab — keyboard only, no mouse required.</span></li>
+                <li><strong>Today template</strong> <span>Place a note named "Today" in the Template folder and every new daily note starts from that layout. One note, applied automatically each day.</span></li>
+                <li><strong>Mermaid diagrams: zoom, fullscreen, save as SVG</strong> <span>Click any Mermaid diagram to open an enlarged viewer. Zoom from 25% to 400% with Ctrl+scroll, switch to fullscreen, or save the rendered diagram as an SVG file.</span></li>
+                <li><strong>Split long notes into a series</strong> <span>Divide a note by heading into a linked series. The series groups in the sidebar for easy navigation. Use Alt+PageUp/PageDown to move between parts, merge them back, or export the whole series at once.</span></li>
+                <li><strong>Web Clipper: ruby text → Aozora notation</strong> <span>Pages with <code>&lt;ruby&gt;</code> annotations now convert to <code>漢字《かんじ》</code> notation automatically. Long articles with footnotes, tables, code blocks, and images also clip more accurately.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Fixed</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Web Clipper: footnote symbols in note titles</strong> <span>Footnote reference markers were appearing in note titles and exported filenames when clipping pages with citations. This is now fixed; the H1 is always a clean title.</span></li>
+                <li><strong>Web Clipper: long article accuracy</strong> <span>Clipping long pages that mix footnotes, tables, code blocks, and images now produces cleaner Markdown with fewer structural breaks.</span></li>
+                <li><strong>Mermaid: black-fill rendering bug</strong> <span>Diagrams rendered as solid black in the enlarged viewer and archive preview. Fixed across all four themes and all diagram types.</span></li>
+                <li><strong>Mermaid: font inconsistency in Japanese diagrams</strong> <span>Diagrams containing Japanese text were using a mix of fonts. Font rendering is now uniform.</span></li>
+                <li><strong>Git sync: write conflict guard</strong> <span>Concurrent writes during sync could corrupt the stored state. A write-conflict guard now prevents this, and any sync interruption after conflict resolution recovers cleanly on the next operation.</span></li>
+                <li><strong>Settings sync: field-level 3-way merge</strong> <span>When settings differed across devices, sync previously picked one side wholesale. It now merges at the field level, preserving each device's intentional changes.</span></li>
+                <li><strong>Custom export presets now sync via Git</strong> <span>User-defined export presets were excluded from Git sync. They are now included, so presets created on one device appear on all others.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.5 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.5</span>
               <span class="accordion-highlight">Cleaner handoff, sharper command flow.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">v2.2.4 sharpened the entry point — how things get in. v2.2.5 cleans up what comes after: where clips trace back to, how commands flow, and how exports reach their destination. The editor and security surface tighten quietly alongside.</p>

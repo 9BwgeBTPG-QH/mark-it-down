@@ -32,18 +32,18 @@ committing notes to their long-term system (Obsidian, Notion, etc.).
 
 ## Pages
 
-- [Home (English)](https://9bwgebptg-qh.github.io/mark-it-down/index.html)
-- [Home (Japanese)](https://9bwgebptg-qh.github.io/mark-it-down/index-ja.html)
-- [Features](https://9bwgebptg-qh.github.io/mark-it-down/features.html)
-- [Features (Japanese)](https://9bwgebptg-qh.github.io/mark-it-down/features-ja.html)
-- [Templates](https://9bwgebptg-qh.github.io/mark-it-down/templates.html)
-- [Templates (Japanese)](https://9bwgebptg-qh.github.io/mark-it-down/templates-ja.html)
-- [Changelog](https://9bwgebptg-qh.github.io/mark-it-down/changelog.html)
-- [Changelog (Japanese)](https://9bwgebptg-qh.github.io/mark-it-down/changelog-ja.html)
-- [FAQ](https://9bwgebptg-qh.github.io/mark-it-down/faq.html)
-- [FAQ (Japanese)](https://9bwgebptg-qh.github.io/mark-it-down/faq-ja.html)
-- [Troubleshooting](https://9bwgebptg-qh.github.io/mark-it-down/troubleshooting.html)
-- [Privacy Policy](https://9bwgebptg-qh.github.io/mark-it-down/privacy-policy.html)
+- [Home (English)](https://markitdown.reduktion.dev/index.html)
+- [Home (Japanese)](https://markitdown.reduktion.dev/index-ja.html)
+- [Features](https://markitdown.reduktion.dev/features.html)
+- [Features (Japanese)](https://markitdown.reduktion.dev/features-ja.html)
+- [Templates](https://markitdown.reduktion.dev/templates.html)
+- [Templates (Japanese)](https://markitdown.reduktion.dev/templates-ja.html)
+- [Changelog](https://markitdown.reduktion.dev/changelog.html)
+- [Changelog (Japanese)](https://markitdown.reduktion.dev/changelog-ja.html)
+- [FAQ](https://markitdown.reduktion.dev/faq.html)
+- [FAQ (Japanese)](https://markitdown.reduktion.dev/faq-ja.html)
+- [Troubleshooting](https://markitdown.reduktion.dev/troubleshooting.html)
+- [Privacy Policy](https://markitdown.reduktion.dev/privacy-policy.html)
 
 ## Install
 

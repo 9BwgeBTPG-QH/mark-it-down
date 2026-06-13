@@ -51,13 +51,13 @@
     "inLanguage": "ja",
     "isAccessibleForFree": true,
     "keywords": "Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし",
-    "dateModified": "2026-06-06",
+    "dateModified": "2026-06-13",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "JPY"
     },
-    "softwareVersion": "2.2.5",
+    "softwareVersion": "2.2.6",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -274,27 +274,27 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">最近の追加機能</h2>
-        <p class="coming-soon-status">v2.2.5 — 受け渡しをきれいに、操作を速く。</p>
+        <p class="coming-soon-status">v2.2.6 — アドレスバーから直接ノートへ。図を拡大して確かめる。長文を分割して育てる。</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>RSSクリップの出典が残る</strong>
-            <span>RSS記事を保存すると frontmatter に <code>source_url</code> が入り、保存トーストから Undo できるようになった。出典を保ったまま、必要ならすぐ取り消せる。</span>
+            <strong>アドレスバーからノートを開く</strong>
+            <span>Chrome のアドレスバーで <code>mid</code> と入力してスペースを押すと、ノートをタイトルで検索できる。Enter で新規タブに開く。マウス不要。</span>
           </li>
           <li>
-            <strong>コマンドパレットが速くなった</strong>
-            <span>最近使ったコマンドが上に出るようになり、スニペットは挿入前にプレビューできる。Mermaid スニペットも実際の図として確認できる。</span>
+            <strong>Today テンプレート</strong>
+            <span>Template フォルダに「Today」というノートを置くと、今日のノートがそのひな型で始まる。1つのノートが毎日のレイアウトになる。</span>
           </li>
           <li>
-            <strong>エクスポートの受け渡しを改善</strong>
-            <span>Markdown target preset、ZIPファイル名修正、Shift-JIS opt-in、Notion ZIP import、タイムスタンプ整合で、複数ツール・複数OSへの書き出しが安定した。</span>
+            <strong>Mermaid 図を拡大・ズーム・SVG 保存</strong>
+            <span>Mermaid 図をクリックすると拡大表示され、Ctrl+スクロールで 25〜400% ズームできる。そのまま SVG ファイルとして保存可能。</span>
           </li>
           <li>
-            <strong>エディタが邪魔をしない</strong>
-            <span>新規ノートは自動でエディタにフォーカスし、Today Entry 判定はより厳密に。コンパクト時のツールバーラベルや narrow overlay Notes の開閉も落ち着いた。</span>
+            <strong>長いノートをシリーズに分割</strong>
+            <span>見出し単位でノートを分割してシリーズにまとめられる。Alt+PageUp/PageDown で移動、結合、シリーズ全体のエクスポートも可能。</span>
           </li>
           <li>
-            <strong>セキュリティを強化</strong>
-            <span>PAT暗号化の fail-closed、KaTeX/Mermaid のローカルバンドル、明示的な CSP で、リモートサービスやトラッキングを増やさず審査リスクを下げた。</span>
+            <strong>Web Clipper：ルビを青空文庫記法に変換</strong>
+            <span>ルビ付きのページ（<code>&lt;ruby&gt;</code> タグ）を取り込むと、<code>漢字《かんじ》</code> 形式に変換される。脚注や表を含む長文の取り込み品質も改善した。</span>
           </li>
         </ul>
       </section>
@@ -347,7 +347,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版: v2.2.5</small></p>
+        <small>最新版: v2.2.6</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手

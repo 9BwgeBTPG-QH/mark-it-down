@@ -38,4 +38,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://9bwgebptg-qh.github.io/mark-it-down/sitemap.xml
+Sitemap: https://markitdown.reduktion.dev/sitemap.xml

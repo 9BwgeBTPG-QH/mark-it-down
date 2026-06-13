@@ -88,6 +88,7 @@
               <li><strong>Social and Publishing Sites</strong> <span>Dedicated extractors for LinkedIn, Bluesky, Threads, Medium, and Discourse reduce cleanup after clipping</span></li>
               <li><strong>Zenn / Qiita / Hatena Blog</strong> <span>Japanese blogging platform embed syntax recognized and converted to standard Markdown. Hatena Blog footnotes become Markdown footnotes when clipped from RSS</span></li>
               <li><strong>Save Selection — Unified Quote Format</strong> <span>Saving selected text via right-click or RSS Quote Selection always produces the same structure: frontmatter (source URL + timestamp) + blockquote + attribution link + disclaimer footer</span></li>
+              <li><strong>Ruby text → Aozora notation</strong> <span>Pages with <code>&lt;ruby&gt;</code> annotations (common in Japanese content) convert automatically to <code>漢字《かんじ》</code> notation. Long articles that mix footnotes, tables, code blocks, and images also clip more accurately</span></li>
             </ul>
           </div>
         </details>
@@ -184,7 +185,7 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>GitHub Flavored</strong> <span>Tables, task lists, syntax highlighting</span></li>
-              <li><strong>Mermaid</strong> <span>All 19 diagram types — flowcharts, ER, mind maps, Gantt, and more. Click to zoom, PNG export</span></li>
+              <li><strong>Mermaid</strong> <span>All 19 diagram types — flowcharts, ER, mind maps, Gantt, and more. Click to enlarge, zoom 25–400% with Ctrl+scroll, fullscreen, SVG export</span></li>
               <li><strong>Math (LaTeX)</strong> <span>Inline <code>$...$</code>, block <code>$$...$$</code>. Open in new tab, save as Retina 2x PNG</span></li>
               <li><strong>Callouts</strong> <span>NOTE, TIP, IMPORTANT, WARNING, CAUTION</span></li>
               <li><strong>Auto-Linking</strong> <span>URLs and emails become clickable</span></li>
@@ -230,7 +231,7 @@
               <li><strong>Sort</strong> <span>Name↑, Name↓, Updated↑, Updated↓ — 4-state cycle</span></li>
               <li><strong>Duplicate Detection</strong> <span>Side-by-side comparison to choose</span></li>
               <li><strong>Template Gallery</strong> <span>Browse 20+ templates from the gallery page. Link appears on Template folder hover</span></li>
-              <li><strong>Split Note</strong> <span>Break a long note at any heading into two parts</span></li>
+              <li><strong>Note Series</strong> <span>Split a long note by heading into a linked series. Parts group in the sidebar, navigate with Alt+PageUp/PageDown, merge back anytime, or export the whole series at once</span></li>
               <li><strong>Merge Notes</strong> <span>Ctrl+Click to select, drag to reorder, combine into one</span></li>
               <li><strong>Right Panel Note Details</strong> <span>Hover a note name in the list to see its creation date, modification date, file size, and Git status in the right panel — without opening the note</span></li>
               <li><strong>Frontmatter Edit from Right Panel</strong> <span>Right-click a note name to open frontmatter editing in the right panel. Drag fields to reorder, add and remove tags, apply export presets. Archive notes show read-only</span></li>
@@ -328,6 +329,7 @@
             <div class="changelog-group">
               <h3 class="changelog-group-title">Navigation</h3>
               <ul class="changelog-features">
+                <li><strong><kbd>mid</kbd> + Space (address bar)</strong> <span>Type <code>mid</code> in Chrome's address bar and press Space to search notes by title. Press Enter to open the note in a new tab — keyboard only, no mouse required</span></li>
                 <li><strong>Line Number Jump</strong> <span>Command Palette → "Go to line" — jump the cursor to any line number. Useful in long technical notes</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>K</kbd></strong> <span>Search</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></strong> <span>Command Palette</span></li>

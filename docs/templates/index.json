@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T13:45:11.686Z",
+  "generatedAt": "2026-06-13T20:53:55.648Z",
   "templates": [
     {
       "slug": "ai/ai-conversation-archive",
@@ -478,6 +478,25 @@
       "summary": {
         "en": "Simple behavior change retrospective framework.",
         "ja": "スプリントや期間の終わりに記入しましょう。"
+      }
+    },
+    {
+      "slug": "productivity/today",
+      "category": "productivity",
+      "tags": [
+        "daily"
+      ],
+      "useCases": [
+        "personal"
+      ],
+      "time": 3,
+      "title": {
+        "en": "Today",
+        "ja": "Today"
+      },
+      "summary": {
+        "en": "A daily layout that auto-applies when you name it \"Today\" — place this note in the Template folder and every new daily note starts from this structure.",
+        "ja": "Template フォルダに「Today」という名前で保存すると、毎日のノートがこのレイアウトで始まる。"
       }
     },
     {

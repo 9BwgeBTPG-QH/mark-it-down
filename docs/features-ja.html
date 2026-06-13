@@ -85,6 +85,7 @@
               <li><strong>ソーシャル / パブリッシングサイト</strong> <span>LinkedIn、Bluesky、Threads、Medium、Discourse に専用抽出を追加。クリップ後の手直しを減らせる</span></li>
               <li><strong>Zenn・Qiita・はてなブログ</strong> <span>プラットフォーム固有の埋め込み構文を認識し標準Markdownに変換。RSS経由のはてなブログ脚注はMarkdown footnoteに変換</span></li>
               <li><strong>Save Selection — 引用フォーマット統一</strong> <span>右クリック「選択テキストを保存」と RSS Quote Selection はどちらも同じ形で出力される。frontmatter（保存元 URL・日時）+ blockquote + 出典リンク + フッター免責文</span></li>
+              <li><strong>ルビ → 青空文庫記法に変換</strong> <span><code>&lt;ruby&gt;</code> タグを含むページを取り込むと <code>漢字《かんじ》</code> 形式に自動変換される。脚注・表・コードブロック・画像を含む長文ページの取り込み品質も改善した</span></li>
             </ul>
           </div>
         </details>
@@ -181,7 +182,7 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>GitHub Flavored</strong> <span>テーブル、タスクリスト、シンタックスハイライト</span></li>
-              <li><strong>Mermaid</strong> <span>全19種対応 — フローチャート、ER図、マインドマップ、ガントチャート等。クリックで拡大、PNG保存</span></li>
+              <li><strong>Mermaid</strong> <span>全19種対応 — フローチャート、ER図、マインドマップ、ガントチャート等。クリックで拡大、Ctrl+スクロールで 25〜400% ズーム、全画面表示、SVG 保存</span></li>
               <li><strong>数式 (LaTeX)</strong> <span>インライン <code>$...$</code>、ブロック <code>$$...$$</code>。別タブで開いてRetina 2x PNGで保存</span></li>
               <li><strong>コールアウト</strong> <span>NOTE、TIP、IMPORTANT、WARNING、CAUTION</span></li>
               <li><strong>自動リンク化</strong> <span>URLとメールアドレスが自動でリンクに</span></li>
@@ -227,7 +228,7 @@
               <li><strong>ソート</strong> <span>名前↑、名前↓、更新↑、更新↓ — 4状態サイクル</span></li>
               <li><strong>重複検出</strong> <span>side-by-side比較で選択</span></li>
               <li><strong>テンプレートギャラリー</strong> <span>ギャラリーページから20種類以上のテンプレートを閲覧。Templateフォルダのホバーでリンク表示</span></li>
-              <li><strong>ノート分割</strong> <span>見出し単位でノートを2つに分割</span></li>
+              <li><strong>ノートシリーズ</strong> <span>見出し単位でノートを分割してシリーズにまとめられる。サイドバーにグループ表示され、Alt+PageUp/PageDown で移動、結合、シリーズ全体のエクスポートも可能</span></li>
               <li><strong>ノート結合</strong> <span>Ctrl+クリックで選択、ドラッグで並び替え、1つに結合</span></li>
               <li><strong>右パネル ノート詳細</strong> <span>ノート一覧でノート名にカーソルを合わせると、作成日時・更新日時・サイズ・Git 状態が右パネルに表示される。ノートを開かずに確認できる</span></li>
               <li><strong>右パネルから frontmatter 編集</strong> <span>ノート名を右クリックして frontmatter を直接編集。フィールドのドラッグで並び替え、tags の追加・削除、エクスポートプリセットの適用もここから。Archive のノートは読み取り専用</span></li>
@@ -325,6 +326,7 @@
             <div class="changelog-group">
               <h3 class="changelog-group-title">ナビゲーション</h3>
               <ul class="changelog-features">
+                <li><strong><kbd>mid</kbd> + Space（アドレスバー）</strong> <span>Chrome のアドレスバーで <code>mid</code> と入力してスペースを押すとノートをタイトルで検索できる。Enter で新規タブに開く。マウス不要</span></li>
                 <li><strong>行番号ジャンプ</strong> <span>コマンドパレット →「指定行へ移動」で任意の行にカーソルを飛ばせる。長い技術メモで便利</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>K</kbd></strong> <span>検索</span></li>
                 <li><strong><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></strong> <span>コマンドパレット</span></li>
