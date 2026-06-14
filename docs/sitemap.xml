@@ -21,6 +21,24 @@
   </url>
 
   <url>
+    <loc>https://markitdown.reduktion.dev/why.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://markitdown.reduktion.dev/why.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/why-ja.html"/>
+  </url>
+
+  <url>
+    <loc>https://markitdown.reduktion.dev/why-ja.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://markitdown.reduktion.dev/why.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/why-ja.html"/>
+  </url>
+
+  <url>
     <loc>https://markitdown.reduktion.dev/features.html</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
