@@ -71,8 +71,37 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.6 - Under Review -->
+        <!-- v2.2.7 - Under Review -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.7</span>
+              <span class="accordion-highlight">When something fails, you now know why.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Git sync, Web Clipper, and RSS now tell you why they failed — authentication, access denied, or network issue — instead of a generic error. Plus a fix for TOC navigation buttons going unresponsive right after a note loads.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Improvements</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Git sync failure reasons</strong> <span>Sync errors now name the cause: authentication, access denied, or network failure.</span></li>
+                <li><strong>Web Clipper &amp; RSS failure reasons</strong> <span>When a clip or feed fetch fails, the reason is shown instead of a generic message.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Fixed</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>TOC navigation fix</strong> <span>Top / bottom / prev / next-heading buttons no longer go dead right after a note loads.</span></li>
+                <li><strong>Git sync reliability</strong> <span>Fixed cases where notes were not synced correctly.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.6 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>

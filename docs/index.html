@@ -53,13 +53,13 @@
     "inLanguage": ["en", "ja"],
     "isAccessibleForFree": true,
     "keywords": "Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry",
-    "dateModified": "2026-06-13",
+    "dateModified": "2026-06-15",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "2.2.6",
+    "softwareVersion": "2.2.7",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -280,27 +280,23 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">Recently Added</h2>
-        <p class="coming-soon-status">v2.2.6 — Open any note from the address bar. Zoom into diagrams. Split long notes into a series.</p>
+        <p class="coming-soon-status">v2.2.7 — When something fails, you now know why.</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>Open notes from Chrome's address bar</strong>
-            <span>Type <code>mid</code> and press Space in the address bar to search notes by title. Press Enter to open the note in a new tab — no mouse needed.</span>
+            <strong>Git sync failure reasons</strong>
+            <span>Sync errors now name the cause: authentication, access denied, or network failure.</span>
           </li>
           <li>
-            <strong>Today template</strong>
-            <span>Put a note named "Today" in the Template folder and every new daily note will start from that layout. One note, applied every day.</span>
+            <strong>Web Clipper &amp; RSS failure reasons</strong>
+            <span>When a clip or feed fetch fails, the reason is shown instead of a generic message.</span>
           </li>
           <li>
-            <strong>Mermaid diagrams: zoom, fullscreen, save as SVG</strong>
-            <span>Click any Mermaid diagram to enlarge it, then zoom from 25% to 400% with Ctrl+scroll. Save the result as an SVG file directly from the viewer.</span>
+            <strong>TOC navigation fix</strong>
+            <span>Top / bottom / prev / next-heading buttons no longer go dead right after a note loads.</span>
           </li>
           <li>
-            <strong>Split long notes into a series</strong>
-            <span>Divide a long note by heading into a linked series. Navigate with Alt+PageUp/PageDown, merge back, or export the whole series at once.</span>
-          </li>
-          <li>
-            <strong>Web Clipper: ruby text → Aozora notation</strong>
-            <span>Pages with <code>&lt;ruby&gt;</code> annotations (common in Japanese content) now convert cleanly to <code>漢字《かんじ》</code> notation. Long articles with footnotes and tables clip more accurately too.</span>
+            <strong>Git sync reliability</strong>
+            <span>Fixed cases where notes were not synced correctly.</span>
           </li>
         </ul>
       </section>
@@ -353,7 +349,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Ready to write?</h2>
         <p>Available as a Chrome extension. No account required.<br>
-        <small>Latest version: v2.2.6</small></p>
+        <small>Latest version: v2.2.7</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
             Get the extension
