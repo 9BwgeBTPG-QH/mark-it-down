@@ -53,13 +53,13 @@
     "inLanguage": "ja",
     "isAccessibleForFree": true,
     "keywords": "Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし",
-    "dateModified": "2026-06-15",
+    "dateModified": "2026-06-23",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "JPY"
     },
-    "softwareVersion": "2.2.7",
+    "softwareVersion": "2.2.8",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -111,6 +111,7 @@
         <li><a href="index-ja.html" aria-current="page">ホーム</a></li>
         <li><a href="why-ja.html">MIDとは</a></li>
         <li><a href="features-ja.html">機能</a></li>
+        <li><a href="okf-ja.html">OKF</a></li>
         <li><a href="templates-ja.html">テンプレート</a></li>
         <li><a href="faq-ja.html">よくある質問</a></li>
         <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
@@ -277,23 +278,27 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">最近の追加機能</h2>
-        <p class="coming-soon-status">v2.2.7 — エラーが出たとき、何が起きているかわかるようになった。</p>
+        <p class="coming-soon-status">v2.2.8 — 書いたことが、書いたものと一緒に残る。</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>Git 同期の失敗理由を表示</strong>
-            <span>認証エラー・アクセス権限エラー・ネットワーク障害を区別して表示。</span>
+            <strong>Note Log</strong>
+            <span>ノートの変更理由を — Creation・Update、または自分で決めた動詞で — ノート内に書き留められる。Alt+L でログを開く。記録は OKF エクスポートと Git コミットに自動反映。</span>
           </li>
           <li>
-            <strong>Web Clipper / RSS の失敗理由を表示</strong>
-            <span>取り込み・取得に失敗した理由を具体的に表示。</span>
+            <strong>リンクグラフ</strong>
+            <span>右パネルに「このノートへのリンク」「このノートからのリンク」をグラフ表示。ノードをクリックでジャンプ。[+][−] でグラフをズーム。</span>
           </li>
           <li>
-            <strong>目次ナビボタンの修正</strong>
-            <span>ノート読み込み直後にボタンが無反応になる問題を修正。</span>
+            <strong>生 Markdown トグル</strong>
+            <span>右パネルで整形表示と生 Markdown 記法を切り替えられる。エディタを開かずに構文を確認できる。</span>
           </li>
           <li>
-            <strong>Git 同期の整合性改善</strong>
-            <span>一部状況でノートが正しく同期されない問題を修正。</span>
+            <strong>OKF バンドル</strong>
+            <span>エントリメニューからインポート。リンクはウィキリンクとして復元。エクスポートにはブラウザで開ける index.html を同梱（サーバー不要）。</span>
+          </li>
+          <li>
+            <strong>EPUB 章ナビゲーション &amp; セマンティックマークアップ</strong>
+            <span>EPUB エクスポートに章区切りとランドマークを追加。セマンティックタグ（figure・テーブルヘッダー・article/nav）が HTML エクスポート・OKF Viewer・アプリ内プレビューに適用。</span>
           </li>
         </ul>
       </section>
@@ -346,7 +351,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版: v2.2.7</small></p>
+        <small>最新版: v2.2.8</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手
@@ -367,6 +372,7 @@
         <ul>
           <li><a href="index-ja.html">ホーム</a></li>
           <li><a href="features-ja.html">機能</a></li>
+          <li><a href="okf-ja.html">OKF</a></li>
           <li><a href="templates-ja.html">テンプレート</a></li>
           <li><a href="faq-ja.html">よくある質問</a></li>
           <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>

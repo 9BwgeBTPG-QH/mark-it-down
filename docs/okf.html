@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Knowledge Format (OKF) — Mark It Down</title>
+  <meta name="description" content="How Mark It Down supports Open Knowledge Format: portable Markdown knowledge bundles, OKF import and export, Git-friendly files, and anti-lock-in workflows.">
+  <meta name="theme-color" content="#F2EDE4">
+  <!-- OGP -->
+  <meta property="og:title" content="Open Knowledge Format (OKF) — Mark It Down">
+  <meta property="og:description" content="Mark It Down treats OKF as a portable Markdown knowledge format for review, curation, export, and Git-friendly reuse.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="en-dark.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="preload" href="fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BGZ2T3RGJW');
+  </script>
+  <!-- Language auto-redirect -->
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage;
+      if (lang.startsWith('ja') && !sessionStorage.getItem('langOverride')) {
+        window.location.replace('okf-ja.html');
+      }
+    })();
+  </script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Open Knowledge Format (OKF) — Mark It Down",
+    "description": "How Mark It Down supports Open Knowledge Format as portable Markdown knowledge bundles.",
+    "inLanguage": "en",
+    "url": "https://markitdown.reduktion.dev/okf.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mark It Down",
+      "url": "https://markitdown.reduktion.dev/"
+    }
+  }
+  </script>
+  <link rel="alternate" hreflang="en" href="https://markitdown.reduktion.dev/okf.html">
+  <link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/okf-ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://markitdown.reduktion.dev/okf.html">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="container">
+    <nav class="header-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="why.html">Philosophy</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="okf.html" aria-current="page">OKF</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li class="lang-switcher"><a href="okf-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a></li>
+      </ul>
+    </nav>
+    <header role="banner">
+      <div class="header-logo">
+        <a href="index.html" aria-label="Mark It Down Home">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
+      </div>
+      <p class="tagline">Portable knowledge, plain files.</p>
+    </header>
+
+    <main id="main-content" role="main">
+      <section class="hero" aria-labelledby="okf-hero-heading">
+        <span class="section-label">OKF</span>
+        <h2 id="okf-hero-heading" class="hero-tagline">Open Knowledge Format support.</h2>
+        <p class="hero-subtitle">
+          Mark It Down can read, write, and review OKF bundles<br>
+          without turning your knowledge into a private database.
+        </p>
+        <span class="hero-ornament" aria-hidden="true">~ ~ ~</span>
+      </section>
+
+      <section class="philosophy" aria-labelledby="what-is-okf-heading">
+        <span class="section-label">What is OKF</span>
+        <h2 id="what-is-okf-heading">Markdown knowledge that can travel.</h2>
+        <div class="why-narrative">
+          <p><strong>Open Knowledge Format</strong> is a lightweight way to package knowledge as ordinary Markdown files with YAML frontmatter. A bundle can include concept documents, optional <code>index.md</code> files for navigation, and optional <code>log.md</code> files for history.</p>
+          <p>The format is intentionally small: readable by people, diffable in Git, and tolerant when a bundle is incomplete or evolving. The official OKF v0.1 draft defines the basic rules, including the required <code>type</code> field for concept files.</p>
+          <p><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Read the OKF spec</a> or <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener">Google Cloud's introduction</a>.</p>
+        </div>
+      </section>
+
+      <section class="philosophy" aria-labelledby="mid-okf-heading">
+        <span class="section-label">Mark It Down x OKF</span>
+        <h2 id="mid-okf-heading">A review layer for portable knowledge.</h2>
+        <ul class="coming-soon-list" role="list" style="margin-top:2rem;">
+          <li><strong>Export OKF bundles</strong> — Write notes out as <code>.okf.zip</code> with generated frontmatter, flat concept layout, folder indexes, and a self-contained static viewer. Source URLs are preserved as OKF resources. The activity log groups entries by date and labels each item as Creation or Update.</li>
+          <li><strong>Static viewer</strong> — Each export includes a single <code>index.html</code> you can open directly — no server needed. Three-column layout with concept list, Markdown body, TOC, and a concept graph. Use the [+][−] buttons to zoom in on dense clusters or pull back for an overview.</li>
+          <li><strong>Citations round-trip</strong> — Frontmatter <code>citations</code> fields survive export and import unchanged. The viewer renders them as a dedicated section per concept.</li>
+          <li><strong>Edit on-ramp</strong> — The viewer footer shows how to edit the bundle in any text editor or Markdown app. No lock-in.</li>
+          <li><strong>Import OKF bundles</strong> — Import a bundle explicitly from the Entry menu, including bundles without a version marker. Relative links are restored as wikilinks, and original concept paths are preserved for lossless re-export.</li>
+          <li><strong>Keep bundle shape</strong> — Concept files export flat at the bundle root. Folder information travels as <code>_folder</code> frontmatter and restores on re-import.</li>
+          <li><strong>Preview conformance</strong> — Use Portability Hub to see OKF-related findings before a note leaves the workspace.</li>
+          <li><strong>Sync through Git</strong> — Push OKF-compatible note files and generated indexes as plain repository content.</li>
+        </ul>
+      </section>
+
+      <section class="philosophy" aria-labelledby="why-fits-heading">
+        <span class="section-label">Why it fits</span>
+        <h2 id="why-fits-heading">No hostages means no hidden format.</h2>
+        <div class="why-narrative">
+          <p>Mark It Down is built around the idea that notes should graduate. OKF points in the same direction: knowledge remains visible as Markdown, metadata remains visible as frontmatter, and history remains visible in Git.</p>
+          <p>That makes Mark It Down a good place to inspect and rewrite OKF content. It is not a managed catalog, enrichment agent, or hosted integration. It is the human review step between an incoming bundle and the next place that bundle needs to go.</p>
+        </div>
+      </section>
+
+      <section class="cta-section" aria-labelledby="okf-cta-heading">
+        <h2 id="okf-cta-heading">Bring knowledge in. Rewrite it. Let it leave.</h2>
+        <div class="buttons">
+          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke"
+             class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store"
+             onclick="gtag('event','cta_click',{event_category:'engagement',event_label:'okf'})">
+            Get the extension
+          </a>
+          <a href="features.html" class="btn btn-secondary">
+            See all features
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-brand">
+        <img src="icon-128.png" alt="" aria-hidden="true">
+        <span>Mark It Down</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="why.html">Philosophy</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="okf.html">OKF</a></li>
+          <li><a href="templates.html">Templates</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+          <li class="lang-switcher"><a href="okf-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a></li>
+        </ul>
+      </nav>
+      <p>
+        <span>© 2025-2026 reduktion.dev</span>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

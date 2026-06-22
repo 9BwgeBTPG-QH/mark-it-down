@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Knowledge Format（OKF） — Mark It Down</title>
+  <meta name="description" content="Mark It Down の Open Knowledge Format 対応。持ち運べる Markdown knowledge bundle、OKF import/export、Git で扱えるファイル、ロックインしない作業フロー。">
+  <meta name="theme-color" content="#F2EDE4">
+  <!-- OGP -->
+  <meta property="og:title" content="Open Knowledge Format（OKF） — Mark It Down">
+  <meta property="og:description" content="Mark It Down は OKF を、レビュー・咀嚼・再配布のためのポータブルな Markdown knowledge format として扱います。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="en-dark.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="preload" href="fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BGZ2T3RGJW');
+  </script>
+  <!-- Language auto-redirect -->
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage;
+      if (!lang.startsWith('ja') && !sessionStorage.getItem('langOverride')) {
+        window.location.replace('okf.html');
+      }
+    })();
+  </script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Open Knowledge Format（OKF） — Mark It Down",
+    "description": "Mark It Down の Open Knowledge Format 対応。ポータブルな Markdown knowledge bundle として OKF を扱います。",
+    "inLanguage": "ja",
+    "url": "https://markitdown.reduktion.dev/okf-ja.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mark It Down",
+      "url": "https://markitdown.reduktion.dev/"
+    }
+  }
+  </script>
+  <link rel="alternate" hreflang="en" href="https://markitdown.reduktion.dev/okf.html">
+  <link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/okf-ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://markitdown.reduktion.dev/okf.html">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">コンテンツへスキップ</a>
+  <div class="container">
+    <nav class="header-nav" aria-label="メインナビゲーション">
+      <ul>
+        <li><a href="index-ja.html">ホーム</a></li>
+        <li><a href="why-ja.html">MIDとは</a></li>
+        <li><a href="features-ja.html">機能</a></li>
+        <li><a href="okf-ja.html" aria-current="page">OKF</a></li>
+        <li><a href="templates-ja.html">テンプレート</a></li>
+        <li><a href="faq-ja.html">よくある質問</a></li>
+        <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
+        <li><a href="changelog-ja.html">更新履歴</a></li>
+        <li><a href="feedback-ja.html">フィードバック</a></li>
+        <li><a href="privacy-policy-ja.html">プライバシー</a></li>
+        <li class="lang-switcher"><a href="okf.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a></li>
+      </ul>
+    </nav>
+    <header role="banner">
+      <div class="header-logo">
+        <a href="index-ja.html" aria-label="Mark It Down ホーム">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <h1>Mark It Down</h1>
+        </a>
+      </div>
+      <p class="tagline">持ち運べる知識を、普通のファイルで。</p>
+    </header>
+
+    <main id="main-content" role="main">
+      <section class="hero" aria-labelledby="okf-hero-heading">
+        <span class="section-label">OKF</span>
+        <h2 id="okf-hero-heading" class="hero-tagline">Open Knowledge Format 対応。</h2>
+        <p class="hero-subtitle">
+          Mark It Down は OKF バンドルを読み、書き、レビューできます。<br>
+          知識を独自データベースに閉じ込めません。
+        </p>
+        <span class="hero-ornament" aria-hidden="true">~ ~ ~</span>
+      </section>
+
+      <section class="philosophy" aria-labelledby="what-is-okf-heading">
+        <span class="section-label">What is OKF</span>
+        <h2 id="what-is-okf-heading">持ち運べる Markdown knowledge。</h2>
+        <div class="why-narrative">
+          <p><strong>Open Knowledge Format</strong> は、知識を YAML フロントマター付きの通常の Markdown ファイルとしてまとめる軽量フォーマットです。concept document、ナビゲーション用の任意の <code>index.md</code>、履歴用の任意の <code>log.md</code> を含められます。</p>
+          <p>形式は意図的に小さく、人間が読めて、Git で差分が見え、不完全または成長途中のバンドルにも寛容です。公式 OKF v0.1 draft は、concept file に必須の <code>type</code> フィールドなど、最小限の規則を定めています。</p>
+          <p><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">OKF spec を読む</a> / <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener">Google Cloud の紹介を読む</a></p>
+        </div>
+      </section>
+
+      <section class="philosophy" aria-labelledby="mid-okf-heading">
+        <span class="section-label">Mark It Down x OKF</span>
+        <h2 id="mid-okf-heading">ポータブルな知識のレビュー層。</h2>
+        <ul class="coming-soon-list" role="list" style="margin-top:2rem;">
+          <li><strong>OKF バンドルを書き出す</strong> — ノートを <code>.okf.zip</code> として出力。フラットな concept レイアウト、folder index、self-contained 静的 viewer を含みます。ソース URL は OKF resource として保持。activity log は日付ごとにグループ化し、各項目を Creation または Update としてラベル付けします。</li>
+          <li><strong>静的 Viewer</strong> — エクスポートには直接開ける単一の <code>index.html</code> が含まれます。サーバー不要。concept リスト・Markdown 本文・TOC・概念グラフの3カラムレイアウト。[+][−] ボタンで概念グラフをズームし、密集したクラスタを拡大したり全体を俯瞰できます。</li>
+          <li><strong>Citations の往復</strong> — フロントマターの <code>citations</code> フィールドはエクスポートとインポートを通じて変化しません。Viewer では各 concept に専用の引用セクションとして表示されます。</li>
+          <li><strong>Edit on-ramp</strong> — Viewer のフッターに、外部のテキストエディタや Markdown アプリでバンドルを編集するためのガイドを表示します。ロックインなし。</li>
+          <li><strong>OKF バンドルを取り込む</strong> — エントリメニューから明示的にバンドルをインポートできます。version marker のないバンドルも対応。相対リンクはウィキリンクとして復元し、元の concept パスを保持するため loss-less で再エクスポートできます。</li>
+          <li><strong>バンドルの形を保つ</strong> — concept ファイルはバンドルルートにフラットで出力されます。フォルダ情報は <code>_folder</code> フロントマターとして持ち運ばれ、再インポート時に復元されます。</li>
+          <li><strong>conformance を確認する</strong> — Portability Hub で、ノートが外へ出る前に OKF 関連の findings を確認できます。</li>
+          <li><strong>Git で同期する</strong> — OKF 互換の note file と生成 index を、普通の repository content として push できます。</li>
+        </ul>
+      </section>
+
+      <section class="philosophy" aria-labelledby="why-fits-heading">
+        <span class="section-label">Why it fits</span>
+        <h2 id="why-fits-heading">No hostages は、隠れた形式を持たないこと。</h2>
+        <div class="why-narrative">
+          <p>Mark It Down は、ノートがいつでも卒業できることを前提に作っています。OKF も同じ方向を向いています。知識は Markdown として見え、メタデータは frontmatter として見え、履歴は Git で見えます。</p>
+          <p>だから Mark It Down は OKF content を点検し、書き直し、整える場所に向いています。これは managed catalog でも enrichment agent でも hosted integration でもありません。入ってきたバンドルと次の行き先の間に置く、人間のレビュー工程です。</p>
+        </div>
+      </section>
+
+      <section class="cta-section" aria-labelledby="okf-cta-heading">
+        <h2 id="okf-cta-heading">知識を取り込み、書き直し、外へ出す。</h2>
+        <div class="buttons">
+          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke"
+             class="btn btn-primary" aria-label="Chrome ウェブストアから Mark It Down を入手"
+             onclick="gtag('event','cta_click',{event_category:'engagement',event_label:'okf-ja'})">
+            拡張機能を入手する
+          </a>
+          <a href="features-ja.html" class="btn btn-secondary">
+            機能を見る
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-brand">
+        <img src="icon-128.png" alt="" aria-hidden="true">
+        <span>Mark It Down</span>
+      </div>
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <ul>
+          <li><a href="index-ja.html">ホーム</a></li>
+          <li><a href="why-ja.html">MIDとは</a></li>
+          <li><a href="features-ja.html">機能</a></li>
+          <li><a href="okf-ja.html">OKF</a></li>
+          <li><a href="templates-ja.html">テンプレート</a></li>
+          <li><a href="faq-ja.html">よくある質問</a></li>
+          <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
+          <li><a href="changelog-ja.html">更新履歴</a></li>
+          <li><a href="feedback-ja.html">フィードバック</a></li>
+          <li><a href="privacy-policy-ja.html">プライバシー</a></li>
+          <li class="lang-switcher"><a href="okf.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a></li>
+        </ul>
+      </nav>
+      <p>
+        <span>© 2025-2026 reduktion.dev</span>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

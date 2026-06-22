@@ -53,13 +53,13 @@
     "inLanguage": ["en", "ja"],
     "isAccessibleForFree": true,
     "keywords": "Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry",
-    "dateModified": "2026-06-15",
+    "dateModified": "2026-06-23",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "2.2.7",
+    "softwareVersion": "2.2.8",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -114,6 +114,7 @@
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="why.html">Philosophy</a></li>
         <li><a href="features.html">Features</a></li>
+        <li><a href="okf.html">OKF</a></li>
         <li><a href="templates.html">Templates</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="troubleshooting.html">Troubleshooting</a></li>
@@ -280,23 +281,27 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">Recently Added</h2>
-        <p class="coming-soon-status">v2.2.7 — When something fails, you now know why.</p>
+        <p class="coming-soon-status">v2.2.8 — More of what you wrote stays with what you wrote.</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>Git sync failure reasons</strong>
-            <span>Sync errors now name the cause: authentication, access denied, or network failure.</span>
+            <strong>Note Log</strong>
+            <span>Record why a note changed — Creation, Update, or any verb you choose — right inside the note. Alt+L opens the log; entries flow into OKF exports and Git commits automatically.</span>
           </li>
           <li>
-            <strong>Web Clipper &amp; RSS failure reasons</strong>
-            <span>When a clip or feed fetch fails, the reason is shown instead of a generic message.</span>
+            <strong>Link graph</strong>
+            <span>The right panel now shows which notes point here and which this note points to. Click a node to jump. [+][−] buttons zoom the graph.</span>
           </li>
           <li>
-            <strong>TOC navigation fix</strong>
-            <span>Top / bottom / prev / next-heading buttons no longer go dead right after a note loads.</span>
+            <strong>Raw Markdown toggle</strong>
+            <span>Switch the right panel between rendered view and raw source to check syntax without opening the editor.</span>
           </li>
           <li>
-            <strong>Git sync reliability</strong>
-            <span>Fixed cases where notes were not synced correctly.</span>
+            <strong>OKF bundles</strong>
+            <span>Import from the Entry menu with links restored as wikilinks. Exports include a browser-readable index.html — open the bundle in any browser without extra tools.</span>
+          </li>
+          <li>
+            <strong>EPUB chapter navigation &amp; semantic markup</strong>
+            <span>EPUB files now include chapter sections and landmarks. Semantic tags (figure, table headers, article/nav) apply across HTML exports, OKF viewer, and in-app preview.</span>
           </li>
         </ul>
       </section>
@@ -349,7 +354,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Ready to write?</h2>
         <p>Available as a Chrome extension. No account required.<br>
-        <small>Latest version: v2.2.7</small></p>
+        <small>Latest version: v2.2.8</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store">
             Get the extension
@@ -370,6 +375,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="features.html">Features</a></li>
+          <li><a href="okf.html">OKF</a></li>
           <li><a href="templates.html">Templates</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="troubleshooting.html">Troubleshooting</a></li>

@@ -35,6 +35,7 @@
         <li><a href="index-ja.html">ホーム</a></li>
         <li><a href="why-ja.html">MIDとは</a></li>
         <li><a href="features-ja.html">機能</a></li>
+        <li><a href="okf-ja.html">OKF</a></li>
         <li><a href="templates-ja.html">テンプレート</a></li>
         <li><a href="faq-ja.html">よくある質問</a></li>
         <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
@@ -68,15 +69,41 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.7 - 審査中 -->
+        <!-- v2.2.8 - 審査中 -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.8</span>
+              <span class="accordion-highlight">書いたことが、書いたものと一緒に残る。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">OKF バンドルとの往復がより忠実になった。外部バンドルを取り込んだときに元の構造が保たれ、ソースリンクはポータブルなメタデータとして引き継がれ、エクスポートにはブラウザで開ける概要ページが含まれる。知識パッケージの形を失わずに、レビューと咀嚼のループを回せるようになった。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">新機能</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Note Log</strong> <span>ノートの変更理由を — Creation・Update・Deprecation、または自分で決めた動詞で — ノート内に書き留められる。Alt+L でログを開く。記録は OKF エクスポートと Git コミットに自動反映。</span></li>
+                <li><strong>リンクグラフ</strong> <span>右パネルに「このノートへのリンク」「このノートからのリンク」をグラフ表示。ノードをクリックでジャンプ。[+][−] でグラフをズームできる（OKF バンドルの Viewer も同様）。</span></li>
+                <li><strong>生 Markdown トグル</strong> <span>右パネルで整形表示と生 Markdown 記法を切り替えられる。エディタを開かずに構文を確認できる。</span></li>
+                <li><strong>OKF バンドル改善</strong> <span>エントリメニューから OKF バンドルを明示インポート。リンクはウィキリンクとして復元。エクスポートにはブラウザで開ける index.html を同梱（サーバー不要）。ソース URL は OKF resource として保持。Git 同期も同じ OKF 構造を維持。</span></li>
+                <li><strong>セマンティックマークアップ全面適用</strong> <span>figure/figcaption・scope 属性・article/nav ランドマークが HTML エクスポート・OKF Viewer・アプリ内プレビュー・EPUB すべてに適用。Markdown ソースは変更されない。</span></li>
+                <li><strong>EPUB 章ナビゲーション</strong> <span>EPUB エクスポートに章区切りとランドマークナビゲーションを追加。スクリーンリーダーや電子書籍リーダーで章ごとに移動できる。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.7 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.7</span>
               <span class="accordion-highlight">エラーが出たとき、何が起きているかわかるようになった。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Git 同期・Web Clipper・RSS が失敗した理由（認証エラー・アクセス拒否・ネットワーク障害）を具体的に表示するようになった。あわせて、ノート読み込み直後に目次ナビゲーションボタンが無反応になる問題を修正した。</p>
@@ -1556,6 +1583,7 @@
         <ul>
           <li><a href="index-ja.html">ホーム</a></li>
           <li><a href="features-ja.html">機能</a></li>
+          <li><a href="okf-ja.html">OKF</a></li>
           <li><a href="templates-ja.html">テンプレート</a></li>
           <li><a href="faq-ja.html">よくある質問</a></li>
           <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
