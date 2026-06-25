@@ -53,13 +53,13 @@
     "inLanguage": "ja",
     "isAccessibleForFree": true,
     "keywords": "Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし",
-    "dateModified": "2026-06-23",
+    "dateModified": "2026-06-25",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "JPY"
     },
-    "softwareVersion": "2.2.8",
+    "softwareVersion": "2.2.9",
     "author": {
       "@type": "Person",
       "name": "Mark It Down Developer"
@@ -278,27 +278,27 @@
       <section class="coming-soon-section" aria-labelledby="coming-soon-heading">
         <span class="section-label">What's New</span>
         <h2 id="coming-soon-heading">最近の追加機能</h2>
-        <p class="coming-soon-status">v2.2.8 — 書いたことが、書いたものと一緒に残る。</p>
+        <p class="coming-soon-status">v2.2.9 — OKFバンドルが参照元を一緒に持ち出せるようになり、ナレッジグラフが読みやすくなった。</p>
         <ul class="coming-soon-list" role="list">
           <li>
-            <strong>Note Log</strong>
-            <span>ノートの変更理由を — Creation・Update、または自分で決めた動詞で — ノート内に書き留められる。Alt+L でログを開く。記録は OKF エクスポートと Git コミットに自動反映。</span>
+            <strong>OKF バンドルの参照リスト</strong>
+            <span>OKF バンドルとしてエクスポートすると、本文中の外部リンクが自動的に収集され、番号付きの参照リストとしてファイル末尾に追加される。バンドルを渡した後も参照元が見えるようになる。</span>
           </li>
           <li>
-            <strong>リンクグラフ</strong>
-            <span>右パネルに「このノートへのリンク」「このノートからのリンク」をグラフ表示。ノードをクリックでジャンプ。[+][−] でグラフをズーム。</span>
+            <strong>バンドル内のノートリンク</strong>
+            <span>自分のノート同士のリンクが、エクスポート後のバンドル内でも正しく機能するようになった。エディタ上でのつながりがバンドルの中でも保たれる。</span>
           </li>
           <li>
-            <strong>生 Markdown トグル</strong>
-            <span>右パネルで整形表示と生 Markdown 記法を切り替えられる。エディタを開かずに構文を確認できる。</span>
+            <strong>リンクグラフの改善</strong>
+            <span>ノードラベルがノードの下に表示されて重ならなくなった。ノードやエッジを選択するとアンバーでハイライト。Reset view ボタンでグラフ全体を一望できる。4テーマすべてがグラフに正しく反映される。</span>
           </li>
           <li>
-            <strong>OKF バンドル</strong>
-            <span>エントリメニューからインポート。リンクはウィキリンクとして復元。エクスポートにはブラウザで開ける index.html を同梱（サーバー不要）。</span>
+            <strong>Portability Hub の見出しレベル警告</strong>
+            <span>見出しレベルが飛んでいるノートを警告するようになった。EPUB や文書変換ツールへの出力前に構造の問題を把握できる。</span>
           </li>
           <li>
-            <strong>EPUB 章ナビゲーション &amp; セマンティックマークアップ</strong>
-            <span>EPUB エクスポートに章区切りとランドマークを追加。セマンティックタグ（figure・テーブルヘッダー・article/nav）が HTML エクスポート・OKF Viewer・アプリ内プレビューに適用。</span>
+            <strong>フロントマターの値候補</strong>
+            <span>confidence や source フィールドを編集するとき、標準的な値の候補が表示されるようになった。自由な値も引き続き入力できる。</span>
           </li>
         </ul>
       </section>
@@ -351,7 +351,7 @@
       <section class="cta-section" aria-labelledby="cta-heading">
         <h2 id="cta-heading">書き始めませんか？</h2>
         <p>Chrome拡張機能で利用可能。アカウント不要。<br>
-        <small>最新版: v2.2.8</small></p>
+        <small>最新版: v2.2.9</small></p>
         <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する">
             拡張機能を入手

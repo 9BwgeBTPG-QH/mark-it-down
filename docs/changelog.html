@@ -72,15 +72,49 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.8 - Under Review -->
+        <!-- v2.2.9 - Under Review -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.9</span>
+              <span class="accordion-highlight">OKF bundles carry their references forward, and the knowledge graph becomes easier to explore.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">Knowledge stays connected when it leaves the editor. OKF bundles now carry their sources as a numbered reference list, and links between notes resolve correctly inside the exported bundle. The concept graph got a round of usability work: labels that don't overlap, amber highlights on selection, a persistent Reset button, and first-time guidance. The Portability Hub adds heading-structure warnings, and the frontmatter panel suggests standard values for confidence and source fields.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Improvements</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>OKF bundle references</strong> <span>External links in your notes are automatically collected and appended as a numbered References list when you export as an OKF bundle. Sources stay visible when you hand off the package.</span></li>
+                <li><strong>Note links in bundles</strong> <span>Links between your own notes now resolve correctly inside an exported OKF bundle. Connections that existed in the editor stay intact after export.</span></li>
+                <li><strong>OKF export type field guidance</strong> <span>The export panel now explains how the type field is assigned automatically based on which folder a note lives in. The Portability Hub flags notes with no type set so you can review them before export.</span></li>
+                <li><strong>Link graph improvements</strong> <span>Node labels appear below each node and no longer overlap. Selecting a node or edge highlights it in amber. A Reset view button is always visible and returns the graph to a full overview. All four color themes now carry through into the graph correctly.</span></li>
+                <li><strong>Concept graph new-user guidance</strong> <span>If your graph has only one note or none at all, a short guide explains how to create connections using the [[note name]] syntax. A one-time hint also explains that clicking a node opens the table of contents for that note.</span></li>
+                <li><strong>Note log raw status tooltip</strong> <span>Hovering over the raw chip in the note activity log now shows a tooltip that explains what raw status means and how to clear it.</span></li>
+                <li><strong>Portability Hub heading-level warnings</strong> <span>The Hub now flags notes where heading levels jump unexpectedly — helping you catch structural problems before exporting to EPUB or document converters.</span></li>
+                <li><strong>Frontmatter value suggestions</strong> <span>When editing the confidence or source fields in the metadata panel, a short list of standard values appears. You can still type anything — the suggestions keep values consistent across notes.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Fixed</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Toolbar menu collapsing while open</strong> <span>Opening a toolbar menu and keeping it open no longer caused the menu to collapse unexpectedly due to the editor's auto-hide behavior.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.8 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.8</span>
               <span class="accordion-highlight">More of what you wrote stays with what you wrote.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Mark It Down can now work more faithfully with OKF bundles. External bundles keep more of their original structure when imported, source links are carried into the portable metadata, and exported bundles include a browser-readable overview — making OKF a clean review and curation loop without losing the shape of the original knowledge package.</p>

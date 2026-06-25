@@ -69,15 +69,49 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.8 - 審査中 -->
+        <!-- v2.2.9 - 審査中 -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.9</span>
+              <span class="accordion-highlight">OKFバンドルが参照元を一緒に持ち出せるようになり、ナレッジグラフが読みやすくなった。</span>
+            </div>
+            <span class="accordion-status under-review">審査中</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">知識がエディタを離れてもつながりを保てるようになった。OKF バンドルが参照元を番号付きリストとして持ち出せ、ノート間リンクもバンドル内で正しく機能する。コンセプトグラフはラベルが重ならず、選択時にアンバーでハイライトされ、Reset ボタンが常に表示される。初めて開いたときのガイダンスも追加された。Portability Hub は見出し構造の警告を追加し、フロントマターパネルは confidence・source の標準値を候補表示するようになった。</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">改善</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>OKF バンドルの参照リスト</strong> <span>OKF バンドルとしてエクスポートすると、本文中の外部リンクが自動的に収集され、番号付きの参照リストとしてファイル末尾に追加される。バンドルを渡した後も参照元が見えるようになる。</span></li>
+                <li><strong>バンドル内のノートリンク</strong> <span>自分のノート同士のリンクが、エクスポート後のバンドル内でも正しく機能するようになった。エディタ上でのつながりがバンドルの中でも保たれる。</span></li>
+                <li><strong>OKF エクスポートの type フィールド説明</strong> <span>エクスポートパネルに、type フィールドがどのフォルダのノートにどの値として自動設定されるかの説明が表示されるようになった。Portability Hub では type が未設定のノートを確認できる。</span></li>
+                <li><strong>リンクグラフの改善</strong> <span>ノードラベルがノードの下に表示されて重ならなくなった。ノードやエッジを選択するとアンバーでハイライト。Reset view ボタンが常に表示され、グラフ全体を一望できる。4テーマすべてがグラフに正しく反映される。</span></li>
+                <li><strong>コンセプトグラフの初回ガイダンス</strong> <span>グラフにノートがほとんどない場合は、[[ノート名]] 記法でつながりを作る方法を案内するガイダンスが表示される。ノードをクリックすると目次が開くことを伝えるヒントも初回のみ表示される。</span></li>
+                <li><strong>Note Log の raw ステータス tooltip</strong> <span>ノートアクティビティログの raw チップにホバーすると、raw ステータスの意味と解除方法を説明する tooltip が表示されるようになった。</span></li>
+                <li><strong>Portability Hub の見出しレベル警告</strong> <span>見出しレベルが飛んでいるノートを警告するようになった。EPUB や文書変換ツールへの出力前に構造の問題を把握できる。</span></li>
+                <li><strong>フロントマターの値候補</strong> <span>confidence や source フィールドを編集するとき、標準的な値の候補が表示されるようになった。自由な値も引き続き入力できる。複数のノートで値を揃えて、あとで絞り込みや並べ替えがしやすくなる。</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">バグ修正</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>ツールバーメニューが開いた状態で折りたたまれる問題を修正</strong> <span>ツールバーのメニューを開いたまま保持すると、エディタの自動非表示ロジックによってメニューが予期せず閉じる問題を修正した。</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.8 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.8</span>
               <span class="accordion-highlight">書いたことが、書いたものと一緒に残る。</span>
             </div>
-            <span class="accordion-status under-review">審査中</span>
+            <span class="accordion-status released">リリース済</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">OKF バンドルとの往復がより忠実になった。外部バンドルを取り込んだときに元の構造が保たれ、ソースリンクはポータブルなメタデータとして引き継がれ、エクスポートにはブラウザで開ける概要ページが含まれる。知識パッケージの形を失わずに、レビューと咀嚼のループを回せるようになった。</p>
