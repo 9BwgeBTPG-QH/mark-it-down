@@ -109,7 +109,9 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>Feed Viewer</strong> <span>Open RSS from the sidebar, command palette, or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>. Move with <kbd>j</kbd>/<kbd>k</kbd>, open with <kbd>Enter</kbd> or <kbd>o</kbd>, save with <kbd>i</kbd></span></li>
-              <li><strong>Reading Pane</strong> <span>Preview article HTML, track read and saved state, and view the saved Markdown immediately after clipping</span></li>
+              <li><strong>Full-Screen Workspace</strong> <span>RSS Reader is an independent workspace, not a modal — left feed sidebar, center article list and reading pane, right inspector panel</span></li>
+              <li><strong>Reading Pane</strong> <span>Articles render with the same engine as your notes — math, diagrams, and code highlighting included. Track read and saved state, and view the saved Markdown immediately after clipping</span></li>
+              <li><strong>Article TOC</strong> <span>Right panel shows the article's heading structure with scroll-spy; click a heading to jump to that section</span></li>
               <li><strong>OPML Import / Export</strong> <span>Bring subscription lists from Feedly, Inoreader, NetNewsWire, and other OPML 2.0 readers</span></li>
               <li><strong>Git Sync for RSS Settings</strong> <span>Sync feeds and denylist settings across devices while keeping per-device permissions separate</span></li>
               <li><strong>Feed Health Indicators</strong> <span>See last fetch time, failed fetches, permission needs, and saved state before deciding what to read next</span></li>
@@ -125,6 +127,50 @@
               <li><strong>Dead Feed Cleanup</strong> <span>When a feed fails repeatedly, a prompt surfaces to remove it or update the URL — keeping your subscription list healthy without manual audits</span></li>
               <li><strong>Conditional GET (ETag / Last-Modified)</strong> <span>Feed requests include <code>If-None-Match</code> and <code>If-Modified-Since</code> headers. Unchanged feeds return 304 and skip parsing — less bandwidth, faster cycles</span></li>
               <li><strong>Retention Split</strong> <span>Set separate retention periods for read and unread articles. Keep unread items longer, prune read ones sooner</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Repository Reader -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">📖</span>
+              <span class="accordion-highlight">Repository Reader — Browse GitHub without leaving the app</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>Browse Any GitHub Repository</strong> <span>Open a public repository by URL from the header book icon. Private repositories work with a personal access token</span></li>
+              <li><strong>File Tree Search</strong> <span>Filter the file tree by path or filename; folders containing a match expand automatically</span></li>
+              <li><strong>Unified Renderer</strong> <span>Markdown files render with the same engine as your notes: math, diagrams, code highlighting, GitHub Alerts, and images</span></li>
+              <li><strong>Backlinks + Hover Preview</strong> <span>The right panel lists files that link to the one you're viewing. Hovering a link shows the target file's title and an excerpt</span></li>
+              <li><strong>Link Graph</strong> <span>Outline or radial view of how loaded files link to each other, in the file sidebar panel — same engine as Note Graph</span></li>
+              <li><strong>Ctrl+K File Switcher</strong> <span>Jump to any loaded file by name without leaving the keyboard</span></li>
+              <li><strong>Quote to Inbox</strong> <span>Select text in the preview and save it as a note, with source URL and timestamp recorded in frontmatter</span></li>
+              <li><strong>Back/Forward Navigation</strong> <span>Header buttons and <kbd>Alt</kbd>+<kbd>←</kbd>/<kbd>→</kbd> retrace files you've already opened in the session</span></li>
+              <li><strong>Pinned Repository Auto-Load</strong> <span>Pin a repository from the history dropdown and it reopens automatically the next time you open Repository Reader</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Note Graph -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">🕸</span>
+              <span class="accordion-highlight">Note Graph — Outline & radial views</span>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <ul class="changelog-features">
+              <li><strong>Outline View</strong> <span>Default tree view of note links. Click any node to re-root the tree, with breadcrumb navigation and collapsible branches</span></li>
+              <li><strong>Radial View</strong> <span>Linked notes arranged around a center node. Zoom with the mouse wheel or <kbd>Ctrl</kbd>+wheel, pan by dragging, and reset with the overlay Reset/+/− buttons</span></li>
+              <li><strong>Keyboard Navigation</strong> <span>Move focus between graph nodes without a mouse</span></li>
+              <li><strong>CJK-Aware Labels</strong> <span>Long Japanese and Chinese note titles truncate and position by angle to avoid overlapping in the radial view</span></li>
+              <li><strong>Shared with Repository Reader</strong> <span>The same graph view is available inside Repository Reader's file sidebar, showing links between loaded files</span></li>
             </ul>
           </div>
         </details>
@@ -224,7 +270,7 @@
             <ul class="changelog-features">
               <li><strong>5 Folders</strong> <span>Inbox / Template / Archive / Trash / System</span></li>
               <li><strong>Pinned Area</strong> <span>Pinned notes grouped in a dedicated "★ Pinned" area at the top. Hidden when empty (Alt+P)</span></li>
-              <li><strong>Frontmatter</strong> <span>Manage Hugo/Jekyll/Obsidian metadata separately from note body. Edit in the Detail Panel Frontmatter tab; auto-merged on export</span></li>
+              <li><strong>Frontmatter</strong> <span>Manage Hugo/Jekyll/Obsidian metadata separately from note body. Edit in the dedicated Frontmatter modal — apply suggested values as chips, Copy as YAML, or Clear all. Auto-merged on export</span></li>
               <li><strong>Detail Panel</strong> <span>Preview, Frontmatter, and Info tabs inside the sidebar — inspect and edit without opening a note. Drag to resize</span></li>
               <li><strong>Hover Cards and Preview Panel</strong> <span>Check note content and metadata from the sidebar before opening the note</span></li>
               <li><strong>NoteItem Simplification</strong> <span>Each note row shows only checkbox and title. Actions consolidated in the Detail Panel</span></li>
@@ -238,7 +284,7 @@
               <li><strong>Note Series</strong> <span>Split a long note by heading into a linked series. Parts group in the sidebar, navigate with Alt+PageUp/PageDown, merge back anytime, or export the whole series at once</span></li>
               <li><strong>Merge Notes</strong> <span>Ctrl+Click to select, drag to reorder, combine into one</span></li>
               <li><strong>Right Panel Note Details</strong> <span>Hover a note name in the list to see its creation date, modification date, file size, and Git status in the right panel — without opening the note</span></li>
-              <li><strong>Frontmatter Edit from Right Panel</strong> <span>Right-click a note name to open frontmatter editing in the right panel. Drag fields to reorder, add and remove tags, apply export presets. Archive notes show read-only</span></li>
+              <li><strong>Frontmatter Edit from Right Panel</strong> <span>Right-click a note name to open the Frontmatter modal. Drag fields to reorder, add and remove tags, apply export presets. Archive notes show read-only</span></li>
             </ul>
           </div>
         </details>
@@ -255,7 +301,7 @@
           <div class="accordion-content">
             <ul class="changelog-features">
               <li><strong>TOC</strong> <span>Auto-generated, highlights current section. Collapsible child headings, 6 navigation buttons (top, prev/next heading, PgUp/PgDn, bottom)</span></li>
-              <li><strong>Backlink Panel</strong> <span>Inbound <code>[[links]]</code> pointing to the current note appear at the bottom of the TOC and in the Right Panel. Click or Enter to jump to the source note. Hidden when there are no backlinks</span></li>
+              <li><strong>Backlink Panel — Links Here</strong> <span>Inbound <code>[[links]]</code> pointing to the current note appear in a collapsible "Links here" list at the bottom of the TOC and in the Right Panel. Each entry shows the source note title, line number, and a preview of the surrounding text. Click or Enter to jump to the source note. Hidden when there are no backlinks</span></li>
               <li><strong>TOC Reordering</strong> <span>Drag & drop or keyboard shortcuts to restructure headings</span></li>
               <li><strong>Breadcrumbs</strong> <span>Current heading path with click-to-jump ancestors</span></li>
               <li><strong>Word Count</strong> <span>Characters, words (CJK-aware), reading time</span></li>
@@ -288,7 +334,7 @@
               <li><strong>Chrome Storage</strong> <span>Survives cache clear</span></li>
               <li><strong>Import/Export</strong> <span>.md, .zip, Archive Pinned</span></li>
               <li><strong>Export</strong> <span>PDF (page numbers, TOC, custom margins), DOCX (images, diagrams, math embedded), PNG (2x Retina), HTML (3 templates, self-contained), EPUB (Mermaid, math, code highlighting), LaTeX (.tex, heading→\section mapping) — <kbd>Ctrl+Shift+E</kbd></span></li>
-              <li><strong>OKF Export</strong> <span><a href="okf.html">Open Knowledge Format</a> — export notes as <code>.okf.zip</code> with generated frontmatter, a self-contained concept graph viewer, citations, and activity log. Git sync also writes OKF-compatible files</span></li>
+              <li><strong>OKF Export</strong> <span><a href="okf.html">Open Knowledge Format</a> — export notes as <code>.okf.zip</code> with generated frontmatter, a self-contained concept graph viewer, and an activity log. A citations section is auto-generated from links in the note body, and relative Markdown links between notes convert to bundle-relative OKF paths. Git sync also writes OKF-compatible files</span></li>
               <li><strong>Semantic HTML output</strong> <span>HTML and EPUB export render captioned images as <code>&lt;figure&gt;&lt;figcaption&gt;</code>, table headers as <code>&lt;th scope="col"&gt;</code>, and the TOC as a labeled <code>&lt;nav&gt;</code> — Markdown source unchanged</span></li>
               <li><strong>Portable Copy Targets</strong> <span>Copy as CommonMark, GFM, Hugo, or Obsidian when you need Markdown shaped for a specific destination</span></li>
               <li><strong>Rich Text Copy</strong> <span>Copy entire note or selection as rich text (<kbd>Ctrl+Shift+C</kbd>). Paste into Word, Notion, or Google Docs with formatting intact</span></li>
