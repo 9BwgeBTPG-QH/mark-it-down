@@ -55,7 +55,7 @@
   <link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/okf-ja.html">
   <link rel="alternate" hreflang="x-default" href="https://markitdown.reduktion.dev/okf.html">
 </head>
-<body style="word-break: keep-all; overflow-wrap: anywhere;">
+<body>
   <a href="#main-content" class="skip-to-content">コンテンツへ​スキップ</a>
   <div class="container">
     <nav class="header-nav" aria-label="メインナビゲーション">
@@ -65,7 +65,7 @@
         <li><a href="features-ja.html">機能</a></li>
         <li><a href="okf-ja.html" aria-current="page">OKF</a></li>
         <li><a href="templates-ja.html">テンプレート</a></li>
-        <li style="word-break: keep-all; overflow-wrap: anywhere;"><a href="faq-ja.html">よく​ある​質問</a></li>
+        <li><a href="faq-ja.html">よく​ある​質問</a></li>
         <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
         <li><a href="changelog-ja.html">更新履歴</a></li>
         <li><a href="feedback-ja.html">フィードバック</a></li>
@@ -80,14 +80,14 @@
           <h1>Mark It Down</h1>
         </a>
       </div>
-      <p class="tagline" style="word-break: keep-all; overflow-wrap: anywhere;">持ち​運べる​知識を、​普通の​ファイルで。</p>
+      <p class="tagline">持ち​運べる​知識を、​普通の​ファイルで。</p>
     </header>
 
     <main id="main-content" role="main">
       <section class="hero" aria-labelledby="okf-hero-heading">
         <span class="section-label">OKF</span>
         <h2 id="okf-hero-heading" class="hero-tagline">Open Knowledge Format 対応。</h2>
-        <p class="hero-subtitle" style="word-break: keep-all; overflow-wrap: anywhere;">
+        <p class="hero-subtitle">
           Mark It Down は​ OKF バンドルを​読み、​書き、​レビューできます。<br>
           知識を​独自データベースに​閉じ込めません。​
         </p>
@@ -96,41 +96,41 @@
 
       <section class="philosophy" aria-labelledby="what-is-okf-heading">
         <span class="section-label">What is OKF</span>
-        <h2 id="what-is-okf-heading" style="word-break: keep-all; overflow-wrap: anywhere;">持ち​運べる​ Markdown knowledge。</h2>
+        <h2 id="what-is-okf-heading">持ち​運べる​ Markdown knowledge。</h2>
         <div class="why-narrative">
-          <p style="word-break: keep-all; overflow-wrap: anywhere;"><strong>Open Knowledge Format</strong> は、​知識を​ YAML フロントマター付きの​通常の​ Markdown ファイルと​して​まとめる​軽量フォーマットです。​concept document、​ナビゲーション用の​任意の​ <code>index.md</code>、​履歴用の​任意の​ <code>log.md</code> を​含められます。</p>
-          <p style="word-break: keep-all; overflow-wrap: anywhere;">形式は​意図的に​小さく、​人間が​読めて、​Git で​差分が​見え、​不完全または​成長途中の​バンドルにも​寛容です。​公式 OKF v0.1 draft は、​concept file に​必須の​ <code>type</code> フィールドなど、​最小限の​規則を​定めています。</p>
-          <p style="word-break: keep-all; overflow-wrap: anywhere;"><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">OKF spec を​読む</a> / <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener">Google Cloud の​紹介を​読む</a></p>
+          <p><strong>Open Knowledge Format</strong> は、​知識を​ YAML フロントマター付きの​通常の​ Markdown ファイルと​して​まとめる​軽量フォーマットです。​concept document、​ナビゲーション用の​任意の​ <code>index.md</code>、​履歴用の​任意の​ <code>log.md</code> を​含められます。</p>
+          <p>形式は​意図的に​小さく、​人間が​読めて、​Git で​差分が​見え、​不完全または​成長途中の​バンドルにも​寛容です。​公式 OKF v0.1 draft は、​concept file に​必須の​ <code>type</code> フィールドなど、​最小限の​規則を​定めています。</p>
+          <p><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">OKF spec を​読む</a> / <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener">Google Cloud の​紹介を​読む</a></p>
         </div>
       </section>
 
       <section class="philosophy" aria-labelledby="mid-okf-heading">
         <span class="section-label">Mark It Down x OKF</span>
-        <h2 id="mid-okf-heading" style="word-break: keep-all; overflow-wrap: anywhere;">ポータブルな​知識の​レビュー層。</h2>
-        <ul class="coming-soon-list" role="list" style="margin-top:2rem;">
-          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>OKF バンドルを​書き出す</strong> — ノートを​ <code>.okf.zip</code> と​して​出力。​フラットな​ concept レイアウト、​folder index、​self-contained 静的 viewer を​含みます。​ソース URL は​ OKF resource と​して​保持。​activity log は​日付ごとに​グループ化し、​各項目を​ Creation または​ Update と​して​ラベル付けします。</li>
-          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>静的 Viewer</strong> — エクスポートには​直接開ける​単一の​ <code>index.html</code> が​含まれます。​サーバー不要。​concept リスト・Markdown 本文・TOC・概念グラフの​3カラムレイアウト。​[+][−] ボタンで​概念グラフを​ズームし、​密集した​クラスタを​拡大したり全体を​俯瞰できます。</li>
-          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>Citations の​往復</strong> — フロントマターの​ <code>citations</code> フィールドは​エクスポートと​インポートを​通じて​変化しません。​Viewer では​各 concept に​専用の​引用セクションと​して​表示されます。</li>
-          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>Edit on-ramp</strong> — Viewer の​フッターに、​外部の​テキストエディタや​ Markdown アプリで​バンドルを​編集する​ための​ガイドを​表示します。​ロックインなし。</li>
-          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>OKF バンドルを​取り込む</strong> — エントリメニューから​明示的に​バンドルを​インポートできます。​version marker の​ない​バンドルも​対応。​相対リンクは​ウィキリンクと​して​復元し、​元の​ concept パスを​保持する​ため loss-less で​再エクスポートできます。</li>
-          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>バンドルの​形を​保つ</strong> — concept ファイルは​バンドルルートに​フラットで​出力されます。​フォルダ情報は​ <code>_folder</code> フロントマターと​して​持ち運ばれ、​再インポート時に​復元されます。</li>
-          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>conformance を​確認する</strong>​ — Portability Hub で、​ノートが​外へ​出る​前に​ OKF 関連の​ findings を​確認できます。</li>
-          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>Git で​同期する</strong>​ — OKF 互換の​ note file と​生成 index を、​普通の​ repository content と​して​ push できます。</li>
+        <h2 id="mid-okf-heading">ポータブルな​知識の​レビュー層。</h2>
+        <ul class="coming-soon-list coming-soon-list--spaced" role="list">
+          <li><strong>OKF バンドルを​書き出す</strong> — ノートを​ <code>.okf.zip</code> と​して​出力。​フラットな​ concept レイアウト、​folder index、​self-contained 静的 viewer を​含みます。​ソース URL は​ OKF resource と​して​保持。​activity log は​日付ごとに​グループ化し、​各項目を​ Creation または​ Update と​して​ラベル付けします。</li>
+          <li><strong>静的 Viewer</strong> — エクスポートには​直接開ける​単一の​ <code>index.html</code> が​含まれます。​サーバー不要。​concept リスト・Markdown 本文・TOC・概念グラフの​3カラムレイアウト。​[+][−] ボタンで​概念グラフを​ズームし、​密集した​クラスタを​拡大したり全体を​俯瞰できます。</li>
+          <li><strong>Citations の​往復</strong> — フロントマターの​ <code>citations</code> フィールドは​エクスポートと​インポートを​通じて​変化しません。​Viewer では​各 concept に​専用の​引用セクションと​して​表示されます。</li>
+          <li><strong>Edit on-ramp</strong> — Viewer の​フッターに、​外部の​テキストエディタや​ Markdown アプリで​バンドルを​編集する​ための​ガイドを​表示します。​ロックインなし。</li>
+          <li><strong>OKF バンドルを​取り込む</strong> — エントリメニューから​明示的に​バンドルを​インポートできます。​version marker の​ない​バンドルも​対応。​相対リンクは​ウィキリンクと​して​復元し、​元の​ concept パスを​保持する​ため loss-less で​再エクスポートできます。</li>
+          <li><strong>バンドルの​形を​保つ</strong> — concept ファイルは​バンドルルートに​フラットで​出力されます。​フォルダ情報は​ <code>_folder</code> フロントマターと​して​持ち運ばれ、​再インポート時に​復元されます。</li>
+          <li><strong>conformance を​確認する</strong>​ — Portability Hub で、​ノートが​外へ​出る​前に​ OKF 関連の​ findings を​確認できます。</li>
+          <li><strong>Git で​同期する</strong>​ — OKF 互換の​ note file と​生成 index を、​普通の​ repository content と​して​ push できます。</li>
         </ul>
       </section>
 
       <section class="philosophy" aria-labelledby="why-fits-heading">
         <span class="section-label">Why it fits</span>
-        <h2 id="why-fits-heading" style="word-break: keep-all; overflow-wrap: anywhere;">No hostages は、​隠れた​形式を​持たない​こと。</h2>
+        <h2 id="why-fits-heading">No hostages は、​隠れた​形式を​持たない​こと。</h2>
         <div class="why-narrative">
-          <p style="word-break: keep-all; overflow-wrap: anywhere;">Mark It Down は、​ノートが​いつでも​卒業できる​ことを​前提に​作っています。​OKF も​同じ方​向を​向いています。​知識は​ Markdown と​して​見え、​メタデータは​ frontmatter と​して​見え、​履歴は​ Git で​見えます。</p>
-          <p style="word-break: keep-all; overflow-wrap: anywhere;">だから​ Mark It Down は​ OKF content を​点検し、​書き直し、​整える​場所に​向いています。​これは​ managed catalog でも​ enrichment agent でも​ hosted integration でもありません。​入ってきた​バンドルと​次の​行き先の​間に​置く、​人間の​レビュー工程です。</p>
+          <p>Mark It Down は、​ノートが​いつでも​卒業できる​ことを​前提に​作っています。​OKF も​同じ方​向を​向いています。​知識は​ Markdown と​して​見え、​メタデータは​ frontmatter と​して​見え、​履歴は​ Git で​見えます。</p>
+          <p>だから​ Mark It Down は​ OKF content を​点検し、​書き直し、​整える​場所に​向いています。​これは​ managed catalog でも​ enrichment agent でも​ hosted integration でもありません。​入ってきた​バンドルと​次の​行き先の​間に​置く、​人間の​レビュー工程です。</p>
         </div>
       </section>
 
       <section class="cta-section" aria-labelledby="okf-cta-heading">
-        <h2 id="okf-cta-heading" style="word-break: keep-all; overflow-wrap: anywhere;">知識を​取り込み、​書き直し、​外へ出す。</h2>
-        <div class="buttons" style="word-break: keep-all; overflow-wrap: anywhere;">
+        <h2 id="okf-cta-heading">知識を​取り込み、​書き直し、​外へ出す。</h2>
+        <div class="buttons">
           <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Chrome ウェブストアから Mark It Down を入手" onclick="gtag('event','cta_click',{event_category:'engagement',event_label:'okf-ja'})">
             拡張機能を​入手する​
           </a>
@@ -153,7 +153,7 @@
           <li><a href="features-ja.html">機能</a></li>
           <li><a href="okf-ja.html">OKF</a></li>
           <li><a href="templates-ja.html">テンプレート</a></li>
-          <li style="word-break: keep-all; overflow-wrap: anywhere;"><a href="faq-ja.html">よく​ある​質問</a></li>
+          <li><a href="faq-ja.html">よく​ある​質問</a></li>
           <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
           <li><a href="changelog-ja.html">更新履歴</a></li>
           <li><a href="feedback-ja.html">フィードバック</a></li>
