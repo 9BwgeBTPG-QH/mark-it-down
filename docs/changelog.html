@@ -72,15 +72,61 @@
       <div class="changelog-accordion">
 
 
-        <!-- v2.2.9 - Under Review -->
+        <!-- v2.2.10 - Under Review -->
         <details class="accordion-item latest" open>
+          <summary class="accordion-header">
+            <div class="accordion-title">
+              <span class="accordion-icon"></span>
+              <span class="accordion-version">v2.2.10</span>
+              <span class="accordion-highlight">New reading surfaces and a richer knowledge graph.</span>
+            </div>
+            <span class="accordion-status under-review">Under Review</span>
+          </summary>
+          <div class="accordion-content">
+            <p class="changelog-theme">This release adds two entirely new reading surfaces and reworks how notes connect. GitHub Repository Reader lets you browse repositories without leaving Mark It Down: navigate the file tree, follow links between files, and import what you want into your notes. RSS Reader grows from a small modal into a full-screen workspace with the same Markdown rendering quality as your own notes. The note graph replaces the shifting force-directed layout with a consistent outline tree and an interactive radial view with zoom and pan.</p>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">New Features</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>GitHub Repository Reader</strong> <span>Browse any public GitHub repository without leaving Mark It Down. Open a repository by URL, navigate the file tree, and view Markdown files with full rendering: code blocks, diagrams, math, callouts, and images. Pin a repository so it reopens next time. Private repositories work with a personal access token. Any file can be imported into your Inbox with one click.</span></li>
+                <li><strong>RSS Reader becomes a full-screen workspace</strong> <span>A left feed and filter sidebar, a central article list and reading pane, and a right inspector showing metadata, tags, and headings. Filter by tag, search inline, dismiss articles with Undo, and save articles to Inbox in one step. Ctrl+Shift+R opens the surface directly.</span></li>
+                <li><strong>Note graph: outline tree and radial view</strong> <span>The outline view shows your notes as a navigable tree you can expand, collapse, and re-root. The radial view arranges linked notes around a center node with wheel zoom, drag pan, and a Reset button. A graph view is also available inside Repository Reader, showing how files in a repository link to each other.</span></li>
+                <li><strong>Frontmatter editor modal</strong> <span>Editing note metadata now opens a dedicated modal. Suggested values from the note itself and from the clipped page appear as chips you can click to apply. Copy as YAML and Clear all are available from the header menu.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Improvements</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>RSS articles render like your notes</strong> <span>Article previews use the same rendering engine as the main editor: the same fonts, heading styles, code blocks, and Markdown formatting.</span></li>
+                <li><strong>RSS article inspector</strong> <span>The right panel shows the article's heading structure as a table of contents with scroll tracking. Click a heading to jump to that section.</span></li>
+                <li><strong>Repository Reader: wikilinks and Obsidian vaults</strong> <span>Wikilinks between files in the same repository work as navigation. Obsidian highlights, comments, and callout types render with their full styling, including collapsible sections.</span></li>
+                <li><strong>Repository Reader: navigation history</strong> <span>Back and Forward buttons in the header, Alt+Left / Alt+Right shortcuts, and a heading-level quick switcher (Ctrl+K) for jumping to any file by name.</span></li>
+                <li><strong>Repository Reader: backlinks panel</strong> <span>The right panel lists other files that link to the one you are reading, with hover previews. Click to navigate.</span></li>
+                <li><strong>Quieter sidebar rows</strong> <span>Status details (unprocessed marker, Git pending state, note size) move from every note row into a hover card. Git pending is indicated only by a subtle title color change.</span></li>
+                <li><strong>Japanese text wraps naturally</strong> <span>Japanese UI text (sidebar titles, modal labels, tooltips) now wraps at natural phrase boundaries rather than mid-word.</span></li>
+                <li><strong>Filename becomes the note title on import</strong> <span>Markdown files without a title field or top-level heading now use their filename as the note title, preventing a wave of untitled notes after a bulk import.</span></li>
+              </ul>
+            </div>
+            <div class="changelog-group">
+              <h3 class="changelog-group-title">Fixed</h3>
+              <ul class="changelog-features" role="list">
+                <li><strong>Large Markdown tables</strong> <span>Files made up entirely of large tables now open correctly instead of appearing blank or truncated.</span></li>
+                <li><strong>Appearance panel during Focus Mode</strong> <span>The Appearance and theme panel can now be opened and used while Focus Mode is active.</span></li>
+                <li><strong>Frontmatter with leading blank lines</strong> <span>Files with blank lines or whitespace before the opening frontmatter block now import their metadata correctly.</span></li>
+                <li><strong>Git sync with spaces in filenames</strong> <span>Pulling from Git now correctly matches notes whose filenames contain spaces, instead of creating duplicate notes.</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <!-- v2.2.9 -->
+        <details class="accordion-item">
           <summary class="accordion-header">
             <div class="accordion-title">
               <span class="accordion-icon"></span>
               <span class="accordion-version">v2.2.9</span>
               <span class="accordion-highlight">OKF bundles carry their references forward, and the knowledge graph becomes easier to explore.</span>
             </div>
-            <span class="accordion-status under-review">Under Review</span>
+            <span class="accordion-status released">Released</span>
           </summary>
           <div class="accordion-content">
             <p class="changelog-theme">Knowledge stays connected when it leaves the editor. OKF bundles now carry their sources as a numbered reference list, and links between notes resolve correctly inside the exported bundle. The concept graph got a round of usability work: labels that don't overlap, amber highlights on selection, a persistent Reset button, and first-time guidance. The Portability Hub adds heading-structure warnings, and the frontmatter panel suggests standard values for confidence and source fields.</p>
