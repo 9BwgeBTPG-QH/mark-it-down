@@ -10,7 +10,8 @@ docs/
 ├── index-ja.html           # Landing page (Japanese)
 ├── privacy-policy.html     # Privacy policy (English)
 ├── privacy-policy-ja.html  # Privacy policy (Japanese)
-├── style.css               # Shared styles (dark theme)
+├── style.css               # Shared styles (warm/cream palette, generated — see CSS Workflow below)
+├── style.src.css           # Shared styles, readable source (edit this, not style.css)
 ├── favicon.png             # 128x128 icon
 ├── icon-*.png              # Extension icons (16/48/128)
 ├── screenshots/            # Screenshots for landing page
@@ -72,6 +73,16 @@ Update the Chrome Web Store links in:
 - `docs/index-ja.html` (line 51)
 
 Replace `href="#"` with the actual Chrome Web Store URL.
+
+## CSS Workflow
+
+- `docs/style.src.css` is the readable source — edit this file.
+- `docs/style.css` is the generated, minified file GitHub Pages actually serves — do not hand-edit it.
+- After editing `docs/style.src.css`, regenerate `docs/style.css`:
+  ```
+  npx --yes clean-css-cli docs/style.src.css -o docs/style.css
+  ```
+- Commit both files together.
 
 ## Update Notes
 

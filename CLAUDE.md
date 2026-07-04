@@ -23,7 +23,8 @@ docs/                    # GitHub Pages site (deployed)
 ├── troubleshooting.html / troubleshooting-ja.html
 ├── feedback.html / feedback-ja.html
 ├── privacy-policy.html / privacy-policy-ja.html
-└── style.css                            # Shared styles
+├── style.src.css                        # Shared styles, readable source (edit this)
+└── style.css                            # Shared styles, generated/minified (deployed; do not hand-edit)
 
 ref/                     # Source app docs (gitignore, local only)
 ├── README.md            # App README - authoritative source
@@ -49,6 +50,11 @@ When releasing a new version:
 - **Glassmorphism Accordion**: All content pages (Features, Changelog, FAQ, Troubleshooting) use CSS-only `<details>` accordions. No JavaScript required.
 - **Color Palette**: Notion-style warm palette
 - **Icons**: Emoji + SVG (e.g., Git official logo)
+
+### CSS Workflow
+- Edit `docs/style.src.css` (readable source). Never hand-edit `docs/style.css` — it's generated.
+- Regenerate after editing: `npx --yes clean-css-cli docs/style.src.css -o docs/style.css`
+- Commit both files together.
 
 ---
 
