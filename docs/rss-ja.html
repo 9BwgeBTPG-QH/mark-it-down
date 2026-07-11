@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="ja"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSS Reader: ローカルMarkdownノートへ保存 — Mark It Down</title>
+  <meta name="description" content="Mark It Downの全画面RSS Readerでフィードを読み、OPMLを取り込み、記事を確認し、必要なものだけInboxのローカルMarkdownノートへ保存。">
+  <meta name="theme-color" content="#F2EDE4">
+  <meta property="og:title" content="RSS Reader: ローカルMarkdownノートへ保存 — Mark It Down">
+  <meta property="og:description" content="Mark It Downの全画面RSS Readerでフィードを読み、OPMLを取り込み、記事を確認し、必要なものだけInboxのローカルMarkdownノートへ保存。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="jp-dark.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="preload" href="fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BGZ2T3RGJW');
+  </script>
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage;
+      if (false) {
+        window.location.replace('rss.html');
+      }
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "RSS Reader: ローカルMarkdownノートへ保存 — Mark It Down",
+    "description": "Mark It Downの全画面RSS Readerでフィードを読み、OPMLを取り込み、記事を確認し、必要なものだけInboxのローカルMarkdownノートへ保存。",
+    "inLanguage": "ja",
+    "url": "https://markitdown.reduktion.dev/rss-ja.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mark It Down",
+      "url": "https://markitdown.reduktion.dev/"
+    }
+  }
+  </script>
+  <link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/rss-ja.html">
+  <link rel="alternate" hreflang="en" href="https://markitdown.reduktion.dev/rss.html">
+  <link rel="alternate" hreflang="x-default" href="https://markitdown.reduktion.dev/rss.html">
+</head>
+<body style="word-break: keep-all; overflow-wrap: anywhere;">
+  <a href="#main-content" class="skip-to-content">本文へ​移動</a>
+  <div class="container">
+    <nav class="header-nav" aria-label="メインナビゲーション">
+      <ul>
+        <li><a href="index-ja.html">ホーム</a></li>
+        <li><a href="why-ja.html">MIDとは</a></li>
+        <li><a href="features-ja.html">機能</a></li>
+        <li><a href="okf-ja.html">OKF</a></li>
+        <li><a href="templates-ja.html">テンプレート</a></li>
+        <li style="word-break: keep-all; overflow-wrap: anywhere;"><a href="faq-ja.html">よく​ある​質問</a></li>
+        <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
+        <li><a href="changelog-ja.html">更新履歴</a></li>
+        <li><a href="feedback-ja.html">フィードバック</a></li>
+        <li><a href="privacy-policy-ja.html">プライバシー</a></li>
+        <li class="lang-switcher"><a href="rss.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a></li>
+      </ul>
+    </nav>
+    <header role="banner">
+      <div class="header-logo">
+        <a href="index-ja.html" aria-label="Mark It Down ホーム">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <span class="site-title">Mark It Down</span>
+        </a>
+      </div>
+      <p class="tagline" style="word-break: keep-all; overflow-wrap: anywhere;">フィードを​読む。​書き直すものだけ残す。</p>
+    </header>
+
+    <main id="main-content" role="main">
+      <section class="hero" aria-labelledby="rss-ja-hero-heading">
+        <span class="section-label">RSS Reader</span>
+        <h1 id="rss-ja-hero-heading" class="hero-tagline" style="word-break: keep-all; overflow-wrap: anywhere;">ローカルMarkdownノートの​ための​RSS Reader</h1>
+        <p class="hero-subtitle" style="word-break: keep-all; overflow-wrap: anywhere;">Mark It Downの​全画​面RSS Readerで​フィードを​読み、​OPMLを​取り込み、​記事を​確認し、​必要な​ものだけInboxの​ローカルMarkdownノートへ​保存。</p>
+        <span class="hero-ornament" aria-hidden="true">~ ~ ~</span>
+      </section>
+
+      <section class="philosophy" aria-labelledby="rss-workspace-heading">
+        <span class="section-label">Workspace</span>
+        <h2 id="rss-workspace-heading" style="word-break: keep-all; overflow-wrap: anywhere;">放置する​Inboxではなく、​エディタ内の​読む場所。</h2>
+        <div class="why-narrative">
+          <p style="word-break: keep-all; overflow-wrap: anywhere;">RSS Reader は​フィード専用の​全画​面ワークスペースです。​左に​フィード、​中央に​記事一覧と​本文、​右に​メタデータを​置きます。</p>
+        </div>
+        <ul class="coming-soon-list coming-soon-list--spaced" role="list">
+          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>全画面で​読む</strong> — 別アプリや​別タブを​開かず、​フィード一覧から​記事表示へ​移れます。</li>
+          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>記事インスペクタ</strong> — 保存する​前に、​メタデータ、​タグ、​見出しを​確認できます。</li>
+          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>Inboxへ​保存</strong> — 選んだ​記事だけを​保存し、​通常の​ローカルMarkdownノートと​して​書き直せます。</li>
+        </ul>
+      </section>
+
+      <section class="philosophy" aria-labelledby="rss-sync-heading">
+        <span class="section-label">Subscriptions</span>
+        <h2 id="rss-sync-heading" style="word-break: keep-all; overflow-wrap: anywhere;">購読リストは​持ち​運べる。​本文保存は​意図した​ときだけ。</h2>
+        <div class="why-narrative">
+          <p style="word-break: keep-all; overflow-wrap: anywhere;">RSS設定は​移動できますが、​記事本文は​明示的に​クリップした​ときだけ​保存します。​便利な​Readerで​ありながら、​見えない​大量アーカイブに​はしません。</p>
+        </div>
+        <ul class="coming-soon-list coming-soon-list--spaced" role="list">
+          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>OPML import / export</strong> — Feedly、​Inoreader、​NetNewsWireなどの​OPML 2.0リーダーから​購読リストを​持ち込めます。</li>
+          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>RSS設定の​Git同期</strong> — フィードと​denylist設定を​デバイス間で​同期し、​権限は​各デバイスに​分けて​保持します。</li>
+          <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>Web subscription</strong> — RSSの​ない​サイトでは​記事URLと​タイトルを​先に​取得し、​本文は​明示的に​clipした​ときだけ​保存します。</li>
+        </ul>
+      </section>
+
+      <section class="cta-section" aria-labelledby="rss-ja-cta-heading">
+        <h2 id="rss-ja-cta-heading" style="word-break: keep-all; overflow-wrap: anywhere;">読むことを、​未処理リストではなく​ノートに​変える。</h2>
+        <div class="buttons" style="word-break: keep-all; overflow-wrap: anywhere;">
+          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Chrome ウェブストアから Mark It Down を入手" onclick="gtag('event','cta_click',{event_category:'engagement',event_label:'rss-ja'})">拡張機能を​入手する</a>​
+          <a href="features-ja.html" class="btn btn-secondary">機能を​見る</a>​
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-brand">
+        <img src="icon-128.png" alt="" aria-hidden="true">
+        <span>Mark It Down</span>
+      </div>
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <ul>
+          <li><a href="index-ja.html">ホーム</a></li>
+          <li><a href="why-ja.html">MIDとは</a></li>
+          <li><a href="features-ja.html">機能</a></li>
+          <li><a href="clipper-ja.html">Web Clipper</a></li>
+          <li><a href="rss-ja.html">RSS Reader</a></li>
+          <li><a href="okf-ja.html">OKF</a></li>
+          <li><a href="templates-ja.html">テンプレート</a></li>
+          <li style="word-break: keep-all; overflow-wrap: anywhere;"><a href="faq-ja.html">よく​ある​質問</a></li>
+          <li><a href="troubleshooting-ja.html">トラブルシューティング</a></li>
+          <li><a href="changelog-ja.html">更新履歴</a></li>
+          <li><a href="feedback-ja.html">フィードバック</a></li>
+          <li><a href="privacy-policy-ja.html">プライバシー</a></li>
+          <li class="lang-switcher"><a href="rss.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a></li>
+        </ul>
+      </nav>
+      <p><span>© 2025-2026 reduktion.dev</span></p>
+    </footer>
+  </div>
+
+
+</body></html>

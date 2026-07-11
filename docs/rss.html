@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSS Reader for Local Markdown Notes — Mark It Down</title>
+  <meta name="description" content="Read RSS feeds in a full-screen Mark It Down workspace, import OPML, inspect articles, and save selected items to local Markdown notes in Inbox.">
+  <meta name="theme-color" content="#F2EDE4">
+  <meta property="og:title" content="RSS Reader for Local Markdown Notes — Mark It Down">
+  <meta property="og:description" content="Read RSS feeds in a full-screen Mark It Down workspace, import OPML, inspect articles, and save selected items to local Markdown notes in Inbox.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="en-dark.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="preload" href="fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BGZ2T3RGJW');
+  </script>
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage;
+      if (lang.startsWith('ja') && !sessionStorage.getItem('langOverride')) {
+        window.location.replace('rss-ja.html');
+      }
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "RSS Reader for Local Markdown Notes — Mark It Down",
+    "description": "Read RSS feeds in a full-screen Mark It Down workspace, import OPML, inspect articles, and save selected items to local Markdown notes in Inbox.",
+    "inLanguage": "en",
+    "url": "https://markitdown.reduktion.dev/rss.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mark It Down",
+      "url": "https://markitdown.reduktion.dev/"
+    }
+  }
+  </script>
+  <link rel="alternate" hreflang="en" href="https://markitdown.reduktion.dev/rss.html">
+  <link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/rss-ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://markitdown.reduktion.dev/rss.html">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="container">
+    <nav class="header-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="why.html">Philosophy</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="okf.html">OKF</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li class="lang-switcher"><a href="rss-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a></li>
+      </ul>
+    </nav>
+    <header role="banner">
+      <div class="header-logo">
+        <a href="index.html" aria-label="Mark It Down Home">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <span class="site-title">Mark It Down</span>
+        </a>
+      </div>
+      <p class="tagline">Read feeds. Keep only what you will rewrite.</p>
+    </header>
+
+    <main id="main-content" role="main">
+      <section class="hero" aria-labelledby="rss-hero-heading">
+        <span class="section-label">RSS Reader</span>
+        <h1 id="rss-hero-heading" class="hero-tagline">RSS Reader for local Markdown notes</h1>
+        <p class="hero-subtitle">Read RSS feeds in a full-screen Mark It Down workspace, import OPML, inspect articles, and save selected items to local Markdown notes in Inbox.</p>
+        <span class="hero-ornament" aria-hidden="true">~ ~ ~</span>
+      </section>
+
+      <section class="philosophy" aria-labelledby="rss-workspace-heading">
+        <span class="section-label">Workspace</span>
+        <h2 id="rss-workspace-heading">A reader surface inside the editor, not another inbox to ignore.</h2>
+        <div class="why-narrative">
+          <p>RSS Reader gives feeds their own full-screen workspace: feed list on the left, article list and reading pane in the center, and metadata on the right.</p>
+        </div>
+        <ul class="coming-soon-list coming-soon-list--spaced" role="list">
+          <li><strong>Full-screen reading</strong> — Move from feed list to article view without opening another app or browser tab.</li>
+          <li><strong>Article inspector</strong> — Review metadata, tags, and headings before deciding whether the article deserves a note.</li>
+          <li><strong>Inbox save</strong> — Save only the article you choose, then rewrite it as a normal local Markdown note.</li>
+        </ul>
+      </section>
+
+      <section class="philosophy" aria-labelledby="rss-sync-heading">
+        <span class="section-label">Subscriptions</span>
+        <h2 id="rss-sync-heading">Subscriptions stay portable. Article bodies stay intentional.</h2>
+        <div class="why-narrative">
+          <p>RSS settings can move with you, while article content is saved only when you explicitly clip it. That keeps the reader useful without turning it into a hidden bulk archive.</p>
+        </div>
+        <ul class="coming-soon-list coming-soon-list--spaced" role="list">
+          <li><strong>OPML import and export</strong> — Bring subscriptions from Feedly, Inoreader, NetNewsWire, and other OPML 2.0 readers.</li>
+          <li><strong>Git sync for settings</strong> — Sync feeds and denylist settings across devices while keeping permissions device-local.</li>
+          <li><strong>Web subscriptions</strong> — For sites without RSS, fetch article URLs and titles first; save body text only when you explicitly clip.</li>
+        </ul>
+      </section>
+
+      <section class="cta-section" aria-labelledby="rss-cta-heading">
+        <h2 id="rss-cta-heading">Turn reading into notes, not a backlog.</h2>
+        <div class="buttons">
+          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store" onclick="gtag('event','cta_click',{event_category:'engagement',event_label:'rss'})">Get the extension</a>
+          <a href="features.html" class="btn btn-secondary">See all features</a>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-brand">
+        <img src="icon-128.png" alt="" aria-hidden="true">
+        <span>Mark It Down</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="why.html">Philosophy</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="clipper.html">Web Clipper</a></li>
+          <li><a href="rss.html">RSS Reader</a></li>
+          <li><a href="okf.html">OKF</a></li>
+          <li><a href="templates.html">Templates</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+          <li class="lang-switcher"><a href="rss-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a></li>
+        </ul>
+      </nav>
+      <p><span>© 2025-2026 reduktion.dev</span></p>
+    </footer>
+  </div>
+</body>
+</html>

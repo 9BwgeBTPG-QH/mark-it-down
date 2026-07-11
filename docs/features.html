@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Features - Mark It Down</title>
-  <meta name="description" content="Explore all features of Mark It Down: GFM support, Git sync, dual mode, and more.">
+  <title>Features: Web Clipper, RSS Reader, Git Sync — Mark It Down</title>
+  <meta name="description" content="Explore Mark It Down features: Web Clipper, RSS Reader, Repository Reader, Obsidian-style wikilinks, Git sync, export, templates, and Focus Mode.">
   <meta name="theme-color" content="#FAFAF9">
   <!-- OGP -->
-  <meta property="og:title" content="Features - Mark It Down">
-  <meta property="og:description" content="Explore all features of Mark It Down: GFM support, Git sync, dual mode, and more.">
+  <meta property="og:title" content="Features: Web Clipper, RSS Reader, Git Sync — Mark It Down">
+  <meta property="og:description" content="Explore Mark It Down features: Web Clipper, RSS Reader, Repository Reader, Obsidian-style wikilinks, Git sync, export, templates, and Focus Mode.">
   <meta property="og:type" content="website">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
@@ -52,7 +52,7 @@
       <div class="header-logo">
         <a href="index.html" aria-label="Mark It Down Home">
           <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
-          <h1>Mark It Down</h1>
+          <span class="site-title">Mark It Down</span>
         </a>
       </div>
       <p class="tagline">Features</p>
@@ -61,7 +61,7 @@
     <main id="main-content" role="main">
       <!-- Introduction -->
       <section class="hero" aria-labelledby="intro-heading">
-        <h2 id="intro-heading" class="visually-hidden">Introduction</h2>
+        <h1 id="intro-heading" class="page-title">Features for Web Clipper, RSS Reader, and portable Markdown</h1>
         <p class="hero-tagline">Write in Markdown.</p>
         <p class="hero-subtitle">
           One pane. No distractions. <br>Write, see instantly.
@@ -93,6 +93,7 @@
               <li><strong>Zenn / Qiita / Hatena Blog</strong> <span>Japanese blogging platform embed syntax recognized and converted to standard Markdown. Hatena Blog footnotes become Markdown footnotes when clipped from RSS</span></li>
               <li><strong>Save Selection — Unified Quote Format</strong> <span>Saving selected text via right-click or RSS Quote Selection always produces the same structure: frontmatter (source URL + timestamp) + blockquote + attribution link + disclaimer footer</span></li>
               <li><strong>Ruby text → Aozora notation</strong> <span>Pages with <code>&lt;ruby&gt;</code> annotations (common in Japanese content) convert automatically to <code>漢字《かんじ》</code> notation. Long articles that mix footnotes, tables, code blocks, and images also clip more accurately</span></li>
+              <li><strong>Learn More</strong> <span>See the <a href="clipper.html">Web Clipper page</a> for the full walkthrough</span></li>
             </ul>
           </div>
         </details>
@@ -127,6 +128,7 @@
               <li><strong>Dead Feed Cleanup</strong> <span>When a feed fails repeatedly, a prompt surfaces to remove it or update the URL — keeping your subscription list healthy without manual audits</span></li>
               <li><strong>Conditional GET (ETag / Last-Modified)</strong> <span>Feed requests include <code>If-None-Match</code> and <code>If-Modified-Since</code> headers. Unchanged feeds return 304 and skip parsing — less bandwidth, faster cycles</span></li>
               <li><strong>Retention Split</strong> <span>Set separate retention periods for read and unread articles. Keep unread items longer, prune read ones sooner</span></li>
+              <li><strong>Learn More</strong> <span>See the <a href="rss.html">RSS Reader page</a> for the full walkthrough</span></li>
             </ul>
           </div>
         </details>
@@ -453,6 +455,8 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="features.html">Features</a></li>
+          <li><a href="clipper.html">Web Clipper</a></li>
+          <li><a href="rss.html">RSS Reader</a></li>
           <li><a href="okf.html">OKF</a></li>
           <li><a href="templates.html">Templates</a></li>
           <li><a href="faq.html">FAQ</a></li>

@@ -1,12 +1,12 @@
 <!DOCTYPE html><html lang="ja"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>機能 - Mark It Down</title>
-  <meta name="description" content="Mark It Downの全機能: GFM対応、Git同期、デュアルモードなど。">
+  <title>機能: Web Clipper・RSS Reader・Git同期 — Mark It Down</title>
+  <meta name="description" content="Mark It Downの機能一覧。Web Clipper、RSS Reader、Repository Reader、Obsidian風wikilink、Git同期、書き出し、テンプレートを掲載。">
   <meta name="theme-color" content="#FAFAF9">
   <!-- OGP -->
-  <meta property="og:title" content="機能 - Mark It Down">
-  <meta property="og:description" content="Mark It Downの全機能: GFM対応、Git同期、デュアルモードなど。">
+  <meta property="og:title" content="機能: Web Clipper・RSS Reader・Git同期 — Mark It Down">
+  <meta property="og:description" content="Mark It Downの機能一覧。Web Clipper、RSS Reader、Repository Reader、Obsidian風wikilink、Git同期、書き出し、テンプレートを掲載。">
   <meta property="og:type" content="website">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
@@ -24,6 +24,9 @@
     gtag('js', new Date());
     gtag('config', 'G-BGZ2T3RGJW');
   </script>
+  <link rel="alternate" hreflang="en" href="https://markitdown.reduktion.dev/features.html">
+  <link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/features-ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://markitdown.reduktion.dev/features.html">
 </head>
 <body style="word-break: keep-all; overflow-wrap: anywhere;">
   <a href="#main-content" class="skip-to-content">メインコンテンツへ</a>​
@@ -47,7 +50,7 @@
       <div class="header-logo">
         <a href="index-ja.html" aria-label="Mark It Down ホーム">
           <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
-          <h1>Mark It Down</h1>
+          <span class="site-title">Mark It Down</span>
         </a>
       </div>
       <p class="tagline">機能</p>
@@ -56,7 +59,7 @@
     <main id="main-content" role="main">
       <!-- Introduction -->
       <section class="hero" aria-labelledby="intro-heading">
-        <h2 id="intro-heading" class="visually-hidden">はじめに</h2>
+        <h1 id="intro-heading" class="page-title" style="word-break: keep-all; overflow-wrap: anywhere;">Web Clipper、​RSS Reader、​ポータブルMarkdownの​機能</h1>
         <p class="hero-tagline" style="word-break: keep-all; overflow-wrap: anywhere;">Markdownで​書く。</p>
         <p class="hero-subtitle" style="word-break: keep-all; overflow-wrap: anywhere;">
           1ペイン。​集中できる。<br>書いて、​すぐ​見る。​
@@ -88,6 +91,7 @@
               <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>Zenn・Qiita・はてなブログ</strong> <span>プラットフォーム固有の​埋め込み構文を​認識し標準Markdownに​変換。​RSS経由のはてなブログ脚注は​Markdown footnoteに​変換</span></li>
               <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>Save Selection — 引用フォーマット統一</strong> <span>右クリック​「選択テキストを​保存」と​ RSS Quote Selection は​どちらも​同じ形で​出力される。​frontmatter​（保存元 URL・​日時）​+ blockquote + 出典リンク + フッター免責文</span></li>
               <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>ルビ →​ 青​空文庫記法に​変換</strong> <span><code>&lt;ruby&gt;</code> タグを​含むページを​取り込むと​ <code>漢字《かんじ》</code> 形式に​自動変換される。​脚注・表・コードブロック・画像を​含む長文ページの​取り込み品質も​改善した</span></li>
+              <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>詳しく​見る</strong>​ <span>詳しくは<a href="clipper-ja.html">​Web Clipperの​ページ</a>へ。</span></li>
             </ul>
           </div>
         </details>
@@ -122,6 +126,7 @@
               <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>死んだ​フィードの​クリーンアップ</strong> <span>フィードが​連続して​失敗すると​削除または​URL更新を​促すプロンプトを​表示。​購読リストを​手動で​監視しなくても​健全に​保てる</span></li>
               <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>Conditional GET​（ETag / Last-Modified）</strong>​ <span>フィードリクエストに​ <code>If-None-Match</code> / <code>If-Modified-Since</code> ヘッダーを​送信。​未更新フィードは​ 304 を​返しパースを​スキップ——通信量削減、​取得サイクル高速化</span></li>
               <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>保持期間の​分割設定</strong> <span>既読記事と​未読記事の​保持期間を​個別に​設定できる。​未読は​長く、​既読は​短くと​いった​運用が​可能</span></li>
+              <li style="word-break: keep-all; overflow-wrap: anywhere;"><strong>詳しく​見る</strong>​ <span>詳しくは<a href="rss-ja.html">​RSS Readerの​ページ</a>へ。</span></li>
             </ul>
           </div>
         </details>
@@ -448,6 +453,8 @@
         <ul>
           <li><a href="index-ja.html">ホーム</a></li>
           <li><a href="features-ja.html">機能</a></li>
+          <li><a href="clipper-ja.html">Web Clipper</a></li>
+          <li><a href="rss-ja.html">RSS Reader</a></li>
           <li><a href="okf-ja.html">OKF</a></li>
           <li><a href="templates-ja.html">テンプレート</a></li>
           <li style="word-break: keep-all; overflow-wrap: anywhere;"><a href="faq-ja.html">よく​ある​質問</a></li>

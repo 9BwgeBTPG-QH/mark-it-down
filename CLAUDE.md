@@ -10,6 +10,8 @@ This is the **GitHub Pages website** for Mark It Down (Chrome extension Markdown
 
 The `ref/` folder contains the **source app documentation** (gitignore対象、ローカルのみ). Use `ref/README.md` as the authoritative source for app features and specifications.
 
+SEO キーワードの正本: `chorme_mark-it-down` リポジトリの `doc/technical-decisions/seo-keyword-map.md`（title / meta description / h1 を変更する前に必ず照合する）。
+
 ---
 
 ## Project Structure

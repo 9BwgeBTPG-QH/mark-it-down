@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Clipper for Markdown and AI Chats — Mark It Down</title>
+  <meta name="description" content="Right-click any page, AI chat, or selected text and turn it into clean Markdown in Mark It Down. Preview, trim, save to Inbox, and edit in Side Panel.">
+  <meta name="theme-color" content="#F2EDE4">
+  <meta property="og:title" content="Web Clipper for Markdown and AI Chats — Mark It Down">
+  <meta property="og:description" content="Right-click any page, AI chat, or selected text and turn it into clean Markdown in Mark It Down. Preview, trim, save to Inbox, and edit in Side Panel.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="en-dark.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="icon-128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="icon-128.png">
+  <link rel="preload" href="fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BGZ2T3RGJW');
+  </script>
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage;
+      if (lang.startsWith('ja') && !sessionStorage.getItem('langOverride')) {
+        window.location.replace('clipper-ja.html');
+      }
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Web Clipper for Markdown and AI Chats — Mark It Down",
+    "description": "Right-click any page, AI chat, or selected text and turn it into clean Markdown in Mark It Down. Preview, trim, save to Inbox, and edit in Side Panel.",
+    "inLanguage": "en",
+    "url": "https://markitdown.reduktion.dev/clipper.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mark It Down",
+      "url": "https://markitdown.reduktion.dev/"
+    }
+  }
+  </script>
+  <link rel="alternate" hreflang="en" href="https://markitdown.reduktion.dev/clipper.html">
+  <link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/clipper-ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://markitdown.reduktion.dev/clipper.html">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="container">
+    <nav class="header-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="why.html">Philosophy</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="okf.html">OKF</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li class="lang-switcher"><a href="clipper-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a></li>
+      </ul>
+    </nav>
+    <header role="banner">
+      <div class="header-logo">
+        <a href="index.html" aria-label="Mark It Down Home">
+          <img src="icon-128.png" alt="" class="logo-icon" aria-hidden="true">
+          <span class="site-title">Mark It Down</span>
+        </a>
+      </div>
+      <p class="tagline">Clip the web. Rewrite it in your own words.</p>
+    </header>
+
+    <main id="main-content" role="main">
+      <section class="hero" aria-labelledby="clipper-hero-heading">
+        <span class="section-label">Web Clipper</span>
+        <h1 id="clipper-hero-heading" class="hero-tagline">Web Clipper for pages, AI chats, and Markdown notes</h1>
+        <p class="hero-subtitle">Right-click any page, AI chat, or selected text and turn it into clean Markdown in Mark It Down. Preview, trim, save to Inbox, and edit in Side Panel.</p>
+        <span class="hero-ornament" aria-hidden="true">~ ~ ~</span>
+      </section>
+
+      <section class="philosophy" aria-labelledby="clipper-flow-heading">
+        <span class="section-label">Flow</span>
+        <h2 id="clipper-flow-heading">Right-click, preview, then keep the part worth rewriting.</h2>
+        <div class="why-narrative">
+          <p>Web Clipper is the Entry surface for web pages and AI output. It turns selected text or full pages into ordinary Markdown notes, then hands them to the same local editor as everything else.</p>
+        </div>
+        <ul class="coming-soon-list coming-soon-list--spaced" role="list">
+          <li><strong>Page and selection clipping</strong> — Save the current page or selected text as clean Markdown, with the source URL preserved.</li>
+          <li><strong>AI chat extraction</strong> — Capture useful output from Claude, ChatGPT, Grok, and Gemini without adding AI writing inside the editor.</li>
+          <li><strong>Side Panel editing</strong> — Open saved clips next to the page or chat they came from, so cleanup starts in context.</li>
+        </ul>
+      </section>
+
+      <section class="philosophy" aria-labelledby="clipper-quality-heading">
+        <span class="section-label">Fidelity</span>
+        <h2 id="clipper-quality-heading">Markdown that keeps structure instead of flattening it.</h2>
+        <div class="why-narrative">
+          <p>The clipper chooses extraction paths for the page shape, then keeps the result readable as plain Markdown. The goal is not bulk ingestion; it is a clean handoff into your own words.</p>
+        </div>
+        <ul class="coming-soon-list coming-soon-list--spaced" role="list">
+          <li><strong>Readable article structure</strong> — Headings, lists, code, tables, and links stay editable after capture.</li>
+          <li><strong>Specialized extractors</strong> — Social threads, publishing sites, YouTube transcripts, Mermaid blocks, and Japanese ruby annotations have dedicated handling.</li>
+          <li><strong>Local review step</strong> — Preview and clip filters let you trim the result before it becomes a note.</li>
+        </ul>
+      </section>
+
+      <section class="cta-section" aria-labelledby="clipper-cta-heading">
+        <h2 id="clipper-cta-heading">Clip less. Keep what matters.</h2>
+        <div class="buttons">
+          <a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store" onclick="gtag('event','cta_click',{event_category:'engagement',event_label:'clipper'})">Get the extension</a>
+          <a href="features.html" class="btn btn-secondary">See all features</a>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-brand">
+        <img src="icon-128.png" alt="" aria-hidden="true">
+        <span>Mark It Down</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="why.html">Philosophy</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="clipper.html">Web Clipper</a></li>
+          <li><a href="rss.html">RSS Reader</a></li>
+          <li><a href="okf.html">OKF</a></li>
+          <li><a href="templates.html">Templates</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+          <li class="lang-switcher"><a href="clipper-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a></li>
+        </ul>
+      </nav>
+      <p><span>© 2025-2026 reduktion.dev</span></p>
+    </footer>
+  </div>
+</body>
+</html>

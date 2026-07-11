@@ -237,7 +237,7 @@ header {
   object-fit: contain;
   opacity: 0.9;
 }
-header h1 {
+.site-title {
   font-family: var(--font-serif);
   font-size: var(--font-size-3xl);
   font-weight: 500;
@@ -371,6 +371,7 @@ main {
 section {
   margin-bottom: var(--spacing-section);
 }
+h1,
 h2 {
   font-family: var(--font-serif);
   font-size: var(--font-size-2xl);
@@ -2936,7 +2937,7 @@ footer a:hover {
     margin-left: calc(-1 * var(--spacing-sm));
     margin-right: calc(-1 * var(--spacing-sm));
   }
-  header h1 {
+  .site-title {
     font-size: var(--font-size-2xl);
   }
   .hero-tagline {
@@ -2964,7 +2965,7 @@ footer a:hover {
     font-size: var(--font-size-xl);
     max-width: 600px;
   }
-  header h1 {
+  .site-title {
     font-size: var(--font-size-4xl);
   }
   .philosophy-list {
