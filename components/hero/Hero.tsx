@@ -6,6 +6,14 @@ import { indexContent, type Lang } from '@/content/index';
 
 const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke';
 
+// Manuscript = the welcome note the user actually sees first (「UIが教師」).
+// JA: 2026-07-11 capture (2560x1080). EN: v2.2.10 placeholder until the
+// matching EN welcome capture arrives.
+const heroShot = {
+  en: { src: '/hero-mock/hero-screenshot.png', width: 1280, height: 800 },
+  ja: { src: '/hero-mock/hero-screenshot-ja.png', width: 1100, height: 688 },
+} as const;
+
 // index hero「一枚の紙」(#1593 案B採用、2026-07-11 ユーザー決定)。装飾なしの
 // 全幅タイポグラフィ + hairline 罫 + CTA。スクリーンショットは直下の独立
 // セクションに 2 枚目の紙として全幅で置く。Motion なし（完全静的）。
@@ -45,14 +53,14 @@ export function Hero({ lang }: { lang: Lang }) {
       <section className="mx-auto max-w-section px-4 pb-section-mobile lg:px-8 lg:pb-section">
         <div className="overflow-hidden rounded border border-hairline bg-paper">
           <Image
-            src="/hero-mock/hero-screenshot.png"
+            src={heroShot[lang].src}
             alt={
               ja
-                ? 'ブラウザタブで開いた Mark It Down エディタでノートを書き直している画面'
+                ? 'Mark It Down を開くと最初に表示されるウェルカムノート'
                 : 'Mark It Down editor open in a browser tab, showing a note being rewritten'
             }
-            width={1280}
-            height={800}
+            width={heroShot[lang].width}
+            height={heroShot[lang].height}
             className="h-auto w-full"
             priority
           />
