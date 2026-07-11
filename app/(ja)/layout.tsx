@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 import { Lora } from 'next/font/google';
+import { SiteNav } from '@/components/SiteNav';
+import { SiteFooter } from '@/components/SiteFooter';
 import '../globals.css';
 
 // Independent root layout for the (ja) route group — see app/(en)/layout.tsx
@@ -11,7 +13,11 @@ const lora = Lora({ subsets: ['latin'], variable: '--font-lora', display: 'swap'
 export default function JaLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ja" className={lora.variable}>
-      <body>{children}</body>
+      <body>
+        <SiteNav lang="ja" />
+        {children}
+        <SiteFooter lang="ja" />
+      </body>
     </html>
   );
 }
