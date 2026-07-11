@@ -63,6 +63,7 @@ export function Hero({ lang }: { lang: Lang }) {
             height={heroShot[lang].height}
             className="h-auto w-full"
             priority
+            fetchPriority="high"
           />
         </div>
       </section>
