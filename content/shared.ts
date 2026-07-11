@@ -40,12 +40,14 @@ export function navHref(slug: string, lang: Lang): string {
   return lang === 'en' ? `/${slug}.html` : `/${slug}-ja.html`;
 }
 
-// EN⇄JA switch always targets the home page: SiteNav/SiteFooter don't yet
-// receive the current page's JA/EN counterpart slug (only the index route is
-// wired in Phase 2). Pages built in later phases can pass a same-page target
-// once they exist on both sides.
-export function langSwitchHref(lang: Lang): string {
-  return lang === 'en' ? '/index-ja.html' : '/index.html';
+// EN⇄JA switch target for a given page: defaults to the home page (`slug`
+// omitted) but Phase 3's PageShell passes the current page's own slug so the
+// switch lands on that page's language counterpart instead of always
+// bouncing to index. Reuses navHref so the EN/JA filename mapping has one
+// source of truth.
+export function langSwitchHref(lang: Lang, slug: string = 'index'): string {
+  const targetLang: Lang = lang === 'en' ? 'ja' : 'en';
+  return navHref(slug, targetLang);
 }
 
 interface SharedCopy {

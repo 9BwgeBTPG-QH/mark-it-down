@@ -5,6 +5,10 @@ import { primaryNavLinks, navHref, langSwitchHref, sharedContent } from '@/conte
 interface SiteNavProps {
   lang: Lang;
   currentSlug?: string;
+  // Defaults to currentSlug so the EN/JA switch stays on the same page by
+  // default; only needed when a page's language counterpart lives at a
+  // different slug than its own.
+  langSwitchSlug?: string;
 }
 
 // DESIGN.md §6 "ナビ：常時表示・sticky。ブラー背景は使わず paper 不透明 +
@@ -13,7 +17,7 @@ interface SiteNavProps {
 // checkbox stays `sr-only` (not `hidden`) so it remains focusable/reachable
 // by keyboard per DESIGN.md §7 — `display: none` would drop it from the tab
 // order entirely.
-export function SiteNav({ lang, currentSlug = 'index' }: SiteNavProps) {
+export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentSlug }: SiteNavProps) {
   const copy = sharedContent[lang];
   const fontClass = lang === 'ja' ? 'font-sans-ja' : 'font-sans';
   const headingFontClass = lang === 'ja' ? 'font-sans-ja' : 'font-serif';
@@ -57,7 +61,7 @@ export function SiteNav({ lang, currentSlug = 'index' }: SiteNavProps) {
             })}
             <li>
               <a
-                href={langSwitchHref(lang)}
+                href={langSwitchHref(lang, langSwitchSlug)}
                 hrefLang={lang === 'en' ? 'ja' : 'en'}
                 className={`text-ink-muted transition-colors duration-instant ease-out hover:text-seal ${focusRing}`}
               >
