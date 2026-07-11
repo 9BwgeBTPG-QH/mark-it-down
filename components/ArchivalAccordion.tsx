@@ -7,6 +7,8 @@ export interface ArchivalAccordionItem {
   date?: string;
   title: ReactNode;
   content: ReactNode;
+  /** Renders the native `<details open>` attribute (e.g. troubleshooting's first item). */
+  defaultOpen?: boolean;
 }
 
 interface ArchivalAccordionProps {
@@ -26,7 +28,7 @@ export function ArchivalAccordion({ items, lang = 'en', className = '' }: Archiv
   return (
     <div className={`divide-y divide-hairline border-y border-hairline ${className}`}>
       {items.map((item) => (
-        <details key={item.id} className="group py-4">
+        <details key={item.id} className="group py-4" open={item.defaultOpen}>
           <summary className="flex cursor-pointer list-none items-baseline gap-4 [&::-webkit-details-marker]:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-seal">
             {item.index && <span className="text-caption text-ink-muted">{item.index}</span>}
             {item.date && <span className="text-caption text-ink-muted">{item.date}</span>}
