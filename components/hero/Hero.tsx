@@ -40,6 +40,7 @@ export function Hero({ lang }: { lang: Lang }) {
             variant="primary"
             target="_blank"
             rel="noreferrer noopener"
+            data-ga-cta="hero"
           >
             {copy.ctaPrimary}
           </SealButton>

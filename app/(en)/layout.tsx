@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { Lora, Raleway } from 'next/font/google';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import '../globals.css';
 
 // This is an independent Next.js root layout (via the (en) route group) so
@@ -14,7 +15,10 @@ const raleway = Raleway({ subsets: ['latin'], variable: '--font-raleway', displa
 export default function EnLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${lora.variable} ${raleway.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }

@@ -6,6 +6,8 @@ interface SealButtonProps extends Pick<AnchorHTMLAttributes<HTMLAnchorElement>, 
   lang?: Lang;
   children: ReactNode;
   className?: string;
+  // GA cta_click label, read by GoogleAnalytics' delegated click listener.
+  'data-ga-cta'?: string;
 }
 
 // DESIGN.md §5 "Seal Press": CTA `:active` presses the seal down —

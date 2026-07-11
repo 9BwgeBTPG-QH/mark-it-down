@@ -15,9 +15,9 @@ const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobel
 // (#1593 Phase 3-3). Unlike components/clipper/Cta.tsx and
 // components/rss/Cta.tsx (heading + two buttons), the old Features CTA has
 // only a single button — no secondary "See all features" link, since this
-// already is the features page. Old CTA button's inline gtag() analytics
-// call is dropped (no analytics wiring in this rebuild, same omission as
-// every other Cta.tsx in this codebase).
+// already is the features page. No data-ga-cta here: the old features pages
+// had no cta_click event (unlike hero/why/clipper/okf/rss), so only the
+// site-wide page_view from GoogleAnalytics applies (#1593 Phase 4 parity).
 export function Cta({ lang }: { lang: Lang }) {
   const copy = featuresSections[lang].cta;
   const ja = lang === 'ja';

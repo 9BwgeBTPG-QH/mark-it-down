@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { Lora } from 'next/font/google';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import '../globals.css';
 
 // Independent root layout for the (ja) route group — see app/(en)/layout.tsx
@@ -13,7 +14,10 @@ const lora = Lora({ subsets: ['latin'], variable: '--font-lora', display: 'swap'
 export default function JaLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ja" className={lora.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }

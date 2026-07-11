@@ -15,9 +15,10 @@ const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobel
 // body paragraph (like components/index/Cta.tsx) + a single button (like
 // components/features/Cta.tsx, since this already is a dedicated page with
 // no "see all templates" secondary link to add) — no version caption line.
-// Old CTA button's aria-label and inline gtag() analytics call are both
-// dropped, matching every other Cta.tsx in this codebase (SealButton's prop
-// type has no aria-label slot; there is no analytics wiring in this rebuild).
+// Old CTA button's aria-label is dropped (SealButton's prop type has no
+// aria-label slot). No data-ga-cta here: the old templates pages had no
+// cta_click event (unlike hero/why/clipper/okf/rss), so only the site-wide
+// page_view from GoogleAnalytics applies (#1593 Phase 4 parity).
 export function Cta({ lang }: { lang: Lang }) {
   const copy = templatesCta[lang];
   const ja = lang === 'ja';
