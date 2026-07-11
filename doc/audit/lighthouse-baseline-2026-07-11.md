@@ -8,13 +8,14 @@
 |---|---|---|---|---|---|---|
 | /index.html | 87 | 96 | 100 | 3.9 s | 0 | 120 ms |
 | /features.html | 89 | 100 | 100 | 3.8 s | 0 | 80 ms |
-| /clipper.html | 実行不可 | — | — | — | — | — |
-| /rss.html | 実行不可 | — | — | — | — | — |
+| /clipper.html | 89 | 96 | 100 | 3.7 s | 0 | 50 ms |
+| /rss.html | 100 | 96 | 100 | 1.4 s | 0 | 60 ms |
 
-## /clipper.html, /rss.html が実行不可だった理由
+## 計測メモ
 
-本番 URL (`https://markitdown.reduktion.dev/clipper.html`, `.../rss.html`) が **HTTP 404** を返すため Lighthouse がページロードに失敗した（`curl -o /dev/null -w "%{http_code}"` で確認済み）。
+- /index.html, /features.html: 2026-07-11 初回計測。
+- /clipper.html, /rss.html: 初回計測時は `eed65be` 未push のため本番 404 で実行不可だった。push 後（Pages 反映確認: HTTP 200）に同条件で再計測し追記（2026-07-11）。
 
-原因: ローカル `docs/clipper.html` / `docs/rss.html` は直近コミット `eed65be`（"feat(site): SEO keyword audit — page-specific title/meta/h1, clipper/rss landing pages (#1583, #1586, #1587)"）で新規追加されたページだが、この1コミットは `origin/main` に対して未push（`git log origin/main..HEAD` で確認）。GitHub Pages は `origin/main` から配信されるため、このページ群はまだ本番に存在しない。
+## ゲート値（Phase 4 で下回らないこと）
 
-対応方針（提案、未実施）: このコミットを push すれば本番に反映されるため、その後に再計測すれば4ページ揃う。今回はコミットしない指示のため push もしていない。
+Performance: index 87 / features 89 / clipper 89 / rss 100。Accessibility: index 96 / features 100 / clipper 96 / rss 96。
