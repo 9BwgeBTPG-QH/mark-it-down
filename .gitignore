@@ -7,6 +7,11 @@ node_modules/
 # Build outputs
 dist/
 
+# Next.js (chorme_mark-it-down#1593 rebuild)
+.next/
+out/
+next-env.d.ts
+
 # OS files
 .DS_Store
 Thumbs.db

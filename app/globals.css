@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal global application only — full design system lands in Phase 3. */
+@layer base {
+  body {
+    @apply bg-paper text-ink-2;
+  }
+}
