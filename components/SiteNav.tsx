@@ -16,7 +16,9 @@ interface SiteNavProps {
 // JS): a `peer` checkbox toggles the nav list via `peer-checked:`. The
 // checkbox stays `sr-only` (not `hidden`) so it remains focusable/reachable
 // by keyboard per DESIGN.md §7 — `display: none` would drop it from the tab
-// order entirely.
+// order entirely. No aria-hidden on it: a focusable element hidden from AT
+// fails axe aria-hidden-focus (Lighthouse a11y, #1593 Phase 4); the <label>
+// association provides its accessible name instead.
 export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentSlug }: SiteNavProps) {
   const copy = sharedContent[lang];
   const fontClass = lang === 'ja' ? 'font-sans-ja' : 'font-sans';
@@ -31,7 +33,7 @@ export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentS
           {copy.brand}
         </a>
 
-        <input type="checkbox" id="site-nav-toggle" className="peer sr-only" aria-hidden="true" />
+        <input type="checkbox" id="site-nav-toggle" className="peer sr-only" />
         <label
           htmlFor="site-nav-toggle"
           className={`cursor-pointer rounded-sm border border-hairline px-3 py-2 text-caption text-ink-2 lg:hidden ${fontClass}`}
