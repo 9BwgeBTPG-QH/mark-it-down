@@ -49,9 +49,23 @@ When releasing a new version:
 4. `sitemap.xml`: Update `<lastmod>` for changed pages
 
 ### Design System
-- **Glassmorphism Accordion**: All content pages (Features, Changelog, FAQ, Troubleshooting) use CSS-only `<details>` accordions. No JavaScript required.
-- **Color Palette**: Notion-style warm palette
-- **Icons**: Emoji + SVG (e.g., Git official logo)
+
+デザイン言語の正本はルート [`DESIGN.md`](DESIGN.md)（**Manuscript & Ink**、2026-07-11 策定、chorme_mark-it-down#1593）。トークン・タイポグラフィ・Do/Don't はすべてそちらを参照。
+
+- 現行サイトは旧デザイン（Notion風クリーム + Glassmorphism Accordion）のまま。#1593 の Next.js 再構築で DESIGN.md 準拠に置き換える
+- **旧クリーム `#f2ede4` と Glassmorphism は新規使用禁止**（DESIGN.md §8）
+- アコーディオンは CSS-only `<details>` を維持（archival index スタイルへ移行予定）
+
+### Redesign In Progress (#1593)
+
+確定済みの技術方針（詳細は chorme_mark-it-down#1593 本文）:
+
+- Next.js 15（App Router / SSG static export）+ Tailwind CSS + shadcn/ui + Framer Motion。3D 系ライブラリ禁止
+- 既存 URL 構造（フラット `.html`）と CNAME / Pages 設定を維持（`trailingSlash: false`）
+- デプロイ: ローカル `next build` → `docs/` 同期コミット（現行運用のまま）
+- SEO パリティゲート: title / meta / h1 / hreflang / sitemap の新旧自動 diff 必須
+- Lighthouse Performance / Accessibility を改善前ベースライン以上に維持
+- 外部 CDN 禁止（フォント・スクリプト・画像のセルフホスト）
 
 ### CSS Workflow
 - Edit `docs/style.src.css` (readable source). Never hand-edit `docs/style.css` — it's generated.
@@ -83,7 +97,7 @@ When releasing a new version:
 
 ### プラン承認基準
 - バイリンガルの整合性（EN/JAの内容が対応していること）を確認
-- 既存デザインシステム（Glassmorphism Accordion）を維持
+- デザインは `DESIGN.md`（Manuscript & Ink）準拠を確認
 - 同一ファイルの並行編集を含むプランは拒否
 
 ### タスク完了基準

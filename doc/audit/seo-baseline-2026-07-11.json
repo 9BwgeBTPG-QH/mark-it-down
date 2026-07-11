@@ -1,0 +1,845 @@
+{
+  "generatedAt": "2026-07-11T06:15:53.830Z",
+  "docsDir": "/mnt/c/Users/asano/mark-it-down/docs",
+  "excluded": [
+    "slides-en.html",
+    "slides-ja.html"
+  ],
+  "pageCount": 26,
+  "pages": [
+    {
+      "file": "changelog-ja.html",
+      "title": "更新履歴: RSS Reader・Web Clipper・書き出し — Mark It Down",
+      "metaDescription": "Mark It Downの更新履歴。RSS Reader、Web Clipper、Repository Reader、書き出し、Git同期、グラフ、エディタ改善を掲載。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/changelog.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/changelog-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/changelog.html"
+        }
+      ],
+      "ogTitle": "更新履歴: RSS Reader・Web Clipper・書き出し — Mark It Down",
+      "ogDescription": "Mark It Downの更新履歴。RSS Reader、Web Clipper、Repository Reader、書き出し、Git同期、グラフ、エディタ改善を掲載。",
+      "ogImage": null,
+      "firstH1": "Mark It Downの​更新履歴",
+      "jsonLd": []
+    },
+    {
+      "file": "changelog.html",
+      "title": "Changelog: RSS Reader, Web Clipper, Export — Mark It Down",
+      "metaDescription": "Version history for Mark It Down, including RSS Reader, Web Clipper, Repository Reader, export, Git sync, graph, and editor improvements.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/changelog.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/changelog-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/changelog.html"
+        }
+      ],
+      "ogTitle": "Changelog: RSS Reader, Web Clipper, Export — Mark It Down",
+      "ogDescription": "Version history for Mark It Down, including RSS Reader, Web Clipper, Repository Reader, export, Git sync, graph, and editor improvements.",
+      "ogImage": null,
+      "firstH1": "Changelog for Mark It Down features",
+      "jsonLd": []
+    },
+    {
+      "file": "clipper-ja.html",
+      "title": "Web Clipper: WebページとAIチャットをMarkdownへ — Mark It Down",
+      "metaDescription": "Webページ、AIチャット、選択テキストを右クリックでMarkdownに変換。プレビューして整え、Inboxへ保存し、Side Panelでそのまま編集できます。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/clipper-ja.html"
+        },
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/clipper.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/clipper.html"
+        }
+      ],
+      "ogTitle": "Web Clipper: WebページとAIチャットをMarkdownへ — Mark It Down",
+      "ogDescription": "Webページ、AIチャット、選択テキストを右クリックでMarkdownに変換。プレビューして整え、Inboxへ保存し、Side Panelでそのまま編集できます。",
+      "ogImage": "jp-dark.png",
+      "firstH1": "Webページ、​AIチャット、​Markdownノートの​ための​Web Clipper",
+      "jsonLd": [
+        {
+          "@type": "WebPage",
+          "softwareVersion": null
+        }
+      ]
+    },
+    {
+      "file": "clipper.html",
+      "title": "Web Clipper for Markdown and AI Chats — Mark It Down",
+      "metaDescription": "Right-click any page, AI chat, or selected text and turn it into clean Markdown in Mark It Down. Preview, trim, save to Inbox, and edit in Side Panel.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/clipper.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/clipper-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/clipper.html"
+        }
+      ],
+      "ogTitle": "Web Clipper for Markdown and AI Chats — Mark It Down",
+      "ogDescription": "Right-click any page, AI chat, or selected text and turn it into clean Markdown in Mark It Down. Preview, trim, save to Inbox, and edit in Side Panel.",
+      "ogImage": "en-dark.png",
+      "firstH1": "Web Clipper for pages, AI chats, and Markdown notes",
+      "jsonLd": [
+        {
+          "@type": "WebPage",
+          "softwareVersion": null
+        }
+      ]
+    },
+    {
+      "file": "faq-ja.html",
+      "title": "FAQ: 無料・ローカルMarkdownエディタ — Mark It Down",
+      "metaDescription": "Mark It Downのよくある質問。無料利用、オフライン執筆、ローカル保存、Web Clipper、Git同期、書き出しについて。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/faq.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/faq-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/faq.html"
+        }
+      ],
+      "ogTitle": "FAQ: 無料・ローカルMarkdownエディタ — Mark It Down",
+      "ogDescription": "Mark It Downのよくある質問。無料利用、オフライン執筆、ローカル保存、Web Clipper、Git同期、書き出しについて。",
+      "ogImage": null,
+      "firstH1": "無料・ローカルMarkdownエディタの​FAQ",
+      "jsonLd": [
+        {
+          "@type": "FAQPage",
+          "softwareVersion": null
+        }
+      ]
+    },
+    {
+      "file": "faq.html",
+      "title": "FAQ: Free Local Markdown Editor — Mark It Down",
+      "metaDescription": "Frequently asked questions about Mark It Down: free use, offline writing, local storage, Web Clipper behavior, Git sync, and export options.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/faq.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/faq-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/faq.html"
+        }
+      ],
+      "ogTitle": "FAQ: Free Local Markdown Editor — Mark It Down",
+      "ogDescription": "Frequently asked questions about Mark It Down: free use, offline writing, local storage, Web Clipper behavior, Git sync, and export options.",
+      "ogImage": null,
+      "firstH1": "FAQ for the free local Markdown editor",
+      "jsonLd": [
+        {
+          "@type": "FAQPage",
+          "softwareVersion": null
+        }
+      ]
+    },
+    {
+      "file": "features-ja.html",
+      "title": "機能: Web Clipper・RSS Reader・Git同期 — Mark It Down",
+      "metaDescription": "Mark It Downの機能一覧。Web Clipper、RSS Reader、Repository Reader、Obsidian風wikilink、Git同期、書き出し、テンプレートを掲載。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/features.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/features-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/features.html"
+        }
+      ],
+      "ogTitle": "機能: Web Clipper・RSS Reader・Git同期 — Mark It Down",
+      "ogDescription": "Mark It Downの機能一覧。Web Clipper、RSS Reader、Repository Reader、Obsidian風wikilink、Git同期、書き出し、テンプレートを掲載。",
+      "ogImage": null,
+      "firstH1": "Web Clipper、​RSS Reader、​ポータブルMarkdownの​機能",
+      "jsonLd": []
+    },
+    {
+      "file": "features.html",
+      "title": "Features: Web Clipper, RSS Reader, Git Sync — Mark It Down",
+      "metaDescription": "Explore Mark It Down features: Web Clipper, RSS Reader, Repository Reader, Obsidian-style wikilinks, Git sync, export, templates, and Focus Mode.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/features.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/features-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/features.html"
+        }
+      ],
+      "ogTitle": "Features: Web Clipper, RSS Reader, Git Sync — Mark It Down",
+      "ogDescription": "Explore Mark It Down features: Web Clipper, RSS Reader, Repository Reader, Obsidian-style wikilinks, Git sync, export, templates, and Focus Mode.",
+      "ogImage": null,
+      "firstH1": "Features for Web Clipper, RSS Reader, and portable Markdown",
+      "jsonLd": []
+    },
+    {
+      "file": "feedback-ja.html",
+      "title": "Mark It Down Markdownエディタへのフィードバック",
+      "metaDescription": "AI回答、Web記事、RSS、Gitで扱いやすいノートのためのローカルファーストMarkdownエディタ、Mark It Downへのフィードバック。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/feedback.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/feedback-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/feedback.html"
+        }
+      ],
+      "ogTitle": "Mark It Down Markdownエディタへのフィードバック",
+      "ogDescription": "AI回答、Web記事、RSS、Gitで扱いやすいノートのためのローカルファーストMarkdownエディタ、Mark It Downへのフィードバック。",
+      "ogImage": null,
+      "firstH1": "Mark It Downへの​フィードバック",
+      "jsonLd": []
+    },
+    {
+      "file": "feedback.html",
+      "title": "Feedback for Mark It Down Markdown Editor",
+      "metaDescription": "Send feedback about Mark It Down, the local-first Markdown editor and Web Clipper for AI answers, web articles, RSS, and Git-friendly notes.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/feedback.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/feedback-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/feedback.html"
+        }
+      ],
+      "ogTitle": "Feedback for Mark It Down Markdown Editor",
+      "ogDescription": "Send feedback about Mark It Down, the local-first Markdown editor and Web Clipper for AI answers, web articles, RSS, and Git-friendly notes.",
+      "ogImage": null,
+      "firstH1": "Feedback for Mark It Down",
+      "jsonLd": []
+    },
+    {
+      "file": "index-ja.html",
+      "title": "無料・ローカル完結 Markdown エディタ & Web クリッパー — Mark It Down",
+      "metaDescription": "AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/index.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/index-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/index.html"
+        }
+      ],
+      "ogTitle": "無料・ローカル完結 Markdown エディタ & Web クリッパー — Mark It Down",
+      "ogDescription": "AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。",
+      "ogImage": "jp-dark.png",
+      "firstH1": "無料・ローカル完結 ​Markdown エディタ",
+      "jsonLd": [
+        {
+          "@type": "SoftwareApplication",
+          "softwareVersion": "2.2.10"
+        }
+      ]
+    },
+    {
+      "file": "index.html",
+      "title": "Free Local Markdown Editor & Web Clipper — Mark It Down",
+      "metaDescription": "Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/index.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/index-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/index.html"
+        }
+      ],
+      "ogTitle": "Free Local Markdown Editor & Web Clipper — Mark It Down",
+      "ogDescription": "Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.",
+      "ogImage": "en-dark.png",
+      "firstH1": "Free local Markdown editor and Web Clipper",
+      "jsonLd": [
+        {
+          "@type": "SoftwareApplication",
+          "softwareVersion": "2.2.10"
+        }
+      ]
+    },
+    {
+      "file": "okf-ja.html",
+      "title": "OKF ポータブルMarkdownバンドル — Mark It Down",
+      "metaDescription": "Mark It DownのOpen Knowledge Format対応。持ち運べるMarkdown knowledge bundle、OKF import/export、Gitで扱えるファイル、ロックインしない作業フロー。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/okf.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/okf-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/okf.html"
+        }
+      ],
+      "ogTitle": "OKF ポータブルMarkdownバンドル — Mark It Down",
+      "ogDescription": "Mark It DownのOpen Knowledge Format対応。持ち運べるMarkdown knowledge bundle、OKF import/export、Gitで扱えるファイル、ロックインしない作業フロー。",
+      "ogImage": "jp-dark.png",
+      "firstH1": "Open Knowledge Format 対応",
+      "jsonLd": [
+        {
+          "@type": "WebPage",
+          "softwareVersion": null
+        }
+      ]
+    },
+    {
+      "file": "okf.html",
+      "title": "OKF Portable Markdown Bundles — Mark It Down",
+      "metaDescription": "How Mark It Down supports Open Knowledge Format: portable Markdown knowledge bundles, OKF import/export, Git-friendly files, and anti-lock-in workflows.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/okf.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/okf-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/okf.html"
+        }
+      ],
+      "ogTitle": "OKF Portable Markdown Bundles — Mark It Down",
+      "ogDescription": "How Mark It Down supports Open Knowledge Format: portable Markdown knowledge bundles, OKF import/export, Git-friendly files, and anti-lock-in workflows.",
+      "ogImage": "en-dark.png",
+      "firstH1": "Open Knowledge Format support",
+      "jsonLd": [
+        {
+          "@type": "WebPage",
+          "softwareVersion": null
+        }
+      ]
+    },
+    {
+      "file": "privacy-policy-ja.html",
+      "title": "プライバシー: ローカルファーストMarkdownエディタ — Mark It Down",
+      "metaDescription": "Mark It Downのプライバシーポリシー。ローカル保存、アカウント不要、Web Clipper権限、RSSフィード、任意のGit同期、Chrome拡張のデータ扱い。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/privacy-policy.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/privacy-policy-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/privacy-policy.html"
+        }
+      ],
+      "ogTitle": "プライバシー: ローカルファーストMarkdownエディタ — Mark It Down",
+      "ogDescription": "Mark It Downのプライバシーポリシー。ローカル保存、アカウント不要、Web Clipper権限、RSSフィード、任意のGit同期、Chrome拡張のデータ扱い。",
+      "ogImage": "jp-dark.png",
+      "firstH1": "ローカルファーストMarkdownエディタの​プライバシー",
+      "jsonLd": []
+    },
+    {
+      "file": "privacy-policy.html",
+      "title": "Privacy: Local-First Markdown Editor — Mark It Down",
+      "metaDescription": "Privacy policy for Mark It Down: local storage, no account, Web Clipper permissions, RSS feeds, optional Git sync, and Chrome extension data handling.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/privacy-policy.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/privacy-policy-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/privacy-policy.html"
+        }
+      ],
+      "ogTitle": "Privacy: Local-First Markdown Editor — Mark It Down",
+      "ogDescription": "Privacy policy for Mark It Down: local storage, no account, Web Clipper permissions, RSS feeds, optional Git sync, and Chrome extension data handling.",
+      "ogImage": "en-dark.png",
+      "firstH1": "Privacy for a local-first Markdown editor",
+      "jsonLd": []
+    },
+    {
+      "file": "rss-ja.html",
+      "title": "RSS Reader: ローカルMarkdownノートへ保存 — Mark It Down",
+      "metaDescription": "Mark It Downの全画面RSS Readerでフィードを読み、OPMLを取り込み、記事を確認し、必要なものだけInboxのローカルMarkdownノートへ保存。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/rss-ja.html"
+        },
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/rss.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/rss.html"
+        }
+      ],
+      "ogTitle": "RSS Reader: ローカルMarkdownノートへ保存 — Mark It Down",
+      "ogDescription": "Mark It Downの全画面RSS Readerでフィードを読み、OPMLを取り込み、記事を確認し、必要なものだけInboxのローカルMarkdownノートへ保存。",
+      "ogImage": "jp-dark.png",
+      "firstH1": "ローカルMarkdownノートの​ための​RSS Reader",
+      "jsonLd": [
+        {
+          "@type": "WebPage",
+          "softwareVersion": null
+        }
+      ]
+    },
+    {
+      "file": "rss.html",
+      "title": "RSS Reader for Local Markdown Notes — Mark It Down",
+      "metaDescription": "Read RSS feeds in a full-screen Mark It Down workspace, import OPML, inspect articles, and save selected items to local Markdown notes in Inbox.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/rss.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/rss-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/rss.html"
+        }
+      ],
+      "ogTitle": "RSS Reader for Local Markdown Notes — Mark It Down",
+      "ogDescription": "Read RSS feeds in a full-screen Mark It Down workspace, import OPML, inspect articles, and save selected items to local Markdown notes in Inbox.",
+      "ogImage": "en-dark.png",
+      "firstH1": "RSS Reader for local Markdown notes",
+      "jsonLd": [
+        {
+          "@type": "WebPage",
+          "softwareVersion": null
+        }
+      ]
+    },
+    {
+      "file": "templates-ja.html",
+      "title": "Markdownテンプレートギャラリー — Mark It Down",
+      "metaDescription": "Mark It Down用の38のMarkdownテンプレート。AI、生産性、ジャーナリング、開発、コンテンツ、思考の6カテゴリ。ローカルファーストな執筆ワークフローのために。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/templates.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/templates-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/templates.html"
+        }
+      ],
+      "ogTitle": "Markdownテンプレートギャラリー — Mark It Down",
+      "ogDescription": "Mark It Down用の38のMarkdownテンプレート。AI、生産性、ジャーナリング、開発、コンテンツ、思考の6カテゴリ。ローカルファーストな執筆ワークフローのために。",
+      "ogImage": "https://markitdown.reduktion.dev/icon-128.png",
+      "firstH1": "Markdownテンプレートギャラリー",
+      "jsonLd": []
+    },
+    {
+      "file": "templates.html",
+      "title": "Markdown Template Gallery — Mark It Down",
+      "metaDescription": "38 Markdown templates for Mark It Down: AI, productivity, journaling, development, content, and thinking templates for a local-first writing workflow.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/templates.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/templates-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/templates.html"
+        }
+      ],
+      "ogTitle": "Markdown Template Gallery — Mark It Down",
+      "ogDescription": "38 Markdown templates for Mark It Down: AI, productivity, journaling, development, content, and thinking templates for a local-first writing workflow.",
+      "ogImage": "https://markitdown.reduktion.dev/icon-128.png",
+      "firstH1": "Markdown Template Gallery",
+      "jsonLd": []
+    },
+    {
+      "file": "troubleshooting-ja.html",
+      "title": "トラブルシューティング: Web Clipper・RSS・Git同期 — Mark It Down",
+      "metaDescription": "Mark It Downのトラブルシューティング。Web Clipperの権限、RSSフィード、Git同期、ローカル保存、書き出し、Chrome拡張の挙動。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/troubleshooting.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/troubleshooting-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/troubleshooting.html"
+        }
+      ],
+      "ogTitle": "トラブルシューティング: Web Clipper・RSS・Git同期 — Mark It Down",
+      "ogDescription": "Mark It Downのトラブルシューティング。Web Clipperの権限、RSSフィード、Git同期、ローカル保存、書き出し、Chrome拡張の挙動。",
+      "ogImage": null,
+      "firstH1": "Web Clipper、​RSS、​Git同期の​トラブルシューティング",
+      "jsonLd": []
+    },
+    {
+      "file": "troubleshooting.html",
+      "title": "Troubleshooting Web Clipper, RSS, Git Sync — Mark It Down",
+      "metaDescription": "Troubleshooting for Mark It Down: Web Clipper permissions, RSS feeds, Git sync, local storage, export, and Chrome extension behavior.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/troubleshooting.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/troubleshooting-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/troubleshooting.html"
+        }
+      ],
+      "ogTitle": "Troubleshooting Web Clipper, RSS, Git Sync — Mark It Down",
+      "ogDescription": "Troubleshooting for Mark It Down: Web Clipper permissions, RSS feeds, Git sync, local storage, export, and Chrome extension behavior.",
+      "ogImage": null,
+      "firstH1": "Troubleshooting Web Clipper, RSS, and Git sync",
+      "jsonLd": []
+    },
+    {
+      "file": "welcome-ja.html",
+      "title": "ようこそ: ローカルMarkdownワークスペース — Mark It Down",
+      "metaDescription": "無料・ローカル完結のMarkdownワークスペース、Mark It Downをセットアップ。New Tab、Side Panel、Web Clipper、RSS、書き出しを使い始める。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/welcome.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/welcome-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/welcome.html"
+        }
+      ],
+      "ogTitle": "ようこそ: ローカルMarkdownワークスペース — Mark It Down",
+      "ogDescription": "無料・ローカル完結のMarkdownワークスペース、Mark It Downをセットアップ。New Tab、Side Panel、Web Clipper、RSS、書き出しを使い始める。",
+      "ogImage": null,
+      "firstH1": "ローカルMarkdownワークスペースへ​ようこそ",
+      "jsonLd": []
+    },
+    {
+      "file": "welcome.html",
+      "title": "Welcome: Local Markdown Workspace — Mark It Down",
+      "metaDescription": "Set up Mark It Down, the free local Markdown workspace for New Tab writing, Side Panel editing, Web Clipper capture, RSS, and export.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/welcome.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/welcome-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/welcome.html"
+        }
+      ],
+      "ogTitle": "Welcome: Local Markdown Workspace — Mark It Down",
+      "ogDescription": "Set up Mark It Down, the free local Markdown workspace for New Tab writing, Side Panel editing, Web Clipper capture, RSS, and export.",
+      "ogImage": null,
+      "firstH1": "Welcome to your local Markdown workspace",
+      "jsonLd": []
+    },
+    {
+      "file": "why-ja.html",
+      "title": "なぜローカルファーストなMarkdownを書くのか — Mark It Down",
+      "metaDescription": "Mark It Downの思想。AI生成を足さず、ローカルファーストなMarkdownで、自分の言葉に書き直すためのブラウザ作業場。",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/why.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/why-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/why.html"
+        }
+      ],
+      "ogTitle": "なぜローカルファーストなMarkdownを書くのか — Mark It Down",
+      "ogDescription": "Mark It Downの思想。AI生成を足さず、ローカルファーストなMarkdownで、自分の言葉に書き直すためのブラウザ作業場。",
+      "ogImage": "jp-dark.png",
+      "firstH1": "なぜ、​ローカルファーストな​Markdownを​書くのか",
+      "jsonLd": [
+        {
+          "@type": "WebPage",
+          "softwareVersion": null
+        }
+      ]
+    },
+    {
+      "file": "why.html",
+      "title": "Why Local-First Markdown Writing — Mark It Down",
+      "metaDescription": "The philosophy behind Mark It Down: local-first Markdown, no AI writing, no account wall, and a browser workspace built for rewriting in your own words.",
+      "metaRobots": null,
+      "canonical": null,
+      "hreflang": [
+        {
+          "hreflang": "en",
+          "href": "https://markitdown.reduktion.dev/why.html"
+        },
+        {
+          "hreflang": "ja",
+          "href": "https://markitdown.reduktion.dev/why-ja.html"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://markitdown.reduktion.dev/why.html"
+        }
+      ],
+      "ogTitle": "Why Local-First Markdown Writing — Mark It Down",
+      "ogDescription": "The philosophy behind Mark It Down: local-first Markdown, no AI writing, no account wall, and a browser workspace built for rewriting in your own words.",
+      "ogImage": "en-dark.png",
+      "firstH1": "Why local-first Markdown writing",
+      "jsonLd": [
+        {
+          "@type": "WebPage",
+          "softwareVersion": null
+        }
+      ]
+    }
+  ],
+  "sitemap": [
+    {
+      "loc": "https://markitdown.reduktion.dev/index.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/index-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/why.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/why-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/features.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/features-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/clipper.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/clipper-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/rss.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/rss-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/okf.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/okf-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/templates.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/templates-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/faq.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/faq-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/changelog.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/changelog-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/troubleshooting.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/troubleshooting-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/feedback.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/feedback-ja.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/privacy-policy.html",
+      "lastmod": "2026-07-11"
+    },
+    {
+      "loc": "https://markitdown.reduktion.dev/privacy-policy-ja.html",
+      "lastmod": "2026-07-11"
+    }
+  ]
+}
