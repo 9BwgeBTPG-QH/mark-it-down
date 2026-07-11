@@ -1,20 +1,14 @@
-import { indexContent, type Lang } from '@/content/index';
-import { Budoux } from '@/components/Budoux';
+import { Hero } from '@/components/hero/Hero';
+import type { Lang } from '@/content/index';
 
-// Shared skeleton for the EN/JA index page pair. Pulls its own copy from
+// Shared skeleton for the EN/JA index page pair. Copy lives in
 // content/index.ts so app/(en)/page.tsx and app/(ja)/index-ja/page.tsx stay
-// one-line wrappers. Visual design lands in Phase 3.
+// one-line wrappers. Hero is the approved「一枚の紙」layout (#1593 案B);
+// remaining index sections land in Phase 3.
 export function IndexPage({ lang }: { lang: Lang }) {
-  const copy = indexContent[lang];
-
   return (
-    <main className="mx-auto max-w-content px-4 py-24">
-      <h1 className={`text-h1-mobile md:text-h1 text-ink ${lang === 'ja' ? 'font-sans-ja' : 'font-serif'}`}>
-        {lang === 'ja' ? <Budoux text={copy.h1} /> : copy.h1}
-      </h1>
-      <p className={`mt-4 text-ink-2 ${lang === 'ja' ? 'font-sans-ja text-body-ja' : 'font-sans text-body'}`}>
-        {lang === 'ja' ? <Budoux text={copy.description} /> : copy.description}
-      </p>
+    <main>
+      <Hero lang={lang} />
     </main>
   );
 }

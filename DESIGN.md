@@ -158,3 +158,4 @@ CTA ボタンの `:active` で封蝋を押す感触: `translateY(1px)` + hairlin
 - 外部 CDN（フォント・スクリプト・画像とも）
 - `ink-faint` の本文使用（コントラスト FAIL）
 - `brass` の小サイズテキスト・UI コントロール使用
+- 封蝋モチーフの画像装飾（2026-07-11 決定: MID は誰かに宛てた手紙ではなく tear-off notepad / scratch pad — 自分の考えを書き留める場。brass トークン自体はロゴ用に維持）

@@ -25,6 +25,8 @@ const config: Config = {
         serif: ['var(--font-lora)', 'ui-serif', 'serif'],
         sans: ['var(--font-raleway)', 'ui-sans-serif', 'sans-serif'],
         'sans-ja': ['"Hiragino Sans"', '"Noto Sans JP"', 'Meiryo', 'sans-serif'],
+        // DESIGN.md §3: JA 見出しは Lora + 和文ゴシックの混植（Lora は約物・欧文にのみ効く）
+        'serif-ja': ['var(--font-lora)', '"Hiragino Sans"', '"Noto Sans JP"', 'Meiryo', 'sans-serif'],
       },
       fontSize: {
         // DESIGN.md §3 スケール（desktop / mobile variants both exposed as tokens）
