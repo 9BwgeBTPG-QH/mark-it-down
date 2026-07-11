@@ -29,3 +29,5 @@ __pycache__/
 # Claude
 .claude/
 docs/CLAUDE.md
+# lighthouse (WSL) が生成する Windows プロファイルのゴミ (#1593)
+undefined:/

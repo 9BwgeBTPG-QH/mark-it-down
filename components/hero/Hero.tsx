@@ -7,10 +7,9 @@ import { indexContent, type Lang } from '@/content/index';
 const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke';
 
 // Manuscript = the welcome note the user actually sees first (「UIが教師」).
-// JA: 2026-07-11 capture (2560x1080). EN: v2.2.10 placeholder until the
-// matching EN welcome capture arrives.
+// EN/JA: 2026-07-11 captures (2560x1080), cropped to the note column.
 const heroShot = {
-  en: { src: '/hero-mock/hero-screenshot.png', width: 1280, height: 800 },
+  en: { src: '/hero-mock/hero-screenshot.png', width: 1100, height: 688 },
   ja: { src: '/hero-mock/hero-screenshot-ja.png', width: 1100, height: 688 },
 } as const;
 
@@ -57,7 +56,7 @@ export function Hero({ lang }: { lang: Lang }) {
             alt={
               ja
                 ? 'Mark It Down を開くと最初に表示されるウェルカムノート'
-                : 'Mark It Down editor open in a browser tab, showing a note being rewritten'
+                : 'The welcome note you see when you first open Mark It Down'
             }
             width={heroShot[lang].width}
             height={heroShot[lang].height}
