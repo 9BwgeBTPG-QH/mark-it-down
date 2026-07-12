@@ -94,6 +94,7 @@ export interface IndexFaqItem {
 interface IndexSectionsCopy {
   philosophyEyebrow: string;
   philosophyHeading: string;
+  philosophyLede: string;
   philosophyItems: IndexBrokenItem[];
   flowEyebrow: string;
   flowHeading: string;
@@ -123,6 +124,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
   en: {
     philosophyEyebrow: 'Philosophy',
     philosophyHeading: 'Philosophy',
+    philosophyLede: 'Write it in your own words. It stays as memory.',
     philosophyItems: [
       {
         title: 'Capture first. Classify later.',
@@ -238,6 +240,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
   ja: {
     philosophyEyebrow: 'Philosophy',
     philosophyHeading: '哲学',
+    philosophyLede: '自分の言葉で書く。記憶として持続する。',
     philosophyItems: [
       {
         title: 'まず取り込む。分類はあとで。',

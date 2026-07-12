@@ -8,7 +8,8 @@ const icons = [PhilosophyCaptureIcon, PhilosophyDigestIcon, PhilosophyIntentIcon
 
 // Old docs/index.html "Philosophy" section, restored verbatim from eed65be
 // (original-design rollback, 2026-07-12): section-label eyebrow, visually
-// hidden h2, three philosophy-item cards with stroke icons.
+// hidden h2, three philosophy-item cards with stroke icons. philosophyLede
+// reuses Flow.tsx's .flow-description pattern (landing refinement R4).
 export function Philosophy({ lang }: { lang: Lang }) {
   const copy = indexSections[lang];
   const ja = lang === 'ja';
@@ -19,6 +20,7 @@ export function Philosophy({ lang }: { lang: Lang }) {
       <h2 id="philosophy-heading" className="visually-hidden">
         {copy.philosophyHeading}
       </h2>
+      <p className="flow-description">{ja ? <Budoux text={copy.philosophyLede} /> : copy.philosophyLede}</p>
       <ul className="philosophy-list" role="list">
         {copy.philosophyItems.map((item, i) => {
           const Icon = icons[i];
