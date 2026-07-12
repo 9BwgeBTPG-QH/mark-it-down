@@ -2,19 +2,16 @@
 
 import type { ReactNode } from 'react';
 import { useMemo, useState } from 'react';
-import { Card } from '@/components/Card';
 import {
   templateCategoryLabels,
   templateActionLabels,
   templateTagIdsBySlug,
   templateTagLabels,
   templateFilterCopy,
+  templateSummariesBySlug,
   type TemplateCategory,
 } from '@/content/templates';
 import type { Lang } from '@/content/index';
-
-const linkClass =
-  'text-seal underline decoration-seal/40 underline-offset-2 transition-colors duration-instant ease-out hover:decoration-seal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-seal';
 
 type CopyState = 'idle' | 'copied' | 'failed';
 
@@ -36,65 +33,58 @@ export interface TemplateGridCardData {
 interface TemplateGridClientProps {
   lang: Lang;
   cards: TemplateGridCardData[];
-  headingFont: string;
-  bodyFont: string;
-  captionFont: string;
 }
 
-// Client-interactive half of the templates gallery, restored per #1593
-// Phase 3-3 review: search + category filter tabs (with count badges) + tag
-// facets + clipboard-copy are genuine old-page functionality (docs/
-// templates.html / docs/templates-ja.html), not decorative chrome, and
-// Next.js client components are an accepted part of this stack (the earlier
-// "no new client JS" pass was overly conservative). The client boundary is
-// intentionally scoped to just this component — PageShell / Hero / Guide /
-// Cta, and the BudouX text-segmentation itself, stay server-side — to keep
-// the hydration bundle small.
+const CATEGORY_ORDER: TemplateCategory[] = ['ai', 'productivity', 'journaling', 'dev', 'content', 'thinking'];
+
+// Client-interactive half of docs/templates.html / docs/templates-ja.html's
+// gallery, restored verbatim from the old inline <script> (original-design
+// rollback, #1593 Wave R2 Batch 2): search input + category filter-tabs +
+// tag-facets + per-card visible tag chips + clipboard-copy. The client
+// boundary is intentionally scoped to just this component — PageShell /
+// Hero / Guide / Cta, and the BudouX text-segmentation itself, stay
+// server-side — to keep the hydration bundle small (see
+// components/templates/TemplateGrid.tsx for the Budoux precomputation).
 //
-// SEO note: all 39 cards are always rendered into the SSG output; filtering
-// only toggles a `hidden` class client-side (never conditional unmount), so
-// crawlers and the static HTML retain every card's full title/description
-// text regardless of the default filter state.
+// All 39 cards are always rendered into the SSG output; filtering only
+// toggles inline `display: none` client-side (never conditional unmount, and
+// never a "hidden" utility class), matching the old script's literal
+// `card.style.display = matches ? '' : 'none'` — crawlers and the static
+// HTML retain every card's full text regardless of the default filter
+// state.
 //
-// Search matches visible title + visible description + tag labels only. The
-// old page additionally matched a hidden `dataset.summary` field sourced from
-// docs/templates/index.json's `summary` field — that field was found to be
-// unreliable (several entries don't correspond to the visible on-page
-// description, e.g. ai/ai-conversation-archive's JSON summary describes an
-// unrelated paste-conversion feature), so it's deliberately not replicated
-// here to avoid surfacing that mismatch as confusing search results.
-//
-// Tag facets restore the old page's multi-select tag filter. Per-card visible
-// tag chips (the old page's injectTagChips()) are not restored — the
-// coordinator's restore list names the facet buttons, not per-card chip
-// display, so that's treated as a separate, not-yet-requested enhancement.
-export function TemplateGridClient({ lang, cards, headingFont, bodyFont, captionFont }: TemplateGridClientProps) {
+// Search matches visible title + visible description + the old page's
+// hidden `data-summary` field (docs/templates/index.json's per-template
+// `summary` text, not shown on the card) + `data-tags` (the card's raw,
+// language-neutral tag ids joined by a space — NOT the translated tag
+// labels shown in the chips/facets; this is a literal port of the old
+// script's `tagStr.includes(searchQuery)`, which searches the same id
+// strings regardless of language).
+export function TemplateGridClient({ lang, cards }: TemplateGridClientProps) {
   const categoryLabels = templateCategoryLabels[lang];
   const actionLabels = templateActionLabels[lang];
   const tagLabels = templateTagLabels[lang];
   const filterCopy = templateFilterCopy[lang];
+  const summaries = templateSummariesBySlug[lang];
 
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<TemplateCategory | 'all'>('all');
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
   const [copyState, setCopyState] = useState<Record<string, CopyState>>({});
 
-  const categories = useMemo(() => {
+  const categoryTabs = useMemo(() => {
     const counts: Record<string, number> = { all: cards.length };
     for (const card of cards) {
       counts[card.category] = (counts[card.category] ?? 0) + 1;
     }
-    const order: TemplateCategory[] = ['ai', 'productivity', 'journaling', 'dev', 'content', 'thinking'];
     return [
       { key: 'all' as const, label: filterCopy.allLabel, count: counts.all },
-      ...order
-        .filter((key) => counts[key] > 0)
-        .map((key) => ({ key, label: categoryLabels[key], count: counts[key] })),
+      ...CATEGORY_ORDER.map((key) => ({ key, label: categoryLabels[key], count: counts[key] ?? 0 })),
     ];
   }, [cards, categoryLabels, filterCopy.allLabel]);
 
-  // Tag ids actually used by this language's catalog, sorted by tag id
-  // (matches the old page's buildTagFacets() Object.keys(...).sort() order).
+  // Tag ids used by this language's catalog, sorted by tag id (matches the
+  // old page's buildTagFacets() Object.keys(tagCounts).sort() order).
   const tagFacetIds = useMemo(() => {
     const used = new Set<string>();
     for (const card of cards) {
@@ -103,18 +93,20 @@ export function TemplateGridClient({ lang, cards, headingFont, bodyFont, caption
     return Array.from(used).sort();
   }, [cards]);
 
-  const query = searchQuery.trim().toLowerCase();
+  const query = searchQuery.toLowerCase().trim();
 
-  function isCardVisible(card: TemplateGridCardData): boolean {
+  function isCardVisible(card: TemplateGridCardData, tagStr: string): boolean {
     if (activeCategory !== 'all' && card.category !== activeCategory) return false;
 
     const cardTagIds = templateTagIdsBySlug[card.slug] ?? [];
     if (activeTags.size > 0 && !cardTagIds.some((tagId) => activeTags.has(tagId))) return false;
 
     if (query.length > 0) {
-      const tagText = cardTagIds.map((tagId) => tagLabels[tagId] ?? tagId).join(' ').toLowerCase();
-      const haystack = `${card.title} ${card.description} ${tagText}`.toLowerCase();
-      if (!haystack.includes(query)) return false;
+      const title = card.title.toLowerCase();
+      const desc = card.description.toLowerCase();
+      const summary = (summaries[card.slug] ?? '').toLowerCase();
+      const matches = title.includes(query) || desc.includes(query) || summary.includes(query) || tagStr.includes(query);
+      if (!matches) return false;
     }
 
     return true;
@@ -143,69 +135,50 @@ export function TemplateGridClient({ lang, cards, headingFont, bodyFont, caption
     }, 2000);
   }
 
-  const tabButtonBase =
-    'rounded border px-3 py-1.5 text-caption transition-colors duration-instant ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-seal';
-
   return (
     <>
-      <div className="mb-6 flex flex-col gap-4">
-        <input
-          type="search"
-          value={searchQuery}
-          onChange={(event) => setSearchQuery(event.target.value)}
-          placeholder={filterCopy.searchPlaceholder}
-          aria-label={filterCopy.searchAriaLabel}
-          className={`w-full max-w-sm rounded border border-hairline bg-paper px-3 py-2 text-ink placeholder:text-ink-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-seal ${bodyFont}`}
-        />
+      <input
+        type="text"
+        value={searchQuery}
+        onChange={(event) => setSearchQuery(event.target.value)}
+        placeholder={filterCopy.searchPlaceholder}
+        aria-label={filterCopy.searchAriaLabel}
+        className="template-search-input"
+      />
 
-        <nav aria-label={filterCopy.filterNavAriaLabel} className="flex flex-wrap gap-2">
-          {categories.map(({ key, label, count }) => {
-            const isActive = activeCategory === key;
-            return (
-              <button
-                key={key}
-                type="button"
-                onClick={() => setActiveCategory(key)}
-                aria-pressed={isActive}
-                className={`${tabButtonBase} ${captionFont} ${
-                  isActive
-                    ? 'border-seal bg-seal/10 text-ink'
-                    : 'border-hairline bg-paper text-ink-2 hover:border-seal/40'
-                }`}
-              >
-                {label} ({count})
-              </button>
-            );
-          })}
-        </nav>
+      <nav className="filter-tabs" aria-label={filterCopy.filterNavAriaLabel}>
+        {categoryTabs.map(({ key, label, count }) => (
+          <button
+            key={key}
+            type="button"
+            data-filter={key}
+            onClick={() => setActiveCategory(key)}
+            className={activeCategory === key ? 'filter-btn active' : 'filter-btn'}
+          >
+            {label} ({count})
+          </button>
+        ))}
+      </nav>
 
-        {tagFacetIds.length > 0 && (
-          <div role="group" aria-label={filterCopy.tagFacetsAriaLabel} className="flex flex-wrap gap-2">
-            {tagFacetIds.map((tagId) => {
-              const isActive = activeTags.has(tagId);
-              return (
-                <button
-                  key={tagId}
-                  type="button"
-                  onClick={() => toggleTag(tagId)}
-                  aria-pressed={isActive}
-                  className={`${tabButtonBase} ${captionFont} ${
-                    isActive
-                      ? 'border-seal bg-seal/10 text-ink'
-                      : 'border-hairline bg-paper text-ink-muted hover:border-seal/40'
-                  }`}
-                >
-                  {tagLabels[tagId] ?? tagId}
-                </button>
-              );
-            })}
-          </div>
-        )}
+      <div className="tag-facets" id="tag-facets" role="group" aria-label={filterCopy.tagFacetsAriaLabel}>
+        {tagFacetIds.map((tagId) => (
+          <button
+            key={tagId}
+            type="button"
+            data-tag={tagId}
+            onClick={() => toggleTag(tagId)}
+            className={activeTags.has(tagId) ? 'tag-facet-btn active' : 'tag-facet-btn'}
+          >
+            {tagLabels[tagId] ?? tagId}
+          </button>
+        ))}
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="template-grid">
         {cards.map((card) => {
-          const visible = isCardVisible(card);
+          const cardTagIds = templateTagIdsBySlug[card.slug] ?? [];
+          const tagStr = cardTagIds.join(' ');
+          const visible = isCardVisible(card, tagStr);
           const state = copyState[card.slug] ?? 'idle';
           const copyLabel =
             state === 'copied'
@@ -215,19 +188,48 @@ export function TemplateGridClient({ lang, cards, headingFont, bodyFont, caption
                 : actionLabels.copyButton.idle;
 
           return (
-            <Card key={card.slug} variant="outline" className={visible ? '' : 'hidden'}>
-              <p className={`text-caption text-ink-muted ${captionFont}`}>{categoryLabels[card.category]}</p>
-              <h3 className={`mt-2 text-h3 text-ink ${headingFont}`}>{card.titleNode}</h3>
-              <p className={`mt-2 text-ink-2 ${bodyFont}`}>{card.descriptionNode}</p>
-              <div className="mt-4 flex flex-wrap gap-4">
-                <button type="button" onClick={() => handleCopy(card.slug, card.mdHref)} className={`${linkClass} ${bodyFont}`}>
+            <div
+              key={card.slug}
+              className="template-card"
+              data-category={card.category}
+              data-summary={(summaries[card.slug] ?? '').toLowerCase()}
+              data-tags={tagStr}
+              style={{ display: visible ? undefined : 'none' }}
+            >
+              <div className="template-card-header">
+                <span className={`category-badge badge-${card.category}`}>{categoryLabels[card.category]}</span>
+              </div>
+              <h3 className="template-card-title">{card.titleNode}</h3>
+              <p className="template-card-desc">{card.descriptionNode}</p>
+              {cardTagIds.length > 0 && (
+                <div className="template-tag-chips">
+                  {cardTagIds.map((tagId) => (
+                    <span className="template-tag-chip" key={tagId}>
+                      {tagLabels[tagId] ?? tagId}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <div className="template-card-actions">
+                <button
+                  type="button"
+                  data-template={card.slug}
+                  onClick={() => handleCopy(card.slug, card.mdHref)}
+                  className={state === 'copied' ? 'copy-btn copied' : 'copy-btn'}
+                >
                   {copyLabel}
                 </button>
-                <a href={card.viewHref} target="_blank" rel="noopener noreferrer" className={`${linkClass} ${bodyFont}`}>
-                  {actionLabels.openRaw}
+                <a
+                  href={card.viewHref}
+                  target="_blank"
+                  rel="noopener"
+                  className="open-btn"
+                  title={actionLabels.openButtonTitle}
+                >
+                  ↗
                 </a>
               </div>
-            </Card>
+            </div>
           );
         })}
       </div>

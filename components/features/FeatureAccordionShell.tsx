@@ -4,61 +4,48 @@ import type { Lang } from '@/content/index';
 
 interface FeatureAccordionShellProps {
   lang: Lang;
-  index: string;
   eyebrow: string;
   heading: string;
-  bg: 'paper' | 'paper-shade';
+  // Plain glyph string for every category except Git Sync, which passes its
+  // <GitSyncIcon /> brand SVG instead (see components/features/GitSyncIcon.tsx).
+  icon: ReactNode;
+  // Git Sync's .accordion-version carries an extra "accordion-icon-svg"
+  // class in the old markup (sizes/aligns the inline SVG); every other
+  // category's .accordion-version holds a plain glyph and omits it.
+  iconIsSvg?: boolean;
+  // Old docs/features.html only ever has the first accordion item (Web
+  // Clipper) pre-expanded via a bare `open` attribute; every other category
+  // starts collapsed.
+  open?: boolean;
   children: ReactNode;
 }
 
-// Shared <details>/<summary> shell for the Features page's category-level
-// disclosures (#1593 Phase 3-3 structural review: the old docs/features.html
-// kept each of its 11 categories collapsed behind an accordion — a
-// deliberate old-design information structure for catalog content — which
-// the earlier flat port had lost).
-//
-// components/ArchivalAccordion.tsx doesn't fit here: its <summary> title
-// renders as a plain <span> (text-h3), not a heading element — fine for its
-// existing callers (index page FAQ Q&A leaf items) where nothing below the
-// section's own <h2> needs its own heading level, but Features categories
-// ARE h2-level themselves (h1 Hero -> h2 category -> h3 item), so reusing
-// ArchivalAccordion verbatim would delete every category's <h2> from the
-// page outline. This shell keeps the same DESIGN.md §6 visual language
-// (archival index number, hairline border, group-open rotate arrow,
-// CSS-only details/summary — no client JS) while keeping a real <h2> inside
-// <summary>.
-//
-// Shared by components/features/FeatureCategoryAccordion.tsx (11 flat
-// categories) and components/features/ShortcutsSection.tsx (Keyboard
-// Shortcuts, whose body content is grouped rather than a flat item list, so
-// it composes this shell directly instead of going through
-// FeatureCategoryAccordion).
-export function FeatureAccordionShell({ lang, index, eyebrow, heading, bg, children }: FeatureAccordionShellProps) {
+// Shared <details>/<summary> shell for the Features page's 12 category-level
+// disclosures, restored verbatim to eed65be's old docs/features.html
+// .accordion-item markup (design-regression project #1593 Wave R2 Batch 2).
+// The old markup has no per-category heading element and no archival index
+// number or chevron affordance — .accordion-highlight is a single text node
+// joining the eyebrow and heading with an em dash, and the open/close state
+// is communicated purely by app/original.css's ::marker / rotate styling on
+// .accordion-header. FeaturesPage.tsx's own h1 (Hero) is the only heading in
+// the page outline until Keyboard Shortcuts' <h3 class="changelog-group-title">
+// group headings — categories themselves are not headings in the old design.
+export function FeatureAccordionShell({ lang, eyebrow, heading, icon, iconIsSvg, open, children }: FeatureAccordionShellProps) {
   const ja = lang === 'ja';
-  const headingFont = ja ? 'font-serif-ja' : 'font-serif';
-  const captionFont = ja ? 'font-sans-ja' : 'font-sans';
-  const bgClass = bg === 'paper' ? 'bg-paper' : 'bg-paper-shade';
+  const versionClass = iconIsSvg ? 'accordion-version accordion-icon-svg' : 'accordion-version';
 
   return (
-    <section className={`border-t border-hairline ${bgClass}`}>
-      <div className="mx-auto max-w-content px-4 py-section-mobile lg:px-8 lg:py-section">
-        <details className="group">
-          <summary className="flex cursor-pointer list-none items-baseline gap-4 [&::-webkit-details-marker]:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-seal">
-            <span className={`text-caption text-ink-muted ${captionFont}`}>{index}</span>
-            <span className="flex-1">
-              <p className={`text-caption text-ink-muted ${captionFont}`}>{eyebrow}</p>
-              <h2 className={`mt-2 text-h2 text-ink ${headingFont}`}>{ja ? <Budoux text={heading} /> : heading}</h2>
-            </span>
-            <span
-              aria-hidden="true"
-              className="text-ink-muted transition-transform duration-fast ease-out group-open:rotate-180 motion-reduce:transition-none"
-            >
-              &#8595;
-            </span>
-          </summary>
-          <div className="mt-6">{children}</div>
-        </details>
-      </div>
-    </section>
+    <details className="accordion-item" open={open}>
+      <summary className="accordion-header">
+        <div className="accordion-title">
+          <span className="accordion-icon"></span>
+          <span className={versionClass}>{icon}</span>
+          <span className="accordion-highlight">
+            {eyebrow} — {ja ? <Budoux text={heading} /> : heading}
+          </span>
+        </div>
+      </summary>
+      <div className="accordion-content">{children}</div>
+    </details>
   );
 }

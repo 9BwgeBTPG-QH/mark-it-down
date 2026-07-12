@@ -41,18 +41,27 @@ export const troubleshootingContent: Record<Lang, TroubleshootingCopy> = {
   },
 };
 
+// Inline run: a plain-text segment, or a single <strong>/<em>/<code> span.
+// Restored per #1593 Wave R2 fidelity requirement (previously flattened to
+// plain text — see git history of this file before the restoration commit).
+// Same shape as content/okf.ts's OkfInlineRun; not shared across files since
+// there is no third consumer.
+export type Run = string | { strong: string } | { em: string } | { code: string };
+
 // One `<details>` per issue (6 flat items, no categories). `group` covers the
 // nested `.changelog-group` sub-sections inside several items (e.g. "How to
 // Repair" / "What Gets Detected") — each is its own real heading followed by
 // its own blocks, one level deeper than the item itself. `termList` covers the
 // `.changelog-features` bullet lists whose <li> is a <strong> term followed by
 // a <span> description (e.g. "Duplicate notes — Notes with the same title...");
-// plain `list` covers ordinary <ul>/<ol> bullets elsewhere. Inline
-// <strong>/<em>/<code> spans within paragraphs/list items are flattened to
-// plain text, same precedent as content/faq.ts's FaqBlock.
+// these have no inline tags inside term/description themselves in the old
+// markup, so they stay plain strings. `list.items` is `Run[][]` — one run
+// array per `<li>` — since nearly every ordered-list item in this page's old
+// markup carries a leading `<strong>Label</strong>` and, in the RSS items,
+// embedded `<em>`/`<code>` spans mid-sentence.
 export type TroubleshootingBlock =
-  | { type: 'paragraph'; text: string }
-  | { type: 'list'; ordered: boolean; items: string[] }
+  | { type: 'paragraph'; runs: Run[] }
+  | { type: 'list'; ordered: boolean; items: Run[][] }
   | { type: 'termList'; items: { term: string; description: string }[] }
   | { type: 'group'; title: string; blocks: TroubleshootingBlock[] };
 
@@ -68,10 +77,10 @@ export interface TroubleshootingItem {
 export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
   en: [
     {
-      title: 'Storage Repair — Fix duplicate notes and data issues',
+      title: '🔧 Storage Repair — Fix duplicate notes and data issues',
       defaultOpen: true,
       blocks: [
-        { type: 'paragraph', text: 'If duplicate notes or data inconsistencies occur, you can repair storage from the settings.' },
+        { type: 'paragraph', runs: ['If duplicate notes or data inconsistencies occur, you can repair storage from the settings.'] },
         {
           type: 'group',
           title: 'How to Repair',
@@ -80,9 +89,9 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
               type: 'list',
               ordered: true,
               items: [
-                'Open ⚙ Settings → Troubleshooting tab → Repair Storage',
-                'Click the "Scan" button',
-                'If issues are found, select notes to delete and repair',
+                ['Open ', { strong: '⚙ Settings' }, ' → ', { strong: 'Troubleshooting' }, ' tab → ', { strong: 'Repair Storage' }],
+                ['Click the ', { strong: '"Scan"' }, ' button'],
+                ['If issues are found, select notes to delete and repair'],
               ],
             },
           ],
@@ -103,9 +112,9 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
       ],
     },
     {
-      title: 'Storage Analysis — Check usage and organize notes',
+      title: '📊 Storage Analysis — Check usage and organize notes',
       blocks: [
-        { type: 'paragraph', text: 'Check storage usage and organize old notes in bulk.' },
+        { type: 'paragraph', runs: ['Check storage usage and organize old notes in bulk.'] },
         {
           type: 'group',
           title: 'How to Analyze',
@@ -114,8 +123,8 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
               type: 'list',
               ordered: true,
               items: [
-                'Open ⚙ Settings → Troubleshooting tab → Storage Analysis',
-                'Click the "Analyze" button',
+                ['Open ', { strong: '⚙ Settings' }, ' → ', { strong: 'Troubleshooting' }, ' tab → ', { strong: 'Storage Analysis' }],
+                ['Click the ', { strong: '"Analyze"' }, ' button'],
               ],
             },
           ],
@@ -138,16 +147,19 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
           type: 'group',
           title: 'Bulk Archive',
           blocks: [
-            { type: 'paragraph', text: 'Select notes and move them to Archive folder in bulk with pinning. Useful for regular backups and storage cleanup.' },
-            { type: 'paragraph', text: 'System Notes are excluded from analysis (auto-generated guide files).' },
+            {
+              type: 'paragraph',
+              runs: ['Select notes and move them to Archive folder in bulk with pinning. Useful for regular backups and storage cleanup.'],
+            },
+            { type: 'paragraph', runs: [{ em: 'System Notes are excluded from analysis (auto-generated guide files).' }] },
           ],
         },
       ],
     },
     {
-      title: 'Duplicate Detection — Side-by-side comparison',
+      title: '📋 Duplicate Detection — Side-by-side comparison',
       blocks: [
-        { type: 'paragraph', text: 'If notes with the same title are detected, a warning banner is displayed.' },
+        { type: 'paragraph', runs: ['If notes with the same title are detected, a warning banner is displayed.'] },
         {
           type: 'termList',
           items: [
@@ -159,10 +171,17 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
       ],
     },
     {
-      title: 'Before Uninstalling — Back up your data first!',
+      title: '⚠️ Before Uninstalling — Back up your data first!',
       blocks: [
-        { type: 'paragraph', text: 'Uninstalling the extension will delete all saved notes.' },
-        { type: 'paragraph', text: 'Mark It Down data is stored in chrome.storage.local, and uninstalling the extension will delete the data.' },
+        { type: 'paragraph', runs: [{ strong: 'Uninstalling the extension will delete all saved notes.' }] },
+        {
+          type: 'paragraph',
+          runs: [
+            'Mark It Down data is stored in ',
+            { code: 'chrome.storage.local' },
+            ', and uninstalling the extension will delete the data.',
+          ],
+        },
         {
           type: 'group',
           title: 'Backup Methods',
@@ -171,19 +190,22 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
               type: 'list',
               ordered: true,
               items: [
-                'Export all notes as ZIP — Settings (⚙) → "Export all notes as ZIP"',
-                'Push to GitHub — Git ▼ → Sync (or Git Settings → Push)',
+                [{ strong: 'Export all notes as ZIP' }, ' — Settings (⚙) → "Export all notes as ZIP"'],
+                [{ strong: 'Push to GitHub' }, ' — Git ▼ → Sync (or Git Settings → Push)'],
               ],
             },
-            { type: 'paragraph', text: 'We recommend regular exports to avoid losing important notes.' },
+            { type: 'paragraph', runs: [{ em: 'We recommend regular exports to avoid losing important notes.' }] },
           ],
         },
       ],
     },
     {
-      title: 'RSS Notifications Not Appearing',
+      title: '🔔 RSS Notifications Not Appearing',
       blocks: [
-        { type: 'paragraph', text: "If you've enabled desktop notifications in RSS settings but aren't seeing them, check the following in order:" },
+        {
+          type: 'paragraph',
+          runs: ["If you've enabled desktop notifications in RSS settings but aren't seeing them, check the following in order:"],
+        },
         {
           type: 'group',
           title: 'Checklist',
@@ -192,10 +214,30 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
               type: 'list',
               ordered: true,
               items: [
-                'Scheduled refresh also enabled? — Notifications are sent by background polling. Make sure RSS settings > Scheduled refresh is also turned on, not just notifications.',
-                'Chrome notification permission — Open chrome://settings/content/notifications and confirm the extension is not blocked.',
-                'OS notification settings — On Windows, check System > Notifications > Chrome. On macOS, check System Settings > Notifications > Google Chrome. Make sure Chrome notifications are allowed.',
-                'Feed has new items? — Notifications only appear when a fetch finds articles newer than the last check. Try adding a feed that updates frequently to confirm the flow works.',
+                [
+                  { strong: 'Scheduled refresh also enabled?' },
+                  ' — Notifications are sent by background polling. Make sure ',
+                  { em: 'RSS settings > Scheduled refresh' },
+                  ' is also turned on, not just notifications.',
+                ],
+                [
+                  { strong: 'Chrome notification permission' },
+                  ' — Open ',
+                  { code: 'chrome://settings/content/notifications' },
+                  ' and confirm the extension is not blocked.',
+                ],
+                [
+                  { strong: 'OS notification settings' },
+                  ' — On Windows, check ',
+                  { em: 'System > Notifications > Chrome' },
+                  '. On macOS, check ',
+                  { em: 'System Settings > Notifications > Google Chrome' },
+                  '. Make sure Chrome notifications are allowed.',
+                ],
+                [
+                  { strong: 'Feed has new items?' },
+                  ' — Notifications only appear when a fetch finds articles newer than the last check. Try adding a feed that updates frequently to confirm the flow works.',
+                ],
               ],
             },
           ],
@@ -203,9 +245,9 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
       ],
     },
     {
-      title: 'Background RSS Fetch Not Running',
+      title: '⏱️ Background RSS Fetch Not Running',
       blocks: [
-        { type: 'paragraph', text: "If feeds aren't updating automatically even with scheduled refresh enabled:" },
+        { type: 'paragraph', runs: ["If feeds aren't updating automatically even with scheduled refresh enabled:"] },
         {
           type: 'group',
           title: 'Checklist',
@@ -214,10 +256,24 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
               type: 'list',
               ordered: true,
               items: [
-                'Is Chrome running? — Background polling requires Chrome to be open. It does not run while Chrome is fully closed.',
-                'Check alarm registration — Open the extension\'s background service worker in chrome://extensions (click "Service Worker" link) and look for alarm-related log entries. If the service worker is inactive, opening any Mark It Down tab will wake it up and re-register the alarm.',
-                'Re-toggle the setting — Turn scheduled refresh off and back on in RSS settings to force alarm re-registration.',
-                'Host permissions granted? — Background fetch requires host permissions for each registered feed origin. The extension icon badge shows a count if permissions are missing. Click the badge or open RSS settings to grant them.',
+                [
+                  { strong: 'Is Chrome running?' },
+                  ' — Background polling requires Chrome to be open. It does not run while Chrome is fully closed.',
+                ],
+                [
+                  { strong: 'Check alarm registration' },
+                  " — Open the extension's background service worker in ",
+                  { code: 'chrome://extensions' },
+                  ' (click "Service Worker" link) and look for alarm-related log entries. If the service worker is inactive, opening any Mark It Down tab will wake it up and re-register the alarm.',
+                ],
+                [
+                  { strong: 'Re-toggle the setting' },
+                  ' — Turn scheduled refresh off and back on in RSS settings to force alarm re-registration.',
+                ],
+                [
+                  { strong: 'Host permissions granted?' },
+                  ' — Background fetch requires host permissions for each registered feed origin. The extension icon badge shows a count if permissions are missing. Click the badge or open RSS settings to grant them.',
+                ],
               ],
             },
           ],
@@ -227,10 +283,10 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
   ],
   ja: [
     {
-      title: 'ストレージ修復 — 重複ノートやデータ問題を修正',
+      title: '🔧 ストレージ修復 — 重複ノートやデータ問題を修正',
       defaultOpen: true,
       blocks: [
-        { type: 'paragraph', text: '重複ノートやデータの不整合が発生した場合、設定画面から修復できます。' },
+        { type: 'paragraph', runs: ['重複ノートやデータの不整合が発生した場合、設定画面から修復できます。'] },
         {
           type: 'group',
           title: '修復方法',
@@ -239,9 +295,9 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
               type: 'list',
               ordered: true,
               items: [
-                '⚙ 設定 → Troubleshooting タブ → Repair Storage',
-                '「スキャン」ボタンをクリック',
-                '問題が見つかった場合、削除するノートを選択して修復',
+                [{ strong: '⚙ 設定' }, ' → ', { strong: 'Troubleshooting' }, ' タブ → ', { strong: 'Repair Storage' }],
+                [{ strong: '「スキャン」' }, 'ボタンをクリック'],
+                ['問題が見つかった場合、削除するノートを選択して修復'],
               ],
             },
           ],
@@ -262,9 +318,9 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
       ],
     },
     {
-      title: 'ストレージ分析 — 使用状況の確認とノート整理',
+      title: '📊 ストレージ分析 — 使用状況の確認とノート整理',
       blocks: [
-        { type: 'paragraph', text: 'ストレージ使用状況を確認し、古いノートを一括整理できます。' },
+        { type: 'paragraph', runs: ['ストレージ使用状況を確認し、古いノートを一括整理できます。'] },
         {
           type: 'group',
           title: '分析方法',
@@ -273,8 +329,8 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
               type: 'list',
               ordered: true,
               items: [
-                '⚙ 設定 → Troubleshooting タブ → Storage Analysis',
-                '「Analyze」ボタンをクリック',
+                [{ strong: '⚙ 設定' }, ' → ', { strong: 'Troubleshooting' }, ' タブ → ', { strong: 'Storage Analysis' }],
+                [{ strong: '「Analyze」' }, 'ボタンをクリック'],
               ],
             },
           ],
@@ -297,16 +353,19 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
           type: 'group',
           title: '一括アーカイブ',
           blocks: [
-            { type: 'paragraph', text: '選択したノートを一度にArchiveフォルダへ移動＆ピン留め。定期バックアップやストレージ整理に便利。' },
-            { type: 'paragraph', text: 'システムノートは分析対象外です（自動生成ガイドファイル）。' },
+            {
+              type: 'paragraph',
+              runs: ['選択したノートを一度にArchiveフォルダへ移動＆ピン留め。定期バックアップやストレージ整理に便利。'],
+            },
+            { type: 'paragraph', runs: [{ em: 'システムノートは分析対象外です（自動生成ガイドファイル）。' }] },
           ],
         },
       ],
     },
     {
-      title: '重複ノート検出 — side-by-side比較',
+      title: '📋 重複ノート検出 — side-by-side比較',
       blocks: [
-        { type: 'paragraph', text: '同じタイトルのノートが存在する場合、警告バナーが表示されます。' },
+        { type: 'paragraph', runs: ['同じタイトルのノートが存在する場合、警告バナーが表示されます。'] },
         {
           type: 'termList',
           items: [
@@ -318,10 +377,13 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
       ],
     },
     {
-      title: 'アンインストール前の注意 — データをバックアップ！',
+      title: '⚠️ アンインストール前の注意 — データをバックアップ！',
       blocks: [
-        { type: 'paragraph', text: '拡張機能を削除すると、保存されたすべてのノートが消失します。' },
-        { type: 'paragraph', text: 'Mark It Downのデータはchrome.storage.localに保存されており、拡張機能をアンインストールするとデータも削除されます。' },
+        { type: 'paragraph', runs: [{ strong: '拡張機能を削除すると、保存されたすべてのノートが消失します。' }] },
+        {
+          type: 'paragraph',
+          runs: ['Mark It Downのデータは', { code: 'chrome.storage.local' }, 'に保存されており、拡張機能をアンインストールするとデータも削除されます。'],
+        },
         {
           type: 'group',
           title: 'バックアップ方法',
@@ -330,19 +392,19 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
               type: 'list',
               ordered: true,
               items: [
-                '全ノートをZIPエクスポート — 設定（⚙）→ 「全ノートをZIPでエクスポート」',
-                'GitHubにプッシュ — Git ▼ → Sync（または Git Settings → Push）',
+                [{ strong: '全ノートをZIPエクスポート' }, ' — 設定（⚙）→ 「全ノートをZIPでエクスポート」'],
+                [{ strong: 'GitHubにプッシュ' }, ' — Git ▼ → Sync（または Git Settings → Push）'],
               ],
             },
-            { type: 'paragraph', text: '大切なノートを失わないよう、定期的なエクスポートをお勧めします。' },
+            { type: 'paragraph', runs: [{ em: '大切なノートを失わないよう、定期的なエクスポートをお勧めします。' }] },
           ],
         },
       ],
     },
     {
-      title: 'RSS通知が届かない',
+      title: '🔔 RSS通知が届かない',
       blocks: [
-        { type: 'paragraph', text: 'RSS設定でデスクトップ通知を有効にしたのに通知が届かない場合は、以下の順番で確認してください：' },
+        { type: 'paragraph', runs: ['RSS設定でデスクトップ通知を有効にしたのに通知が届かない場合は、以下の順番で確認してください：'] },
         {
           type: 'group',
           title: 'チェックリスト',
@@ -351,10 +413,30 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
               type: 'list',
               ordered: true,
               items: [
-                '定期取得も有効になっていますか？ — 通知はバックグラウンド取得によって送られます。RSS設定 > 定期取得も通知と合わせて有効にしてください。',
-                'Chromeの通知許可 — chrome://settings/content/notificationsを開き、この拡張機能がブロックされていないか確認してください。',
-                'OSの通知設定 — Windowsの場合はシステム > 通知とアクション > Chrome、macOSの場合はシステム設定 > 通知 > Google ChromeでChromeの通知が許可されているか確認してください。',
-                'フィードに新着はありますか？ — 通知は前回チェック以降に新着記事が見つかった場合のみ送られます。更新頻度の高いフィードを追加して動作確認してみてください。',
+                [
+                  { strong: '定期取得も有効になっていますか？' },
+                  ' — 通知はバックグラウンド取得によって送られます。',
+                  { em: 'RSS設定 > 定期取得' },
+                  'も通知と合わせて有効にしてください。',
+                ],
+                [
+                  { strong: 'Chromeの通知許可' },
+                  ' — ',
+                  { code: 'chrome://settings/content/notifications' },
+                  'を開き、この拡張機能がブロックされていないか確認してください。',
+                ],
+                [
+                  { strong: 'OSの通知設定' },
+                  ' — Windowsの場合は',
+                  { em: 'システム > 通知とアクション > Chrome' },
+                  '、macOSの場合は',
+                  { em: 'システム設定 > 通知 > Google Chrome' },
+                  'でChromeの通知が許可されているか確認してください。',
+                ],
+                [
+                  { strong: 'フィードに新着はありますか？' },
+                  ' — 通知は前回チェック以降に新着記事が見つかった場合のみ送られます。更新頻度の高いフィードを追加して動作確認してみてください。',
+                ],
               ],
             },
           ],
@@ -362,9 +444,9 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
       ],
     },
     {
-      title: 'RSSバックグラウンド取得が動いていない',
+      title: '⏱️ RSSバックグラウンド取得が動いていない',
       blocks: [
-        { type: 'paragraph', text: '定期取得を有効にしてもフィードが自動更新されない場合：' },
+        { type: 'paragraph', runs: ['定期取得を有効にしてもフィードが自動更新されない場合：'] },
         {
           type: 'group',
           title: 'チェックリスト',
@@ -373,10 +455,24 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
               type: 'list',
               ordered: true,
               items: [
-                'Chromeは起動していますか？ — バックグラウンド取得にはChromeが起動している必要があります。Chrome自体を完全に閉じると動作しません。',
-                'アラームの登録確認 — chrome://extensionsから拡張機能のService Workerを開き（「Service Worker」リンクをクリック）、アラーム関連のログを確認してください。Service Workerが非アクティブの場合は、Mark It Downのタブを開くと起動し直してアラームが再登録されます。',
-                '設定を一度オフ→オンにする — RSS設定で定期取得を一度無効にして再度有効にすると、アラームが強制再登録されます。',
-                'ホスト権限は付与されていますか？ — バックグラウンド取得には登録済み各フィードへのホスト権限が必要です。権限が不足している場合は拡張機能アイコンのバッジに件数が表示されます。バッジをクリックするかRSS設定を開いて権限を付与してください。',
+                [
+                  { strong: 'Chromeは起動していますか？' },
+                  ' — バックグラウンド取得にはChromeが起動している必要があります。Chrome自体を完全に閉じると動作しません。',
+                ],
+                [
+                  { strong: 'アラームの登録確認' },
+                  ' — ',
+                  { code: 'chrome://extensions' },
+                  'から拡張機能のService Workerを開き（「Service Worker」リンクをクリック）、アラーム関連のログを確認してください。Service Workerが非アクティブの場合は、Mark It Downのタブを開くと起動し直してアラームが再登録されます。',
+                ],
+                [
+                  { strong: '設定を一度オフ→オンにする' },
+                  ' — RSS設定で定期取得を一度無効にして再度有効にすると、アラームが強制再登録されます。',
+                ],
+                [
+                  { strong: 'ホスト権限は付与されていますか？' },
+                  ' — バックグラウンド取得には登録済み各フィードへのホスト権限が必要です。権限が不足している場合は拡張機能アイコンのバッジに件数が表示されます。バッジをクリックするかRSS設定を開いて権限を付与してください。',
+                ],
               ],
             },
           ],
@@ -390,7 +486,8 @@ export const troubleshootingItems: Record<Lang, TroubleshootingItem[]> = {
 // docs/troubleshooting-ja.html (`#cta-heading` + its following <p>, 2 inline
 // links: FAQ and Feedback). Same shape as content/faq.ts's FaqCtaCopy —
 // duplicated here rather than shared, since the two pages' CTA copy diverges
-// per language and there is no third consumer.
+// per language and there is no third consumer. No inline tags in this copy,
+// so it stays plain strings (unlike TroubleshootingBlock above).
 export interface TroubleshootingCtaCopy {
   heading: string;
   before: string;

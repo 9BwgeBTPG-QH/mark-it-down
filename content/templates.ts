@@ -41,54 +41,113 @@ export const templatesContent: Record<Lang, TemplatesCopy> = {
   },
 };
 
+// Inline run for paragraphs mixing plain text with <strong>/<code> emphasis
+// — same shape as content/okf.ts's OkfInlineRun, duplicated locally since
+// that type isn't exported for cross-page-family reuse (established
+// per-page-family convention; see components/okf/InlineText.tsx). Rendered
+// by components/templates/InlineText.tsx.
+export type TemplateInlineRun = string | { strong: string } | { code: string };
+
 export interface TemplateGuideCard {
   title: string;
-  body: string;
+  body: TemplateInlineRun[];
 }
 
 interface TemplateGuideCopy {
   heading: string;
-  intro: string;
+  intro: TemplateInlineRun[];
   cards: TemplateGuideCard[];
 }
 
 // "Make it your own" guide section, ported verbatim from docs/templates.html /
-// docs/templates-ja.html. The old markup's inline <strong>/<code> emphasis
-// within these paragraphs is flattened to plain text (same precedent as
-// content/okf.ts's OKF Export item body / content/features.ts) — only real
-// in-body <a href> links are preserved as structured fields elsewhere in this
-// codebase, and this section has none, only decorative emphasis. The old
-// <code>#&nbsp;YYYY-MM-DD</code> / <code>YYYY-MM-DD&nbsp;HH:MM</code> spans
-// keep their literal text with a plain space (the &nbsp; only prevented an
-// awkward line break inside the old CSS layout).
+// docs/templates-ja.html, including the old markup's inline <strong>/<code>
+// emphasis (kept as TemplateInlineRun[] runs rather than flattened to plain
+// text — restored per #1593 Wave R2 Batch 2's full-fidelity requirement).
+// The old <code>#&nbsp;YYYY-MM-DD</code> / <code>YYYY-MM-DD&nbsp;HH:MM</code>
+// spans keep their literal text with a plain space (the &nbsp; only
+// prevented an awkward line break inside the old CSS layout).
 export const templatesGuide: Record<Lang, TemplateGuideCopy> = {
   en: {
     heading: 'Make it your own',
-    intro:
-      'Three ways to bring a template in. Copy Markdown grabs the whole thing; ↗ Raw lets you pick just the sections you need — for either, keep Mark It Down open in the Side Panel while you browse and paste straight in. Or use the Web Clipper: clip the template view and Mark It Down opens automatically, no setup needed.',
+    intro: [
+      'Three ways to bring a template in. ',
+      { strong: 'Copy Markdown' },
+      ' grabs the whole thing; ',
+      { strong: '↗ Raw' },
+      ' lets you pick just the sections you need — for either, keep Mark It Down open in the ',
+      { strong: 'Side Panel' },
+      ' while you browse and paste straight in. Or use the ',
+      { strong: 'Web Clipper' },
+      ': clip the template view and Mark It Down opens automatically, no setup needed.',
+    ],
     cards: [
       {
-        title: 'Daily notes from a "Today" template',
-        body: 'Create a note named Today (case-insensitive) in the Template folder. When you run Create today’s entry in the Side Panel or New Tab, its body is inserted beneath a # YYYY-MM-DD heading — so each day starts from your own structure. The template’s top heading is dropped; the date is the only thing filled in (no other placeholders).',
+        title: 'Daily notes from a “Today” template',
+        body: [
+          'Create a note named ',
+          { strong: 'Today' },
+          ' (case-insensitive) in the ',
+          { strong: 'Template' },
+          ' folder. When you run ',
+          { strong: 'Create today’s entry' },
+          ' in the Side Panel or New Tab, its body is inserted beneath a ',
+          { code: '# YYYY-MM-DD' },
+          ' heading — so each day starts from your own structure. The template’s top heading is dropped; the date is the only thing filled in (no other placeholders).',
+        ],
       },
       {
         title: 'Tip — timestamp headings for logs',
-        body: 'Type /now, or run Insert Timestamp Heading from the command palette, to drop a YYYY-MM-DD HH:MM heading at the cursor. Pick H2 or H3 under Settings → Editor → Formatting → Timestamp Heading (default H2). The headings flow into the table of contents, turning a day’s log into a clickable timeline — pairs well with a Today template.',
+        body: [
+          'Type ',
+          { code: '/now' },
+          ', or run ',
+          { strong: 'Insert Timestamp Heading' },
+          ' from the command palette, to drop a ',
+          { code: 'YYYY-MM-DD HH:MM' },
+          ' heading at the cursor. Pick H2 or H3 under ',
+          { strong: 'Settings → Editor → Formatting → Timestamp Heading' },
+          ' (default H2). The headings flow into the table of contents, turning a day’s log into a clickable timeline — pairs well with a Today template.',
+        ],
       },
     ],
   },
   ja: {
     heading: '自分仕様にする',
-    intro:
-      '取り込み方は3通り。Copy Markdown でまるごとコピー、↗ Raw を開いて必要な部分だけコピー — どちらもサイドパネルで Mark It Down を横に開いておけば、見ながらそのまま貼り付けられます。Web Clipper ならテンプレート表示画面をクリップすると同時にサイドパネルが開くので、事前の準備は不要です。',
+    intro: [
+      '取り込み方は3通り。',
+      { strong: 'Copy Markdown' },
+      ' でまるごとコピー、',
+      { strong: '↗ Raw' },
+      ' を開いて必要な部分だけコピー — どちらもサイドパネルで Mark It Down を横に開いておけば、見ながらそのまま貼り付けられます。',
+      { strong: 'Web Clipper' },
+      ' ならテンプレート表示画面をクリップすると同時にサイドパネルが開くので、事前の準備は不要です。',
+    ],
     cards: [
       {
         title: '「Today」テンプレートで一日を始める',
-        body: 'Template フォルダに Today（大文字小文字は問いません）という名前のノートを置きます。サイドパネルや新しいタブで「今日のエントリーを作成」を実行すると、その本文が # YYYY-MM-DD 見出しの下に挿入され、毎日あなた自身のひな型から書き始められます。テンプレート先頭の見出しは取り除かれ、差し込まれるのは日付だけです（ほかの変数はありません）。',
+        body: [
+          { strong: 'Template' },
+          ' フォルダに ',
+          { strong: 'Today' },
+          '（大文字小文字は問いません）という名前のノートを置きます。サイドパネルや新しいタブで ',
+          { strong: '「今日のエントリーを作成」' },
+          ' を実行すると、その本文が ',
+          { code: '# YYYY-MM-DD' },
+          ' 見出しの下に挿入され、毎日あなた自身のひな型から書き始められます。テンプレート先頭の見出しは取り除かれ、差し込まれるのは日付だけです（ほかの変数はありません）。',
+        ],
       },
       {
         title: 'Tip — ログ向けのタイムスタンプ見出し',
-        body: '/now と入力するか、コマンドパレットで「タイムスタンプ見出しを挿入」を実行すると、YYYY-MM-DD HH:MM 形式の見出しがカーソル位置に挿入されます。見出しレベル（H2 / H3）は設定 → エディタ → フォーマット → タイムスタンプ見出し で変更できます（デフォルト H2）。見出しは目次に並ぶので、その日のログがクリックできるタイムラインになります。Todayテンプレートと組み合わせると便利です。',
+        body: [
+          { code: '/now' },
+          ' と入力するか、コマンドパレットで ',
+          { strong: '「タイムスタンプ見出しを挿入」' },
+          ' を実行すると、',
+          { code: 'YYYY-MM-DD HH:MM' },
+          ' 形式の見出しがカーソル位置に挿入されます。見出しレベル（H2 / H3）は ',
+          { strong: '設定 → エディタ → フォーマット → タイムスタンプ見出し' },
+          ' で変更できます（デフォルト H2）。見出しは目次に並ぶので、その日のログがクリックできるタイムラインになります。Todayテンプレートと組み合わせると便利です。',
+        ],
       },
     ],
   },
@@ -123,16 +182,9 @@ export interface TemplateCard {
 }
 
 // 39-card catalog, ported verbatim from docs/templates.html / docs/templates-ja.html
-// (category / title / description / slug). Two source-level notes:
+// (category / title / description / slug). One source-level note:
 //
-// 1. The old page's search input, filter-tabs (with per-category counts),
-//    tag-facets, and JS clipboard copy are all client-JS-driven — this static
-//    export site adds no new client JS beyond native <details>/<summary>, so
-//    none of those controls are ported. The always-visible flat grid was
-//    never collapsed in the old markup either way (filtering only ever
-//    hid/showed cards, it didn't fold content), so this is a straightforward
-//    drop, not a structural change to what's rendered. See final report.
-// 2. The EN and JA source pages order the Productivity category differently:
+// The EN and JA source pages order the Productivity category differently:
 //    EN has "YWT Retrospective" last (after RACI Matrix), JA has "YWT振り返り"
 //    third from top (right after KPT). This is a genuine pre-existing
 //    inconsistency between the two old pages, preserved per-language as-is
@@ -629,25 +681,26 @@ interface TemplatesCtaCopy {
   heading: string;
   body: string;
   buttonLabel: string;
+  buttonAriaLabel: string;
 }
 
-// Closing CTA, ported verbatim from docs/templates.html / docs/templates-ja.html.
-// The old JA CTA link had a literal "?hl=ja" query param appended to the same
-// Chrome Web Store URL — dropped here, matching the existing non-branching
-// CWS_URL precedent already established in every other Cta.tsx in this
-// codebase (see components/features/Cta.tsx's own comment on this). The old
-// button's aria-label is likewise omitted, matching every other page's
-// SealButton usage (SealButton's prop type has no aria-label slot).
+// Closing CTA, ported verbatim from docs/templates.html / docs/templates-ja.html,
+// including the button's aria-label (SealButton passes it through) and the
+// JA link's literal "?hl=ja" query param on the Chrome Web Store URL (see
+// components/templates/Cta.tsx, which builds that URL per-language like
+// components/index/Cta.tsx does).
 export const templatesCta: Record<Lang, TemplatesCtaCopy> = {
   en: {
     heading: 'Ready to write?',
     body: 'Available as a Chrome extension. No account required.',
     buttonLabel: 'Get the extension',
+    buttonAriaLabel: 'Get Mark It Down from Chrome Web Store',
   },
   ja: {
     heading: '書き始めよう',
     body: 'Chrome拡張機能として利用可能。アカウント不要。',
     buttonLabel: '拡張機能を入手',
+    buttonAriaLabel: 'Chrome Web StoreからMark It Downを入手',
   },
 };
 
@@ -659,23 +712,25 @@ interface TemplateCopyButtonLabels {
 
 interface TemplateActionLabels {
   copyButton: TemplateCopyButtonLabels;
-  openRaw: string;
+  openButtonTitle: string;
 }
 
 // Per-card action labels, reused across all 39 cards. Ported verbatim from
 // docs/templates.html / docs/templates-ja.html's copy-btn three text states
-// (idle / copied / failed) — see components/templates/TemplateGrid.tsx for
-// the fetch-then-clipboard handler that swaps between them, and how "↗ Raw"
-// (the guide-intro's own literal, untranslated phrase, reused for both
-// languages) pairs with the external templates/ subtree view.html link.
+// (idle / copied / failed) — see components/templates/TemplateGridClient.tsx
+// for the fetch-then-clipboard handler that swaps between them. The
+// open-btn's visible text is the literal glyph "↗" in both languages
+// (hardcoded directly in TemplateGridClient.tsx, not content-driven, same
+// precedent as components/why/Hero.tsx's "~ ~ ~" ornament); only its title
+// attribute differs per language, carried here as openButtonTitle.
 export const templateActionLabels: Record<Lang, TemplateActionLabels> = {
   en: {
     copyButton: { idle: '📋 Copy Markdown', copied: '✓ Copied!', failed: '✗ Failed' },
-    openRaw: '↗ Raw',
+    openButtonTitle: 'Open in new tab',
   },
   ja: {
     copyButton: { idle: '📋 コピー', copied: '✓ コピーしました！', failed: '✗ 失敗' },
-    openRaw: '↗ Raw',
+    openButtonTitle: '新しいタブで開く',
   },
 };
 
@@ -828,5 +883,106 @@ export const templateFilterCopy: Record<Lang, TemplateFilterCopy> = {
     filterNavAriaLabel: 'カテゴリでフィルター',
     tagFacetsAriaLabel: 'タグで絞り込む',
     allLabel: 'すべて',
+  },
+};
+
+// Per-template hidden `summary` field, extracted verbatim from
+// docs/templates/index.json's `summary.en`/`summary.ja` (fetched at runtime
+// by the old page's own script and stashed on each card as
+// `data-summary` — see the old script's injectTagChips()/filterCards()).
+// Restored per #1593 Wave R2 Batch 2's full-fidelity requirement: the old
+// search input matches this field in addition to the visible title and
+// description, so a template can be found by summary text that never
+// appears on the card itself. Ported at build time rather than re-fetched
+// at runtime, same precedent as templateTagIdsBySlug above.
+//
+// Several `thinking/*` entries have literally-untranslated English text in
+// the `ja` bucket in the source JSON (e.g. thinking/problem-statement) —
+// preserved as-is per this project's truth-seeking rule against silently
+// "fixing" pre-existing source-data inconsistencies; see final report.
+export const templateSummariesBySlug: Record<Lang, Record<string, string>> = {
+  en: {
+    'ai/llm-output-organizer': 'Capture, rewrite, and act on LLM responses.',
+    'ai/prompt-library': 'Catalog and rate your most-used prompts.',
+    'ai/ai-conversation-archive': 'Preserve multi-turn conversations with context.',
+    'ai/llm-output-rewrite': 'Rewrite AI output in your own words.',
+    'ai/ai-summary-knowledge-note': 'Convert AI summaries into permanent notes.',
+    'productivity/daily-note': 'Daily journal with focus, tasks, and reflection.',
+    'productivity/today':
+      'A daily layout that auto-applies when you name it "Today" — place this note in the Template folder and every new daily note starts from this structure.',
+    'productivity/weekly-review': 'Reflect on the week and plan ahead.',
+    'productivity/zettelkasten-atomic-note': 'One idea per note for knowledge building.',
+    'productivity/book-review': 'Structured reading review with quotes and rating.',
+    'productivity/meeting-notes': 'Structured meeting capture with action items.',
+    'productivity/kpt-retrospective': 'Keep, Problem, Try — structured sprint retrospective.',
+    'productivity/start-stop-continue': 'Simple behavior change retrospective framework.',
+    'productivity/four-ls-retrospective': 'Liked, Learned, Lacked, Longed for — positive reflection framework.',
+    'productivity/starfish-retrospective': 'Five-point deep analysis for team improvement.',
+    'productivity/okr': 'Objectives and Key Results for quarterly goal setting.',
+    'productivity/raci-matrix': 'Responsibility assignment matrix for role clarity.',
+    'productivity/ywt-retrospective': 'Reflect on what you did, what you learned, and what to do next.',
+    'journaling/five-minute-journal': 'Morning gratitude and evening reflection prompts.',
+    'journaling/stoic-journal': 'Set intentions and review actions with clarity.',
+    'journaling/daily-reflection': 'Three short prompts to close out the day.',
+    'journaling/cbt-thought-record': 'Separate thoughts, emotions, and actions for reflection.',
+    'dev/readme-template': 'Project README with quick start and API reference.',
+    'dev/changelog': 'Keep a Changelog format version history.',
+    'dev/adr': 'Lightweight ADR for technical decisions.',
+    'dev/api-documentation': 'REST API endpoint documentation.',
+    'dev/rfc': 'Design proposal with alternatives and review process.',
+    'content/blog-post-draft': 'Outline and draft a blog post.',
+    'content/technical-article': 'Step-by-step technical tutorial structure.',
+    'thinking/problem-statement': 'Define a problem with impact and constraints.',
+    'thinking/decision-log': 'Record decisions with context and rationale.',
+    'thinking/five-whys-analysis': 'Root cause analysis using the 5 Whys method.',
+    'thinking/project-brief': 'Project overview with scope, timeline, and risks.',
+    'thinking/fishbone-diagram': 'Ishikawa cause-and-effect root cause analysis.',
+    'thinking/eight-d-report': 'Eight-discipline structured problem-solving report.',
+    'thinking/fmea': 'Failure mode and effects analysis with RPN scoring.',
+    'thinking/fta': 'Top-down failure decomposition with AND/OR gates.',
+    'thinking/is-is-not-analysis': 'Define problem boundaries by elimination.',
+    'thinking/decision-matrix': 'Weighted multi-criteria evaluation for structured decisions.',
+  },
+  ja: {
+    'ai/llm-output-organizer': 'LLMの出力を `Ctrl+Shift+V` で貼り付け（自動でMarkdownに変換）。',
+    'ai/prompt-library': 'すべてのプロンプトを `Ctrl+K` で横断検索。',
+    'ai/ai-conversation-archive': 'LLMの回答を `Ctrl+Shift+V` で貼り付け（HTMLを自動でMarkdownに変換）。',
+    'ai/llm-output-rewrite': '元のLLM出力を `Ctrl+Shift+V` で貼り付けると、HTMLがクリーンなMarkdownに自動変換されます。',
+    'ai/ai-summary-knowledge-note': '関連ノートは `Ctrl+K` で検索。',
+    'productivity/daily-note': '毎日、フォーカスとタスクを記入して始めましょう。',
+    'productivity/today': 'Template フォルダに「Today」という名前で保存すると、毎日のノートがこのレイアウトで始まる。',
+    'productivity/weekly-review': '毎週末に記入してください。',
+    'productivity/zettelkasten-atomic-note': '1ノートにつき1アイデア。',
+    'productivity/book-review': 'まずメタデータを記入。',
+    'productivity/meeting-notes': '`Ctrl+Shift+;` で会議の日時を挿入。',
+    'productivity/kpt-retrospective': '`Ctrl+;` で今日の日付を挿入。',
+    'productivity/start-stop-continue': 'スプリントや期間の終わりに記入しましょう。',
+    'productivity/four-ls-retrospective': 'スプリントやプロジェクト期間の終わりに実施してください。',
+    'productivity/starfish-retrospective': 'スプリントやフェーズの終わりに実施してください。',
+    'productivity/okr': '`Ctrl+;` で今日の日付を挿入。',
+    'productivity/raci-matrix': '`Ctrl+;` で日付を挿入。',
+    'productivity/ywt-retrospective': 'スプリントや期間の終わりに記入してください。',
+    'journaling/five-minute-journal': '朝と夜に分けて使います。',
+    'journaling/stoic-journal': '自分でコントロールできることと、できないことを分けて書きます。',
+    'journaling/daily-reflection': '夜に軽く振り返りたいときに使います。',
+    'journaling/cbt-thought-record': '状況・思考・感情・行動を分けて整理するセルフリフレクション用テンプレートです。',
+    'dev/readme-template': 'プロジェクトに合わせて各セクションを記入してください。',
+    'dev/changelog': '新しいバージョンを上に追加してください。',
+    'dev/adr': '重要な技術的決定ごとに1つのADRを作成。',
+    'dev/api-documentation': '各エンドポイントをH2セクションとしてドキュメント化してください。',
+    'dev/rfc': '1つのRFCに1つの設計提案。',
+    'content/blog-post-draft': 'まずフックから始め、ポイントを展開し、最後にCTA（行動喚起）でまとめましょう。',
+    'content/technical-article': 'まず問題を定義し、次に解決策をステップバイステップで解説しましょう。',
+    // Untranslated in the old source JSON — see file-level note above.
+    'thinking/problem-statement': 'Define a problem with impact and constraints.',
+    'thinking/decision-log': 'Record decisions with context and rationale.',
+    'thinking/five-whys-analysis': 'Root cause analysis using the 5 Whys method.',
+    'thinking/project-brief': 'Project overview with scope, timeline, and risks.',
+    'thinking/fishbone-diagram': '石川図（特性要因図）で根本原因を構造的に分析する。',
+    'thinking/eight-d-report': 'Eight-discipline structured problem-solving report.',
+    'thinking/fmea': 'Failure mode and effects analysis with RPN scoring.',
+    'thinking/fta': 'Top-down failure decomposition with AND/OR gates.',
+    'thinking/is-is-not-analysis': 'Define problem boundaries by elimination.',
+    'thinking/decision-matrix': 'Weighted multi-criteria evaluation for structured decisions.',
   },
 };

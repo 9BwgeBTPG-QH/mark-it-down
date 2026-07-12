@@ -1,136 +1,125 @@
 import { PageShell } from '@/components/PageShell';
 import { Hero } from '@/components/features/Hero';
 import { FeatureCategoryAccordion } from '@/components/features/FeatureCategoryAccordion';
+import { GitSyncIcon } from '@/components/features/GitSyncIcon';
 import { ShortcutsSection } from '@/components/features/ShortcutsSection';
 import { Cta } from '@/components/features/Cta';
 import { featuresSections, type Lang } from '@/content/features';
 
-// Shared skeleton for the EN/JA Features page pair (#1593 Phase 3-3). Copy
-// lives in content/features.ts so app/(en)/features/page.tsx and
-// app/(ja)/features-ja/page.tsx stay one-line wrappers. Information order
-// follows docs/features.html / docs/features-ja.html: hero -> 11 catalog
-// categories -> Keyboard Shortcuts (the one category with an extra nesting
-// level) -> closing CTA. PageShell owns SiteNav/SiteFooter (see
-// components/ClipperPage.tsx for the same pattern).
+// Shared skeleton for the EN/JA Features page pair, restored verbatim to
+// eed65be's docs/features.html / docs/features-ja.html structure (design-
+// regression project #1593 Wave R2 Batch 2). Copy lives in
+// content/features.ts so app/(en)/features/page.tsx and
+// app/(ja)/features-ja/page.tsx stay one-line wrappers. PageShell owns
+// SiteNav/SiteFooter (see components/ClipperPage.tsx for the same pattern).
 //
 // No JsonLd here: unlike the index/clipper/rss pages, docs/features.html /
 // docs/features-ja.html have no JSON-LD script tag to port.
 //
-// Structural review (post-launch): the first port rendered all 11 categories
-// as an always-open FeatureSection, producing a 25,000px+ scroll wall. The
-// old docs/features.html kept every category collapsed behind its own
-// accordion — a deliberate old-design information structure for catalog
-// content — so categories (including Keyboard Shortcuts, 28 items) now
-// render via FeatureCategoryAccordion / ShortcutsSection, both collapsed by
-// default via native <details>/<summary> (see
-// components/features/FeatureAccordionShell.tsx for why
-// components/ArchivalAccordion.tsx wasn't reused directly). Archival index
-// numbers (01-12) run in the same top-to-bottom order as before. Hero and Cta
-// are unchanged: Hero has no list content to collapse, and Cta is the
-// page's single always-visible closing action, consistent with every other
-// page's Cta.tsx in this codebase.
+// All 12 categories sit in one flat <div class="changelog-accordion">, each
+// as a native <details class="accordion-item">, matching the old page's own
+// non-programmatic markup exactly — no per-category <section> wrapper, no
+// archival index number, no background alternation (those were inventions of
+// an earlier, since-reverted port; the old page has neither). Only the first
+// item (Web Clipper) starts expanded via `open`, matching the old markup.
+// Order follows docs/features.html: Web Clipper -> RSS Reader -> Repository
+// Reader -> Note Graph -> Portability -> Modes -> Markdown -> Notes -> View
+// -> Storage -> Git Sync -> Keyboard Shortcuts (the one category with an
+// extra nesting level) -> closing CTA.
 export function FeaturesPage({ lang }: { lang: Lang }) {
   const copy = featuresSections[lang];
 
   return (
     <PageShell lang={lang} slug="features">
       <Hero lang={lang} />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="01"
-        eyebrow={copy.webClipper.eyebrow}
-        heading={copy.webClipper.heading}
-        items={copy.webClipper.items}
-        bg="paper"
-      />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="02"
-        eyebrow={copy.rssReader.eyebrow}
-        heading={copy.rssReader.heading}
-        items={copy.rssReader.items}
-        bg="paper-shade"
-      />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="03"
-        eyebrow={copy.repositoryReader.eyebrow}
-        heading={copy.repositoryReader.heading}
-        items={copy.repositoryReader.items}
-        bg="paper"
-      />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="04"
-        eyebrow={copy.noteGraph.eyebrow}
-        heading={copy.noteGraph.heading}
-        items={copy.noteGraph.items}
-        bg="paper-shade"
-      />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="05"
-        eyebrow={copy.portability.eyebrow}
-        heading={copy.portability.heading}
-        items={copy.portability.items}
-        bg="paper"
-      />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="06"
-        eyebrow={copy.modes.eyebrow}
-        heading={copy.modes.heading}
-        items={copy.modes.items}
-        bg="paper-shade"
-      />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="07"
-        eyebrow={copy.markdown.eyebrow}
-        heading={copy.markdown.heading}
-        items={copy.markdown.items}
-        bg="paper"
-      />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="08"
-        eyebrow={copy.notes.eyebrow}
-        heading={copy.notes.heading}
-        items={copy.notes.items}
-        bg="paper-shade"
-      />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="09"
-        eyebrow={copy.view.eyebrow}
-        heading={copy.view.heading}
-        items={copy.view.items}
-        bg="paper"
-      />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="10"
-        eyebrow={copy.storage.eyebrow}
-        heading={copy.storage.heading}
-        items={copy.storage.items}
-        bg="paper-shade"
-      />
-      <FeatureCategoryAccordion
-        lang={lang}
-        index="11"
-        eyebrow={copy.gitSync.eyebrow}
-        heading={copy.gitSync.heading}
-        items={copy.gitSync.items}
-        bg="paper"
-      />
-      <ShortcutsSection
-        lang={lang}
-        index="12"
-        eyebrow={copy.shortcuts.eyebrow}
-        heading={copy.shortcuts.heading}
-        groups={copy.shortcuts.groups}
-        bg="paper-shade"
-      />
+      <div className="changelog-accordion">
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.webClipper.eyebrow}
+          heading={copy.webClipper.heading}
+          icon={copy.webClipper.icon}
+          items={copy.webClipper.items}
+          open
+        />
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.rssReader.eyebrow}
+          heading={copy.rssReader.heading}
+          icon={copy.rssReader.icon}
+          items={copy.rssReader.items}
+        />
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.repositoryReader.eyebrow}
+          heading={copy.repositoryReader.heading}
+          icon={copy.repositoryReader.icon}
+          items={copy.repositoryReader.items}
+        />
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.noteGraph.eyebrow}
+          heading={copy.noteGraph.heading}
+          icon={copy.noteGraph.icon}
+          items={copy.noteGraph.items}
+        />
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.portability.eyebrow}
+          heading={copy.portability.heading}
+          icon={copy.portability.icon}
+          items={copy.portability.items}
+        />
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.modes.eyebrow}
+          heading={copy.modes.heading}
+          icon={copy.modes.icon}
+          items={copy.modes.items}
+        />
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.markdown.eyebrow}
+          heading={copy.markdown.heading}
+          icon={copy.markdown.icon}
+          items={copy.markdown.items}
+        />
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.notes.eyebrow}
+          heading={copy.notes.heading}
+          icon={copy.notes.icon}
+          items={copy.notes.items}
+        />
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.view.eyebrow}
+          heading={copy.view.heading}
+          icon={copy.view.icon}
+          items={copy.view.items}
+        />
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.storage.eyebrow}
+          heading={copy.storage.heading}
+          icon={copy.storage.icon}
+          items={copy.storage.items}
+        />
+        <FeatureCategoryAccordion
+          lang={lang}
+          eyebrow={copy.gitSync.eyebrow}
+          heading={copy.gitSync.heading}
+          icon={<GitSyncIcon />}
+          iconIsSvg
+          items={copy.gitSync.items}
+        />
+        <ShortcutsSection
+          lang={lang}
+          eyebrow={copy.shortcuts.eyebrow}
+          heading={copy.shortcuts.heading}
+          icon={copy.shortcuts.icon}
+          groups={copy.shortcuts.groups}
+        />
+      </div>
       <Cta lang={lang} />
     </PageShell>
   );

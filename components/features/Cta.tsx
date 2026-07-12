@@ -11,27 +11,26 @@ import { featuresSections, type Lang } from '@/content/features';
 // codebase (none of them vary the URL by lang).
 const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke';
 
-// Old docs/features.html closing CTA section, ported verbatim
-// (#1593 Phase 3-3). Unlike components/clipper/Cta.tsx and
-// components/rss/Cta.tsx (heading + two buttons), the old Features CTA has
-// only a single button — no secondary "See all features" link, since this
-// already is the features page. No data-ga-cta here: the old features pages
-// had no cta_click event (unlike hero/why/clipper/okf/rss), so only the
-// site-wide page_view from GoogleAnalytics applies (#1593 Phase 4 parity).
+// Old docs/features.html closing CTA section, restored verbatim to eed65be's
+// .cta-section / .buttons markup (#1593 Wave R2 Batch 2). Unlike
+// components/clipper/Cta.tsx and components/rss/Cta.tsx (heading + two
+// buttons), the old Features CTA has only a single button — no secondary
+// "See all features" link, since this already is the features page. The
+// ground-truth anchor has no target/rel/onclick attribute at all (opens in
+// the same tab, no cta_click event), so no data-ga-cta conversion applies
+// here unlike rss/clipper's Cta.
 export function Cta({ lang }: { lang: Lang }) {
   const copy = featuresSections[lang].cta;
   const ja = lang === 'ja';
-  const headingFont = ja ? 'font-serif-ja' : 'font-serif';
 
   return (
-    <section className="border-t border-hairline bg-paper">
-      <div className="mx-auto max-w-content px-4 py-section-mobile text-center lg:px-8 lg:py-section">
-        <h2 className={`text-h2 text-ink ${headingFont}`}>{ja ? <Budoux text={copy.heading} /> : copy.heading}</h2>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <SealButton href={CWS_URL} lang={lang} variant="primary" target="_blank" rel="noreferrer noopener">
-            {copy.primaryLabel}
-          </SealButton>
-        </div>
+    <section className="cta-section" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">{ja ? <Budoux text={copy.heading} /> : copy.heading}</h2>
+      <p>{ja ? <Budoux text={copy.body} /> : copy.body}</p>
+      <div className="buttons">
+        <SealButton href={CWS_URL} lang={lang} variant="primary" aria-label={copy.primaryAriaLabel}>
+          {copy.primaryLabel}
+        </SealButton>
       </div>
     </section>
   );

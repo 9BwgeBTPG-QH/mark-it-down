@@ -19,12 +19,14 @@ const TEMPLATES_BASE = 'https://markitdown.reduktion.dev/templates';
 // that alone doubled the route's First Load JS (103 kB -> 212 kB), so the
 // segmented title/description are precomputed here as ReactNode and passed
 // down as plain props instead.
+//
+// No wrapping element here (original-design rollback, #1593 Wave R2 Batch
+// 2): the old markup's search input / filter-tabs nav / tag-facets div /
+// template-grid div sit directly inside <main>, with no enclosing <section>
+// — TemplateGridClient's own top-level Fragment is returned as-is.
 export function TemplateGrid({ lang }: { lang: Lang }) {
   const cards = templateCards[lang];
   const ja = lang === 'ja';
-  const headingFont = ja ? 'font-serif-ja' : 'font-serif';
-  const bodyFont = ja ? 'font-sans-ja text-body-ja' : 'font-sans text-body';
-  const captionFont = ja ? 'font-sans-ja' : 'font-sans';
 
   const cardData: TemplateGridCardData[] = cards.map((card) => ({
     slug: card.slug,
@@ -39,17 +41,5 @@ export function TemplateGrid({ lang }: { lang: Lang }) {
       : `${TEMPLATES_BASE}/view.html?t=${card.slug}`,
   }));
 
-  return (
-    <section className="border-t border-hairline bg-paper-shade">
-      <div className="mx-auto max-w-section px-4 py-section-mobile lg:px-8 lg:py-section">
-        <TemplateGridClient
-          lang={lang}
-          cards={cardData}
-          headingFont={headingFont}
-          bodyFont={bodyFont}
-          captionFont={captionFont}
-        />
-      </div>
-    </section>
-  );
+  return <TemplateGridClient lang={lang} cards={cardData} />;
 }

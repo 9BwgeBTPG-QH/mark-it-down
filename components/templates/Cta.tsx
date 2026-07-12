@@ -5,36 +5,30 @@ import type { Lang } from '@/content/index';
 
 // Same Chrome Web Store URL as every other Cta.tsx in this codebase;
 // duplicated locally per that convention (none of them export a shared
-// constant). The old JA source's CTA link had a literal "?hl=ja" query
-// param appended to this same URL — dropped here, matching the existing
-// non-branching CWS_URL precedent (see components/features/Cta.tsx's own
-// comment on this).
+// constant).
 const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke';
 
-// Closing CTA from docs/templates.html / docs/templates-ja.html: heading +
-// body paragraph (like components/index/Cta.tsx) + a single button (like
-// components/features/Cta.tsx, since this already is a dedicated page with
-// no "see all templates" secondary link to add) — no version caption line.
-// Old CTA button's aria-label is dropped (SealButton's prop type has no
-// aria-label slot). No data-ga-cta here: the old templates pages had no
-// cta_click event (unlike hero/why/clipper/okf/rss), so only the site-wide
-// page_view from GoogleAnalytics applies (#1593 Phase 4 parity).
+// Closing CTA, restored verbatim from docs/templates.html / docs/templates-ja.html
+// (original-design rollback, #1593 Wave R2 Batch 2): .cta-section -> h2 -> p
+// -> .buttons with a single primary link, no version caption line. The old
+// primary link opens in the SAME tab (no target/rel in the old markup) and
+// has no onclick gtag (unlike okf/clipper/index's CTAs), so no
+// data-ga-cta here. The JA link keeps the old source's literal "?hl=ja"
+// query param on the CWS URL — same branch as components/index/Cta.tsx's
+// cwsHref, not the earlier non-branching draft this file replaces.
 export function Cta({ lang }: { lang: Lang }) {
   const copy = templatesCta[lang];
   const ja = lang === 'ja';
-  const headingFont = ja ? 'font-serif-ja' : 'font-serif';
-  const bodyFont = ja ? 'font-sans-ja text-body-ja' : 'font-sans text-body';
+  const cwsHref = ja ? `${CWS_URL}?hl=ja` : CWS_URL;
 
   return (
-    <section className="border-t border-hairline bg-paper">
-      <div className="mx-auto max-w-content px-4 py-section-mobile text-center lg:px-8 lg:py-section">
-        <h2 className={`text-h2 text-ink ${headingFont}`}>{ja ? <Budoux text={copy.heading} /> : copy.heading}</h2>
-        <p className={`mt-4 text-ink-2 ${bodyFont}`}>{ja ? <Budoux text={copy.body} /> : copy.body}</p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <SealButton href={CWS_URL} lang={lang} variant="primary" target="_blank" rel="noreferrer noopener">
-            {copy.buttonLabel}
-          </SealButton>
-        </div>
+    <section className="cta-section" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">{ja ? <Budoux text={copy.heading} /> : copy.heading}</h2>
+      <p>{ja ? <Budoux text={copy.body} /> : copy.body}</p>
+      <div className="buttons">
+        <SealButton href={cwsHref} lang={lang} variant="primary" aria-label={copy.buttonAriaLabel}>
+          {copy.buttonLabel}
+        </SealButton>
       </div>
     </section>
   );

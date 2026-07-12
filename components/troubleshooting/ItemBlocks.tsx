@@ -1,4 +1,5 @@
 import { Budoux } from '@/components/Budoux';
+import { Runs } from '@/components/troubleshooting/Runs';
 import type { Lang } from '@/content/index';
 import type { TroubleshootingBlock } from '@/content/troubleshooting';
 
@@ -7,44 +8,38 @@ interface ItemBlocksProps {
   blocks: TroubleshootingBlock[];
 }
 
-// Renders a single Troubleshooting item's block[] (#1593 Phase 3-4),
-// recursive: `group` blocks (e.g. "How to Repair" / "What Gets Detected")
-// nest their own blocks one level deeper than the item itself, matching
-// docs/troubleshooting.html's `.changelog-group` sub-sections. `termList`
-// covers `.changelog-features` bullet lists — a <strong> term followed by a
-// plain <span> description with no separator punctuation between them in
-// the old markup (confirmed by direct read of docs/troubleshooting.html
-// lines 94-97: `<li><strong>Term</strong> <span>description</span></li>`),
-// so none is added here. `paragraph`/`list` share the same rendering as
-// components/faq/QuestionBlocks.tsx.
+// Renders a single Troubleshooting item's block[], restored to
+// docs/troubleshooting.html's/-ja.html's original plain markup (#1593 Wave
+// R2 fidelity requirement — no Tailwind/M&I classes, no flattened inline
+// tags). Recursive: `group` blocks (e.g. "How to Repair" / "What Gets
+// Detected") nest their own blocks one level deeper than the item itself,
+// matching the old markup's bare `<div class="changelog-group"><h3
+// class="changelog-group-title">...</h3>...</div>`. `termList` covers
+// `<ul class="changelog-features">` bullet lists — a `<strong>` term
+// followed by a plain `<span>` description with no separator punctuation
+// between them in the old markup. `list`/`paragraph` render their `Run[]`
+// via components/troubleshooting/Runs.tsx to restore the old markup's
+// inline `<strong>`/`<em>`/`<code>` spans.
 export function ItemBlocks({ lang, blocks }: ItemBlocksProps) {
   const ja = lang === 'ja';
-  const bodyFont = ja ? 'font-sans-ja text-body-ja' : 'font-sans text-body';
-  const headingFont = ja ? 'font-serif-ja' : 'font-serif';
 
   return (
-    <div className="space-y-3">
+    <>
       {blocks.map((block, i) => {
         if (block.type === 'list') {
-          const items = block.items.map((item, j) => <li key={j}>{ja ? <Budoux text={item} /> : item}</li>);
-          return block.ordered ? (
-            <ol key={i} className={`list-decimal space-y-1 pl-6 ${bodyFont}`}>
-              {items}
-            </ol>
-          ) : (
-            <ul key={i} className={`list-disc space-y-1 pl-6 ${bodyFont}`}>
-              {items}
-            </ul>
-          );
+          const items = block.items.map((item, j) => (
+            <li key={j}>
+              <Runs runs={item} ja={ja} />
+            </li>
+          ));
+          return block.ordered ? <ol key={i}>{items}</ol> : <ul key={i}>{items}</ul>;
         }
         if (block.type === 'termList') {
           return (
-            <ul key={i} className={`space-y-1 ${bodyFont}`}>
+            <ul key={i} className="changelog-features">
               {block.items.map((term, j) => (
                 <li key={j}>
-                  <span className={`font-semibold text-ink ${headingFont}`}>
-                    {ja ? <Budoux text={term.term} /> : term.term}
-                  </span>{' '}
+                  <strong>{ja ? <Budoux text={term.term} /> : term.term}</strong>{' '}
                   <span>{ja ? <Budoux text={term.description} /> : term.description}</span>
                 </li>
               ))}
@@ -53,20 +48,18 @@ export function ItemBlocks({ lang, blocks }: ItemBlocksProps) {
         }
         if (block.type === 'group') {
           return (
-            <div key={i}>
-              <h3 className={`text-h3 text-ink ${headingFont}`}>{ja ? <Budoux text={block.title} /> : block.title}</h3>
-              <div className="mt-2">
-                <ItemBlocks lang={lang} blocks={block.blocks} />
-              </div>
+            <div key={i} className="changelog-group">
+              <h3 className="changelog-group-title">{ja ? <Budoux text={block.title} /> : block.title}</h3>
+              <ItemBlocks lang={lang} blocks={block.blocks} />
             </div>
           );
         }
         return (
-          <p key={i} className={bodyFont}>
-            {ja ? <Budoux text={block.text} /> : block.text}
+          <p key={i}>
+            <Runs runs={block.runs} ja={ja} />
           </p>
         );
       })}
-    </div>
+    </>
   );
 }

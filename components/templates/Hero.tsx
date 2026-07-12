@@ -2,22 +2,24 @@ import { Budoux } from '@/components/Budoux';
 import { templatesContent } from '@/content/templates';
 import type { Lang } from '@/content/index';
 
-// Same layout as components/features/Hero.tsx (h1 + tagline + subtitle, no
-// eyebrow) — docs/templates.html / docs/templates-ja.html's hero has the
-// same three-line shape.
+// docs/templates.html / docs/templates-ja.html's hero, restored verbatim
+// (original-design rollback, #1593 Wave R2 Batch 2): h1.page-title +
+// p.hero-tagline + p.hero-subtitle inside section.hero. The JA subtitle had
+// manually inserted zero-width spaces (U+200B) plus an inline
+// word-break/overflow-wrap style for line-break control — both dropped here,
+// replaced by <Budoux> (same precedent as every other already-rolled-back
+// page's hero).
 export function Hero({ lang }: { lang: Lang }) {
   const copy = templatesContent[lang];
   const ja = lang === 'ja';
-  const headingFont = ja ? 'font-serif-ja' : 'font-serif';
-  const bodyFont = ja ? 'font-sans-ja text-body-ja' : 'font-sans text-body';
 
   return (
-    <section className="mx-auto max-w-content px-4 py-section-mobile lg:px-8 lg:py-section">
-      <h1 className={`text-balance text-h1-mobile text-ink md:text-h1 ${headingFont}`}>
+    <section className="hero" aria-labelledby="gallery-heading">
+      <h1 id="gallery-heading" className="page-title">
         {ja ? <Budoux text={copy.h1} /> : copy.h1}
       </h1>
-      <p className={`mt-4 text-ink-2 ${bodyFont}`}>{ja ? <Budoux text={copy.heroTagline} /> : copy.heroTagline}</p>
-      <p className={`mt-2 text-ink-2 ${bodyFont}`}>{ja ? <Budoux text={copy.heroSubtitle} /> : copy.heroSubtitle}</p>
+      <p className="hero-tagline">{ja ? <Budoux text={copy.heroTagline} /> : copy.heroTagline}</p>
+      <p className="hero-subtitle">{ja ? <Budoux text={copy.heroSubtitle} /> : copy.heroSubtitle}</p>
     </section>
   );
 }
