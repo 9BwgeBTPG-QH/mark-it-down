@@ -146,7 +146,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
       },
     ],
     flowEyebrow: 'Workflow',
-    flowHeading: 'Entry → Edit → Clear → Exit',
+    flowHeading: 'Entry → Edit → Move → Exit',
     flowIntro: 'Information can pass through the browser instead of piling up there.',
     flowSteps: [
       {
@@ -155,7 +155,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
       },
       { title: 'Edit', bodyLines: ['In your own words.', 'Make it yours.'] },
       {
-        title: 'Clear',
+        title: 'Move',
         bodyLines: ['Archive finished work.', 'Template repeatable patterns. Trash what you no longer need.'],
       },
       {
@@ -259,7 +259,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
       },
     ],
     flowEyebrow: 'Workflow',
-    flowHeading: 'Entry → Edit → Clear → Exit',
+    flowHeading: 'Entry → Edit → Move → Exit',
     flowIntro: '情報はブラウザに溜め込むだけでなく、通過させることもできます。',
     flowSteps: [
       {
@@ -268,7 +268,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
       },
       { title: 'Edit', bodyLines: ['自分の言葉で。', '自分のものにする。'] },
       {
-        title: 'Clear',
+        title: 'Move',
         bodyLines: ['終わったものはArchiveへ。', '繰り返す型はTemplateへ。不要なものはTrashへ。'],
       },
       {
@@ -358,7 +358,7 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     name: 'Mark It Down',
     alternateName: 'Mark It Down — Markdown Editor & Web Clipper',
     description:
-      'Chrome extension Markdown editor & Web Clipper for digesting AI output and web articles into your own words. Built around the Entry → Edit → Clear → Exit workflow — a workshop for digestion, not a vault for storage. Side Panel and New Tab, Git sync, offline.',
+      'Chrome extension Markdown editor & Web Clipper for digesting AI output and web articles into your own words. Built around the Entry → Edit → Move → Exit workflow — a workshop for digestion, not a vault for storage. Side Panel and New Tab, Git sync, offline.',
     applicationCategory: 'Productivity',
     applicationSubCategory: 'Markdown Editor',
     browserRequirements: 'Chrome 116+ or Chromium-based browsers',
@@ -422,7 +422,7 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     name: 'Mark It Down',
     alternateName: 'Mark It Down — Markdown エディタ & Web クリッパー',
     description:
-      'Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力や Web 記事を「咀嚼」して自分の言葉に変える作業場。Entry → Edit → Clear → Exit のワークフローで、保存ではなく消化を目的とする。Side Panel と New Tab、Git 同期、オフライン対応。',
+      'Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力や Web 記事を「咀嚼」して自分の言葉に変える作業場。Entry → Edit → Move → Exit のワークフローで、保存ではなく消化を目的とする。Side Panel と New Tab、Git 同期、オフライン対応。',
     applicationCategory: 'Productivity',
     applicationSubCategory: 'Markdownエディタ',
     browserRequirements: 'Chrome 116以降またはChromiumベースブラウザ',

@@ -8,12 +8,12 @@ import { indexContent, type Lang } from '@/content/index';
 
 const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke';
 
-// Entry → Edit → Clear → Exit strip. Labels are English in both languages,
+// Entry → Edit → Move → Exit strip. Labels are English in both languages,
 // exactly as in the old page (the whole strip is aria-hidden decoration).
 const flowSteps = [
   { label: 'Entry', Icon: EntryIcon },
   { label: 'Edit', Icon: EditIcon },
-  { label: 'Clear', Icon: ClearIcon },
+  { label: 'Move', Icon: ClearIcon },
   { label: 'Exit', Icon: ExitIcon },
 ] as const;
 

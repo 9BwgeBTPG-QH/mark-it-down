@@ -6,7 +6,7 @@ import { indexSections, type Lang } from '@/content/index';
 // Same four icons as the hero flow strip — the old page reuses the set.
 const icons = [EntryIcon, EditIcon, ClearIcon, ExitIcon];
 
-// Old docs/index.html Entry→Edit→Clear→Exit flow section, restored verbatim
+// Old docs/index.html Entry→Edit→Move→Exit flow section, restored verbatim
 // from eed65be (original-design rollback, 2026-07-12). The old markup reuses
 // philosophy-list / philosophy-item with a flow-item modifier class.
 export function Flow({ lang }: { lang: Lang }) {
