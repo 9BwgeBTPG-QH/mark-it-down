@@ -6,29 +6,34 @@ export interface SiteNavLink {
   ja: string;
 }
 
-// Header nav: primary product pages only, kept short enough for a single-row
-// sticky bar (DESIGN.md §6 "ナビ：常時表示・sticky"). Selected from the
-// current docs/index.html header-nav baseline, plus Web Clipper / RSS Reader
-// — real product surfaces that were previously footer-only in the current
-// site; surfacing them in the header closes that gap. Secondary pages
-// (Philosophy, Troubleshooting, Feedback, Privacy) move to SiteFooter only.
+// Original-design nav (eed65be:docs/index.html header-nav, restored by the
+// #1593 rollback decision 2026-07-12): Home / Philosophy / Features / OKF /
+// Templates / FAQ / Troubleshooting / Changelog / Feedback / Privacy.
+// Web Clipper / RSS Reader are footer-only, exactly as the old site had them.
 export const primaryNavLinks: SiteNavLink[] = [
+  { slug: 'index', en: 'Home', ja: 'ホーム' },
+  { slug: 'why', en: 'Philosophy', ja: 'MIDとは' },
+  { slug: 'features', en: 'Features', ja: '機能' },
+  { slug: 'okf', en: 'OKF', ja: 'OKF' },
+  { slug: 'templates', en: 'Templates', ja: 'テンプレート' },
+  { slug: 'faq', en: 'FAQ', ja: 'よくある質問' },
+  { slug: 'troubleshooting', en: 'Troubleshooting', ja: 'トラブルシューティング' },
+  { slug: 'changelog', en: 'Changelog', ja: '更新履歴' },
+  { slug: 'feedback', en: 'Feedback', ja: 'フィードバック' },
+  { slug: 'privacy-policy', en: 'Privacy', ja: 'プライバシー' },
+];
+
+// Footer nav: the old site's footer-nav order (icon brand row + this list).
+export const footerNavLinks: SiteNavLink[] = [
   { slug: 'index', en: 'Home', ja: 'ホーム' },
   { slug: 'features', en: 'Features', ja: '機能' },
   { slug: 'clipper', en: 'Web Clipper', ja: 'Web Clipper' },
   { slug: 'rss', en: 'RSS Reader', ja: 'RSS Reader' },
-  { slug: 'templates', en: 'Templates', ja: 'テンプレート' },
   { slug: 'okf', en: 'OKF', ja: 'OKF' },
+  { slug: 'templates', en: 'Templates', ja: 'テンプレート' },
   { slug: 'faq', en: 'FAQ', ja: 'よくある質問' },
-  { slug: 'changelog', en: 'Changelog', ja: '更新履歴' },
-];
-
-// Footer nav: full site map (primary links plus secondary pages), matching
-// the current docs/index.html footer-nav's role as the exhaustive sitemap.
-export const footerNavLinks: SiteNavLink[] = [
-  ...primaryNavLinks,
-  { slug: 'why', en: 'Philosophy', ja: 'MIDとは' },
   { slug: 'troubleshooting', en: 'Troubleshooting', ja: 'トラブルシューティング' },
+  { slug: 'changelog', en: 'Changelog', ja: '更新履歴' },
   { slug: 'feedback', en: 'Feedback', ja: 'フィードバック' },
   { slug: 'privacy-policy', en: 'Privacy', ja: 'プライバシー' },
 ];
@@ -53,27 +58,34 @@ export function langSwitchHref(lang: Lang, slug: string = 'index'): string {
 interface SharedCopy {
   brand: string;
   navLabel: string;
-  menuToggle: string;
   langSwitchLabel: string;
   footerLabel: string;
   copyright: string;
+  // 旧サイトの skip link / ヘッダタグライン / ロゴリンク aria-label
+  skipLabel: string;
+  tagline: string;
+  homeAriaLabel: string;
 }
 
 export const sharedContent: Record<Lang, SharedCopy> = {
   en: {
     brand: 'Mark It Down',
     navLabel: 'Main navigation',
-    menuToggle: 'Menu',
     langSwitchLabel: '日本語',
     footerLabel: 'Footer navigation',
     copyright: '© 2025-2026 reduktion.dev',
+    skipLabel: 'Skip to main content',
+    tagline: 'Your browser is now a writing desk.',
+    homeAriaLabel: 'Mark It Down Home',
   },
   ja: {
     brand: 'Mark It Down',
     navLabel: 'メインナビゲーション',
-    menuToggle: 'メニュー',
     langSwitchLabel: 'English',
     footerLabel: 'フッターナビゲーション',
     copyright: '© 2025-2026 reduktion.dev',
+    skipLabel: 'メインコンテンツへスキップ',
+    tagline: 'ブラウザが、書斎になる。',
+    homeAriaLabel: 'Mark It Down ホーム',
   },
 };

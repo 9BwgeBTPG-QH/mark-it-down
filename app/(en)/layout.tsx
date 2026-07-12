@@ -2,6 +2,9 @@ import type { ReactNode } from 'react';
 import { Lora, Raleway } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import '../globals.css';
+// Original-design stylesheet (eed65be:docs/style.src.css port) — loaded after
+// globals.css so its rules win over Tailwind preflight (#1593 rollback).
+import '../original.css';
 
 // This is an independent Next.js root layout (via the (en) route group) so
 // <html lang> can differ from the (ja) group's layout — a single shared root

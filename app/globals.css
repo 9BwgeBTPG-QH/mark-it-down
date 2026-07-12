@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Minimal global application only — full design system lands in Phase 3. */
-@layer base {
-  body {
-    @apply bg-paper text-ink-2;
-  }
-}
+/* Body styling lives in app/original.css (the original design's stylesheet,
+   ported wholesale from eed65be:docs/style.src.css — #1593 rollback decision,
+   2026-07-12). Tailwind stays available for new elements only. */

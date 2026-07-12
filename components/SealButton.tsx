@@ -1,8 +1,10 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 import type { Lang } from '@/content/index';
 
-interface SealButtonProps extends Pick<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'target' | 'rel'> {
+interface SealButtonProps extends Pick<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'target' | 'rel' | 'aria-label'> {
   variant?: 'primary' | 'secondary';
+  // Unused since the original-design rollback (styling is class-based via
+  // app/original.css); accepted so existing call sites keep compiling.
   lang?: Lang;
   children: ReactNode;
   className?: string;
@@ -10,33 +12,23 @@ interface SealButtonProps extends Pick<AnchorHTMLAttributes<HTMLAnchorElement>, 
   'data-ga-cta'?: string;
 }
 
-// DESIGN.md §5 "Seal Press": CTA `:active` presses the seal down —
-// `translateY(1px)` + border shifting to `seal-deep`, 120ms — the tactile
-// confirmation that a commitment was made. Variants are DESIGN.md §6's two
-// static CTA styles (primary: seal fill + white text / secondary: paper fill
-// + seal text + 1px seal border). The transform is gated under
-// `motion-safe:` rather than added-then-cancelled, so reduced-motion users
-// never receive it (DESIGN.md §7).
+// Original-design CTA button (eed65be .btn / .btn-primary / .btn-secondary,
+// restored 2026-07-12): rendering delegates entirely to app/original.css's
+// class rules — this component only maps the variant to the old class names.
+// The component name is kept (SealButton) to avoid touching ~20 call sites;
+// it no longer carries the Manuscript & Ink "seal" semantics.
 export function SealButton({
   href,
   variant = 'primary',
-  lang,
+  lang: _lang,
   children,
   className = '',
   ...anchorProps
 }: SealButtonProps) {
-  const fontClass = lang === 'ja' ? 'font-sans-ja' : 'font-sans';
-  const variantClasses =
-    variant === 'primary'
-      ? 'border-seal bg-seal text-paper hover:bg-seal-deep hover:border-seal-deep'
-      : 'border-seal bg-paper text-seal hover:bg-paper-shade';
+  const variantClass = variant === 'primary' ? 'btn btn-primary' : 'btn btn-secondary';
 
   return (
-    <a
-      href={href}
-      className={`inline-flex items-center justify-center rounded-sm border px-6 py-3 text-body ${fontClass} transition-[transform,background-color,border-color] duration-instant ease-out motion-safe:active:translate-y-px active:border-seal-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-seal ${variantClasses} ${className}`}
-      {...anchorProps}
-    >
+    <a href={href} className={`${variantClass} ${className}`.trim()} {...anchorProps}>
       {children}
     </a>
   );
