@@ -8,37 +8,35 @@ import { indexContent, indexSections, type Lang } from '@/content/index';
 // site-wide constants (Hero.tsx keeps its own copy of this URL too).
 const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke';
 
-// Old docs/index.html closing CTA section, ported verbatim (#1593 Phase
-// 3-1), including the secondary button's changelog.html target.
+// Old docs/index.html closing CTA section, restored verbatim from eed65be
+// (original-design rollback, 2026-07-12): note + <small> version share one
+// <p> split by <br>, buttons open in the same tab, and — unlike the hero —
+// the old markup has no gtag onclick here, so no data-ga-cta.
 export function Cta({ lang }: { lang: Lang }) {
   const copy = indexSections[lang];
   const ja = lang === 'ja';
-  const headingFont = ja ? 'font-serif-ja' : 'font-serif';
-  const bodyFont = ja ? 'font-sans-ja text-body-ja' : 'font-sans text-body';
-  const captionFont = ja ? 'font-sans-ja' : 'font-sans';
+  const cwsHref = ja ? `${CWS_URL}?hl=ja` : CWS_URL;
 
   return (
-    <section className="border-t border-hairline bg-paper">
-      <div className="mx-auto max-w-content px-4 py-section-mobile text-center lg:px-8 lg:py-section">
-        <h2 className={`text-h2 text-ink ${headingFont}`}>
-          {ja ? <Budoux text={copy.ctaHeading} /> : copy.ctaHeading}
-        </h2>
-        <p className={`mt-4 text-ink-2 ${bodyFont}`}>{ja ? <Budoux text={copy.ctaNote} /> : copy.ctaNote}</p>
-        <p className={`mt-1 text-caption text-ink-muted ${captionFont}`}>{copy.ctaVersion}</p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <SealButton
-            href={CWS_URL}
-            lang={lang}
-            variant="primary"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            {indexContent[lang].ctaPrimary}
-          </SealButton>
-          <SealButton href={navHref('changelog', lang)} lang={lang} variant="secondary">
-            {copy.ctaSecondaryLabel}
-          </SealButton>
-        </div>
+    <section className="cta-section" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">{ja ? <Budoux text={copy.ctaHeading} /> : copy.ctaHeading}</h2>
+      <p>
+        {ja ? <Budoux text={copy.ctaNote} /> : copy.ctaNote}
+        <br />
+        <small>{copy.ctaVersion}</small>
+      </p>
+      <div className="buttons">
+        <SealButton
+          href={cwsHref}
+          lang={lang}
+          variant="primary"
+          aria-label={indexContent[lang].ctaPrimaryAriaLabel}
+        >
+          {indexContent[lang].ctaPrimary}
+        </SealButton>
+        <SealButton href={navHref('changelog', lang)} lang={lang} variant="secondary">
+          {copy.ctaSecondaryLabel}
+        </SealButton>
       </div>
     </section>
   );

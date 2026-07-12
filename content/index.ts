@@ -5,15 +5,19 @@ interface IndexCopy {
   title: string;
   description: string;
   h1: string;
-  heroLede: string;
+  // Hero copy, verbatim from eed65be docs/index.html / index-ja.html. Lines
+  // arrays reproduce the old hard `<br>` breaks (JA with ZWSP stripped —
+  // <Budoux> supersedes them).
+  heroTaglineLines: string[];
+  heroFact: string;
+  heroSubtitleLines: string[];
   ctaPrimary: string;
+  ctaPrimaryAriaLabel: string;
   ctaSecondary: string;
 }
 
-// Placeholder copy: lifted verbatim from the current production docs/index.html
-// and docs/index-ja.html (title / meta description / h1). Visual design and
-// full page content land in Phase 3 — this only proves the EN/JA page-pair
-// structure with shared components.
+// Copy lifted verbatim from eed65be docs/index.html and docs/index-ja.html
+// (title / meta description / h1 are the SEO parity gate — do not edit).
 export const indexContent: Record<Lang, IndexCopy> = {
   en: {
     lang: 'en',
@@ -21,9 +25,16 @@ export const indexContent: Record<Lang, IndexCopy> = {
     description:
       'Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.',
     h1: 'Free local Markdown editor and Web Clipper',
-    heroLede:
-      'Some notes are not meant to live in the browser forever. Mark It Down gives them a quiet place to become your words before they leave for export, Git, or a long-term archive.',
+    heroTaglineLines: ['Bring it in.', 'Rewrite what matters.', 'Move it on.'],
+    heroFact:
+      'A free Chrome extension — Markdown editor & Web Clipper for AI output, web articles, RSS items, and rough notes.',
+    heroSubtitleLines: [
+      'Some notes are not meant to live in the browser forever.',
+      'Mark It Down gives them a quiet place to become your words',
+      'before they leave for export, Git, or a long-term archive.',
+    ],
     ctaPrimary: 'Get the extension',
+    ctaPrimaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
     ctaSecondary: 'See how it works',
   },
   ja: {
@@ -32,9 +43,16 @@ export const indexContent: Record<Lang, IndexCopy> = {
     description:
       'AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。',
     h1: '無料・ローカル完結 Markdown エディタ',
-    heroLede:
-      'すべてのノートがブラウザに住み続けるわけではありません。Mark It Down は、エクスポートや Git、長期アーカイブへ送り出す前に、自分の言葉へ書き直すための静かな場所です。',
+    heroTaglineLines: ['取り込む。', '必要な部分を書き直す。', '次へ送り出す。'],
+    heroFact:
+      'Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力、Web 記事、RSS、断片メモを扱う作業場です。',
+    heroSubtitleLines: [
+      'すべてのノートをブラウザに置き続ける必要はありません。',
+      'Mark It Down は、素材が自分の言葉になるまでの静かな場所です。',
+      'できあがったら、Export、Git、長期保存先へ送り出します。',
+    ],
     ctaPrimary: '拡張機能を入手',
+    ctaPrimaryAriaLabel: 'Chrome Web Storeで入手する',
     ctaSecondary: '機能を見る',
   },
 };
@@ -48,53 +66,45 @@ export const indexContent: Record<Lang, IndexCopy> = {
 // factually accurate (JA has its own description/featureList/currency, not
 // an EN reuse). Update alongside CLAUDE.md's "Version Updates" step 3
 // (`softwareVersion` / `dateModified`) on release.
-// Below-fold index sections (#1593 Phase 3-1). Copy ported verbatim from the
-// current production docs/index.html / docs/index-ja.html (Philosophy, Flow,
-// Workflow, Recently Added, FAQ preview, CTA sections), minus presentational
-// artifacts that don't survive the redesign: manual `<br>` line breaks
-// (column width changed, so hard breaks are dropped and prose reflows
-// naturally) and JA zero-width spaces / `word-break: keep-all` inline styles
-// (superseded by the <Budoux> component's own line-break control). The
-// "Screenshot" section (old: Marp slides-en.html/slides-ja.html iframe) is
-// intentionally not ported — those slide decks don't exist in this Next.js
-// rebuild, and Hero already renders the one screenshot this page needs
-// directly below the h1 (components/hero/Hero.tsx).
+// Below-fold index sections, ported verbatim from eed65be docs/index.html /
+// docs/index-ja.html (Philosophy, Flow, Screenshot, Workflow, Recently Added,
+// FAQ preview, CTA). Old hard `<br>` breaks inside philosophy/flow item
+// bodies are reproduced as `bodyLines` arrays. JA zero-width spaces /
+// `word-break: keep-all` inline styles are stripped — the <Budoux> component
+// supersedes them (DESIGN.md).
 export interface IndexListItem {
   title: string;
   body: string;
 }
 
-export interface IndexFaqItem {
-  question: string;
-  answer: string;
+// List item whose old markup had a manual <br> mid-body (philosophy / flow).
+export interface IndexBrokenItem {
+  title: string;
+  bodyLines: string[];
 }
 
-// New addition (not in the old page): explicit content-level links to
-// clipper.html / rss.html / features.html — the discoverability gap #1593
-// was opened for (content/shared.ts already surfaces these in the header
-// nav; this closes the same gap in the page body). Label/body text is
-// lifted from the existing indexJsonLd featureList entries above rather
-// than freshly invented, except the Features blurb which has no equivalent
-// featureList line to port.
-export interface IndexExploreLink {
-  slug: string;
-  label: string;
-  body: string;
-  linkLabel: string;
+// The old FAQ answers bold only their leading sentence
+// (`<p><strong>lead</strong> rest</p>`), so the split is content-level.
+export interface IndexFaqItem {
+  question: string;
+  answerLead: string;
+  answerRest: string;
 }
 
 interface IndexSectionsCopy {
+  philosophyEyebrow: string;
   philosophyHeading: string;
-  philosophyItems: IndexListItem[];
+  philosophyItems: IndexBrokenItem[];
   flowEyebrow: string;
   flowHeading: string;
   flowIntro: string;
-  flowSteps: IndexListItem[];
+  flowSteps: IndexBrokenItem[];
+  screenshotHeading: string;
+  screenshotContext: string;
+  screenshotIframeTitle: string;
   workflowEyebrow: string;
   workflowHeading: string;
   workflowItems: IndexListItem[];
-  exploreHeading: string;
-  exploreLinks: IndexExploreLink[];
   recentEyebrow: string;
   recentHeading: string;
   recentStatus: string;
@@ -111,36 +121,49 @@ interface IndexSectionsCopy {
 
 export const indexSections: Record<Lang, IndexSectionsCopy> = {
   en: {
+    philosophyEyebrow: 'Philosophy',
     philosophyHeading: 'Philosophy',
     philosophyItems: [
       {
         title: 'Capture first. Classify later.',
-        body: 'Clips, feeds, and pasted drafts start in Inbox. The filing decision can wait until you have read them.',
+        bodyLines: [
+          'Clips, feeds, and pasted drafts start in Inbox.',
+          'The filing decision can wait until you have read them.',
+        ],
       },
       {
         title: 'Not storage. Digestion.',
-        body: "Copy-pasting doesn't make it yours. Rewriting does.",
+        bodyLines: ["Copy-pasting doesn't make it yours.", 'Rewriting does.'],
       },
       {
         title: 'Local, then intentional.',
-        body: 'Autosave keeps the draft nearby. Export and Git sync happen when you decide the note is ready.',
+        bodyLines: [
+          'Autosave keeps the draft nearby.',
+          'Export and Git sync happen when you decide the note is ready.',
+        ],
       },
     ],
     flowEyebrow: 'Workflow',
     flowHeading: 'Entry → Edit → Clear → Exit',
     flowIntro: 'Information can pass through the browser instead of piling up there.',
     flowSteps: [
-      { title: 'Entry', body: 'Paste AI output. Clip a page. Save an RSS item. Start from a blank note.' },
-      { title: 'Edit', body: 'In your own words. Make it yours.' },
+      {
+        title: 'Entry',
+        bodyLines: ['Paste AI output.', 'Clip a page. Save an RSS item. Start from a blank note.'],
+      },
+      { title: 'Edit', bodyLines: ['In your own words.', 'Make it yours.'] },
       {
         title: 'Clear',
-        body: 'Archive finished work. Template repeatable patterns. Trash what you no longer need.',
+        bodyLines: ['Archive finished work.', 'Template repeatable patterns. Trash what you no longer need.'],
       },
       {
         title: 'Exit',
-        body: 'PDF, DOCX, HTML, EPUB, LaTeX, .md, or Git. Send finished notes where they belong next.',
+        bodyLines: ['PDF, DOCX, HTML, EPUB, LaTeX, .md, or Git.', 'Send finished notes where they belong next.'],
       },
     ],
+    screenshotHeading: 'Screenshot',
+    screenshotContext: 'Explore Mark It Down — browse the slides at your own pace',
+    screenshotIframeTitle: 'Mark It Down - Product Overview Slides',
     workflowEyebrow: 'Use Cases',
     workflowHeading: 'How it works in practice',
     workflowItems: [
@@ -159,27 +182,6 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
       {
         title: 'Brain-dump, then reorder',
         body: 'Write a list as it comes to mind, then use Alt+↑ / ↓ to reorder lines into shape.',
-      },
-    ],
-    exploreHeading: 'Go deeper',
-    exploreLinks: [
-      {
-        slug: 'clipper',
-        label: 'Web Clipper',
-        body: 'Right-click to save any page or AI chat as Markdown.',
-        linkLabel: 'Open Web Clipper',
-      },
-      {
-        slug: 'rss',
-        label: 'RSS Reader',
-        body: 'Read feeds, open articles, and save selected items to Inbox.',
-        linkLabel: 'Open RSS Reader',
-      },
-      {
-        slug: 'features',
-        label: 'Features',
-        body: 'See the full feature list, from Git sync to Portability Hub.',
-        linkLabel: 'See all features',
       },
     ],
     recentEyebrow: "What's New",
@@ -212,17 +214,19 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqItems: [
       {
         question: 'Is Mark It Down free?',
-        answer: 'Yes, completely free. No ads, no premium tier, no account required.',
+        answerLead: 'Yes, completely free.',
+        answerRest: 'No ads, no premium tier, no account required.',
       },
       {
         question: 'Can I use it offline?',
-        answer:
-          'Yes, almost everything works offline. Creating, editing, searching notes—all work without internet. Only Git sync requires a connection.',
+        answerLead: 'Yes, almost everything works offline.',
+        answerRest:
+          'Creating, editing, searching notes—all work without internet. Only Git sync requires a connection.',
       },
       {
         question: 'Will clearing browser cache delete my notes?',
-        answer:
-          'No. Notes are stored in a dedicated extension storage, separate from browser cache. Your data is safe.',
+        answerLead: 'No.',
+        answerRest: 'Notes are stored in a dedicated extension storage, separate from browser cache. Your data is safe.',
       },
     ],
     faqMoreLabel: 'View all FAQ',
@@ -232,36 +236,46 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ctaSecondaryLabel: "What's new",
   },
   ja: {
+    philosophyEyebrow: 'Philosophy',
     philosophyHeading: '哲学',
     philosophyItems: [
       {
         title: 'まず取り込む。分類はあとで。',
-        body: 'クリップ、フィード、貼り付けた下書きは Inbox へ。分類は、読んでからでも間に合います。',
+        bodyLines: ['クリップ、フィード、貼り付けた下書きは Inbox へ。', '分類は、読んでからでも間に合います。'],
       },
       {
         title: '保存じゃなくて、咀嚼。',
-        body: 'コピペでは自分のものにならない。書き直すことで自分の言葉になる。',
+        bodyLines: ['コピペでは自分のものにならない。', '書き直すことで自分の言葉になる。'],
       },
       {
         title: 'ローカルに保存し、意図して送り出す。',
-        body: '下書きは自動保存で手元に残ります。Export と Git 同期は、ノートの準備ができたときに実行します。',
+        bodyLines: [
+          '下書きは自動保存で手元に残ります。',
+          'Export と Git 同期は、ノートの準備ができたときに実行します。',
+        ],
       },
     ],
     flowEyebrow: 'Workflow',
     flowHeading: 'Entry → Edit → Clear → Exit',
     flowIntro: '情報はブラウザに溜め込むだけでなく、通過させることもできます。',
     flowSteps: [
-      { title: 'Entry', body: 'AI出力を貼り付ける。ページをクリップする。RSSを保存する。空白から書く。' },
-      { title: 'Edit', body: '自分の言葉で。自分のものにする。' },
+      {
+        title: 'Entry',
+        bodyLines: ['AI出力を貼り付ける。', 'ページをクリップする。RSSを保存する。空白から書く。'],
+      },
+      { title: 'Edit', bodyLines: ['自分の言葉で。', '自分のものにする。'] },
       {
         title: 'Clear',
-        body: '終わったものはArchiveへ。繰り返す型はTemplateへ。不要なものはTrashへ。',
+        bodyLines: ['終わったものはArchiveへ。', '繰り返す型はTemplateへ。不要なものはTrashへ。'],
       },
       {
         title: 'Exit',
-        body: 'PDF、DOCX、HTML、EPUB、LaTeX、.md、Git。できあがったノートを、次の場所へ送ります。',
+        bodyLines: ['PDF、DOCX、HTML、EPUB、LaTeX、.md、Git。', 'できあがったノートを、次の場所へ送ります。'],
       },
     ],
+    screenshotHeading: 'スクリーンショット',
+    screenshotContext: 'Mark It Downの全体像 — スライドを自分のペースでご覧ください',
+    screenshotIframeTitle: 'Mark It Down - 製品紹介スライド',
     workflowEyebrow: 'Use Cases',
     workflowHeading: '実際の使い方',
     workflowItems: [
@@ -280,27 +294,6 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
       {
         title: '思いつくまま書いて並べ替え',
         body: 'リストを思いつくまま書いて、Alt+↑ / ↓ で行を並べ替えて整える。',
-      },
-    ],
-    exploreHeading: 'ツールを見る',
-    exploreLinks: [
-      {
-        slug: 'clipper',
-        label: 'Web Clipper',
-        body: '右クリックでページやAIチャットをMarkdownに変換して保存。',
-        linkLabel: 'Web Clipperを見る',
-      },
-      {
-        slug: 'rss',
-        label: 'RSS Reader',
-        body: 'フィードを読み、必要な記事だけInboxへ保存。',
-        linkLabel: 'RSS Readerを見る',
-      },
-      {
-        slug: 'features',
-        label: '機能',
-        body: 'Git同期からPortability Hubまで、全機能を確認。',
-        linkLabel: '全機能を見る',
       },
     ],
     recentEyebrow: "What's New",
@@ -333,16 +326,18 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqItems: [
       {
         question: '無料で使えますか？',
-        answer: 'はい、完全無料です。広告なし、有料プランなし、アカウント登録も不要です。',
+        answerLead: 'はい、完全無料です。',
+        answerRest: '広告なし、有料プランなし、アカウント登録も不要です。',
       },
       {
         question: 'オフラインで使えますか？',
-        answer:
-          'はい、ほぼすべての機能がオフラインで動作します。ノートの作成、編集、検索はすべてオフラインで可能。Git同期のみインターネット接続が必要です。',
+        answerLead: 'はい、ほぼすべての機能がオフラインで動作します。',
+        answerRest: 'ノートの作成、編集、検索はすべてオフラインで可能。Git同期のみインターネット接続が必要です。',
       },
       {
         question: 'ブラウザのキャッシュを消すとノートも消えますか？',
-        answer: 'いいえ、消えません。ノートは拡張機能専用のストレージに保存されており、ブラウザキャッシュとは別です。データは安全です。',
+        answerLead: 'いいえ、消えません。',
+        answerRest: 'ノートは拡張機能専用のストレージに保存されており、ブラウザキャッシュとは別です。データは安全です。',
       },
     ],
     faqMoreLabel: 'すべてのFAQを見る',
