@@ -1,6 +1,6 @@
 import type { Lang } from '@/content/index';
 import { Budoux } from '@/components/Budoux';
-import { primaryNavLinks, navHref, langSwitchHref, sharedContent } from '@/content/shared';
+import { primaryNavLinks, navHref, langSwitchHref, sharedContent, pageTaglines } from '@/content/shared';
 
 interface SiteNavProps {
   lang: Lang;
@@ -19,9 +19,16 @@ interface SiteNavProps {
 // <Budoux> instead (same line-break intent, no inline styles).
 export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentSlug }: SiteNavProps) {
   const copy = sharedContent[lang];
+  // 旧サイトはヘッダタグラインがページ毎に異なる（welcome は無し）。
+  const tagline =
+    currentSlug in pageTaglines[lang] ? pageTaglines[lang][currentSlug] : copy.tagline;
+  // 旧 welcome.html はオンボーディング専用ページとして header-nav 自体が無い
+  // （ロゴのみの banner header）。eed65be 実測に合わせて非表示にする。
+  const showNav = currentSlug !== 'welcome';
 
   return (
     <>
+      {showNav && (
       <nav className="header-nav" aria-label={copy.navLabel}>
         <ul>
           {primaryNavLinks.map((item) => (
@@ -38,6 +45,7 @@ export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentS
           </li>
         </ul>
       </nav>
+      )}
       <header role="banner">
         <div className="header-logo">
           <a href={navHref('index', lang)} aria-label={copy.homeAriaLabel}>
@@ -46,7 +54,9 @@ export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentS
             <span className="site-title">{copy.brand}</span>
           </a>
         </div>
-        <p className="tagline">{lang === 'ja' ? <Budoux text={copy.tagline} /> : copy.tagline}</p>
+        {tagline !== null && (
+          <p className="tagline">{lang === 'ja' ? <Budoux text={tagline} /> : tagline}</p>
+        )}
       </header>
     </>
   );

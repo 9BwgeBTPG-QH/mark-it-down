@@ -67,6 +67,38 @@ interface SharedCopy {
   homeAriaLabel: string;
 }
 
+// 旧サイト（eed65be）はヘッダタグラインがページ毎に異なる。ここに無い slug は
+// sharedContent.tagline（index / why と同文）へフォールバックし、null は
+// タグライン要素そのものを描画しない（旧 welcome.html はロゴのみ）。
+export const pageTaglines: Record<Lang, Record<string, string | null>> = {
+  en: {
+    features: 'Features',
+    templates: 'Template Gallery',
+    faq: 'FAQ',
+    changelog: 'Changelog',
+    'privacy-policy': 'Privacy Policy',
+    troubleshooting: 'Troubleshooting',
+    feedback: 'Feedback',
+    okf: 'Portable knowledge, plain files.',
+    clipper: 'Clip the web. Rewrite it in your own words.',
+    rss: 'Read feeds. Keep only what you will rewrite.',
+    welcome: null,
+  },
+  ja: {
+    features: '機能',
+    templates: 'テンプレートギャラリー',
+    faq: 'よくある質問',
+    changelog: '更新履歴',
+    'privacy-policy': 'プライバシーポリシー',
+    troubleshooting: 'トラブルシューティング',
+    feedback: 'フィードバック',
+    okf: '持ち運べる知識を、普通のファイルで。',
+    clipper: 'Webを取り込む。自分の言葉にする。',
+    rss: 'フィードを読む。書き直すものだけ残す。',
+    welcome: null,
+  },
+};
+
 export const sharedContent: Record<Lang, SharedCopy> = {
   en: {
     brand: 'Mark It Down',
