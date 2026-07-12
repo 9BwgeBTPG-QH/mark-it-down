@@ -24,6 +24,6 @@
 
 ## 移行中の注意
 
-- Manuscript & Ink の Tailwind トークン（`paper` / `ink` / `seal` / `hairline` / `font-serif` 等）は未移行ページの互換のため `tailwind.config.ts` に残存。**新規使用禁止**、全ページ移行完了後に削除
+- Manuscript & Ink の Tailwind トークンは全ページ移行完了後に削除済み（2026-07-12）。`tailwind.config.ts` にデザイントークンを追加しない。再混入ゲート: `grep -rnE "bg-paper|paper-shade|text-ink|ink-2|ink-muted|border-hairline|outline-seal|bg-ink|font-serif|font-sans-ja|shadow-float|text-h1|text-display" app components content` が 0 件（Tailwind JIT は未定義クラスを黙って無視するため build 成功は安全確認にならない）
 - Lighthouse ゲート: `doc/audit/lighthouse-baseline-2026-07-12.md`（Perf 97-99 / A11y 100）を維持目標とするが、旧デザイン復元により旧実測（`-07-11.md`: Perf 87-100 / A11y 96-100）相当へ戻る項目が出た場合は、原因を「デザイン起因 / 実装起因」に切り分けて記録する（gtag 遅延化・next/font 等の基盤改善は維持されるため全面回帰はしない見込み）
 - SEO パリティ: title / description / h1 は `doc/audit/seo-baseline-2026-07-12.json` と一致を維持（eed65be の SEO 監査値と同一）
