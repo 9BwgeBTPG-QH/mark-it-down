@@ -1,31 +1,26 @@
 import { PageShell } from '@/components/PageShell';
 import { JsonLd } from '@/components/JsonLd';
 import { Hero } from '@/components/rss/Hero';
-import { FeatureSection } from '@/components/clipper/FeatureSection';
+import { PhilosophySection } from '@/components/rss/PhilosophySection';
 import { Cta } from '@/components/rss/Cta';
 import { rssJsonLd, rssSections, type Lang } from '@/content/rss';
 
-// Shared skeleton for the EN/JA RSS Reader page pair (#1593 Phase 3-2).
-// Copy lives in content/rss.ts so app/(en)/rss/page.tsx and
-// app/(ja)/rss-ja/page.tsx stay one-line wrappers. Information order
-// follows docs/rss.html / docs/rss-ja.html: hero → Workspace → Subscriptions
-// → closing CTA. The old page has no screenshot/image section, so none is
-// added here. PageShell owns SiteNav/SiteFooter (see components/ClipperPage.tsx
-// for the same pattern on the Web Clipper page).
+// Shared skeleton for the EN/JA RSS Reader page pair, restored verbatim to
+// eed65be original design (Wave R2 T1, #1593). Copy lives in content/rss.ts
+// so app/(en)/rss/page.tsx and app/(ja)/rss-ja/page.tsx stay one-line
+// wrappers. Section order follows docs/rss.html / docs/rss-ja.html: hero ->
+// Workspace (id rss-workspace-heading) -> Subscriptions (id
+// rss-sync-heading, matching the old page's own id even though its
+// section-label reads "Subscriptions") -> closing CTA. The old page has no
+// screenshot/image section, so none is added here. PageShell owns
+// SiteNav/SiteFooter (see components/ClipperPage.tsx for the same pattern on
+// the Web Clipper page).
 //
-// FeatureSection is imported directly from components/clipper/FeatureSection
-// rather than duplicated: its props ({ lang, eyebrow, heading, intro, items,
-// bg }) are content-agnostic and RssListItem (content/rss.ts) is structurally
-// identical to ClipperListItem ({ title, body }), so no props extension was
-// needed. Hero and Cta are NOT reused from components/clipper/ — both of
-// those components import their copy source directly (clipperContent /
-// clipperSections) rather than accepting it as a prop, so reusing them
-// as-is would have pointed the rss page at clipper's copy. Rather than
-// widen their props for a single reuse, components/rss/Hero.tsx and
-// components/rss/Cta.tsx mirror the same structure/classes with
-// content/rss.ts as their copy source, matching this codebase's existing
-// per-page Hero/Cta convention (components/index/Hero.tsx also does not
-// take copy as a prop).
+// PhilosophySection is NOT reused from components/clipper/ — this codebase's
+// established per-page-family convention (Hero and Cta already mirror rather
+// than share; see the removed comment this replaces). components/rss/
+// PhilosophySection.tsx duplicates components/clipper/PhilosophySection.tsx's
+// structure with content/rss.ts as its copy source.
 export function RssPage({ lang }: { lang: Lang }) {
   const copy = rssSections[lang];
 
@@ -33,21 +28,21 @@ export function RssPage({ lang }: { lang: Lang }) {
     <PageShell lang={lang} slug="rss">
       <JsonLd data={rssJsonLd[lang]} />
       <Hero lang={lang} />
-      <FeatureSection
+      <PhilosophySection
         lang={lang}
+        headingId="rss-workspace-heading"
         eyebrow={copy.workspace.eyebrow}
         heading={copy.workspace.heading}
         intro={copy.workspace.intro}
         items={copy.workspace.items}
-        bg="paper"
       />
-      <FeatureSection
+      <PhilosophySection
         lang={lang}
+        headingId="rss-sync-heading"
         eyebrow={copy.subscriptions.eyebrow}
         heading={copy.subscriptions.heading}
         intro={copy.subscriptions.intro}
         items={copy.subscriptions.items}
-        bg="paper-shade"
       />
       <Cta lang={lang} />
     </PageShell>

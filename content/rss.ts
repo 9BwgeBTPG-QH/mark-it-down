@@ -62,6 +62,7 @@ interface RssSectionCopy {
 interface RssCtaCopy {
   heading: string;
   primaryLabel: string;
+  primaryAriaLabel: string;
   secondaryLabel: string;
 }
 
@@ -122,6 +123,7 @@ export const rssSections: Record<Lang, RssSectionsCopy> = {
     cta: {
       heading: 'Turn reading into notes, not a backlog.',
       primaryLabel: 'Get the extension',
+      primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
       secondaryLabel: 'See all features',
     },
   },
@@ -169,6 +171,7 @@ export const rssSections: Record<Lang, RssSectionsCopy> = {
     cta: {
       heading: '読むことを、未処理リストではなくノートに変える。',
       primaryLabel: '拡張機能を入手する',
+      primaryAriaLabel: 'Chrome ウェブストアから Mark It Down を入手',
       secondaryLabel: '機能を見る',
     },
   },

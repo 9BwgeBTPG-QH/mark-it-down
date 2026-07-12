@@ -1,64 +1,71 @@
+import { Fragment } from 'react';
 import { Budoux } from '@/components/Budoux';
-import type { Lang } from '@/content/index';
-import type { WhyOriginBlock } from '@/content/why';
+import { whyOrigin, type WhyOriginBlock, type WhyOriginLine, type Lang } from '@/content/why';
 
-interface OriginProps {
-  lang: Lang;
-  eyebrow: string;
-  blocks: WhyOriginBlock[];
+// Old docs/why.html "The starting point" section (<section aria-labelledby=
+// "why-origin-heading">), restored verbatim from eed65be (original-design
+// rollback, 2026-07-12): section-label eyebrow, visually hidden h2, and a
+// plain why-narrative wrapper div (no dedicated CSS rule for this class in
+// either the old or new stylesheet — the old page relies on default block
+// styling here) holding the ordered paragraph/blockquote/emphasis blocks
+// 1:1 with the old markup's own block boundaries per language. A paragraph
+// block can carry a `lines` array instead of `text` to restore the old
+// markup's hard <br> within a single <p>, and an individual line can be a
+// [before, strong, after] tuple to restore an old inline <strong> span
+// embedded within that line (see WhyOriginLine in content/why.ts).
+function OriginLine({ line, ja }: { line: WhyOriginLine; ja: boolean }) {
+  if (Array.isArray(line)) {
+    const [before, strong, after] = line;
+    return (
+      <>
+        {ja ? <Budoux text={before} /> : before}
+        <strong>{ja ? <Budoux text={strong} /> : strong}</strong>
+        {after && (ja ? <Budoux text={after} /> : after)}
+      </>
+    );
+  }
+  return ja ? <Budoux text={line} /> : line;
 }
 
-// Part 1 "The starting point" (docs/why.html <section aria-labelledby=
-// "why-origin-heading">, #1593 Phase 3-3). Direct read of docs/why.html /
-// docs/why-ja.html shows the old markup carries BOTH a visible
-// `<span class="section-label">` caption AND a separate hidden
-// `<h2 class="visually-hidden">` with the same text — kept here as a
-// visible eyebrow caption (same treatment as okf/rss's eyebrow) plus an
-// `sr-only` h2 (same Tailwind utility already used by
-// components/SiteNav.tsx) so both the visual caption and the heading
-// outline/SEO structure match the old page.
-//
-// `blocks` is an ordered union rather than fixed paragraph fields because
-// content/why.ts's whyOrigin has a different block count per language (EN 5
-// / JA 7) — see that file's own comment for why. `blockquote` renders as an
-// indented, quiet citation (no existing blockquote pattern in this codebase
-// to reuse); `emphasis` renders the one whole-paragraph <strong> as a
-// standalone bold statement, a block-level rhetorical device distinct from
-// the surrounding prose, not a plain paragraph.
-export function Origin({ lang, eyebrow, blocks }: OriginProps) {
+function Block({ block, ja }: { block: WhyOriginBlock; ja: boolean }) {
+  if (block.type === 'paragraph' && 'lines' in block)
+    return (
+      <p>
+        {block.lines.map((line, i) => (
+          <Fragment key={i}>
+            {i > 0 && <br />}
+            <OriginLine line={line} ja={ja} />
+          </Fragment>
+        ))}
+      </p>
+    );
+  const text = ja ? <Budoux text={block.text} /> : block.text;
+  if (block.type === 'blockquote') return <blockquote>{text}</blockquote>;
+  if (block.type === 'emphasis')
+    return (
+      <p>
+        <strong>{text}</strong>
+      </p>
+    );
+  return <p>{text}</p>;
+}
+
+export function Origin({ lang }: { lang: Lang }) {
+  const copy = whyOrigin[lang];
   const ja = lang === 'ja';
-  const bodyFont = ja ? 'font-sans-ja text-body-ja' : 'font-sans text-body';
-  const headingFont = ja ? 'font-serif-ja' : 'font-serif';
-  const captionFont = ja ? 'font-sans-ja' : 'font-sans';
 
   return (
-    <section className="border-t border-hairline bg-paper">
-      <div className="mx-auto max-w-content px-4 py-section-mobile lg:px-8 lg:py-section">
-        <p className={`text-caption text-ink-muted ${captionFont}`}>{eyebrow}</p>
-        <h2 className={`sr-only ${headingFont}`}>{eyebrow}</h2>
-        <div className="mt-6 space-y-6">
-          {blocks.map((block, i) => {
-            if (block.type === 'blockquote') {
-              return (
-                <blockquote key={i} className="border-l-2 border-seal py-1 pl-6 text-ink-2 italic">
-                  {block.text}
-                </blockquote>
-              );
-            }
-            if (block.type === 'emphasis') {
-              return (
-                <p key={i} className={`text-h3 font-semibold text-ink ${headingFont}`}>
-                  {ja ? <Budoux text={block.text} /> : block.text}
-                </p>
-              );
-            }
-            return (
-              <p key={i} className={`text-ink-2 ${bodyFont}`}>
-                {ja ? <Budoux text={block.text} /> : block.text}
-              </p>
-            );
-          })}
-        </div>
+    <section className="philosophy" aria-labelledby="why-origin-heading">
+      <span className="section-label">{copy.eyebrow}</span>
+      <h2 id="why-origin-heading" className="visually-hidden">
+        {copy.eyebrow}
+      </h2>
+      <div className="why-narrative">
+        {copy.blocks.map((block, i) => (
+          <Fragment key={i}>
+            <Block block={block} ja={ja} />
+          </Fragment>
+        ))}
       </div>
     </section>
   );

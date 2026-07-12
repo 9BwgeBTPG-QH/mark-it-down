@@ -44,62 +44,96 @@ export const welcomeContent: Record<Lang, WelcomeCopy> = {
   },
 };
 
+// Inline run shapes shared by the fields below that carry a single <strong>
+// span or a <kbd>+<kbd> pair inside a sentence (original-design rollback,
+// #1593 Wave R2 — supersedes the prior Tailwind-era flattening precedent in
+// content/faq.ts / content/troubleshooting.ts / content/features.ts: this
+// page's app/original.css defines real `.welcome-cta kbd` / `.way-content
+// kbd` / `.welcome-details .detail-content li strong` rules that only apply
+// to actual <kbd>/<strong> elements, so the inline structure is restored
+// instead of flattened). Rendered by components/welcome/InlineText.tsx.
+export interface WelcomeStrongSegment {
+  before: string;
+  strong: string;
+  after: string;
+}
+
+export interface WelcomeKbdPairSegment {
+  before: string;
+  kbd1: string;
+  mid: string;
+  kbd2: string;
+  after: string;
+}
+
 // "First things first" block (Chrome's post-install confirmation dialog).
-// Inline <strong> spans in the old markup (e.g. click <strong>"Keep it"</strong>)
-// are flattened to plain text, matching the established precedent in
-// content/faq.ts's FaqBlock / content/troubleshooting.ts's TroubleshootingBlock
-// / content/features.ts's OKF Export item ("Inline <strong>/<em>/<code>/<kbd>
-// spans ... are flattened to plain text").
 export interface WelcomeFirstAction {
   label: string;
   heading: string;
-  body: string;
+  body: WelcomeStrongSegment;
   screenshotSrc: string;
   screenshotAlt: string;
-  fallbackText: string;
-  subtleNote: string;
+  fallbackText: WelcomeStrongSegment;
+  subtleNote: WelcomeStrongSegment;
 }
 
 export const welcomeFirstAction: Record<Lang, WelcomeFirstAction> = {
   en: {
     label: 'First things first',
     heading: 'If you see this dialog',
-    body: 'Chrome may show a confirmation dialog right after installation. To use Mark It Down, click "Keep it".',
+    body: {
+      before: 'Chrome may show a confirmation dialog right after installation. To use Mark It Down, click ',
+      strong: '"Keep it"',
+      after: '.',
+    },
     screenshotSrc: '/screenshots/chrome-dialog-en.png',
     screenshotAlt: "Chrome dialog: Click 'Keep it'",
-    fallbackText: '"Did you mean to change this page?" → Click Keep it',
-    subtleNote: 'Want to go back to your previous extension? Just turn off Mark It Down at chrome://extensions.',
+    fallbackText: { before: '"Did you mean to change this page?" → Click ', strong: 'Keep it', after: '' },
+    subtleNote: {
+      before: 'Want to go back to your previous extension? Just turn off Mark It Down at ',
+      strong: 'chrome://extensions',
+      after: '.',
+    },
   },
   ja: {
     label: 'まず最初に',
     heading: 'このダイアログが表示されたら',
-    body: 'Chromeがインストール直後に確認ダイアログを表示することがあります。Mark It Downを使うには「そのままにする」を選んでください。',
+    body: {
+      before: 'Chromeがインストール直後に確認ダイアログを表示することがあります。Mark It Downを使うには',
+      strong: '「そのままにする」',
+      after: 'を選んでください。',
+    },
     screenshotSrc: '/screenshots/chrome-dialog-ja.png',
     screenshotAlt: 'Chrome ダイアログ：「そのままにする」をクリック',
-    fallbackText: '「このページを変更するつもりでしたか？」→「そのままにする」',
-    subtleNote: '元の拡張機能に戻したくなったら、chrome://extensions で Mark It Down をオフにすれば OK です。',
+    fallbackText: { before: '「このページを変更するつもりでしたか？」→ ', strong: '「そのままにする」', after: '' },
+    subtleNote: {
+      before: '元の拡張機能に戻したくなったら、',
+      strong: 'chrome://extensions',
+      after: ' で Mark It Down をオフにすれば OK です。',
+    },
   },
 };
 
-// CTA block ("try it now"). <kbd> tags are flattened to plain "Ctrl + T"
-// text, matching content/features.ts's Keyboard Shortcuts precedent
-// ("<kbd> tags (Ctrl+Shift+E / Ctrl+Shift+C) are flattened to plain text").
-// The leading checkmark (old markup: <span class="success-marker">&#10003;</span>)
-// is a meaningful inline mark (not decorative), so it stays a rendered
-// prefix in WelcomePage rather than being folded into successText.
+// CTA block ("try it now"). The leading checkmark (old markup:
+// <span class="success-marker">&#10003;</span>) is a meaningful inline mark,
+// rendered as a literal prefix by components/welcome/Cta.tsx.
 export interface WelcomeCta {
-  instruction: string;
-  successText: string;
+  instruction: WelcomeKbdPairSegment;
+  successText: WelcomeStrongSegment;
 }
 
 export const welcomeCta: Record<Lang, WelcomeCta> = {
   en: {
-    instruction: 'Press Ctrl + T to open a new tab',
-    successText: 'You\'ll see a note called "Welcome to Mark It Down" — that means it\'s working',
+    instruction: { before: 'Press ', kbd1: 'Ctrl', mid: ' + ', kbd2: 'T', after: ' to open a new tab' },
+    successText: {
+      before: 'You\'ll see a note called "',
+      strong: 'Welcome to Mark It Down',
+      after: '" — that means it\'s working',
+    },
   },
   ja: {
-    instruction: 'Ctrl + T で新しいタブを開いてみてください',
-    successText: '「Mark It Downへようこそ」というノートが表示されたら成功です',
+    instruction: { before: '', kbd1: 'Ctrl', mid: ' + ', kbd2: 'T', after: ' で新しいタブを開いてみてください' },
+    successText: { before: '「', strong: 'Mark It Downへようこそ', after: '」というノートが表示されたら成功です' },
   },
 };
 
@@ -113,18 +147,29 @@ export type WelcomeWayIcon = 'newTab' | 'sidePanel' | 'webClipper';
 export interface WelcomeWayCard {
   icon: WelcomeWayIcon;
   heading: string;
-  body: string;
+  body: string | WelcomeStrongSegment | WelcomeKbdPairSegment;
 }
 
-// Three way-cards ("New Tab" / "Side Panel" / "Web Clipper"). Old markup's
-// <kbd>/<strong> spans flattened to plain text (same precedent as above).
+// Three way-cards ("New Tab" / "Side Panel" / "Web Clipper"). New Tab's body
+// carries a <kbd>+<kbd> pair, Side Panel's a <strong> span around the
+// chrome:// URL (both real elements in app/original.css's `.way-content
+// kbd` rule), Web Clipper's stays plain per the old markup.
 export const welcomeWayCards: Record<Lang, WelcomeWayCard[]> = {
   en: [
-    { icon: 'newTab', heading: 'New Tab', body: 'Press Ctrl + T anytime — the editor opens like a notepad.' },
+    {
+      icon: 'newTab',
+      heading: 'New Tab',
+      body: { before: 'Press ', kbd1: 'Ctrl', mid: ' + ', kbd2: 'T', after: ' anytime — the editor opens like a notepad.' },
+    },
     {
       icon: 'sidePanel',
       heading: 'Side Panel',
-      body: 'Click the Mark It Down icon in the toolbar (pin it via the Extensions puzzle icon). Opens the editor beside any webpage. Set up a keyboard shortcut at chrome://extensions/shortcuts.',
+      body: {
+        before:
+          'Click the Mark It Down icon in the toolbar (pin it via the Extensions puzzle icon). Opens the editor beside any webpage. Set up a keyboard shortcut at ',
+        strong: 'chrome://extensions/shortcuts',
+        after: '.',
+      },
     },
     {
       icon: 'webClipper',
@@ -133,11 +178,20 @@ export const welcomeWayCards: Record<Lang, WelcomeWayCard[]> = {
     },
   ],
   ja: [
-    { icon: 'newTab', heading: 'New Tab', body: 'Ctrl + T で開くたびにエディタが起動。メモ帳感覚で使えます。' },
+    {
+      icon: 'newTab',
+      heading: 'New Tab',
+      body: { before: '', kbd1: 'Ctrl', mid: ' + ', kbd2: 'T', after: ' で開くたびにエディタが起動。メモ帳感覚で使えます。' },
+    },
     {
       icon: 'sidePanel',
       heading: 'Side Panel',
-      body: 'ツールバーの Mark It Down アイコンをクリック（Extensions のパズルピースアイコンからピン留め）。Web ページの横にエディタを開けます。ショートカットは chrome://extensions/shortcuts で登録できます。',
+      body: {
+        before:
+          'ツールバーの Mark It Down アイコンをクリック（Extensions のパズルピースアイコンからピン留め）。Web ページの横にエディタを開けます。ショートカットは ',
+        strong: 'chrome://extensions/shortcuts',
+        after: ' で登録できます。',
+      },
     },
     {
       icon: 'webClipper',

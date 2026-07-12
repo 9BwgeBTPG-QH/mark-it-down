@@ -1,6 +1,5 @@
 export type { Lang } from './index';
 import type { Lang } from './index';
-import type { FeatureSectionItem } from '@/components/clipper/FeatureSection';
 
 interface WhyCopy {
   lang: Lang;
@@ -8,19 +7,21 @@ interface WhyCopy {
   description: string;
   eyebrow: string;
   h1: string;
-  heroSubtitle: string;
+  heroSubtitleLines: string[];
 }
 
 // Hero copy lifted verbatim from docs/why.html / docs/why-ja.html
 // (title / meta description / h1 / hero subtitle). The old hero's decorative
-// "~ ~ ~" ornament (hero-ornament span, aria-hidden) is intentionally not
-// ported — it carried no content, only a divider glyph the new design does
-// not need (same precedent as content/clipper.ts / content/rss.ts's Hero).
+// "~ ~ ~" ornament (hero-ornament span, aria-hidden) IS ported (original-design
+// rollback, 2026-07-12) — see components/why/Hero.tsx.
 //
-// The old page has no visible eyebrow span in the hero (just "Why" as the
-// section-label, not rendered as a separate line above the h1 in the old
-// markup's visual output) — kept here as `eyebrow` for structural parity
-// with the other page Heroes (okf/clipper/rss all show one).
+// The old markup carries a visible `<span class="section-label">Why</span>`
+// above the h1 in both languages (untranslated "Why", confirmed by direct
+// read of docs/why.html / docs/why-ja.html) — kept here as `eyebrow`.
+//
+// heroSubtitleLines restores the old markup's hard `<br>` between the two
+// hero-subtitle lines (same BrokenLines precedent as content/index.ts's
+// heroTaglineLines/heroSubtitleLines).
 //
 // JA h1: the old markup separated phrases with manually inserted zero-width
 // spaces (U+200B) for line-break control, which the new <Budoux> component
@@ -37,7 +38,7 @@ export const whyContent: Record<Lang, WhyCopy> = {
       'The philosophy behind Mark It Down: local-first Markdown, no AI writing, no account wall, and a browser workspace built for rewriting in your own words.',
     eyebrow: 'Why',
     h1: 'Why local-first Markdown writing',
-    heroSubtitle: 'No matter how smart AI gets, only you can write your own thoughts.',
+    heroSubtitleLines: ['No matter how smart AI gets,', 'only you can write your own thoughts.'],
   },
   ja: {
     lang: 'ja',
@@ -46,7 +47,7 @@ export const whyContent: Record<Lang, WhyCopy> = {
       'Mark It Downの思想。AI生成を足さず、ローカルファーストなMarkdownで、自分の言葉に書き直すためのブラウザ作業場。',
     eyebrow: 'Why',
     h1: 'なぜ、ローカルファーストな Markdownを書くのか',
-    heroSubtitle: 'AIがどんなに賢くなっても、あなたの考えはあなたしか書けない。',
+    heroSubtitleLines: ['AIがどんなに賢くなっても、', 'あなたの考えはあなたしか書けない。'],
   },
 };
 
@@ -66,8 +67,17 @@ export const whyContent: Record<Lang, WhyCopy> = {
 // like reading." / "保存して「読んだ気」になる。"), which are flattened to
 // plain text within their paragraph, matching the inline-formatting
 // precedent already set by content/features.ts's OKF Export item body.
+// A `lines` entry is either a plain string, or a [before, strong, after]
+// tuple for the one old inline <strong> span embedded within a line (rather
+// than a whole-paragraph <strong>, which is the `emphasis` block type
+// below) — same tuple shape as content/why.ts's WhyBeliefLine, reused here
+// for <strong> instead of <em>. `after` is '' when the strong span runs to
+// the end of the line (see components/why/Origin.tsx for the render side).
+export type WhyOriginLine = string | [before: string, strong: string, after: string];
+
 export type WhyOriginBlock =
   | { type: 'paragraph'; text: string }
+  | { type: 'paragraph'; lines: WhyOriginLine[] }
   | { type: 'emphasis'; text: string }
   | { type: 'blockquote'; text: string };
 
@@ -77,14 +87,20 @@ export const whyOrigin: Record<Lang, { eyebrow: string; blocks: WhyOriginBlock[]
     blocks: [
       {
         type: 'paragraph',
-        text: 'You search, get output, drop it into Obsidian or Notion. Feel like you understood it. Click to save. Get the comfort of "I\'ve secured it." Saving feels like reading.',
+        lines: [
+          'You search, get output, drop it into Obsidian or Notion. Feel like you understood it.',
+          ['Click to save. Get the comfort of "I\'ve secured it." ', 'Saving feels like reading.', ''],
+        ],
       },
       { type: 'paragraph', text: 'Someone once said:' },
       { type: 'blockquote', text: '"I was spending more time managing my second brain than using it."' },
       { type: 'emphasis', text: 'Externalized structure is never internalized.' },
       {
         type: 'paragraph',
-        text: "Pulling everything straight in is easy — but it comes with noise, and without some digestion, you won't be able to recall any of it later. You need a place to rewrite things in your own words before you save them anywhere.",
+        lines: [
+          "Pulling everything straight in is easy — but it comes with noise, and without some digestion, you won't be able to recall any of it later.",
+          'You need a place to rewrite things in your own words before you save them anywhere.',
+        ],
       },
     ],
   },
@@ -92,7 +108,10 @@ export const whyOrigin: Record<Lang, { eyebrow: string; blocks: WhyOriginBlock[]
     eyebrow: '起点',
     blocks: [
       { type: 'paragraph', text: '検索した結果、出力した結果を Obsidian や Notion に放り込む。それで「わかった気」になる。' },
-      { type: 'paragraph', text: 'クリックした瞬間に「確保した」という安心感が得られる。保存して「読んだ気」になる。' },
+      {
+        type: 'paragraph',
+        lines: [['クリックした瞬間に「確保した」という安心感が得られる。', '保存して「読んだ気」になる。', '']],
+      },
       { type: 'paragraph', text: 'ある人はこう言っている。' },
       { type: 'blockquote', text: '"I was spending more time managing my second brain than using it."' },
       { type: 'emphasis', text: '外部化された構造は、内部化されない。' },
@@ -108,11 +127,11 @@ export const whyOrigin: Record<Lang, { eyebrow: string; blocks: WhyOriginBlock[]
 // Part 2 "What we believe" (docs/why.html <section aria-labelledby=
 // "why-beliefs-heading">). Icon SVG path data is language-independent, so
 // it is stored once per item index rather than duplicated per language.
-// Item bodies are `paragraphs: string[]` because EN item 3 ("Friction, on
-// purpose.") has 1 paragraph while JA's has 2 — same structural-divergence
-// rationale as whyOrigin. Inline <em>/<code> spans within paragraphs are
-// flattened to plain text (same precedent as whyOrigin's inline <strong>
-// and content/features.ts's OKF Export item body).
+// Item bodies are `paragraphs: WhyBeliefParagraph[]` (see that type below)
+// because EN item 3 ("Friction, on purpose.") has 1 paragraph while JA's has
+// 2 — same structural-divergence rationale as whyOrigin. The old markup's
+// hard <br> within a paragraph and its one inline <em> span are restored via
+// WhyBeliefParagraph/WhyBeliefLine below rather than flattened.
 export const whyBeliefsIcons: string[] = [
   'M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z',
   'M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z',
@@ -120,9 +139,19 @@ export const whyBeliefsIcons: string[] = [
   'M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25',
 ];
 
+// A belief paragraph is a single line (string), or an array of lines to be
+// joined with the old markup's hard <br> (WhyBeliefLine[]). One line in the
+// whole section — "the cognitive processing <em>while you write it</em>." —
+// carries an old inline <em>; it is represented as a
+// [before, emphasized, after] tuple rather than a generic inline-run system,
+// since it is the only occurrence in this file (see components/why/
+// Beliefs.tsx for the render side).
+export type WhyBeliefLine = string | [before: string, emphasized: string, after: string];
+export type WhyBeliefParagraph = string | WhyBeliefLine[];
+
 export interface WhyBeliefItem {
   title: string;
-  paragraphs: string[];
+  paragraphs: WhyBeliefParagraph[];
 }
 
 export const whyBeliefs: Record<Lang, { eyebrow: string; items: WhyBeliefItem[] }> = {
@@ -132,9 +161,19 @@ export const whyBeliefs: Record<Lang, { eyebrow: string; items: WhyBeliefItem[] 
       {
         title: 'Not storage. Digestion.',
         paragraphs: [
-          "Information can be copied. Experience cannot. The value of a note isn't in rereading it — it's in the cognitive processing while you write it.",
+          [
+            'Information can be copied. Experience cannot.',
+            [
+              "The value of a note isn't in rereading it — it's in the cognitive processing ",
+              'while you write it',
+              '.',
+            ],
+          ],
           'High-resolution content fills in the imaginative gaps. Filling those gaps yourself — reaching for the words, building the picture — is what creates memory and understanding.',
-          'Reread, rewrite, find your own words — only then does it become knowledge. That "click" of connection, that moment things settle — it only happens when you write it yourself.',
+          [
+            'Reread, rewrite, find your own words — only then does it become knowledge.',
+            'That "click" of connection, that moment things settle — it only happens when you write it yourself.',
+          ],
         ],
       },
       {
@@ -163,9 +202,12 @@ export const whyBeliefs: Record<Lang, { eyebrow: string; items: WhyBeliefItem[] 
       {
         title: '保存じゃなくて、咀嚼。',
         paragraphs: [
-          '情報はコピーできるけど、経験はコピーできない。 ノートの価値は、後で読み返すことにあるのではなく、「書いている最中の認知処理」にある。',
-          '解像度が高いものは、想像の余白を埋めてしまう。 自分で余白を埋める、情景を想像する、それが記憶と理解を生む。',
-          '読み直し、書き直し、自分の言葉になったとき、はじめてそれは自分の知識になる。 「点と点がつながる瞬間」「腑に落ちた感じ」——それは、自分で書いた先にしかない。',
+          ['情報はコピーできるけど、経験はコピーできない。', 'ノートの価値は、後で読み返すことにあるのではなく、「書いている最中の認知処理」にある。'],
+          ['解像度が高いものは、想像の余白を埋めてしまう。', '自分で余白を埋める、情景を想像する、それが記憶と理解を生む。'],
+          [
+            '読み直し、書き直し、自分の言葉になったとき、はじめてそれは自分の知識になる。',
+            '「点と点がつながる瞬間」「腑に落ちた感じ」——それは、自分で書いた先にしかない。',
+          ],
         ],
       },
       {
@@ -174,13 +216,19 @@ export const whyBeliefs: Record<Lang, { eyebrow: string; items: WhyBeliefItem[] 
           // "この道具に AIは内蔵しない。" — a real space is reinserted before
           // "AIは" after stripping the old markup's zero-width spaces (same
           // treatment as the h1; see whyContent's JA h1 comment above).
-          'AIは便利だ。だからこそ、AIの答えを鵜呑みにせず、自分の言葉で摩擦をかけられるかどうかが、これからの分水嶺になる。 この道具に AIは内蔵しない。AIと一緒に使うが、考えるのはあなただ。意識的に寄り道をする。',
+          [
+            'AIは便利だ。だからこそ、AIの答えを鵜呑みにせず、自分の言葉で摩擦をかけられるかどうかが、これからの分水嶺になる。',
+            'この道具に AIは内蔵しない。AIと一緒に使うが、考えるのはあなただ。意識的に寄り道をする。',
+          ],
         ],
       },
       {
         title: '溜め込みには、あえて摩擦を。',
         paragraphs: [
-          '書くことは、限りなく滑らかに。でも「溜め込む」ことには、わざと摩擦をかける。フォルダは増やせない。同期は手動。 「どこに保存するか」を考えさせる構造にすることで、無意識の衝動を「本当にしたい行動か」に変換する。',
+          [
+            '書くことは、限りなく滑らかに。でも「溜め込む」ことには、わざと摩擦をかける。フォルダは増やせない。同期は手動。',
+            '「どこに保存するか」を考えさせる構造にすることで、無意識の衝動を「本当にしたい行動か」に変換する。',
+          ],
           '書くことを滑らかにするツールは数えきれない。でも、溜め込む行為に摩擦をかけるツールは、ここ以外に知らない。',
         ],
       },
@@ -195,22 +243,39 @@ export const whyBeliefs: Record<Lang, { eyebrow: string; items: WhyBeliefItem[] 
 };
 
 // Part 3 "What we don't build" (docs/why.html <section aria-labelledby=
-// "why-notbuilt-heading">). Reuses FeatureSectionItem for the 3-item list.
-// `subtitle` sentence count differs by language (EN 2 sentences, JA 3 —
-// the JA copy has an extra monetization-tradeoff sentence with no EN
-// equivalent); preserved verbatim per language rather than harmonized.
+// "why-notbuilt-heading">). Old markup: <h2> is VISIBLE here (unlike Parts
+// 1/2's visually-hidden headings), and the list uses the shared
+// `.coming-soon-list.coming-soon-list--spaced` class with plain
+// `<li><strong>Title</strong> — body</li>` items (em-dash-joined inline
+// text, no <span>) — a different literal pattern from
+// components/index/RecentlyAdded.tsx's `<li><strong>/<span></li>` markup,
+// so a local WhyNotBuiltItem replaces the borrowed FeatureSectionItem type
+// (components/clipper/FeatureSection.tsx is not reused; see
+// components/why/NotBuilt.tsx).
+// `subtitleLines` restores the old markup's hard <br> breaks between
+// sentences (EN 2 lines, JA 3 — the JA copy has an extra
+// monetization-tradeoff sentence with no EN equivalent); preserved verbatim
+// per language rather than harmonized.
+export interface WhyNotBuiltItem {
+  title: string;
+  body: string;
+}
+
 interface WhyNotBuiltCopy {
   eyebrow: string;
   heading: string;
-  subtitle: string;
-  items: FeatureSectionItem[];
+  subtitleLines: string[];
+  items: WhyNotBuiltItem[];
 }
 
 export const whyNotBuilt: Record<Lang, WhyNotBuiltCopy> = {
   en: {
     eyebrow: "What we don't build",
     heading: 'Sharpening means cutting away.',
-    subtitle: 'Adding features is easy. Building the courage to leave them out is the hard part. These are absent.',
+    subtitleLines: [
+      'Adding features is easy. Building the courage to leave them out is the hard part.',
+      'These are absent.',
+    ],
     items: [
       {
         title: 'AI generation (summarise / generate / proofread)',
@@ -229,8 +294,11 @@ export const whyNotBuilt: Record<Lang, WhyNotBuiltCopy> = {
   ja: {
     eyebrow: 'あえて、作らないもの',
     heading: '引き算が、人間中心の証明になる。',
-    subtitle:
-      '機能を足すのは簡単だ。削る勇気を持つほうがずっと難しい。 マネタイズを最優先にするなら逆の設計が正解だろう——留まらせる、溜め込ませる、依存させる。それをやるつもりはない。 以下のものはここにない。',
+    subtitleLines: [
+      '機能を足すのは簡単だ。削る勇気を持つほうがずっと難しい。',
+      'マネタイズを最優先にするなら逆の設計が正解だろう——留まらせる、溜め込ませる、依存させる。それをやるつもりはない。',
+      '以下のものはここにない。',
+    ],
     items: [
       {
         title: 'AI生成機能（要約・生成・校正）',
@@ -251,23 +319,29 @@ export const whyNotBuilt: Record<Lang, WhyNotBuiltCopy> = {
 interface WhyCtaCopy {
   heading: string;
   primaryLabel: string;
+  primaryAriaLabel: string;
   secondaryLabel: string;
 }
 
 // Closing CTA, ported verbatim from docs/why.html / docs/why-ja.html. The
-// old primary button's inline gtag() analytics call is dropped — this
-// rebuild has no analytics wiring, matching the same omission already made
-// for content/rss.ts / content/clipper.ts's CTA copy. Secondary button
-// targets features.html / features-ja.html, matching the old page.
+// old primary button's inline gtag() analytics call is dropped in favor of
+// a `data-ga-cta` attribute (see components/why/Cta.tsx) — same precedent
+// as content/rss.ts / content/clipper.ts's CTA copy. `primaryAriaLabel`
+// restores the old primary <a>'s aria-label verbatim (the old secondary
+// button carries no aria-label). Secondary button targets features.html /
+// features-ja.html, matching the old page. Neither button had
+// target="_blank" in the old markup.
 export const whyCta: Record<Lang, WhyCtaCopy> = {
   en: {
     heading: 'Study, then write. Find your own words. Repeat.',
     primaryLabel: 'Get the extension',
+    primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
     secondaryLabel: 'See how it works',
   },
   ja: {
     heading: '調べて、書く。自分の言葉にする。その繰り返しが、自分になる。',
     primaryLabel: '拡張機能を入手する',
+    primaryAriaLabel: 'Chrome ウェブストアから Mark It Down を入手',
     secondaryLabel: '使い方を見る',
   },
 };

@@ -2,16 +2,12 @@ interface IconProps {
   className?: string;
 }
 
-// Warning-triangle icon ported from docs/welcome.html's first-action-label
-// SVG (#1593 Phase 3-5, final group). The old markup hardcoded
-// stroke="#92400E" (amber); DESIGN.md's seal-only-accent rule ("アクセントは
-// seal 1色のみ...brass の小サイズテキスト・UI コントロール使用" is listed
-// under 禁止) does not permit introducing a second accent hue, so this
-// renders with stroke="currentColor" instead — same treatment as the
-// way-card icons below, which already used stroke="currentColor" in the old
-// markup. The caller renders it in a neutral ink tone. See final report for
-// this deviation.
-export function WarningTriangleIcon({ className = '' }: IconProps) {
+// Warning-triangle icon ported verbatim from docs/welcome.html's
+// first-action-label SVG (original-design rollback, #1593 Wave R2): the old
+// markup hardcoded stroke="#92400E" (amber), matching `.first-action-label`'s
+// own amber text color in app/original.css, so it is restored here as-is
+// rather than the Tailwind-era currentColor substitution.
+export function WarningTriangleIcon({ className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +15,7 @@ export function WarningTriangleIcon({ className = '' }: IconProps) {
       height="16"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
+      stroke="#92400E"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -33,7 +29,7 @@ export function WarningTriangleIcon({ className = '' }: IconProps) {
   );
 }
 
-export function NewTabIcon({ className = '' }: IconProps) {
+export function NewTabIcon({ className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +50,7 @@ export function NewTabIcon({ className = '' }: IconProps) {
   );
 }
 
-export function SidePanelIcon({ className = '' }: IconProps) {
+export function SidePanelIcon({ className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +71,7 @@ export function SidePanelIcon({ className = '' }: IconProps) {
   );
 }
 
-export function WebClipperIcon({ className = '' }: IconProps) {
+export function WebClipperIcon({ className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,25 +1,25 @@
 import { Budoux } from '@/components/Budoux';
 import { clipperContent, type Lang } from '@/content/clipper';
 
-// Old docs/clipper.html hero, ported (#1593 Phase 3-2). Unlike the index
-// hero (components/hero/Hero.tsx), this is a standard content-page title —
-// DESIGN.md's h1/h1-mobile scale (38px/30px), not the display scale reserved
-// for the index hero only. The old hero's decorative "~ ~ ~" ornament
-// (aria-hidden, no content) is intentionally dropped.
+// Old docs/clipper.html hero, restored verbatim to eed65be original design
+// (Wave R2 T1, #1593): .hero -> section-label eyebrow -> h1.hero-tagline ->
+// hero-subtitle -> hero-ornament divider. Replaces the previous Tailwind
+// M&I-token version; the ornament span (dropped in the earlier port) is
+// restored to match components/hero/Hero.tsx's treatment on the index page.
 export function Hero({ lang }: { lang: Lang }) {
   const copy = clipperContent[lang];
   const ja = lang === 'ja';
-  const headingFont = ja ? 'font-serif-ja' : 'font-serif';
-  const bodyFont = ja ? 'font-sans-ja text-body-ja' : 'font-sans text-body';
-  const captionFont = ja ? 'font-sans-ja' : 'font-sans';
 
   return (
-    <section className="mx-auto max-w-content px-4 py-section-mobile lg:px-8 lg:py-section">
-      <p className={`text-caption text-ink-muted ${captionFont}`}>{copy.eyebrow}</p>
-      <h1 className={`mt-2 text-balance text-h1-mobile text-ink md:text-h1 ${headingFont}`}>
+    <section className="hero" aria-labelledby="clipper-hero-heading">
+      <span className="section-label">{copy.eyebrow}</span>
+      <h1 id="clipper-hero-heading" className="hero-tagline">
         {ja ? <Budoux text={copy.h1} /> : copy.h1}
       </h1>
-      <p className={`mt-4 text-ink-2 ${bodyFont}`}>{ja ? <Budoux text={copy.heroSubtitle} /> : copy.heroSubtitle}</p>
+      <p className="hero-subtitle">{ja ? <Budoux text={copy.heroSubtitle} /> : copy.heroSubtitle}</p>
+      <span className="hero-ornament" aria-hidden="true">
+        ~ ~ ~
+      </span>
     </section>
   );
 }
