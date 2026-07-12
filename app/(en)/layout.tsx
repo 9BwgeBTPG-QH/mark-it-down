@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Lora, Raleway } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import { LangRedirect } from '@/components/LangRedirect';
 import '../globals.css';
 // Original-design stylesheet (eed65be:docs/style.src.css port) — loaded after
 // globals.css so its rules win over Tailwind preflight (#1593 rollback).
@@ -19,6 +20,7 @@ export default function EnLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${lora.variable} ${raleway.variable}`}>
       <body>
+        <LangRedirect lang="en" />
         {children}
         <GoogleAnalytics />
       </body>
