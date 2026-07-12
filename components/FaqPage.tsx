@@ -1,55 +1,58 @@
+import { Fragment } from 'react';
 import { PageShell } from '@/components/PageShell';
 import { JsonLd } from '@/components/JsonLd';
 import { Budoux } from '@/components/Budoux';
-import { ArchivalAccordion, type ArchivalAccordionItem } from '@/components/ArchivalAccordion';
 import { Hero } from '@/components/faq/Hero';
 import { QuestionBlocks } from '@/components/faq/QuestionBlocks';
 import { Cta } from '@/components/faq/Cta';
-import { faqJsonLd, faqCategories, type Lang } from '@/content/faq';
+import { faqJsonLd, faqCategories, faqContent, type Lang } from '@/content/faq';
 
-// Shared skeleton for the EN/JA FAQ page pair (#1593 Phase 3-4). Copy lives
-// in content/faq.ts so app/(en)/faq/page.tsx and app/(ja)/faq-ja/page.tsx
-// stay one-line wrappers. Information order follows docs/faq.html /
-// docs/faq-ja.html: hero -> 9 category groups (25 questions total) -> closing
-// CTA. PageShell owns SiteNav/SiteFooter (see components/ClipperPage.tsx for
-// the same pattern).
+// Shared skeleton for the EN/JA FAQ page pair, restored to the original
+// docs/faq.html/-ja.html plain markup (#1593 Wave R2 fidelity requirement).
+// Copy lives in content/faq.ts so app/(en)/faq/page.tsx and
+// app/(ja)/faq-ja/page.tsx stay one-line wrappers. PageShell owns
+// SiteNav/SiteFooter (see components/ClipperPage.tsx for the same pattern).
 //
-// Each category header (`.faq-category-header` in the old markup) is a
-// plain, always-visible div — never its own <details> — unlike the Features
-// page's collapsed category accordions (components/features/
-// FeatureCategoryAccordion.tsx). So each category here renders as a real
-// always-visible <h2> followed by an ArchivalAccordion of that category's
-// questions, matching the old two-level information structure (visible
-// category, collapsible question) rather than nesting a third disclosure
-// level.
+// The old markup wraps every category header (`.faq-category-header`) and
+// every question's <details class="accordion-item"> together as flat
+// document-order siblings inside a single `.changelog-accordion` div under
+// one `<section aria-labelledby="faq-heading">` — not one <section> per
+// category, and not an ArchivalAccordion. `<details>` is written natively
+// per question here, matching components/index/FaqPreview.tsx's precedent.
 export function FaqPage({ lang }: { lang: Lang }) {
   const categories = faqCategories[lang];
+  const copy = faqContent[lang];
   const ja = lang === 'ja';
-  const headingFont = ja ? 'font-serif-ja' : 'font-serif';
 
   return (
     <PageShell lang={lang} slug="faq">
       <JsonLd data={faqJsonLd[lang]} />
       <Hero lang={lang} />
-      {categories.map((category, ci) => {
-        const items: ArchivalAccordionItem[] = category.items.map((item, ii) => ({
-          id: `faq-${ci}-${ii}`,
-          title: ja ? <Budoux text={item.question} /> : item.question,
-          content: <QuestionBlocks lang={lang} blocks={item.blocks} />,
-        }));
-        const bgClass = ci % 2 === 0 ? 'bg-paper' : 'bg-paper-shade';
-
-        return (
-          <section key={category.heading} className={`border-t border-hairline ${bgClass}`}>
-            <div className="mx-auto max-w-content px-4 py-section-mobile lg:px-8 lg:py-section">
-              <h2 className={`text-h2 text-ink ${headingFont}`}>
-                {ja ? <Budoux text={category.heading} /> : category.heading}
-              </h2>
-              <ArchivalAccordion items={items} lang={lang} className="mt-6" />
-            </div>
-          </section>
-        );
-      })}
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading" className="visually-hidden">
+          {copy.sectionHeading}
+        </h2>
+        <div className="changelog-accordion">
+          {categories.map((category) => (
+            <Fragment key={category.heading}>
+              <div className="faq-category-header">{ja ? <Budoux text={category.heading} /> : category.heading}</div>
+              {category.items.map((item) => (
+                <details key={item.question} className="accordion-item">
+                  <summary className="accordion-header">
+                    <div className="accordion-title">
+                      <span className="accordion-icon"></span>
+                      <span className="accordion-highlight">{ja ? <Budoux text={item.question} /> : item.question}</span>
+                    </div>
+                  </summary>
+                  <div className="accordion-content">
+                    <QuestionBlocks lang={lang} blocks={item.blocks} />
+                  </div>
+                </details>
+              ))}
+            </Fragment>
+          ))}
+        </div>
+      </section>
       <Cta lang={lang} />
     </PageShell>
   );
