@@ -191,27 +191,27 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: 'Recently Added',
-    recentStatus: 'v2.2.10 — New reading surfaces and a richer knowledge graph.',
+    recentStatus: 'v2.3.0 — A dedicated table editor arrives.',
     recentItems: [
       {
-        title: 'GitHub Repository Reader',
-        body: 'Browse any public GitHub repository without leaving Mark It Down: navigate the file tree, follow links between files, and import what you need into your notes. Private repositories work with a personal access token.',
+        title: 'Spreadsheet-style table grid',
+        body: 'Open a Markdown table in a full-screen grid view, select cells by dragging, choose whole rows or columns from the gutters, and keep the result as plain Markdown.',
       },
       {
-        title: 'RSS Reader becomes a full-screen workspace',
-        body: 'A feed sidebar on the left, a central article list and reading pane, and an article inspector showing metadata, tags, and headings. Articles render with the same Markdown engine as your own notes.',
+        title: 'Row, column, and range operations',
+        body: 'Insert, delete, move, duplicate, sort, copy, cut, and paste table data from the context menu or familiar shortcuts, including tabular data from spreadsheets.',
       },
       {
-        title: 'Note graph: outline tree and radial view',
-        body: 'The outline view shows your notes as a collapsible tree you can re-root at any node. The radial view arranges linked notes around a center node with zoom and pan. A graph view is also available inside Repository Reader.',
+        title: 'Formatting and search inside the table',
+        body: 'Apply bold, italic, or code formatting to selected cells, use Ctrl/Cmd+F to search within the table, and drag the fill handle to copy values or extend simple series.',
       },
       {
-        title: 'Frontmatter editor modal',
-        body: 'Editing note metadata now opens a dedicated modal. Suggested values from the note and the clipped page appear as chips you can click to apply. Copy as YAML and Clear all are in the header menu.',
+        title: 'Safer multi-tab editing',
+        body: 'Saves are coordinated across New Tab and Side Panel so an older copy of the same note can no longer silently overwrite newer work.',
       },
       {
-        title: 'Quieter sidebar rows',
-        body: 'Status details (unprocessed marker, Git pending state, note size) move from every note row into a hover card. The list stays calm while the information remains one hover away.',
+        title: 'Quieter fixes around tables and clips',
+        body: 'Column widths survive row and column edits, list-contained code blocks keep their full content on paste or clip, and Archive opens faster while browsing older notes.',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -237,7 +237,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'View all FAQ',
     ctaHeading: 'Ready to write?',
     ctaNote: 'Available as a Chrome extension. No account required.',
-    ctaVersion: 'Latest version: v2.2.10',
+    ctaVersion: 'Latest version: v2.3.0',
     ctaSecondaryLabel: "What's new",
   },
   ja: {
@@ -310,27 +310,27 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: '最近の追加機能',
-    recentStatus: 'v2.2.10 — 新しい読書面と、より深まるナレッジグラフ。',
+    recentStatus: 'v2.3.0 — テーブル専用グリッド編集を追加。',
     recentItems: [
       {
-        title: 'GitHub Repository Reader',
-        body: 'Mark It Down を離れずに GitHub リポジトリを閲覧できる。ファイルツリーをたどり、ファイル間のリンクを追い、必要なファイルをノートに取り込める。プライベートリポジトリは個人アクセストークンで対応。',
+        title: 'スプレッドシート風のテーブルグリッド',
+        body: 'Markdown テーブルを全画面のグリッドで開き、ドラッグでセル範囲を選択し、行や列をガターからまとめて選べる。結果はそのまま plain Markdown に戻る。',
       },
       {
-        title: 'RSS リーダーが全画面ワークスペースに',
-        body: '左のフィードサイドバー、中央の記事一覧と閲覧ペイン、右のインスペクタ（メタデータ・タグ・見出し）で構成される。記事は自分のノートと同じ Markdown エンジンで表示される。',
+        title: '行・列・範囲操作',
+        body: '行や列の挿入、削除、移動、複製、並び替え、コピー、切り取り、貼り付けに対応。スプレッドシートからの表データ貼り付けも扱える。',
       },
       {
-        title: 'ノートグラフの再設計',
-        body: 'アウトラインビューはノートを折りたたみ可能なツリーで表示し、任意のノードをルートに変更できる。Radial ビューはリンク先のノートを中心ノードの周囲に配置し、ズームとパンに対応。Repository Reader 内でもグラフが使える。',
+        title: 'テーブル内検索と一括書式',
+        body: '選択したセルに太字、斜体、コード書式をまとめて適用できる。Ctrl/Cmd+F でテーブル内を検索し、フィルハンドルで値のコピーや連番入力もできる。',
       },
       {
-        title: 'フロントマター専用モーダル',
-        body: 'ノートのメタデータ編集が専用モーダルになった。ノート本文やクリップ元ページから候補が提示され、クリックで適用できる。YAML としてコピーや一括クリアもヘッダメニューから操作できる。',
+        title: '複数タブ編集の安全性向上',
+        body: 'New Tab と Side Panel で同じノートを開いているときも保存を調整し、古い内容が新しい変更を静かに上書きしないようにした。',
       },
       {
-        title: 'サイドバーのノート行が静かに',
-        body: '未処理マーカーや Git 保留状態、ノートサイズなどのステータス表示をホバーカードに移動。一覧は静かなまま、詳細はホバーひとつで確認できる。',
+        title: 'テーブルとクリップ周りの修正',
+        body: '行や列を編集しても列幅が保持される。リスト内コードブロックはペーストやクリップ時に欠けなくなり、Archive の連続閲覧も速くなった。',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -355,7 +355,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'すべてのFAQを見る',
     ctaHeading: '書き始めませんか？',
     ctaNote: 'Chrome拡張機能で利用可能。アカウント不要。',
-    ctaVersion: '最新版: v2.2.10',
+    ctaVersion: '最新版: v2.3.0',
     ctaSecondaryLabel: '更新履歴',
   },
 };
@@ -377,13 +377,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry',
-    dateModified: '2026-07-04',
+    dateModified: '2026-07-14',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
     },
-    softwareVersion: '2.2.10',
+    softwareVersion: '2.3.0',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
@@ -419,6 +419,7 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
       'Auto-hide UI — header and toolbar hide while writing',
       'Git sync status indicator in sidebar',
       'Table keyboard navigation — Excel-like Enter/Tab/Alt+Enter cell movement',
+      'Table grid editor — range selection, row and column operations, formatting, search, sort, and autofill for Markdown tables',
       'Hold-to-delete — deliberate press-and-hold to permanently remove notes',
       'Web Clipper preview — select sections before saving a clip',
       'Sidebar hover cards and preview panel for checking notes before opening',
@@ -441,13 +442,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし',
-    dateModified: '2026-07-04',
+    dateModified: '2026-07-14',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'JPY',
     },
-    softwareVersion: '2.2.10',
+    softwareVersion: '2.3.0',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
@@ -480,6 +481,7 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
       '自動非表示UI（執筆中にヘッダーとツールバーが自動で隠れる）',
       'Git同期ステータスインジケーター',
       'テーブルキーボードナビゲーション（ExcelライクなEnter/Tab/Alt+Enter操作）',
+      'テーブルグリッド編集（範囲選択、行・列操作、書式設定、検索、並び替え、オートフィル）',
       '長押し削除（Trashからの完全削除に意思確認）',
       'Web Clipperプレビュー（クリップ前にセクション選択）',
       'サイドバーのホバーカードとプレビューパネル',

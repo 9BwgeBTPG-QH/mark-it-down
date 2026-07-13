@@ -583,7 +583,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Tables',
-          body: 'Insert, sort columns, copy as CSV or Markdown, layout toggle (Auto / Full Width / Equal Columns), drag to reorder rows. Paste from Excel/Google Sheets',
+          body: 'Open a dedicated grid editor for range selection, row and column operations, sorting, autofill, search, and selected-cell Bold/Italic/Code formatting. Tables remain plain Markdown. Paste from Excel/Google Sheets',
         },
         {
           title: 'Custom Snippets',
@@ -1366,7 +1366,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'テーブル',
-          body: '挿入、ソート（昇順/降順）、CSV/Markdownコピー、Prettify、行ドラッグ並び替え、Layout Toggle（自動/全幅/均等）。Excel/Google Sheetsから貼り付けで自動変換。行/列クロスハイライト付き',
+          body: '専用グリッドエディタで範囲選択、行・列操作、並び替え、オートフィル、検索、選択セルへの太字/斜体/コード書式を扱える。テーブルは plain Markdown のまま保持。Excel/Google Sheetsから貼り付けで自動変換',
         },
         {
           title: 'カスタムスニペット',

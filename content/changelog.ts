@@ -76,7 +76,7 @@ export interface ChangelogVersion {
 // docs/changelog.html / docs/changelog-ja.html (newest first, matching the
 // old page's DOM order), mechanically extracted from eed65be and cross-checked
 // against this file's prior text (#1593 Wave R2 Batch 3). Only the single
-// newest entry (v2.2.10) carries `latest`/`defaultOpen`; all other entries
+// newest entry carries `latest`/`defaultOpen`; all other entries
 // omit both fields rather than writing them out as `false` (see
 // content/troubleshooting.ts's own `defaultOpen` convention). Inline
 // <code> formatting inside the old <li> markup is restored as ChangelogRun[]
@@ -94,12 +94,47 @@ export interface ChangelogVersion {
 export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   en: [
     {
-      version: 'v2.2.10',
-      highlight: 'New reading surfaces and a richer knowledge graph.',
+      version: 'v2.3.0',
+      highlight: 'A spreadsheet-style editor for tables, and a steadier workspace.',
       status: 'Under Review',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'This release adds a dedicated grid editor for Markdown tables, so editing a table can feel like editing a spreadsheet instead of wrestling with pipes and cursor positions. The grid view supports range selection, row and column operations, copy and paste from spreadsheets, sorting, autofill, search, and inline formatting while the underlying note stays plain Markdown. It also fixes several quiet workflow problems around table widths, pasted list code blocks, multi-tab saves, and Archive browsing.',
+      sections: [
+        {
+          title: 'New Features',
+          items: [
+            { term: ['Spreadsheet-style table editor'], description: ['Open a Markdown table in a full-screen grid view from the table toolbar, a right-click, or the Command Palette. Drag to select cells, click gutters to select rows or columns, copy, cut, paste, insert, delete, move, duplicate, sort, and use familiar spreadsheet shortcuts.'] },
+            { term: ['Table formatting, search, and autofill'], description: ['Apply Bold, Italic, or Code formatting to selected cells, search within the table with ', { code: 'Ctrl/Cmd+F' }, ', and drag a fill handle to copy values or extend simple series. Every grid change applies back to the note as a single plain Markdown edit.'] },
+          ],
+        },
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['Archive opens faster'], description: ['Opening archived notes is faster when browsing through several older notes in one session.'] },
+            { term: ['Tables take up less vertical space'], description: ['Table rows are tighter across the reading and writing styles, so more of a table fits on screen at once.'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['Code blocks inside lists'], description: ['Multi-line code blocks inside bulleted or numbered lists no longer lose lines when pasted or clipped.'] },
+            { term: ['Table column widths'], description: ['Manually resized table columns no longer reset after adding or removing rows or columns.'] },
+            { term: ['Multi-tab note editing'], description: ['Saves are coordinated across New Tab and Side Panel so an older version of the same note can no longer silently overwrite newer changes.'] },
+            { term: ['Command Palette selection'], description: ['Pressing Enter right after typing now runs the visible highlighted command instead of an earlier stale selection.'] },
+            { term: ['Table toolbar and Tab navigation'], description: ['The floating table toolbar no longer gets stuck hidden, and Tab reliably moves to the next table cell.'] },
+            { term: ['Tabular paste header detection'], description: ['Numeric or date-like header rows from spreadsheet data are recognized more accurately as headers.'] },
+            { term: ['Japanese export fonts'], description: ['PDF, HTML, and EPUB exports now fall back to standard Japanese system fonts where needed.'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.2.10',
+      highlight: 'New reading surfaces and a richer knowledge graph.',
+      status: 'Released',
+      statusClass: 'released',
       theme: 'This release adds two entirely new reading surfaces and reworks how notes connect. GitHub Repository Reader lets you browse repositories without leaving Mark It Down: navigate the file tree, follow links between files, and import what you want into your notes. RSS Reader grows from a small modal into a full-screen workspace with the same Markdown rendering quality as your own notes. The note graph replaces the shifting force-directed layout with a consistent outline tree and an interactive radial view with zoom and pan.',
       sections: [
         {
@@ -1408,12 +1443,47 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   ],
   ja: [
     {
-      version: 'v2.2.10',
-      highlight: '新しい読書面と、より深まるナレッジグラフ。',
+      version: 'v2.3.0',
+      highlight: 'テーブルをスプレッドシートのように編集し、作業場をより安定させる。',
       status: '審査中',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'Markdown テーブルを専用のグリッドで編集できるようになった。パイプ記号やカーソル位置と格闘せず、表をスプレッドシートのように扱える。グリッドでは範囲選択、行・列操作、スプレッドシートからの貼り付け、並び替え、オートフィル、検索、一括書式設定に対応し、ノート本体は plain Markdown のまま保たれる。あわせて、列幅保持、リスト内コードブロックの貼り付け、複数タブ保存、Archive 閲覧まわりの静かな不具合も修正した。',
+      sections: [
+        {
+          title: 'New Features',
+          items: [
+            { term: ['スプレッドシート風テーブルエディタ'], description: ['Markdown テーブルを、テーブルツールバー、右クリック、またはコマンドパレットから全画面グリッドで開ける。セル範囲のドラッグ選択、行・列ガター選択、コピー、切り取り、貼り付け、挿入、削除、移動、複製、並び替え、よく使うスプレッドシート風ショートカットに対応。'] },
+            { term: ['テーブル書式、検索、オートフィル'], description: ['選択セルに太字、斜体、コード書式を適用できる。', { code: 'Ctrl/Cmd+F' }, ' でテーブル内検索を開き、フィルハンドルで値のコピーや簡単な連番入力もできる。グリッドでの変更は、1 回の plain Markdown 編集としてノートへ戻る。'] },
+          ],
+        },
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['Archive の表示高速化'], description: ['同じセッションで複数のアーカイブ済みノートを閲覧するとき、表示までの待ち時間が短くなった。'] },
+            { term: ['テーブル行間のコンパクト化'], description: ['各読み書きスタイルでテーブル行の高さを抑え、同じ画面内により多くの表データを表示できるようにした。'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['リスト内コードブロック'], description: ['箇条書きや番号付きリスト内の複数行コードブロックが、ペーストやクリップ時に途中で欠けなくなった。'] },
+            { term: ['テーブル列幅'], description: ['手動で調整した列幅が、行や列の追加・削除後もリセットされなくなった。'] },
+            { term: ['複数タブでの同一ノート編集'], description: ['New Tab と Side Panel で同じノートを開いている場合も保存が調整され、古い内容が新しい変更を静かに上書きしなくなった。'] },
+            { term: ['コマンドパレットの選択'], description: ['入力直後に Enter を押したとき、古い選択ではなく画面上でハイライトされているコマンドが実行されるようになった。'] },
+            { term: ['テーブルツールバーと Tab 移動'], description: ['フローティングのテーブルツールバーが非表示のまま固まらなくなり、Tab キーで次のセルへ安定して移動できるようになった。'] },
+            { term: ['表データ貼り付けのヘッダー判定'], description: ['数値や日付に見えるヘッダー行を含むスプレッドシートデータを、より正確にヘッダーとして認識するようになった。'] },
+            { term: ['日本語エクスポートフォント'], description: ['PDF、HTML、EPUB 書き出しで、必要に応じて標準的な日本語システムフォントへフォールバックするようになった。'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.2.10',
+      highlight: '新しい読書面と、より深まるナレッジグラフ。',
+      status: 'リリース済',
+      statusClass: 'released',
       theme: 'まったく新しい読書面が2つ追加され、ノートのつながり方が再設計された。GitHub Repository Reader では、Mark It Down を離れずにリポジトリを閲覧できる。ファイルツリーをたどり、ファイル間のリンクを追い、必要なファイルをノートに取り込める。RSS リーダーは小さなモーダルから、自分のノートと同じ Markdown 品質で表示する全画面ワークスペースに成長した。ノートグラフは開くたびに配置が変わるレイアウトをやめ、一定の並びで読めるアウトラインツリーと、ズーム・パン対応の Radial ビューに置き換わった。',
       sections: [
         {
