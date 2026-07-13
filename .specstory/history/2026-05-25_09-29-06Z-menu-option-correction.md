@@ -62,11 +62,82 @@ Status: **completed**
 
 _**Agent (gpt-5.5)**_
 
+✅ 完全一致は見つからなかったので、区切り文字やエスケープ表記の違いを含めて近い文言を探します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
 <tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
 <details>
 <summary>Tool use: **ripgrep_raw_search**</summary>
 
-Status: **loading**
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "pattern": "Entry.*Edit.*Clear.*Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "pattern": "Entry.*Edit.*Clear.*Exit",
+  "topFiles": [
+    {
+      "matchCount": 4,
+      "uri": ".\\content\\index.ts"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\index.html"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\index-ja.html"
+    },
+    {
+      "matchCount": 3,
+      "uri": ".\\components\\index\\Flow.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\components\\hero\\Hero.tsx"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\components\\index\\icons.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-09_15-01-43Z-@docs-サイトの改善点.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-24_15-17-16Z-html-utf-8-character-corruption.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-17_22-42-10Z-wsl-lines-18-25.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-24_15-17Z-html-utf-8-character-corruption.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-09_15-01Z-@docs-サイトの改善点.md"
+    }
+  ],
+  "totalFiles": 11,
+  "totalMatches": 22
+}
+```
+Status: **completed**
 
 
 </details>
@@ -83,7 +154,82 @@ _**Agent (gpt-5.5)**_
 <details>
 <summary>Tool use: **ripgrep_raw_search**</summary>
 
-Status: **loading**
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "pattern": "Entry.*Edit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "pattern": "Entry.*Edit",
+  "topFiles": [
+    {
+      "matchCount": 4,
+      "uri": ".\\content\\index.ts"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\okf.html"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\index.html"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\index-ja.html"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\changelog.html"
+    },
+    {
+      "matchCount": 3,
+      "uri": ".\\components\\index\\Flow.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\components\\hero\\Hero.tsx"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\components\\index\\icons.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-09_15-01-43Z-@docs-サイトの改善点.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-24_15-17-16Z-html-utf-8-character-corruption.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-17_22-42-10Z-wsl-lines-18-25.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-24_15-17Z-html-utf-8-character-corruption.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-09_15-01Z-@docs-サイトの改善点.md"
+    }
+  ],
+  "totalFiles": 13,
+  "totalMatches": 24
+}
+```
+Status: **completed**
 
 
 </details>
@@ -100,7 +246,82 @@ _**Agent (gpt-5.5)**_
 <details>
 <summary>Tool use: **ripgrep_raw_search**</summary>
 
-Status: **loading**
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "pattern": "Clear.*Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "pattern": "Clear.*Exit",
+  "topFiles": [
+    {
+      "matchCount": 4,
+      "uri": ".\\content\\index.ts"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\index.html"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\index-ja.html"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\_next\\static\\chunks\\framework-2c534e0e662575a2.js"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\_next\\static\\chunks\\4bd1b696-c023c6e3521b1417.js"
+    },
+    {
+      "matchCount": 3,
+      "uri": ".\\components\\index\\Flow.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\components\\hero\\Hero.tsx"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\components\\index\\icons.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-09_15-01-43Z-@docs-サイトの改善点.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-24_15-17-16Z-html-utf-8-character-corruption.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-17_22-42-10Z-wsl-lines-18-25.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-24_15-17Z-html-utf-8-character-corruption.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-09_15-01Z-@docs-サイトの改善点.md"
+    }
+  ],
+  "totalFiles": 13,
+  "totalMatches": 24
+}
+```
+Status: **completed**
 
 
 </details>
@@ -108,5 +329,1688 @@ Status: **loading**
 
 <tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
 <summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<think><details><summary>Thought Process</summary>
+**Editing content flow**
+
+I need to edit the content and comments because the user says it's likely only content in place. I should inspect the content and index, checking if components have step labels that say "Clear." I need to determine if I should change visible instances from "Clear" to "Move." There are also non-user-facing comments I may need to update. It seems like the feature should be "Move" instead of "Clear" throughout the flow, so I'll search for "Clear" in the index content.</details></think>
+
+_**Agent (gpt-5.5)**_
+
+✅ 該当箇所は生成物 `docs/` ではなく、正本の `content/index.ts` にありました。これから正本側を直し、必要なら生成物はビルド同期で反映します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\content\index.ts</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\components\index\Flow.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\components\hero\Hero.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+✅ 表示上の見出し・ステップ名・ヒーロー装飾のラベルが対象でした。既存アイコン名は `ClearIcon` のまま使われているため、まず文言だけを最小修正します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "pattern": "MoveIcon|ClearIcon|title: 'Move'|label: 'Move'"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "pattern": "MoveIcon|ClearIcon|title: 'Move'|label: 'Move'",
+  "topFiles": [
+    {
+      "matchCount": 2,
+      "uri": ".\\components\\index\\Flow.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\components\\hero\\Hero.tsx"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\components\\index\\icons.tsx"
+    }
+  ],
+  "totalFiles": 3,
+  "totalMatches": 5
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\components\index\icons.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+✅ `content/index.ts` の英日コピーと JSON-LD description、ヒーロー／フローの表示ラベルを合わせて修正します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\content\index.ts</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+✅ これから正本ファイルを編集します。`title` / meta description / `h1` は触らず、ワークフロー表記だけを変更します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\asano\mark-it-down\content\index.ts</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\asano\mark-it-down\components\hero\Hero.tsx</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\asano\mark-it-down\components\index\Flow.tsx</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<think><details><summary>Thought Process</summary>
+**Updating icon comments**
+
+I'm thinking about commenting on the icons since they aren't visible. Should I update them to say "Move"? The current labels are Entry, Edit, Clear, and Exit, which feels inconsistent. If the ClearIcon is still named, I want to make sure my comments are accurate to their functions, even if they aren’t visible. Maybe using "Move" would be better. I might consider renaming the export, although that doesn't seem necessary right now. I need to clarify my next steps.</details></think>
+
+_**Agent (gpt-5.5)**_
+
+✅ 正本の表示文言は修正済みです。残っている `Clear` 表記がユーザー表示に出るものか、別機能の「クリア」なのかを確認します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "pattern": "Entry.*Edit.*Clear.*Exit|Entry.*Edit.*Clear|Clear.*Exit|label: 'Clear'|title: 'Clear'"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "pattern": "Entry.*Edit.*Clear.*Exit|Entry.*Edit.*Clear|Clear.*Exit|label: 'Clear'|title: 'Clear'",
+  "topFiles": [
+    {
+      "matchCount": 2,
+      "uri": ".\\components\\index\\Flow.tsx"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\components\\hero\\Hero.tsx"
+    },
+    {
+      "matchCount": 4,
+      "uri": ".\\.specstory\\history\\2026-05-25_09-29-06Z-menu-option-correction.md"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\index.html"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\index-ja.html"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\changelog.html"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\_next\\static\\chunks\\framework-2c534e0e662575a2.js"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\docs\\_next\\static\\chunks\\4bd1b696-c023c6e3521b1417.js"
+    },
+    {
+      "matchCount": 1,
+      "uri": ".\\components\\index\\icons.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-09_15-01-43Z-@docs-サイトの改善点.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-24_15-17-16Z-html-utf-8-character-corruption.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-17_22-42-10Z-wsl-lines-18-25.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-24_15-17Z-html-utf-8-character-corruption.md"
+    },
+    {
+      "matchCount": 2,
+      "uri": ".\\.specstory\\history\\2026-01-09_15-01Z-@docs-サイトの改善点.md"
+    }
+  ],
+  "totalFiles": 14,
+  "totalMatches": 23
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "content/index.ts",
+    "components/hero/Hero.tsx",
+    "components/index/Flow.tsx"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "content/index.ts"
+    },
+    {
+      "relativeWorkspacePath": "components/hero/Hero.tsx"
+    },
+    {
+      "relativeWorkspacePath": "components/index/Flow.tsx"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints"><details>
+<summary>Tool use: **read_lints**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+✅ 変更したファイルの lint は問題ありません。公開用 `docs/` は生成物なので、`npm run sync` で正規手順どおり反映します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: C:\Users\asano\.cursor\projects\c-Users-asano-mark-it-down\terminals\2.txt</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: npm run sync</summary>
+
+```bash
+npm run sync
+```
+
+```
+
+&gt; mark-it-down-site@0.1.0 sync
+&gt; next build &amp;&amp; node scripts/sync-docs.mjs
+
+'next' �́A�����R�}���h�܂��͊O���R�}���h�A
+����\�ȃv���O�����܂��̓o�b�&#96; �t�@�C���Ƃ��ĔF������Ă��܂���B
+
+```
+</details>
+</tool-use>
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2"><details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<think><details><summary>Thought Process</summary>
+**Investigating package dependencies**
+
+It seems like the next step isn't found, which likely means dependencies are missing. I should consider running an `npm install` to check on that. I wonder if the `node_modules` directory is absent. The user didn't specifically ask me to avoid this step, so I might just confirm it with them first. However, to sync properly, I probably do need to run the installation. I'll also inspect the package files using Glob to ensure everything's correct.</details></think>
+
+_**Agent (gpt-5.5)**_
+
+✅ `npm run sync` は `next` が見つからず失敗しました。依存関係が未インストールの可能性があるため、プロジェクトの package 定義を確認します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\package.json</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="search" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "" • **1** result in **1** directory</summary>
+
+Directory: **c:\Users\asano\mark-it-down** (1 file)
+
+| File |
+|------|
+| `../.\package-lock.json` |
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="search" data-tool-name="glob_file_search"><details>
+<summary>Tool use: **glob_file_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="search" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "" • **0** results in **1** directory</summary>
+
+Directory: **c:\Users\asano\mark-it-down** (0 files)
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="search" data-tool-name="glob_file_search"><details>
+<summary>Tool use: **glob_file_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<think><details><summary>Thought Process</summary>
+**Deciding on npm installation**
+
+I’m considering whether I need to install dependencies. Running `npm install` could create a `node_modules` folder along with a `package-lock` file if it doesn't already exist. I wonder if that’s acceptable, or if I should check the current contents first. If a lock file exists, should I use `npm install` or `npm ci`? I think I prefer `npm install`, but it might update the lock file if it’s outdated. I realize I need to use the shell for this.</details></think>
+
+_**Agent (gpt-5.5)**_
+
+✅ `node_modules` がないため `next` が実行できない状態でした。既存の `package-lock.json` に従って `npm ci` で依存関係を入れてから、同期を再実行します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: npm ci</summary>
+
+```bash
+npm ci
+```
+
+```
+npm warn deprecated uuid@9.0.1: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+
+added 168 packages, and audited 169 packages in 23s
+
+49 packages are looking for funding
+  run &#96;npm fund&#96; for details
+
+4 moderate severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run &#96;npm audit&#96; for details.
+
+```
+</details>
+</tool-use>
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2"><details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+✅ 依存関係のインストールが完了しました。続けて `npm run sync` を再実行し、生成された `docs/` に反映します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: npm run sync</summary>
+
+```bash
+npm run sync
+```
+
+```
+
+&gt; mark-it-down-site@0.1.0 sync
+&gt; next build &amp;&amp; node scripts/sync-docs.mjs
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\asano\package-lock.json as the root directory.
+ To silence this warning, set &#96;outputFileTracingRoot&#96; in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * C:\Users\asano\mark-it-down\package-lock.json
+
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+   ▲ Next.js 15.5.20
+
+   Creating an optimized production build ...
+ ⚠ Compiled with warnings in 4.7s
+
+./node_modules/linkedom/commonjs/canvas.cjs
+Module not found: Can't resolve 'canvas' in 'C:\Users\asano\mark-it-down\node_modules\linkedom\commonjs'
+
+Import trace for requested module:
+./node_modules/linkedom/commonjs/canvas.cjs
+./node_modules/linkedom/esm/html/canvas-element.js
+./node_modules/linkedom/esm/shared/html-classes.js
+./node_modules/linkedom/esm/index.js
+./node_modules/budoux/module/dom.js
+./node_modules/budoux/module/html_processor.js
+./node_modules/budoux/module/index.js
+./components/Budoux.tsx
+./components/welcome/InlineText.tsx
+./components/welcome/ScreenshotWithFallback.tsx
+
+ ✓ Compiled successfully in 9.9s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/29) ...
+   Generating static pages (7/29) 
+   Generating static pages (14/29) 
+   Generating static pages (21/29) 
+ ✓ Generating static pages (29/29)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                      480 B         103 kB
+├ ○ /_not-found                            990 B         104 kB
+├ ○ /changelog                             168 B         103 kB
+├ ○ /changelog-ja                          168 B         103 kB
+├ ○ /clipper                               168 B         103 kB
+├ ○ /clipper-ja                            168 B         103 kB
+├ ○ /faq                                   168 B         103 kB
+├ ○ /faq-ja                                168 B         103 kB
+├ ○ /features                              168 B         103 kB
+├ ○ /features-ja                           168 B         103 kB
+├ ○ /feedback                              168 B         103 kB
+├ ○ /feedback-ja                           168 B         103 kB
+├ ○ /index-ja                              480 B         103 kB
+├ ○ /okf                                   168 B         103 kB
+├ ○ /okf-ja                                168 B         103 kB
+├ ○ /privacy-policy                        168 B         103 kB
+├ ○ /privacy-policy-ja                     168 B         103 kB
+├ ○ /rss                                   168 B         103 kB
+├ ○ /rss-ja                                168 B         103 kB
+├ ○ /templates                             119 B         108 kB
+├ ○ /templates-ja                          118 B         108 kB
+├ ○ /troubleshooting                       168 B         103 kB
+├ ○ /troubleshooting-ja                    168 B         103 kB
+├ ○ /welcome                               630 B         206 kB
+├ ○ /welcome-ja                            630 B         206 kB
+├ ○ /why                                   168 B         103 kB
+└ ○ /why-ja                                168 B         103 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/255-3a91f01e1c0f613e.js       46.3 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          1.99 kB
+
+
+○  (Static)  prerendered as static content
+
+[sync-docs] mode: DRY-RUN
+[sync-docs] out/ total files: 122
+[sync-docs]   to copy into docs/: 93
+[sync-docs]   excluded (.txt RSC payload): 26
+[sync-docs]   excluded (repo-internal: CLAUDE.md / _locales): 3
+[sync-docs] docs/-only files are left untouched (never deleted): CNAME, .nojekyll, sitemap.xml, robots.txt, and anything else with no counterpart in out/.
+
+[sync-docs] Dry-run only — no files written. Re-run with --apply to copy.
+  would copy: 404.html
+  would copy: changelog-ja.html
+  would copy: changelog.html
+  would copy: clipper-ja.html
+  would copy: clipper.html
+  would copy: faq-ja.html
+  would copy: faq.html
+  would copy: features-ja.html
+  would copy: features.html
+  would copy: feedback-ja.html
+  would copy: feedback.html
+  would copy: hero-mock\hero-screenshot-ja.png
+  would copy: hero-mock\hero-screenshot.png
+  would copy: icon-128.png
+  would copy: index-ja.html
+  would copy: index.html
+  would copy: okf-ja.html
+  would copy: okf.html
+  would copy: privacy-policy-ja.html
+  would copy: privacy-policy.html
+  ... and 73 more
+
+```
+</details>
+</tool-use>
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2"><details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<think><details><summary>Thought Process</summary>
+**Evaluating sync scripts**
+
+I’m considering if I need to do a dry-run only or if the script requires the --apply flag. The package script suggests no apply is needed, but do I need to inspect the script further? I'm wondering about the environment as well. Maybe I need to run the command `node scripts/sync-docs.mjs --apply` after the build? I should definitely check the script to see if it needs read permissions.</details></think>
+
+_**Agent (gpt-5.5)**_
+
+✅ ビルドは成功しましたが、同期スクリプトはデフォルトが DRY-RUN で `docs/` へ未書き込みでした。スクリプトの適用オプションを確認してから反映します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\scripts\sync-docs.mjs</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<think><details><summary>Thought Process</summary>
+**Running sync verification**
+
+I’m executing the command `node scripts/sync-docs.mjs --apply`, which will help with syncing the documents. After that, I’ll need to verify the search functionality to make sure everything is working as expected. I also need to take note that the `npm run sync` command succeeded in building, but it was a dry run, so I’ll keep an eye out for any warnings that were generated.</details></think>
+
+_**Agent (gpt-5.5)**_
+
+✅ `--apply` が必要なことを確認しました。直前のビルド済み `out/` から `docs/` へコピーします。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: node scripts/sync-docs.mjs --apply</summary>
+
+```bash
+node scripts/sync-docs.mjs --apply
+```
+
+```
+[sync-docs] mode: APPLY
+[sync-docs] out/ total files: 122
+[sync-docs]   to copy into docs/: 93
+[sync-docs]   excluded (.txt RSC payload): 26
+[sync-docs]   excluded (repo-internal: CLAUDE.md / _locales): 3
+[sync-docs] docs/-only files are left untouched (never deleted): CNAME, .nojekyll, sitemap.xml, robots.txt, and anything else with no counterpart in out/.
+
+[sync-docs] Copied 93 files into docs/.
+
+```
+</details>
+</tool-use>
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2"><details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+✅ `docs/` への反映まで完了しました。最後に、公開 HTML と正本に古いワークフロー表記が残っていないか確認します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\content",
+  "pattern": "Entry.*Edit.*Clear.*Exit|Entry.*Edit.*Move.*Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\content",
+  "pattern": "Entry.*Edit.*Clear.*Exit|Entry.*Edit.*Move.*Exit",
+  "topFiles": [
+    {
+      "matchCount": 4,
+      "uri": "content\\index.ts"
+    }
+  ],
+  "totalFiles": 1,
+  "totalMatches": 4
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\components",
+  "pattern": "Entry.*Edit.*Clear.*Exit|Entry.*Edit.*Move.*Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\components",
+  "pattern": "Entry.*Edit.*Clear.*Exit|Entry.*Edit.*Move.*Exit",
+  "topFiles": [
+    {
+      "matchCount": 3,
+      "uri": "components\\index\\Flow.tsx"
+    },
+    {
+      "matchCount": 2,
+      "uri": "components\\hero\\Hero.tsx"
+    },
+    {
+      "matchCount": 1,
+      "uri": "components\\index\\icons.tsx"
+    }
+  ],
+  "totalFiles": 3,
+  "totalMatches": 6
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index.html",
+  "pattern": "Entry.*Edit.*Clear.*Exit|Entry.*Edit.*Move.*Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index.html",
+  "pattern": "Entry.*Edit.*Clear.*Exit|Entry.*Edit.*Move.*Exit",
+  "topFiles": [
+    {
+      "matchCount": 1,
+      "uri": "docs\\index.html"
+    }
+  ],
+  "totalFiles": 1,
+  "totalMatches": 1
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index-ja.html",
+  "pattern": "Entry.*Edit.*Clear.*Exit|Entry.*Edit.*Move.*Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index-ja.html",
+  "pattern": "Entry.*Edit.*Clear.*Exit|Entry.*Edit.*Move.*Exit",
+  "topFiles": [
+    {
+      "matchCount": 1,
+      "uri": "docs\\index-ja.html"
+    }
+  ],
+  "totalFiles": 1,
+  "totalMatches": 1
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "content/index.ts",
+    "components/hero/Hero.tsx",
+    "components/index/Flow.tsx"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "content/index.ts"
+    },
+    {
+      "relativeWorkspacePath": "components/hero/Hero.tsx"
+    },
+    {
+      "relativeWorkspacePath": "components/index/Flow.tsx"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints"><details>
+<summary>Tool use: **read_lints**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<think><details><summary>Thought Process</summary>
+**Checking search accuracy**
+
+I think the output isn’t showing the old versus new matches due to line truncation. I might need a more precise search in the documentation, but I’m not sure if there are any matches. So, I’ll search separately for "Entry → Edit → Clear → Exit" in the docs to see if I can find more relevant information. This might help clarify things!</details></think>
+
+_**Agent (gpt-5.5)**_
+
+✅ 正本側では `Entry → Edit → Move → Exit` のみになっています。念のため、生成済み `docs/` に古い完全一致が残っていないことも確認します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs",
+  "pattern": "Entry → Edit → Clear → Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs",
+  "pattern": "Entry → Edit → Clear → Exit",
+  "topFiles": [],
+  "totalFiles": 0,
+  "totalMatches": 0
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs",
+  "pattern": "Entry → Edit → Move → Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs",
+  "pattern": "Entry → Edit → Move → Exit",
+  "topFiles": [],
+  "totalFiles": 0,
+  "totalMatches": 0
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\content",
+  "pattern": "Entry → Edit → Clear → Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\content",
+  "pattern": "Entry → Edit → Clear → Exit",
+  "topFiles": [],
+  "totalFiles": 0,
+  "totalMatches": 0
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs",
+  "pattern": "Entry.*Move.*Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs",
+  "pattern": "Entry.*Move.*Exit",
+  "topFiles": [],
+  "totalFiles": 0,
+  "totalMatches": 0
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs",
+  "pattern": "Entry.*Clear.*Exit"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs",
+  "pattern": "Entry.*Clear.*Exit",
+  "topFiles": [],
+  "totalFiles": 0,
+  "totalMatches": 0
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+✅ `docs/` の HTML は圧縮されていて矢印やテキストの出方が異なるため、`Move` / `Clear` 単語単位でも確認します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index.html",
+  "pattern": "Move"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index.html",
+  "pattern": "Move",
+  "topFiles": [
+    {
+      "matchCount": 1,
+      "uri": "docs\\index.html"
+    }
+  ],
+  "totalFiles": 1,
+  "totalMatches": 1
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index.html",
+  "pattern": "Clear"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index.html",
+  "pattern": "Clear",
+  "topFiles": [
+    {
+      "matchCount": 1,
+      "uri": "docs\\index.html"
+    }
+  ],
+  "totalFiles": 1,
+  "totalMatches": 1
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index-ja.html",
+  "pattern": "Move"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index-ja.html",
+  "pattern": "Move",
+  "topFiles": [
+    {
+      "matchCount": 1,
+      "uri": "docs\\index-ja.html"
+    }
+  ],
+  "totalFiles": 1,
+  "totalMatches": 1
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index-ja.html",
+  "pattern": "Clear"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "c:\\Users\\asano\\mark-it-down\\docs\\index-ja.html",
+  "pattern": "Clear",
+  "topFiles": [],
+  "totalFiles": 0,
+  "totalMatches": 0
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<think><details><summary>Thought Process</summary>
+**Checking for final preparations**
+
+I'm looking at the index.html and the "Clear all" recent item seems legit, but I want to make sure it's okay. I need to check the git status, and possibly use commands like git diff as well. It looks like running git status might help here. Oh, and I should note the build warnings before I proceed since the shell instructions suggest not committing yet. Let's make sure everything is in order before moving forward!</details></think>
+
+_**Agent (gpt-5.5)**_
+
+✅ 公開 HTML では `Move` が反映され、JA index に古い `Clear` は残っていません。EN index の `Clear` は別文脈の “Clear all” なので、今回のワークフロー表記とは無関係です。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: git status --short</summary>
+
+```bash
+git status --short
+```
+
+```
+ M .specstory/statistics.json
+ M components/hero/Hero.tsx
+ M components/index/Flow.tsx
+ M content/index.ts
+ M docs/404.html
+ M docs/changelog-ja.html
+ M docs/changelog.html
+ M docs/clipper-ja.html
+ M docs/clipper.html
+ M docs/faq-ja.html
+ M docs/faq.html
+ M docs/features-ja.html
+ M docs/features.html
+ M docs/feedback-ja.html
+ M docs/feedback.html
+ M docs/index-ja.html
+ M docs/index.html
+ M docs/okf-ja.html
+ M docs/okf.html
+ M docs/privacy-policy-ja.html
+ M docs/privacy-policy.html
+ M docs/rss-ja.html
+ M docs/rss.html
+ M docs/templates-ja.html
+ M docs/templates.html
+ M docs/troubleshooting-ja.html
+ M docs/troubleshooting.html
+ M docs/welcome-ja.html
+ M docs/welcome.html
+ M docs/why-ja.html
+ M docs/why.html
+?? .specstory/history/2026-05-25_09-29-06Z-menu-option-correction.md
+?? docs/_next/static/NTIUn3YnUW2prsU2pKvmT/
+?? docs/_next/static/chunks/139.7a5a8e93a21948c1.js
+?? docs/_next/static/chunks/265.27bb1e44173cbc59.js
+?? docs/_next/static/chunks/36-02677ab10abde6ab.js
+?? docs/_next/static/chunks/app/(en)/layout-2cd7f9710eff4a46.js
+?? docs/_next/static/chunks/app/(en)/page-130fc074e1cc4113.js
+?? docs/_next/static/chunks/app/(en)/templates/page-1a909cfb36eacf06.js
+?? docs/_next/static/chunks/app/(en)/welcome/page-5a616566b17b71fd.js
+?? docs/_next/static/chunks/app/(ja)/index-ja/page-130fc074e1cc4113.js
+?? docs/_next/static/chunks/app/(ja)/layout-9df1eb2e28014d6f.js
+?? docs/_next/static/chunks/app/(ja)/templates-ja/page-b31720bdb9d5c74c.js
+?? docs/_next/static/chunks/app/(ja)/welcome-ja/page-5a616566b17b71fd.js
+?? docs/_next/static/chunks/app/_not-found/page-909e777143c79026.js
+?? docs/_next/static/chunks/main-app-5efaaf64ddea9faa.js
+?? docs/_next/static/chunks/main-ebcfbce0658f5382.js
+?? docs/_next/static/chunks/pages/_app-82835f42865034fa.js
+?? docs/_next/static/chunks/pages/_error-8fe8fa87888a6a7e.js
+?? docs/_next/static/chunks/webpack-92671fc59bcd1b12.js
+?? docs/_next/static/css/d2c657ecef0e2073.css
+
+```
+</details>
+</tool-use>
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2"><details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: git diff -- content/index.ts components/hero/Hero.tsx components/index/Flow.tsx docs/index.html docs/index-ja.html</summary>
+
+```bash
+git diff -- content/index.ts components/hero/Hero.tsx components/index/Flow.tsx docs/index.html docs/index-ja.html
+```
+
+```
+warning: in the working copy of 'components/hero/Hero.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/index/Flow.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'content/index.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/index-ja.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/index.html', LF will be replaced by CRLF the next time Git touches it
+diff --git a/components/hero/Hero.tsx b/components/hero/Hero.tsx
+index 3ec909e..1c78cfe 100644
+--- a/components/hero/Hero.tsx
++++ b/components/hero/Hero.tsx
+@@ -8,12 +8,12 @@ import { indexContent, type Lang } from '@/content/index';
+ 
+ const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke';
+ 
+-// Entry → Edit → Clear → Exit strip. Labels are English in both languages,
++// Entry → Edit → Move → Exit strip. Labels are English in both languages,
+ // exactly as in the old page (the whole strip is aria-hidden decoration).
+ const flowSteps = [
+   { label: 'Entry', Icon: EntryIcon },
+   { label: 'Edit', Icon: EditIcon },
+-  { label: 'Clear', Icon: ClearIcon },
++  { label: 'Move', Icon: ClearIcon },
+   { label: 'Exit', Icon: ExitIcon },
+ ] as const;
+ 
+diff --git a/components/index/Flow.tsx b/components/index/Flow.tsx
+index 79ccf29..92d63ac 100644
+--- a/components/index/Flow.tsx
++++ b/components/index/Flow.tsx
+@@ -6,7 +6,7 @@ import { indexSections, type Lang } from '@/content/index';
+ // Same four icons as the hero flow strip — the old page reuses the set.
+ const icons = [EntryIcon, EditIcon, ClearIcon, ExitIcon];
+ 
+-// Old docs/index.html Entry→Edit→Clear→Exit flow section, restored verbatim
++// Old docs/index.html Entry→Edit→Move→Exit flow section, restored verbatim
+ // from eed65be (original-design rollback, 2026-07-12). The old markup reuses
+ // philosophy-list / philosophy-item with a flow-item modifier class.
+ export function Flow({ lang }: { lang: Lang }) {
+diff --git a/content/index.ts b/content/index.ts
+index d483a5c..6393e51 100644
+--- a/content/index.ts
++++ b/content/index.ts
+@@ -146,7 +146,7 @@ export const indexSections: Record&lt;Lang, IndexSectionsCopy&gt; = {
+       },
+     ],
+     flowEyebrow: 'Workflow',
+-    flowHeading: 'Entry → Edit → Clear → Exit',
++    flowHeading: 'Entry → Edit → Move → Exit',
+     flowIntro: 'Information can pass through the browser instead of piling up there.',
+     flowSteps: [
+       {
+@@ -155,7 +155,7 @@ export const indexSections: Record&lt;Lang, IndexSectionsCopy&gt; = {
+       },
+       { title: 'Edit', bodyLines: ['In your own words.', 'Make it yours.'] },
+       {
+-        title: 'Clear',
++        title: 'Move',
+         bodyLines: ['Archive finished work.', 'Template repeatable patterns. Trash what you no longer need.'],
+       },
+       {
+@@ -259,7 +259,7 @@ export const indexSections: Record&lt;Lang, IndexSectionsCopy&gt; = {
+       },
+     ],
+     flowEyebrow: 'Workflow',
+-    flowHeading: 'Entry → Edit → Clear → Exit',
++    flowHeading: 'Entry → Edit → Move → Exit',
+     flowIntro: '情報はブラウザに溜め込むだけでなく、通過させることもできます。',
+     flowSteps: [
+       {
+@@ -268,7 +268,7 @@ export const indexSections: Record&lt;Lang, IndexSectionsCopy&gt; = {
+       },
+       { title: 'Edit', bodyLines: ['自分の言葉で。', '自分のものにする。'] },
+       {
+-        title: 'Clear',
++        title: 'Move',
+         bodyLines: ['終わったものはArchiveへ。', '繰り返す型はTemplateへ。不要なものはTrashへ。'],
+       },
+       {
+@@ -358,7 +358,7 @@ export const indexJsonLd: Record&lt;Lang, Record&lt;string, unknown&gt;&gt; = {
+     name: 'Mark It Down',
+     alternateName: 'Mark It Down — Markdown Editor &amp; Web Clipper',
+     description:
+-      'Chrome extension Markdown editor &amp; Web Clipper for digesting AI output and web articles into your own words. Built around the Entry → Edit → Clear → Exit workflow — a workshop for digestion, not a vault for storage. Side Panel and New Tab, Git sync, offline.',
++      'Chrome extension Markdown editor &amp; Web Clipper for digesting AI output and web articles into your own words. Built around the Entry → Edit → Move → Exit workflow — a workshop for digestion, not a vault for storage. Side Panel and New Tab, Git sync, offline.',
+     applicationCategory: 'Productivity',
+     applicationSubCategory: 'Markdown Editor',
+     browserRequirements: 'Chrome 116+ or Chromium-based browsers',
+@@ -422,7 +422,7 @@ export const indexJsonLd: Record&lt;Lang, Record&lt;string, unknown&gt;&gt; = {
+     name: 'Mark It Down',
+     alternateName: 'Mark It Down — Markdown エディタ &amp; Web クリッパー',
+     description:
+-      'Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力や Web 記事を「咀嚼」して自分の言葉に変える作業場。Entry → Edit → Clear → Exit のワークフローで、保存ではなく消化を目的とする。Side Panel と New Tab、Git 同期、オフライン対応。',
++      'Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力や Web 記事を「咀嚼」して自分の言葉に変える作業場。Entry → Edit → Move → Exit のワークフローで、保存ではなく消化を目的とする。Side Panel と New Tab、Git 同期、オフライン対応。',
+     applicationCategory: 'Productivity',
+     applicationSubCategory: 'Markdownエディタ',
+     browserRequirements: 'Chrome 116以降またはChromiumベースブラウザ',
+diff --git a/docs/index-ja.html b/docs/index-ja.html
+index be00943..a46f26f 100644
+--- a/docs/index-ja.html
++++ b/docs/index-ja.html
+@@ -1,4 +1,4 @@
+-&lt;!DOCTYPE html&gt;&lt;!--P_bzKNTuosQS3MPG7nhO2--&gt;&lt;html lang="ja" class="__variable_c1a059 __variable_ea7542"&gt;&lt;head&gt;&lt;meta charSet="utf-8"/&gt;&lt;meta name="viewport" content="width=device-width, initial-scale=1"/&gt;&lt;link rel="preload" href="/_next/static/media/5c0c2bcbaa4149ca-s.p.woff2" as="font" crossorigin="" type="font/woff2"/&gt;&lt;link rel="preload" href="/_next/static/media/630c17af355fa44e-s.p.woff2" as="font" crossorigin="" type="font/woff2"/&gt;&lt;link rel="preload" as="image" href="/icon-128.png"/&gt;&lt;link rel="stylesheet" href="/_next/static/css/42d4259c4d563989.css" data-precedence="next"/&gt;&lt;link rel="stylesheet" href="/_next/static/css/9379fdb4cb45c428.css" data-precedence="next"/&gt;&lt;link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-6cd1d0110126e6a6.js"/&gt;&lt;script src="/_next/static/chunks/4bd1b696-c023c6e3521b1417.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/255-3a91f01e1c0f613e.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/main-app-c46bc769a6243282.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/app/(ja)/layout-4a34e8f6718c1978.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/app/(ja)/index-ja/page-216209f997a5a74d.js" async=""&gt;&lt;/script&gt;&lt;link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW" as="script"/&gt;&lt;meta name="next-size-adjust" content=""/&gt;&lt;title&gt;無料・ローカル完結 Markdown エディタ &amp;amp; Web クリッパー — Mark It Down&lt;/title&gt;&lt;meta name="description" content="AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。"/&gt;&lt;link rel="canonical" href="https://markitdown.reduktion.dev/index-ja.html"/&gt;&lt;link rel="alternate" hrefLang="en" href="https://markitdown.reduktion.dev/index.html"/&gt;&lt;link rel="alternate" hrefLang="ja" href="https://markitdown.reduktion.dev/index-ja.html"/&gt;&lt;link rel="alternate" hrefLang="x-default" href="https://markitdown.reduktion.dev/index.html"/&gt;&lt;meta property="og:title" content="無料・ローカル完結 Markdown エディタ &amp;amp; Web クリッパー — Mark It Down"/&gt;&lt;meta property="og:description" content="AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。"/&gt;&lt;meta property="og:image" content="https://markitdown.reduktion.dev/jp-dark.png"/&gt;&lt;meta property="og:type" content="website"/&gt;&lt;meta name="twitter:card" content="summary_large_image"/&gt;&lt;meta name="twitter:title" content="無料・ローカル完結 Markdown エディタ &amp;amp; Web クリッパー — Mark It Down"/&gt;&lt;meta name="twitter:description" content="AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。"/&gt;&lt;meta name="twitter:image" content="https://markitdown.reduktion.dev/jp-dark.png"/&gt;&lt;script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;div hidden=""&gt;&lt;!--$--&gt;&lt;!--/$--&gt;&lt;/div&gt;&lt;script&gt;(function () {
++&lt;!DOCTYPE html&gt;&lt;!--NTIUn3YnUW2prsU2pKvmT--&gt;&lt;html lang="ja" class="__variable_c1a059 __variable_ea7542"&gt;&lt;head&gt;&lt;meta charSet="utf-8"/&gt;&lt;meta name="viewport" content="width=device-width, initial-scale=1"/&gt;&lt;link rel="preload" as="image" href="/icon-128.png"/&gt;&lt;link rel="stylesheet" href="/_next/static/css/42d4259c4d563989.css" data-precedence="next"/&gt;&lt;link rel="stylesheet" href="/_next/static/css/d2c657ecef0e2073.css" data-precedence="next"/&gt;&lt;link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-92671fc59bcd1b12.js"/&gt;&lt;script src="/_next/static/chunks/4bd1b696-c023c6e3521b1417.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/255-3a91f01e1c0f613e.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/main-app-5efaaf64ddea9faa.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/app/(ja)/layout-9df1eb2e28014d6f.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/app/(ja)/index-ja/page-130fc074e1cc4113.js" async=""&gt;&lt;/script&gt;&lt;link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW" as="script"/&gt;&lt;title&gt;無料・ローカル完結 Markdown エディタ &amp;amp; Web クリッパー — Mark It Down&lt;/title&gt;&lt;meta name="description" content="AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。"/&gt;&lt;link rel="canonical" href="https://markitdown.reduktion.dev/index-ja.html"/&gt;&lt;link rel="alternate" hrefLang="en" href="https://markitdown.reduktion.dev/index.html"/&gt;&lt;link rel="alternate" hrefLang="ja" href="https://markitdown.reduktion.dev/index-ja.html"/&gt;&lt;link rel="alternate" hrefLang="x-default" href="https://markitdown.reduktion.dev/index.html"/&gt;&lt;meta property="og:title" content="無料・ローカル完結 Markdown エディタ &amp;amp; Web クリッパー — Mark It Down"/&gt;&lt;meta property="og:description" content="AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。"/&gt;&lt;meta property="og:image" content="https://markitdown.reduktion.dev/jp-dark.png"/&gt;&lt;meta property="og:type" content="website"/&gt;&lt;meta name="twitter:card" content="summary_large_image"/&gt;&lt;meta name="twitter:title" content="無料・ローカル完結 Markdown エディタ &amp;amp; Web クリッパー — Mark It Down"/&gt;&lt;meta name="twitter:description" content="AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。"/&gt;&lt;meta name="twitter:image" content="https://markitdown.reduktion.dev/jp-dark.png"/&gt;&lt;script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;div hidden=""&gt;&lt;!--$--&gt;&lt;!--/$--&gt;&lt;/div&gt;&lt;script&gt;(function () {
+   try {
+     var lang = navigator.language || navigator.userLanguage || '';
+     var file = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
+@@ -19,4 +19,4 @@
+       } catch (e) {}
+     }
+   });
+-})();&lt;/script&gt;&lt;a href="#main-content" class="skip-to-content"&gt;メインコンテンツへスキップ&lt;/a&gt;&lt;div class="container"&gt;&lt;nav class="header-nav" aria-label="メインナビゲーション"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="/index-ja.html" aria-current="page"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ホーム&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/why-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;MIDとは&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/features-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;機能&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/okf-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;OKF&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/templates-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;テンプレート&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/faq-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;よく&lt;wbr/&gt;ある&lt;wbr/&gt;質問&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/troubleshooting-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;トラブルシューティング&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/changelog-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;更新履歴&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/feedback-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;フィードバック&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/privacy-policy-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;プライバシー&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="lang-switcher"&gt;&lt;a href="/index.html" hrefLang="en"&gt;English&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;header role="banner"&gt;&lt;div class="header-logo"&gt;&lt;a href="/index-ja.html" aria-label="Mark It Down ホーム"&gt;&lt;img src="/icon-128.png" alt="" class="logo-icon" aria-hidden="true"/&gt;&lt;span class="site-title"&gt;Mark It Down&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;p class="tagline"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ブラウザが、&lt;wbr/&gt;書斎に&lt;wbr/&gt;なる。&lt;/span&gt;&lt;/p&gt;&lt;/header&gt;&lt;main id="main-content" role="main"&gt;&lt;script type="application/ld+json"&gt;{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mark It Down","alternateName":"Mark It Down — Markdown エディタ &amp; Web クリッパー","description":"Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力や Web 記事を「咀嚼」して自分の言葉に変える作業場。Entry → Edit → Clear → Exit のワークフローで、保存ではなく消化を目的とする。Side Panel と New Tab、Git 同期、オフライン対応。","applicationCategory":"Productivity","applicationSubCategory":"Markdownエディタ","browserRequirements":"Chrome 116以降またはChromiumベースブラウザ","audience":{"@type":"Audience","audienceType":"AIツールユーザー、ナレッジワーカー、エンジニア、研究者"},"operatingSystem":"Chrome","inLanguage":"ja","isAccessibleForFree":true,"keywords":"Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし","dateModified":"2026-07-04","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"softwareVersion":"2.2.10","author":{"@type":"Person","name":"Mark It Down Developer"},"sameAs":["https://github.com/9BwgeBTPG-QH/mark-it-down","https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke"],"downloadUrl":"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke","featureList":["ライブプレビュー付きMarkdown編集","RSS Reader（フィードを読み、必要な記事だけInboxへ保存）","OPMLインポート/エクスポート（RSS購読リストを他のリーダーと移行）","RSS Git同期（feeds / denylist設定を端末間で共有）","デュアルモード：新しいタブとサイドパネル","Web Clipper（右クリックでページをMarkdownに変換）","Portability Hub（Zenn・Hugo・Obsidian 等8プラットフォームへの記法変換）","CommonMark・GFM・Hugo・Obsidian向けコピー","Chat Format Smart Paste（Slack・Discord・WhatsApp の自動正規化）","Git同期（GitHub、GitLab対応）","PDF（ページ番号・目次付き）・DOCX・PNG・HTML・EPUB・LaTeXエクスポート","4テーマ：Light、Dark、Parchment、CandleLight","Focus Mode（タイプライタースクロール）","Mermaidダイアグラム・LaTeX数式対応","キーボードファースト設計","オフライン対応","日英バイリンガル","Frontmatter管理（メタデータを本文と分離・エクスポート時に自動合成）","Web Clipper CSSセレクター指定（ページセクションを選んでクリップ）","自動非表示UI（執筆中にヘッダーとツールバーが自動で隠れる）","Git同期ステータスインジケーター","テーブルキーボードナビゲーション（ExcelライクなEnter/Tab/Alt+Enter操作）","長押し削除（Trashからの完全削除に意思確認）","Web Clipperプレビュー（クリップ前にセクション選択）","サイドバーのホバーカードとプレビューパネル","エクスポートプリセット（YAML/TOML/JSONフロントマター自動付加）"]}&lt;/script&gt;&lt;section class="hero" aria-labelledby="hero-heading"&gt;&lt;h1 id="hero-heading" class="page-title"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;無料・ローカル完結 &lt;wbr/&gt;Markdown エディタ&lt;/span&gt;&lt;/h1&gt;&lt;div class="hero-flow" aria-hidden="true"&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Entry&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Edit&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Clear&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Exit&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class="hero-tagline"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;取り込む。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;必要な&lt;wbr/&gt;部分を&lt;wbr/&gt;書き直す。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;次へ&lt;wbr/&gt;送り出す。&lt;/span&gt;&lt;/p&gt;&lt;p class="hero-fact"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Chrome 拡張の&lt;wbr/&gt; Markdown エディタ ＆ Web クリッパー。&lt;wbr/&gt;AI 出力、&lt;wbr/&gt;Web 記事、&lt;wbr/&gt;RSS、&lt;wbr/&gt;断片メモを&lt;wbr/&gt;扱う作業場です。&lt;/span&gt;&lt;/p&gt;&lt;p class="hero-subtitle"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;すべての&lt;wbr/&gt;ノートを&lt;wbr/&gt;ブラウザに&lt;wbr/&gt;置き続ける&lt;!-- --&gt;&lt;wbr/&gt;必要は&lt;!-- --&gt;&lt;wbr/&gt;ありません。&lt;!-- --&gt;&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Mark It Down は、&lt;wbr/&gt;素材が&lt;wbr/&gt;自分の&lt;wbr/&gt;言葉に&lt;wbr/&gt;なるまでの&lt;wbr/&gt;静かな&lt;wbr/&gt;場所です。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;できあがったら、&lt;wbr/&gt;Export、&lt;wbr/&gt;Git、&lt;wbr/&gt;長期保存先へ&lt;wbr/&gt;送り出します。&lt;/span&gt;&lt;/p&gt;&lt;div class="buttons"&gt;&lt;a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する" data-ga-cta="hero"&gt;拡張機能を入手&lt;/a&gt;&lt;a href="/features-ja.html" class="btn btn-secondary"&gt;機能を見る&lt;/a&gt;&lt;/div&gt;&lt;span class="hero-ornament" aria-hidden="true"&gt;~ ~ ~&lt;/span&gt;&lt;/section&gt;&lt;section class="philosophy" aria-labelledby="philosophy-heading"&gt;&lt;span class="section-label"&gt;Philosophy&lt;/span&gt;&lt;h2 id="philosophy-heading" class="visually-hidden"&gt;哲学&lt;/h2&gt;&lt;ul class="philosophy-list" role="list"&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;まず&lt;wbr/&gt;取り込む。&lt;wbr/&gt;分類は&lt;wbr/&gt;あとで。&lt;/span&gt;&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;クリップ、&lt;wbr/&gt;フィード、&lt;wbr/&gt;貼り付けた&lt;wbr/&gt;下&lt;wbr/&gt;書きは&lt;wbr/&gt; Inbox へ。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;分類は、&lt;wbr/&gt;読んでからでも&lt;wbr/&gt;間に&lt;wbr/&gt;合います。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;保存じゃなくて、&lt;wbr/&gt;咀嚼。&lt;/span&gt;&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;コピペでは&lt;wbr/&gt;自分の&lt;wbr/&gt;ものにならない。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;書き直す&lt;wbr/&gt;ことで&lt;wbr/&gt;自分の&lt;wbr/&gt;言葉に&lt;wbr/&gt;なる。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ローカルに&lt;wbr/&gt;保存し、&lt;wbr/&gt;意図して&lt;wbr/&gt;送り出す。&lt;/span&gt;&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;下&lt;wbr/&gt;書きは&lt;wbr/&gt;自動保存で&lt;wbr/&gt;手元に&lt;wbr/&gt;残ります。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Export と&lt;!-- --&gt;&lt;wbr/&gt; Git 同期は、&lt;!-- --&gt;&lt;wbr/&gt;ノートの&lt;!-- --&gt;&lt;wbr/&gt;準備が&lt;!-- --&gt;&lt;wbr/&gt;できた&lt;!-- --&gt;&lt;wbr/&gt;ときに&lt;!-- --&gt;&lt;wbr/&gt;実行します。&lt;!-- --&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="flow-section" aria-labelledby="flow-heading"&gt;&lt;span class="section-label"&gt;Workflow&lt;/span&gt;&lt;h2 id="flow-heading"&gt;Entry → Edit → Clear → Exit&lt;/h2&gt;&lt;p class="flow-description"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;情報は&lt;wbr/&gt;ブラウザに&lt;wbr/&gt;溜め込むだけでなく、&lt;wbr/&gt;通過させる&lt;wbr/&gt;ことも&lt;wbr/&gt;できます。&lt;/span&gt;&lt;/p&gt;&lt;ul class="philosophy-list" role="list"&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Entry&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;AI出力を&lt;wbr/&gt;貼り付ける。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ページを&lt;wbr/&gt;クリップする。&lt;wbr/&gt;RSSを&lt;wbr/&gt;保存する。&lt;wbr/&gt;空白から&lt;wbr/&gt;書く。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Edit&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;自分の&lt;wbr/&gt;言葉で。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;自分の&lt;wbr/&gt;ものに&lt;wbr/&gt;する。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Clear&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;終わった&lt;wbr/&gt;ものは&lt;wbr/&gt;Archiveへ。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;繰り返す型は&lt;wbr/&gt;Templateへ。&lt;wbr/&gt;不要な&lt;wbr/&gt;ものは&lt;wbr/&gt;Trashへ。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Exit&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;PDF、&lt;wbr/&gt;DOCX、&lt;wbr/&gt;HTML、&lt;wbr/&gt;EPUB、&lt;wbr/&gt;LaTeX、&lt;wbr/&gt;.md、&lt;wbr/&gt;Git。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;できあがった&lt;wbr/&gt;ノートを、次の&lt;wbr/&gt;場所へ&lt;wbr/&gt;送ります。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="screenshot-section" aria-labelledby="screenshot-heading"&gt;&lt;h2 id="screenshot-heading" class="visually-hidden"&gt;スクリーンショット&lt;/h2&gt;&lt;div class="video-container"&gt;&lt;p class="video-context"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Mark It Downの&lt;wbr/&gt;全体&lt;wbr/&gt;像 — スライドを&lt;wbr/&gt;自分の&lt;wbr/&gt;ペースで&lt;wbr/&gt;ご覧ください&lt;/span&gt;&lt;/p&gt;&lt;iframe src="/slides-ja.html" title="Mark It Down - 製品紹介スライド" allowFullScreen="" loading="lazy"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/section&gt;&lt;section class="workflow-section" aria-labelledby="workflow-heading"&gt;&lt;span class="section-label"&gt;Use Cases&lt;/span&gt;&lt;h2 id="workflow-heading"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;実際の&lt;wbr/&gt;使い方&lt;/span&gt;&lt;/h2&gt;&lt;ul class="workflow-list" role="list"&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Xを&lt;wbr/&gt;記事でも&lt;wbr/&gt;スレッドでも&lt;wbr/&gt;取り込む&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;X / Twitterの&lt;wbr/&gt;記事でも&lt;wbr/&gt;スレッドでも、&lt;wbr/&gt;右クリックの&lt;wbr/&gt;取り込みで&lt;wbr/&gt;即Markdownに&lt;wbr/&gt;変換して&lt;wbr/&gt;保存。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;複数環境の&lt;wbr/&gt;日次ログ&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ノートの&lt;wbr/&gt;タイトルを&lt;wbr/&gt;日付&lt;wbr/&gt;（例 YYYYMMDD）に&lt;wbr/&gt;して、&lt;wbr/&gt;メモは&lt;wbr/&gt; /now の&lt;wbr/&gt;時刻見出しで&lt;wbr/&gt;追記。&lt;wbr/&gt;別の&lt;wbr/&gt;端末で&lt;wbr/&gt;編集しても、&lt;wbr/&gt;Git同期が&lt;wbr/&gt;競合を&lt;wbr/&gt;検出し&lt;wbr/&gt;「両方を&lt;wbr/&gt;結合」で&lt;wbr/&gt;1つに&lt;wbr/&gt;まとめられる。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;横で&lt;wbr/&gt;読みながら&lt;wbr/&gt;メモ、&lt;wbr/&gt;タブで&lt;wbr/&gt;集中&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Webを&lt;wbr/&gt;見ながら&lt;wbr/&gt;Side Panelで&lt;wbr/&gt;メモ。&lt;wbr/&gt;閉じて&lt;wbr/&gt;New Tabで&lt;wbr/&gt;同じ&lt;wbr/&gt;ノートを&lt;wbr/&gt;開き、&lt;wbr/&gt;じっくり編集。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;思いつくまま&lt;wbr/&gt;書いて&lt;wbr/&gt;並べ替え&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;リストを&lt;wbr/&gt;思いつくまま&lt;wbr/&gt;書いて、&lt;wbr/&gt;Alt+↑ / ↓ で&lt;wbr/&gt;行を&lt;wbr/&gt;並べ替えて&lt;wbr/&gt;整える。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="coming-soon-section" aria-labelledby="coming-soon-heading"&gt;&lt;span class="section-label"&gt;What&amp;#x27;s New&lt;/span&gt;&lt;h2 id="coming-soon-heading"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;最近の&lt;wbr/&gt;追加機能&lt;/span&gt;&lt;/h2&gt;&lt;p class="coming-soon-status"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;v2.2.10 — 新しい&lt;wbr/&gt;読書面と、&lt;wbr/&gt;より&lt;wbr/&gt;深まる&lt;wbr/&gt;ナレッジグラフ。&lt;/span&gt;&lt;/p&gt;&lt;ul class="coming-soon-list" role="list"&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;GitHub Repository Reader&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Mark It Down を&lt;wbr/&gt;離れずに&lt;wbr/&gt; GitHub リポジトリを&lt;wbr/&gt;閲覧できる。&lt;wbr/&gt;ファイルツリーを&lt;wbr/&gt;たどり、&lt;wbr/&gt;ファイル間の&lt;wbr/&gt;リンクを&lt;wbr/&gt;追い、&lt;wbr/&gt;必要な&lt;wbr/&gt;ファイルを&lt;wbr/&gt;ノートに&lt;wbr/&gt;取り込める。&lt;wbr/&gt;プライベートリポジトリは&lt;wbr/&gt;個人アクセストークンで&lt;wbr/&gt;対応。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;RSS リーダーが&lt;wbr/&gt;全画面ワークスペースに&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;左の&lt;wbr/&gt;フィードサイドバー、&lt;wbr/&gt;中央の&lt;wbr/&gt;記事一覧と&lt;wbr/&gt;閲覧ペイン、&lt;wbr/&gt;右の&lt;wbr/&gt;インスペクタ&lt;wbr/&gt;（メタデータ・タグ・&lt;wbr/&gt;見出し）で&lt;wbr/&gt;構成される。&lt;wbr/&gt;記事は&lt;wbr/&gt;自分の&lt;wbr/&gt;ノートと&lt;wbr/&gt;同じ&lt;wbr/&gt; Markdown エンジンで&lt;wbr/&gt;表示される。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ノートグラフの&lt;wbr/&gt;再設計&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;アウトラインビューは&lt;wbr/&gt;ノートを&lt;wbr/&gt;折りたたみ可能な&lt;wbr/&gt;ツリーで&lt;wbr/&gt;表示し、&lt;wbr/&gt;任意の&lt;wbr/&gt;ノードを&lt;wbr/&gt;ルートに&lt;wbr/&gt;変更できる。&lt;wbr/&gt;Radial ビューは&lt;wbr/&gt;リンク先の&lt;wbr/&gt;ノートを&lt;wbr/&gt;中心ノードの&lt;wbr/&gt;周囲に&lt;wbr/&gt;配置し、&lt;wbr/&gt;ズームと&lt;wbr/&gt;パンに&lt;wbr/&gt;対応。&lt;wbr/&gt;Repository Reader 内でも&lt;wbr/&gt;グラフが&lt;wbr/&gt;使える。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;フロントマター専用モーダル&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ノートの&lt;wbr/&gt;メタデータ編集が&lt;wbr/&gt;専用モーダルに&lt;wbr/&gt;なった。&lt;wbr/&gt;ノート本文や&lt;wbr/&gt;クリップ元ページから&lt;wbr/&gt;候補が&lt;!-- --&gt;&lt;wbr/&gt;提示され、&lt;!-- --&gt;&lt;wbr/&gt;クリックで&lt;!-- --&gt;&lt;wbr/&gt;適用できる。&lt;!-- --&gt;&lt;wbr/&gt;YAML と&lt;!-- --&gt;&lt;wbr/&gt;して&lt;!-- --&gt;&lt;wbr/&gt;コピーや&lt;!-- --&gt;&lt;wbr/&gt;一括クリアも&lt;!-- --&gt;&lt;wbr/&gt;ヘッダメニューから&lt;!-- --&gt;&lt;wbr/&gt;操作できる。&lt;!-- --&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;サイドバーの&lt;wbr/&gt;ノート行が&lt;wbr/&gt;静かに&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;未処理マーカーや&lt;wbr/&gt; Git 保留状態、&lt;wbr/&gt;ノートサイズなどの&lt;wbr/&gt;ステータス表示を&lt;wbr/&gt;ホバーカードに&lt;wbr/&gt;移動。&lt;wbr/&gt;一覧は&lt;wbr/&gt;静かなまま、&lt;wbr/&gt;詳細は&lt;wbr/&gt;ホバーひとつで&lt;wbr/&gt;確認できる。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="faq-preview-section" aria-labelledby="faq-preview-heading"&gt;&lt;span class="section-label"&gt;FAQ&lt;/span&gt;&lt;h2 id="faq-preview-heading"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;よく&lt;wbr/&gt;ある&lt;wbr/&gt;質問&lt;/span&gt;&lt;/h2&gt;&lt;div class="changelog-accordion"&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;無料で&lt;wbr/&gt;使えますか？&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;はい、&lt;wbr/&gt;完全無料です。&lt;/span&gt;&lt;/strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;広告なし、&lt;wbr/&gt;有料プランなし、&lt;wbr/&gt;アカウント登録も&lt;wbr/&gt;不要です。&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;オフラインで&lt;wbr/&gt;使えますか？&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;はい、&lt;wbr/&gt;ほぼ&lt;wbr/&gt;すべての機能が&lt;wbr/&gt;オフラインで&lt;wbr/&gt;動作します。&lt;/span&gt;&lt;/strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ノートの&lt;wbr/&gt;作成、&lt;wbr/&gt;編集、&lt;wbr/&gt;検索は&lt;wbr/&gt;すべて&lt;wbr/&gt;オフラインで&lt;wbr/&gt;可能。&lt;wbr/&gt;Git同期のみ&lt;wbr/&gt;インターネット接続が&lt;wbr/&gt;必要です。&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ブラウザの&lt;wbr/&gt;キャッシュを&lt;wbr/&gt;消すと&lt;wbr/&gt;ノートも&lt;wbr/&gt;消えますか？&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;いいえ、&lt;wbr/&gt;消えません。&lt;/span&gt;&lt;/strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ノートは&lt;wbr/&gt;拡張機能専用の&lt;wbr/&gt;ストレージに&lt;wbr/&gt;保存されており、&lt;wbr/&gt;ブラウザキャッシュとは&lt;wbr/&gt;別です。&lt;wbr/&gt;データは&lt;wbr/&gt;安全です。&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;/div&gt;&lt;p class="faq-more-link"&gt;&lt;a href="/faq-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;すべての&lt;wbr/&gt;FAQを&lt;wbr/&gt;見る&lt;/span&gt; →&lt;/a&gt;&lt;/p&gt;&lt;/section&gt;&lt;section class="cta-section" aria-labelledby="cta-heading"&gt;&lt;h2 id="cta-heading"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;書き&lt;wbr/&gt;始めませんか？&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Chrome拡張機能で&lt;wbr/&gt;利用可能。&lt;wbr/&gt;アカウント不要。&lt;/span&gt;&lt;br/&gt;&lt;small&gt;最新版: v2.2.10&lt;/small&gt;&lt;/p&gt;&lt;div class="buttons"&gt;&lt;a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する"&gt;拡張機能を入手&lt;/a&gt;&lt;a href="/changelog-ja.html" class="btn btn-secondary"&gt;更新履歴&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;/main&gt;&lt;footer role="contentinfo"&gt;&lt;div class="footer-brand"&gt;&lt;img src="/icon-128.png" alt="" aria-hidden="true"/&gt;&lt;span&gt;Mark It Down&lt;/span&gt;&lt;/div&gt;&lt;nav class="footer-nav" aria-label="フッターナビゲーション"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="/index-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ホーム&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/features-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;機能&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/clipper-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Web Clipper&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/rss-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;RSS Reader&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/okf-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;OKF&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/templates-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;テンプレート&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/faq-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;よく&lt;wbr/&gt;ある&lt;wbr/&gt;質問&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/troubleshooting-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;トラブルシューティング&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/changelog-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;更新履歴&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/feedback-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;フィードバック&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/privacy-policy-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;プライバシー&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="lang-switcher"&gt;&lt;a href="/index.html" hrefLang="en"&gt;English&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;p&gt;&lt;span&gt;© 2025-2026 reduktion.dev&lt;/span&gt;&lt;/p&gt;&lt;/footer&gt;&lt;/div&gt;&lt;!--$--&gt;&lt;!--/$--&gt;&lt;script src="/_next/static/chunks/webpack-6cd1d0110126e6a6.js" id="_R_" async=""&gt;&lt;/script&gt;&lt;script&gt;(self.__next_f=self.__next_f||[]).push([0])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[9766,[],\"\"]\n3:I[8924,[],\"\"]\n4:I[1402,[\"248\",\"static/chunks/app/(ja)/layout-4a34e8f6718c1978.js\"],\"\"]\n8:I[7150,[],\"\"]\n:HL[\"/_next/static/media/5c0c2bcbaa4149ca-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/630c17af355fa44e-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/42d4259c4d563989.css\",\"style\"]\n:HL[\"/_next/static/css/9379fdb4cb45c428.css\",\"style\"]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"0:{\"P\":null,\"b\":\"P_bzKNTuosQS3MPG7nhO2\",\"p\":\"\",\"c\":[\"\",\"index-ja\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"(ja)\",{\"children\":[\"index-ja\",{\"children\":[\"__PAGE__\",{}]}]},\"$undefined\",\"$undefined\",true]}],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"(ja)\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/42d4259c4d563989.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/9379fdb4cb45c428.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ja\",\"className\":\"__variable_c1a059 __variable_ea7542\",\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"(function () {\\n  try {\\n    var lang = navigator.language || navigator.userLanguage || '';\\n    var file = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);\\n    if (lang.indexOf('ja') !== 0 \u0026\u0026 !sessionStorage.getItem('langOverride')) {\\n      if (/-ja\\\\.html$/.test(file)) {\\n        location.replace(file.replace(/-ja\\\\.html$/, '.html'));\\n      } else if (/-ja$/.test(file)) {\\n        location.replace(file.slice(0, -3) + '.html');\\n      }\\n    }\\n  } catch (e) {}\\n  document.addEventListener('click', function (event) {\\n    var target = event.target;\\n    var anchor = target instanceof Element ? target.closest('.lang-switcher a') : null;\\n    if (anchor) {\\n      try {\\n        sessionStorage.setItem('langOverride', '1');\\n      } catch (e) {}\\n    }\\n  });\\n})();\"}}],[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:style\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:1:props:style\",\"children\":404}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:2:props:style\",\"children\":[\"$\",\"h2\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:2:props:children:props:style\",\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[[\"$\",\"$L4\",null,{\"src\":\"https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW\",\"strategy\":\"afterInteractive\"}],[\"$\",\"$L4\",null,{\"id\":\"ga-init\",\"strategy\":\"afterInteractive\",\"children\":\"window.dataLayer = window.dataLayer || [];\\nfunction gtag(){dataLayer.push(arguments);}\\ngtag('js', new Date());\\ngtag('config', 'G-BGZ2T3RGJW');\\ndocument.addEventListener('click', function (event) {\\n  var target = event.target;\\n  var cta = target instanceof Element ? target.closest('[data-ga-cta]') : null;\\n  if (cta) {\\n    gtag('event', 'cta_click', {\\n      event_category: 'engagement',\\n      event_label: cta.getAttribute('data-ga-cta'),\\n    });\\n  }\\n});\"}]]]}]}]]}],{\"children\":[\"index-ja\",\"$L5\",{\"children\":[\"__PAGE__\",\"$L6\",{},null,false]},null,false]},null,false]},null,false],\"$L7\",false]],\"m\":\"$undefined\",\"G\":[\"$8\",[]],\"s\":false,\"S\":true}\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"15:I[4431,[],\"ViewportBoundary\"]\n17:I[4431,[],\"MetadataBoundary\"]\n18:\"$Sreact.suspense\"\n5:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\n9:Tcce,"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Mark It Down\",\"alternateName\":\"Mark It Down — Markdown エディタ \u0026 Web クリッパー\",\"description\":\"Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力や Web 記事を「咀嚼」して自分の言葉に変える作業場。Entry → Edit → Clear → Exit のワークフローで、保存ではなく消化を目的とする。Side Panel と New Tab、Git 同期、オフライン対応。\",\"applicationCategory\":\"Productivity\",\"applicationSubCategory\":\"Markdownエディタ\",\"browserRequirements\":\"Chrome 116以降またはChromiumベースブラウザ\",\"audience\":{\"@type\":\"Audience\",\"audienceType\":\"AIツールユーザー、ナレッジワーカー、エンジニア、研究者\"},\"operatingSystem\":\"Chrome\",\"inLanguage\":\"ja\",\"isAccessibleForFree\":true,\"keywords\":\"Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし\",\"dateModified\":\"2026-07-04\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"JPY\"},\"softwareVersion\":\"2.2.10\",\"author\":{\"@type\":\"Person\",\"name\":\"Mark It Down Developer\"},\"sameAs\":[\"https://github.com/9BwgeBTPG-QH/mark-it-down\",\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\"],\"downloadUrl\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"featureList\":[\"ライブプレビュー付きMarkdown編集\",\"RSS Reader（フィードを読み、必要な記事だけInboxへ保存）\",\"OPMLインポート/エクスポート（RSS購読リストを他のリーダーと移行）\",\"RSS Git同期（feeds / denylist設定を端末間で共有）\",\"デュアルモード：新しいタブとサイドパネル\",\"Web Clipper（右クリックでページをMarkdownに変換）\",\"Portability Hub（Zenn・Hugo・Obsidian 等8プラットフォームへの記法変換）\",\"CommonMark・GFM・Hugo・Obsidian向けコピー\",\"Chat Format Smart Paste（Slack・Discord・WhatsApp の自動正規化）\",\"Git同期（GitHub、GitLab対応）\",\"PDF（ページ番号・目次付き）・DOCX・PNG・HTML・EPUB・LaTeXエクスポート\",\"4テーマ：Light、Dark、Parchment、CandleLight\",\"Focus Mode（タイプライタースクロール）\",\"Mermaidダイアグラム・LaTeX数式対応\",\"キーボードファースト設計\",\"オフライン対応\",\"日英バイリンガル\",\"Frontmatter管理（メタデータを本文と分離・エクスポート時に自動合成）\",\"Web Clipper CSSセレクター指定（ページセクションを選んでクリップ）\",\"自動非表示UI（執筆中にヘッダーとツールバーが自動で隠れる）\",\"Git同期ステータスインジケーター\",\"テーブルキーボードナビゲーション（ExcelライクなEnter/Tab/Alt+Enter操作）\",\"長押し削除（Trashからの完全削除に意思確認）\",\"Web Clipperプレビュー（クリップ前にセクション選択）\",\"サイドバーのホバーカードとプレビューパネル\",\"エクスポートプリセット（YAML/TOML/JSONフロントマター自動付加）\"]}"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"6:[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"a\",null,{\"href\":\"#main-content\",\"className\":\"skip-to-content\",\"children\":\"メインコンテンツへスキップ\"}],[\"$\",\"div\",null,{\"className\":\"container\",\"children\":[[[\"$\",\"nav\",null,{\"className\":\"header-nav\",\"aria-label\":\"メインナビゲーション\",\"children\":[\"$\",\"ul\",null,{\"children\":[[[\"$\",\"li\",\"index\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/index-ja.html\",\"aria-current\":\"page\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ホーム\"]}]]}]}]}],[\"$\",\"li\",\"why\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/why-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"MIDとは\"]}]]}]}]}],[\"$\",\"li\",\"features\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/features-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"機能\"]}]]}]}]}],[\"$\",\"li\",\"okf\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/okf-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"OKF\"]}]]}]}]}],[\"$\",\"li\",\"templates\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/templates-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"テンプレート\"]}]]}]}]}],[\"$\",\"li\",\"faq\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/faq-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"よく\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ある\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"質問\"]}]]}]}]}],[\"$\",\"li\",\"troubleshooting\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/troubleshooting-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"トラブルシューティング\"]}]]}]}]}],[\"$\",\"li\",\"changelog\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/changelog-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"更新履歴\"]}]]}]}]}],[\"$\",\"li\",\"feedback\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/feedback-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"フィードバック\"]}]]}]}]}],[\"$\",\"li\",\"privacy-policy\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/privacy-policy-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"プライバシー\"]}]]}]}]}]],[\"$\",\"li\",null,{\"className\":\"lang-switcher\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index.html\",\"hrefLang\":\"en\",\"children\":\"English\"}]}]]}]}],[\"$\",\"header\",null,{\"role\":\"banner\",\"children\":[[\"$\",\"div\",null,{\"className\":\"header-logo\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index-ja.html\",\"aria-label\":\"Mark It Down ホーム\",\"children\":[[\"$\",\"img\",null,{\"src\":\"/icon-128.png\",\"alt\":\"\",\"className\":\"logo-icon\",\"aria-hidden\":\"true\"}],[\"$\",\"span\",null,{\"className\":\"site-title\",\"children\":\"Mark It Down\"}]]}]}],[\"$\",\"p\",null,{\"className\":\"tagline\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ブラウザが、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書斎に\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"なる。\"]}]]}]}]]}]],[\"$\",\"main\",null,{\"id\":\"main-content\",\"role\":\"main\",\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"$9\"}}],\"$La\",\"$Lb\",\"$Lc\",\"$Ld\",\"$Le\",\"$Lf\",\"$L10\",\"$L11\",\"$L12\"]}],\"$L13\"]}]],null,\"$L14\"]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"7:[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$L15\",null,{\"children\":\"$L16\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]],[\"$\",\"$L17\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$18\",null,{\"fallback\":null,\"children\":\"$L19\"}]}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"36:I[7787,[\"830\",\"static/chunks/app/(ja)/index-ja/page-216209f997a5a74d.js\"],\"RevealScript\"]\n37:I[4431,[],\"OutletBoundary\"]\n39:I[5278,[],\"AsyncMetadataOutlet\"]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"a:[\"$\",\"section\",null,{\"className\":\"hero\",\"aria-labelledby\":\"hero-heading\",\"children\":[[\"$\",\"h1\",null,{\"id\":\"hero-heading\",\"className\":\"page-title\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"無料・ローカル完結 \"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Markdown エディタ\"]}]]}]}],[\"$\",\"div\",null,{\"className\":\"hero-flow\",\"aria-hidden\":\"true\",\"children\":[[\"$\",\"$1\",\"Entry\",{\"children\":[false,[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Entry\"}]]}]]}],[\"$\",\"$1\",\"Edit\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Edit\"}]]}]]}],[\"$\",\"$1\",\"Clear\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Clear\"}]]}]]}],[\"$\",\"$1\",\"Exit\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Exit\"}]]}]]}]]}],[\"$\",\"p\",null,{\"className\":\"hero-tagline\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"取り込む。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"必要な\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"部分を\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書き直す。\"]}]]}]]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"次へ\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"送り出す。\"]}]]}]]}]]}],[\"$\",\"p\",null,{\"className\":\"hero-fact\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Chrome 拡張の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\" Markdown エディタ ＆ Web クリッパー。\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"AI 出力、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Web 記事、\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"RSS、\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"断片メモを\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"扱う作業場です。\"]}]]}]}],[\"$\",\"p\",null,{\"className\":\"hero-subtitle\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"すべての\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートを\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ブラウザに\"]}],\"$L1a\",\"$L1b\",\"$L1c\"]}]]}],\"$L1d\",\"$L1e\"]}],\"$L1f\",\"$L20\"]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"b:[\"$\",\"section\",null,{\"className\":\"philosophy\",\"aria-labelledby\":\"philosophy-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Philosophy\"}],[\"$\",\"h2\",null,{\"id\":\"philosophy-heading\",\"className\":\"visually-hidden\",\"children\":\"哲学\"}],[\"$\",\"ul\",null,{\"className\":\"philosophy-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"まず取り込む。分類はあとで。\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"まず\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"取り込む。\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"分類は\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"あとで。\"]}]]}]}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"クリップ、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"フィード、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"貼り付けた\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"下\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書きは\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\" Inbox へ。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"分類は、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"読んでからでも\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"間に\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"合います。\"]}]]}]]}]]}]]}],[\"$\",\"li\",\"保存じゃなくて、咀嚼。\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"保存じゃなくて、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"咀嚼。\"]}]]}]}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"コピペでは\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自分の\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ものにならない。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"書き直す\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ことで\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自分の\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"言葉に\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"なる。\"]}]]}]]}]]}]]}],[\"$\",\"li\",\"ローカルに保存し、意図して送り出す。\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125\"}]}]}],[\"$\",\"h3\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ローカルに\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"保存し、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"意図して\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"送り出す。\"]}]]}]}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"下\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書きは\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自動保存で\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"手元に\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"残ります。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[\"$L21\",\"$L22\",\"$L23\",\"$L24\",\"$L25\",\"$L26\",\"$L27\"]}]]}]]}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"c:[\"$\",\"section\",null,{\"className\":\"flow-section\",\"aria-labelledby\":\"flow-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Workflow\"}],[\"$\",\"h2\",null,{\"id\":\"flow-heading\",\"children\":\"Entry → Edit → Clear → Exit\"}],[\"$\",\"p\",null,{\"className\":\"flow-description\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"情報は\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ブラウザに\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"溜め込むだけでなく、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"通過させる\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ことも\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"できます。\"]}]]}]}],[\"$\",\"ul\",null,{\"className\":\"philosophy-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"Entry\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Entry\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"AI出力を\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"貼り付ける。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ページを\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"クリップする。\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"RSSを\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"保存する。\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"空白から\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書く。\"]}]]}]]}]]}]]}],[\"$\",\"li\",\"Edit\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Edit\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"自分の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"言葉で。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"自分の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ものに\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"する。\"]}]]}]]}]]}]]}],[\"$\",\"li\",\"Clear\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Clear\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"終わった\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ものは\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Archiveへ。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"繰り返す型は\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Templateへ。\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"不要な\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ものは\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Trashへ。\"]}]]}]]}]]}]]}],[\"$\",\"li\",\"Exit\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":\"$L28\"}]}],\"$L29\",\"$L2a\"]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"d:[\"$\",\"section\",null,{\"className\":\"screenshot-section\",\"aria-labelledby\":\"screenshot-heading\",\"children\":[[\"$\",\"h2\",null,{\"id\":\"screenshot-heading\",\"className\":\"visually-hidden\",\"children\":\"スクリーンショット\"}],[\"$\",\"div\",null,{\"className\":\"video-container\",\"children\":[[\"$\",\"p\",null,{\"className\":\"video-context\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Mark It Downの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"全体\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"像 — スライドを\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自分の\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ペースで\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ご覧ください\"]}]]}]}],[\"$\",\"iframe\",null,{\"src\":\"/slides-ja.html\",\"title\":\"Mark It Down - 製品紹介スライド\",\"allowFullScreen\":true,\"loading\":\"lazy\"}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"e:[\"$\",\"section\",null,{\"className\":\"workflow-section\",\"aria-labelledby\":\"workflow-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Use Cases\"}],[\"$\",\"h2\",null,{\"id\":\"workflow-heading\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"実際の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"使い方\"]}]]}]}],[\"$\",\"ul\",null,{\"className\":\"workflow-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"Xを記事でもスレッドでも取り込む\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Xを\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"記事でも\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"スレッドでも\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"取り込む\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"X / Twitterの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"記事でも\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"スレッドでも、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"右クリックの\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"取り込みで\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"即Markdownに\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"変換して\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"保存。\"]}]]}]}]]}],[\"$\",\"li\",\"複数環境の日次ログ\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"複数環境の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"日次ログ\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ノートの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"タイトルを\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"日付\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"（例 YYYYMMDD）に\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"して、\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"メモは\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\" /now の\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"時刻見出しで\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"追記。\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"別の\"]}],[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"端末で\"]}],[\"$\",\"$1\",\"11\",{\"children\":[[\"$\",\"wbr\",null,{}],\"編集しても、\"]}],[\"$\",\"$1\",\"12\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Git同期が\"]}],[\"$\",\"$1\",\"13\",{\"children\":[[\"$\",\"wbr\",null,{}],\"競合を\"]}],[\"$\",\"$1\",\"14\",{\"children\":[[\"$\",\"wbr\",null,{}],\"検出し\"]}],[\"$\",\"$1\",\"15\",{\"children\":[[\"$\",\"wbr\",null,{}],\"「両方を\"]}],[\"$\",\"$1\",\"16\",{\"children\":[[\"$\",\"wbr\",null,{}],\"結合」で\"]}],[\"$\",\"$1\",\"17\",{\"children\":[[\"$\",\"wbr\",null,{}],\"1つに\"]}],[\"$\",\"$1\",\"18\",{\"children\":[[\"$\",\"wbr\",null,{}],\"まとめられる。\"]}]]}]}]]}],[\"$\",\"li\",\"横で読みながらメモ、タブで集中\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"横で\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"読みながら\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"メモ、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"タブで\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"集中\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Webを\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"見ながら\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Side Panelで\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"メモ。\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"閉じて\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"New Tabで\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"同じ\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートを\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"開き、\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"じっくり編集。\"]}]]}]}]]}],[\"$\",\"li\",\"思いつくまま書いて並べ替え\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"思いつくまま\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書いて\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"並べ替え\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"リストを\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"思いつくまま\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書いて、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Alt+↑ / ↓ で\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"行を\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"並べ替えて\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"整える。\"]}]]}]}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"f:[\"$\",\"section\",null,{\"className\":\"coming-soon-section\",\"aria-labelledby\":\"coming-soon-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"What's New\"}],[\"$\",\"h2\",null,{\"id\":\"coming-soon-heading\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"最近の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"追加機能\"]}]]}]}],[\"$\",\"p\",null,{\"className\":\"coming-soon-status\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"v2.2.10 — 新しい\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"読書面と、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"より\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"深まる\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ナレッジグラフ。\"]}]]}]}],[\"$\",\"ul\",null,{\"className\":\"coming-soon-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"GitHub Repository Reader\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"GitHub Repository Reader\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Mark It Down を\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"離れずに\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\" GitHub リポジトリを\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"閲覧できる。\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ファイルツリーを\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"たどり、\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ファイル間の\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"リンクを\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"追い、\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"必要な\"]}],[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ファイルを\"]}],[\"$\",\"$1\",\"11\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートに\"]}],[\"$\",\"$1\",\"12\",{\"children\":[[\"$\",\"wbr\",null,{}],\"取り込める。\"]}],[\"$\",\"$1\",\"13\",{\"children\":[[\"$\",\"wbr\",null,{}],\"プライベートリポジトリは\"]}],[\"$\",\"$1\",\"14\",{\"children\":[[\"$\",\"wbr\",null,{}],\"個人アクセストークンで\"]}],[\"$\",\"$1\",\"15\",{\"children\":[[\"$\",\"wbr\",null,{}],\"対応。\"]}]]}]}]]}],[\"$\",\"li\",\"RSS リーダーが全画面ワークスペースに\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"RSS リーダーが\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"全画面ワークスペースに\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"左の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"フィードサイドバー、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"中央の\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"記事一覧と\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"閲覧ペイン、\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"右の\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"インスペクタ\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"（メタデータ・タグ・\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"見出し）で\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"構成される。\"]}],[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"記事は\"]}],[\"$\",\"$1\",\"11\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自分の\"]}],[\"$\",\"$1\",\"12\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートと\"]}],[\"$\",\"$1\",\"13\",{\"children\":[[\"$\",\"wbr\",null,{}],\"同じ\"]}],[\"$\",\"$1\",\"14\",{\"children\":[[\"$\",\"wbr\",null,{}],\" Markdown エンジンで\"]}],[\"$\",\"$1\",\"15\",{\"children\":[[\"$\",\"wbr\",null,{}],\"表示される。\"]}]]}]}]]}],[\"$\",\"li\",\"ノートグラフの再設計\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ノートグラフの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"再設計\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"アウトラインビューは\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートを\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"折りたたみ可能な\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ツリーで\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"表示し、\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"任意の\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノードを\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ルートに\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"変更できる。\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Radial ビューは\"]}],[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"リンク先の\"]}],[\"$\",\"$1\",\"11\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートを\"]}],[\"$\",\"$1\",\"12\",{\"children\":[[\"$\",\"wbr\",null,{}],\"中心ノードの\"]}],[\"$\",\"$1\",\"13\",{\"children\":[[\"$\",\"wbr\",null,{}],\"周囲に\"]}],[\"$\",\"$1\",\"14\",{\"children\":[[\"$\",\"wbr\",null,{}],\"配置し、\"]}],[\"$\",\"$1\",\"15\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ズームと\"]}],[\"$\",\"$1\",\"16\",{\"children\":[[\"$\",\"wbr\",null,{}],\"パンに\"]}],[\"$\",\"$1\",\"17\",{\"children\":[[\"$\",\"wbr\",null,{}],\"対応。\"]}],[\"$\",\"$1\",\"18\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Repository Reader 内でも\"]}],[\"$\",\"$1\",\"19\",{\"children\":[[\"$\",\"wbr\",null,{}],\"グラフが\"]}],[\"$\",\"$1\",\"20\",{\"children\":[[\"$\",\"wbr\",null,{}],\"使える。\"]}]]}]}]]}],[\"$\",\"li\",\"フロントマター専用モーダル\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"フロントマター専用モーダル\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ノートの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"メタデータ編集が\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"専用モーダルに\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"なった。\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノート本文や\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"クリップ元ページから\"]}],\"$L2b\",\"$L2c\",\"$L2d\",\"$L2e\",\"$L2f\",\"$L30\",\"$L31\",\"$L32\",\"$L33\",\"$L34\"]}]}]]}],\"$L35\"]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"10:[\"$\",\"section\",null,{\"className\":\"faq-preview-section\",\"aria-labelledby\":\"faq-preview-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"FAQ\"}],[\"$\",\"h2\",null,{\"id\":\"faq-preview-heading\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"よく\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ある\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"質問\"]}]]}]}],[\"$\",\"div\",null,{\"className\":\"changelog-accordion\",\"children\":[[\"$\",\"details\",\"無料で使えますか？\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"無料で\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"使えますか？\"]}]]}]}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"はい、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"完全無料です。\"]}]]}]}],false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"広告なし、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"有料プランなし、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"アカウント登録も\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"不要です。\"]}]]}]]}]}]]}],[\"$\",\"details\",\"オフラインで使えますか？\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"オフラインで\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"使えますか？\"]}]]}]}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"はい、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ほぼ\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"すべての機能が\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"オフラインで\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"動作します。\"]}]]}]}],false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ノートの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"作成、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"編集、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"検索は\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"すべて\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"オフラインで\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"可能。\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Git同期のみ\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"インターネット接続が\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"必要です。\"]}]]}]]}]}]]}],[\"$\",\"details\",\"ブラウザのキャッシュを消すとノートも消えますか？\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ブラウザの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"キャッシュを\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"消すと\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートも\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"消えますか？\"]}]]}]}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"いいえ、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"消えません。\"]}]]}]}],false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ノートは\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"拡張機能専用の\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ストレージに\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"保存されており、\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ブラウザキャッシュとは\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"別です。\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"データは\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"安全です。\"]}]]}]]}]}]]}]]}],[\"$\",\"p\",null,{\"className\":\"faq-more-link\",\"children\":[\"$\",\"a\",null,{\"href\":\"/faq-ja.html\",\"children\":[[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"すべての\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"FAQを\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"見る\"]}]]}],\" →\"]}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"11:[\"$\",\"section\",null,{\"className\":\"cta-section\",\"aria-labelledby\":\"cta-heading\",\"children\":[[\"$\",\"h2\",null,{\"id\":\"cta-heading\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"書き\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"始めませんか？\"]}]]}]}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Chrome拡張機能で\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"利用可能。\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"アカウント不要。\"]}]]}],[\"$\",\"br\",null,{}],[\"$\",\"small\",null,{\"children\":\"最新版: v2.2.10\"}]]}],[\"$\",\"div\",null,{\"className\":\"buttons\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja\",\"className\":\"btn btn-primary\",\"aria-label\":\"Chrome Web Storeで入手する\",\"children\":\"拡張機能を入手\"}],[\"$\",\"a\",null,{\"href\":\"/changelog-ja.html\",\"className\":\"btn btn-secondary\",\"children\":\"更新履歴\"}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"12:[\"$\",\"$L36\",null,{}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"13:[\"$\",\"footer\",null,{\"role\":\"contentinfo\",\"children\":[[\"$\",\"div\",null,{\"className\":\"footer-brand\",\"children\":[[\"$\",\"img\",null,{\"src\":\"/icon-128.png\",\"alt\":\"\",\"aria-hidden\":\"true\"}],[\"$\",\"span\",null,{\"children\":\"Mark It Down\"}]]}],[\"$\",\"nav\",null,{\"className\":\"footer-nav\",\"aria-label\":\"フッターナビゲーション\",\"children\":[\"$\",\"ul\",null,{\"children\":[[[\"$\",\"li\",\"index\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/index-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ホーム\"]}]]}]}]}],[\"$\",\"li\",\"features\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/features-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"機能\"]}]]}]}]}],[\"$\",\"li\",\"clipper\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/clipper-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Web Clipper\"]}]]}]}]}],[\"$\",\"li\",\"rss\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/rss-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"RSS Reader\"]}]]}]}]}],[\"$\",\"li\",\"okf\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/okf-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"OKF\"]}]]}]}]}],[\"$\",\"li\",\"templates\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/templates-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"テンプレート\"]}]]}]}]}],[\"$\",\"li\",\"faq\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/faq-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"よく\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ある\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"質問\"]}]]}]}]}],[\"$\",\"li\",\"troubleshooting\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/troubleshooting-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"トラブルシューティング\"]}]]}]}]}],[\"$\",\"li\",\"changelog\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/changelog-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"更新履歴\"]}]]}]}]}],[\"$\",\"li\",\"feedback\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/feedback-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"フィードバック\"]}]]}]}]}],[\"$\",\"li\",\"privacy-policy\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/privacy-policy-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"プライバシー\"]}]]}]}]}]],[\"$\",\"li\",null,{\"className\":\"lang-switcher\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index.html\",\"hrefLang\":\"en\",\"children\":\"English\"}]}]]}]}],[\"$\",\"p\",null,{\"children\":[\"$\",\"span\",null,{\"children\":\"© 2025-2026 reduktion.dev\"}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"14:[\"$\",\"$L37\",null,{\"children\":[\"$L38\",[\"$\",\"$L39\",null,{\"promise\":\"$@3a\"}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"1a:[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"置き続ける\"]}]\n1b:[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"必要は\"]}]\n1c:[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ありません。\"]}]\n1d:[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Mark It Down は、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"素材が\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自分の\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"言葉に\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"なるまでの\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"静かな\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"場所です。\"]}]]}]]}]\n1e:[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"できあがったら、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Export、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Git、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"長期保存先へ\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"送り出します。\"]}]]}]]}]\n1f:[\"$\",\"div\",null,{\"className\":\"buttons\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja\",\"className\":\"btn btn-primary\",\"aria-label\":\"Chrome Web Storeで入手する\",\"data-ga-cta\":\"hero\",\"children\":\"拡張機能を入手\"}],[\"$\",\"a\",null,{\"href\":\"/features-ja.html\",\"className\":\"btn btn-secondary\",\"children\":\"機能を見る\"}]]}]\n20:[\"$\",\"span\",null,{\"className\":\"hero-ornament\",\"aria-hidden\":\"true\",\"children\":\"~ ~ ~\"}]\n21:[\"$\",\"$1\",\"0\",{\"children\":[false,\"Export と\"]}]\n22:[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\" Git 同期は、\"]}]\n23:[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートの\"]}]\n24:[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"準備が\"]}]\n25:[\"$\",\"$1\",\"4\",{\"children\":[[\"$\""])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,",\"wbr\",null,{}],\"できた\"]}]\n26:[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ときに\"]}]\n27:[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"実行します。\"]}]\n28:[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3\"}]\n29:[\"$\",\"h3\",null,{\"children\":\"Exit\"}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"2a:[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"PDF、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"DOCX、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"HTML、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"EPUB、\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"LaTeX、\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\".md、\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Git。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"できあがった\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートを、次の\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"場所へ\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"送ります。\"]}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"2b:[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"候補が\"]}]\n2c:[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"提示され、\"]}]\n2d:[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"クリックで\"]}]\n2e:[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"適用できる。\"]}]\n2f:[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"YAML と\"]}]\n30:[\"$\",\"$1\",\"11\",{\"children\":[[\"$\",\"wbr\",null,{}],\"して\"]}]\n31:[\"$\",\"$1\",\"12\",{\"children\":[[\"$\",\"wbr\",null,{}],\"コピーや\"]}]\n32:[\"$\",\"$1\",\"13\",{\"children\":[[\"$\",\"wbr\",null,{}],\"一括クリアも\"]}]\n33:[\"$\",\"$1\",\"14\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ヘッダメニューから\"]}]\n34:[\"$\",\"$1\",\"15\",{\"children\":[[\"$\",\"wbr\",null,{}],\"操作できる。\"]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"35:[\"$\",\"li\",\"サイドバーのノート行が静かに\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"サイドバーの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノート行が\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"静かに\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"未処理マーカーや\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\" Git 保留状態、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートサイズなどの\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ステータス表示を\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ホバーカードに\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"移動。\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"一覧は\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"静かなまま、\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"詳細は\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ホバーひとつで\"]}],[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"確認できる。\"]}]]}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"16:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"38:null\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"3a:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"無料・ローカル完結 Markdown エディタ \u0026 Web クリッパー — Mark It Down\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。\"}],[\"$\",\"link\",\"2\",{\"rel\":\"canonical\",\"href\":\"https://markitdown.reduktion.dev/index-ja.html\"}],[\"$\",\"link\",\"3\",{\"rel\":\"alternate\",\"hrefLang\":\"en\",\"href\":\"https://markitdown.reduktion.dev/index.html\"}],[\"$\",\"link\",\"4\",{\"rel\":\"alternate\",\"hrefLang\":\"ja\",\"href\":\"https://markitdown.reduktion.dev/index-ja.html\"}],[\"$\",\"link\",\"5\",{\"rel\":\"alternate\",\"hrefLang\":\"x-default\",\"href\":\"https://markitdown.reduktion.dev/index.html\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:title\",\"content\":\"無料・ローカル完結 Markdown エディタ \u0026 Web クリッパー — Mark It Down\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:description\",\"content\":\"AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:image\",\"content\":\"https://markitdown.reduktion.dev/jp-dark.png\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"10\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"11\",{\"name\":\"twitter:title\",\"content\":\"無料・ローカル完結 Markdown エディタ \u0026 Web クリッパー — Mark It Down\"}],[\"$\",\"meta\",\"12\",{\"name\":\"twitter:description\",\"content\":\"AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:image\",\"content\":\"https://markitdown.reduktion.dev/jp-dark.png\"}]],\"error\":null,\"digest\":\"$undefined\"}\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"19:\"$3a:metadata\"\n"])&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+\ No newline at end of file
++})();&lt;/script&gt;&lt;a href="#main-content" class="skip-to-content"&gt;メインコンテンツへスキップ&lt;/a&gt;&lt;div class="container"&gt;&lt;nav class="header-nav" aria-label="メインナビゲーション"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="/index-ja.html" aria-current="page"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ホーム&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/why-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;MIDとは&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/features-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;機能&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/okf-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;OKF&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/templates-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;テンプレート&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/faq-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;よく&lt;wbr/&gt;ある&lt;wbr/&gt;質問&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/troubleshooting-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;トラブルシューティング&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/changelog-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;更新履歴&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/feedback-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;フィードバック&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/privacy-policy-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;プライバシー&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="lang-switcher"&gt;&lt;a href="/index.html" hrefLang="en"&gt;English&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;header role="banner"&gt;&lt;div class="header-logo"&gt;&lt;a href="/index-ja.html" aria-label="Mark It Down ホーム"&gt;&lt;img src="/icon-128.png" alt="" class="logo-icon" aria-hidden="true"/&gt;&lt;span class="site-title"&gt;Mark It Down&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;p class="tagline"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ブラウザが、&lt;wbr/&gt;書斎に&lt;wbr/&gt;なる。&lt;/span&gt;&lt;/p&gt;&lt;/header&gt;&lt;main id="main-content" role="main"&gt;&lt;script type="application/ld+json"&gt;{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mark It Down","alternateName":"Mark It Down — Markdown エディタ &amp; Web クリッパー","description":"Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力や Web 記事を「咀嚼」して自分の言葉に変える作業場。Entry → Edit → Move → Exit のワークフローで、保存ではなく消化を目的とする。Side Panel と New Tab、Git 同期、オフライン対応。","applicationCategory":"Productivity","applicationSubCategory":"Markdownエディタ","browserRequirements":"Chrome 116以降またはChromiumベースブラウザ","audience":{"@type":"Audience","audienceType":"AIツールユーザー、ナレッジワーカー、エンジニア、研究者"},"operatingSystem":"Chrome","inLanguage":"ja","isAccessibleForFree":true,"keywords":"Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし","dateModified":"2026-07-04","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"softwareVersion":"2.2.10","author":{"@type":"Person","name":"Mark It Down Developer"},"sameAs":["https://github.com/9BwgeBTPG-QH/mark-it-down","https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke"],"downloadUrl":"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke","featureList":["ライブプレビュー付きMarkdown編集","RSS Reader（フィードを読み、必要な記事だけInboxへ保存）","OPMLインポート/エクスポート（RSS購読リストを他のリーダーと移行）","RSS Git同期（feeds / denylist設定を端末間で共有）","デュアルモード：新しいタブとサイドパネル","Web Clipper（右クリックでページをMarkdownに変換）","Portability Hub（Zenn・Hugo・Obsidian 等8プラットフォームへの記法変換）","CommonMark・GFM・Hugo・Obsidian向けコピー","Chat Format Smart Paste（Slack・Discord・WhatsApp の自動正規化）","Git同期（GitHub、GitLab対応）","PDF（ページ番号・目次付き）・DOCX・PNG・HTML・EPUB・LaTeXエクスポート","4テーマ：Light、Dark、Parchment、CandleLight","Focus Mode（タイプライタースクロール）","Mermaidダイアグラム・LaTeX数式対応","キーボードファースト設計","オフライン対応","日英バイリンガル","Frontmatter管理（メタデータを本文と分離・エクスポート時に自動合成）","Web Clipper CSSセレクター指定（ページセクションを選んでクリップ）","自動非表示UI（執筆中にヘッダーとツールバーが自動で隠れる）","Git同期ステータスインジケーター","テーブルキーボードナビゲーション（ExcelライクなEnter/Tab/Alt+Enter操作）","長押し削除（Trashからの完全削除に意思確認）","Web Clipperプレビュー（クリップ前にセクション選択）","サイドバーのホバーカードとプレビューパネル","エクスポートプリセット（YAML/TOML/JSONフロントマター自動付加）"]}&lt;/script&gt;&lt;section class="hero" aria-labelledby="hero-heading"&gt;&lt;h1 id="hero-heading" class="page-title"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;無料・ローカル完結 &lt;wbr/&gt;Markdown エディタ&lt;/span&gt;&lt;/h1&gt;&lt;div class="hero-flow" aria-hidden="true"&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Entry&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Edit&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Move&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Exit&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class="hero-tagline"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;取り込む。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;必要な&lt;wbr/&gt;部分を&lt;wbr/&gt;書き直す。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;次へ&lt;wbr/&gt;送り出す。&lt;/span&gt;&lt;/p&gt;&lt;p class="hero-fact"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Chrome 拡張の&lt;wbr/&gt; Markdown エディタ ＆ Web クリッパー。&lt;wbr/&gt;AI 出力、&lt;wbr/&gt;Web 記事、&lt;wbr/&gt;RSS、&lt;wbr/&gt;断片メモを&lt;wbr/&gt;扱う作業場です。&lt;/span&gt;&lt;/p&gt;&lt;p class="hero-subtitle"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;すべての&lt;wbr/&gt;ノートを&lt;wbr/&gt;ブラウザに&lt;wbr/&gt;置き続ける&lt;!-- --&gt;&lt;wbr/&gt;必要は&lt;!-- --&gt;&lt;wbr/&gt;ありません。&lt;!-- --&gt;&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Mark It Down は、&lt;wbr/&gt;素材が&lt;wbr/&gt;自分の&lt;wbr/&gt;言葉に&lt;wbr/&gt;なるまでの&lt;wbr/&gt;静かな&lt;wbr/&gt;場所です。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;できあがったら、&lt;wbr/&gt;Export、&lt;wbr/&gt;Git、&lt;wbr/&gt;長期保存先へ&lt;wbr/&gt;送り出します。&lt;/span&gt;&lt;/p&gt;&lt;div class="buttons"&gt;&lt;a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する" data-ga-cta="hero"&gt;拡張機能を入手&lt;/a&gt;&lt;a href="/features-ja.html" class="btn btn-secondary"&gt;機能を見る&lt;/a&gt;&lt;/div&gt;&lt;span class="hero-ornament" aria-hidden="true"&gt;~ ~ ~&lt;/span&gt;&lt;/section&gt;&lt;section class="philosophy" aria-labelledby="philosophy-heading"&gt;&lt;span class="section-label"&gt;Philosophy&lt;/span&gt;&lt;h2 id="philosophy-heading" class="visually-hidden"&gt;哲学&lt;/h2&gt;&lt;p class="flow-description"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;自分の&lt;wbr/&gt;言葉で&lt;wbr/&gt;書く。&lt;wbr/&gt;記憶と&lt;wbr/&gt;して&lt;wbr/&gt;持続する。&lt;/span&gt;&lt;/p&gt;&lt;ul class="philosophy-list" role="list"&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;まず&lt;wbr/&gt;取り込む。&lt;wbr/&gt;分類は&lt;wbr/&gt;あとで。&lt;/span&gt;&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;クリップ、&lt;wbr/&gt;フィード、&lt;wbr/&gt;貼り付けた&lt;wbr/&gt;下&lt;wbr/&gt;書きは&lt;wbr/&gt; Inbox へ。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;分類は、&lt;wbr/&gt;読んでからでも&lt;wbr/&gt;間に&lt;wbr/&gt;合います。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;保存じゃなくて、&lt;wbr/&gt;咀嚼。&lt;/span&gt;&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;コピペでは&lt;wbr/&gt;自分の&lt;wbr/&gt;ものにならない。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;書き直す&lt;wbr/&gt;ことで&lt;wbr/&gt;自分の&lt;wbr/&gt;言葉に&lt;wbr/&gt;なる。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ローカルに&lt;wbr/&gt;保存し、&lt;wbr/&gt;意図して&lt;wbr/&gt;送り出す。&lt;/span&gt;&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;下&lt;wbr/&gt;書きは&lt;wbr/&gt;自動保存で&lt;wbr/&gt;手元に&lt;wbr/&gt;残ります。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Export と&lt;wbr/&gt; Git 同期は、&lt;wbr/&gt;ノートの&lt;wbr/&gt;準備が&lt;wbr/&gt;できた&lt;wbr/&gt;ときに&lt;wbr/&gt;実行します。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="flow-section" aria-labelledby="flow-heading"&gt;&lt;span class="section-label"&gt;Workflow&lt;/span&gt;&lt;h2 id="flow-heading"&gt;Entry → Edit → Move → Exit&lt;/h2&gt;&lt;p class="flow-description"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;情報は&lt;wbr/&gt;ブラウザに&lt;wbr/&gt;溜め込むだけでなく、&lt;wbr/&gt;通過させる&lt;wbr/&gt;ことも&lt;wbr/&gt;できます。&lt;/span&gt;&lt;/p&gt;&lt;ul class="philosophy-list" role="list"&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Entry&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;AI出力を&lt;wbr/&gt;貼り付ける。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ページを&lt;wbr/&gt;クリップする。&lt;wbr/&gt;RSSを&lt;wbr/&gt;保存する。&lt;wbr/&gt;空白から&lt;wbr/&gt;書く。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Edit&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;自分の&lt;wbr/&gt;言葉で。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;自分の&lt;wbr/&gt;ものに&lt;wbr/&gt;する。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Move&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;終わった&lt;wbr/&gt;ものは&lt;wbr/&gt;Archiveへ。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;繰り返す型は&lt;wbr/&gt;Templateへ。&lt;wbr/&gt;不要な&lt;wbr/&gt;ものは&lt;wbr/&gt;Trashへ。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Exit&lt;/h3&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;PDF、&lt;wbr/&gt;DOCX、&lt;wbr/&gt;HTML、&lt;wbr/&gt;EPUB、&lt;wbr/&gt;LaTeX、&lt;wbr/&gt;.md、&lt;wbr/&gt;Git。&lt;/span&gt;&lt;br/&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;できあがった&lt;wbr/&gt;ノートを、次の&lt;wbr/&gt;場所へ&lt;wbr/&gt;送ります。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="screenshot-section" aria-labelledby="screenshot-heading"&gt;&lt;h2 id="screenshot-heading" class="visually-hidden"&gt;スクリーンショット&lt;/h2&gt;&lt;div class="video-container"&gt;&lt;p class="video-context"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Mark It Downの&lt;wbr/&gt;全体&lt;wbr/&gt;像 — スライドを&lt;wbr/&gt;自分の&lt;wbr/&gt;ペースで&lt;wbr/&gt;ご覧ください&lt;/span&gt;&lt;/p&gt;&lt;iframe src="/slides-ja.html" title="Mark It Down - 製品紹介スライド" allowFullScreen="" loading="lazy"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/section&gt;&lt;section class="workflow-section" aria-labelledby="workflow-heading"&gt;&lt;span class="section-label"&gt;Use Cases&lt;/span&gt;&lt;h2 id="workflow-heading"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;実際の&lt;wbr/&gt;使い方&lt;/span&gt;&lt;/h2&gt;&lt;ul class="workflow-list" role="list"&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Xを&lt;wbr/&gt;記事でも&lt;wbr/&gt;スレッドでも&lt;wbr/&gt;取り込む&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;X / Twitterの&lt;wbr/&gt;記事でも&lt;wbr/&gt;スレッドでも、&lt;wbr/&gt;右クリックの&lt;wbr/&gt;取り込みで&lt;wbr/&gt;即Markdownに&lt;wbr/&gt;変換して&lt;wbr/&gt;保存。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;複数環境の&lt;wbr/&gt;日次ログ&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ノートの&lt;wbr/&gt;タイトルを&lt;wbr/&gt;日付&lt;wbr/&gt;（例 YYYYMMDD）に&lt;wbr/&gt;して、&lt;wbr/&gt;メモは&lt;wbr/&gt; /now の&lt;wbr/&gt;時刻見出しで&lt;wbr/&gt;追記。&lt;wbr/&gt;別の&lt;wbr/&gt;端末で&lt;wbr/&gt;編集しても、&lt;wbr/&gt;Git同期が&lt;wbr/&gt;競合を&lt;wbr/&gt;検出し&lt;wbr/&gt;「両方を&lt;wbr/&gt;結合」で&lt;wbr/&gt;1つに&lt;wbr/&gt;まとめられる。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;横で&lt;wbr/&gt;読みながら&lt;wbr/&gt;メモ、&lt;wbr/&gt;タブで&lt;wbr/&gt;集中&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Webを&lt;wbr/&gt;見ながら&lt;wbr/&gt;Side Panelで&lt;wbr/&gt;メモ。&lt;wbr/&gt;閉じて&lt;wbr/&gt;New Tabで&lt;wbr/&gt;同じ&lt;wbr/&gt;ノートを&lt;wbr/&gt;開き、&lt;wbr/&gt;じっくり編集。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;思いつくまま&lt;wbr/&gt;書いて&lt;wbr/&gt;並べ替え&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;リストを&lt;wbr/&gt;思いつくまま&lt;wbr/&gt;書いて、&lt;wbr/&gt;Alt+↑ / ↓ で&lt;wbr/&gt;行を&lt;wbr/&gt;並べ替えて&lt;wbr/&gt;整える。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="coming-soon-section" aria-labelledby="coming-soon-heading"&gt;&lt;span class="section-label"&gt;What&amp;#x27;s New&lt;/span&gt;&lt;h2 id="coming-soon-heading"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;最近の&lt;wbr/&gt;追加機能&lt;/span&gt;&lt;/h2&gt;&lt;p class="coming-soon-status"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;v2.2.10 — 新しい&lt;wbr/&gt;読書面と、&lt;wbr/&gt;より&lt;wbr/&gt;深まる&lt;wbr/&gt;ナレッジグラフ。&lt;/span&gt;&lt;/p&gt;&lt;ul class="coming-soon-list" role="list"&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;GitHub Repository Reader&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Mark It Down を&lt;wbr/&gt;離れずに&lt;wbr/&gt; GitHub リポジトリを&lt;wbr/&gt;閲覧できる。&lt;wbr/&gt;ファイルツリーを&lt;wbr/&gt;たどり、&lt;wbr/&gt;ファイル間の&lt;wbr/&gt;リンクを&lt;wbr/&gt;追い、&lt;wbr/&gt;必要な&lt;wbr/&gt;ファイルを&lt;wbr/&gt;ノートに&lt;wbr/&gt;取り込める。&lt;wbr/&gt;プライベートリポジトリは&lt;wbr/&gt;個人アクセストークンで&lt;wbr/&gt;対応。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;RSS リーダーが&lt;wbr/&gt;全画面ワークスペースに&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;左の&lt;wbr/&gt;フィードサイドバー、&lt;wbr/&gt;中央の&lt;wbr/&gt;記事一覧と&lt;wbr/&gt;閲覧ペイン、&lt;wbr/&gt;右の&lt;wbr/&gt;インスペクタ&lt;wbr/&gt;（メタデータ・タグ・&lt;wbr/&gt;見出し）で&lt;wbr/&gt;構成される。&lt;wbr/&gt;記事は&lt;wbr/&gt;自分の&lt;wbr/&gt;ノートと&lt;wbr/&gt;同じ&lt;wbr/&gt; Markdown エンジンで&lt;wbr/&gt;表示される。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ノートグラフの&lt;wbr/&gt;再設計&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;アウトラインビューは&lt;wbr/&gt;ノートを&lt;wbr/&gt;折りたたみ可能な&lt;wbr/&gt;ツリーで&lt;wbr/&gt;表示し、&lt;wbr/&gt;任意の&lt;wbr/&gt;ノードを&lt;wbr/&gt;ルートに&lt;wbr/&gt;変更できる。&lt;wbr/&gt;Radial ビューは&lt;wbr/&gt;リンク先の&lt;wbr/&gt;ノートを&lt;wbr/&gt;中心ノードの&lt;wbr/&gt;周囲に&lt;wbr/&gt;配置し、&lt;wbr/&gt;ズームと&lt;wbr/&gt;パンに&lt;wbr/&gt;対応。&lt;wbr/&gt;Repository Reader 内でも&lt;wbr/&gt;グラフが&lt;wbr/&gt;使える。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;フロントマター専用モーダル&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ノートの&lt;wbr/&gt;メタデータ編集が&lt;wbr/&gt;専用モーダルに&lt;wbr/&gt;なった。&lt;wbr/&gt;ノート本文や&lt;wbr/&gt;クリップ元ページから&lt;wbr/&gt;候補が&lt;!-- --&gt;&lt;wbr/&gt;提示され、&lt;!-- --&gt;&lt;wbr/&gt;クリックで&lt;!-- --&gt;&lt;wbr/&gt;適用できる。&lt;!-- --&gt;&lt;wbr/&gt;YAML と&lt;!-- --&gt;&lt;wbr/&gt;して&lt;!-- --&gt;&lt;wbr/&gt;コピーや&lt;!-- --&gt;&lt;wbr/&gt;一括クリアも&lt;!-- --&gt;&lt;wbr/&gt;ヘッダメニューから&lt;!-- --&gt;&lt;wbr/&gt;操作できる。&lt;!-- --&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;サイドバーの&lt;wbr/&gt;ノート行が&lt;wbr/&gt;静かに&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;未処理マーカーや&lt;wbr/&gt; Git 保留状態、&lt;wbr/&gt;ノートサイズなどの&lt;wbr/&gt;ステータス表示を&lt;wbr/&gt;ホバーカードに&lt;wbr/&gt;移動。&lt;wbr/&gt;一覧は&lt;wbr/&gt;静かなまま、&lt;wbr/&gt;詳細は&lt;wbr/&gt;ホバーひとつで&lt;wbr/&gt;確認できる。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="faq-preview-section" aria-labelledby="faq-preview-heading"&gt;&lt;span class="section-label"&gt;FAQ&lt;/span&gt;&lt;h2 id="faq-preview-heading"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;よく&lt;wbr/&gt;ある&lt;wbr/&gt;質問&lt;/span&gt;&lt;/h2&gt;&lt;div class="changelog-accordion"&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;無料で&lt;wbr/&gt;使えますか？&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;はい、&lt;wbr/&gt;完全無料です。&lt;/span&gt;&lt;/strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;広告なし、&lt;wbr/&gt;有料プランなし、&lt;wbr/&gt;アカウント登録も&lt;wbr/&gt;不要です。&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;オフラインで&lt;wbr/&gt;使えますか？&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;はい、&lt;wbr/&gt;ほぼ&lt;wbr/&gt;すべての機能が&lt;wbr/&gt;オフラインで&lt;wbr/&gt;動作します。&lt;/span&gt;&lt;/strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ノートの&lt;wbr/&gt;作成、&lt;wbr/&gt;編集、&lt;wbr/&gt;検索は&lt;wbr/&gt;すべて&lt;wbr/&gt;オフラインで&lt;wbr/&gt;可能。&lt;wbr/&gt;Git同期のみ&lt;wbr/&gt;インターネット接続が&lt;wbr/&gt;必要です。&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ブラウザの&lt;wbr/&gt;キャッシュを&lt;wbr/&gt;消すと&lt;wbr/&gt;ノートも&lt;wbr/&gt;消えますか？&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;いいえ、&lt;wbr/&gt;消えません。&lt;/span&gt;&lt;/strong&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ノートは&lt;wbr/&gt;拡張機能専用の&lt;wbr/&gt;ストレージに&lt;wbr/&gt;保存されており、&lt;wbr/&gt;ブラウザキャッシュとは&lt;wbr/&gt;別です。&lt;wbr/&gt;データは&lt;wbr/&gt;安全です。&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;/div&gt;&lt;p class="faq-more-link"&gt;&lt;a href="/faq-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;すべての&lt;wbr/&gt;FAQを&lt;wbr/&gt;見る&lt;/span&gt; →&lt;/a&gt;&lt;/p&gt;&lt;/section&gt;&lt;section class="cta-section" aria-labelledby="cta-heading"&gt;&lt;h2 id="cta-heading"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;書き&lt;wbr/&gt;始めませんか？&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Chrome拡張機能で&lt;wbr/&gt;利用可能。&lt;wbr/&gt;アカウント不要。&lt;/span&gt;&lt;br/&gt;&lt;small&gt;最新版: v2.2.10&lt;/small&gt;&lt;/p&gt;&lt;div class="buttons"&gt;&lt;a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja" class="btn btn-primary" aria-label="Chrome Web Storeで入手する"&gt;拡張機能を入手&lt;/a&gt;&lt;a href="/changelog-ja.html" class="btn btn-secondary"&gt;更新履歴&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;/main&gt;&lt;footer role="contentinfo"&gt;&lt;div class="footer-brand"&gt;&lt;img src="/icon-128.png" alt="" aria-hidden="true"/&gt;&lt;span&gt;Mark It Down&lt;/span&gt;&lt;/div&gt;&lt;nav class="footer-nav" aria-label="フッターナビゲーション"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="/index-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;ホーム&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/features-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;機能&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/clipper-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;Web Clipper&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/rss-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;RSS Reader&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/okf-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;OKF&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/templates-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;テンプレート&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/faq-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;よく&lt;wbr/&gt;ある&lt;wbr/&gt;質問&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/troubleshooting-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;トラブルシューティング&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/changelog-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;更新履歴&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/feedback-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;フィードバック&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/privacy-policy-ja.html"&gt;&lt;span class="break-keep [overflow-wrap:anywhere]"&gt;プライバシー&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="lang-switcher"&gt;&lt;a href="/index.html" hrefLang="en"&gt;English&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;p&gt;&lt;span&gt;© 2025-2026 reduktion.dev&lt;/span&gt;&lt;/p&gt;&lt;/footer&gt;&lt;/div&gt;&lt;!--$--&gt;&lt;!--/$--&gt;&lt;script src="/_next/static/chunks/webpack-92671fc59bcd1b12.js" id="_R_" async=""&gt;&lt;/script&gt;&lt;script&gt;(self.__next_f=self.__next_f||[]).push([0])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[9766,[],\"\"]\n3:I[8924,[],\"\"]\n4:I[1402,[\"248\",\"static/chunks/app/(ja)/layout-9df1eb2e28014d6f.js\"],\"\"]\n8:I[7150,[],\"\"]\n:HL[\"/_next/static/css/42d4259c4d563989.css\",\"style\"]\n:HL[\"/_next/static/css/d2c657ecef0e2073.css\",\"style\"]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"0:{\"P\":null,\"b\":\"NTIUn3YnUW2prsU2pKvmT\",\"p\":\"\",\"c\":[\"\",\"index-ja\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"(ja)\",{\"children\":[\"index-ja\",{\"children\":[\"__PAGE__\",{}]}]},\"$undefined\",\"$undefined\",true]}],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"(ja)\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/42d4259c4d563989.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/d2c657ecef0e2073.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ja\",\"className\":\"__variable_c1a059 __variable_ea7542\",\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"(function () {\\n  try {\\n    var lang = navigator.language || navigator.userLanguage || '';\\n    var file = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);\\n    if (lang.indexOf('ja') !== 0 \u0026\u0026 !sessionStorage.getItem('langOverride')) {\\n      if (/-ja\\\\.html$/.test(file)) {\\n        location.replace(file.replace(/-ja\\\\.html$/, '.html'));\\n      } else if (/-ja$/.test(file)) {\\n        location.replace(file.slice(0, -3) + '.html');\\n      }\\n    }\\n  } catch (e) {}\\n  document.addEventListener('click', function (event) {\\n    var target = event.target;\\n    var anchor = target instanceof Element ? target.closest('.lang-switcher a') : null;\\n    if (anchor) {\\n      try {\\n        sessionStorage.setItem('langOverride', '1');\\n      } catch (e) {}\\n    }\\n  });\\n})();\"}}],[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:style\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:1:props:style\",\"children\":404}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:2:props:style\",\"children\":[\"$\",\"h2\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:2:props:children:props:style\",\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[[\"$\",\"$L4\",null,{\"src\":\"https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW\",\"strategy\":\"afterInteractive\"}],[\"$\",\"$L4\",null,{\"id\":\"ga-init\",\"strategy\":\"afterInteractive\",\"children\":\"window.dataLayer = window.dataLayer || [];\\nfunction gtag(){dataLayer.push(arguments);}\\ngtag('js', new Date());\\ngtag('config', 'G-BGZ2T3RGJW');\\ndocument.addEventListener('click', function (event) {\\n  var target = event.target;\\n  var cta = target instanceof Element ? target.closest('[data-ga-cta]') : null;\\n  if (cta) {\\n    gtag('event', 'cta_click', {\\n      event_category: 'engagement',\\n      event_label: cta.getAttribute('data-ga-cta'),\\n    });\\n  }\\n});\"}]]]}]}]]}],{\"children\":[\"index-ja\",\"$L5\",{\"children\":[\"__PAGE__\",\"$L6\",{},null,false]},null,false]},null,false]},null,false],\"$L7\",false]],\"m\":\"$undefined\",\"G\":[\"$8\",[]],\"s\":false,\"S\":true}\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"15:I[4431,[],\"ViewportBoundary\"]\n17:I[4431,[],\"MetadataBoundary\"]\n18:\"$Sreact.suspense\"\n5:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\n9:Tccd,"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Mark It Down\",\"alternateName\":\"Mark It Down — Markdown エディタ \u0026 Web クリッパー\",\"description\":\"Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力や Web 記事を「咀嚼」して自分の言葉に変える作業場。Entry → Edit → Move → Exit のワークフローで、保存ではなく消化を目的とする。Side Panel と New Tab、Git 同期、オフライン対応。\",\"applicationCategory\":\"Productivity\",\"applicationSubCategory\":\"Markdownエディタ\",\"browserRequirements\":\"Chrome 116以降またはChromiumベースブラウザ\",\"audience\":{\"@type\":\"Audience\",\"audienceType\":\"AIツールユーザー、ナレッジワーカー、エンジニア、研究者\"},\"operatingSystem\":\"Chrome\",\"inLanguage\":\"ja\",\"isAccessibleForFree\":true,\"keywords\":\"Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし\",\"dateModified\":\"2026-07-04\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"JPY\"},\"softwareVersion\":\"2.2.10\",\"author\":{\"@type\":\"Person\",\"name\":\"Mark It Down Developer\"},\"sameAs\":[\"https://github.com/9BwgeBTPG-QH/mark-it-down\",\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\"],\"downloadUrl\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"featureList\":[\"ライブプレビュー付きMarkdown編集\",\"RSS Reader（フィードを読み、必要な記事だけInboxへ保存）\",\"OPMLインポート/エクスポート（RSS購読リストを他のリーダーと移行）\",\"RSS Git同期（feeds / denylist設定を端末間で共有）\",\"デュアルモード：新しいタブとサイドパネル\",\"Web Clipper（右クリックでページをMarkdownに変換）\",\"Portability Hub（Zenn・Hugo・Obsidian 等8プラットフォームへの記法変換）\",\"CommonMark・GFM・Hugo・Obsidian向けコピー\",\"Chat Format Smart Paste（Slack・Discord・WhatsApp の自動正規化）\",\"Git同期（GitHub、GitLab対応）\",\"PDF（ページ番号・目次付き）・DOCX・PNG・HTML・EPUB・LaTeXエクスポート\",\"4テーマ：Light、Dark、Parchment、CandleLight\",\"Focus Mode（タイプライタースクロール）\",\"Mermaidダイアグラム・LaTeX数式対応\",\"キーボードファースト設計\",\"オフライン対応\",\"日英バイリンガル\",\"Frontmatter管理（メタデータを本文と分離・エクスポート時に自動合成）\",\"Web Clipper CSSセレクター指定（ページセクションを選んでクリップ）\",\"自動非表示UI（執筆中にヘッダーとツールバーが自動で隠れる）\",\"Git同期ステータスインジケーター\",\"テーブルキーボードナビゲーション（ExcelライクなEnter/Tab/Alt+Enter操作）\",\"長押し削除（Trashからの完全削除に意思確認）\",\"Web Clipperプレビュー（クリップ前にセクション選択）\",\"サイドバーのホバーカードとプレビューパネル\",\"エクスポートプリセット（YAML/TOML/JSONフロントマター自動付加）\"]}"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"6:[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"a\",null,{\"href\":\"#main-content\",\"className\":\"skip-to-content\",\"children\":\"メインコンテンツへスキップ\"}],[\"$\",\"div\",null,{\"className\":\"container\",\"children\":[[[\"$\",\"nav\",null,{\"className\":\"header-nav\",\"aria-label\":\"メインナビゲーション\",\"children\":[\"$\",\"ul\",null,{\"children\":[[[\"$\",\"li\",\"index\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/index-ja.html\",\"aria-current\":\"page\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ホーム\"]}]]}]}]}],[\"$\",\"li\",\"why\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/why-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"MIDとは\"]}]]}]}]}],[\"$\",\"li\",\"features\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/features-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"機能\"]}]]}]}]}],[\"$\",\"li\",\"okf\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/okf-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"OKF\"]}]]}]}]}],[\"$\",\"li\",\"templates\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/templates-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"テンプレート\"]}]]}]}]}],[\"$\",\"li\",\"faq\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/faq-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"よく\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ある\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"質問\"]}]]}]}]}],[\"$\",\"li\",\"troubleshooting\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/troubleshooting-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"トラブルシューティング\"]}]]}]}]}],[\"$\",\"li\",\"changelog\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/changelog-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"更新履歴\"]}]]}]}]}],[\"$\",\"li\",\"feedback\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/feedback-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"フィードバック\"]}]]}]}]}],[\"$\",\"li\",\"privacy-policy\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/privacy-policy-ja.html\",\"aria-current\":\"$undefined\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"プライバシー\"]}]]}]}]}]],[\"$\",\"li\",null,{\"className\":\"lang-switcher\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index.html\",\"hrefLang\":\"en\",\"children\":\"English\"}]}]]}]}],[\"$\",\"header\",null,{\"role\":\"banner\",\"children\":[[\"$\",\"div\",null,{\"className\":\"header-logo\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index-ja.html\",\"aria-label\":\"Mark It Down ホーム\",\"children\":[[\"$\",\"img\",null,{\"src\":\"/icon-128.png\",\"alt\":\"\",\"className\":\"logo-icon\",\"aria-hidden\":\"true\"}],[\"$\",\"span\",null,{\"className\":\"site-title\",\"children\":\"Mark It Down\"}]]}]}],[\"$\",\"p\",null,{\"className\":\"tagline\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ブラウザが、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書斎に\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"なる。\"]}]]}]}]]}]],[\"$\",\"main\",null,{\"id\":\"main-content\",\"role\":\"main\",\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"$9\"}}],\"$La\",\"$Lb\",\"$Lc\",\"$Ld\",\"$Le\",\"$Lf\",\"$L10\",\"$L11\",\"$L12\"]}],\"$L13\"]}]],null,\"$L14\"]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"7:[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$L15\",null,{\"children\":\"$L16\"}],null],[\"$\",\"$L17\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$18\",null,{\"fallback\":null,\"children\":\"$L19\"}]}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"30:I[7787,[\"830\",\"static/chunks/app/(ja)/index-ja/page-130fc074e1cc4113.js\"],\"RevealScript\"]\n31:I[4431,[],\"OutletBoundary\"]\n33:I[5278,[],\"AsyncMetadataOutlet\"]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"a:[\"$\",\"section\",null,{\"className\":\"hero\",\"aria-labelledby\":\"hero-heading\",\"children\":[[\"$\",\"h1\",null,{\"id\":\"hero-heading\",\"className\":\"page-title\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"無料・ローカル完結 \"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Markdown エディタ\"]}]]}]}],[\"$\",\"div\",null,{\"className\":\"hero-flow\",\"aria-hidden\":\"true\",\"children\":[[\"$\",\"$1\",\"Entry\",{\"children\":[false,[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Entry\"}]]}]]}],[\"$\",\"$1\",\"Edit\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Edit\"}]]}]]}],[\"$\",\"$1\",\"Move\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Move\"}]]}]]}],[\"$\",\"$1\",\"Exit\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Exit\"}]]}]]}]]}],[\"$\",\"p\",null,{\"className\":\"hero-tagline\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"取り込む。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"必要な\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"部分を\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書き直す。\"]}]]}]]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"次へ\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"送り出す。\"]}]]}]]}]]}],[\"$\",\"p\",null,{\"className\":\"hero-fact\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Chrome 拡張の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\" Markdown エディタ ＆ Web クリッパー。\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"AI 出力、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Web 記事、\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"RSS、\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"断片メモを\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"扱う作業場です。\"]}]]}]}],[\"$\",\"p\",null,{\"className\":\"hero-subtitle\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"すべての\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートを\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ブラウザに\"]}],\"$L1a\",\"$L1b\",\"$L1c\"]}]]}],\"$L1d\",\"$L1e\"]}],\"$L1f\",\"$L20\"]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"b:[\"$\",\"section\",null,{\"className\":\"philosophy\",\"aria-labelledby\":\"philosophy-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Philosophy\"}],[\"$\",\"h2\",null,{\"id\":\"philosophy-heading\",\"className\":\"visually-hidden\",\"children\":\"哲学\"}],[\"$\",\"p\",null,{\"className\":\"flow-description\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"自分の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"言葉で\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書く。\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"記憶と\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"して\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"持続する。\"]}]]}]}],[\"$\",\"ul\",null,{\"className\":\"philosophy-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"まず取り込む。分類はあとで。\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"まず\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"取り込む。\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"分類は\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"あとで。\"]}]]}]}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"クリップ、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"フィード、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"貼り付けた\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"下\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書きは\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\" Inbox へ。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"分類は、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"読んでからでも\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"間に\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"合います。\"]}]]}]]}]]}]]}],[\"$\",\"li\",\"保存じゃなくて、咀嚼。\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"保存じゃなくて、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"咀嚼。\"]}]]}]}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"コピペでは\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自分の\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ものにならない。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"書き直す\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ことで\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自分の\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"言葉に\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"なる。\"]}]]}]]}]]}]]}],[\"$\",\"li\",\"ローカルに保存し、意図して送り出す。\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125\"}]}]}],[\"$\",\"h3\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ローカルに\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"保存し、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"意図して\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"送り出す。\"]}]]}]}],[\"$\",\"p\",null,{\"children\":\"$L21\"}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"c:[\"$\",\"section\",null,{\"className\":\"flow-section\",\"aria-labelledby\":\"flow-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Workflow\"}],[\"$\",\"h2\",null,{\"id\":\"flow-heading\",\"children\":\"Entry → Edit → Move → Exit\"}],[\"$\",\"p\",null,{\"className\":\"flow-description\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"情報は\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ブラウザに\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"溜め込むだけでなく、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"通過させる\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ことも\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"できます。\"]}]]}]}],[\"$\",\"ul\",null,{\"className\":\"philosophy-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"Entry\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Entry\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"AI出力を\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"貼り付ける。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ページを\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"クリップする。\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"RSSを\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"保存する。\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"空白から\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書く。\"]}]]}]]}]]}]]}],[\"$\",\"li\",\"Edit\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Edit\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"自分の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"言葉で。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"自分の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ものに\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"する。\"]}]]}]]}]]}]]}],[\"$\",\"li\",\"Move\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Move\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"終わった\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ものは\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Archiveへ。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"繰り返す型は\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Templateへ。\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"不要な\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ものは\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Trashへ。\"]}]]}]]}]]}]]}],[\"$\",\"li\",\"Exit\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":\"$L22\"}]}],\"$L23\",\"$L24\"]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"d:[\"$\",\"section\",null,{\"className\":\"screenshot-section\",\"aria-labelledby\":\"screenshot-heading\",\"children\":[[\"$\",\"h2\",null,{\"id\":\"screenshot-heading\",\"className\":\"visually-hidden\",\"children\":\"スクリーンショット\"}],[\"$\",\"div\",null,{\"className\":\"video-container\",\"children\":[[\"$\",\"p\",null,{\"className\":\"video-context\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Mark It Downの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"全体\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"像 — スライドを\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自分の\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ペースで\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ご覧ください\"]}]]}]}],[\"$\",\"iframe\",null,{\"src\":\"/slides-ja.html\",\"title\":\"Mark It Down - 製品紹介スライド\",\"allowFullScreen\":true,\"loading\":\"lazy\"}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"e:[\"$\",\"section\",null,{\"className\":\"workflow-section\",\"aria-labelledby\":\"workflow-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Use Cases\"}],[\"$\",\"h2\",null,{\"id\":\"workflow-heading\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"実際の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"使い方\"]}]]}]}],[\"$\",\"ul\",null,{\"className\":\"workflow-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"Xを記事でもスレッドでも取り込む\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Xを\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"記事でも\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"スレッドでも\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"取り込む\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"X / Twitterの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"記事でも\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"スレッドでも、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"右クリックの\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"取り込みで\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"即Markdownに\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"変換して\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"保存。\"]}]]}]}]]}],[\"$\",\"li\",\"複数環境の日次ログ\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"複数環境の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"日次ログ\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ノートの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"タイトルを\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"日付\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"（例 YYYYMMDD）に\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"して、\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"メモは\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\" /now の\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"時刻見出しで\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"追記。\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"別の\"]}],[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"端末で\"]}],[\"$\",\"$1\",\"11\",{\"children\":[[\"$\",\"wbr\",null,{}],\"編集しても、\"]}],[\"$\",\"$1\",\"12\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Git同期が\"]}],[\"$\",\"$1\",\"13\",{\"children\":[[\"$\",\"wbr\",null,{}],\"競合を\"]}],[\"$\",\"$1\",\"14\",{\"children\":[[\"$\",\"wbr\",null,{}],\"検出し\"]}],[\"$\",\"$1\",\"15\",{\"children\":[[\"$\",\"wbr\",null,{}],\"「両方を\"]}],[\"$\",\"$1\",\"16\",{\"children\":[[\"$\",\"wbr\",null,{}],\"結合」で\"]}],[\"$\",\"$1\",\"17\",{\"children\":[[\"$\",\"wbr\",null,{}],\"1つに\"]}],[\"$\",\"$1\",\"18\",{\"children\":[[\"$\",\"wbr\",null,{}],\"まとめられる。\"]}]]}]}]]}],[\"$\",\"li\",\"横で読みながらメモ、タブで集中\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"横で\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"読みながら\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"メモ、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"タブで\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"集中\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Webを\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"見ながら\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Side Panelで\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"メモ。\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"閉じて\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"New Tabで\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"同じ\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートを\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"開き、\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"じっくり編集。\"]}]]}]}]]}],[\"$\",\"li\",\"思いつくまま書いて並べ替え\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"思いつくまま\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書いて\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"並べ替え\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"リストを\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"思いつくまま\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書いて、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Alt+↑ / ↓ で\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"行を\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"並べ替えて\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"整える。\"]}]]}]}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"f:[\"$\",\"section\",null,{\"className\":\"coming-soon-section\",\"aria-labelledby\":\"coming-soon-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"What's New\"}],[\"$\",\"h2\",null,{\"id\":\"coming-soon-heading\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"最近の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"追加機能\"]}]]}]}],[\"$\",\"p\",null,{\"className\":\"coming-soon-status\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"v2.2.10 — 新しい\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"読書面と、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"より\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"深まる\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ナレッジグラフ。\"]}]]}]}],[\"$\",\"ul\",null,{\"className\":\"coming-soon-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"GitHub Repository Reader\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"GitHub Repository Reader\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Mark It Down を\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"離れずに\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\" GitHub リポジトリを\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"閲覧できる。\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ファイルツリーを\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"たどり、\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ファイル間の\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"リンクを\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"追い、\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"必要な\"]}],[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ファイルを\"]}],[\"$\",\"$1\",\"11\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートに\"]}],[\"$\",\"$1\",\"12\",{\"children\":[[\"$\",\"wbr\",null,{}],\"取り込める。\"]}],[\"$\",\"$1\",\"13\",{\"children\":[[\"$\",\"wbr\",null,{}],\"プライベートリポジトリは\"]}],[\"$\",\"$1\",\"14\",{\"children\":[[\"$\",\"wbr\",null,{}],\"個人アクセストークンで\"]}],[\"$\",\"$1\",\"15\",{\"children\":[[\"$\",\"wbr\",null,{}],\"対応。\"]}]]}]}]]}],[\"$\",\"li\",\"RSS リーダーが全画面ワークスペースに\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"RSS リーダーが\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"全画面ワークスペースに\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"左の\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"フィードサイドバー、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"中央の\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"記事一覧と\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"閲覧ペイン、\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"右の\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"インスペクタ\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"（メタデータ・タグ・\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"見出し）で\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"構成される。\"]}],[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"記事は\"]}],[\"$\",\"$1\",\"11\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自分の\"]}],[\"$\",\"$1\",\"12\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートと\"]}],[\"$\",\"$1\",\"13\",{\"children\":[[\"$\",\"wbr\",null,{}],\"同じ\"]}],[\"$\",\"$1\",\"14\",{\"children\":[[\"$\",\"wbr\",null,{}],\" Markdown エンジンで\"]}],[\"$\",\"$1\",\"15\",{\"children\":[[\"$\",\"wbr\",null,{}],\"表示される。\"]}]]}]}]]}],[\"$\",\"li\",\"ノートグラフの再設計\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ノートグラフの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"再設計\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"アウトラインビューは\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートを\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"折りたたみ可能な\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ツリーで\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"表示し、\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"任意の\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノードを\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ルートに\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"変更できる。\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Radial ビューは\"]}],[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"リンク先の\"]}],[\"$\",\"$1\",\"11\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートを\"]}],[\"$\",\"$1\",\"12\",{\"children\":[[\"$\",\"wbr\",null,{}],\"中心ノードの\"]}],[\"$\",\"$1\",\"13\",{\"children\":[[\"$\",\"wbr\",null,{}],\"周囲に\"]}],[\"$\",\"$1\",\"14\",{\"children\":[[\"$\",\"wbr\",null,{}],\"配置し、\"]}],[\"$\",\"$1\",\"15\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ズームと\"]}],[\"$\",\"$1\",\"16\",{\"children\":[[\"$\",\"wbr\",null,{}],\"パンに\"]}],[\"$\",\"$1\",\"17\",{\"children\":[[\"$\",\"wbr\",null,{}],\"対応。\"]}],[\"$\",\"$1\",\"18\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Repository Reader 内でも\"]}],[\"$\",\"$1\",\"19\",{\"children\":[[\"$\",\"wbr\",null,{}],\"グラフが\"]}],[\"$\",\"$1\",\"20\",{\"children\":[[\"$\",\"wbr\",null,{}],\"使える。\"]}]]}]}]]}],[\"$\",\"li\",\"フロントマター専用モーダル\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"フロントマター専用モーダル\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ノートの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"メタデータ編集が\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"専用モーダルに\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"なった。\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノート本文や\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"クリップ元ページから\"]}],\"$L25\",\"$L26\",\"$L27\",\"$L28\",\"$L29\",\"$L2a\",\"$L2b\",\"$L2c\",\"$L2d\",\"$L2e\"]}]}]]}],\"$L2f\"]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"10:[\"$\",\"section\",null,{\"className\":\"faq-preview-section\",\"aria-labelledby\":\"faq-preview-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"FAQ\"}],[\"$\",\"h2\",null,{\"id\":\"faq-preview-heading\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"よく\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ある\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"質問\"]}]]}]}],[\"$\",\"div\",null,{\"className\":\"changelog-accordion\",\"children\":[[\"$\",\"details\",\"無料で使えますか？\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"無料で\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"使えますか？\"]}]]}]}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"はい、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"完全無料です。\"]}]]}]}],false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"広告なし、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"有料プランなし、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"アカウント登録も\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"不要です。\"]}]]}]]}]}]]}],[\"$\",\"details\",\"オフラインで使えますか？\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"オフラインで\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"使えますか？\"]}]]}]}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"はい、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ほぼ\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"すべての機能が\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"オフラインで\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"動作します。\"]}]]}]}],false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ノートの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"作成、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"編集、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"検索は\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"すべて\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"オフラインで\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"可能。\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Git同期のみ\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"インターネット接続が\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"必要です。\"]}]]}]]}]}]]}],[\"$\",\"details\",\"ブラウザのキャッシュを消すとノートも消えますか？\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ブラウザの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"キャッシュを\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"消すと\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートも\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"消えますか？\"]}]]}]}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"いいえ、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"消えません。\"]}]]}]}],false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ノートは\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"拡張機能専用の\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ストレージに\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"保存されており、\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ブラウザキャッシュとは\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"別です。\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"データは\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"安全です。\"]}]]}]]}]}]]}]]}],[\"$\",\"p\",null,{\"className\":\"faq-more-link\",\"children\":[\"$\",\"a\",null,{\"href\":\"/faq-ja.html\",\"children\":[[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"すべての\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"FAQを\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"見る\"]}]]}],\" →\"]}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"11:[\"$\",\"section\",null,{\"className\":\"cta-section\",\"aria-labelledby\":\"cta-heading\",\"children\":[[\"$\",\"h2\",null,{\"id\":\"cta-heading\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"書き\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"始めませんか？\"]}]]}]}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Chrome拡張機能で\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"利用可能。\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"アカウント不要。\"]}]]}],[\"$\",\"br\",null,{}],[\"$\",\"small\",null,{\"children\":\"最新版: v2.2.10\"}]]}],[\"$\",\"div\",null,{\"className\":\"buttons\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja\",\"className\":\"btn btn-primary\",\"aria-label\":\"Chrome Web Storeで入手する\",\"children\":\"拡張機能を入手\"}],[\"$\",\"a\",null,{\"href\":\"/changelog-ja.html\",\"className\":\"btn btn-secondary\",\"children\":\"更新履歴\"}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"12:[\"$\",\"$L30\",null,{}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"13:[\"$\",\"footer\",null,{\"role\":\"contentinfo\",\"children\":[[\"$\",\"div\",null,{\"className\":\"footer-brand\",\"children\":[[\"$\",\"img\",null,{\"src\":\"/icon-128.png\",\"alt\":\"\",\"aria-hidden\":\"true\"}],[\"$\",\"span\",null,{\"children\":\"Mark It Down\"}]]}],[\"$\",\"nav\",null,{\"className\":\"footer-nav\",\"aria-label\":\"フッターナビゲーション\",\"children\":[\"$\",\"ul\",null,{\"children\":[[[\"$\",\"li\",\"index\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/index-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"ホーム\"]}]]}]}]}],[\"$\",\"li\",\"features\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/features-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"機能\"]}]]}]}]}],[\"$\",\"li\",\"clipper\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/clipper-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Web Clipper\"]}]]}]}]}],[\"$\",\"li\",\"rss\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/rss-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"RSS Reader\"]}]]}]}]}],[\"$\",\"li\",\"okf\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/okf-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"OKF\"]}]]}]}]}],[\"$\",\"li\",\"templates\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/templates-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"テンプレート\"]}]]}]}]}],[\"$\",\"li\",\"faq\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/faq-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"よく\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ある\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"質問\"]}]]}]}]}],[\"$\",\"li\",\"troubleshooting\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/troubleshooting-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"トラブルシューティング\"]}]]}]}]}],[\"$\",\"li\",\"changelog\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/changelog-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"更新履歴\"]}]]}]}]}],[\"$\",\"li\",\"feedback\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/feedback-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"フィードバック\"]}]]}]}]}],[\"$\",\"li\",\"privacy-policy\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/privacy-policy-ja.html\",\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"プライバシー\"]}]]}]}]}]],[\"$\",\"li\",null,{\"className\":\"lang-switcher\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index.html\",\"hrefLang\":\"en\",\"children\":\"English\"}]}]]}]}],[\"$\",\"p\",null,{\"children\":[\"$\",\"span\",null,{\"children\":\"© 2025-2026 reduktion.dev\"}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"14:[\"$\",\"$L31\",null,{\"children\":[\"$L32\",[\"$\",\"$L33\",null,{\"promise\":\"$@34\"}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"1a:[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"置き続ける\"]}]\n1b:[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"必要は\"]}]\n1c:[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ありません。\"]}]\n1d:[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Mark It Down は、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"素材が\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自分の\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"言葉に\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"なるまでの\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"静かな\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"場所です。\"]}]]}]]}]\n1e:[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"できあがったら、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Export、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Git、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"長期保存先へ\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"送り出します。\"]}]]}]]}]\n1f:[\"$\",\"div\",null,{\"className\":\"buttons\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke?hl=ja\",\"className\":\"btn btn-primary\",\"aria-label\":\"Chrome Web Storeで入手する\",\"data-ga-cta\":\"hero\",\"children\":\"拡張機能を入手\"}],[\"$\",\"a\",null,{\"href\":\"/features-ja.html\",\"className\":\"btn btn-secondary\",\"children\":\"機能を見る\"}]]}]\n20:[\"$\",\"span\",null,{\"className\":\"hero-ornament\",\"aria-hidden\":\"true\",\"children\":\"~ ~ ~\"}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"21:[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"下\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"書きは\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"自動保存で\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"手元に\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"残ります。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Export と\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\" Git 同期は、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートの\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"準備が\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"できた\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ときに\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"実行します。\"]}]]}]]}]]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"22:[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3\"}]\n23:[\"$\",\"h3\",null,{\"children\":\"Exit\"}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"24:[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"PDF、\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"DOCX、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"HTML、\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"EPUB、\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"LaTeX、\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\".md、\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"Git。\"]}]]}]]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"できあがった\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートを、次の\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"場所へ\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"送ります。\"]}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"25:[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"候補が\"]}]\n26:[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"提示され、\"]}]\n27:[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"クリックで\"]}]\n28:[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"適用できる。\"]}]\n29:[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"YAML と\"]}]\n2a:[\"$\",\"$1\",\"11\",{\"children\":[[\"$\",\"wbr\",null,{}],\"して\"]}]\n2b:[\"$\",\"$1\",\"12\",{\"children\":[[\"$\",\"wbr\",null,{}],\"コピーや\"]}]\n2c:[\"$\",\"$1\",\"13\",{\"children\":[[\"$\",\"wbr\",null,{}],\"一括クリアも\"]}]\n2d:[\"$\",\"$1\",\"14\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ヘッダメニューから\"]}]\n2e:[\"$\",\"$1\",\"15\",{\"children\":[[\"$\",\"wbr\",null,{}],\"操作できる。\"]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"2f:[\"$\",\"li\",\"サイドバーのノート行が静かに\",{\"children\":[[\"$\",\"strong\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"サイドバーの\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノート行が\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"静かに\"]}]]}]}],[\"$\",\"span\",null,{\"children\":[\"$\",\"span\",null,{\"className\":\"break-keep [overflow-wrap:anywhere]\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"未処理マーカーや\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"wbr\",null,{}],\" Git 保留状態、\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ノートサイズなどの\"]}],[\"$\",\"$1\",\"3\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ステータス表示を\"]}],[\"$\",\"$1\",\"4\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ホバーカードに\"]}],[\"$\",\"$1\",\"5\",{\"children\":[[\"$\",\"wbr\",null,{}],\"移動。\"]}],[\"$\",\"$1\",\"6\",{\"children\":[[\"$\",\"wbr\",null,{}],\"一覧は\"]}],[\"$\",\"$1\",\"7\",{\"children\":[[\"$\",\"wbr\",null,{}],\"静かなまま、\"]}],[\"$\",\"$1\",\"8\",{\"children\":[[\"$\",\"wbr\",null,{}],\"詳細は\"]}],[\"$\",\"$1\",\"9\",{\"children\":[[\"$\",\"wbr\",null,{}],\"ホバーひとつで\"]}],[\"$\",\"$1\",\"10\",{\"children\":[[\"$\",\"wbr\",null,{}],\"確認できる。\"]}]]}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"16:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"32:null\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"34:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"無料・ローカル完結 Markdown エディタ \u0026 Web クリッパー — Mark It Down\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。\"}],[\"$\",\"link\",\"2\",{\"rel\":\"canonical\",\"href\":\"https://markitdown.reduktion.dev/index-ja.html\"}],[\"$\",\"link\",\"3\",{\"rel\":\"alternate\",\"hrefLang\":\"en\",\"href\":\"https://markitdown.reduktion.dev/index.html\"}],[\"$\",\"link\",\"4\",{\"rel\":\"alternate\",\"hrefLang\":\"ja\",\"href\":\"https://markitdown.reduktion.dev/index-ja.html\"}],[\"$\",\"link\",\"5\",{\"rel\":\"alternate\",\"hrefLang\":\"x-default\",\"href\":\"https://markitdown.reduktion.dev/index.html\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:title\",\"content\":\"無料・ローカル完結 Markdown エディタ \u0026 Web クリッパー — Mark It Down\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:description\",\"content\":\"AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:image\",\"content\":\"https://markitdown.reduktion.dev/jp-dark.png\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"10\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"11\",{\"name\":\"twitter:title\",\"content\":\"無料・ローカル完結 Markdown エディタ \u0026 Web クリッパー — Mark It Down\"}],[\"$\",\"meta\",\"12\",{\"name\":\"twitter:description\",\"content\":\"AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:image\",\"content\":\"https://markitdown.reduktion.dev/jp-dark.png\"}]],\"error\":null,\"digest\":\"$undefined\"}\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"19:\"$34:metadata\"\n"])&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+\ No newline at end of file
+diff --git a/docs/index.html b/docs/index.html
+index 2a7809f..32e6472 100644
+--- a/docs/index.html
++++ b/docs/index.html
+@@ -1,4 +1,4 @@
+-&lt;!DOCTYPE html&gt;&lt;!--P_bzKNTuosQS3MPG7nhO2--&gt;&lt;html lang="en" class="__variable_c1a059 __variable_ea7542"&gt;&lt;head&gt;&lt;meta charSet="utf-8"/&gt;&lt;meta name="viewport" content="width=device-width, initial-scale=1"/&gt;&lt;link rel="preload" href="/_next/static/media/5c0c2bcbaa4149ca-s.p.woff2" as="font" crossorigin="" type="font/woff2"/&gt;&lt;link rel="preload" href="/_next/static/media/630c17af355fa44e-s.p.woff2" as="font" crossorigin="" type="font/woff2"/&gt;&lt;link rel="preload" as="image" href="/icon-128.png"/&gt;&lt;link rel="stylesheet" href="/_next/static/css/42d4259c4d563989.css" data-precedence="next"/&gt;&lt;link rel="stylesheet" href="/_next/static/css/9379fdb4cb45c428.css" data-precedence="next"/&gt;&lt;link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-6cd1d0110126e6a6.js"/&gt;&lt;script src="/_next/static/chunks/4bd1b696-c023c6e3521b1417.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/255-3a91f01e1c0f613e.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/main-app-c46bc769a6243282.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/app/(ja)/layout-4a34e8f6718c1978.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/app/(en)/page-216209f997a5a74d.js" async=""&gt;&lt;/script&gt;&lt;link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW" as="script"/&gt;&lt;meta name="next-size-adjust" content=""/&gt;&lt;title&gt;Free Local Markdown Editor &amp;amp; Web Clipper — Mark It Down&lt;/title&gt;&lt;meta name="description" content="Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline."/&gt;&lt;link rel="canonical" href="https://markitdown.reduktion.dev/index.html"/&gt;&lt;link rel="alternate" hrefLang="en" href="https://markitdown.reduktion.dev/index.html"/&gt;&lt;link rel="alternate" hrefLang="ja" href="https://markitdown.reduktion.dev/index-ja.html"/&gt;&lt;link rel="alternate" hrefLang="x-default" href="https://markitdown.reduktion.dev/index.html"/&gt;&lt;meta property="og:title" content="Free Local Markdown Editor &amp;amp; Web Clipper — Mark It Down"/&gt;&lt;meta property="og:description" content="Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline."/&gt;&lt;meta property="og:image" content="https://markitdown.reduktion.dev/en-dark.png"/&gt;&lt;meta property="og:type" content="website"/&gt;&lt;meta name="twitter:card" content="summary_large_image"/&gt;&lt;meta name="twitter:title" content="Free Local Markdown Editor &amp;amp; Web Clipper — Mark It Down"/&gt;&lt;meta name="twitter:description" content="Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline."/&gt;&lt;meta name="twitter:image" content="https://markitdown.reduktion.dev/en-dark.png"/&gt;&lt;script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;div hidden=""&gt;&lt;!--$--&gt;&lt;!--/$--&gt;&lt;/div&gt;&lt;script&gt;(function () {
++&lt;!DOCTYPE html&gt;&lt;!--NTIUn3YnUW2prsU2pKvmT--&gt;&lt;html lang="en" class="__variable_c1a059 __variable_ea7542"&gt;&lt;head&gt;&lt;meta charSet="utf-8"/&gt;&lt;meta name="viewport" content="width=device-width, initial-scale=1"/&gt;&lt;link rel="preload" as="image" href="/icon-128.png"/&gt;&lt;link rel="stylesheet" href="/_next/static/css/42d4259c4d563989.css" data-precedence="next"/&gt;&lt;link rel="stylesheet" href="/_next/static/css/d2c657ecef0e2073.css" data-precedence="next"/&gt;&lt;link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-92671fc59bcd1b12.js"/&gt;&lt;script src="/_next/static/chunks/4bd1b696-c023c6e3521b1417.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/255-3a91f01e1c0f613e.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/main-app-5efaaf64ddea9faa.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/app/(ja)/layout-9df1eb2e28014d6f.js" async=""&gt;&lt;/script&gt;&lt;script src="/_next/static/chunks/app/(en)/page-130fc074e1cc4113.js" async=""&gt;&lt;/script&gt;&lt;link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW" as="script"/&gt;&lt;title&gt;Free Local Markdown Editor &amp;amp; Web Clipper — Mark It Down&lt;/title&gt;&lt;meta name="description" content="Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline."/&gt;&lt;link rel="canonical" href="https://markitdown.reduktion.dev/index.html"/&gt;&lt;link rel="alternate" hrefLang="en" href="https://markitdown.reduktion.dev/index.html"/&gt;&lt;link rel="alternate" hrefLang="ja" href="https://markitdown.reduktion.dev/index-ja.html"/&gt;&lt;link rel="alternate" hrefLang="x-default" href="https://markitdown.reduktion.dev/index.html"/&gt;&lt;meta property="og:title" content="Free Local Markdown Editor &amp;amp; Web Clipper — Mark It Down"/&gt;&lt;meta property="og:description" content="Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline."/&gt;&lt;meta property="og:image" content="https://markitdown.reduktion.dev/en-dark.png"/&gt;&lt;meta property="og:type" content="website"/&gt;&lt;meta name="twitter:card" content="summary_large_image"/&gt;&lt;meta name="twitter:title" content="Free Local Markdown Editor &amp;amp; Web Clipper — Mark It Down"/&gt;&lt;meta name="twitter:description" content="Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline."/&gt;&lt;meta name="twitter:image" content="https://markitdown.reduktion.dev/en-dark.png"/&gt;&lt;script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;div hidden=""&gt;&lt;!--$--&gt;&lt;!--/$--&gt;&lt;/div&gt;&lt;script&gt;(function () {
+   try {
+     var lang = navigator.language || navigator.userLanguage || '';
+     var file = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
+@@ -21,4 +21,4 @@
+       } catch (e) {}
+     }
+   });
+-})();&lt;/script&gt;&lt;a href="#main-content" class="skip-to-content"&gt;Skip to main content&lt;/a&gt;&lt;div class="container"&gt;&lt;nav class="header-nav" aria-label="Main navigation"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="/index.html" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/why.html"&gt;Philosophy&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/features.html"&gt;Features&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/okf.html"&gt;OKF&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/templates.html"&gt;Templates&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/faq.html"&gt;FAQ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/troubleshooting.html"&gt;Troubleshooting&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/changelog.html"&gt;Changelog&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/feedback.html"&gt;Feedback&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/privacy-policy.html"&gt;Privacy&lt;/a&gt;&lt;/li&gt;&lt;li class="lang-switcher"&gt;&lt;a href="/index-ja.html" hrefLang="ja"&gt;日本語&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;header role="banner"&gt;&lt;div class="header-logo"&gt;&lt;a href="/index.html" aria-label="Mark It Down Home"&gt;&lt;img src="/icon-128.png" alt="" class="logo-icon" aria-hidden="true"/&gt;&lt;span class="site-title"&gt;Mark It Down&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;p class="tagline"&gt;Your browser is now a writing desk.&lt;/p&gt;&lt;/header&gt;&lt;main id="main-content" role="main"&gt;&lt;script type="application/ld+json"&gt;{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mark It Down","alternateName":"Mark It Down — Markdown Editor &amp; Web Clipper","description":"Chrome extension Markdown editor &amp; Web Clipper for digesting AI output and web articles into your own words. Built around the Entry → Edit → Clear → Exit workflow — a workshop for digestion, not a vault for storage. Side Panel and New Tab, Git sync, offline.","applicationCategory":"Productivity","applicationSubCategory":"Markdown Editor","browserRequirements":"Chrome 116+ or Chromium-based browsers","audience":{"@type":"Audience","audienceType":"AI tool users, knowledge workers, engineers, researchers"},"operatingSystem":"Chrome","inLanguage":["en","ja"],"isAccessibleForFree":true,"keywords":"Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry","dateModified":"2026-07-04","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"softwareVersion":"2.2.10","author":{"@type":"Person","name":"Mark It Down Developer"},"sameAs":["https://github.com/9BwgeBTPG-QH/mark-it-down","https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke"],"screenshot":"https://markitdown.reduktion.dev/en-dark.png","url":"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke","installUrl":"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke","downloadUrl":"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke","featureList":["Web Clipper — right-click to save any page or AI chat as Markdown","RSS Reader — read feeds, open articles, and save selected items to Inbox","OPML import/export for moving RSS subscriptions between readers","RSS Git sync — keep feed lists and denylist settings across devices","Markdown editing with live preview","Dual mode: New Tab and Side Panel","Git synchronization (GitHub, GitLab)","Export to PDF (with page numbers and TOC), DOCX, PNG, standalone HTML, EPUB, and LaTeX","4 themes: Light, Dark, Parchment, CandleLight","Focus Mode with typewriter scroll","Mermaid diagram and LaTeX math support","Keyboard-first design","Offline support","Bilingual (English/Japanese)","Portability Hub — convert to Obsidian, Hugo, Jekyll, Docusaurus, MkDocs, Zenn, or Qiita syntax","Copy as CommonMark, GFM, Hugo, or Obsidian before publishing","Chat Format Smart Paste — auto-convert Slack, Discord, and WhatsApp pastes","Frontmatter support — manage metadata separately from note body","Web Clipper CSS selector targeting for precise page section clipping","Auto-hide UI — header and toolbar hide while writing","Git sync status indicator in sidebar","Table keyboard navigation — Excel-like Enter/Tab/Alt+Enter cell movement","Hold-to-delete — deliberate press-and-hold to permanently remove notes","Web Clipper preview — select sections before saving a clip","Sidebar hover cards and preview panel for checking notes before opening","Export presets — auto-attach YAML/TOML/JSON frontmatter on export"]}&lt;/script&gt;&lt;section class="hero" aria-labelledby="hero-heading"&gt;&lt;h1 id="hero-heading" class="page-title"&gt;Free local Markdown editor and Web Clipper&lt;/h1&gt;&lt;div class="hero-flow" aria-hidden="true"&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Entry&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Edit&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Clear&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Exit&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class="hero-tagline"&gt;Bring it in.&lt;br/&gt;Rewrite what matters.&lt;br/&gt;Move it on.&lt;/p&gt;&lt;p class="hero-fact"&gt;A free Chrome extension — Markdown editor &amp;amp; Web Clipper for AI output, web articles, RSS items, and rough notes.&lt;/p&gt;&lt;p class="hero-subtitle"&gt;Some notes are not meant to live in the browser forever.&lt;br/&gt;Mark It Down gives them a quiet place to become your words&lt;br/&gt;before they leave for export, Git, or a long-term archive.&lt;/p&gt;&lt;div class="buttons"&gt;&lt;a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store" data-ga-cta="hero"&gt;Get the extension&lt;/a&gt;&lt;a href="/features.html" class="btn btn-secondary"&gt;See how it works&lt;/a&gt;&lt;/div&gt;&lt;span class="hero-ornament" aria-hidden="true"&gt;~ ~ ~&lt;/span&gt;&lt;/section&gt;&lt;section class="philosophy" aria-labelledby="philosophy-heading"&gt;&lt;span class="section-label"&gt;Philosophy&lt;/span&gt;&lt;h2 id="philosophy-heading" class="visually-hidden"&gt;Philosophy&lt;/h2&gt;&lt;ul class="philosophy-list" role="list"&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Capture first. Classify later.&lt;/h3&gt;&lt;p&gt;Clips, feeds, and pasted drafts start in Inbox.&lt;br/&gt;The filing decision can wait until you have read them.&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Not storage. Digestion.&lt;/h3&gt;&lt;p&gt;Copy-pasting doesn&amp;#x27;t make it yours.&lt;br/&gt;Rewriting does.&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Local, then intentional.&lt;/h3&gt;&lt;p&gt;Autosave keeps the draft nearby.&lt;br/&gt;Export and Git sync happen when you decide the note is ready.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="flow-section" aria-labelledby="flow-heading"&gt;&lt;span class="section-label"&gt;Workflow&lt;/span&gt;&lt;h2 id="flow-heading"&gt;Entry → Edit → Clear → Exit&lt;/h2&gt;&lt;p class="flow-description"&gt;Information can pass through the browser instead of piling up there.&lt;/p&gt;&lt;ul class="philosophy-list" role="list"&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Entry&lt;/h3&gt;&lt;p&gt;Paste AI output.&lt;br/&gt;Clip a page. Save an RSS item. Start from a blank note.&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Edit&lt;/h3&gt;&lt;p&gt;In your own words.&lt;br/&gt;Make it yours.&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Clear&lt;/h3&gt;&lt;p&gt;Archive finished work.&lt;br/&gt;Template repeatable patterns. Trash what you no longer need.&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Exit&lt;/h3&gt;&lt;p&gt;PDF, DOCX, HTML, EPUB, LaTeX, .md, or Git.&lt;br/&gt;Send finished notes where they belong next.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="screenshot-section" aria-labelledby="screenshot-heading"&gt;&lt;h2 id="screenshot-heading" class="visually-hidden"&gt;Screenshot&lt;/h2&gt;&lt;div class="video-container"&gt;&lt;p class="video-context"&gt;Explore Mark It Down — browse the slides at your own pace&lt;/p&gt;&lt;iframe src="/slides-en.html" title="Mark It Down - Product Overview Slides" allowFullScreen="" loading="lazy"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/section&gt;&lt;section class="workflow-section" aria-labelledby="workflow-heading"&gt;&lt;span class="section-label"&gt;Use Cases&lt;/span&gt;&lt;h2 id="workflow-heading"&gt;How it works in practice&lt;/h2&gt;&lt;ul class="workflow-list" role="list"&gt;&lt;li&gt;&lt;strong&gt;Clip X — article or thread&lt;/strong&gt;&lt;span&gt;Right-click an X / Twitter article or thread to capture it, converted to Markdown on the spot.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Daily logs across devices&lt;/strong&gt;&lt;span&gt;Title a note with the date (YYYYMMDD) and add memos under /now timestamp headings. Edit it on another device and Git sync flags the conflict — Merge Both combines them into one.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Jot beside the web, focus in a tab&lt;/strong&gt;&lt;span&gt;Take notes in the Side Panel while you read, then close it and open the same note in a New Tab to write.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Brain-dump, then reorder&lt;/strong&gt;&lt;span&gt;Write a list as it comes to mind, then use Alt+↑ / ↓ to reorder lines into shape.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="coming-soon-section" aria-labelledby="coming-soon-heading"&gt;&lt;span class="section-label"&gt;What&amp;#x27;s New&lt;/span&gt;&lt;h2 id="coming-soon-heading"&gt;Recently Added&lt;/h2&gt;&lt;p class="coming-soon-status"&gt;v2.2.10 — New reading surfaces and a richer knowledge graph.&lt;/p&gt;&lt;ul class="coming-soon-list" role="list"&gt;&lt;li&gt;&lt;strong&gt;GitHub Repository Reader&lt;/strong&gt;&lt;span&gt;Browse any public GitHub repository without leaving Mark It Down: navigate the file tree, follow links between files, and import what you need into your notes. Private repositories work with a personal access token.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;RSS Reader becomes a full-screen workspace&lt;/strong&gt;&lt;span&gt;A feed sidebar on the left, a central article list and reading pane, and an article inspector showing metadata, tags, and headings. Articles render with the same Markdown engine as your own notes.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Note graph: outline tree and radial view&lt;/strong&gt;&lt;span&gt;The outline view shows your notes as a collapsible tree you can re-root at any node. The radial view arranges linked notes around a center node with zoom and pan. A graph view is also available inside Repository Reader.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Frontmatter editor modal&lt;/strong&gt;&lt;span&gt;Editing note metadata now opens a dedicated modal. Suggested values from the note and the clipped page appear as chips you can click to apply. Copy as YAML and Clear all are in the header menu.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Quieter sidebar rows&lt;/strong&gt;&lt;span&gt;Status details (unprocessed marker, Git pending state, note size) move from every note row into a hover card. The list stays calm while the information remains one hover away.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="faq-preview-section" aria-labelledby="faq-preview-heading"&gt;&lt;span class="section-label"&gt;FAQ&lt;/span&gt;&lt;h2 id="faq-preview-heading"&gt;Frequently Asked Questions&lt;/h2&gt;&lt;div class="changelog-accordion"&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;Is Mark It Down free?&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;Yes, completely free.&lt;/strong&gt; &lt;!-- --&gt;No ads, no premium tier, no account required.&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;Can I use it offline?&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;Yes, almost everything works offline.&lt;/strong&gt; &lt;!-- --&gt;Creating, editing, searching notes—all work without internet. Only Git sync requires a connection.&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;Will clearing browser cache delete my notes?&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;No.&lt;/strong&gt; &lt;!-- --&gt;Notes are stored in a dedicated extension storage, separate from browser cache. Your data is safe.&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;/div&gt;&lt;p class="faq-more-link"&gt;&lt;a href="/faq.html"&gt;View all FAQ&lt;!-- --&gt; →&lt;/a&gt;&lt;/p&gt;&lt;/section&gt;&lt;section class="cta-section" aria-labelledby="cta-heading"&gt;&lt;h2 id="cta-heading"&gt;Ready to write?&lt;/h2&gt;&lt;p&gt;Available as a Chrome extension. No account required.&lt;br/&gt;&lt;small&gt;Latest version: v2.2.10&lt;/small&gt;&lt;/p&gt;&lt;div class="buttons"&gt;&lt;a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store"&gt;Get the extension&lt;/a&gt;&lt;a href="/changelog.html" class="btn btn-secondary"&gt;What&amp;#x27;s new&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;/main&gt;&lt;footer role="contentinfo"&gt;&lt;div class="footer-brand"&gt;&lt;img src="/icon-128.png" alt="" aria-hidden="true"/&gt;&lt;span&gt;Mark It Down&lt;/span&gt;&lt;/div&gt;&lt;nav class="footer-nav" aria-label="Footer navigation"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="/index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/features.html"&gt;Features&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/clipper.html"&gt;Web Clipper&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/rss.html"&gt;RSS Reader&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/okf.html"&gt;OKF&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/templates.html"&gt;Templates&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/faq.html"&gt;FAQ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/troubleshooting.html"&gt;Troubleshooting&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/changelog.html"&gt;Changelog&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/feedback.html"&gt;Feedback&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/privacy-policy.html"&gt;Privacy&lt;/a&gt;&lt;/li&gt;&lt;li class="lang-switcher"&gt;&lt;a href="/index-ja.html" hrefLang="ja"&gt;日本語&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;p&gt;&lt;span&gt;© 2025-2026 reduktion.dev&lt;/span&gt;&lt;/p&gt;&lt;/footer&gt;&lt;/div&gt;&lt;!--$--&gt;&lt;!--/$--&gt;&lt;script src="/_next/static/chunks/webpack-6cd1d0110126e6a6.js" id="_R_" async=""&gt;&lt;/script&gt;&lt;script&gt;(self.__next_f=self.__next_f||[]).push([0])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[9766,[],\"\"]\n3:I[8924,[],\"\"]\n4:I[1402,[\"248\",\"static/chunks/app/(ja)/layout-4a34e8f6718c1978.js\"],\"\"]\n7:I[7150,[],\"\"]\n:HL[\"/_next/static/media/5c0c2bcbaa4149ca-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/630c17af355fa44e-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/42d4259c4d563989.css\",\"style\"]\n:HL[\"/_next/static/css/9379fdb4cb45c428.css\",\"style\"]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"0:{\"P\":null,\"b\":\"P_bzKNTuosQS3MPG7nhO2\",\"p\":\"\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"(en)\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true]}],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"(en)\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/42d4259c4d563989.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/9379fdb4cb45c428.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"__variable_c1a059 __variable_ea7542\",\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"(function () {\\n  try {\\n    var lang = navigator.language || navigator.userLanguage || '';\\n    var file = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);\\n    if (lang.indexOf('ja') === 0 \u0026\u0026 !sessionStorage.getItem('langOverride') \u0026\u0026 !/-ja(\\\\.html)?$/.test(file)) {\\n      if (file === '' || file === 'index.html' || file === 'index') {\\n        location.replace('index-ja.html');\\n      } else if (/\\\\.html$/.test(file)) {\\n        location.replace(file.replace(/\\\\.html$/, '-ja.html'));\\n      } else {\\n        location.replace(file + '-ja.html');\\n      }\\n    }\\n  } catch (e) {}\\n  document.addEventListener('click', function (event) {\\n    var target = event.target;\\n    var anchor = target instanceof Element ? target.closest('.lang-switcher a') : null;\\n    if (anchor) {\\n      try {\\n        sessionStorage.setItem('langOverride', '1');\\n      } catch (e) {}\\n    }\\n  });\\n})();\"}}],[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:style\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:1:props:style\",\"children\":404}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:2:props:style\",\"children\":[\"$\",\"h2\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:2:props:children:props:style\",\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[[\"$\",\"$L4\",null,{\"src\":\"https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW\",\"strategy\":\"afterInteractive\"}],[\"$\",\"$L4\",null,{\"id\":\"ga-init\",\"strategy\":\"afterInteractive\",\"children\":\"window.dataLayer = window.dataLayer || [];\\nfunction gtag(){dataLayer.push(arguments);}\\ngtag('js', new Date());\\ngtag('config', 'G-BGZ2T3RGJW');\\ndocument.addEventListener('click', function (event) {\\n  var target = event.target;\\n  var cta = target instanceof Element ? target.closest('[data-ga-cta]') : null;\\n  if (cta) {\\n    gtag('event', 'cta_click', {\\n      event_category: 'engagement',\\n      event_label: cta.getAttribute('data-ga-cta'),\\n    });\\n  }\\n});\"}]]]}]}]]}],{\"children\":[\"__PAGE__\",\"$L5\",{},null,false]},null,false]},null,false],\"$L6\",false]],\"m\":\"$undefined\",\"G\":[\"$7\",[]],\"s\":false,\"S\":true}\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"14:I[4431,[],\"ViewportBoundary\"]\n16:I[4431,[],\"MetadataBoundary\"]\n17:\"$Sreact.suspense\"\n8:Tc66,"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Mark It Down\",\"alternateName\":\"Mark It Down — Markdown Editor \u0026 Web Clipper\",\"description\":\"Chrome extension Markdown editor \u0026 Web Clipper for digesting AI output and web articles into your own words. Built around the Entry → Edit → Clear → Exit workflow — a workshop for digestion, not a vault for storage. Side Panel and New Tab, Git sync, offline.\",\"applicationCategory\":\"Productivity\",\"applicationSubCategory\":\"Markdown Editor\",\"browserRequirements\":\"Chrome 116+ or Chromium-based browsers\",\"audience\":{\"@type\":\"Audience\",\"audienceType\":\"AI tool users, knowledge workers, engineers, researchers\"},\"operatingSystem\":\"Chrome\",\"inLanguage\":[\"en\",\"ja\"],\"isAccessibleForFree\":true,\"keywords\":\"Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry\",\"dateModified\":\"2026-07-04\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"softwareVersion\":\"2.2.10\",\"author\":{\"@type\":\"Person\",\"name\":\"Mark It Down Developer\"},\"sameAs\":[\"https://github.com/9BwgeBTPG-QH/mark-it-down\",\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\"],\"screenshot\":\"https://markitdown.reduktion.dev/en-dark.png\",\"url\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"installUrl\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"downloadUrl\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"featureList\":[\"Web Clipper — right-click to save any page or AI chat as Markdown\",\"RSS Reader — read feeds, open articles, and save selected items to Inbox\",\"OPML import/export for moving RSS subscriptions between readers\",\"RSS Git sync — keep feed lists and denylist settings across devices\",\"Markdown editing with live preview\",\"Dual mode: New Tab and Side Panel\",\"Git synchronization (GitHub, GitLab)\",\"Export to PDF (with page numbers and TOC), DOCX, PNG, standalone HTML, EPUB, and LaTeX\",\"4 themes: Light, Dark, Parchment, CandleLight\",\"Focus Mode with typewriter scroll\",\"Mermaid diagram and LaTeX math support\",\"Keyboard-first design\",\"Offline support\",\"Bilingual (English/Japanese)\",\"Portability Hub — convert to Obsidian, Hugo, Jekyll, Docusaurus, MkDocs, Zenn, or Qiita syntax\",\"Copy as CommonMark, GFM, Hugo, or Obsidian before publishing\",\"Chat Format Smart Paste — auto-convert Slack, Discord, and WhatsApp pastes\",\"Frontmatter support — manage metadata separately from note body\",\"Web Clipper CSS selector targeting for precise page section clipping\",\"Auto-hide UI — header and toolbar hide while writing\",\"Git sync status indicator in sidebar\",\"Table keyboard navigation — Excel-like Enter/Tab/Alt+Enter cell movement\",\"Hold-to-delete — deliberate press-and-hold to permanently remove notes\",\"Web Clipper preview — select sections before saving a clip\",\"Sidebar hover cards and preview panel for checking notes before opening\",\"Export presets — auto-attach YAML/TOML/JSON frontmatter on export\"]}"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"5:[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"a\",null,{\"href\":\"#main-content\",\"className\":\"skip-to-content\",\"children\":\"Skip to main content\"}],[\"$\",\"div\",null,{\"className\":\"container\",\"children\":[[[\"$\",\"nav\",null,{\"className\":\"header-nav\",\"aria-label\":\"Main navigation\",\"children\":[\"$\",\"ul\",null,{\"children\":[[[\"$\",\"li\",\"index\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/index.html\",\"aria-current\":\"page\",\"children\":\"Home\"}]}],[\"$\",\"li\",\"why\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/why.html\",\"aria-current\":\"$undefined\",\"children\":\"Philosophy\"}]}],[\"$\",\"li\",\"features\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/features.html\",\"aria-current\":\"$undefined\",\"children\":\"Features\"}]}],[\"$\",\"li\",\"okf\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/okf.html\",\"aria-current\":\"$undefined\",\"children\":\"OKF\"}]}],[\"$\",\"li\",\"templates\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/templates.html\",\"aria-current\":\"$undefined\",\"children\":\"Templates\"}]}],[\"$\",\"li\",\"faq\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/faq.html\",\"aria-current\":\"$undefined\",\"children\":\"FAQ\"}]}],[\"$\",\"li\",\"troubleshooting\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/troubleshooting.html\",\"aria-current\":\"$undefined\",\"children\":\"Troubleshooting\"}]}],[\"$\",\"li\",\"changelog\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/changelog.html\",\"aria-current\":\"$undefined\",\"children\":\"Changelog\"}]}],[\"$\",\"li\",\"feedback\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/feedback.html\",\"aria-current\":\"$undefined\",\"children\":\"Feedback\"}]}],[\"$\",\"li\",\"privacy-policy\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/privacy-policy.html\",\"aria-current\":\"$undefined\",\"children\":\"Privacy\"}]}]],[\"$\",\"li\",null,{\"className\":\"lang-switcher\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index-ja.html\",\"hrefLang\":\"ja\",\"children\":\"日本語\"}]}]]}]}],[\"$\",\"header\",null,{\"role\":\"banner\",\"children\":[[\"$\",\"div\",null,{\"className\":\"header-logo\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index.html\",\"aria-label\":\"Mark It Down Home\",\"children\":[[\"$\",\"img\",null,{\"src\":\"/icon-128.png\",\"alt\":\"\",\"className\":\"logo-icon\",\"aria-hidden\":\"true\"}],[\"$\",\"span\",null,{\"className\":\"site-title\",\"children\":\"Mark It Down\"}]]}]}],[\"$\",\"p\",null,{\"className\":\"tagline\",\"children\":\"Your browser is now a writing desk.\"}]]}]],[\"$\",\"main\",null,{\"id\":\"main-content\",\"role\":\"main\",\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"$8\"}}],\"$L9\",\"$La\",\"$Lb\",\"$Lc\",\"$Ld\",\"$Le\",\"$Lf\",\"$L10\",\"$L11\"]}],\"$L12\"]}]],null,\"$L13\"]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"6:[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$L14\",null,{\"children\":\"$L15\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]],[\"$\",\"$L16\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$17\",null,{\"fallback\":null,\"children\":\"$L18\"}]}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"19:I[7787,[\"817\",\"static/chunks/app/(en)/page-216209f997a5a74d.js\"],\"RevealScript\"]\n1a:I[4431,[],\"OutletBoundary\"]\n1c:I[5278,[],\"AsyncMetadataOutlet\"]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"9:[\"$\",\"section\",null,{\"className\":\"hero\",\"aria-labelledby\":\"hero-heading\",\"children\":[[\"$\",\"h1\",null,{\"id\":\"hero-heading\",\"className\":\"page-title\",\"children\":\"Free local Markdown editor and Web Clipper\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow\",\"aria-hidden\":\"true\",\"children\":[[\"$\",\"$1\",\"Entry\",{\"children\":[false,[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Entry\"}]]}]]}],[\"$\",\"$1\",\"Edit\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Edit\"}]]}]]}],[\"$\",\"$1\",\"Clear\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Clear\"}]]}]]}],[\"$\",\"$1\",\"Exit\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Exit\"}]]}]]}]]}],[\"$\",\"p\",null,{\"className\":\"hero-tagline\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Bring it in.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Rewrite what matters.\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"br\",null,{}],\"Move it on.\"]}]]}],[\"$\",\"p\",null,{\"className\":\"hero-fact\",\"children\":\"A free Chrome extension — Markdown editor \u0026 Web Clipper for AI output, web articles, RSS items, and rough notes.\"}],[\"$\",\"p\",null,{\"className\":\"hero-subtitle\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Some notes are not meant to live in the browser forever.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Mark It Down gives them a quiet place to become your words\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"br\",null,{}],\"before they leave for export, Git, or a long-term archive.\"]}]]}],[\"$\",\"div\",null,{\"className\":\"buttons\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"className\":\"btn btn-primary\",\"aria-label\":\"Get Mark It Down from Chrome Web Store\",\"data-ga-cta\":\"hero\",\"children\":\"Get the extension\"}],[\"$\",\"a\",null,{\"href\":\"/features.html\",\"className\":\"btn btn-secondary\",\"children\":\"See how it works\"}]]}],[\"$\",\"span\",null,{\"className\":\"hero-ornament\",\"aria-hidden\":\"true\",\"children\":\"~ ~ ~\"}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"a:[\"$\",\"section\",null,{\"className\":\"philosophy\",\"aria-labelledby\":\"philosophy-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Philosophy\"}],[\"$\",\"h2\",null,{\"id\":\"philosophy-heading\",\"className\":\"visually-hidden\",\"children\":\"Philosophy\"}],[\"$\",\"ul\",null,{\"className\":\"philosophy-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"Capture first. Classify later.\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Capture first. Classify later.\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Clips, feeds, and pasted drafts start in Inbox.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"The filing decision can wait until you have read them.\"]}]]}]]}],[\"$\",\"li\",\"Not storage. Digestion.\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Not storage. Digestion.\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Copy-pasting doesn't make it yours.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Rewriting does.\"]}]]}]]}],[\"$\",\"li\",\"Local, then intentional.\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Local, then intentional.\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Autosave keeps the draft nearby.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Export and Git sync happen when you decide the note is ready.\"]}]]}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"b:[\"$\",\"section\",null,{\"className\":\"flow-section\",\"aria-labelledby\":\"flow-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Workflow\"}],[\"$\",\"h2\",null,{\"id\":\"flow-heading\",\"children\":\"Entry → Edit → Clear → Exit\"}],[\"$\",\"p\",null,{\"className\":\"flow-description\",\"children\":\"Information can pass through the browser instead of piling up there.\"}],[\"$\",\"ul\",null,{\"className\":\"philosophy-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"Entry\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Entry\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Paste AI output.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Clip a page. Save an RSS item. Start from a blank note.\"]}]]}]]}],[\"$\",\"li\",\"Edit\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Edit\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"In your own words.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Make it yours.\"]}]]}]]}],[\"$\",\"li\",\"Clear\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Clear\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Archive finished work.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Template repeatable patterns. Trash what you no longer need.\"]}]]}]]}],[\"$\",\"li\",\"Exit\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Exit\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"PDF, DOCX, HTML, EPUB, LaTeX, .md, or Git.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Send finished notes where they belong next.\"]}]]}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"c:[\"$\",\"section\",null,{\"className\":\"screenshot-section\",\"aria-labelledby\":\"screenshot-heading\",\"children\":[[\"$\",\"h2\",null,{\"id\":\"screenshot-heading\",\"className\":\"visually-hidden\",\"children\":\"Screenshot\"}],[\"$\",\"div\",null,{\"className\":\"video-container\",\"children\":[[\"$\",\"p\",null,{\"className\":\"video-context\",\"children\":\"Explore Mark It Down — browse the slides at your own pace\"}],[\"$\",\"iframe\",null,{\"src\":\"/slides-en.html\",\"title\":\"Mark It Down - Product Overview Slides\",\"allowFullScreen\":true,\"loading\":\"lazy\"}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"d:[\"$\",\"section\",null,{\"className\":\"workflow-section\",\"aria-labelledby\":\"workflow-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Use Cases\"}],[\"$\",\"h2\",null,{\"id\":\"workflow-heading\",\"children\":\"How it works in practice\"}],[\"$\",\"ul\",null,{\"className\":\"workflow-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"Clip X — article or thread\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Clip X — article or thread\"}],[\"$\",\"span\",null,{\"children\":\"Right-click an X / Twitter article or thread to capture it, converted to Markdown on the spot.\"}]]}],[\"$\",\"li\",\"Daily logs across devices\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Daily logs across devices\"}],[\"$\",\"span\",null,{\"children\":\"Title a note with the date (YYYYMMDD) and add memos under /now timestamp headings. Edit it on another device and Git sync flags the conflict — Merge Both combines them into one.\"}]]}],[\"$\",\"li\",\"Jot beside the web, focus in a tab\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Jot beside the web, focus in a tab\"}],[\"$\",\"span\",null,{\"children\":\"Take notes in the Side Panel while you read, then close it and open the same note in a New Tab to write.\"}]]}],[\"$\",\"li\",\"Brain-dump, then reorder\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Brain-dump, then reorder\"}],[\"$\",\"span\",null,{\"children\":\"Write a list as it comes to mind, then use Alt+↑ / ↓ to reorder lines into shape.\"}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"e:[\"$\",\"section\",null,{\"className\":\"coming-soon-section\",\"aria-labelledby\":\"coming-soon-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"What's New\"}],[\"$\",\"h2\",null,{\"id\":\"coming-soon-heading\",\"children\":\"Recently Added\"}],[\"$\",\"p\",null,{\"className\":\"coming-soon-status\",\"children\":\"v2.2.10 — New reading surfaces and a richer knowledge graph.\"}],[\"$\",\"ul\",null,{\"className\":\"coming-soon-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"GitHub Repository Reader\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"GitHub Repository Reader\"}],[\"$\",\"span\",null,{\"children\":\"Browse any public GitHub repository without leaving Mark It Down: navigate the file tree, follow links between files, and import what you need into your notes. Private repositories work with a personal access token.\"}]]}],[\"$\",\"li\",\"RSS Reader becomes a full-screen workspace\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"RSS Reader becomes a full-screen workspace\"}],[\"$\",\"span\",null,{\"children\":\"A feed sidebar on the left, a central article list and reading pane, and an article inspector showing metadata, tags, and headings. Articles render with the same Markdown engine as your own notes.\"}]]}],[\"$\",\"li\",\"Note graph: outline tree and radial view\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Note graph: outline tree and radial view\"}],[\"$\",\"span\",null,{\"children\":\"The outline view shows your notes as a collapsible tree you can re-root at any node. The radial view arranges linked notes around a center node with zoom and pan. A graph view is also available inside Repository Reader.\"}]]}],[\"$\",\"li\",\"Frontmatter editor modal\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Frontmatter editor modal\"}],[\"$\",\"span\",null,{\"children\":\"Editing note metadata now opens a dedicated modal. Suggested values from the note and the clipped page appear as chips you can click to apply. Copy as YAML and Clear all are in the header menu.\"}]]}],[\"$\",\"li\",\"Quieter sidebar rows\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Quieter sidebar rows\"}],[\"$\",\"span\",null,{\"children\":\"Status details (unprocessed marker, Git pending state, note size) move from every note row into a hover card. The list stays calm while the information remains one hover away.\"}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"f:[\"$\",\"section\",null,{\"className\":\"faq-preview-section\",\"aria-labelledby\":\"faq-preview-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"FAQ\"}],[\"$\",\"h2\",null,{\"id\":\"faq-preview-heading\",\"children\":\"Frequently Asked Questions\"}],[\"$\",\"div\",null,{\"className\":\"changelog-accordion\",\"children\":[[\"$\",\"details\",\"Is Mark It Down free?\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":\"Is Mark It Down free?\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Yes, completely free.\"}],\" \",\"No ads, no premium tier, no account required.\"]}]}]]}],[\"$\",\"details\",\"Can I use it offline?\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":\"Can I use it offline?\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Yes, almost everything works offline.\"}],\" \",\"Creating, editing, searching notes—all work without internet. Only Git sync requires a connection.\"]}]}]]}],[\"$\",\"details\",\"Will clearing browser cache delete my notes?\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":\"Will clearing browser cache delete my notes?\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"No.\"}],\" \",\"Notes are stored in a dedicated extension storage, separate from browser cache. Your data is safe.\"]}]}]]}]]}],[\"$\",\"p\",null,{\"className\":\"faq-more-link\",\"children\":[\"$\",\"a\",null,{\"href\":\"/faq.html\",\"children\":[\"View all FAQ\",\" →\"]}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"10:[\"$\",\"section\",null,{\"className\":\"cta-section\",\"aria-labelledby\":\"cta-heading\",\"children\":[[\"$\",\"h2\",null,{\"id\":\"cta-heading\",\"children\":\"Ready to write?\"}],[\"$\",\"p\",null,{\"children\":[\"Available as a Chrome extension. No account required.\",[\"$\",\"br\",null,{}],[\"$\",\"small\",null,{\"children\":\"Latest version: v2.2.10\"}]]}],[\"$\",\"div\",null,{\"className\":\"buttons\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"className\":\"btn btn-primary\",\"aria-label\":\"Get Mark It Down from Chrome Web Store\",\"children\":\"Get the extension\"}],[\"$\",\"a\",null,{\"href\":\"/changelog.html\",\"className\":\"btn btn-secondary\",\"children\":\"What's new\"}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"11:[\"$\",\"$L19\",null,{}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"12:[\"$\",\"footer\",null,{\"role\":\"contentinfo\",\"children\":[[\"$\",\"div\",null,{\"className\":\"footer-brand\",\"children\":[[\"$\",\"img\",null,{\"src\":\"/icon-128.png\",\"alt\":\"\",\"aria-hidden\":\"true\"}],[\"$\",\"span\",null,{\"children\":\"Mark It Down\"}]]}],[\"$\",\"nav\",null,{\"className\":\"footer-nav\",\"aria-label\":\"Footer navigation\",\"children\":[\"$\",\"ul\",null,{\"children\":[[[\"$\",\"li\",\"index\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/index.html\",\"children\":\"Home\"}]}],[\"$\",\"li\",\"features\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/features.html\",\"children\":\"Features\"}]}],[\"$\",\"li\",\"clipper\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/clipper.html\",\"children\":\"Web Clipper\"}]}],[\"$\",\"li\",\"rss\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/rss.html\",\"children\":\"RSS Reader\"}]}],[\"$\",\"li\",\"okf\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/okf.html\",\"children\":\"OKF\"}]}],[\"$\",\"li\",\"templates\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/templates.html\",\"children\":\"Templates\"}]}],[\"$\",\"li\",\"faq\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/faq.html\",\"children\":\"FAQ\"}]}],[\"$\",\"li\",\"troubleshooting\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/troubleshooting.html\",\"children\":\"Troubleshooting\"}]}],[\"$\",\"li\",\"changelog\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/changelog.html\",\"children\":\"Changelog\"}]}],[\"$\",\"li\",\"feedback\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/feedback.html\",\"children\":\"Feedback\"}]}],[\"$\",\"li\",\"privacy-policy\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/privacy-policy.html\",\"children\":\"Privacy\"}]}]],[\"$\",\"li\",null,{\"className\":\"lang-switcher\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index-ja.html\",\"hrefLang\":\"ja\",\"children\":\"日本語\"}]}]]}]}],[\"$\",\"p\",null,{\"children\":[\"$\",\"span\",null,{\"children\":\"© 2025-2026 reduktion.dev\"}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"13:[\"$\",\"$L1a\",null,{\"children\":[\"$L1b\",[\"$\",\"$L1c\",null,{\"promise\":\"$@1d\"}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"15:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"1b:null\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"1d:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Free Local Markdown Editor \u0026 Web Clipper — Mark It Down\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"canonical\",\"href\":\"https://markitdown.reduktion.dev/index.html\"}],[\"$\",\"link\",\"3\",{\"rel\":\"alternate\",\"hrefLang\":\"en\",\"href\":\"https://markitdown.reduktion.dev/index.html\"}],[\"$\",\"link\",\"4\",{\"rel\":\"alternate\",\"hrefLang\":\"ja\",\"href\":\"https://markitdown.reduktion.dev/index-ja.html\"}],[\"$\",\"link\",\"5\",{\"rel\":\"alternate\",\"hrefLang\":\"x-default\",\"href\":\"https://markitdown.reduktion.dev/index.html\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:title\",\"content\":\"Free Local Markdown Editor \u0026 Web Clipper — Mark It Down\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:description\",\"content\":\"Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:image\",\"content\":\"https://markitdown.reduktion.dev/en-dark.png\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"10\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"11\",{\"name\":\"twitter:title\",\"content\":\"Free Local Markdown Editor \u0026 Web Clipper — Mark It Down\"}],[\"$\",\"meta\",\"12\",{\"name\":\"twitter:description\",\"content\":\"Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:image\",\"content\":\"https://markitdown.reduktion.dev/en-dark.png\"}]],\"error\":null,\"digest\":\"$undefined\"}\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"18:\"$1d:metadata\"\n"])&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+\ No newline at end of file
++})();&lt;/script&gt;&lt;a href="#main-content" class="skip-to-content"&gt;Skip to main content&lt;/a&gt;&lt;div class="container"&gt;&lt;nav class="header-nav" aria-label="Main navigation"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="/index.html" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/why.html"&gt;Philosophy&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/features.html"&gt;Features&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/okf.html"&gt;OKF&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/templates.html"&gt;Templates&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/faq.html"&gt;FAQ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/troubleshooting.html"&gt;Troubleshooting&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/changelog.html"&gt;Changelog&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/feedback.html"&gt;Feedback&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/privacy-policy.html"&gt;Privacy&lt;/a&gt;&lt;/li&gt;&lt;li class="lang-switcher"&gt;&lt;a href="/index-ja.html" hrefLang="ja"&gt;日本語&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;header role="banner"&gt;&lt;div class="header-logo"&gt;&lt;a href="/index.html" aria-label="Mark It Down Home"&gt;&lt;img src="/icon-128.png" alt="" class="logo-icon" aria-hidden="true"/&gt;&lt;span class="site-title"&gt;Mark It Down&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;p class="tagline"&gt;Your browser is now a writing desk.&lt;/p&gt;&lt;/header&gt;&lt;main id="main-content" role="main"&gt;&lt;script type="application/ld+json"&gt;{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mark It Down","alternateName":"Mark It Down — Markdown Editor &amp; Web Clipper","description":"Chrome extension Markdown editor &amp; Web Clipper for digesting AI output and web articles into your own words. Built around the Entry → Edit → Move → Exit workflow — a workshop for digestion, not a vault for storage. Side Panel and New Tab, Git sync, offline.","applicationCategory":"Productivity","applicationSubCategory":"Markdown Editor","browserRequirements":"Chrome 116+ or Chromium-based browsers","audience":{"@type":"Audience","audienceType":"AI tool users, knowledge workers, engineers, researchers"},"operatingSystem":"Chrome","inLanguage":["en","ja"],"isAccessibleForFree":true,"keywords":"Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry","dateModified":"2026-07-04","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"softwareVersion":"2.2.10","author":{"@type":"Person","name":"Mark It Down Developer"},"sameAs":["https://github.com/9BwgeBTPG-QH/mark-it-down","https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke"],"screenshot":"https://markitdown.reduktion.dev/en-dark.png","url":"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke","installUrl":"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke","downloadUrl":"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke","featureList":["Web Clipper — right-click to save any page or AI chat as Markdown","RSS Reader — read feeds, open articles, and save selected items to Inbox","OPML import/export for moving RSS subscriptions between readers","RSS Git sync — keep feed lists and denylist settings across devices","Markdown editing with live preview","Dual mode: New Tab and Side Panel","Git synchronization (GitHub, GitLab)","Export to PDF (with page numbers and TOC), DOCX, PNG, standalone HTML, EPUB, and LaTeX","4 themes: Light, Dark, Parchment, CandleLight","Focus Mode with typewriter scroll","Mermaid diagram and LaTeX math support","Keyboard-first design","Offline support","Bilingual (English/Japanese)","Portability Hub — convert to Obsidian, Hugo, Jekyll, Docusaurus, MkDocs, Zenn, or Qiita syntax","Copy as CommonMark, GFM, Hugo, or Obsidian before publishing","Chat Format Smart Paste — auto-convert Slack, Discord, and WhatsApp pastes","Frontmatter support — manage metadata separately from note body","Web Clipper CSS selector targeting for precise page section clipping","Auto-hide UI — header and toolbar hide while writing","Git sync status indicator in sidebar","Table keyboard navigation — Excel-like Enter/Tab/Alt+Enter cell movement","Hold-to-delete — deliberate press-and-hold to permanently remove notes","Web Clipper preview — select sections before saving a clip","Sidebar hover cards and preview panel for checking notes before opening","Export presets — auto-attach YAML/TOML/JSON frontmatter on export"]}&lt;/script&gt;&lt;section class="hero" aria-labelledby="hero-heading"&gt;&lt;h1 id="hero-heading" class="page-title"&gt;Free local Markdown editor and Web Clipper&lt;/h1&gt;&lt;div class="hero-flow" aria-hidden="true"&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Entry&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Edit&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Move&lt;/span&gt;&lt;/div&gt;&lt;span class="hero-flow-arrow"&gt;→&lt;/span&gt;&lt;div class="hero-flow-step"&gt;&lt;div class="hero-flow-icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="hero-flow-label"&gt;Exit&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class="hero-tagline"&gt;Bring it in.&lt;br/&gt;Rewrite what matters.&lt;br/&gt;Move it on.&lt;/p&gt;&lt;p class="hero-fact"&gt;A free Chrome extension — Markdown editor &amp;amp; Web Clipper for AI output, web articles, RSS items, and rough notes.&lt;/p&gt;&lt;p class="hero-subtitle"&gt;Some notes are not meant to live in the browser forever.&lt;br/&gt;Mark It Down gives them a quiet place to become your words&lt;br/&gt;before they leave for export, Git, or a long-term archive.&lt;/p&gt;&lt;div class="buttons"&gt;&lt;a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store" data-ga-cta="hero"&gt;Get the extension&lt;/a&gt;&lt;a href="/features.html" class="btn btn-secondary"&gt;See how it works&lt;/a&gt;&lt;/div&gt;&lt;span class="hero-ornament" aria-hidden="true"&gt;~ ~ ~&lt;/span&gt;&lt;/section&gt;&lt;section class="philosophy" aria-labelledby="philosophy-heading"&gt;&lt;span class="section-label"&gt;Philosophy&lt;/span&gt;&lt;h2 id="philosophy-heading" class="visually-hidden"&gt;Philosophy&lt;/h2&gt;&lt;p class="flow-description"&gt;Write it in your own words. It stays as memory.&lt;/p&gt;&lt;ul class="philosophy-list" role="list"&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Capture first. Classify later.&lt;/h3&gt;&lt;p&gt;Clips, feeds, and pasted drafts start in Inbox.&lt;br/&gt;The filing decision can wait until you have read them.&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Not storage. Digestion.&lt;/h3&gt;&lt;p&gt;Copy-pasting doesn&amp;#x27;t make it yours.&lt;br/&gt;Rewriting does.&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item" role="listitem"&gt;&lt;div class="philosophy-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Local, then intentional.&lt;/h3&gt;&lt;p&gt;Autosave keeps the draft nearby.&lt;br/&gt;Export and Git sync happen when you decide the note is ready.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="flow-section" aria-labelledby="flow-heading"&gt;&lt;span class="section-label"&gt;Workflow&lt;/span&gt;&lt;h2 id="flow-heading"&gt;Entry → Edit → Move → Exit&lt;/h2&gt;&lt;p class="flow-description"&gt;Information can pass through the browser instead of piling up there.&lt;/p&gt;&lt;ul class="philosophy-list" role="list"&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Entry&lt;/h3&gt;&lt;p&gt;Paste AI output.&lt;br/&gt;Clip a page. Save an RSS item. Start from a blank note.&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Edit&lt;/h3&gt;&lt;p&gt;In your own words.&lt;br/&gt;Make it yours.&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Move&lt;/h3&gt;&lt;p&gt;Archive finished work.&lt;br/&gt;Template repeatable patterns. Trash what you no longer need.&lt;/p&gt;&lt;/li&gt;&lt;li class="philosophy-item flow-item" role="listitem"&gt;&lt;div class="flow-icon" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;h3&gt;Exit&lt;/h3&gt;&lt;p&gt;PDF, DOCX, HTML, EPUB, LaTeX, .md, or Git.&lt;br/&gt;Send finished notes where they belong next.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="screenshot-section" aria-labelledby="screenshot-heading"&gt;&lt;h2 id="screenshot-heading" class="visually-hidden"&gt;Screenshot&lt;/h2&gt;&lt;div class="video-container"&gt;&lt;p class="video-context"&gt;Explore Mark It Down — browse the slides at your own pace&lt;/p&gt;&lt;iframe src="/slides-en.html" title="Mark It Down - Product Overview Slides" allowFullScreen="" loading="lazy"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/section&gt;&lt;section class="workflow-section" aria-labelledby="workflow-heading"&gt;&lt;span class="section-label"&gt;Use Cases&lt;/span&gt;&lt;h2 id="workflow-heading"&gt;How it works in practice&lt;/h2&gt;&lt;ul class="workflow-list" role="list"&gt;&lt;li&gt;&lt;strong&gt;Clip X — article or thread&lt;/strong&gt;&lt;span&gt;Right-click an X / Twitter article or thread to capture it, converted to Markdown on the spot.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Daily logs across devices&lt;/strong&gt;&lt;span&gt;Title a note with the date (YYYYMMDD) and add memos under /now timestamp headings. Edit it on another device and Git sync flags the conflict — Merge Both combines them into one.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Jot beside the web, focus in a tab&lt;/strong&gt;&lt;span&gt;Take notes in the Side Panel while you read, then close it and open the same note in a New Tab to write.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Brain-dump, then reorder&lt;/strong&gt;&lt;span&gt;Write a list as it comes to mind, then use Alt+↑ / ↓ to reorder lines into shape.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="coming-soon-section" aria-labelledby="coming-soon-heading"&gt;&lt;span class="section-label"&gt;What&amp;#x27;s New&lt;/span&gt;&lt;h2 id="coming-soon-heading"&gt;Recently Added&lt;/h2&gt;&lt;p class="coming-soon-status"&gt;v2.2.10 — New reading surfaces and a richer knowledge graph.&lt;/p&gt;&lt;ul class="coming-soon-list" role="list"&gt;&lt;li&gt;&lt;strong&gt;GitHub Repository Reader&lt;/strong&gt;&lt;span&gt;Browse any public GitHub repository without leaving Mark It Down: navigate the file tree, follow links between files, and import what you need into your notes. Private repositories work with a personal access token.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;RSS Reader becomes a full-screen workspace&lt;/strong&gt;&lt;span&gt;A feed sidebar on the left, a central article list and reading pane, and an article inspector showing metadata, tags, and headings. Articles render with the same Markdown engine as your own notes.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Note graph: outline tree and radial view&lt;/strong&gt;&lt;span&gt;The outline view shows your notes as a collapsible tree you can re-root at any node. The radial view arranges linked notes around a center node with zoom and pan. A graph view is also available inside Repository Reader.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Frontmatter editor modal&lt;/strong&gt;&lt;span&gt;Editing note metadata now opens a dedicated modal. Suggested values from the note and the clipped page appear as chips you can click to apply. Copy as YAML and Clear all are in the header menu.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Quieter sidebar rows&lt;/strong&gt;&lt;span&gt;Status details (unprocessed marker, Git pending state, note size) move from every note row into a hover card. The list stays calm while the information remains one hover away.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class="faq-preview-section" aria-labelledby="faq-preview-heading"&gt;&lt;span class="section-label"&gt;FAQ&lt;/span&gt;&lt;h2 id="faq-preview-heading"&gt;Frequently Asked Questions&lt;/h2&gt;&lt;div class="changelog-accordion"&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;Is Mark It Down free?&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;Yes, completely free.&lt;/strong&gt; &lt;!-- --&gt;No ads, no premium tier, no account required.&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;Can I use it offline?&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;Yes, almost everything works offline.&lt;/strong&gt; &lt;!-- --&gt;Creating, editing, searching notes—all work without internet. Only Git sync requires a connection.&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;details class="accordion-item"&gt;&lt;summary class="accordion-header"&gt;&lt;div class="accordion-title"&gt;&lt;span class="accordion-icon"&gt;&lt;/span&gt;&lt;span class="accordion-highlight"&gt;Will clearing browser cache delete my notes?&lt;/span&gt;&lt;/div&gt;&lt;/summary&gt;&lt;div class="accordion-content"&gt;&lt;p&gt;&lt;strong&gt;No.&lt;/strong&gt; &lt;!-- --&gt;Notes are stored in a dedicated extension storage, separate from browser cache. Your data is safe.&lt;/p&gt;&lt;/div&gt;&lt;/details&gt;&lt;/div&gt;&lt;p class="faq-more-link"&gt;&lt;a href="/faq.html"&gt;View all FAQ&lt;!-- --&gt; →&lt;/a&gt;&lt;/p&gt;&lt;/section&gt;&lt;section class="cta-section" aria-labelledby="cta-heading"&gt;&lt;h2 id="cta-heading"&gt;Ready to write?&lt;/h2&gt;&lt;p&gt;Available as a Chrome extension. No account required.&lt;br/&gt;&lt;small&gt;Latest version: v2.2.10&lt;/small&gt;&lt;/p&gt;&lt;div class="buttons"&gt;&lt;a href="https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke" class="btn btn-primary" aria-label="Get Mark It Down from Chrome Web Store"&gt;Get the extension&lt;/a&gt;&lt;a href="/changelog.html" class="btn btn-secondary"&gt;What&amp;#x27;s new&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;/main&gt;&lt;footer role="contentinfo"&gt;&lt;div class="footer-brand"&gt;&lt;img src="/icon-128.png" alt="" aria-hidden="true"/&gt;&lt;span&gt;Mark It Down&lt;/span&gt;&lt;/div&gt;&lt;nav class="footer-nav" aria-label="Footer navigation"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="/index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/features.html"&gt;Features&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/clipper.html"&gt;Web Clipper&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/rss.html"&gt;RSS Reader&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/okf.html"&gt;OKF&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/templates.html"&gt;Templates&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/faq.html"&gt;FAQ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/troubleshooting.html"&gt;Troubleshooting&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/changelog.html"&gt;Changelog&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/feedback.html"&gt;Feedback&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="/privacy-policy.html"&gt;Privacy&lt;/a&gt;&lt;/li&gt;&lt;li class="lang-switcher"&gt;&lt;a href="/index-ja.html" hrefLang="ja"&gt;日本語&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;p&gt;&lt;span&gt;© 2025-2026 reduktion.dev&lt;/span&gt;&lt;/p&gt;&lt;/footer&gt;&lt;/div&gt;&lt;!--$--&gt;&lt;!--/$--&gt;&lt;script src="/_next/static/chunks/webpack-92671fc59bcd1b12.js" id="_R_" async=""&gt;&lt;/script&gt;&lt;script&gt;(self.__next_f=self.__next_f||[]).push([0])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[9766,[],\"\"]\n3:I[8924,[],\"\"]\n4:I[1402,[\"248\",\"static/chunks/app/(ja)/layout-9df1eb2e28014d6f.js\"],\"\"]\n7:I[7150,[],\"\"]\n:HL[\"/_next/static/css/42d4259c4d563989.css\",\"style\"]\n:HL[\"/_next/static/css/d2c657ecef0e2073.css\",\"style\"]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"0:{\"P\":null,\"b\":\"NTIUn3YnUW2prsU2pKvmT\",\"p\":\"\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"(en)\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true]}],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"(en)\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/42d4259c4d563989.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/d2c657ecef0e2073.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"__variable_c1a059 __variable_ea7542\",\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"(function () {\\n  try {\\n    var lang = navigator.language || navigator.userLanguage || '';\\n    var file = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);\\n    if (lang.indexOf('ja') === 0 \u0026\u0026 !sessionStorage.getItem('langOverride') \u0026\u0026 !/-ja(\\\\.html)?$/.test(file)) {\\n      if (file === '' || file === 'index.html' || file === 'index') {\\n        location.replace('index-ja.html');\\n      } else if (/\\\\.html$/.test(file)) {\\n        location.replace(file.replace(/\\\\.html$/, '-ja.html'));\\n      } else {\\n        location.replace(file + '-ja.html');\\n      }\\n    }\\n  } catch (e) {}\\n  document.addEventListener('click', function (event) {\\n    var target = event.target;\\n    var anchor = target instanceof Element ? target.closest('.lang-switcher a') : null;\\n    if (anchor) {\\n      try {\\n        sessionStorage.setItem('langOverride', '1');\\n      } catch (e) {}\\n    }\\n  });\\n})();\"}}],[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:style\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:1:props:style\",\"children\":404}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:2:props:style\",\"children\":[\"$\",\"h2\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:2:props:children:props:style\",\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[[\"$\",\"$L4\",null,{\"src\":\"https://www.googletagmanager.com/gtag/js?id=G-BGZ2T3RGJW\",\"strategy\":\"afterInteractive\"}],[\"$\",\"$L4\",null,{\"id\":\"ga-init\",\"strategy\":\"afterInteractive\",\"children\":\"window.dataLayer = window.dataLayer || [];\\nfunction gtag(){dataLayer.push(arguments);}\\ngtag('js', new Date());\\ngtag('config', 'G-BGZ2T3RGJW');\\ndocument.addEventListener('click', function (event) {\\n  var target = event.target;\\n  var cta = target instanceof Element ? target.closest('[data-ga-cta]') : null;\\n  if (cta) {\\n    gtag('event', 'cta_click', {\\n      event_category: 'engagement',\\n      event_label: cta.getAttribute('data-ga-cta'),\\n    });\\n  }\\n});\"}]]]}]}]]}],{\"children\":[\"__PAGE__\",\"$L5\",{},null,false]},null,false]},null,false],\"$L6\",false]],\"m\":\"$undefined\",\"G\":[\"$7\",[]],\"s\":false,\"S\":true}\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"14:I[4431,[],\"ViewportBoundary\"]\n16:I[4431,[],\"MetadataBoundary\"]\n17:\"$Sreact.suspense\"\n8:Tc65,"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Mark It Down\",\"alternateName\":\"Mark It Down — Markdown Editor \u0026 Web Clipper\",\"description\":\"Chrome extension Markdown editor \u0026 Web Clipper for digesting AI output and web articles into your own words. Built around the Entry → Edit → Move → Exit workflow — a workshop for digestion, not a vault for storage. Side Panel and New Tab, Git sync, offline.\",\"applicationCategory\":\"Productivity\",\"applicationSubCategory\":\"Markdown Editor\",\"browserRequirements\":\"Chrome 116+ or Chromium-based browsers\",\"audience\":{\"@type\":\"Audience\",\"audienceType\":\"AI tool users, knowledge workers, engineers, researchers\"},\"operatingSystem\":\"Chrome\",\"inLanguage\":[\"en\",\"ja\"],\"isAccessibleForFree\":true,\"keywords\":\"Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry\",\"dateModified\":\"2026-07-04\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"softwareVersion\":\"2.2.10\",\"author\":{\"@type\":\"Person\",\"name\":\"Mark It Down Developer\"},\"sameAs\":[\"https://github.com/9BwgeBTPG-QH/mark-it-down\",\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\"],\"screenshot\":\"https://markitdown.reduktion.dev/en-dark.png\",\"url\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"installUrl\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"downloadUrl\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"featureList\":[\"Web Clipper — right-click to save any page or AI chat as Markdown\",\"RSS Reader — read feeds, open articles, and save selected items to Inbox\",\"OPML import/export for moving RSS subscriptions between readers\",\"RSS Git sync — keep feed lists and denylist settings across devices\",\"Markdown editing with live preview\",\"Dual mode: New Tab and Side Panel\",\"Git synchronization (GitHub, GitLab)\",\"Export to PDF (with page numbers and TOC), DOCX, PNG, standalone HTML, EPUB, and LaTeX\",\"4 themes: Light, Dark, Parchment, CandleLight\",\"Focus Mode with typewriter scroll\",\"Mermaid diagram and LaTeX math support\",\"Keyboard-first design\",\"Offline support\",\"Bilingual (English/Japanese)\",\"Portability Hub — convert to Obsidian, Hugo, Jekyll, Docusaurus, MkDocs, Zenn, or Qiita syntax\",\"Copy as CommonMark, GFM, Hugo, or Obsidian before publishing\",\"Chat Format Smart Paste — auto-convert Slack, Discord, and WhatsApp pastes\",\"Frontmatter support — manage metadata separately from note body\",\"Web Clipper CSS selector targeting for precise page section clipping\",\"Auto-hide UI — header and toolbar hide while writing\",\"Git sync status indicator in sidebar\",\"Table keyboard navigation — Excel-like Enter/Tab/Alt+Enter cell movement\",\"Hold-to-delete — deliberate press-and-hold to permanently remove notes\",\"Web Clipper preview — select sections before saving a clip\",\"Sidebar hover cards and preview panel for checking notes before opening\",\"Export presets — auto-attach YAML/TOML/JSON frontmatter on export\"]}"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"5:[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"a\",null,{\"href\":\"#main-content\",\"className\":\"skip-to-content\",\"children\":\"Skip to main content\"}],[\"$\",\"div\",null,{\"className\":\"container\",\"children\":[[[\"$\",\"nav\",null,{\"className\":\"header-nav\",\"aria-label\":\"Main navigation\",\"children\":[\"$\",\"ul\",null,{\"children\":[[[\"$\",\"li\",\"index\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/index.html\",\"aria-current\":\"page\",\"children\":\"Home\"}]}],[\"$\",\"li\",\"why\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/why.html\",\"aria-current\":\"$undefined\",\"children\":\"Philosophy\"}]}],[\"$\",\"li\",\"features\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/features.html\",\"aria-current\":\"$undefined\",\"children\":\"Features\"}]}],[\"$\",\"li\",\"okf\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/okf.html\",\"aria-current\":\"$undefined\",\"children\":\"OKF\"}]}],[\"$\",\"li\",\"templates\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/templates.html\",\"aria-current\":\"$undefined\",\"children\":\"Templates\"}]}],[\"$\",\"li\",\"faq\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/faq.html\",\"aria-current\":\"$undefined\",\"children\":\"FAQ\"}]}],[\"$\",\"li\",\"troubleshooting\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/troubleshooting.html\",\"aria-current\":\"$undefined\",\"children\":\"Troubleshooting\"}]}],[\"$\",\"li\",\"changelog\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/changelog.html\",\"aria-current\":\"$undefined\",\"children\":\"Changelog\"}]}],[\"$\",\"li\",\"feedback\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/feedback.html\",\"aria-current\":\"$undefined\",\"children\":\"Feedback\"}]}],[\"$\",\"li\",\"privacy-policy\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/privacy-policy.html\",\"aria-current\":\"$undefined\",\"children\":\"Privacy\"}]}]],[\"$\",\"li\",null,{\"className\":\"lang-switcher\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index-ja.html\",\"hrefLang\":\"ja\",\"children\":\"日本語\"}]}]]}]}],[\"$\",\"header\",null,{\"role\":\"banner\",\"children\":[[\"$\",\"div\",null,{\"className\":\"header-logo\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index.html\",\"aria-label\":\"Mark It Down Home\",\"children\":[[\"$\",\"img\",null,{\"src\":\"/icon-128.png\",\"alt\":\"\",\"className\":\"logo-icon\",\"aria-hidden\":\"true\"}],[\"$\",\"span\",null,{\"className\":\"site-title\",\"children\":\"Mark It Down\"}]]}]}],[\"$\",\"p\",null,{\"className\":\"tagline\",\"children\":\"Your browser is now a writing desk.\"}]]}]],[\"$\",\"main\",null,{\"id\":\"main-content\",\"role\":\"main\",\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"$8\"}}],\"$L9\",\"$La\",\"$Lb\",\"$Lc\",\"$Ld\",\"$Le\",\"$Lf\",\"$L10\",\"$L11\"]}],\"$L12\"]}]],null,\"$L13\"]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"6:[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$L14\",null,{\"children\":\"$L15\"}],null],[\"$\",\"$L16\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$17\",null,{\"fallback\":null,\"children\":\"$L18\"}]}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"19:I[7787,[\"817\",\"static/chunks/app/(en)/page-130fc074e1cc4113.js\"],\"RevealScript\"]\n1a:I[4431,[],\"OutletBoundary\"]\n1c:I[5278,[],\"AsyncMetadataOutlet\"]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"9:[\"$\",\"section\",null,{\"className\":\"hero\",\"aria-labelledby\":\"hero-heading\",\"children\":[[\"$\",\"h1\",null,{\"id\":\"hero-heading\",\"className\":\"page-title\",\"children\":\"Free local Markdown editor and Web Clipper\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow\",\"aria-hidden\":\"true\",\"children\":[[\"$\",\"$1\",\"Entry\",{\"children\":[false,[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Entry\"}]]}]]}],[\"$\",\"$1\",\"Edit\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Edit\"}]]}]]}],[\"$\",\"$1\",\"Move\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Move\"}]]}]]}],[\"$\",\"$1\",\"Exit\",{\"children\":[[\"$\",\"span\",null,{\"className\":\"hero-flow-arrow\",\"children\":\"→\"}],[\"$\",\"div\",null,{\"className\":\"hero-flow-step\",\"children\":[[\"$\",\"div\",null,{\"className\":\"hero-flow-icon\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3\"}]}]}],[\"$\",\"span\",null,{\"className\":\"hero-flow-label\",\"children\":\"Exit\"}]]}]]}]]}],[\"$\",\"p\",null,{\"className\":\"hero-tagline\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Bring it in.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Rewrite what matters.\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"br\",null,{}],\"Move it on.\"]}]]}],[\"$\",\"p\",null,{\"className\":\"hero-fact\",\"children\":\"A free Chrome extension — Markdown editor \u0026 Web Clipper for AI output, web articles, RSS items, and rough notes.\"}],[\"$\",\"p\",null,{\"className\":\"hero-subtitle\",\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Some notes are not meant to live in the browser forever.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Mark It Down gives them a quiet place to become your words\"]}],[\"$\",\"$1\",\"2\",{\"children\":[[\"$\",\"br\",null,{}],\"before they leave for export, Git, or a long-term archive.\"]}]]}],[\"$\",\"div\",null,{\"className\":\"buttons\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"className\":\"btn btn-primary\",\"aria-label\":\"Get Mark It Down from Chrome Web Store\",\"data-ga-cta\":\"hero\",\"children\":\"Get the extension\"}],[\"$\",\"a\",null,{\"href\":\"/features.html\",\"className\":\"btn btn-secondary\",\"children\":\"See how it works\"}]]}],[\"$\",\"span\",null,{\"className\":\"hero-ornament\",\"aria-hidden\":\"true\",\"children\":\"~ ~ ~\"}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"a:[\"$\",\"section\",null,{\"className\":\"philosophy\",\"aria-labelledby\":\"philosophy-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Philosophy\"}],[\"$\",\"h2\",null,{\"id\":\"philosophy-heading\",\"className\":\"visually-hidden\",\"children\":\"Philosophy\"}],[\"$\",\"p\",null,{\"className\":\"flow-description\",\"children\":\"Write it in your own words. It stays as memory.\"}],[\"$\",\"ul\",null,{\"className\":\"philosophy-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"Capture first. Classify later.\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Capture first. Classify later.\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Clips, feeds, and pasted drafts start in Inbox.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"The filing decision can wait until you have read them.\"]}]]}]]}],[\"$\",\"li\",\"Not storage. Digestion.\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Not storage. Digestion.\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Copy-pasting doesn't make it yours.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Rewriting does.\"]}]]}]]}],[\"$\",\"li\",\"Local, then intentional.\",{\"className\":\"philosophy-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"philosophy-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Local, then intentional.\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Autosave keeps the draft nearby.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Export and Git sync happen when you decide the note is ready.\"]}]]}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"b:[\"$\",\"section\",null,{\"className\":\"flow-section\",\"aria-labelledby\":\"flow-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Workflow\"}],[\"$\",\"h2\",null,{\"id\":\"flow-heading\",\"children\":\"Entry → Edit → Move → Exit\"}],[\"$\",\"p\",null,{\"className\":\"flow-description\",\"children\":\"Information can pass through the browser instead of piling up there.\"}],[\"$\",\"ul\",null,{\"className\":\"philosophy-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"Entry\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Entry\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Paste AI output.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Clip a page. Save an RSS item. Start from a blank note.\"]}]]}]]}],[\"$\",\"li\",\"Edit\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Edit\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"In your own words.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Make it yours.\"]}]]}]]}],[\"$\",\"li\",\"Move\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Move\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"Archive finished work.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Template repeatable patterns. Trash what you no longer need.\"]}]]}]]}],[\"$\",\"li\",\"Exit\",{\"className\":\"philosophy-item flow-item\",\"role\":\"listitem\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flow-icon\",\"aria-hidden\":\"true\",\"children\":[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"strokeWidth\":\"1.5\",\"stroke\":\"currentColor\",\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3\"}]}]}],[\"$\",\"h3\",null,{\"children\":\"Exit\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"$1\",\"0\",{\"children\":[false,\"PDF, DOCX, HTML, EPUB, LaTeX, .md, or Git.\"]}],[\"$\",\"$1\",\"1\",{\"children\":[[\"$\",\"br\",null,{}],\"Send finished notes where they belong next.\"]}]]}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"c:[\"$\",\"section\",null,{\"className\":\"screenshot-section\",\"aria-labelledby\":\"screenshot-heading\",\"children\":[[\"$\",\"h2\",null,{\"id\":\"screenshot-heading\",\"className\":\"visually-hidden\",\"children\":\"Screenshot\"}],[\"$\",\"div\",null,{\"className\":\"video-container\",\"children\":[[\"$\",\"p\",null,{\"className\":\"video-context\",\"children\":\"Explore Mark It Down — browse the slides at your own pace\"}],[\"$\",\"iframe\",null,{\"src\":\"/slides-en.html\",\"title\":\"Mark It Down - Product Overview Slides\",\"allowFullScreen\":true,\"loading\":\"lazy\"}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"d:[\"$\",\"section\",null,{\"className\":\"workflow-section\",\"aria-labelledby\":\"workflow-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"Use Cases\"}],[\"$\",\"h2\",null,{\"id\":\"workflow-heading\",\"children\":\"How it works in practice\"}],[\"$\",\"ul\",null,{\"className\":\"workflow-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"Clip X — article or thread\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Clip X — article or thread\"}],[\"$\",\"span\",null,{\"children\":\"Right-click an X / Twitter article or thread to capture it, converted to Markdown on the spot.\"}]]}],[\"$\",\"li\",\"Daily logs across devices\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Daily logs across devices\"}],[\"$\",\"span\",null,{\"children\":\"Title a note with the date (YYYYMMDD) and add memos under /now timestamp headings. Edit it on another device and Git sync flags the conflict — Merge Both combines them into one.\"}]]}],[\"$\",\"li\",\"Jot beside the web, focus in a tab\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Jot beside the web, focus in a tab\"}],[\"$\",\"span\",null,{\"children\":\"Take notes in the Side Panel while you read, then close it and open the same note in a New Tab to write.\"}]]}],[\"$\",\"li\",\"Brain-dump, then reorder\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Brain-dump, then reorder\"}],[\"$\",\"span\",null,{\"children\":\"Write a list as it comes to mind, then use Alt+↑ / ↓ to reorder lines into shape.\"}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"e:[\"$\",\"section\",null,{\"className\":\"coming-soon-section\",\"aria-labelledby\":\"coming-soon-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"What's New\"}],[\"$\",\"h2\",null,{\"id\":\"coming-soon-heading\",\"children\":\"Recently Added\"}],[\"$\",\"p\",null,{\"className\":\"coming-soon-status\",\"children\":\"v2.2.10 — New reading surfaces and a richer knowledge graph.\"}],[\"$\",\"ul\",null,{\"className\":\"coming-soon-list\",\"role\":\"list\",\"children\":[[\"$\",\"li\",\"GitHub Repository Reader\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"GitHub Repository Reader\"}],[\"$\",\"span\",null,{\"children\":\"Browse any public GitHub repository without leaving Mark It Down: navigate the file tree, follow links between files, and import what you need into your notes. Private repositories work with a personal access token.\"}]]}],[\"$\",\"li\",\"RSS Reader becomes a full-screen workspace\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"RSS Reader becomes a full-screen workspace\"}],[\"$\",\"span\",null,{\"children\":\"A feed sidebar on the left, a central article list and reading pane, and an article inspector showing metadata, tags, and headings. Articles render with the same Markdown engine as your own notes.\"}]]}],[\"$\",\"li\",\"Note graph: outline tree and radial view\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Note graph: outline tree and radial view\"}],[\"$\",\"span\",null,{\"children\":\"The outline view shows your notes as a collapsible tree you can re-root at any node. The radial view arranges linked notes around a center node with zoom and pan. A graph view is also available inside Repository Reader.\"}]]}],[\"$\",\"li\",\"Frontmatter editor modal\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Frontmatter editor modal\"}],[\"$\",\"span\",null,{\"children\":\"Editing note metadata now opens a dedicated modal. Suggested values from the note and the clipped page appear as chips you can click to apply. Copy as YAML and Clear all are in the header menu.\"}]]}],[\"$\",\"li\",\"Quieter sidebar rows\",{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Quieter sidebar rows\"}],[\"$\",\"span\",null,{\"children\":\"Status details (unprocessed marker, Git pending state, note size) move from every note row into a hover card. The list stays calm while the information remains one hover away.\"}]]}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"f:[\"$\",\"section\",null,{\"className\":\"faq-preview-section\",\"aria-labelledby\":\"faq-preview-heading\",\"children\":[[\"$\",\"span\",null,{\"className\":\"section-label\",\"children\":\"FAQ\"}],[\"$\",\"h2\",null,{\"id\":\"faq-preview-heading\",\"children\":\"Frequently Asked Questions\"}],[\"$\",\"div\",null,{\"className\":\"changelog-accordion\",\"children\":[[\"$\",\"details\",\"Is Mark It Down free?\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":\"Is Mark It Down free?\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Yes, completely free.\"}],\" \",\"No ads, no premium tier, no account required.\"]}]}]]}],[\"$\",\"details\",\"Can I use it offline?\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":\"Can I use it offline?\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Yes, almost everything works offline.\"}],\" \",\"Creating, editing, searching notes—all work without internet. Only Git sync requires a connection.\"]}]}]]}],[\"$\",\"details\",\"Will clearing browser cache delete my notes?\",{\"className\":\"accordion-item\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"accordion-header\",\"children\":[\"$\",\"div\",null,{\"className\":\"accordion-title\",\"children\":[[\"$\",\"span\",null,{\"className\":\"accordion-icon\"}],[\"$\",\"span\",null,{\"className\":\"accordion-highlight\",\"children\":\"Will clearing browser cache delete my notes?\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"accordion-content\",\"children\":[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"No.\"}],\" \",\"Notes are stored in a dedicated extension storage, separate from browser cache. Your data is safe.\"]}]}]]}]]}],[\"$\",\"p\",null,{\"className\":\"faq-more-link\",\"children\":[\"$\",\"a\",null,{\"href\":\"/faq.html\",\"children\":[\"View all FAQ\",\" →\"]}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"10:[\"$\",\"section\",null,{\"className\":\"cta-section\",\"aria-labelledby\":\"cta-heading\",\"children\":[[\"$\",\"h2\",null,{\"id\":\"cta-heading\",\"children\":\"Ready to write?\"}],[\"$\",\"p\",null,{\"children\":[\"Available as a Chrome extension. No account required.\",[\"$\",\"br\",null,{}],[\"$\",\"small\",null,{\"children\":\"Latest version: v2.2.10\"}]]}],[\"$\",\"div\",null,{\"className\":\"buttons\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke\",\"className\":\"btn btn-primary\",\"aria-label\":\"Get Mark It Down from Chrome Web Store\",\"children\":\"Get the extension\"}],[\"$\",\"a\",null,{\"href\":\"/changelog.html\",\"className\":\"btn btn-secondary\",\"children\":\"What's new\"}]]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"11:[\"$\",\"$L19\",null,{}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"12:[\"$\",\"footer\",null,{\"role\":\"contentinfo\",\"children\":[[\"$\",\"div\",null,{\"className\":\"footer-brand\",\"children\":[[\"$\",\"img\",null,{\"src\":\"/icon-128.png\",\"alt\":\"\",\"aria-hidden\":\"true\"}],[\"$\",\"span\",null,{\"children\":\"Mark It Down\"}]]}],[\"$\",\"nav\",null,{\"className\":\"footer-nav\",\"aria-label\":\"Footer navigation\",\"children\":[\"$\",\"ul\",null,{\"children\":[[[\"$\",\"li\",\"index\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/index.html\",\"children\":\"Home\"}]}],[\"$\",\"li\",\"features\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/features.html\",\"children\":\"Features\"}]}],[\"$\",\"li\",\"clipper\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/clipper.html\",\"children\":\"Web Clipper\"}]}],[\"$\",\"li\",\"rss\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/rss.html\",\"children\":\"RSS Reader\"}]}],[\"$\",\"li\",\"okf\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/okf.html\",\"children\":\"OKF\"}]}],[\"$\",\"li\",\"templates\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/templates.html\",\"children\":\"Templates\"}]}],[\"$\",\"li\",\"faq\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/faq.html\",\"children\":\"FAQ\"}]}],[\"$\",\"li\",\"troubleshooting\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/troubleshooting.html\",\"children\":\"Troubleshooting\"}]}],[\"$\",\"li\",\"changelog\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/changelog.html\",\"children\":\"Changelog\"}]}],[\"$\",\"li\",\"feedback\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/feedback.html\",\"children\":\"Feedback\"}]}],[\"$\",\"li\",\"privacy-policy\",{\"children\":[\"$\",\"a\",null,{\"href\":\"/privacy-policy.html\",\"children\":\"Privacy\"}]}]],[\"$\",\"li\",null,{\"className\":\"lang-switcher\",\"children\":[\"$\",\"a\",null,{\"href\":\"/index-ja.html\",\"hrefLang\":\"ja\",\"children\":\"日本語\"}]}]]}]}],[\"$\",\"p\",null,{\"children\":[\"$\",\"span\",null,{\"children\":\"© 2025-2026 reduktion.dev\"}]}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"13:[\"$\",\"$L1a\",null,{\"children\":[\"$L1b\",[\"$\",\"$L1c\",null,{\"promise\":\"$@1d\"}]]}]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"15:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"1b:null\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"1d:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Free Local Markdown Editor \u0026 Web Clipper — Mark It Down\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"canonical\",\"href\":\"https://markitdown.reduktion.dev/index.html\"}],[\"$\",\"link\",\"3\",{\"rel\":\"alternate\",\"hrefLang\":\"en\",\"href\":\"https://markitdown.reduktion.dev/index.html\"}],[\"$\",\"link\",\"4\",{\"rel\":\"alternate\",\"hrefLang\":\"ja\",\"href\":\"https://markitdown.reduktion.dev/index-ja.html\"}],[\"$\",\"link\",\"5\",{\"rel\":\"alternate\",\"hrefLang\":\"x-default\",\"href\":\"https://markitdown.reduktion.dev/index.html\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:title\",\"content\":\"Free Local Markdown Editor \u0026 Web Clipper — Mark It Down\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:description\",\"content\":\"Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:image\",\"content\":\"https://markitdown.reduktion.dev/en-dark.png\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"10\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"11\",{\"name\":\"twitter:title\",\"content\":\"Free Local Markdown Editor \u0026 Web Clipper — Mark It Down\"}],[\"$\",\"meta\",\"12\",{\"name\":\"twitter:description\",\"content\":\"Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:image\",\"content\":\"https://markitdown.reduktion.dev/en-dark.png\"}]],\"error\":null,\"digest\":\"$undefined\"}\n"])&lt;/script&gt;&lt;script&gt;self.__next_f.push([1,"18:\"$1d:metadata\"\n"])&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+\ No newline at end of file
+
+```
+</details>
+</tool-use>
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2"><details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+✅ 修正しました。使用エージェント: メインエージェントのみ。
+
+`Entry → Edit → Clear → Exit` を `Entry → Edit → Move → Exit` に変更し、英日両方のトップページ本文・ヒーロー表示・JSON-LD description に反映しました。`docs/` も `node scripts/sync-docs.mjs --apply` で生成反映済みです。
+
+確認:
+- `ReadLints`: エラーなし
+- `npm run sync`: ビルド成功（同期は dry-run だったため、その後 `--apply` 実行）
+- ビルド時に Next.js の workspace root 推定 warning と `canvas` optional module warning が出ていますが、ビルド自体は成功しています。
+
+---
+
+_**User**_
+
+『素材が自分の言葉になるまでの静かな場所です。』の部分を『自分の言葉を書きとめるためのスクラッチパッド。』に変更。
+
+PHILOSOPHYに追記。
+『自分の言葉で書く。記憶として持続する。』の下に『道具は人間の意志を補強するために存在する。意志を代替するために存在するのではない。』
+
+『情報はブラウザに溜め込むだけでなく、通過させることもできます。』を『ブラウザで動作する切り取りメモ。』
+
+英文も修正すること。
+
+---
+
+_**Agent (gpt-5.5)**_
+
+✅ ご指定の日本語コピー3箇所を正本から確認し、対応する英文も同じ意味になるように更新します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\content\index.ts</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\components\index\Philosophy.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\components\index\Flow.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: c:\Users\asano\mark-it-down\components\hero\Hero.tsx</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+✅ PHILOSOPHY の追記は既存の1文フィールドを複数行に変えて、日英とも「見出し下に1行追加」として表示します。これから `content/index.ts` と表示コンポーネントを最小変更します。使用エージェント: メインエージェントのみ。
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\asano\mark-it-down\content\index.ts</summary>
+
+Status: **loading**
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (gpt-5.5)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: c:\Users\asano\mark-it-down\content\index.ts</summary>
+
+Status: **loading**
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
 
 </details></tool-use>

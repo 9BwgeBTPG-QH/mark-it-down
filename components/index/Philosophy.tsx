@@ -20,7 +20,9 @@ export function Philosophy({ lang }: { lang: Lang }) {
       <h2 id="philosophy-heading" className="visually-hidden">
         {copy.philosophyHeading}
       </h2>
-      <p className="flow-description">{ja ? <Budoux text={copy.philosophyLede} /> : copy.philosophyLede}</p>
+      <p className="flow-description">
+        <BrokenLines lines={copy.philosophyLedeLines} ja={ja} />
+      </p>
       <ul className="philosophy-list" role="list">
         {copy.philosophyItems.map((item, i) => {
           const Icon = icons[i];

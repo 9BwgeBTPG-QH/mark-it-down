@@ -30,7 +30,7 @@ export const indexContent: Record<Lang, IndexCopy> = {
       'A free Chrome extension — Markdown editor & Web Clipper for AI output, web articles, RSS items, and rough notes.',
     heroSubtitleLines: [
       'Some notes are not meant to live in the browser forever.',
-      'Mark It Down gives them a quiet place to become your words',
+      'A scratchpad for writing down your own words.',
       'before they leave for export, Git, or a long-term archive.',
     ],
     ctaPrimary: 'Get the extension',
@@ -48,7 +48,7 @@ export const indexContent: Record<Lang, IndexCopy> = {
       'Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力、Web 記事、RSS、断片メモを扱う作業場です。',
     heroSubtitleLines: [
       'すべてのノートをブラウザに置き続ける必要はありません。',
-      'Mark It Down は、素材が自分の言葉になるまでの静かな場所です。',
+      '自分の言葉を書きとめるためのスクラッチパッド。',
       'できあがったら、Export、Git、長期保存先へ送り出します。',
     ],
     ctaPrimary: '拡張機能を入手',
@@ -94,7 +94,7 @@ export interface IndexFaqItem {
 interface IndexSectionsCopy {
   philosophyEyebrow: string;
   philosophyHeading: string;
-  philosophyLede: string;
+  philosophyLedeLines: string[];
   philosophyItems: IndexBrokenItem[];
   flowEyebrow: string;
   flowHeading: string;
@@ -124,7 +124,10 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
   en: {
     philosophyEyebrow: 'Philosophy',
     philosophyHeading: 'Philosophy',
-    philosophyLede: 'Write it in your own words. It stays as memory.',
+    philosophyLedeLines: [
+      'Write it in your own words. It stays as memory.',
+      'Tools exist to reinforce human will. They do not exist to replace it.',
+    ],
     philosophyItems: [
       {
         title: 'Capture first. Classify later.',
@@ -147,7 +150,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     flowEyebrow: 'Workflow',
     flowHeading: 'Entry → Edit → Move → Exit',
-    flowIntro: 'Information can pass through the browser instead of piling up there.',
+    flowIntro: 'Clipping notes that run in your browser.',
     flowSteps: [
       {
         title: 'Entry',
@@ -240,7 +243,10 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
   ja: {
     philosophyEyebrow: 'Philosophy',
     philosophyHeading: '哲学',
-    philosophyLede: '自分の言葉で書く。記憶として持続する。',
+    philosophyLedeLines: [
+      '自分の言葉で書く。記憶として持続する。',
+      '道具は人間の意志を補強するために存在する。意志を代替するために存在するのではない。',
+    ],
     philosophyItems: [
       {
         title: 'まず取り込む。分類はあとで。',
@@ -260,7 +266,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     flowEyebrow: 'Workflow',
     flowHeading: 'Entry → Edit → Move → Exit',
-    flowIntro: '情報はブラウザに溜め込むだけでなく、通過させることもできます。',
+    flowIntro: 'ブラウザで動作する切り取りメモ。',
     flowSteps: [
       {
         title: 'Entry',
