@@ -94,12 +94,39 @@ export interface ChangelogVersion {
 export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   en: [
     {
-      version: 'v2.3.0',
-      highlight: 'A spreadsheet-style editor for tables, and a steadier workspace.',
+      version: 'v2.3.1',
+      highlight: 'More reliable rendering, calmer busy states, and smoother large notes.',
       status: 'Under Review',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'This release makes the editor feel steadier under real writing conditions. Math and Mermaid code blocks render correctly on first load, large notes stay responsive while background rendering continues, and sync, save, import, and fetch states become easier to notice without adding noise.',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['Math and Mermaid rendering'], description: ['Math blocks and Mermaid diagrams now render correctly inside the live editor when a note opens. Switching between source and diagram view no longer leaves a blank block behind.'] },
+            { term: ['Large-note responsiveness'], description: ['Mermaid-heavy notes and large Inbox notes prioritize visible work first, then continue background rendering without blocking the writing surface.'] },
+            { term: ['Specific activity states'], description: ['Git Sync, Web Clipper save and re-extract, Repository Reader import, and RSS fetch states now use small activity indicators while preserving readable labels.'] },
+            { term: ['Auto-hide interaction timing'], description: ['Top controls, Focus Mode reveal zones, side panels, and overlay sidebars now hold steady during resize, drag, context-menu, and panel transitions.'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['Fenced math layout'], description: ['Fenced math code blocks in the initial system note no longer collapse into an unreadably small layout.'] },
+            { term: ['Mermaid live-editor refresh'], description: ['Rendered Mermaid diagrams no longer disappear after the editor refreshes the code block.'] },
+            { term: ['Overlay Notes Sidebar resize'], description: ['Resizing the overlay Notes Sidebar no longer closes it before the resize interaction finishes.'] },
+            { term: ['Smart typography'], description: ['Triple dash input no longer follows the em dash transformation path; horizontal rule behavior remains handled separately.'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.0',
+      highlight: 'A spreadsheet-style editor for tables, and a steadier workspace.',
+      status: 'Released',
+      statusClass: 'released',
       theme: 'This release adds a dedicated grid editor for Markdown tables, so editing a table can feel like editing a spreadsheet instead of wrestling with pipes and cursor positions. The grid view supports range selection, row and column operations, copy and paste from spreadsheets, sorting, autofill, search, and inline formatting while the underlying note stays plain Markdown. It also fixes several quiet workflow problems around table widths, pasted list code blocks, multi-tab saves, and Archive browsing.',
       sections: [
         {
@@ -1443,12 +1470,39 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   ],
   ja: [
     {
-      version: 'v2.3.0',
-      highlight: 'テーブルをスプレッドシートのように編集し、作業場をより安定させる。',
+      version: 'v2.3.1',
+      highlight: '描画を安定させ、処理中表示を静かにし、大容量ノートをより軽く扱えるようにする。',
       status: '審査中',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: '実際に書いている最中の安定感を上げるリリース。数式と Mermaid のコードブロックは初回表示から正しく描画され、大容量ノートは裏側の描画を続けながら操作しやすくなった。同期、保存、インポート、取得中の状態も、邪魔を増やさず見分けやすくしている。',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['数式と Mermaid の描画'], description: ['ノートを開いた時点で、ライブエディタ内の数式ブロックと Mermaid 図が正しく描画される。ソース表示と図表示を切り替えても空白状態にならない。'] },
+            { term: ['大容量ノートの応答性'], description: ['Mermaid の多いノートや大きな Inbox ノートでは、見えている範囲の処理を優先し、裏側の描画で書く面を止めにくくした。'] },
+            { term: ['処理中状態の見分けやすさ'], description: ['Git 同期、Web Clipper の保存・再抽出、Repository Reader のインポート、RSS 取得で、小さなアクティビティ表示を使う。文字ラベルは残したまま。'] },
+            { term: ['自動非表示 UI の操作タイミング'], description: ['上部バー、Focus Mode の表示領域、Side Panel、オーバーレイ Sidebar が、リサイズ、ドラッグ、コンテキストメニュー、パネル遷移中も安定して残る。'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['囲み数式ブロックの表示'], description: ['初期システムノート内の囲み数式ブロックが、読みにくい小さな表示に崩れなくなった。'] },
+            { term: ['Mermaid のライブエディタ更新'], description: ['エディタがコードブロックを更新しても、描画済みの Mermaid 図が消えなくなった。'] },
+            { term: ['Overlay Notes Sidebar のリサイズ'], description: ['オーバーレイ Notes Sidebar のリサイズ中に、操作完了前に sidebar が閉じなくなった。'] },
+            { term: ['スマートタイポグラフィ'], description: ['三連ハイフン入力が em dash 変換経路に入らないようにした。水平線の挙動は専用テストで引き続き扱う。'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.0',
+      highlight: 'テーブルをスプレッドシートのように編集し、作業場をより安定させる。',
+      status: 'リリース済',
+      statusClass: 'released',
       theme: 'Markdown テーブルを専用のグリッドで編集できるようになった。パイプ記号やカーソル位置と格闘せず、表をスプレッドシートのように扱える。グリッドでは範囲選択、行・列操作、スプレッドシートからの貼り付け、並び替え、オートフィル、検索、一括書式設定に対応し、ノート本体は plain Markdown のまま保たれる。あわせて、列幅保持、リスト内コードブロックの貼り付け、複数タブ保存、Archive 閲覧まわりの静かな不具合も修正した。',
       sections: [
         {

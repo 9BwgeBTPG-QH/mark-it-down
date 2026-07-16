@@ -551,11 +551,11 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Mermaid',
-          body: 'All 19 diagram types — flowcharts, ER, mind maps, Gantt, and more. Click to enlarge, zoom 25–400% with Ctrl+scroll, fullscreen, SVG export',
+          body: 'All 19 diagram types — flowcharts, ER, mind maps, Gantt, and more. Diagrams render on first load in the live editor; click to enlarge, zoom 25–400% with Ctrl+scroll, fullscreen, SVG export',
         },
         {
           title: 'Math (LaTeX)',
-          body: ['Inline ', { code: '$...$' }, ', block ', { code: '$$...$$' }, '. Open in new tab, save as Retina 2x PNG'],
+          body: ['Inline ', { code: '$...$' }, ', block ', { code: '$$...$$' }, '. Math blocks render reliably in the live editor. Open in new tab, save as Retina 2x PNG'],
         },
         {
           title: 'Callouts',
@@ -786,7 +786,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Progressive Loading',
-          body: '20KB+ opens instantly — start writing while the rest loads silently',
+          body: '20KB+ opens instantly — start writing while the rest loads silently. Large notes prioritize visible rendering first',
         },
         {
           title: 'Smart Loading',
@@ -1340,11 +1340,11 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         { title: 'GitHub Flavored', body: 'テーブル、タスクリスト、シンタックスハイライト' },
         {
           title: 'Mermaid',
-          body: '全19種対応 — フローチャート、ER図、マインドマップ、ガントチャート等。クリックで拡大、Ctrl+スクロールで25〜400%ズーム、全画面表示、SVG保存',
+          body: '全19種対応 — フローチャート、ER図、マインドマップ、ガントチャート等。ライブエディタで初回表示から描画。クリックで拡大、Ctrl+スクロールで25〜400%ズーム、全画面表示、SVG保存',
         },
         {
           title: '数式 (LaTeX)',
-          body: ['インライン ', { code: '$...$' }, '、ブロック ', { code: '$$...$$' }, '。別タブで開いてRetina 2x PNGで保存'],
+          body: ['インライン ', { code: '$...$' }, '、ブロック ', { code: '$$...$$' }, '。ライブエディタ内で安定して描画。別タブで開いてRetina 2x PNGで保存'],
         },
         { title: 'コールアウト', body: 'NOTE、TIP、IMPORTANT、WARNING、CAUTION' },
         { title: '自動リンク化', body: 'URLとメールアドレスが自動でリンクに' },
@@ -1519,7 +1519,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       icon: '💾',
       items: [
         { title: '自動保存', body: '0.5秒デバウンス、保存ボタン不要' },
-        { title: '段階的読み込み', body: '20KB超でも一瞬で開く — 書き始めるまでの摩擦をゼロに' },
+        { title: '段階的読み込み', body: '20KB超でも一瞬で開く — 見えている範囲の描画を優先し、書き始めるまでの摩擦をゼロに' },
         { title: 'Smart Loading', body: '300KB+で選択ダイアログ表示、Archiveで高速読み取り専用表示' },
         { title: 'Chrome Storage', body: 'キャッシュクリアでも残る' },
         { title: 'インポート/エクスポート', body: '.md、.zip、Archiveピン留め' },
