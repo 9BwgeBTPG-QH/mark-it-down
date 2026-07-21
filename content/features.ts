@@ -238,6 +238,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           ],
         },
         {
+          title: 'Recoverable Clip Failures',
+          body: 'When clipping cannot finish, the captured preview path can stay available so you can retry instead of losing the content path',
+        },
+        {
           title: 'Learn More',
           body: 'See the Web Clipper page for the full walkthrough',
           link: { label: 'Web Clipper page', slug: 'clipper' },
@@ -321,7 +325,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Desktop Notifications',
-          body: 'Opt in from RSS settings to receive a desktop notification listing new article titles when a scheduled fetch finds fresh items. Content is generated locally — nothing sent externally',
+          body: 'Opt in from RSS settings to receive desktop notifications for new article titles and localized background failure notices. Content is generated locally — nothing sent externally',
         },
         {
           title: 'Cross-Device Read Sync',
@@ -782,7 +786,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       items: [
         {
           title: 'Auto-save',
-          body: '0.5s debounce, no save button needed',
+          body: '0.5s debounce, no save button needed. The saved-content reference advances only after storage succeeds, so retry remains meaningful after a failed save',
         },
         {
           title: 'Progressive Loading',
@@ -798,7 +802,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Import/Export',
-          body: '.md, .zip, Archive Pinned',
+          body: '.md, .zip, Archive Pinned. Multi-file and ZIP imports report how many files succeeded and failed',
         },
         {
           title: 'Export',
@@ -883,6 +887,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         {
           title: 'Git Fetch',
           body: 'Check remote without changing local',
+        },
+        {
+          title: 'Partial-Success Warnings',
+          body: 'Push and pull distinguish remote success from local reflection or config-sync warnings, so recoverable local issues do not look like total failures',
         },
         {
           title: 'History',
@@ -1046,6 +1054,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           ],
         },
         {
+          title: '復帰できるクリップ失敗',
+          body: 'クリップが完了できない場合も、取得済みpreview pathを残して、内容の経路を失わずに再試行できる',
+        },
+        {
           title: '詳しく見る',
           body: '詳しくはWeb Clipperのページへ。',
           link: { label: 'Web Clipperのページ', slug: 'clipper' },
@@ -1129,7 +1141,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'デスクトップ通知',
-          body: 'RSS設定でオプトインすると、定期取得で新着記事が見つかったときにタイトル一覧をローカル通知で表示。外部への送信なし',
+          body: 'RSS設定でオプトインすると、新着記事タイトルとローカライズ済みのバックグラウンド失敗通知をデスクトップ通知で表示。外部への送信なし',
         },
         {
           title: '既読状態のデバイス間同期',
@@ -1518,11 +1530,17 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       heading: '自動保存、300KB+対応',
       icon: '💾',
       items: [
-        { title: '自動保存', body: '0.5秒デバウンス、保存ボタン不要' },
+        {
+          title: '自動保存',
+          body: '0.5秒デバウンス、保存ボタン不要。保存済み基準はstorage成功後だけ更新されるため、保存失敗後のretryが意味を持つ',
+        },
         { title: '段階的読み込み', body: '20KB超でも一瞬で開く — 見えている範囲の描画を優先し、書き始めるまでの摩擦をゼロに' },
         { title: 'Smart Loading', body: '300KB+で選択ダイアログ表示、Archiveで高速読み取り専用表示' },
         { title: 'Chrome Storage', body: 'キャッシュクリアでも残る' },
-        { title: 'インポート/エクスポート', body: '.md、.zip、Archiveピン留め' },
+        {
+          title: 'インポート/エクスポート',
+          body: '.md、.zip、Archiveピン留め。複数ファイル/ZIP importは成功数と失敗数を表示する',
+        },
         {
           title: 'エクスポート',
           body: 'PDF（ページ番号・目次・用紙サイズカスタム）、DOCX（画像・Mermaid図・数式・シンタックスハイライト埋め込み）、PNG（2x Retina）、HTML（3テンプレート・Self-Contained）、EPUB（Mermaid・数式・コードハイライト含む電子書籍）、LaTeX（.tex、見出し→\\section等にマッピング） — Ctrl+Shift+E',
@@ -1584,6 +1602,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         { title: '選択的Push', body: 'ステージしたノートだけPush。ノート単位のlastPushedAtで変更追跡' },
         { title: 'Git Fetch', body: 'ローカル変更なしでリモート確認' },
+        {
+          title: 'partial success warning',
+          body: 'Push / Pull は remote success と local reflection / config-sync warning を分けて表示し、復帰できるlocal issueを全体失敗に見せない',
+        },
         { title: '履歴', body: '過去20件のコミット、差分ビュー' },
         { title: 'バージョン復元', body: 'ワンクリックで過去のバージョンに復元' },
       ],

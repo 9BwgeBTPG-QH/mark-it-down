@@ -94,12 +94,41 @@ export interface ChangelogVersion {
 export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   en: [
     {
-      version: 'v2.3.1',
-      highlight: 'More reliable rendering, calmer busy states, and smoother large notes.',
+      version: 'v2.3.2',
+      highlight: 'Clearer recovery, safer dialogs, and localized background notices.',
       status: 'Under Review',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'This release focuses on trust. Mark It Down already keeps your writing local; v2.3.2 makes failure, recovery, and dialog behavior clearer, so the app can explain what happened, what stayed safe, and what you can do next.',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['Failure recovery'], description: ['Startup load, autosave, Git sync, RSS, Web Clipper, import/export, editor initialization, Markdown paste, and runtime errors now use clearer state and recovery paths.'] },
+            { term: ['Accessible modal foundation'], description: ['Dialogs now share labelled semantics, focus trap, focus return, stacked modal priority, Escape handling, Enter confirmation guards, z-index tokens, and theme-safe panel backgrounds.'] },
+            { term: ['Aligned command surfaces'], description: ['Command Palette, Search, Paste as Markdown, Git filename help, Clip Preview, RSS/Git settings, conflict resolution, commit history, export presets, Repository Reader, and web subscription setup follow the same modal contract where applicable.'] },
+            { term: ['Contextual guidance'], description: ['Hints, Help, and the welcome note now point to Today Entry, Omnibox search, backup status, Smart Paste, Appearance, Link Context, Web Clipper, Read Aloud, paste mode, typography, and backup surfaces more directly.'] },
+            { term: ['Localized RSS notifications'], description: ['RSS auto-poll total and partial failure notifications now use Chrome i18n messages, including Japanese copy and placeholder-tested counts.'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['Global error noise'], description: ['Note switching with links no longer leaks Milkdown link tooltip teardown noise into a global error toast.'] },
+            { term: ['Autosave retry'], description: ['Autosave only advances its saved-content reference after storage succeeds, so retry remains meaningful after a failed save.'] },
+            { term: ['RSS and Git partial success'], description: ['Malformed RSS feeds are recorded as parse failures, and Git push/pull separates remote success from local reflection or config-sync warnings.'] },
+            { term: ['Import and clip recovery'], description: ['Multi-file and ZIP imports report success/failure counts, and Web Clipper failures can retain a retryable preview instead of losing the captured content path.'] },
+            { term: ['Dialog overlays'], description: ['Dialog overlays no longer depend on scattered hand-rolled z-index, backdrop, and keydown behavior.'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.1',
+      highlight: 'More reliable rendering, calmer busy states, and smoother large notes.',
+      status: 'Released',
+      statusClass: 'released',
       theme: 'This release makes the editor feel steadier under real writing conditions. Math and Mermaid code blocks render correctly on first load, large notes stay responsive while background rendering continues, and sync, save, import, and fetch states become easier to notice without adding noise.',
       sections: [
         {
@@ -1470,12 +1499,41 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   ],
   ja: [
     {
-      version: 'v2.3.1',
-      highlight: '描画を安定させ、処理中表示を静かにし、大容量ノートをより軽く扱えるようにする。',
+      version: 'v2.3.2',
+      highlight: '復帰の分かりやすさ、安全なダイアログ、日本語通知の強化。',
       status: '審査中',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: '信頼性を高めるリリース。Mark It Down はすでにローカルに書く道具だが、v2.3.2 では失敗、復帰、ダイアログ操作をより分かりやすくし、何が起きたか、何が安全か、次に何をすればよいかを示す。',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['失敗時の復帰導線'], description: ['起動、auto-save、Git同期、RSS、Web Clipper、import/export、editor initialization、Markdown paste、runtime errorで、状態と復帰方法をより明確に表示する。'] },
+            { term: ['アクセシブルなmodal foundation'], description: ['ダイアログはlabelled semantics、focus trap、focus return、stacked modal priority、Escape処理、Enter confirmation guard、z-index token、theme-safe panel backgroundを共通化した。'] },
+            { term: ['コマンド系surfaceの統一'], description: ['Command Palette、Search、Paste as Markdown、Git filename help、Clip Preview、RSS/Git settings、conflict resolution、commit history、export presets、Repository Reader、web subscription setupが、適用可能な範囲で同じmodal contractに揃った。'] },
+            { term: ['文脈に近いガイダンス'], description: ['Hints、Help、welcome note が Today Entry、Omnibox検索、backup status、Smart Paste、Appearance、Link Context、Web Clipper、Read Aloud、paste mode、typography、backup surfaces へ直接案内する。'] },
+            { term: ['RSS通知のローカライズ'], description: ['RSS auto-poll の全体失敗・一部失敗通知を Chrome i18n message 化し、日本語文言と件数placeholderを固定した。'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['global error noise'], description: ['リンク付きノートの切り替えで、Milkdown link tooltip の teardown noise がglobal error toastへ出なくなった。'] },
+            { term: ['auto-save retry'], description: ['auto-save は storage 成功後だけ saved-content reference を更新するため、保存失敗後の retry が意味を持つ。'] },
+            { term: ['RSSとGitのpartial success'], description: ['壊れたRSS feedはparse failureとして記録され、Git push/pullはremote successとlocal reflection/config-sync warningを分けて表示する。'] },
+            { term: ['importとclipの復帰'], description: ['複数ファイル/ZIP importは成功数と失敗数を表示し、Web Clipper失敗時もretry可能なpreviewを残せる。'] },
+            { term: ['dialog overlay'], description: ['ダイアログoverlayは、個別実装されたz-index、backdrop、keydown処理に依存しにくくなった。'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.1',
+      highlight: '描画を安定させ、処理中表示を静かにし、大容量ノートをより軽く扱えるようにする。',
+      status: 'リリース済',
+      statusClass: 'released',
       theme: '実際に書いている最中の安定感を上げるリリース。数式と Mermaid のコードブロックは初回表示から正しく描画され、大容量ノートは裏側の描画を続けながら操作しやすくなった。同期、保存、インポート、取得中の状態も、邪魔を増やさず見分けやすくしている。',
       sections: [
         {
