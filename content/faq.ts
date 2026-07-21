@@ -79,8 +79,9 @@ export interface FaqCategory {
   items: FaqItem[];
 }
 
-// Q&A content lifted verbatim from docs/faq.html / docs/faq-ja.html's 9
-// category groups (25 questions total: 3+2+4+1+2+3+1+4+5). Category headings
+// Q&A content originated in docs/faq.html / docs/faq-ja.html's 9 category
+// groups, then expanded with a bilingual Privacy & Ownership group.
+// The rendered FAQ now has 10 category groups and 33 questions. Category headings
 // keep the old markup's literal emoji prefix (e.g. "🔄 Comparison") — the
 // emoji is part of the `.faq-category-header` text content in the old HTML,
 // not CSS-injected. The old markup wraps every category header and every
@@ -132,9 +133,10 @@ export const faqCategories: Record<Lang, FaqCategory[]> = {
               items: [
                 [{ strong: 'Browser cache cleared' }, ' → Data is preserved ✓'],
                 [{ strong: 'Extension uninstalled' }, ' → Data is deleted ⚠️'],
+                [{ strong: 'Chrome profile deleted or lost' }, ' → Local data may be lost ⚠️'],
               ],
             },
-            { type: 'paragraph', runs: [{ em: 'Tip: Use Git sync for external backup before uninstalling.' }] },
+            { type: 'paragraph', runs: [{ em: 'Tip: Export your notes or use Git sync before uninstalling. Mark It Down has no server copy and cannot recover deleted local data.' }] },
           ],
         },
         {
@@ -160,10 +162,84 @@ export const faqCategories: Record<Lang, FaqCategory[]> = {
               items: [
                 ['Web Clipper (needs a live page to clip)'],
                 ['AI Chat Extraction (Claude, ChatGPT, Grok, Gemini)'],
+                ['RSS Reader and Repository Reader (connect to the feed, article, or GitHub source you open)'],
                 ['Git sync (Push, Pull, Fetch)'],
                 ['HTML export (non-self-contained) and math zoom — CDN for KaTeX CSS'],
               ],
             },
+          ],
+        },
+      ],
+    },
+    {
+      heading: '🔐 Privacy & Ownership',
+      items: [
+        {
+          question: 'Is Mark It Down open source?',
+          blocks: [
+            { type: 'paragraph', runs: ['No. Mark It Down is proprietary software.'] },
+            { type: 'paragraph', runs: [{ strong: 'Local-first is a data-path promise, not a substitute for source inspectability.' }, ' Notes are stored in your Chrome profile by default, there is no Mark It Down account or backend, and export paths remain available.'] },
+            { type: 'paragraph', runs: ['If auditable source is a requirement for your notes workflow, Mark It Down may not be the right fit.'] },
+          ],
+        },
+        {
+          question: 'What does “local-first” mean?',
+          blocks: [
+            { type: 'paragraph', runs: ['Writing, autosave, and note management use ', { code: 'chrome.storage.local' }, ' and do not require an account or a Mark It Down server.'] },
+            { type: 'paragraph', runs: ['Network features are explicit exceptions: Web Clipper, AI chat extraction, RSS, Repository Reader, URL Preview, and Git communicate directly with the site or provider you ask them to use. Nothing is proxied through a Mark It Down backend.'] },
+          ],
+        },
+        {
+          question: 'Does the extension collect analytics or send my notes and clips to Mark It Down?',
+          blocks: [
+            { type: 'paragraph', runs: [{ strong: 'No.' }, ' The Chrome extension includes no analytics, advertising, or third-party error-reporting service.'] },
+            { type: 'paragraph', runs: ['Notes and clipped Markdown are stored locally. When you use a network feature, your browser communicates with the source site or configured Git provider; the content is not sent to Mark It Down.'] },
+          ],
+        },
+        {
+          question: 'Why does the extension request these Chrome permissions?',
+          blocks: [
+            { type: 'paragraph', runs: ['Each permission maps to a visible feature:'] },
+            {
+              type: 'list',
+              ordered: false,
+              items: [
+                [{ code: 'storage / unlimitedStorage' }, ' — local notes and settings'],
+                [{ code: 'sidePanel' }, ' — the editor beside the current page'],
+                [{ code: 'contextMenus / activeTab / scripting' }, ' — clipping the page you explicitly choose'],
+                [{ code: 'alarms / notifications' }, ' — opt-in RSS polling and new-item alerts'],
+                [{ code: 'api.github.com / gitlab.com' }, ' — optional Git and repository operations'],
+              ],
+            },
+            { type: 'paragraph', runs: ['The manifest also declares optional host access. RSS and clipping normally request one origin at a time. Enabling URL Preview separately asks for broad site access so link metadata can be fetched; Chrome shows that request and you can decline it.'] },
+          ],
+        },
+        {
+          question: 'Are my notes and Git token encrypted?',
+          blocks: [
+            { type: 'paragraph', runs: [{ strong: 'Notes are not encrypted by Mark It Down.' }, ' They are stored in Chrome extension storage inside your browser profile. Use an encrypted vault designed for that threat model if application-level encryption is required.'] },
+            { type: 'paragraph', runs: ['A saved Git token is encrypted locally with AES-256-GCM and PBKDF2-derived key material. Because the encryption seed lives in the same Chrome profile, this reduces casual plaintext exposure but does not protect a compromised browser profile or extension context. Use a fine-grained, least-privilege token.'] },
+          ],
+        },
+        {
+          question: 'Does Mark It Down sync automatically across devices?',
+          blocks: [
+            { type: 'paragraph', runs: [{ strong: 'No.' }, ' There is no account-backed or implicit cross-device sync.'] },
+            { type: 'paragraph', runs: ['Git Push and Pull are explicit actions. That keeps remote changes intentional, but it also means you control the backup and synchronization schedule.'] },
+          ],
+        },
+        {
+          question: 'Can Mark It Down edit a folder of local .md files directly?',
+          blocks: [
+            { type: 'paragraph', runs: [{ strong: 'Not in the current version.' }, ' The working copy lives in Chrome extension storage rather than a live filesystem folder.'] },
+            { type: 'paragraph', runs: ['Use Markdown export or Git sync to move notes into a folder or repository you own. If direct filesystem editing is essential, a file-based editor such as VS Code or Obsidian is a better fit.'] },
+          ],
+        },
+        {
+          question: 'Is Mark It Down free? Does it require an account or subscription?',
+          blocks: [
+            { type: 'paragraph', runs: [{ strong: 'Mark It Down is free to use today.' }, ' It does not require an account or subscription.'] },
+            { type: 'paragraph', runs: ['We are not promising that every future feature will always be free. Whatever the maintenance model becomes, the exit path remains: export your notes or keep them in a Git repository you control.'] },
           ],
         },
       ],
@@ -489,9 +565,10 @@ export const faqCategories: Record<Lang, FaqCategory[]> = {
               items: [
                 [{ strong: 'ブラウザキャッシュ削除' }, ' → データは保持 ✓'],
                 [{ strong: '拡張機能アンインストール' }, ' → データは消去 ⚠️'],
+                [{ strong: 'Chromeプロファイルの削除・紛失' }, ' → ローカルデータを失う可能性あり ⚠️'],
               ],
             },
-            { type: 'paragraph', runs: [{ em: 'ヒント: アンインストール前にGit同期で外部バックアップを取っておくと安心です。' }] },
+            { type: 'paragraph', runs: [{ em: 'ヒント: アンインストール前にノートを書き出すか、Git同期でバックアップしてください。Mark It Down側にサーバーコピーはなく、削除されたローカルデータは復元できません。' }] },
           ],
         },
         {
@@ -517,10 +594,84 @@ export const faqCategories: Record<Lang, FaqCategory[]> = {
               items: [
                 ['Web Clipper（対象Webページへのアクセスが前提）'],
                 ['AI会話抽出（Claude、ChatGPT、Grok、Gemini）'],
+                ['RSS Reader・Repository Reader（開いたフィード、記事、GitHubの取得元へ接続）'],
                 ['Git同期（Push、Pull、Fetch）'],
                 ['HTMLエクスポート（非Self-Contained）・数式の拡大表示 — KaTeX CSSのCDN参照'],
               ],
             },
+          ],
+        },
+      ],
+    },
+    {
+      heading: '🔐 プライバシー & データ所有',
+      items: [
+        {
+          question: 'Mark It Downはオープンソースですか？',
+          blocks: [
+            { type: 'paragraph', runs: ['いいえ。Mark It Downはプロプライエタリソフトウェアです。'] },
+            { type: 'paragraph', runs: [{ strong: 'ローカルファーストはデータ経路の約束であり、ソースを検査できることの代わりではありません。' }, ' ノートは標準でChromeプロファイル内に保存され、Mark It Downのアカウントやバックエンドはなく、書き出し経路も用意しています。'] },
+            { type: 'paragraph', runs: ['ソースを監査できることがノート環境の必須条件なら、Mark It Downは適さない可能性があります。'] },
+          ],
+        },
+        {
+          question: '「ローカルファースト」とはどういう意味ですか？',
+          blocks: [
+            { type: 'paragraph', runs: ['執筆、オートセーブ、ノート管理は', { code: 'chrome.storage.local' }, 'を使用し、アカウントやMark It Downのサーバーを必要としません。'] },
+            { type: 'paragraph', runs: ['Web Clipper、AI会話抽出、RSS、Repository Reader、URL Preview、Gitは明示的な例外で、ユーザーが指定したサイトやプロバイダーと直接通信します。Mark It Downのバックエンドを経由することはありません。'] },
+          ],
+        },
+        {
+          question: '拡張機能はアクセス解析を行ったり、ノートやクリップをMark It Downへ送信したりしますか？',
+          blocks: [
+            { type: 'paragraph', runs: [{ strong: 'いいえ。' }, ' Chrome拡張機能には、アクセス解析、広告、サードパーティのエラー送信サービスを組み込んでいません。'] },
+            { type: 'paragraph', runs: ['ノートと変換済みMarkdownはローカルに保存されます。ネットワーク機能を使った場合は、ブラウザが取得元サイトまたは設定したGitプロバイダーと通信しますが、コンテンツがMark It Downへ送られることはありません。'] },
+          ],
+        },
+        {
+          question: 'なぜこれらのChrome権限が必要なのですか？',
+          blocks: [
+            { type: 'paragraph', runs: ['各権限は、ユーザーが確認できる機能に対応しています。'] },
+            {
+              type: 'list',
+              ordered: false,
+              items: [
+                [{ code: 'storage / unlimitedStorage' }, ' — ローカルのノートと設定'],
+                [{ code: 'sidePanel' }, ' — 閲覧中ページの横に表示するエディタ'],
+                [{ code: 'contextMenus / activeTab / scripting' }, ' — ユーザーが明示的に選んだページのクリップ'],
+                [{ code: 'alarms / notifications' }, ' — オプトインのRSS定期取得と新着通知'],
+                [{ code: 'api.github.com / gitlab.com' }, ' — 任意のGit・リポジトリ操作'],
+              ],
+            },
+            { type: 'paragraph', runs: ['manifestには任意のホストアクセスも宣言されています。RSSとクリップは通常、オリジン単位で権限を求めます。URL Previewを有効にする場合だけ、リンク情報を取得するための広範なサイトアクセスを別途要求します。Chromeの確認画面で拒否できます。'] },
+          ],
+        },
+        {
+          question: 'ノートとGitトークンは暗号化されていますか？',
+          blocks: [
+            { type: 'paragraph', runs: [{ strong: 'ノートはMark It Down独自の暗号化を行っていません。' }, ' Chromeプロファイル内の拡張機能ストレージに保存されます。アプリケーションレベルの暗号化が必須なら、その脅威モデル向けの暗号化vaultを使用してください。'] },
+            { type: 'paragraph', runs: ['保存したGitトークンは、AES-256-GCMとPBKDF2で導出した鍵素材を使ってローカル暗号化します。ただし暗号化seedも同じChromeプロファイルにあるため、平文の露出を抑えるものであり、侵害されたブラウザプロファイルや拡張機能コンテキストを防ぐものではありません。権限を絞ったfine-grained tokenを推奨します。'] },
+          ],
+        },
+        {
+          question: '複数デバイスへ自動同期されますか？',
+          blocks: [
+            { type: 'paragraph', runs: [{ strong: 'いいえ。' }, ' アカウントによる同期や暗黙のクロスデバイス同期はありません。'] },
+            { type: 'paragraph', runs: ['GitのPushとPullは明示的な操作です。リモートの変更を意図的に保てる一方、バックアップと同期のタイミングはユーザーが管理します。'] },
+          ],
+        },
+        {
+          question: 'ローカルフォルダの.mdファイルを直接編集できますか？',
+          blocks: [
+            { type: 'paragraph', runs: [{ strong: '現行バージョンではできません。' }, ' 作業中のデータは、リアルタイムのファイルシステムフォルダではなくChrome拡張機能ストレージに保存されます。'] },
+            { type: 'paragraph', runs: ['Markdown書き出しまたはGit同期を使って、自分が所有するフォルダやリポジトリへ移動できます。ファイルシステム上の直接編集が必須なら、VS CodeやObsidianなどのファイルベースエディタが適しています。'] },
+          ],
+        },
+        {
+          question: 'Mark It Downは無料ですか？ アカウントやサブスクリプションは必要ですか？',
+          blocks: [
+            { type: 'paragraph', runs: [{ strong: '現在、Mark It Downは無料で利用できます。' }, ' アカウントやサブスクリプションは不要です。'] },
+            { type: 'paragraph', runs: ['将来のすべての機能が永続的に無料であるとは約束していません。今後の維持方法にかかわらず、ノートを書き出すか、自分で管理するGitリポジトリへ保存する出口は維持します。'] },
           ],
         },
       ],
@@ -845,15 +996,10 @@ export const faqCta: Record<Lang, FaqCtaCopy> = {
   },
 };
 
-// FAQPage JSON-LD, ported verbatim from docs/faq.html / docs/faq-ja.html's
-// <script type="application/ld+json"> block. The old page's own JSON-LD has
-// only 23 Question entries while the rendered body has 25 (the last 2 items
-// in the Design Philosophy category — the RSS notification questions — are
-// present in the body but absent from this schema in both languages). This
-// is a pre-existing inconsistency in the old production site itself, not
-// introduced by this migration; it is preserved verbatim (23 entries) rather
-// than "fixed" by expanding it to 25, per the verbatim-port requirement (see
-// final report).
+// FAQPage JSON-LD. Keep this explicit schema in question-for-question parity
+// with faqCategories above. The Trust & Ownership expansion also closes the
+// old production gap where the two RSS questions were rendered but omitted
+// from structured data: both languages now expose all 33 visible questions.
 export const faqJsonLd: Record<Lang, Record<string, unknown>> = {
   en: {
     '@context': 'https://schema.org',
@@ -1029,7 +1175,7 @@ export const faqJsonLd: Record<Lang, Record<string, unknown>> = {
       },
       {
         '@type': 'Question',
-        name: "What does 'intentional commits' mean for Git sync?",
+        name: 'What does "intentional commits" mean for Git sync?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Auto-sync tools (like Google Drive or iCloud) sync every change automatically. Mark It Down auto-saves locally every second — but pushing to Git is a deliberate action. You can select specific notes to push rather than pushing everything at once. The idea is to tidy up first, then commit. Your remote history stays readable and meaningful.',
@@ -1041,6 +1187,86 @@ export const faqJsonLd: Record<Lang, Record<string, unknown>> = {
         acceptedAnswer: {
           '@type': 'Answer',
           text: "By design. Mark It Down is a writing tool, not a generating tool. The philosophy is 'digestion' (咀嚼) — you take AI-generated output from ChatGPT, Claude, Gemini, or wherever, paste it in, and rewrite it in your own words. The editor renders AI output perfectly (LaTeX math, Mermaid diagrams, code blocks, GFM tables), but it never generates content for you. The thinking happens in your head, not in the tool.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I get notified when new RSS articles arrive?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Open RSS settings and enable Desktop notifications and Scheduled refresh. Notifications are sent when a background fetch finds new items. If they do not appear, check Chrome's notification permission for the extension and your operating system's Chrome notification settings.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How often does automatic RSS polling run?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Set the interval in RSS settings > Polling interval; the minimum is 30 minutes. Chrome's alarm API runs polling while Chrome is open even if Mark It Down tabs are closed. Disabling scheduled refresh cancels the alarm, and enabling it registers the alarm again.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is Mark It Down open source?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. Mark It Down is proprietary software. Local-first is a data-path promise, not a substitute for source inspectability: notes are stored in your Chrome profile by default, there is no Mark It Down account or backend, and export paths remain available. If auditable source is a requirement, Mark It Down may not be the right fit.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What does “local-first” mean?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Writing, autosave, and note management use chrome.storage.local and do not require an account or a Mark It Down server. Web Clipper, AI chat extraction, RSS, Repository Reader, URL Preview, and Git are explicit network exceptions that communicate directly with the site or provider you ask them to use. Nothing is proxied through a Mark It Down backend.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does the extension collect analytics or send my notes and clips to Mark It Down?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. The Chrome extension includes no analytics, advertising, or third-party error-reporting service. Notes and clipped Markdown are stored locally. Network features communicate with the source site or configured Git provider; the content is not sent to Mark It Down.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Why does the extension request these Chrome permissions?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Storage and unlimitedStorage keep notes locally; sidePanel provides the editor beside the page; contextMenus, activeTab, and scripting support explicit clipping; alarms and notifications support opt-in RSS; GitHub and GitLab access supports optional repository operations. RSS and clipping normally request one origin at a time. URL Preview separately asks for broad optional site access, which Chrome shows and you can decline.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Are my notes and Git token encrypted?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Notes are not encrypted by Mark It Down; they are stored in Chrome extension storage inside your browser profile. A saved Git token is encrypted locally with AES-256-GCM and PBKDF2-derived key material. Because the encryption seed lives in the same Chrome profile, this reduces casual plaintext exposure but does not protect a compromised browser profile or extension context.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Mark It Down sync automatically across devices?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. There is no account-backed or implicit cross-device sync. Git Push and Pull are explicit actions, so you control the backup and synchronization schedule.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can Mark It Down edit a folder of local .md files directly?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Not in the current version. The working copy lives in Chrome extension storage rather than a live filesystem folder. Use Markdown export or Git sync to move notes into a folder or repository you own.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is Mark It Down free? Does it require an account or subscription?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Mark It Down is free to use today and does not require an account or subscription. We are not promising that every future feature will always be free. Whatever the maintenance model becomes, you can export your notes or keep them in a Git repository you control.',
         },
       },
     ],
@@ -1231,6 +1457,86 @@ export const faqJsonLd: Record<Lang, Record<string, unknown>> = {
         acceptedAnswer: {
           '@type': 'Answer',
           text: '意図的な設計です。Mark It Downは書くためのツールであり、生成するツールではありません。思想は「咀嚼」 — ChatGPT、Claude、Geminiなどから生成されたAI出力を貼り付けて、自分の言葉で書き直します。エディタはAI出力を完璧にレンダリングしますが（LaTeX数式、Mermaidダイアグラム、構文ハイライト付きコードブロック、GFMテーブル）、コンテンツの生成は一切しません。思考はツールの中ではなく、あなたの頭の中で起きるものです。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'RSS新着記事の通知を受け取るには？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'RSS設定でデスクトップ通知と定期取得を有効にします。バックグラウンド取得で新着が見つかったときに通知されます。届かない場合は、Chromeの拡張機能通知権限とOS側のChrome通知設定を確認してください。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'RSS自動取得はどのくらいの頻度で動きますか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'RSS設定 > 取得間隔で設定し、最小間隔は30分です。Chromeが起動していれば、Mark It Downのタブを閉じていてもChromeのアラームAPIで取得します。定期取得を無効にするとアラームは解除され、再度有効にすると登録されます。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Mark It Downはオープンソースですか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'いいえ。Mark It Downはプロプライエタリソフトウェアです。ローカルファーストはデータ経路の約束であり、ソースを検査できることの代わりではありません。ノートは標準でChromeプロファイル内に保存され、Mark It Downのアカウントやバックエンドはなく、書き出し経路も用意しています。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '「ローカルファースト」とはどういう意味ですか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '執筆、オートセーブ、ノート管理はchrome.storage.localを使用し、アカウントやMark It Downのサーバーを必要としません。Web Clipper、AI会話抽出、RSS、Repository Reader、URL Preview、Gitは明示的なネットワーク例外で、指定したサイトやプロバイダーと直接通信します。Mark It Downのバックエンドは経由しません。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '拡張機能はアクセス解析を行ったり、ノートやクリップをMark It Downへ送信したりしますか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'いいえ。Chrome拡張機能にはアクセス解析、広告、サードパーティのエラー送信サービスを組み込んでいません。ノートと変換済みMarkdownはローカルに保存されます。ネットワーク機能は取得元サイトまたは設定したGitプロバイダーと通信しますが、コンテンツがMark It Downへ送られることはありません。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'なぜこれらのChrome権限が必要なのですか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'storageとunlimitedStorageはローカル保存、sidePanelはページ横のエディタ、contextMenus・activeTab・scriptingは明示的なクリップ、alarmsとnotificationsはオプトインのRSS、GitHubとGitLabへのアクセスは任意のリポジトリ操作に使用します。RSSとクリップは通常オリジン単位で権限を求めます。URL Previewだけは広範な任意サイトアクセスを別途求め、Chromeの確認画面で拒否できます。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'ノートとGitトークンは暗号化されていますか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'ノートはMark It Down独自の暗号化を行わず、Chromeプロファイル内の拡張機能ストレージに保存します。保存したGitトークンはAES-256-GCMとPBKDF2で導出した鍵素材を使ってローカル暗号化します。暗号化seedも同じChromeプロファイルにあるため、平文の露出を抑えるものであり、侵害されたプロファイルを防ぐものではありません。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '複数デバイスへ自動同期されますか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'いいえ。アカウントによる同期や暗黙のクロスデバイス同期はありません。GitのPushとPullは明示的な操作で、バックアップと同期のタイミングはユーザーが管理します。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'ローカルフォルダの.mdファイルを直接編集できますか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '現行バージョンではできません。作業中のデータは、リアルタイムのファイルシステムフォルダではなくChrome拡張機能ストレージに保存されます。Markdown書き出しまたはGit同期で、自分が所有するフォルダやリポジトリへ移動できます。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Mark It Downは無料ですか？ アカウントやサブスクリプションは必要ですか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '現在、Mark It Downは無料で利用でき、アカウントやサブスクリプションは不要です。将来のすべての機能が永続的に無料であるとは約束していません。今後の維持方法にかかわらず、ノートを書き出すか、自分で管理するGitリポジトリへ保存できます。',
         },
       },
     ],

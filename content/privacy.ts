@@ -31,7 +31,7 @@ export const privacyContent: Record<Lang, PrivacyCopy> = {
     description:
       "Privacy policy for Mark It Down: local storage, no account, Web Clipper permissions, RSS feeds, optional Git sync, and Chrome extension data handling.",
     h1: 'Privacy for a local-first Markdown editor',
-    lastUpdated: 'Last Updated: May 2026 (v2.2.2)',
+    lastUpdated: 'Last Updated: July 2026 (v2.3.2)',
   },
   ja: {
     lang: 'ja',
@@ -39,7 +39,7 @@ export const privacyContent: Record<Lang, PrivacyCopy> = {
     description:
       'Mark It Downのプライバシーポリシー。ローカル保存、アカウント不要、Web Clipper権限、RSSフィード、任意のGit同期、Chrome拡張のデータ扱い。',
     h1: 'ローカルファーストMarkdownエディタのプライバシー',
-    lastUpdated: '最終更新日: 2026年5月（v2.2.2）',
+    lastUpdated: '最終更新日: 2026年7月（v2.3.2）',
   },
 };
 
@@ -83,7 +83,7 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
         {
           type: 'paragraph',
           runs: [
-            "Mark It Down is a Chrome extension that provides a WYSIWYG Markdown note-taking experience in your new tab and side panel. Starting with v2.0.2, it also includes a Web Clipper that lets you save any web page or AI chat output as Markdown directly into your notes. As of v2.2.0, the extension also lets you subscribe to user-registered RSS feeds and uses a per-origin dynamic host permission flow so you can grant or revoke access to clip targets and feed sources individually. v2.2.2 adds opt-in background polling and desktop notifications for new RSS articles. This privacy policy explains how we handle your data.",
+            "Mark It Down is a Chrome extension that provides a WYSIWYG Markdown note-taking experience in your new tab and side panel. As of v2.3.2, its optional network features include Web Clipper, AI chat extraction, RSS, Repository Reader, URL Preview, and Git synchronization. These features connect directly to the source or provider you choose; Mark It Down does not operate an account system or product backend. This privacy policy explains what stays local, what communicates externally, and when Chrome asks for permission.",
           ],
         },
       ],
@@ -92,11 +92,11 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
       id: 'data-collection',
       heading: 'Data Collection',
       blocks: [
-        { type: 'paragraph', runs: [{ strong: 'Mark It Down does NOT collect, transmit, or share any personal data.' }] },
+        { type: 'paragraph', runs: [{ strong: 'Mark It Down does not collect, receive, sell, or share your personal data with us.' }] },
         {
           type: 'paragraph',
           runs: [
-            "All your notes and settings are stored locally in your browser using Chrome's storage API. We do not have servers and do not collect any information about you or your usage.",
+            "All your notes and settings are stored locally in your browser using Chrome's storage API. The extension includes no analytics, advertising, or third-party error-reporting service. When you use an optional network feature, your browser communicates directly with the source site or configured provider — not with a Mark It Down server.",
           ],
         },
       ],
@@ -111,10 +111,11 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
           rows: [
             ['Notes', 'Local (chrome.storage.local)', 'No*'],
             ['Settings', 'Local (chrome.storage.local)', 'No'],
-            ['Git Token', 'Local (encrypted)', 'No'],
+            ['Git Token', 'Local (encrypted)', 'GitHub / GitLab only during authenticated requests'],
+            ['RSS / clipped / repository content', 'Local after retrieval', 'Retrieved directly from the source you request'],
           ],
         },
-        { type: 'note', text: '*Unless you explicitly enable Git synchronization' },
+        { type: 'note', text: '*Note content is transmitted only when you explicitly use Git synchronization. Other network features retrieve content from the source named in the feature.' },
       ],
     },
     {
@@ -172,8 +173,9 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
               runs: [
                 ": When you register a feed URL, Chrome prompts you to grant access to that feed's origin only (e.g. ",
                 { code: 'https://example.com' },
-                '). The extension never requests broad permissions like ',
+                '). The manifest declares ',
                 { code: '<all_urls>' },
+                ' as the optional capability ceiling, but RSS requests only the specific origin pattern you register',
               ],
             },
             {
@@ -224,6 +226,27 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
       ],
     },
     {
+      id: 'repository-reader',
+      heading: 'Repository Reader (Added in v2.2.10)',
+      blocks: [
+        {
+          type: 'paragraph',
+          runs: [
+            'Repository Reader opens a GitHub Markdown repository only after you enter or select a repository URL. Your browser communicates directly with the GitHub API; repository content is not proxied through a Mark It Down server.',
+          ],
+        },
+        {
+          type: 'list',
+          items: [
+            { label: 'Public repositories', runs: [': Read without a token through the GitHub API'] },
+            { label: 'Private repositories', runs: [': Use your saved GitHub token only when you explicitly enable the token option for Repository Reader'] },
+            { label: 'Local state', runs: [': Reader history, pinned repositories, and imported notes stay in Chrome extension storage'] },
+            { label: 'Explicit import', runs: [': Reading a repository does not add its files to your notes until you choose to import one'] },
+          ],
+        },
+      ],
+    },
+    {
       id: 'git-sync',
       heading: 'Git Synchronization (Optional)',
       blocks: [
@@ -235,6 +258,7 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
             { label: 'Encryption', runs: [': Your token is encrypted using AES-256-GCM with PBKDF2 key derivation'] },
             { label: 'Storage', runs: [": The encrypted token is stored only in your browser's local storage"] },
             { label: 'No transmission to us', runs: [": Your token is never sent to our servers (we don't have any)"] },
+            { label: 'Scope', runs: [': The encryption seed is stored in the same Chrome profile. This reduces casual plaintext exposure but does not protect a compromised browser profile or extension context'] },
           ],
         },
         { type: 'subheading', text: 'Data Transmission' },
@@ -242,7 +266,7 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
           type: 'list',
           items: [
             { label: 'Direct Communication', runs: [': Notes are transmitted directly between your browser and your Git repository'] },
-            { label: 'No Intermediary', runs: [': No data passes through any third-party servers'] },
+            { label: 'No Mark It Down Intermediary', runs: [': Data goes to the GitHub or GitLab service you configured and does not pass through a server operated by us'] },
             { label: 'Your Control', runs: [': You can disconnect Git synchronization at any time'] },
           ],
         },
@@ -272,7 +296,15 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
             ],
             [
               'optional_host_permissions (http/https)',
-              'Per-origin dynamic access for RSS feed URLs and Web Clipper article URLs. Granted only when you register a feed or clip a new origin, scoped to that single origin, and revocable at any time. The extension never pre-grants broad host access',
+              'The manifest declares <all_urls> as the optional capability ceiling. RSS and Web Clipper normally request only the origin you register or clip, and each grant can be revoked',
+            ],
+            [
+              'optional <all_urls> grant for URL Preview',
+              'Requested only when you enable URL Preview, because link metadata can come from any site. Chrome shows a separate broad-access prompt; URL Preview remains off if you decline',
+            ],
+            [
+              'host_permissions (api.github.com / gitlab.com)',
+              'Direct Git synchronization and GitHub Repository Reader requests. No Mark It Down server is used as an intermediary',
             ],
           ],
         },
@@ -296,13 +328,15 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
           type: 'list',
           items: [
             { label: 'GitHub / GitLab', runs: [' (only if you enable Git synchronization) — destination for note sync'] },
+            { label: 'GitHub API', runs: [' (only when you use Repository Reader) — source of repository metadata and Markdown files'] },
             { label: 'RSS feed publishers you register', runs: [' (v2.2.0+) — source of feed XML'] },
             { label: 'Hosts of articles you clip with Web Clipper', runs: [' — source of article HTML'] },
+            { label: 'Hosts of links shown by URL Preview', runs: [' (only if you enable URL Preview) — source of link metadata'] },
           ],
         },
         {
           type: 'paragraph',
-          runs: ['All three are limited to destinations you explicitly registered or acted upon. The extension never autonomously contacts origins you have not authorized.'],
+          runs: ['These services are limited to destinations you registered, opened, clipped, or enabled through an optional feature. The extension does not send their content to a server operated by Mark It Down.'],
         },
       ],
     },
@@ -339,7 +373,7 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
       blocks: [
         {
           type: 'paragraph',
-          runs: [{ strong: "Your data is yours. We don't collect it, we don't see it, we don't sell it. Everything stays on your device." }],
+          runs: [{ strong: "Your notes stay on your device by default. Optional network features communicate directly with the source or provider you choose; nothing passes through a Mark It Down backend." }],
         },
       ],
     },
@@ -352,7 +386,7 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
         {
           type: 'paragraph',
           runs: [
-            'Mark It Downは、新しいタブとサイドパネルでMarkdownメモ体験を提供するChrome拡張機能です。v2.0.2より、右クリックメニューからWebページやテキスト選択をMarkdownとして取り込む「Web Clipper」機能が追加されました。v2.2.0では、ユーザーが登録したRSSフィードからの記事取得機能と、Web Clipper / RSSフィード対象URLへのアクセス権限をユーザーが個別に許可・拒否できる動的ホスト権限の仕組みが追加されています。v2.2.2では、RSS設定でオプトインすることでバックグラウンド定期取得とデスクトップ通知が利用できます。このプライバシーポリシーでは、お客様のデータの取り扱いについて説明します。',
+            'Mark It Downは、新しいタブとサイドパネルでWYSIWYG Markdownメモ体験を提供するChrome拡張機能です。v2.3.2時点の任意ネットワーク機能には、Web Clipper、AI会話抽出、RSS、Repository Reader、URL Preview、Git同期があります。これらはユーザーが選んだ取得元やプロバイダーと直接通信し、Mark It Downはアカウントシステムや製品バックエンドを運営していません。このプライバシーポリシーでは、ローカルに残るデータ、外部通信が発生する場面、Chromeが権限を求めるタイミングを説明します。',
           ],
         },
       ],
@@ -418,9 +452,9 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
               runs: [
                 ': フィードURLを登録するとき、Chromeの権限ダイアログが表示され、当該フィードのオリジン（例: ',
                 { code: 'https://example.com' },
-                '）に対してのみアクセス権限を付与します。',
+                '）に対してのみアクセス権限を付与します。manifestは任意権限の上限として',
                 { code: '<all_urls>' },
-                'のような広範な権限は要求しません',
+                'を宣言していますが、RSSが実際に要求するのは登録したオリジンのパターンだけです',
               ],
             },
             {
@@ -471,14 +505,35 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
       ],
     },
     {
-      id: 'data-collection',
-      heading: 'データ収集について',
+      id: 'repository-reader',
+      heading: 'Repository Reader（v2.2.10で追加）',
       blocks: [
-        { type: 'paragraph', runs: [{ strong: 'Mark It Downは、個人データを収集、送信、共有しません。' }] },
         {
           type: 'paragraph',
           runs: [
-            'すべてのノートと設定は、ChromeのストレージAPIを使用してブラウザ内にローカル保存されます。私たちはサーバーを持たず、お客様やご利用状況に関する情報を一切収集しません。',
+            'Repository Readerは、ユーザーがリポジトリURLを入力または選択した場合にのみ、GitHub上のMarkdownリポジトリを開きます。ブラウザはGitHub APIと直接通信し、リポジトリ内容がMark It Downのサーバーを経由することはありません。',
+          ],
+        },
+        {
+          type: 'list',
+          items: [
+            { label: '公開リポジトリ', runs: [': トークンなしでGitHub APIから読み取ります'] },
+            { label: '非公開リポジトリ', runs: [': Repository Readerでトークン利用を明示的に有効にした場合のみ、保存済みGitHubトークンを使用します'] },
+            { label: 'ローカル状態', runs: [': 閲覧履歴、ピン留めしたリポジトリ、取り込んだノートはChrome拡張機能ストレージに保存されます'] },
+            { label: '明示的な取り込み', runs: [': リポジトリを読むだけではノートに追加されず、ユーザーが選んだファイルだけを取り込みます'] },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'data-collection',
+      heading: 'データ収集について',
+      blocks: [
+        { type: 'paragraph', runs: [{ strong: 'Mark It Downは、お客様の個人データを当社へ収集・受信せず、販売・共有しません。' }] },
+        {
+          type: 'paragraph',
+          runs: [
+            'すべてのノートと設定は、ChromeのストレージAPIを使用してブラウザ内にローカル保存されます。拡張機能にはアクセス解析、広告、サードパーティのエラー送信サービスを組み込んでいません。任意のネットワーク機能を使う場合、ブラウザは取得元サイトまたは設定したプロバイダーと直接通信し、Mark It Downのサーバーは経由しません。',
           ],
         },
       ],
@@ -493,10 +548,11 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
           rows: [
             ['ノート', 'ローカル（chrome.storage.local）', 'なし*'],
             ['設定', 'ローカル（chrome.storage.local）', 'なし'],
-            ['Gitトークン', 'ローカル（暗号化）', 'なし'],
+            ['Gitトークン', 'ローカル（暗号化）', '認証リクエスト時のみGitHub / GitLabへ送信'],
+            ['RSS・クリップ・リポジトリ内容', '取得後はローカル', 'ユーザーが指定した取得元から直接受信'],
           ],
         },
-        { type: 'note', text: '*Git同期を明示的に有効にした場合を除く' },
+        { type: 'note', text: '*ノート本文が送信されるのは、Git同期を明示的に使用した場合のみです。その他のネットワーク機能は、機能内に表示された取得元からコンテンツを受信します。' },
       ],
     },
     {
@@ -511,6 +567,7 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
             { label: '暗号化', runs: [': トークンはPBKDF2鍵導出を用いたAES-256-GCMで暗号化されます'] },
             { label: '保存', runs: [': 暗号化されたトークンはブラウザのローカルストレージにのみ保存されます'] },
             { label: '私たちへの送信なし', runs: [': トークンが私たちのサーバーに送信されることはありません（サーバーは存在しません）'] },
+            { label: '保護範囲', runs: [': 暗号化seedも同じChromeプロファイルに保存されます。平文の露出を抑えるものであり、侵害されたブラウザプロファイルや拡張機能コンテキストを防ぐものではありません'] },
           ],
         },
         { type: 'subheading', text: 'データ通信' },
@@ -518,7 +575,7 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
           type: 'list',
           items: [
             { label: '直接通信', runs: [': ノートはお客様のブラウザとGitリポジトリ間で直接送受信されます'] },
-            { label: '仲介なし', runs: [': データが第三者のサーバーを経由することはありません'] },
+            { label: 'Mark It Downによる仲介なし', runs: [': データは設定したGitHubまたはGitLabへ送信され、当社が運営するサーバーを経由しません'] },
             { label: 'お客様の管理下', runs: [': Git同期はいつでも解除できます'] },
           ],
         },
@@ -548,7 +605,15 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
             ],
             [
               'optional_host_permissions (http/https)',
-              'RSSフィードURLおよびWeb Clipper対象記事URLへの動的アクセス。フィード登録時/クリップ時に該当オリジンのみ個別付与され、ユーザーはいつでも拒否・取消可能。広範な事前付与は行わない',
+              'manifestは任意権限の上限として<all_urls>を宣言します。RSSとWeb Clipperは通常、登録またはクリップしたオリジンだけを要求し、各権限は取消可能です',
+            ],
+            [
+              'URL Preview用の任意<all_urls>付与',
+              'リンク情報は任意のサイトにあるため、URL Previewを有効にした場合だけ要求します。Chromeが広範なアクセスの確認画面を表示し、拒否した場合はURL Previewを有効にしません',
+            ],
+            [
+              'host_permissions (api.github.com / gitlab.com)',
+              'Git同期およびGitHub Repository Readerとの直接通信に使用します。Mark It Downのサーバーは仲介しません',
             ],
           ],
         },
@@ -567,13 +632,15 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
           type: 'list',
           items: [
             { label: 'GitHub / GitLab', runs: ['（Git同期を有効化した場合のみ）— ノートの同期先'] },
+            { label: 'GitHub API', runs: ['（Repository Readerを使用した場合のみ）— リポジトリ情報とMarkdownファイルの取得元'] },
             { label: 'お客様が登録したRSSフィード発行元のサーバー', runs: ['（v2.2.0以降）— フィードXMLの取得先'] },
             { label: 'Web Clipperでクリップした対象記事のホスト', runs: [' — 記事HTMLの取得先'] },
+            { label: 'URL Previewで表示したリンク先のホスト', runs: ['（URL Previewを有効にした場合のみ）— リンク情報の取得元'] },
           ],
         },
         {
           type: 'paragraph',
-          runs: ['いずれもお客様が明示的に登録・操作した宛先のみが対象であり、登録されていないオリジンへ拡張機能が自発的に通信することはありません。'],
+          runs: ['対象は、ユーザーが登録、表示、クリップ、または任意機能として有効にした宛先に限られます。取得した内容がMark It Downの運営するサーバーへ送られることはありません。'],
         },
       ],
     },
@@ -610,7 +677,7 @@ export const privacySections: Record<Lang, PrivacySection[]> = {
       blocks: [
         {
           type: 'paragraph',
-          runs: [{ strong: 'お客様のデータはお客様のものです。私たちはそれを収集せず、見ることもなく、販売することもありません。すべてはお客様のデバイス内に留まります。' }],
+          runs: [{ strong: 'ノートは標準でお客様のデバイスに保存されます。任意のネットワーク機能は、ユーザーが選んだ取得元またはプロバイダーと直接通信し、Mark It Downのバックエンドは経由しません。' }],
         },
       ],
     },
