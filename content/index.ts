@@ -25,13 +25,12 @@ export const indexContent: Record<Lang, IndexCopy> = {
     description:
       'Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.',
     h1: 'Free local Markdown editor and Web Clipper',
-    heroTaglineLines: ['Bring it in.', 'Rewrite what matters.', 'Move it on.'],
-    heroFact:
-      'A free Chrome extension — Markdown editor & Web Clipper for AI output, web articles, RSS items, and rough notes.',
+    heroTaglineLines: ['No AI writing.', 'No account wall.', 'No automatic note sync.'],
+    heroFact: 'A local writing space for rewriting ideas in your own words.',
     heroSubtitleLines: [
-      'Some notes are not meant to live in the browser forever.',
-      'A scratchpad for writing down your own words.',
-      'before they leave for export, Git, or a long-term archive.',
+      'Bring in AI output, web pages, RSS items, or a blank note.',
+      'Rewrite what matters in your own words.',
+      'When it is ready, export it or move it through Git.',
     ],
     ctaPrimary: 'Get the extension',
     ctaPrimaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
@@ -43,13 +42,12 @@ export const indexContent: Record<Lang, IndexCopy> = {
     description:
       'AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。',
     h1: '無料・ローカル完結 Markdown エディタ',
-    heroTaglineLines: ['取り込む。', '必要な部分を書き直す。', '次へ送り出す。'],
-    heroFact:
-      'Chrome 拡張の Markdown エディタ ＆ Web クリッパー。AI 出力、Web 記事、RSS、断片メモを扱う作業場です。',
+    heroTaglineLines: ['AI執筆機能はない。', 'アカウント登録は不要。', 'ノートの自動同期はない。'],
+    heroFact: '考えを自分の言葉に書き直す、ローカルだけで使える場所です。',
     heroSubtitleLines: [
-      'すべてのノートをブラウザに置き続ける必要はありません。',
-      '自分の言葉を書きとめるためのスクラッチパッド。',
-      'できあがったら、Export、Git、長期保存先へ送り出します。',
+      'AI出力、Web記事、RSS、空白のノートを取り込む。',
+      '必要な部分を、自分の言葉に書き直す。',
+      'できあがったら、Export または Git で送り出す。',
     ],
     ctaPrimary: '拡張機能を入手',
     ctaPrimaryAriaLabel: 'Chrome Web Storeで入手する',
@@ -125,15 +123,15 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     philosophyEyebrow: 'Philosophy',
     philosophyHeading: 'Philosophy',
     philosophyLedeLines: [
-      'Write it in your own words. It stays as memory.',
-      'Tools exist to reinforce human will. They do not exist to replace it.',
+      'We left out AI writing, custom folders, and automatic note sync.',
+      'What remains is a local workspace where you rewrite, choose what to keep, and send finished notes out.',
     ],
     philosophyItems: [
       {
-        title: 'Capture first. Classify later.',
+        title: 'No AI writing. No automatic note sync.',
         bodyLines: [
-          'Clips, feeds, and pasted drafts start in Inbox.',
-          'The filing decision can wait until you have read them.',
+          'Use AI beside the editor, not inside it.',
+          'You run Git sync only when you decide the note is ready.',
         ],
       },
       {
@@ -244,15 +242,15 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     philosophyEyebrow: 'Philosophy',
     philosophyHeading: '哲学',
     philosophyLedeLines: [
-      '自分の言葉で書く。記憶として持続する。',
-      '道具は人間の意志を補強するために存在する。意志を代替するために存在するのではない。',
+      'AI執筆、カスタムフォルダ、ノートの自動同期は載せなかった。',
+      '残したのは、自分で書き直し、残すものを決め、完成したノートを送り出すためのローカルな作業場。',
     ],
     philosophyItems: [
       {
-        title: 'まず取り込む。分類はあとで。',
+        title: 'AIに書かせる機能も、ノートの自動同期も入れない。',
         bodyLines: [
-          'クリップ、フィード、貼り付けた下書きは Inbox へ。',
-          '分類は、読んでからでも間に合います。',
+          'AIはエディタの横で使う。中には入れない。',
+          'ノートの準備ができたときだけ、自分で Git 同期を実行する。',
         ],
       },
       {
