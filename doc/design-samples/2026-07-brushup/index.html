@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'"
+    >
+    <meta name="color-scheme" content="light dark">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'/>">
+    <title>Mark It Down — July 2026 brush-up decision lab</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#experiments">Skip to experiments</a>
+
+    <header class="lab-header">
+      <div class="lab-header__meta">
+        <span class="lab-stamp">HITL / PHASE 0</span>
+        <span>Issue #1661</span>
+        <span>2026-07 brush-up</span>
+      </div>
+      <div class="lab-header__title">
+        <p class="eyebrow">Mark It Down design lab</p>
+        <h1>Change one variable.<br>Keep the writing surface honest.</h1>
+        <p>
+          A controlled comparison artifact for typography, surfaces, accent,
+          affordance, motion, and theme information architecture. It does not
+          modify or ship with the production site.
+        </p>
+      </div>
+      <div class="fidelity-strip" aria-label="Artifact fidelity status">
+        <span><strong id="font-health">Checking fonts</strong> self-hosted assets</span>
+        <span><strong>13 page pairs</strong> production scope unchanged</span>
+        <span><strong>AA + motion</strong> review required</span>
+      </div>
+    </header>
+
+    <aside class="lab-controls" aria-label="Shared comparison conditions">
+      <div class="lab-controls__intro">
+        <span class="control-index">00</span>
+        <div>
+          <h2>Fixed comparison conditions</h2>
+          <p>Every experiment reuses the same content, canvas, and interaction state.</p>
+        </div>
+      </div>
+
+      <fieldset class="choice-group" data-global-control="language">
+        <legend>Copy</legend>
+        <div class="choice-row">
+          <input id="lang-en" type="radio" name="language" value="en" checked>
+          <label for="lang-en">EN</label>
+          <input id="lang-ja" type="radio" name="language" value="ja">
+          <label for="lang-ja">JA</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="choice-group" data-global-control="viewport">
+        <legend>Preview canvas</legend>
+        <div class="choice-row">
+          <input id="viewport-desktop" type="radio" name="viewport" value="desktop" checked>
+          <label for="viewport-desktop">Desktop</label>
+          <input id="viewport-mobile" type="radio" name="viewport" value="mobile">
+          <label for="viewport-mobile">390 px</label>
+        </div>
+      </fieldset>
+
+      <div class="choice-group">
+        <span class="choice-group__label">Motion</span>
+        <label class="check-control" for="reduce-motion">
+          <input id="reduce-motion" type="checkbox">
+          <span>Simulate reduced motion</span>
+        </label>
+      </div>
+
+      <div class="choice-group">
+        <span class="choice-group__label">Font loading</span>
+        <label class="check-control" for="force-font-fallback">
+          <input id="force-font-fallback" type="checkbox">
+          <span>Force fallback</span>
+        </label>
+      </div>
+
+      <p class="condition-readout" aria-live="polite" id="condition-readout">
+        EN / desktop / operating-system motion preference
+      </p>
+    </aside>
+
+    <main id="experiments">
+      <section class="experiment" data-axis="s1" data-variant="control">
+        <div class="experiment__header">
+          <span class="experiment__index">S1</span>
+          <div>
+            <p class="eyebrow">Typography / real surfaces</p>
+            <h2>Which mono voice belongs to MID?</h2>
+            <p>
+              Version, shortcut, status, changelog, Markdown, and code use the
+              selected face. Body copy and every other visual token remain the
+              warm current control.
+            </p>
+          </div>
+        </div>
+        <fieldset class="variant-picker" data-axis-control="s1">
+          <legend>Mono surface face</legend>
+          <div class="variant-picker__options">
+            <input id="s1-control" type="radio" name="s1" value="control" checked>
+            <label for="s1-control">Current fallback</label>
+            <input id="s1-space" type="radio" name="s1" value="space">
+            <label for="s1-space">Space Mono</label>
+            <input id="s1-jetbrains" type="radio" name="s1" value="jetbrains">
+            <label for="s1-jetbrains">JetBrains Mono</label>
+            <input id="s1-geist" type="radio" name="s1" value="geist">
+            <label for="s1-geist">Geist Mono</label>
+          </div>
+        </fieldset>
+        <div class="preview-stage">
+          <article class="sample-page" tabindex="0">
+            <div class="sample-page__topline">
+              <span class="mono-surface">MARK IT DOWN / <strong>v2.3.0</strong></span>
+              <span class="status-badge mono-surface js-copy" data-en="RECENTLY ADDED" data-ja="最近追加">RECENTLY ADDED</span>
+            </div>
+            <h3 class="js-copy" data-en="A quiet place for unfinished thoughts" data-ja="書きかけの思考に、静かな場所を">
+              A quiet place for unfinished thoughts
+            </h3>
+            <p class="sample-lede js-copy"
+              data-en="Capture Markdown before the thread disappears. 日本語と English が混ざる実際のノートも、そのまま。"
+              data-ja="思考の糸が消える前に Markdown へ。日本語と English が混ざる実際のノートも、そのまま。">
+              Capture Markdown before the thread disappears. 日本語と English が混ざる実際のノートも、そのまま。
+            </p>
+            <div class="surface-row">
+              <span>
+                <span class="surface-label js-copy" data-en="Shortcut" data-ja="ショートカット">Shortcut</span>
+                <kbd class="mono-surface">Ctrl + Shift + M</kbd>
+              </span>
+              <span>
+                <span class="surface-label js-copy" data-en="Release" data-ja="リリース">Release</span>
+                <span class="mono-surface">2026.07.29 / stable</span>
+              </span>
+            </div>
+            <div class="writing-sample">
+              <pre class="mono-surface"><code># Today
+- [x] Capture the idea
+- [ ] Refine ゆっくり
+
+const note = "local-first";</code></pre>
+              <div class="changelog-block">
+                <span class="surface-label js-copy" data-en="Changelog status" data-ja="変更履歴ステータス">Changelog status</span>
+                <strong class="mono-surface js-copy" data-en="SYNCED / NO CONFLICTS" data-ja="同期済み / 競合なし">
+                  SYNCED / NO CONFLICTS
+                </strong>
+                <p class="js-copy"
+                  data-en="Markdown tables now stay readable in narrow panels."
+                  data-ja="狭いパネルでも Markdown テーブルを読みやすく保ちます。">
+                  Markdown tables now stay readable in narrow panels.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="experiment" data-axis="s2" data-variant="lora">
+        <div class="experiment__header">
+          <span class="experiment__index">S2</span>
+          <div>
+            <p class="eyebrow">Typography / headings only</p>
+            <h2>Serif warmth or mono precision?</h2>
+            <p>
+              Only heading typography changes. Raleway body copy, spacing,
+              colors, border, and shadow stay fixed.
+            </p>
+          </div>
+        </div>
+        <fieldset class="variant-picker" data-axis-control="s2">
+          <legend>Heading face</legend>
+          <div class="variant-picker__options">
+            <input id="s2-lora" type="radio" name="s2" value="lora" checked>
+            <label for="s2-lora">Current Lora</label>
+            <input id="s2-space" type="radio" name="s2" value="space">
+            <label for="s2-space">Space Mono</label>
+            <input id="s2-jetbrains" type="radio" name="s2" value="jetbrains">
+            <label for="s2-jetbrains">JetBrains Mono</label>
+            <input id="s2-geist" type="radio" name="s2" value="geist">
+            <label for="s2-geist">Geist Mono</label>
+          </div>
+        </fieldset>
+        <div class="preview-stage">
+          <article class="sample-page heading-comparison" tabindex="0">
+            <p class="eyebrow">MARKDOWN / LOCAL-FIRST / NO AI</p>
+            <h3 class="heading-test js-copy" data-en="Your thoughts, before they become tasks" data-ja="タスクになる前の、あなたの思考">
+              Your thoughts, before they become tasks
+            </h3>
+            <p class="sample-lede js-copy"
+              data-en="A new tab editor for capturing the sentence you are not ready to organize."
+              data-ja="まだ整理する準備ができていない一文を、新しいタブですぐに記録。">
+              A new tab editor for capturing the sentence you are not ready to organize.
+            </p>
+            <div class="heading-rule"></div>
+            <h4 class="heading-test js-copy" data-en="Write without a workflow tax" data-ja="手順に邪魔されず、書く">
+              Write without a workflow tax
+            </h4>
+            <p class="js-copy"
+              data-en="The editor opens ready. Your notes stay yours."
+              data-ja="エディターはすぐに書ける状態で開きます。ノートはあなたのものです。">
+              The editor opens ready. Your notes stay yours.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="experiment" data-axis="s3a" data-variant="soft">
+        <div class="experiment__header">
+          <span class="experiment__index">S3a</span>
+          <div>
+            <p class="eyebrow">Surface / shadow only</p>
+            <h2>Soft layer or hard offset?</h2>
+            <p>Radius, border, background, content, and card position do not change.</p>
+          </div>
+        </div>
+        <fieldset class="variant-picker" data-axis-control="s3a">
+          <legend>Shadow treatment</legend>
+          <div class="variant-picker__options">
+            <input id="s3a-soft" type="radio" name="s3a" value="soft" checked>
+            <label for="s3a-soft">Current soft layers</label>
+            <input id="s3a-hard" type="radio" name="s3a" value="hard">
+            <label for="s3a-hard">Hard 6 px offset</label>
+          </div>
+        </fieldset>
+        <div class="preview-stage">
+          <article class="surface-card shadow-test" tabindex="0">
+            <span class="surface-label">NOTE / 07:42</span>
+            <h3 class="js-copy" data-en="Keep the thought in motion." data-ja="思考の勢いを、そのまま残す。">
+              Keep the thought in motion.
+            </h3>
+            <p class="js-copy"
+              data-en="The shadow should describe hierarchy, not decorate the page."
+              data-ja="影はページを飾るためではなく、情報の階層を伝えるために。">
+              The shadow should describe hierarchy, not decorate the page.
+            </p>
+            <a href="#s3a-note" class="text-link js-copy" data-en="Read the note" data-ja="ノートを読む">Read the note</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="experiment" data-axis="s3b" data-variant="current">
+        <div class="experiment__header">
+          <span class="experiment__index">S3b</span>
+          <div>
+            <p class="eyebrow">Surface / radius + border only</p>
+            <h2>Soft corners or a firmer frame?</h2>
+            <p>Shadow and background remain on the current production control.</p>
+          </div>
+        </div>
+        <fieldset class="variant-picker" data-axis-control="s3b">
+          <legend>Frame treatment</legend>
+          <div class="variant-picker__options">
+            <input id="s3b-current" type="radio" name="s3b" value="current" checked>
+            <label for="s3b-current">Current 10 px / subtle</label>
+            <input id="s3b-sharp" type="radio" name="s3b" value="sharp">
+            <label for="s3b-sharp">3 px / solid ink</label>
+          </div>
+        </fieldset>
+        <div class="preview-stage">
+          <article class="surface-card frame-test" tabindex="0">
+            <span class="surface-label">LOCAL-FIRST WORKSPACE</span>
+            <h3 class="js-copy" data-en="No account between you and a blank page." data-ja="白紙との間に、アカウントはいらない。">
+              No account between you and a blank page.
+            </h3>
+            <p class="js-copy"
+              data-en="The frame carries the same content with one geometric decision changed."
+              data-ja="同じ内容のまま、フレームの幾何学だけを切り替えます。">
+              The frame carries the same content with one geometric decision changed.
+            </p>
+            <button type="button" class="control-button js-copy" data-en="Open editor" data-ja="エディターを開く">Open editor</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="experiment" data-axis="s3c" data-variant="cream">
+        <div class="experiment__header">
+          <span class="experiment__index">S3c</span>
+          <div>
+            <p class="eyebrow">Surface / background only</p>
+            <h2>Quiet cream or measured grid?</h2>
+            <p>The card and every token inside it remain unchanged.</p>
+          </div>
+        </div>
+        <fieldset class="variant-picker" data-axis-control="s3c">
+          <legend>Canvas treatment</legend>
+          <div class="variant-picker__options">
+            <input id="s3c-cream" type="radio" name="s3c" value="cream" checked>
+            <label for="s3c-cream">Current flat cream</label>
+            <input id="s3c-grid" type="radio" name="s3c" value="grid">
+            <label for="s3c-grid">24 px writing grid</label>
+          </div>
+        </fieldset>
+        <div class="preview-stage background-test">
+          <article class="surface-card" tabindex="0">
+            <span class="surface-label">DRAFT 03 / AUTOSAVED</span>
+            <h3 class="js-copy" data-en="A grid should support rhythm, not demand attention." data-ja="方眼はリズムを支え、視線を奪わない。">
+              A grid should support rhythm, not demand attention.
+            </h3>
+            <p class="js-copy"
+              data-en="Check long-form readability before choosing atmosphere."
+              data-ja="雰囲気を選ぶ前に、長文の読みやすさを確認します。">
+              Check long-form readability before choosing atmosphere.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="experiment" data-axis="s4" data-variant="extension">
+        <div class="experiment__header">
+          <span class="experiment__index">S4</span>
+          <div>
+            <p class="eyebrow">Dark B / accent only</p>
+            <h2>Which signal survives the dark?</h2>
+            <p>
+              The dark surface, type, border, radius, content, and state remain
+              identical. Only accent-family tokens change.
+            </p>
+          </div>
+        </div>
+        <fieldset class="variant-picker" data-axis-control="s4">
+          <legend>Dark accent family</legend>
+          <div class="variant-picker__options">
+            <input id="s4-extension" type="radio" name="s4" value="extension" checked>
+            <label for="s4-extension">Extension #60a5fa</label>
+            <input id="s4-blue" type="radio" name="s4" value="blue">
+            <label for="s4-blue">Signal blue #4d9fff</label>
+            <input id="s4-amber" type="radio" name="s4" value="amber">
+            <label for="s4-amber">Warm amber</label>
+          </div>
+        </fieldset>
+        <div class="preview-stage dark-stage">
+          <article class="dark-surface" tabindex="0">
+            <div class="dark-surface__nav">
+              <strong class="mono-surface">MARK IT DOWN</strong>
+              <span class="dark-status"><span></span> LOCAL / READY</span>
+            </div>
+            <div class="dark-surface__content">
+              <p class="eyebrow">DARK B / CONTROLLED ACCENT</p>
+              <h3 class="js-copy" data-en="A focused editor after the room goes quiet." data-ja="部屋が静かになった後の、集中できるエディター。">
+                A focused editor after the room goes quiet.
+              </h3>
+              <p class="js-copy"
+                data-en="Accent marks actions and current state. It never becomes ambient decoration."
+                data-ja="アクセントは操作と現在地を示し、雰囲気だけの装飾にはしません。">
+                Accent marks actions and current state. It never becomes ambient decoration.
+              </p>
+              <div class="dark-actions">
+                <button type="button" class="dark-primary js-copy" data-en="Start writing" data-ja="書き始める">Start writing</button>
+                <a href="#s4-details" class="dark-link js-copy" data-en="View details" data-ja="詳細を見る">View details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="experiment" data-axis="s5a" data-variant="pill">
+        <div class="experiment__header">
+          <span class="experiment__index">S5a</span>
+          <div>
+            <p class="eyebrow">Affordance / status badge only</p>
+            <h2>Does status need a pill?</h2>
+            <p>Placement, copy, weight, and status color stay fixed.</p>
+          </div>
+        </div>
+        <fieldset class="variant-picker" data-axis-control="s5a">
+          <legend>Status badge shape</legend>
+          <div class="variant-picker__options">
+            <input id="s5a-pill" type="radio" name="s5a" value="pill" checked>
+            <label for="s5a-pill">Keep pill</label>
+            <input id="s5a-label" type="radio" name="s5a" value="label">
+            <label for="s5a-label">Remove pill</label>
+          </div>
+        </fieldset>
+        <div class="preview-stage">
+          <article class="release-row" tabindex="0">
+            <div>
+              <span class="surface-label">CHANGELOG / v2.3.0</span>
+              <h3 class="js-copy" data-en="Side Panel keeps pace with your notes" data-ja="サイドパネルがノートの速度に追いつく">
+                Side Panel keeps pace with your notes
+              </h3>
+              <p class="js-copy" data-en="Released 29 July 2026" data-ja="2026年7月29日リリース">
+                Released 29 July 2026
+              </p>
+            </div>
+            <span class="release-status mono-surface js-copy" data-en="NEW" data-ja="新着">NEW</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="experiment" data-axis="s5b" data-variant="pill">
+        <div class="experiment__header">
+          <span class="experiment__index">S5b</span>
+          <div>
+            <p class="eyebrow">Affordance / CTA shape only</p>
+            <h2>Does the action need a pill?</h2>
+            <p>Copy, color, size, focus ring, and placement stay fixed.</p>
+          </div>
+        </div>
+        <fieldset class="variant-picker" data-axis-control="s5b">
+          <legend>CTA shape</legend>
+          <div class="variant-picker__options">
+            <input id="s5b-pill" type="radio" name="s5b" value="pill" checked>
+            <label for="s5b-pill">Keep pill</label>
+            <input id="s5b-angular" type="radio" name="s5b" value="angular">
+            <label for="s5b-angular">Remove pill / 4 px</label>
+          </div>
+        </fieldset>
+        <div class="preview-stage">
+          <article class="cta-comparison" tabindex="0">
+            <div>
+              <span class="surface-label">CHROME EXTENSION / LOCAL-FIRST</span>
+              <h3 class="js-copy" data-en="Ready when the thought arrives." data-ja="思いついた、その瞬間に書ける。">
+                Ready when the thought arrives.
+              </h3>
+            </div>
+            <button type="button" class="shape-cta js-copy" data-en="Add to Chrome" data-ja="Chrome に追加">Add to Chrome</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="experiment" data-axis="s6a" data-variant="press">
+        <div class="experiment__header">
+          <span class="experiment__index">S6a</span>
+          <div>
+            <p class="eyebrow">Motion grammar only</p>
+            <h2>Press response or restrained glow?</h2>
+            <p>
+              Both grammars are shown on the same light and dark palettes so
+              motion—not color—remains the changed variable. Keyboard, touch,
+              hover-capable pointer, and reduced motion are explicit states.
+            </p>
+          </div>
+        </div>
+        <fieldset class="variant-picker" data-axis-control="s6a">
+          <legend>Motion grammar</legend>
+          <div class="variant-picker__options">
+            <input id="s6a-press" type="radio" name="s6a" value="press" checked>
+            <label for="s6a-press">Press / 120 ms</label>
+            <input id="s6a-glow" type="radio" name="s6a" value="glow">
+            <label for="s6a-glow">Glow / 220 ms</label>
+          </div>
+        </fieldset>
+        <div class="preview-stage motion-stage">
+          <div class="motion-toolbar">
+            <p id="motion-status" aria-live="polite">Motion ready. Use Tab, Enter, touch, or Replay.</p>
+            <button type="button" class="replay-button" id="replay-motion">Replay motion</button>
+          </div>
+          <div class="motion-lanes">
+            <article class="motion-lane motion-lane--light">
+              <span class="surface-label">LIGHT SURFACE</span>
+              <h3 class="js-copy" data-en="Capture the line." data-ja="その一行を、残す。">Capture the line.</h3>
+              <button type="button" class="motion-target js-copy" data-en="Start writing" data-ja="書き始める">Start writing</button>
+            </article>
+            <article class="motion-lane motion-lane--dark">
+              <span class="surface-label">DARK SURFACE</span>
+              <h3 class="js-copy" data-en="Stay with the thought." data-ja="思考のそばにいる。">Stay with the thought.</h3>
+              <button type="button" class="motion-target js-copy" data-en="Start writing" data-ja="書き始める">Start writing</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="experiment" data-axis="s6b" data-variant="system">
+        <div class="experiment__header">
+          <span class="experiment__index">S6b</span>
+          <div>
+            <p class="eyebrow">Theme / information architecture only</p>
+            <h2>Follow the system or expose the choice?</h2>
+            <p>
+              The sample surface is unchanged. Only how the system/light/dark
+              state is communicated and controlled changes.
+            </p>
+          </div>
+        </div>
+        <fieldset class="variant-picker" data-axis-control="s6b">
+          <legend>Theme information architecture</legend>
+          <div class="variant-picker__options">
+            <input id="s6b-system" type="radio" name="s6b" value="system" checked>
+            <label for="s6b-system">System only</label>
+            <input id="s6b-segmented" type="radio" name="s6b" value="segmented">
+            <label for="s6b-segmented">Explicit 3 options</label>
+            <input id="s6b-cycle" type="radio" name="s6b" value="cycle">
+            <label for="s6b-cycle">Compact cycle</label>
+          </div>
+        </fieldset>
+        <div class="preview-stage theme-ia-stage" data-effective-theme="light">
+          <article class="theme-surface" tabindex="0">
+            <div class="theme-surface__bar">
+              <strong class="mono-surface">MARK IT DOWN</strong>
+              <div class="theme-control theme-control--system" data-theme-control="system">
+                <span class="theme-state-dot" aria-hidden="true"></span>
+                <span>System theme: <strong class="js-effective-theme">Light</strong></span>
+              </div>
+              <fieldset class="theme-control theme-control--segmented" data-theme-control="segmented">
+                <legend>Theme</legend>
+                <div>
+                  <input id="theme-system" type="radio" name="preview-theme" value="system" checked>
+                  <label for="theme-system">System</label>
+                  <input id="theme-light" type="radio" name="preview-theme" value="light">
+                  <label for="theme-light">Light</label>
+                  <input id="theme-dark" type="radio" name="preview-theme" value="dark">
+                  <label for="theme-dark">Dark</label>
+                </div>
+              </fieldset>
+              <div class="theme-control theme-control--cycle" data-theme-control="cycle">
+                <span class="visually-hidden" id="cycle-help">Cycles System, Light, and Dark</span>
+                <button type="button" id="cycle-theme" aria-describedby="cycle-help">
+                  Theme: <strong id="cycle-theme-label">System</strong>
+                </button>
+              </div>
+            </div>
+            <div class="theme-surface__body">
+              <span class="surface-label">CURRENT STATE / <strong class="js-theme-choice">SYSTEM</strong></span>
+              <h3 class="js-copy" data-en="A visible choice should explain its consequence." data-ja="見える選択肢には、結果が伝わること。">
+                A visible choice should explain its consequence.
+              </h3>
+              <p class="js-copy"
+                data-en="System follows the operating system. Light and Dark persist as explicit preferences."
+                data-ja="System は OS 設定に追従し、Light と Dark は明示した設定として保存します。">
+                System follows the operating system. Light and Dark persist as explicit preferences.
+              </p>
+              <a href="#s6b-theme" class="theme-link js-copy" data-en="Theme behavior details" data-ja="テーマ動作の詳細">
+                Theme behavior details
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="lab-footer">
+      <p>
+        Decision gate: score every option in
+        <a href="./decision-record.md">decision-record.md</a> before Phase 1 changes production tokens.
+      </p>
+      <p class="mono-surface">NO REMOTE FONTS / NO SITE SOURCE CHANGES / ISSUE #1661</p>
+    </footer>
+  </body>
+</html>

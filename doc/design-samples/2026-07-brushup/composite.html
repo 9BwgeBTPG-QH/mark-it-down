@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-theme-preference="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'"
+    >
+    <meta name="color-scheme" content="light dark">
+    <title>Mark It Down — Recommended composite</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'/>">
+    <link rel="stylesheet" href="./composite.css">
+    <script src="./composite.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="wordmark" href="#main-content" aria-label="Mark It Down home">
+          <span>MARK IT DOWN</span>
+          <small>LOCAL FIRST / NO AI</small>
+        </a>
+
+        <div class="nav-center" aria-label="Page sections">
+          <a href="#why">Why MID</a>
+          <a href="#product-preview">Editor</a>
+          <a href="#proof">Principles</a>
+        </div>
+
+        <div class="theme-cluster">
+          <fieldset class="theme-switch" role="radiogroup" aria-label="Color theme">
+            <legend>Theme</legend>
+            <input id="composite-theme-system" type="radio" name="composite-theme" value="system">
+            <label for="composite-theme-system">System</label>
+            <input id="composite-theme-light" type="radio" name="composite-theme" value="light" checked>
+            <label for="composite-theme-light">Light</label>
+            <input id="composite-theme-dark" type="radio" name="composite-theme" value="dark">
+            <label for="composite-theme-dark">Dark</label>
+          </fieldset>
+          <output id="theme-status" class="theme-status" aria-live="polite">LIGHT ACTIVE</output>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="why" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="composite-label">COMPOSITE / RECOMMENDED SLATE</p>
+          <h1 id="hero-title">Write it down.<br><em>Keep it yours.</em></h1>
+          <p class="hero-lede">
+            A fast Markdown workspace in every new tab. No account, no feed,
+            no AI waiting between the thought and the sentence.
+          </p>
+
+          <div class="hero-actions">
+            <a class="action action-primary press-control" href="#product-preview">Add to Chrome</a>
+            <a class="action action-secondary press-control" href="#proof">Why local-first</a>
+          </div>
+
+          <dl class="hero-meta" aria-label="Product status">
+            <div>
+              <dt>Release</dt>
+              <dd>v2.3.0</dd>
+            </div>
+            <div>
+              <dt>Storage</dt>
+              <dd>LOCAL</dd>
+            </div>
+            <div>
+              <dt>Start</dt>
+              <dd>NEW TAB</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="product-stage" id="product-preview">
+          <div class="product-caption" aria-hidden="true">
+            <span>01 / EDITOR</span>
+            <span>SPACE MONO / DARK B</span>
+          </div>
+
+          <section class="editor-window" aria-label="Mark It Down editor preview">
+            <header class="editor-bar">
+              <div>
+                <strong>MARK IT DOWN</strong>
+                <span>NEW TAB</span>
+              </div>
+              <p class="editor-status"><span aria-hidden="true"></span> LOCAL / SAVED</p>
+            </header>
+
+            <div class="editor-layout">
+              <aside class="note-rail" aria-label="Example notes">
+                <div class="rail-heading">
+                  <span>NOTES / 04</span>
+                  <button class="rail-add press-control" type="button" aria-label="Create a new note">+</button>
+                </div>
+                <button class="note-row note-row-active" type="button" aria-current="true">
+                  <span>01</span>
+                  <strong>Before the meeting</strong>
+                  <small>TODAY / 08:42</small>
+                </button>
+                <button class="note-row" type="button">
+                  <span>02</span>
+                  <strong>Launch fragments</strong>
+                  <small>YESTERDAY</small>
+                </button>
+                <button class="note-row" type="button">
+                  <span>03</span>
+                  <strong>Reading trail</strong>
+                  <small>MONDAY</small>
+                </button>
+              </aside>
+
+              <article class="note-canvas">
+                <div class="note-kicker">
+                  <span>DRAFT 07</span>
+                  <span>842 WORDS</span>
+                </div>
+                <h2>Before the meeting</h2>
+                <p class="note-intro">
+                  The useful thought arrived before the agenda did.
+                </p>
+                <div class="note-rule"></div>
+                <p>
+                  Start with the part that still feels unfinished. Keep the
+                  question visible long enough to become precise.
+                </p>
+                <blockquote>
+                  <span aria-hidden="true">#</span>
+                  思考の速度を落とさずに、あとから育てられる形で残す。
+                  <strong>Write first, organize later.</strong>
+                </blockquote>
+                <pre><code>- [x] Capture the rough edge
+- [ ] Find the honest sentence
+- [ ] Share when it is ready</code></pre>
+              </article>
+            </div>
+
+            <footer class="editor-footer">
+              <span>MARKDOWN</span>
+              <span>CTRL + SHIFT + M</span>
+              <span>SYNC: OFFLINE</span>
+            </footer>
+          </section>
+        </div>
+      </section>
+
+      <section class="proof-strip" id="proof" aria-label="Product principles">
+        <article>
+          <span class="proof-index">01</span>
+          <div>
+            <h2>Immediate</h2>
+            <p>Open a tab. The cursor is already waiting.</p>
+          </div>
+        </article>
+        <article>
+          <span class="proof-index">02</span>
+          <div>
+            <h2>Local</h2>
+            <p>Your note begins on your device, not in a service.</p>
+          </div>
+        </article>
+        <article>
+          <span class="proof-index">03</span>
+          <div>
+            <h2>Portable</h2>
+            <p>Plain Markdown remains useful beyond the editor.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
