@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Template Preview - Mark It Down</title>
   <meta name="description" content="Preview a Markdown template for Mark It Down.">
-  <meta name="theme-color" content="#FAFAF9">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f2ede4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a09" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Template Preview - Mark It Down">
   <meta property="og:description" content="Preview a Markdown template for Mark It Down.">
   <meta property="og:type" content="article">
@@ -15,9 +17,6 @@
   <link rel="icon" type="image/png" sizes="48x48" href="../icon-48.png">
   <link rel="icon" type="image/png" sizes="128x128" href="../icon-128.png">
   <link rel="apple-touch-icon" sizes="128x128" href="../icon-128.png">
-  <script id="mid-theme-bootstrap">
-    (function(){var d=document.documentElement,k="mid-theme",q="(prefers-color-scheme: dark)",m=window.matchMedia(q),p="system";try{var v=localStorage.getItem(k);if(v==="light"||v==="dark"){p=v}else if(v!==null){localStorage.removeItem(k)}}catch(e){}var t=p==="system"?(m.matches?"dark":"light"):p;d.setAttribute("data-theme",t);d.setAttribute("data-theme-preference",p);d.style.colorScheme=t;document.querySelector('meta[name="theme-color"]').content=t==="dark"?"#0a0a09":"#f2ede4";if(window.performance&&performance.mark)performance.mark("mid-theme-ready")}());
-  </script>
   <link rel="stylesheet" href="../style.css">
   <script src="../assets/template-frontmatter.js"></script>
   <link id="md-alternate" rel="alternate" type="text/markdown" href="">
@@ -47,14 +46,6 @@
         <li><a href="../feedback.html">Feedback</a></li>
         <li><a href="../privacy-policy.html">Privacy</a></li>
         <li class="lang-switcher"><a id="lang-switch" href="view-ja.html" hreflang="ja" onclick="sessionStorage.setItem('langOverride','1')">日本語</a></li>
-        <li class="theme-switcher">
-          <fieldset class="theme-selector" data-static-theme-selector>
-            <legend class="visually-hidden">Theme</legend>
-            <label class="theme-selector-option" for="viewer-theme-system"><input class="theme-selector-input" id="viewer-theme-system" name="viewer-theme" type="radio" value="system"><span>System</span></label>
-            <label class="theme-selector-option" for="viewer-theme-light"><input class="theme-selector-input" id="viewer-theme-light" name="viewer-theme" type="radio" value="light"><span>Light</span></label>
-            <label class="theme-selector-option" for="viewer-theme-dark"><input class="theme-selector-input" id="viewer-theme-dark" name="viewer-theme" type="radio" value="dark"><span>Dark</span></label>
-          </fieldset>
-        </li>
       </ul>
     </nav>
     <header role="banner">
@@ -144,7 +135,6 @@
     </footer>
   </div>
 
-  <script src="../assets/theme.js"></script>
   <!-- CDN dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/marked@15/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highlight.min.js"></script>

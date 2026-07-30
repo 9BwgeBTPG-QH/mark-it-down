@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { LangRedirect } from '@/components/LangRedirect';
-import { THEME_BOOTSTRAP_SCRIPT } from '@/lib/theme';
 import { fontVariables } from '../fonts';
 import '../globals.css';
 // Original-design stylesheet (eed65be:docs/style.src.css port) — loaded after
@@ -16,14 +15,11 @@ import '../original.css';
 // layout rendering the same index-defaulted nav/footer for every route.
 export default function EnLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={fontVariables} suppressHydrationWarning>
+    <html lang="en" className={fontVariables}>
       <head>
         <meta name="color-scheme" content="light dark" />
-        <meta name="theme-color" content="#f2ede4" />
-        <script
-          id="mid-theme-bootstrap"
-          dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }}
-        />
+        <meta name="theme-color" content="#f2ede4" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0a0a09" media="(prefers-color-scheme: dark)" />
       </head>
       <body>
         <LangRedirect lang="en" />

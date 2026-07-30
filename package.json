@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/finalize-static-export.mjs",
+    "build": "next build",
     "sync": "npm run build && node scripts/sync-docs.mjs",
     "lint": "next lint"
   },

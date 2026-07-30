@@ -147,11 +147,7 @@ for (const [index, path] of CSS_FILES.entries()) {
     JSON.stringify([...darkTokens[index]]) === JSON.stringify([...fallbackTokens[index]]),
     `${path} explicit dark and no-JS fallback tokens differ`
   );
-  expect(sourceHasThemeUi(cssSources[index]), `${path} theme selector contract is incomplete`);
-  expect(
-    cssSources[index].includes('@media (forced-colors: active)'),
-    `${path} forced-colors contract is missing`
-  );
+  expect(sourceHasSystemTheme(cssSources[index]), `${path} system theme contract is incomplete`);
 }
 
 expect(
@@ -159,17 +155,14 @@ expect(
   'production/static dark token parity failed'
 );
 
-function sourceHasThemeUi(source) {
-  const selectorBlock = block(source, '.theme-selector');
-  const optionBlock = block(source, '.theme-selector-option');
+function sourceHasSystemTheme(source) {
   return (
-    source.includes('html[data-theme="light"]') &&
+    source.includes('@media (prefers-color-scheme: dark)') &&
+    source.includes('html:not([data-theme])') &&
     source.includes('color-scheme: light') &&
     source.includes('color-scheme: dark') &&
-    source.includes('.theme-selector-option:has(input[type="radio"]:checked)') &&
-    source.includes('.theme-selector-option:has(input[type="radio"]:focus-visible)') &&
-    selectorBlock.includes('border:') &&
-    /min-height:\s*44px/.test(optionBlock)
+    !source.includes('.theme-selector') &&
+    !source.includes('.theme-switcher')
   );
 }
 
@@ -208,96 +201,63 @@ expect(onAccentRatio >= 4.5, `--text-on-accent contrast ${onAccentRatio.toFixed(
 
 const enLayout = read('app/(en)/layout.tsx');
 const jaLayout = read('app/(ja)/layout.tsx');
-const themeModule = read('lib/theme.ts');
-const selector = read('components/ThemeSelector.tsx');
 const siteNav = read('components/SiteNav.tsx');
 const decisionRecord = read('doc/design-samples/2026-07-brushup/decision-record.md');
-const staticTheme = read('docs/assets/theme.js');
 const staticViewers = ['docs/templates/view.html', 'docs/templates/view-ja.html'].map(read);
 const packageJson = JSON.parse(read('package.json'));
-const exportFinalizer = read('scripts/finalize-static-export.mjs');
 
 for (const [name, layout] of [
   ['EN layout', enLayout],
   ['JA layout', jaLayout],
 ]) {
-  expect(layout.includes('THEME_BOOTSTRAP_SCRIPT'), `${name} misses the bootstrap`);
-  expect(layout.includes('suppressHydrationWarning'), `${name} misses hydration suppression`);
   expect(layout.includes('name="color-scheme"'), `${name} misses color-scheme metadata`);
-  expect(layout.includes('id="mid-theme-bootstrap"'), `${name} misses the bootstrap marker`);
+  expect(
+    layout.includes('media="(prefers-color-scheme: light)"'),
+    `${name} misses the light theme-color media query`
+  );
+  expect(
+    layout.includes('media="(prefers-color-scheme: dark)"'),
+    `${name} misses the dark theme-color media query`
+  );
+  expect(!layout.includes('THEME_BOOTSTRAP_SCRIPT'), `${name} still imports theme JavaScript`);
+  expect(!layout.includes('suppressHydrationWarning'), `${name} still suppresses theme hydration`);
+  expect(!layout.includes('mid-theme-bootstrap'), `${name} still emits a theme bootstrap`);
 }
 
-for (const contract of [
-  'mid-theme',
-  '(prefers-color-scheme: dark)',
-  'data-theme',
-  'data-theme-preference',
-  'localStorage.removeItem',
-  'mid-theme-ready',
-]) {
-  expect(themeModule.includes(contract), `bootstrap contract missing ${contract}`);
-}
-
-for (const contract of [
-  "['system', 'light', 'dark']",
-  "localStorage.setItem",
-  "localStorage.removeItem",
-  "addEventListener?.('change'",
-  "addEventListener('storage'",
-  'mid-theme-change',
-]) {
-  expect(selector.includes(contract), `ThemeSelector contract missing ${contract}`);
-}
-
-expect(siteNav.includes('<ThemeSelector lang={lang} />'), 'SiteNav misses ThemeSelector');
-expect(siteNav.includes('header-nav-theme-only'), 'welcome theme selector route is missing');
+expect(!siteNav.includes('ThemeSelector'), 'SiteNav still renders ThemeSelector');
+expect(!siteNav.includes('theme-switcher'), 'SiteNav still exposes a theme switcher');
 expect(
-  decisionRecord.includes('## Phase 3 theme state machine record'),
-  'state machine was not recorded before implementation'
+  decisionRecord.includes('## Phase 3 system-only theme override'),
+  'system-only owner decision is not recorded'
 );
 expect(
-  packageJson.scripts.build.includes('scripts/finalize-static-export.mjs'),
-  'build does not enforce pre-CSS theme bootstrap placement'
+  packageJson.scripts.build === 'next build',
+  'build still carries theme-bootstrap post-processing'
 );
-for (const contract of [
-  'id="mid-theme-bootstrap"',
-  'rel="stylesheet"',
-  'Theme bootstrap still follows CSS',
-]) {
-  expect(exportFinalizer.includes(contract), `static export finalizer misses ${contract}`);
-}
 
 for (const [index, viewer] of staticViewers.entries()) {
   expect(
-    viewer.indexOf('id="mid-theme-bootstrap"') < viewer.indexOf('rel="stylesheet"'),
-    `static viewer ${index} bootstrap is not before CSS`
+    viewer.includes('name="color-scheme" content="light dark"'),
+    `static viewer ${index} misses color-scheme metadata`
   );
   expect(
-    (viewer.match(/class="theme-selector-option"/g) ?? []).length === 3,
-    `static viewer ${index} does not expose three theme options`
+    viewer.includes('media="(prefers-color-scheme: light)"') &&
+      viewer.includes('media="(prefers-color-scheme: dark)"'),
+    `static viewer ${index} misses media-specific theme colors`
   );
-  expect(viewer.includes('../assets/theme.js'), `static viewer ${index} misses theme.js`);
-}
-
-for (const contract of [
-  'localStorage.getItem',
-  'localStorage.setItem',
-  'localStorage.removeItem',
-  "addEventListener('change'",
-  "addEventListener('storage'",
-  'data-theme-preference',
-]) {
-  expect(staticTheme.includes(contract), `static theme controller misses ${contract}`);
+  expect(!viewer.includes('mid-theme-bootstrap'), `static viewer ${index} still has theme JS`);
+  expect(!viewer.includes('theme-selector'), `static viewer ${index} still exposes theme UI`);
+  expect(!viewer.includes('../assets/theme.js'), `static viewer ${index} still loads theme.js`);
 }
 
 console.log('[phase3-theme] PASS');
 console.log(`- Phase 3a light token hashes: ${PHASE3A_LIGHT_TOKEN_HASHES.join(' / ')}`);
 console.log(`- dark theme-owned overrides: ${darkTokens[0].size}`);
 console.log(`- locked token overrides: 0`);
-console.log(`- explicit/no-JS token parity: PASS`);
+console.log(`- explicit/system-media token parity: PASS`);
 console.log(`- production/static dark token parity: PASS`);
-console.log(`- state-machine source contracts: PASS`);
-console.log(`- static export pre-CSS bootstrap finalizer: PASS`);
-console.log(`- static viewer bootstrap/UI contracts: PASS`);
+console.log(`- system-only CSS/metadata contracts: PASS`);
+console.log(`- theme UI/storage/bootstrap absent: PASS`);
+console.log(`- static viewer system-theme contract: PASS`);
 console.log(`- contrast checks: ${contrastResults.length + 1}`);
 console.log(`- minimum contrast: ${Math.min(onAccentRatio, ...contrastResults.map(([, ratio]) => ratio)).toFixed(2)}:1`);

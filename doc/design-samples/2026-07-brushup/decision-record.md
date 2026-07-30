@@ -21,7 +21,7 @@
 | Mobile viewport | `390 × 844 CSS px` |
 | Device scale factor | `1` |
 | Pointer/input | `mouse; keyboard; Chrome hasTouch=1 mobile emulation` |
-| OS color scheme | `light → dark live change verified; explicit states verified` |
+| OS color scheme | `light → dark live change verified; final production follows browser preference only` |
 | OS motion preference | `no-preference + reduce verified` |
 | Artifact font state | `5/5 loaded confirmed with FontFaceSet` |
 | Forced fallback state | `confirmed` |
@@ -78,8 +78,8 @@ AA, motion safety, keyboard/touch access, font load, and horizontal overflow are
 | S5b CTA 4 px corner | 5 | 5 | 5 | 5 | 5 | 5 | n/a | **30/30** | Strong action affordance and coherent geometry at desktop and touch sizes. |
 | S6a 120 ms press | 5 | 5 | 5 | 5 | 5 | 5 | n/a | **30/30** | Physical, immediate feedback works for pointer, keyboard, and touch. |
 | S6a 220 ms glow | 4 | 3 | 5 | 4 | 5 | 5 | n/a | 26/30 | Visible but introduces a luminous grammar better reserved for dark-theme focus. |
-| S6b system-only | 4 | 4 | 5 | 2 | 5 | 5 | n/a | 25/30 | Safe default, but offers no explicit override or path back after OS mismatch. |
-| S6b explicit 3 options | 4 | 5 | 5 | 5 | 5 | 5 | n/a | **29/30** | Current state and System return path are simultaneously visible and keyboard-native. |
+| S6b system-only | 4 | 5 | 5 | 5 | 5 | 5 | n/a | **29/30** | Final owner decision: follows the browser without adding site chrome, persistence, or a second preference surface. |
+| S6b explicit 3 options | 4 | 4 | 5 | 3 | 5 | 5 | n/a | 26/30 | States are clear, but the control duplicates browser settings and adds navigation density plus stored-state complexity. |
 | S6b compact cycle | 3 | 4 | 5 | 3 | 5 | 5 | n/a | 25/30 | Compact, but hides the available states and makes the next click harder to predict. |
 
 ## Decisions and rationale
@@ -228,28 +228,33 @@ AA, motion safety, keyboard/touch access, font load, and horizontal overflow are
 
 ### S6b — theme information architecture
 
-- Chosen option: **explicit System / Light / Dark options**
+- Chosen option: **system-only, with no site-visible theme control**
 - Why it won:
-  - All states and the route back to OS behavior are visible at once.
-  - A named radiogroup exposes current state and uses native keyboard behavior.
+  - The website follows the user's browser/OS preference without introducing a
+    second settings surface.
+  - CSS media queries provide first-paint-correct rendering with no storage,
+    hydration, cross-tab synchronization, or bootstrap JavaScript.
+  - Removing the selector reduces desktop/mobile navigation density and leaves
+    the site focused on reading.
 - Rejected options and exact reason:
-  - System-only: no override for users whose viewing context differs from the OS.
-  - Compact cycle: hides available states and makes the next result less predictable.
+  - Explicit options: useful for override-heavy applications, but unnecessary
+    on this public site and more complex than the final owner intent.
+  - Compact cycle: duplicates browser settings while hiding the available states
+    and making the next result less predictable.
 - Exact production state contract:
-  - UI state: `system | light | dark`
-  - Stored preference: only `light | dark`; `system` is represented by key absence.
-  - Effective theme: key absent ? `matchMedia("(prefers-color-scheme: dark)")` : stored value.
-  - Persistence surface: `localStorage["mid-theme"]`; invalid value or storage
-    exception falls back to System.
-  - Initial paint/FOUC contract: a head bootstrap runs before stylesheet paint,
-    validates storage, resolves the effective theme, and writes
-    `data-theme="light|dark"` plus the matching `color-scheme`.
-  - OS theme live-change contract: a `matchMedia` change listener updates
-    `data-theme` only while the key is absent; explicit overrides remain stable.
-  - no-JS contract: CSS `prefers-color-scheme` fallback follows the OS.
-- Desktop screenshot: `screenshots/s6b-segmented-desktop-en.png`
-- Mobile screenshot: `screenshots/s6b-segmented-mobile-ja.png`
-- Veto checks: pass — current state exposed, native keyboard/labels, no hover dependency.
+  - UI state: none.
+  - Stored preference: none; the former `mid-theme` value is ignored.
+  - Effective theme: CSS `@media (prefers-color-scheme: dark)`.
+  - Initial paint/FOUC contract: CSS is authoritative; there is no theme
+    bootstrap or hydration-owned root attribute.
+  - Browser theme live-change contract: the media query is reevaluated natively.
+  - Browser chrome: paired `theme-color` metadata uses light/dark media queries.
+- Desktop screenshot:
+  `../../audit/screenshots/phase3-dark/matrix/dark/en-index.png`
+- Mobile screenshot:
+  `../../audit/screenshots/phase3-dark/mobile/ja-home.png`
+- Veto checks: pass — no theme control to operate, and both schemes retain AA,
+  reduced-motion behavior, and zero horizontal overflow.
 
 ## Phase 2 production ownership addendum
 
@@ -268,43 +273,28 @@ The complete selector-level radius/shadow classification and exception
 allowlist is
 [`../../audit/phase2-shape-shadow-allowlist-2026-07-30.md`](../../audit/phase2-shape-shadow-allowlist-2026-07-30.md).
 
-## Phase 3 theme state machine record
+## Phase 3 system-only theme override
 
-Recorded on `2026-07-30` after the Phase 3a color audit and before the Phase 3b
-implementation.
+Recorded on `2026-07-30` after the first Phase 3b production review. This owner
+decision supersedes the earlier explicit three-option state machine.
 
-Storage key: `localStorage["mid-theme"]`. Only `light` and `dark` are valid
-stored values. The absence of the key represents `system`.
-
-| Event / condition | Preference state | Effective theme | Storage action | Listener result |
-|---|---|---|---|---|
-| boot, stored `light` | light | light | preserve | OS changes ignored |
-| boot, stored `dark` | dark | dark | preserve | OS changes ignored |
-| boot, key absent | system | current `prefers-color-scheme` | none | OS changes update the root |
-| boot, invalid value | system | current `prefers-color-scheme` | remove invalid key if possible | OS changes update the root |
-| boot, storage read throws | system | current `prefers-color-scheme` | none | OS changes update the root |
-| choose Light / Dark | chosen override | chosen override | persist chosen value | OS changes ignored |
-| choose System | system | current `prefers-color-scheme` | remove key | OS changes update the root |
-| override write/remove throws | system | current `prefers-color-scheme` | none | OS changes update the root |
-| cross-tab valid storage event | event override | event override | already external | OS changes ignored |
-| cross-tab removal/invalid event | system | current `prefers-color-scheme` | invalid key removed if possible | OS changes update the root |
-| JavaScript unavailable | system | CSS `prefers-color-scheme` fallback | none | browser CSS reevaluation |
+| Event / condition | Effective theme | Site action |
+|---|---|---|
+| boot with browser Light | Light | CSS light tokens apply |
+| boot with browser Dark | Dark | CSS dark media-query tokens apply |
+| browser changes Light -> Dark | Dark | native media-query reevaluation |
+| browser changes Dark -> Light | Light | native media-query reevaluation |
+| JavaScript unavailable | same as browser preference | no degradation; theme has no JS dependency |
+| stale `mid-theme` key exists | same as browser preference | ignored; no storage read or write |
 
 Initial-paint contract:
 
-1. A dependency-free inline `<head>` bootstrap runs before the stylesheet.
-2. It resolves the table above and writes `data-theme="light|dark"`,
-   `data-theme-preference="system|light|dark"`, and matching `color-scheme`
-   onto `<html>`.
-3. The root layout uses `suppressHydrationWarning`; the client selector reads
-   the already-resolved preference after hydration, so no theme attribute is
-   rewritten during React's initial reconciliation.
-4. The same algorithm is embedded before `style.css` in the static EN/JA
-   template viewers.
-
-The three-option UI is a labelled native radio group. All options remain
-visible, keyboard selection uses native radio behavior, the checked option
-exposes the current preference, and selecting System removes the override.
+1. Light tokens are the root default.
+2. Dark tokens apply in `@media (prefers-color-scheme: dark)`.
+3. No script writes `data-theme` or suppresses hydration warnings.
+4. EN/JA root layouts and static template viewers expose
+   `color-scheme: light dark` and media-specific `theme-color` metadata.
+5. No System / Light / Dark selector is rendered anywhere on the site.
 
 ## Candidate token ledger
 
@@ -395,9 +385,8 @@ Run on 2026-07-29 with Chrome 148.0.7778.96:
 - Independent OS `reduce` context reported `0` animations, `transform: none`,
   and `0.001ms` transition duration. The non-moving shadow state may change
   instantly to preserve feedback.
-- S6b explicit options selected Dark, the compact control announced current
-  and next states, and a live OS color-scheme change updated System from Light
-  to Dark.
+- S6b production follows a live OS color-scheme change from Light to Dark with
+  no site-visible control, storage access, or bootstrap script.
 - Static S6a PNG files do not prove elapsed-time behavior. The live checks
   above and a human review of the Replay control are required for selection.
 
@@ -409,6 +398,6 @@ Run on 2026-07-29 with Chrome 148.0.7778.96:
 - [x] EN desktop and JA mobile screenshots exist for every option.
 - [x] Font loaded and forced-fallback paths are verified.
 - [x] Keyboard, touch, focus-visible, reduced-motion, and AA veto gates pass.
-- [x] S6b state, persistence, initial-paint, and OS-change contracts are explicit.
+- [x] S6b system-only initial-paint and browser-change contracts are explicit.
 - [x] The approved values have been copied to the canonical #1660 plan before
       Phase 1 begins.

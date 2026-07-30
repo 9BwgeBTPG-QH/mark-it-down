@@ -552,94 +552,6 @@ header .tagline {
 .header-nav .lang-switcher a:hover {
   color: var(--accent-primary);
 }
-.header-nav .theme-switcher {
-  position: sticky;
-  right: 0;
-  z-index: 1;
-  margin-left: var(--spacing-xs);
-  padding-left: var(--spacing-xs);
-  background: var(--bg-primary);
-  border-left: 1px solid var(--border-subtle);
-}
-.header-nav-theme-only {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.theme-selector {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  padding: 2px;
-  color: var(--text-secondary);
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-primary);
-  border-radius: var(--radius-control);
-}
-.theme-selector-option {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 32px;
-  min-height: 44px;
-  padding: 4px 8px;
-  color: inherit;
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: var(--radius-control);
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  font-weight: 600;
-  line-height: 1;
-  cursor: pointer;
-}
-.theme-selector-input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  pointer-events: none;
-}
-.theme-selector-option > span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  padding: 0 2px;
-  border: 1px solid transparent;
-  border-radius: var(--radius-control);
-}
-.theme-selector-option:has(input[type="radio"]:checked),
-.theme-selector-input:checked + span {
-  color: var(--text-on-accent);
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  box-shadow: var(--shadow-decorative);
-}
-.theme-selector-option:has(input[type="radio"]:focus-visible),
-.theme-selector-input:focus-visible + span {
-  outline: 2px solid var(--accent-primary);
-  outline-offset: 2px;
-  box-shadow: var(--shadow-focus);
-}
-@media (forced-colors: active) {
-  .theme-selector {
-    border-color: ButtonText;
-  }
-  .theme-selector-option:has(input[type="radio"]:checked),
-  .theme-selector-input:checked + span {
-    color: HighlightText;
-    background: Highlight;
-    border-color: Highlight;
-    box-shadow: none;
-  }
-  .theme-selector-option:has(input[type="radio"]:focus-visible),
-  .theme-selector-input:focus-visible + span {
-    outline-color: Highlight;
-    box-shadow: none;
-  }
-}
 @media (max-width: 768px) {
   .header-nav {
     margin-bottom: var(--spacing-sm);
@@ -664,10 +576,6 @@ header .tagline {
     align-items: center;
   }
   .header-nav .lang-switcher {
-    margin-left: 0.25rem;
-    padding-left: 0.25rem;
-  }
-  .header-nav .theme-switcher {
     margin-left: 0.25rem;
     padding-left: 0.25rem;
   }

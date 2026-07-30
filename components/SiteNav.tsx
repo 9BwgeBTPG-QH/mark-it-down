@@ -1,6 +1,5 @@
 import type { Lang } from '@/content/index';
 import { Budoux } from '@/components/Budoux';
-import { ThemeSelector } from '@/components/ThemeSelector';
 import { primaryNavLinks, navHref, langSwitchHref, sharedContent, pageTaglines } from '@/content/shared';
 
 interface SiteNavProps {
@@ -44,19 +43,8 @@ export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentS
               {copy.langSwitchLabel}
             </a>
           </li>
-          <li className="theme-switcher">
-            <ThemeSelector lang={lang} />
-          </li>
         </ul>
       </nav>
-      )}
-      {!showNav && (
-        <nav
-          className="header-nav header-nav-theme-only"
-          aria-label={lang === 'ja' ? '表示設定' : 'Display preferences'}
-        >
-          <ThemeSelector lang={lang} />
-        </nav>
       )}
       <header role="banner">
         <div className="header-logo">
