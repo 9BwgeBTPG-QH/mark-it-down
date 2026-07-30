@@ -251,6 +251,23 @@ AA, motion safety, keyboard/touch access, font load, and horizontal overflow are
 - Mobile screenshot: `screenshots/s6b-segmented-mobile-ja.png`
 - Veto checks: pass — current state exposed, native keyboard/labels, no hover dependency.
 
+## Phase 2 production ownership addendum
+
+Recorded on `2026-07-30` before Phase 3 color/theme work.
+
+| Layer | Production ownership |
+|---|---|
+| Shape | `--radius-card/control/inline/media/status/action/pill/circle` are theme-independent and must not be overridden by Phase 3. |
+| Layout rhythm | Existing `--spacing-*` values are retained and theme-independent. |
+| Type hierarchy | Lora headings, Raleway body/navigation, Space Mono metadata/code, sizes, line heights, and letter spacing are theme-independent. |
+| Motion | `120ms ease-out` press timing and `translate(2px, 3px)` grammar are theme-independent. |
+| Effects | Card, media, action, focus, floating, and decorative `--shadow-*` tokens are semantic theme effects; Phase 3 may override their rendering without changing role or shape. |
+| Color | Background, text, accent, and border colors are theme-owned and may be overridden only after the Phase 3 hard-coded-color audit. |
+
+The complete selector-level radius/shadow classification and exception
+allowlist is
+[`../../audit/phase2-shape-shadow-allowlist-2026-07-30.md`](../../audit/phase2-shape-shadow-allowlist-2026-07-30.md).
+
 ## Candidate token ledger
 
 These are comparison values, not production decisions.
