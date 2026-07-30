@@ -128,11 +128,18 @@ for (const [name, source] of [
 ]) {
   expect(!legacyPattern.test(source), `${name} retains a legacy radius/shadow token`);
 
-  const shadowValues = [...source.matchAll(/box-shadow\s*:\s*([^;]+);/g)].map((match) =>
-    match[1].replace(/\s+/g, ' ').trim()
+  const shadowValues = rules(source).flatMap((rule) =>
+    [...rule.body.matchAll(/box-shadow\s*:\s*([^;]+);/g)].map((match) => ({
+      value: match[1].replace(/\s+/g, ' ').trim(),
+      forcedColors: rule.context.some((context) =>
+        /^@media\s*\(forced-colors:\s*active\)/.test(context)
+      ),
+    }))
   );
   expect(
-    shadowValues.every((value) => value.startsWith('var(--shadow-')),
+    shadowValues.every(
+      ({ value, forcedColors }) => value.startsWith('var(--shadow-') || (value === 'none' && forcedColors)
+    ),
     `${name} contains a non-semantic box-shadow declaration`
   );
 

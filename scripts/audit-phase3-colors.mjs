@@ -77,6 +77,7 @@ function stripComments(source) {
 
 function blockRange(source, marker) {
   const markerIndex = source.indexOf(marker);
+  if (markerIndex < 0) throw new Error(`Missing block: ${marker}`);
   const open = source.indexOf('{', markerIndex);
   let depth = 0;
 
@@ -89,6 +90,10 @@ function blockRange(source, marker) {
   }
 
   throw new Error(`Unclosed block: ${marker}`);
+}
+
+function optionalBlockRange(source, marker) {
+  return source.includes(marker) ? blockRange(source, marker) : null;
 }
 
 function blockStackAt(source, offset) {
@@ -125,13 +130,24 @@ function classifyCss(finding) {
 
 function cssInventory(path) {
   const source = stripComments(read(path));
-  const [rootOpen, rootClose] = blockRange(source, ':root');
+  const definitionRanges = [
+    blockRange(source, ':root'),
+    optionalBlockRange(source, 'html[data-theme="dark"]'),
+    optionalBlockRange(source, 'html:not([data-theme])'),
+  ].filter(Boolean);
   const literalPattern =
     /(#[0-9a-f]{3,8}\b|rgba?\([^)]*\)|hsla?\([^)]*\)|\b(?:transparent|currentColor)\b)/gi;
   const findings = [];
 
   for (const match of source.matchAll(literalPattern)) {
-    if (match.index >= rootOpen && match.index <= rootClose) continue;
+    if (
+      definitionRanges.some(
+        ([definitionOpen, definitionClose]) =>
+          match.index >= definitionOpen && match.index <= definitionClose
+      )
+    ) {
+      continue;
+    }
     const stack = blockStackAt(source, match.index);
     const selector = [...stack].reverse().find((header) => !header.startsWith('@')) ?? '(root)';
     const finding = {

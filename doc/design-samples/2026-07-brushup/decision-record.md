@@ -268,6 +268,44 @@ The complete selector-level radius/shadow classification and exception
 allowlist is
 [`../../audit/phase2-shape-shadow-allowlist-2026-07-30.md`](../../audit/phase2-shape-shadow-allowlist-2026-07-30.md).
 
+## Phase 3 theme state machine record
+
+Recorded on `2026-07-30` after the Phase 3a color audit and before the Phase 3b
+implementation.
+
+Storage key: `localStorage["mid-theme"]`. Only `light` and `dark` are valid
+stored values. The absence of the key represents `system`.
+
+| Event / condition | Preference state | Effective theme | Storage action | Listener result |
+|---|---|---|---|---|
+| boot, stored `light` | light | light | preserve | OS changes ignored |
+| boot, stored `dark` | dark | dark | preserve | OS changes ignored |
+| boot, key absent | system | current `prefers-color-scheme` | none | OS changes update the root |
+| boot, invalid value | system | current `prefers-color-scheme` | remove invalid key if possible | OS changes update the root |
+| boot, storage read throws | system | current `prefers-color-scheme` | none | OS changes update the root |
+| choose Light / Dark | chosen override | chosen override | persist chosen value | OS changes ignored |
+| choose System | system | current `prefers-color-scheme` | remove key | OS changes update the root |
+| override write/remove throws | system | current `prefers-color-scheme` | none | OS changes update the root |
+| cross-tab valid storage event | event override | event override | already external | OS changes ignored |
+| cross-tab removal/invalid event | system | current `prefers-color-scheme` | invalid key removed if possible | OS changes update the root |
+| JavaScript unavailable | system | CSS `prefers-color-scheme` fallback | none | browser CSS reevaluation |
+
+Initial-paint contract:
+
+1. A dependency-free inline `<head>` bootstrap runs before the stylesheet.
+2. It resolves the table above and writes `data-theme="light|dark"`,
+   `data-theme-preference="system|light|dark"`, and matching `color-scheme`
+   onto `<html>`.
+3. The root layout uses `suppressHydrationWarning`; the client selector reads
+   the already-resolved preference after hydration, so no theme attribute is
+   rewritten during React's initial reconciliation.
+4. The same algorithm is embedded before `style.css` in the static EN/JA
+   template viewers.
+
+The three-option UI is a labelled native radio group. All options remain
+visible, keyboard selection uses native radio behavior, the checked option
+exposes the current preference, and selecting System removes the override.
+
 ## Candidate token ledger
 
 These are comparison values, not production decisions.
