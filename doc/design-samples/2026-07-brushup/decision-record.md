@@ -228,33 +228,27 @@ AA, motion safety, keyboard/touch access, font load, and horizontal overflow are
 
 ### S6b — theme information architecture
 
-- Chosen option: **system-only, with no site-visible theme control**
-- Why it won:
-  - The website follows the user's browser/OS preference without introducing a
-    second settings surface.
-  - CSS media queries provide first-paint-correct rendering with no storage,
-    hydration, cross-tab synchronization, or bootstrap JavaScript.
-  - Removing the selector reduces desktop/mobile navigation density and leaves
-    the site focused on reading.
-- Rejected options and exact reason:
-  - Explicit options: useful for override-heavy applications, but unnecessary
-    on this public site and more complex than the final owner intent.
-  - Compact cycle: duplicates browser settings while hiding the available states
-    and making the next result less predictable.
-- Exact production state contract:
-  - UI state: none.
-  - Stored preference: none; the former `mid-theme` value is ignored.
-  - Effective theme: CSS `@media (prefers-color-scheme: dark)`.
-  - Initial paint/FOUC contract: CSS is authoritative; there is no theme
-    bootstrap or hydration-owned root attribute.
-  - Browser theme live-change contract: the media query is reevaluated natively.
-  - Browser chrome: paired `theme-color` metadata uses light/dark media queries.
+- Chosen option: **browser preference only**
+
+| Concern | Production decision |
+|---|---|
+| Effective theme | CSS `@media (prefers-color-scheme: dark)` |
+| First paint | CSS applies the correct scheme before client code runs |
+| Live browser changes | The media query is reevaluated by the browser |
+| Browser chrome | Paired `theme-color` metadata uses light/dark media queries |
+| Previous `mid-theme` value | Ignored |
+
+The three-option selector was removed because it duplicated a browser setting
+and added storage, bootstrap, hydration, and cross-tab behavior to a reading
+site. A compact cycle control was also rejected because it hid the available
+states and made the next result harder to predict.
+
 - Desktop screenshot:
   `../../audit/screenshots/phase3-dark/matrix/dark/en-index.png`
 - Mobile screenshot:
   `../../audit/screenshots/phase3-dark/mobile/ja-home.png`
-- Veto checks: pass — no theme control to operate, and both schemes retain AA,
-  reduced-motion behavior, and zero horizontal overflow.
+- Veto checks: pass — both schemes retain AA contrast, reduced-motion behavior,
+  and zero horizontal overflow.
 
 ## Phase 2 production ownership addendum
 
@@ -273,10 +267,11 @@ The complete selector-level radius/shadow classification and exception
 allowlist is
 [`../../audit/phase2-shape-shadow-allowlist-2026-07-30.md`](../../audit/phase2-shape-shadow-allowlist-2026-07-30.md).
 
-## Phase 3 system-only theme override
+## Phase 3 browser-preference revision
 
-Recorded on `2026-07-30` after the first Phase 3b production review. This owner
-decision supersedes the earlier explicit three-option state machine.
+After the first Phase 3b production review on `2026-07-30`, the repository owner
+removed the website theme control. The production site now follows the browser
+preference directly.
 
 | Event / condition | Effective theme | Site action |
 |---|---|---|
@@ -284,17 +279,16 @@ decision supersedes the earlier explicit three-option state machine.
 | boot with browser Dark | Dark | CSS dark media-query tokens apply |
 | browser changes Light -> Dark | Dark | native media-query reevaluation |
 | browser changes Dark -> Light | Light | native media-query reevaluation |
-| JavaScript unavailable | same as browser preference | no degradation; theme has no JS dependency |
-| stale `mid-theme` key exists | same as browser preference | ignored; no storage read or write |
+| JavaScript unavailable | same as browser preference | CSS remains authoritative |
+| stale `mid-theme` key exists | same as browser preference | the old value is ignored |
 
-Initial-paint contract:
+### Initial paint
 
-1. Light tokens are the root default.
-2. Dark tokens apply in `@media (prefers-color-scheme: dark)`.
-3. No script writes `data-theme` or suppresses hydration warnings.
-4. EN/JA root layouts and static template viewers expose
-   `color-scheme: light dark` and media-specific `theme-color` metadata.
-5. No System / Light / Dark selector is rendered anywhere on the site.
+- Light tokens are the root default; dark tokens apply inside
+  `@media (prefers-color-scheme: dark)`.
+- EN/JA root layouts and static template viewers declare
+  `color-scheme: light dark` and media-specific `theme-color` metadata.
+- Client code does not write a theme attribute or render a theme selector.
 
 ## Candidate token ledger
 

@@ -1,145 +1,97 @@
-# Phase 3 browser-preference dark-theme validation
+# Phase 3 ダークテーマ検証（ブラウザ設定追従）
 
-Date: 2026-07-30
+- 実施日: 2026-07-30
+- 対象: Issue #1664
+- Phase 3a: `fff4b80`（ソース）、`3cc3f5d`（生成物）
+- Phase 3b 初版: `b556866`（ソース）、`dd0af29`（生成物）
 
-Issue: #1664
+Phase 3b 初版では、System / Light / Dark の選択機能を公開した。その後の確認で、サイト内の選択機能を廃止し、ブラウザ設定だけに従う仕様へ変更した。
 
-Phase 3a checkpoint: `fff4b80` + `3cc3f5d`
+## 採用仕様
 
-Initial Phase 3b checkpoint: `b556866` + `dd0af29`
+| 項目 | 実装 |
+|---|---|
+| Light | `:root` の既定値 |
+| Dark | `@media (prefers-color-scheme: dark)` の上書き |
+| 対応宣言 | `color-scheme` メタデータ |
+| テーマ選択UI | 設置しない |
+| 状態保存 | 使用しない |
+| 初期化処理 | 使用しない |
+| 静的ビューア | 本体と同じメタデータとCSS |
 
-## Final scope
+テーマはブラウザのメディアクエリに追従する。クライアント側の初期化や再描画を介さないため、タブ間同期やハイドレーション抑制も不要になった。
 
-The first Phase 3b implementation exposed an explicit
-`System / Light / Dark` selector. The repository owner subsequently chose the
-simpler final contract: the public site shows no theme control and follows the
-user's browser/OS color-scheme preference.
+`html[data-theme="dark"]` は回帰テスト用の上書きに限って残している。公開コードはこの属性を書き込まない。
 
-This report validates that final CSS-only contract across the EN/JA route
-matrix, static template viewers, mobile layouts, and three browser engines.
-Phase 2 typography, geometry, spacing, radius, and motion contracts remain
-locked.
+## 静的検査
 
-## Final implementation contract
+| 検査 | 結果 |
+|---|---:|
+| Phase 1 タイポグラフィ監査 | PASS |
+| Phase 2 Lightテーマ監査 | PASS |
+| Phase 3 カラートークン監査 | PASS |
+| ブラウザ設定追従監査 | PASS |
+| Light基準画像のハッシュ | 変更なし |
+| Dark用上書き | 67件 |
+| 固定色の上書き | 0件 |
+| Light / Darkトークン対応 | PASS |
+| 未分類色 | 0件 |
+| コントラスト検査 | 17件、最小値 7.25 |
+| テーマUI・保存・初期化処理の参照 | 0件 |
+| TypeScript / build | PASS |
+| 文書内リンク | 98件 |
+| 欠落・大小文字不一致・孤立文書 | 各0件 |
 
-- Light semantic tokens are the root default.
-- Dark tokens apply through `@media (prefers-color-scheme: dark)`.
-- EN/JA layouts and static viewers publish `color-scheme: light dark`.
-- Paired `theme-color` metadata uses light/dark media queries.
-- The website renders no theme selector, button, or preference status.
-- No theme code reads or writes `localStorage`.
-- A stale `mid-theme` key is ignored and does not override browser preference.
-- No bootstrap script mutates root attributes before paint.
-- No React client component or hydration suppression is required for theme.
-- Browser preference changes are handled by native media-query reevaluation.
-- The explicit `html[data-theme="dark"]` token block remains only as a
-  non-user-facing deterministic visual-regression hook; production code never
-  writes the attribute, and its tokens are audited for exact parity with the
-  browser-media block.
+文書検査では、`budoux`、`linkedom`、`canvas` の既知警告が出る。今回の差分に起因するエラーではない。
 
-The owner override and superseded state-machine decision are recorded in
-`doc/design-samples/2026-07-brushup/decision-record.md`.
+## ブラウザ検証
 
-## Static audits
+| 検査 | 結果 |
+|---|---:|
+| ルート検証 | 52 / 52 |
+| Light | 26 |
+| Dark | 26 |
+| 英語 | 26 |
+| 日本語 | 26 |
+| 横方向のはみ出し | 0 |
+| テーマ選択UIの表示 | 0 |
+| ルート要素のテーマ属性 | 0 |
+| 静的ビューア | 4 / 4 |
+| モバイル幅 | 4 / 4 |
+| Chromium | 2 / 2 |
+| Firefox | 2 / 2 |
+| WebKit | 2 / 2 |
+| サイト由来のリソースエラー | 0 |
+| ハイドレーションエラー | 0 |
 
-| Gate | Result |
-| --- | --- |
-| Phase 1 typography | PASS |
-| Phase 2 light contract | PASS |
-| Phase 3 color inventory | PASS |
-| Phase 3 browser-preference contract | PASS |
-| Phase 3a light-token hashes | unchanged |
-| Dark theme-owned overrides | 67 |
-| Locked typography/spacing/radius/motion overrides | 0 |
-| Explicit regression hook / browser-media token parity | PASS |
-| Production / static dark-token parity | PASS |
-| Unclassified color findings | 0 |
-| Contrast checks | 17; minimum 7.25:1 |
-| Theme UI / storage / bootstrap references | 0 |
-| TypeScript | PASS |
-| Production build | PASS |
-| `docs/` sync | 98 files copied |
-| Missing output / SHA mismatch / `_next` orphan | 0 / 0 / 0 |
+保存済みテーマを想定した古い値を事前に入れた状態でも、表示はブラウザ設定に従った。
 
-The build retains the known optional `budoux -> linkedom -> canvas` warning;
-compilation, type validation, static generation, and export all complete.
-Removing the bootstrap also removes the former
-`scripts/finalize-static-export.mjs` post-processing step.
+CLSはLightとDarkで各3回計測し、全試行で0だった。
 
-## Runtime browser-preference results
+## 画面上の確認値
 
-Every run preloaded the opposite former `mid-theme` value to prove that stale
-storage no longer affects rendering.
+| 対象 | Light | Dark |
+|---|---|---|
+| ページ背景 | `rgb(247, 246, 241)` | `rgb(19, 18, 16)` |
+| 本文 | `rgb(34, 34, 34)` | `rgb(238, 234, 225)` |
+| 罫線 | `rgb(34, 34, 34)` | `rgb(181, 175, 163)` |
+| アクセント | `rgb(255, 210, 63)` | `rgb(255, 210, 63)` |
 
-| Matrix | Result |
-| --- | --- |
-| 13 routes x EN/JA x browser Light/Dark | 52/52 PASS |
-| Light states | 26 |
-| Dark states | 26 |
-| EN states | 26 |
-| JA states | 26 |
-| Maximum document horizontal overflow | 0 px |
-| Visible theme controls | 0 |
-| Root `data-theme` / `data-theme-preference` attributes | absent |
-| Static viewer EN/JA x Light/Dark | 4/4 PASS |
-| Mobile 390x844: EN/JA site + EN/JA static viewer | 4/4 PASS |
-| Chromium: Dark -> Light -> Dark live preference | 2/2 PASS |
-| Firefox: Dark -> Light -> Dark live preference | 2/2 PASS |
-| WebKit: Dark -> Light -> Dark live preference | 2/2 PASS |
-| Site-owned resource errors | 0 |
-| Hydration errors/warnings | 0 |
+英語・日本語の主要画面、モバイル幅、静的ビューアで、本文、リンク、表、コード、警告、図版の判読性を目視確認した。
 
-CLS was `0` in three Light runs and three Dark runs. The system-only path has
-no JavaScript theme transition, so the browser selects the matching token
-block during CSS evaluation instead of correcting the theme after paint.
+## 修正した問題
 
-## Representative surface checks
+1. サイト内の三択UIがブラウザ設定と役割を重複していたため、UIと状態管理を削除した。
+2. テーマUIの追加でナビゲーション密度と導入部の行構成が変わっていたため、従来の配置へ戻した。
+3. 初期化スクリプトがCSSの判断を後処理していたため、メディアクエリへ一本化した。
+4. 静的ビューア専用の制御経路を廃止し、本体と同じCSS契約へ統一した。
+5. 保存済みの古いテーマ値が表示を固定しないことを回帰テストで確認した。
+6. 検証用に残っていた孤立画像31件を整理した。
 
-- Light body: `rgb(242, 237, 228)`, `color-scheme: light`
-- Dark body: `rgb(10, 10, 9)`, `color-scheme: dark`
-- Dark primary text: `rgb(241, 236, 227)`
-- SVG flow icons: accent stroke `rgb(96, 165, 250)`, fill `none`
-- template cards: `rgba(255, 255, 255, 0.035)`
-- form input: dark inherited scheme with semantic text/border
-- primary button: blue surface with dark readable text
-- welcome caution surface: `rgba(251, 191, 36, 0.08)`
-- static viewer `pre`: dark semantic background/text/border
-- raster images retain their source rendering without automatic inversion
+## 証跡
 
-## Adversarial findings resolved
-
-1. The explicit selector duplicated browser settings and added a second
-   preference model, persistent storage, cross-tab synchronization, bootstrap
-   ordering, and hydration ownership. The final contract removes all five.
-2. The selector also increased desktop/mobile navigation density and required a
-   special theme-only navigation row on Welcome. Both UI paths are removed;
-   Welcome again renders its intended logo-only banner.
-3. The first implementation required moving a script ahead of blocking CSS
-   after static export. Pure CSS preference handling eliminates that
-   post-processing and the associated FOUC failure mode.
-4. Static template viewers had a separate controller and three-option markup.
-   They now use the same CSS media contract and paired metadata as Next pages.
-5. A prior saved `mid-theme` value could otherwise preserve an obsolete
-   override. Runtime checks seeded the opposite value in every matrix state and
-   confirmed it remains ignored.
-6. Regenerating the static export produced 31 obsolete `_next` artifacts. They
-   were removed, leaving zero files under deployed `docs/_next` without an
-   `out/_next` counterpart.
-
-## Visual evidence
-
-- `doc/audit/screenshots/phase3-dark/cohort-composite-en.png`
-- `doc/audit/screenshots/phase3-dark/matrix/light/` (26 full-page images)
-- `doc/audit/screenshots/phase3-dark/matrix/dark/` (26 full-page images)
-- `doc/audit/screenshots/phase3-dark/static/` (2 full-page images)
-- `doc/audit/screenshots/phase3-dark/mobile/` (4 full-page images)
-
-The five-page composite mixes browser Light and Dark evidence for Home,
-Templates, Welcome, Changelog, and FAQ. All captures show the final navigation
-without a site-level theme control. Static desktop and mobile evidence uses
-`?t=dev/api-documentation` and asserts a rendered `#template-content h1`
-before capture.
-
-Final manual inspection of the composite, mobile Home, and mobile static viewer
-found no clipped leading navigation, theme-control remnants, horizontal
-document overflow, or broken content state.
+- `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-light-en-1280.png`
+- `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-dark-en-1280.png`
+- `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-light-ja-390.png`
+- `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-dark-ja-390.png`
+- `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-static-viewer-dark.png`
