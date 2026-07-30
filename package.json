@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "sync": "next build && node scripts/sync-docs.mjs",
+    "sync": "npm run build && node scripts/sync-docs.mjs",
     "lint": "next lint"
   },
   "dependencies": {

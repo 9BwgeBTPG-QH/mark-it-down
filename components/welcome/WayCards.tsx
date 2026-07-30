@@ -1,9 +1,10 @@
+import type { ReactElement } from 'react';
 import { Budoux } from '@/components/Budoux';
 import { WelcomeInline } from '@/components/welcome/InlineText';
 import { NewTabIcon, SidePanelIcon, WebClipperIcon } from '@/components/welcome/icons';
 import { welcomeWaysLabel, welcomeWayCards, type Lang, type WelcomeWayIcon } from '@/content/welcome';
 
-const icons: Record<WelcomeWayIcon, (props: { className?: string }) => JSX.Element> = {
+const icons: Record<WelcomeWayIcon, (props: { className?: string }) => ReactElement> = {
   newTab: NewTabIcon,
   sidePanel: SidePanelIcon,
   webClipper: WebClipperIcon,

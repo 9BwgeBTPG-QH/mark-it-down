@@ -32,7 +32,7 @@ export function FaqPage({ lang }: { lang: Lang }) {
         <h2 id="faq-heading" className="visually-hidden">
           {copy.sectionHeading}
         </h2>
-        <div className="changelog-accordion">
+        <div className="changelog-accordion faq-accordion">
           {categories.map((category) => (
             <Fragment key={category.heading}>
               <div className="faq-category-header">{ja ? <Budoux text={category.heading} /> : category.heading}</div>

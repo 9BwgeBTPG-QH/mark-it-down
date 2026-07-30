@@ -4,9 +4,9 @@ interface IconProps {
 
 // Warning-triangle icon ported verbatim from docs/welcome.html's
 // first-action-label SVG (original-design rollback, #1593 Wave R2): the old
-// markup hardcoded stroke="#92400E" (amber), matching `.first-action-label`'s
-// own amber text color in app/original.css, so it is restored here as-is
-// rather than the Tailwind-era currentColor substitution.
+// markup hardcoded stroke="#92400E" (amber), matching `.first-action-label`.
+// Phase 3a moved that color behind the semantic label token, so the SVG now
+// inherits the same resolved value instead of carrying a second color source.
 export function WarningTriangleIcon({ className }: IconProps) {
   return (
     <svg
@@ -15,7 +15,7 @@ export function WarningTriangleIcon({ className }: IconProps) {
       height="16"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#92400E"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
