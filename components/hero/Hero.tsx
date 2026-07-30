@@ -17,9 +17,11 @@ const flowSteps = [
   { label: 'Exit', Icon: ExitIcon },
 ] as const;
 
-// Old docs/index.html hero, restored verbatim from eed65be (original-design
+// Old docs/index.html hero structure, restored from eed65be (original-design
 // rollback, 2026-07-12): h1 → flow strip → tagline → fact → subtitle →
-// buttons → ornament. No screenshot — the old page's only visual is the Marp
+// buttons → ornament. The tagline/fact copy itself was rewritten 2026-07-31
+// (see content/index.ts) — the structure, not the wording, is the contract.
+// No screenshot — the old page's only visual is the Marp
 // slide iframe in the screenshot-section below (components/index/Screenshot).
 // The primary CTA opens in the same tab and carries data-ga-cta="hero"
 // (delegated GA listener), matching the old inline gtag onclick's placement —

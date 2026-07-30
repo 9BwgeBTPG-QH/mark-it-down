@@ -290,6 +290,35 @@ preference directly.
   `color-scheme: light dark` and media-specific `theme-color` metadata.
 - Client code does not write a theme attribute or render a theme selector.
 
+## 2026-07-31 review addendum
+
+Recorded after the post-ship adversarial review of #1660.
+
+- **Theme identity scope.** The "paper neo-brutalism" language (hard-offset
+  shadows such as `6px 6px 0`, solid ink borders) applies to the light theme
+  only. The dark theme deliberately uses a different language (hairline inset
+  borders plus soft glow shadows, blue `#60a5fa` accent), as permitted by the
+  Phase 2 shape/shadow allowlist ("Theme effect; Phase 3 may override"). The
+  two themes are not intended to share one visual identity.
+- **Shadow offset hierarchy (light).** Shipped tokens form a deliberate size
+  ramp: cards `--shadow-card-rest: 6px 6px 0`, action buttons
+  `--shadow-action-rest: 5px 5px 0` collapsing to `3px 2px 0` with a
+  `translate(2px, 3px)` press motion, floating `3px 3px 0`, decorative
+  `2px 2px 0`.
+- **Explicit `data-theme` selectors removed.** The `html[data-theme="dark"]` /
+  `html[data-theme="light"]` override blocks (178 lines per CSS file) were dead
+  code — no shipped script ever writes the attribute — and were deleted. The
+  dark theme is defined solely by `html:not([data-theme])` inside
+  `@media (prefers-color-scheme: dark)`; `scripts/audit-phase3-theme.mjs` now
+  audits that block directly and rejects any reintroduction of
+  `html[data-theme=`.
+- **Mono accent extended to section labels.** `.section-label`,
+  `.hero-flow-label`, and `.ways-label` moved from `--font-sans` to
+  `--font-mono`. Before this, the landing page rendered zero Space Mono
+  glyphs (mono was confined to `code` / `kbd` / changelog chips), so the
+  Phase 1 accent was invisible on the most-visited page while its font still
+  downloaded there.
+
 ## Candidate token ledger
 
 These are comparison values, not production decisions.

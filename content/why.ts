@@ -254,8 +254,9 @@ export const whyBeliefs: Record<Lang, { eyebrow: string; items: WhyBeliefItem[] 
 // components/why/NotBuilt.tsx).
 // `subtitleLines` restores the old markup's hard <br> breaks between
 // sentences (EN 2 lines, JA 3 — the JA copy has an extra
-// monetization-tradeoff sentence with no EN equivalent); preserved verbatim
-// per language rather than harmonized.
+// monetization-tradeoff sentence with no EN equivalent); kept per language
+// rather than harmonized. The JA tradeoff sentence was rephrased 2026-07-31
+// to drop its full-width dash (slop review).
 export interface WhyNotBuiltItem {
   title: string;
   body: string;
@@ -296,7 +297,7 @@ export const whyNotBuilt: Record<Lang, WhyNotBuiltCopy> = {
     heading: '引き算が、人間中心の証明になる。',
     subtitleLines: [
       '機能を足すのは簡単だ。削る勇気を持つほうがずっと難しい。',
-      'マネタイズを最優先にするなら逆の設計が正解だろう——留まらせる、溜め込ませる、依存させる。それをやるつもりはない。',
+      'マネタイズを最優先にするなら、留まらせる、溜め込ませる、依存させるという逆の設計が正解だろう。それをやるつもりはない。',
       '以下のものはここにない。',
     ],
     items: [

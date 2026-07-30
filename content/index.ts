@@ -5,9 +5,13 @@ interface IndexCopy {
   title: string;
   description: string;
   h1: string;
-  // Hero copy, verbatim from eed65be docs/index.html / index-ja.html. Lines
-  // arrays reproduce the old hard `<br>` breaks (JA with ZWSP stripped —
-  // <Budoux> supersedes them).
+  // Hero copy. heroTaglineLines / heroFact were rewritten 2026-07-31 (#1660
+  // review follow-up): the tagline now states what the product is, and the
+  // three "No ..." claims moved down into heroFact — still the plain
+  // `.hero-fact` paragraph, now a single middot-separated line set in
+  // --font-mono. heroSubtitleLines remain verbatim from eed65be
+  // docs/index.html / index-ja.html. Lines arrays reproduce hard `<br>`
+  // breaks (JA with ZWSP stripped — <Budoux> supersedes them).
   heroTaglineLines: string[];
   heroFact: string;
   heroSubtitleLines: string[];
@@ -16,8 +20,9 @@ interface IndexCopy {
   ctaSecondary: string;
 }
 
-// Copy lifted verbatim from eed65be docs/index.html and docs/index-ja.html
-// (title / meta description / h1 are the SEO parity gate — do not edit).
+// Copy originally lifted from eed65be docs/index.html and docs/index-ja.html;
+// hero tagline/fact revised 2026-07-31 (see IndexCopy comment above).
+// title / meta description / h1 are the SEO parity gate — do not edit.
 export const indexContent: Record<Lang, IndexCopy> = {
   en: {
     lang: 'en',
@@ -25,8 +30,8 @@ export const indexContent: Record<Lang, IndexCopy> = {
     description:
       'Free local-first Chrome extension Markdown editor and Web Clipper for AI answers, web articles, RSS reading, and Git-friendly notes. Writing works offline.',
     h1: 'Free local Markdown editor and Web Clipper',
-    heroTaglineLines: ['No AI writing.', 'No account wall.', 'No automatic note sync.'],
-    heroFact: 'A local writing space for rewriting ideas in your own words.',
+    heroTaglineLines: ['A local Markdown editor', 'for rewriting ideas in your own words.'],
+    heroFact: 'No AI writing · No account · No auto-sync',
     heroSubtitleLines: [
       'Bring in AI output, web pages, RSS items, or a blank note.',
       'Rewrite what matters in your own words.',
@@ -42,8 +47,8 @@ export const indexContent: Record<Lang, IndexCopy> = {
     description:
       'AI回答、Web記事、RSSをローカルで書き直す無料のChrome拡張Markdownエディタ。Web Clipper、Git同期、Obsidian風wikilinkに対応。',
     h1: '無料・ローカル完結 Markdown エディタ',
-    heroTaglineLines: ['AI執筆機能はない。', 'アカウント登録は不要。', 'ノートの自動同期はない。'],
-    heroFact: '考えを自分の言葉に書き直す、ローカルだけで使える場所です。',
+    heroTaglineLines: ['自分の言葉に書き直すための、', 'ローカル Markdown エディタ。'],
+    heroFact: 'AI執筆なし · アカウント不要 · 自動同期なし',
     heroSubtitleLines: [
       'AI出力、Web記事、RSS、空白のノートを取り込む。',
       '必要な部分を、自分の言葉に書き直す。',

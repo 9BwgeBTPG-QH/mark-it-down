@@ -72,8 +72,11 @@ interface RssSectionsCopy {
   cta: RssCtaCopy;
 }
 
-// Below-fold section copy, ported verbatim from docs/rss.html /
-// docs/rss-ja.html (Workspace section, Subscriptions section, closing CTA).
+// Below-fold section copy, ported from docs/rss.html / docs/rss-ja.html
+// (Workspace section, Subscriptions section, closing CTA). The CTA heading
+// was rephrased 2026-07-31 to an affirmative form — the page had two
+// negative-parallel headings and keeps only the Workspace one (slop review).
+// Everything else is verbatim.
 // The old CTA button's inline gtag() analytics call is dropped — this
 // rebuild has no analytics wiring, matching the same omission already made
 // for the index page's CTA (components/index/Cta.tsx) and the clipper
@@ -121,7 +124,7 @@ export const rssSections: Record<Lang, RssSectionsCopy> = {
       ],
     },
     cta: {
-      heading: 'Turn reading into notes, not a backlog.',
+      heading: 'Turn reading into your own notes.',
       primaryLabel: 'Get the extension',
       primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
       secondaryLabel: 'See all features',
@@ -169,7 +172,7 @@ export const rssSections: Record<Lang, RssSectionsCopy> = {
       ],
     },
     cta: {
-      heading: '読むことを、未処理リストではなくノートに変える。',
+      heading: '読んだものを、自分のノートに変える。',
       primaryLabel: '拡張機能を入手する',
       primaryAriaLabel: 'Chrome ウェブストアから Mark It Down を入手',
       secondaryLabel: '機能を見る',

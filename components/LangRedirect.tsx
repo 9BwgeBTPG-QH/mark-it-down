@@ -13,6 +13,10 @@
 // extensionless `/why` that Pages also serves / `next dev` uses). The onclick
 // is replaced with one delegated listener — same pattern as GoogleAnalytics's
 // data-ga-cta listener — so SiteNav/SiteFooter stay server components.
+// 2026-07 revision (#1660 review follow-up): the JA→EN direction is removed.
+// Default navigation never lands on a `-ja` URL by accident, so opening one is
+// explicit intent (typed or shared link) and must not bounce non-ja browsers
+// back to EN. EN→JA auto-redirect and the switcher override are unchanged.
 // Rendered as a plain parser-blocking inline <script> at the top of <body>,
 // the closest static-export equivalent of the old head placement (runs before
 // any content paints, so no flash of the wrong language).
@@ -28,14 +32,7 @@ const redirectFor = {
         location.replace(file + '-ja.html');
       }
     }`,
-  ja: `var file = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
-    if (lang.indexOf('ja') !== 0 && !sessionStorage.getItem('langOverride')) {
-      if (/-ja\\.html$/.test(file)) {
-        location.replace(file.replace(/-ja\\.html$/, '.html'));
-      } else if (/-ja$/.test(file)) {
-        location.replace(file.slice(0, -3) + '.html');
-      }
-    }`,
+  ja: '',
 };
 
 export function LangRedirect({ lang }: { lang: 'en' | 'ja' }) {

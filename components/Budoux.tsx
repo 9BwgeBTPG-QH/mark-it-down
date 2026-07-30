@@ -5,8 +5,18 @@ import { loadDefaultJapaneseParser } from 'budoux';
 // its output is baked into static HTML, so this ships zero client JS.
 const parser = loadDefaultJapaneseParser();
 
+// A trailing phrase this short (e.g. 「ない。」) wrapping alone reads as a
+// typographic widow — observed on the index-ja hero tagline. Merging it into
+// the previous phrase removes that break opportunity; overflow-wrap: anywhere
+// below still allows an emergency break if the merged phrase exceeds the line.
+const WIDOW_MAX_CHARS = 3;
+
 export function Budoux({ text }: { text: string }) {
   const phrases = parser.parse(text);
+  if (phrases.length > 1 && phrases[phrases.length - 1].length <= WIDOW_MAX_CHARS) {
+    const widow = phrases.pop() as string;
+    phrases[phrases.length - 1] += widow;
+  }
   return (
     // word-break: keep-all is required for <wbr> to matter: CJK text is
     // otherwise breakable between any two characters, so browsers ignore the

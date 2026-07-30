@@ -260,7 +260,10 @@ export const okfMidSection: Record<Lang, OkfMidSectionCopy> = {
 };
 
 // "Why it fits" narrative section (docs/okf.html "philosophy" section #3).
-// Plain prose, no inline formatting or links in the old page.
+// Plain prose, no inline formatting or links in the old page. The second
+// paragraph's "It is not a managed catalog, ..." sentence was dropped in
+// both languages 2026-07-31 (slop review: textbook negative-parallel
+// construction); the rest matches the old page.
 export const okfWhyFits: Record<Lang, OkfNarrativeCopy> = {
   en: {
     eyebrow: 'Why it fits',
@@ -270,7 +273,7 @@ export const okfWhyFits: Record<Lang, OkfNarrativeCopy> = {
         'Mark It Down is built around the idea that notes should graduate. OKF points in the same direction: knowledge remains visible as Markdown, metadata remains visible as frontmatter, and history remains visible in Git.',
       ],
       [
-        'That makes Mark It Down a good place to inspect and rewrite OKF content. It is not a managed catalog, enrichment agent, or hosted integration. It is the human review step between an incoming bundle and the next place that bundle needs to go.',
+        'That makes Mark It Down a good place to inspect and rewrite OKF content. It is the human review step between an incoming bundle and the next place that bundle needs to go.',
       ],
     ],
   },
@@ -282,7 +285,7 @@ export const okfWhyFits: Record<Lang, OkfNarrativeCopy> = {
         'Mark It Down は、ノートがいつでも卒業できることを前提に作っています。OKF も同じ方向を向いています。知識は Markdown として見え、メタデータは frontmatter として見え、履歴は Git で見えます。',
       ],
       [
-        'だから Mark It Down は OKF content を点検し、書き直し、整える場所に向いています。これは managed catalog でも enrichment agent でも hosted integration でもありません。入ってきたバンドルと次の行き先の間に置く、人間のレビュー工程です。',
+        'だから Mark It Down は OKF content を点検し、書き直し、整える場所に向いています。入ってきたバンドルと次の行き先の間に置く、人間のレビュー工程です。',
       ],
     ],
   },

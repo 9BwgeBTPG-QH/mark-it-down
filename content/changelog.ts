@@ -11,7 +11,9 @@ interface ChangelogCopy {
 }
 
 // Copy for the EN/JA Changelog page pair (#1593 Phase 3-4). Ported verbatim
-// from docs/changelog.html / docs/changelog-ja.html. The JA h1/description
+// from docs/changelog.html / docs/changelog-ja.html, with two exceptions
+// rephrased 2026-07-31 (slop review, em-dash density): the EN v2.2.6 theme
+// and the JA v2.2.4 theme (both dashes removed). The JA h1/description
 // below have their zero-width spaces (U+200B) stripped, matching the same
 // convention used in content/faq.ts / content/why.ts / content/troubleshooting.ts.
 export const changelogContent: Record<Lang, ChangelogCopy> = {
@@ -302,7 +304,7 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
       highlight: 'Open from the address bar, zoom diagrams, grow notes into a series.',
       status: 'Released',
       statusClass: 'released',
-      theme: 'v2.2.5 cleaned up what goes out. v2.2.6 makes it worth taking out: diagrams you can inspect at full resolution, notes you can grow by splitting, clips you can actually read. The tools for shaping information — zoom, divide, convert — now feel as capable as the tools for bringing it in.',
+      theme: 'v2.2.5 cleaned up what goes out. v2.2.6 makes it worth taking out: diagrams you can inspect at full resolution, notes you can grow by splitting, clips you can actually read. Zoom, divide, convert: the tools for shaping information now feel as capable as the tools for bringing it in.',
       sections: [
         {
           title: 'New Features',
@@ -1770,7 +1772,7 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
       highlight: 'Web Clipper が、取り込みの入口になる。',
       status: 'リリース済',
       statusClass: 'released',
-      theme: 'v2.2.3 でメモ帳を「思考の場所」として深化させた。v2.2.4 はその入口——Web Clipper を中心に、「取り込む」体験を一段引き上げるバージョンだ。サイトから取得したメタデータを frontmatter に選んで追加でき、保存前にコンテンツの取り込み方を切り替えられ、Markdown に書き出すときに Obsidian で開いてそのまま読める。スクロールバーは使うときだけ現れ、エディタの静けさを邪魔しない。地味だが重要な修正もした——Git 同期で RSS が絡んだときにプッシュが止まるデッドロックが解消された。',
+      theme: 'v2.2.3 でメモ帳を「思考の場所」として深化させた。v2.2.4 はその入口である Web Clipper を中心に、「取り込む」体験を一段引き上げるバージョンだ。サイトから取得したメタデータを frontmatter に選んで追加でき、保存前にコンテンツの取り込み方を切り替えられ、Markdown に書き出すときに Obsidian で開いてそのまま読める。スクロールバーは使うときだけ現れ、エディタの静けさを邪魔しない。地味だが重要な修正もした。Git 同期で RSS が絡んだときにプッシュが止まるデッドロックの解消だ。',
       sections: [
         {
           title: '新機能',

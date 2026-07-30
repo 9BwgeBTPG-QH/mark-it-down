@@ -126,8 +126,7 @@ function tokenColor(tokenMap, name) {
 
 const cssSources = CSS_FILES.map((path) => stripComments(read(path)));
 const lightTokens = cssSources.map((source) => tokens(block(source, ':root')));
-const darkTokens = cssSources.map((source) => tokens(block(source, 'html[data-theme="dark"]')));
-const fallbackTokens = cssSources.map((source) => tokens(block(source, 'html:not([data-theme])')));
+const darkTokens = cssSources.map((source) => tokens(block(source, 'html:not([data-theme])')));
 
 for (const [index, path] of CSS_FILES.entries()) {
   expect(
@@ -143,10 +142,6 @@ for (const [index, path] of CSS_FILES.entries()) {
   );
   expect(missing.length === 0, `${path} dark block misses: ${missing.join(', ')}`);
   expect(locked.length === 0, `${path} dark block overrides locked tokens: ${locked.join(', ')}`);
-  expect(
-    JSON.stringify([...darkTokens[index]]) === JSON.stringify([...fallbackTokens[index]]),
-    `${path} explicit dark and no-JS fallback tokens differ`
-  );
   expect(sourceHasSystemTheme(cssSources[index]), `${path} system theme contract is incomplete`);
 }
 
@@ -161,6 +156,7 @@ function sourceHasSystemTheme(source) {
     source.includes('html:not([data-theme])') &&
     source.includes('color-scheme: light') &&
     source.includes('color-scheme: dark') &&
+    !source.includes('html[data-theme=') &&
     !source.includes('.theme-selector') &&
     !source.includes('.theme-switcher')
   );
@@ -227,8 +223,8 @@ for (const [name, layout] of [
 expect(!siteNav.includes('ThemeSelector'), 'SiteNav still renders ThemeSelector');
 expect(!siteNav.includes('theme-switcher'), 'SiteNav still exposes a theme switcher');
 expect(
-  decisionRecord.includes('## Phase 3 system-only theme override'),
-  'system-only owner decision is not recorded'
+  decisionRecord.includes('## Phase 3 browser-preference revision'),
+  'browser-preference owner decision is not recorded'
 );
 expect(
   packageJson.scripts.build === 'next build',
@@ -254,7 +250,7 @@ console.log('[phase3-theme] PASS');
 console.log(`- Phase 3a light token hashes: ${PHASE3A_LIGHT_TOKEN_HASHES.join(' / ')}`);
 console.log(`- dark theme-owned overrides: ${darkTokens[0].size}`);
 console.log(`- locked token overrides: 0`);
-console.log(`- explicit/system-media token parity: PASS`);
+console.log(`- explicit data-theme selectors absent: PASS`);
 console.log(`- production/static dark token parity: PASS`);
 console.log(`- system-only CSS/metadata contracts: PASS`);
 console.log(`- theme UI/storage/bootstrap absent: PASS`);

@@ -72,8 +72,11 @@ interface ClipperSectionsCopy {
   cta: ClipperCtaCopy;
 }
 
-// Below-fold section copy, ported verbatim from docs/clipper.html /
-// docs/clipper-ja.html (Flow section, Fidelity section, closing CTA). The
+// Below-fold section copy, ported from docs/clipper.html /
+// docs/clipper-ja.html (Flow section, Fidelity section, closing CTA); the JA
+// CTA heading was rephrased 2026-07-31 to match the EN affirmative form
+// (slop review — the negation existed only in JA). Everything else is
+// verbatim. The
 // old CTA button's inline gtag() analytics call is dropped — this rebuild
 // has no analytics wiring, matching the same omission already made for the
 // index page's CTA (components/index/Cta.tsx).
@@ -168,7 +171,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
       ],
     },
     cta: {
-      heading: '全部ではなく、必要な部分だけを残す。',
+      heading: '少なくクリップして、大事な部分だけを残す。',
       primaryLabel: '拡張機能を入手する',
       primaryAriaLabel: 'Chrome ウェブストアから Mark It Down を入手',
       secondaryLabel: '機能を見る',

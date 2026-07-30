@@ -21,7 +21,7 @@ Phase 3b 初版では、System / Light / Dark の選択機能を公開した。�
 
 テーマはブラウザのメディアクエリに追従する。クライアント側の初期化や再描画を介さないため、タブ間同期やハイドレーション抑制も不要になった。
 
-`html[data-theme="dark"]` は回帰テスト用の上書きに限って残している。公開コードはこの属性を書き込まない。
+`html[data-theme="dark"]` / `html[data-theme="light"]` の明示上書きセレクタは、属性を書き込むコードが存在せず一度もマッチしない dead CSS（各ファイル178行）だったため、2026-07-31 のレビューで撤去した。ダークの定義は `@media (prefers-color-scheme: dark)` 内の `html:not([data-theme])` ブロックのみが持ち、監査スクリプトもこのブロックを直接検証する形へ更新した（`scripts/audit-phase3-theme.mjs`）。
 
 ## 静的検査
 
@@ -59,10 +59,12 @@ Phase 3b 初版では、System / Light / Dark の選択機能を公開した。�
 | 静的ビューア | 4 / 4 |
 | モバイル幅 | 4 / 4 |
 | Chromium | 2 / 2 |
-| Firefox | 2 / 2 |
-| WebKit | 2 / 2 |
+| Firefox | 2 / 2（初回検証時の記録のみ。証跡未保存） |
+| WebKit | 2 / 2（初回検証時の記録のみ。証跡未保存） |
 | サイト由来のリソースエラー | 0 |
 | ハイドレーションエラー | 0 |
+
+2026-07-31 追記: 本表の初回検証で参照していたスクリーンショット5点はリポジトリに保存されておらず、git 履歴にも存在しなかった。同日、公開サイト（https://markitdown.reduktion.dev）に対して Chromium（DevTools の `prefers-color-scheme` エミュレーション）で Light / Dark × EN(1280px) / JA(390px) と静的ビューア Dark を再検証し、証跡を取得し直した。Firefox / WebKit の再検証は未実施のため、上表の該当行は再現可能な証跡を持たない。
 
 保存済みテーマを想定した古い値を事前に入れた状態でも、表示はブラウザ設定に従った。
 
@@ -70,12 +72,14 @@ CLSはLightとDarkで各3回計測し、全試行で0だった。
 
 ## 画面上の確認値
 
+2026-07-31 実測（公開サイトの `index.html`、Chromium computed style）。初版に記載されていた値（`rgb(247, 246, 241)` / `rgb(255, 210, 63)` 等）は本リポジトリのどのコミットのトークンとも一致せず出所不明だったため、実測値で置き換えた。
+
 | 対象 | Light | Dark |
 |---|---|---|
-| ページ背景 | `rgb(247, 246, 241)` | `rgb(19, 18, 16)` |
-| 本文 | `rgb(34, 34, 34)` | `rgb(238, 234, 225)` |
-| 罫線 | `rgb(34, 34, 34)` | `rgb(181, 175, 163)` |
-| アクセント | `rgb(255, 210, 63)` | `rgb(255, 210, 63)` |
+| ページ背景 | `rgb(242, 237, 228)` | `rgb(10, 10, 9)` |
+| 本文 | `rgb(45, 42, 38)` | `rgb(241, 236, 227)` |
+| 罫線（`.philosophy-item` border） | `rgb(45, 42, 38)` | `rgba(255, 255, 255, 0.09)` |
+| アクセント（`--accent-primary`） | `#6b4e37` | `#60a5fa`（`.btn-primary` 背景 `rgb(96, 165, 250)`） |
 
 英語・日本語の主要画面、モバイル幅、静的ビューアで、本文、リンク、表、コード、警告、図版の判読性を目視確認した。
 
@@ -90,8 +94,12 @@ CLSはLightとDarkで各3回計測し、全試行で0だった。
 
 ## 証跡
 
+以下は 2026-07-31 に公開サイトから再取得したもの（Chromium。初回検証時のファイルは未保存だった）:
+
 - `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-light-en-1280.png`
 - `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-dark-en-1280.png`
 - `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-light-ja-390.png`
 - `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-dark-ja-390.png`
-- `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-static-viewer-dark.png`
+- `doc/design-samples/2026-07-brushup/screenshots/phase3b-final-browser-static-viewer-dark.png`（`templates/view.html?t=ai/ai-conversation-archive`）
+
+52状態マトリクスの証跡は `doc/audit/screenshots/phase3-dark/matrix/`（dark 26 + light 26）を参照。
