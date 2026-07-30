@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
-import { Lora, Raleway } from 'next/font/google';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { LangRedirect } from '@/components/LangRedirect';
+import { fontVariables } from '../fonts';
 import '../globals.css';
 // Original-design stylesheet (eed65be:docs/style.src.css port) — loaded after
 // globals.css so its rules win over Tailwind preflight (#1593 rollback).
@@ -13,12 +13,9 @@ import '../original.css';
 // SiteFooter moved to PageShell (Phase 3): a shared root layout can't know a
 // page's own slug, so each page composes PageShell itself instead of this
 // layout rendering the same index-defaulted nav/footer for every route.
-const lora = Lora({ subsets: ['latin'], variable: '--font-lora', display: 'swap' });
-const raleway = Raleway({ subsets: ['latin'], variable: '--font-raleway', display: 'swap' });
-
 export default function EnLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${lora.variable} ${raleway.variable}`}>
+    <html lang="en" className={fontVariables}>
       <body>
         <LangRedirect lang="en" />
         {children}

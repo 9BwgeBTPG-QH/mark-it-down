@@ -46,6 +46,28 @@
     U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
     U+2215, U+FEFF, U+FFFD;
 }
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/space-mono-latin-400.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/space-mono-latin-700.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
 
 /* ============================================================================
    DESIGN TOKENS (:root)
@@ -76,6 +98,7 @@
     0 16px 48px rgba(43, 43, 43, 0.12), 0 8px 16px rgba(107, 78, 55, 0.08);
   --font-serif: "Lora", Georgia, serif;
   --font-sans: "Raleway", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
@@ -1686,7 +1709,7 @@ a:hover {
   line-height: var(--line-height-relaxed);
 }
 .faq-answer code {
-  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-family: var(--font-mono);
   font-size: 0.9em;
   background: var(--bg-secondary);
   padding: 0.1em 0.4em;
@@ -2281,7 +2304,7 @@ a:hover {
   font-size: inherit;
 }
 .template-viewer-content code {
-  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-family: var(--font-mono);
   font-size: 0.9em;
   background: var(--bg-secondary);
   padding: 0.15em 0.4em;
@@ -2535,7 +2558,7 @@ a:hover {
 .template-raw-content {
   white-space: pre-wrap;
   word-wrap: break-word;
-  font-family: SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.6;
   padding: 0;

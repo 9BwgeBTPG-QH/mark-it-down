@@ -32,6 +32,7 @@
     0 16px 48px rgba(43, 43, 43, 0.12), 0 8px 16px rgba(107, 78, 55, 0.08);
   --font-serif: var(--font-lora), Georgia, serif;
   --font-sans: var(--font-raleway), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, monospace;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
@@ -985,7 +986,7 @@ a:hover {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 .accordion-version {
-  font-family: var(--font-serif);
+  font-family: var(--font-mono);
   font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--text-primary);
@@ -1021,7 +1022,7 @@ a:hover {
   margin-top: 0;
 }
 .accordion-status {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 600;
   padding: 4px 10px;
@@ -1150,7 +1151,11 @@ a:hover {
   color: var(--text-secondary);
   line-height: 1.4;
 }
+.changelog-features kbd {
+  font-family: var(--font-mono);
+}
 .changelog-features code {
+  font-family: var(--font-mono);
   font-size: 0.8em;
   background: rgba(107, 78, 55, 0.1);
   padding: 1px 5px;
@@ -1661,12 +1666,15 @@ a:hover {
   margin-bottom: var(--spacing-xs);
   line-height: var(--line-height-relaxed);
 }
-.faq-answer code {
-  font-family: ui-monospace, SFMono-Regular, monospace;
+.faq-accordion code {
+  font-family: var(--font-mono);
   font-size: 0.9em;
   background: var(--bg-secondary);
   padding: 0.1em 0.4em;
   border-radius: var(--radius-sm);
+}
+.faq-accordion kbd {
+  font-family: var(--font-mono);
 }
 .faq-answer em {
   color: var(--text-muted);
@@ -2257,7 +2265,7 @@ a:hover {
   font-size: inherit;
 }
 .template-viewer-content code {
-  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-family: var(--font-mono);
   font-size: 0.9em;
   background: var(--bg-secondary);
   padding: 0.15em 0.4em;
@@ -2511,7 +2519,7 @@ a:hover {
 .template-raw-content {
   white-space: pre-wrap;
   word-wrap: break-word;
-  font-family: SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.6;
   padding: 0;
@@ -3132,7 +3140,7 @@ footer a:hover {
   border-radius: var(--radius-md);
 }
 .welcome-cta kbd {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: var(--font-size-lg);
   background: var(--bg-secondary);
   padding: 4px 12px;
@@ -3209,7 +3217,7 @@ footer a:hover {
   margin: 0;
 }
 .way-content kbd {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: 0.8em;
   background: var(--bg-secondary);
   padding: 2px 6px;
