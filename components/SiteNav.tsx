@@ -12,13 +12,14 @@ interface SiteNavProps {
 }
 
 // Header: a hamburger nav (top-right, all viewports; CSS-only <details> like
-// every other disclosure on this site — no JS. Outside clicks close it via
-// the summary's fixed click-away layer; Esc-to-close remains a known,
-// accepted limitation) followed by the banner header (logo + site
-// title + tagline). All styling comes from app/original.css via the old class
-// names — no Tailwind classes here. The old JA pages' inline word-break/ZWSP
-// hints are covered by <Budoux> instead (same line-break intent, no inline
-// styles).
+// every other disclosure on this site — no JS. Opening it covers the whole
+// viewport with a fullscreen overlay (2026-08-01); the only close affordance
+// is the summary itself, rendered as an X above the overlay — Esc-to-close
+// remains a known, accepted limitation) followed by the banner header (logo +
+// site title + tagline). All styling comes from app/original.css via the old
+// class names — no Tailwind classes here. The old JA pages' inline
+// word-break/ZWSP hints are covered by <Budoux> instead (same line-break
+// intent, no inline styles).
 export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentSlug }: SiteNavProps) {
   const copy = sharedContent[lang];
   // 旧サイトはヘッダタグラインがページ毎に異なる（welcome は無し）。

@@ -399,12 +399,15 @@ header .tagline {
   margin-top: var(--spacing-xs);
   letter-spacing: var(--letter-spacing-wide);
 }
-/* Hamburger nav (2026-07-31, synced from app/original.css): fixed in the
-   viewport's top-right corner — in the empty gutter outside the content
-   column on desktop widths, so neither the toggle nor the opened panel
-   covers the text. CSS-only <details> disclosure — outside clicks close it
-   via the summary's click-away layer; Esc-to-close is a known, accepted
-   limitation of the no-JS approach. */
+/* Hamburger nav (2026-08-01, synced from app/original.css): toggle fixed
+   in the viewport's top-right corner; opening it covers the whole viewport
+   with a fullscreen overlay — large-type links over a slow Ken Burns
+   gradient backdrop. CSS-only <details> disclosure; the only close
+   affordance is the toggle itself (an X floating above the overlay).
+   Esc-to-close is a known, accepted limitation of the no-JS approach.
+   NOTE: never give .header-nav / .nav-menu a transform, filter, or
+   contain — any of those would become the containing block for the
+   position: fixed overlay and break the fullscreen layout. */
 .header-nav {
   position: fixed;
   top: var(--spacing-sm);
@@ -418,6 +421,10 @@ header .tagline {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Above the fullscreen .nav-menu-panel (z-index: 1) so the X stays
+     visible and clickable while the overlay is open. */
+  position: relative;
+  z-index: 2;
   width: 44px;
   height: 44px;
   cursor: pointer;
@@ -468,44 +475,118 @@ header .tagline {
 .nav-menu[open] .nav-menu-icon span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
-/* Click-away layer: while open, the summary grows an invisible fixed layer
-   under the panel, so a click anywhere outside the panel is a click on the
-   summary and closes the menu — outside-click dismissal without JS. */
-.nav-menu[open] .nav-menu-toggle::before {
+/* Fullscreen overlay backdrop, split across the details element's own
+   pseudo-elements. They live OUTSIDE the <details> content subtree —
+   Chrome keeps closed content alive via content-visibility and skips its
+   style recalc, so animations on elements inside the panel play only on
+   the first open. Pseudos on .nav-menu[open] are created and destroyed
+   with the attribute, so the Ken Burns animation restarts on every open.
+   ::before is the instantly-opaque base (--bg-card would be translucent
+   in dark mode and let the page text bleed through); ::after is the
+   gradient layer that fades in and slowly grows above it. Both paint
+   below the panel (z 0 < 1) and the toggle (z 2). */
+.nav-menu[open]::before {
   content: '';
   position: fixed;
   inset: 0;
-  cursor: default;
+  z-index: 0;
+  background: var(--bg-primary);
 }
+.nav-menu[open]::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, var(--accent-light) 0%, transparent 60%),
+    linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  transform-origin: center;
+  animation: nav-kenburns 6s var(--motion-easing) both;
+}
+/* Fullscreen overlay panel — transparent, the backdrop pseudos above
+   provide the surface. justify-content is declared twice: `safe center`
+   keeps the top items reachable when the list overflows (short
+   viewports); browsers without the `safe` keyword fall back to center. */
 .nav-menu-panel {
+  position: fixed;
+  inset: 0;
   z-index: 1;
-}
-.nav-menu-panel {
-  position: absolute;
-  top: calc(100% + var(--spacing-xs));
-  right: 0;
-  min-width: 220px;
-  max-width: calc(100vw - 2 * var(--spacing-lg));
-  max-height: calc(100vh - 5rem);
-  overflow-y: auto;
-  background: var(--bg-card);
-  border: 2px solid var(--text-primary);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card-rest);
-  padding: var(--spacing-xs);
   margin: 0;
+  padding: calc(44px + 2 * var(--spacing-sm)) var(--spacing-lg) var(--spacing-lg);
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  justify-content: center;
+  justify-content: safe center;
+  gap: var(--spacing-xs);
+  overflow-y: auto;
+}
+@keyframes nav-kenburns {
+  from {
+    opacity: 0;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+/* Page behind the overlay must not scroll while the menu is open. */
+body:has(.nav-menu[open]) {
+  overflow: hidden;
+}
+/* Keyboard focus containment (no-JS focus trap): everything behind the
+   opaque overlay leaves the tab order via visibility — hidden elements
+   are unfocusable, and unlike display, a descendant can restore
+   visibility, so the nav itself stays visible and operable. Without this,
+   Tab would walk invisible links behind the overlay. Browsers without
+   :has() keep the previous (pre-overlay) behavior. */
+body:has(.nav-menu[open]) .skip-to-content,
+body:has(.nav-menu[open]) .container {
+  visibility: hidden;
+}
+body:has(.nav-menu[open]) .header-nav {
+  visibility: visible;
 }
 .header-nav li {
   margin: 0;
+  opacity: 0;
+}
+.nav-menu[open] .nav-menu-panel li {
+  animation: nav-item-in 0.4s var(--motion-easing) both;
+}
+/* Stagger: 10 nav links + the lang switcher revealed top to bottom.
+   nth-child keeps the delays in CSS — no extra classes in the markup. */
+.header-nav li:nth-child(1) { animation-delay: 0.05s; }
+.header-nav li:nth-child(2) { animation-delay: 0.09s; }
+.header-nav li:nth-child(3) { animation-delay: 0.13s; }
+.header-nav li:nth-child(4) { animation-delay: 0.17s; }
+.header-nav li:nth-child(5) { animation-delay: 0.21s; }
+.header-nav li:nth-child(6) { animation-delay: 0.25s; }
+.header-nav li:nth-child(7) { animation-delay: 0.29s; }
+.header-nav li:nth-child(8) { animation-delay: 0.33s; }
+.header-nav li:nth-child(9) { animation-delay: 0.37s; }
+.header-nav li:nth-child(10) { animation-delay: 0.41s; }
+.header-nav li:nth-child(11) { animation-delay: 0.45s; }
+@keyframes nav-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .header-nav a {
   display: block;
   font-family: var(--font-sans);
-  font-size: var(--font-size-sm);
+  /* Display type for the fullscreen overlay; JA labels wrap via Budoux +
+     keep-all instead of the old nowrap dropdown behavior. The fluid term
+     also tracks viewport height so all 11 items fit a 768px-tall laptop
+     screen without scrolling. */
+  font-size: clamp(1.375rem, min(5vw, 3.6vh), 2.5rem);
+  line-height: var(--line-height-tight);
   color: var(--text-secondary);
   text-decoration: none;
   padding: var(--spacing-xs) var(--spacing-sm);
@@ -513,7 +594,7 @@ header .tagline {
   transition:
     color var(--transition-base),
     background-color var(--transition-base);
-  white-space: nowrap;
+  white-space: normal;
 }
 .header-nav a:hover {
   color: var(--accent-primary);
@@ -535,28 +616,25 @@ header .tagline {
 .header-nav .lang-switcher a:hover {
   color: var(--accent-primary);
 }
-/* Where the gutter beside the content column can't fit the open panel
-   (220px + offsets), push the column aside instead of covering it — the
-   open menu must never sit on top of the text (user feedback 2026-08-01).
-   Above 1367px the panel fits the gutter; at 768px and below the mobile
-   pattern applies. Browsers without :has() fall back to the overlay. */
-@media (min-width: 769px) and (max-width: 1367px) {
-  .container {
-    transition: margin-right var(--motion-duration) var(--motion-easing);
-  }
-  body:has(.nav-menu[open]) .container {
-    margin-right: calc(220px + 2 * var(--spacing-sm) + var(--spacing-xs));
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   .nav-menu-toggle,
-  .nav-menu-icon span,
-  .container {
+  .nav-menu-icon span {
     transition: none;
   }
   .nav-menu-toggle:active {
     transform: none;
     box-shadow: var(--shadow-action-press);
+  }
+  /* The global 0s-duration rule doesn't reset animation-delay, so the
+     staggered items would sit at opacity: 0 for their delay — clear the
+     animations outright and show everything immediately. Selectors mirror
+     the [open]-scoped animation rules so they win on specificity. */
+  .nav-menu[open]::after,
+  .nav-menu[open] .nav-menu-panel li,
+  .header-nav li {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
 .feature-badge {
