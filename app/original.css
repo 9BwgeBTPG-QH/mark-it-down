@@ -84,7 +84,7 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
-  --spacing-section: 6rem;
+  --spacing-section: 8rem;
   --spacing-hero: 8rem;
   --line-height-tight: 1.3;
   --line-height-normal: 1.7;
@@ -706,7 +706,7 @@ p {
   margin-top: var(--spacing-md);
 }
 
-/* Entrance animation keyframe + scroll-reveal states (hero/philosophy/flow/screenshot fadeUp; coming-soon/cta/faq-preview/workflow default to visible, JS adds .reveal-pending as a progressive-enhancement-only pre-reveal state) */
+/* Entrance animation keyframe + scroll-reveal states (hero/philosophy/flow fadeUp; screenshot/coming-soon/cta/faq-preview/workflow default to visible, JS adds .reveal-pending as a progressive-enhancement-only pre-reveal state) */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -726,12 +726,10 @@ p {
 .flow-section {
   animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
-.screenshot-section {
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
-}
 .coming-soon-section,
 .cta-section,
 .faq-preview-section,
+.screenshot-section,
 .workflow-section {
   transition:
     opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
@@ -740,9 +738,69 @@ p {
 .coming-soon-section.reveal-pending,
 .cta-section.reveal-pending,
 .faq-preview-section.reveal-pending,
+.screenshot-section.reveal-pending,
 .workflow-section.reveal-pending {
   opacity: 0;
   transform: translateY(20px);
+}
+
+/* Card stagger — opacity only: transform is reserved for the hover press
+   so entrance delays never lag pointer feedback */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.philosophy .philosophy-item {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
+}
+.philosophy .philosophy-item:nth-child(2) {
+  animation-delay: 270ms;
+}
+.philosophy .philosophy-item:nth-child(3) {
+  animation-delay: 390ms;
+}
+.flow-section .flow-item {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 300ms both;
+}
+.flow-section .flow-item:nth-child(2) {
+  animation-delay: 420ms;
+}
+.flow-section .flow-item:nth-child(3) {
+  animation-delay: 540ms;
+}
+.flow-section .flow-item:nth-child(n + 4) {
+  animation-delay: 660ms;
+}
+.coming-soon-section.reveal-pending .coming-soon-list li,
+.workflow-section.reveal-pending .workflow-list li {
+  opacity: 0;
+}
+/* transition-delay maps per property: border-color / box-shadow / transform
+   stay at 0s so hover feedback is never delayed; only opacity staggers */
+.coming-soon-list li:nth-child(2),
+.workflow-list li:nth-child(2) {
+  transition-delay: 0s, 0s, 0s, 90ms;
+}
+.coming-soon-list li:nth-child(3),
+.workflow-list li:nth-child(3) {
+  transition-delay: 0s, 0s, 0s, 180ms;
+}
+.coming-soon-list li:nth-child(n + 4),
+.workflow-list li:nth-child(n + 4) {
+  transition-delay: 0s, 0s, 0s, 270ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .philosophy .philosophy-item,
+  .flow-section .flow-item,
+  .coming-soon-list li,
+  .workflow-list li {
+    animation-delay: 0s !important;
+    transition-delay: 0s !important;
+  }
 }
 .hero-ornament {
   display: block;
@@ -849,8 +907,9 @@ p {
 }
 .flow-section h2 {
   font-family: var(--font-serif);
-  font-size: var(--font-size-2xl);
-  font-weight: 500;
+  /* clamp: 480px 以下の裸 h2 縮小に詳細度で勝つため自己収縮させる */
+  font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.25rem);
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
   letter-spacing: var(--letter-spacing-wide);
@@ -878,7 +937,8 @@ p {
   box-shadow: var(--shadow-card-rest);
   transition:
     border-color var(--transition-fast),
-    box-shadow var(--motion-duration) var(--motion-easing);
+    box-shadow var(--motion-duration) var(--motion-easing),
+    transform var(--motion-duration) var(--motion-easing);
 }
 .flow-icon {
   width: 24px;
@@ -1407,8 +1467,8 @@ a:hover {
 }
 .coming-soon-section h2 {
   font-family: var(--font-serif);
-  font-size: var(--font-size-xl);
-  font-weight: 500;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--spacing-xs);
 }
@@ -1445,7 +1505,8 @@ a:hover {
   transition:
     border-color 0.3s cubic-bezier(0.44, 0, 0.56, 1),
     box-shadow var(--motion-duration) var(--motion-easing),
-    transform var(--motion-duration) var(--motion-easing);
+    transform var(--motion-duration) var(--motion-easing),
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: default;
 }
 .coming-soon-list strong {
@@ -1477,8 +1538,8 @@ a:hover {
 }
 .workflow-section h2 {
   font-family: var(--font-serif);
-  font-size: var(--font-size-xl);
-  font-weight: 500;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--spacing-lg);
 }
@@ -1500,7 +1561,8 @@ a:hover {
   transition:
     border-color 0.3s cubic-bezier(0.44, 0, 0.56, 1),
     box-shadow var(--motion-duration) var(--motion-easing),
-    transform var(--motion-duration) var(--motion-easing);
+    transform var(--motion-duration) var(--motion-easing),
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: default;
 }
 .workflow-list strong {
@@ -1548,8 +1610,8 @@ a:hover {
 }
 .faq-preview-section h2 {
   font-family: var(--font-serif);
-  font-size: var(--font-size-xl);
-  font-weight: 500;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--spacing-lg);
 }
@@ -2898,7 +2960,8 @@ a:hover {
 }
 .cta-section h2 {
   font-family: var(--font-serif);
-  font-size: var(--font-size-2xl);
+  font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.25rem);
+  font-weight: 600;
   margin-bottom: var(--spacing-sm);
 }
 .cta-section p {
@@ -3535,6 +3598,13 @@ footer a:hover {
     transform: translate(2px, 3px);
     box-shadow: var(--shadow-card-hover);
   }
+  .philosophy-item:hover,
+  .flow-item:hover,
+  .coming-soon-list li:hover,
+  .workflow-list li:hover {
+    transform: translate(2px, 3px);
+    box-shadow: var(--shadow-card-hover);
+  }
   .first-action .screenshot img:hover,
   .screenshot-section img:hover {
     transform: translate(2px, 3px);
@@ -3549,7 +3619,10 @@ footer a:hover {
 @media (prefers-reduced-motion: reduce) {
   .accordion-item,
   .btn,
+  .coming-soon-list li,
   .first-action .screenshot img,
+  .flow-item,
+  .philosophy-item,
   .screenshot-section img,
   .template-edge-arrow .edge-arrow-icon,
   .workflow-list li {

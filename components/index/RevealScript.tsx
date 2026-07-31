@@ -12,7 +12,7 @@ export function RevealScript() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const targets = document.querySelectorAll(
-      '.workflow-section, .coming-soon-section, .faq-preview-section, .cta-section',
+      '.screenshot-section, .workflow-section, .coming-soon-section, .faq-preview-section, .cta-section',
     );
     if (!targets.length) return;
     targets.forEach((t) => t.classList.add('reveal-pending'));
