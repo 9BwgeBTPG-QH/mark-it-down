@@ -11,12 +11,14 @@ interface SiteNavProps {
   langSwitchSlug?: string;
 }
 
-// Original-design header (eed65be:docs/*.html, restored 2026-07-12): a plain
-// wrapping link list (nav.header-nav) followed by the banner header (logo +
-// site title + tagline). All styling comes from app/original.css via the old
-// class names — no Tailwind classes here. No mobile hamburger: the old nav
-// simply wraps. The old JA pages' inline word-break/ZWSP hints are covered by
-// <Budoux> instead (same line-break intent, no inline styles).
+// Header: a hamburger nav (top-right, all viewports; CSS-only <details> like
+// every other disclosure on this site — no JS. Outside clicks close it via
+// the summary's fixed click-away layer; Esc-to-close remains a known,
+// accepted limitation) followed by the banner header (logo + site
+// title + tagline). All styling comes from app/original.css via the old class
+// names — no Tailwind classes here. The old JA pages' inline word-break/ZWSP
+// hints are covered by <Budoux> instead (same line-break intent, no inline
+// styles).
 export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentSlug }: SiteNavProps) {
   const copy = sharedContent[lang];
   // 旧サイトはヘッダタグラインがページ毎に異なる（welcome は無し）。
@@ -30,20 +32,33 @@ export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentS
     <>
       {showNav && (
       <nav className="header-nav" aria-label={copy.navLabel}>
-        <ul>
-          {primaryNavLinks.map((item) => (
-            <li key={item.slug}>
-              <a href={navHref(item.slug, lang)} aria-current={item.slug === currentSlug ? 'page' : undefined}>
-                {lang === 'ja' ? <Budoux text={item.ja} /> : item.en}
+        <details className="nav-menu">
+          {/* <summary> gets its accessible name from visually-hidden text
+              (aria-label on summary is unreliable across screen readers).
+              No manual aria-expanded: <details> exposes its own state. */}
+          <summary className="nav-menu-toggle">
+            <span className="nav-menu-icon" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
+            <span className="visually-hidden">{copy.navLabel}</span>
+          </summary>
+          <ul className="nav-menu-panel">
+            {primaryNavLinks.map((item) => (
+              <li key={item.slug}>
+                <a href={navHref(item.slug, lang)} aria-current={item.slug === currentSlug ? 'page' : undefined}>
+                  {lang === 'ja' ? <Budoux text={item.ja} /> : item.en}
+                </a>
+              </li>
+            ))}
+            <li className="lang-switcher">
+              <a href={langSwitchHref(lang, langSwitchSlug)} hrefLang={lang === 'en' ? 'ja' : 'en'}>
+                {copy.langSwitchLabel}
               </a>
             </li>
-          ))}
-          <li className="lang-switcher">
-            <a href={langSwitchHref(lang, langSwitchSlug)} hrefLang={lang === 'en' ? 'ja' : 'en'}>
-              {copy.langSwitchLabel}
-            </a>
-          </li>
-        </ul>
+          </ul>
+        </details>
       </nav>
       )}
       <header role="banner">
@@ -55,7 +70,16 @@ export function SiteNav({ lang, currentSlug = 'index', langSwitchSlug = currentS
           </a>
         </div>
         {tagline !== null && (
-          <p className="tagline">{lang === 'ja' ? <Budoux text={tagline} /> : tagline}</p>
+          <p className="tagline">
+            {/* Budoux only makes sense for CJK text; the shared tagline is an
+                English brand phrase on both languages, so gate on content,
+                not lang, to avoid feeding English through the CJK parser. */}
+            {lang === 'ja' && /[぀-ヿ㐀-鿿]/.test(tagline) ? (
+              <Budoux text={tagline} />
+            ) : (
+              tagline
+            )}
+          </p>
         )}
       </header>
     </>

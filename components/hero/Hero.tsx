@@ -1,25 +1,15 @@
-import { Fragment } from 'react';
 import { SealButton } from '@/components/SealButton';
 import { Budoux } from '@/components/Budoux';
 import { BrokenLines } from '@/components/index/BrokenLines';
-import { EntryIcon, EditIcon, ClearIcon, ExitIcon } from '@/components/index/icons';
 import { navHref } from '@/content/shared';
 import { indexContent, type Lang } from '@/content/index';
 
 const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobelalhjehbdbdejlohjnhbgfke';
 
-// Entry → Edit → Move → Exit strip. Labels are English in both languages,
-// exactly as in the old page (the whole strip is aria-hidden decoration).
-const flowSteps = [
-  { label: 'Entry', Icon: EntryIcon },
-  { label: 'Edit', Icon: EditIcon },
-  { label: 'Move', Icon: ClearIcon },
-  { label: 'Exit', Icon: ExitIcon },
-] as const;
-
-// Old docs/index.html hero structure, restored from eed65be (original-design
-// rollback, 2026-07-12): h1 → flow strip → tagline → fact → subtitle →
-// buttons → ornament. The tagline/fact copy itself was rewritten 2026-07-31
+// Hero structure: h1 → tagline → fact → subtitle → buttons → ornament.
+// (The Entry→Edit→Move→Exit strip was dropped 2026-07-31 to bring the CTA
+// above the fold; the flow still appears in components/index/Flow.tsx.)
+// The tagline/fact copy itself was rewritten 2026-07-31
 // (see content/index.ts) — the structure, not the wording, is the contract.
 // No screenshot — the old page's only visual is the Marp
 // slide iframe in the screenshot-section below (components/index/Screenshot).
@@ -36,19 +26,6 @@ export function Hero({ lang }: { lang: Lang }) {
       <h1 id="hero-heading" className="page-title">
         {ja ? <Budoux text={copy.h1} /> : copy.h1}
       </h1>
-      <div className="hero-flow" aria-hidden="true">
-        {flowSteps.map(({ label, Icon }, i) => (
-          <Fragment key={label}>
-            {i > 0 && <span className="hero-flow-arrow">→</span>}
-            <div className="hero-flow-step">
-              <div className="hero-flow-icon">
-                <Icon />
-              </div>
-              <span className="hero-flow-label">{label}</span>
-            </div>
-          </Fragment>
-        ))}
-      </div>
       <p className="hero-tagline">
         <BrokenLines lines={copy.heroTaglineLines} ja={ja} />
       </p>

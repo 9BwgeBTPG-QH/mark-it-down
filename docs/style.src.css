@@ -357,14 +357,14 @@ html[lang="ja"] body {
 header {
   position: static;
   text-align: center;
-  padding: var(--spacing-lg) 0 var(--spacing-2xl);
+  padding: var(--spacing-md) 0 var(--spacing-md);
 }
 .header-logo {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xs);
 }
 .header-logo a {
   display: flex;
@@ -378,8 +378,8 @@ header {
   opacity: 0.8;
 }
 .logo-icon {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   opacity: 0.9;
 }
@@ -396,47 +396,119 @@ header .tagline {
   font-size: var(--font-size-lg);
   font-weight: 300;
   color: var(--text-secondary);
-  margin-top: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
   letter-spacing: var(--letter-spacing-wide);
 }
+/* Hamburger nav (2026-07-31, synced from app/original.css): fixed in the
+   viewport's top-right corner — in the empty gutter outside the content
+   column on desktop widths, so neither the toggle nor the opened panel
+   covers the text. CSS-only <details> disclosure — outside clicks close it
+   via the summary's click-away layer; Esc-to-close is a known, accepted
+   limitation of the no-JS approach. */
 .header-nav {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
   z-index: 100;
-  background: var(--bg-primary);
-  margin-bottom: var(--spacing-md);
-  padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-floating);
-  transition: box-shadow var(--motion-duration) var(--motion-easing);
-  width: 100%;
 }
-.header-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.nav-menu {
+  position: relative;
+}
+.nav-menu-toggle {
   display: flex;
-  flex-wrap: nowrap;
-  gap: var(--spacing-xs);
-  justify-content: safe center;
   align-items: center;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  list-style: none;
+  background: var(--bg-card);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-control);
+  box-shadow: var(--shadow-action-rest);
+  transition:
+    background-color var(--motion-duration) var(--motion-easing),
+    box-shadow var(--motion-duration) var(--motion-easing),
+    transform var(--motion-duration) var(--motion-easing);
+  -webkit-tap-highlight-color: transparent;
 }
-.header-nav ul::-webkit-scrollbar {
+.nav-menu-toggle::-webkit-details-marker {
   display: none;
+}
+.nav-menu-toggle::marker {
+  content: '';
+}
+.nav-menu-toggle:hover {
+  background: var(--accent-light);
+}
+.nav-menu-toggle:active {
+  transform: translate(2px, 3px);
+  box-shadow: var(--shadow-action-press);
+}
+.nav-menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 18px;
+}
+.nav-menu-icon span {
+  display: block;
+  height: 2px;
+  background: var(--text-primary);
+  transition:
+    transform var(--motion-duration) var(--motion-easing),
+    opacity var(--motion-duration) var(--motion-easing);
+}
+.nav-menu[open] .nav-menu-icon span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-menu[open] .nav-menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+.nav-menu[open] .nav-menu-icon span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+/* Click-away layer: while open, the summary grows an invisible fixed layer
+   under the panel, so a click anywhere outside the panel is a click on the
+   summary and closes the menu — outside-click dismissal without JS. */
+.nav-menu[open] .nav-menu-toggle::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  cursor: default;
+}
+.nav-menu-panel {
+  z-index: 1;
+}
+.nav-menu-panel {
+  position: absolute;
+  top: calc(100% + var(--spacing-xs));
+  right: 0;
+  min-width: 220px;
+  max-width: calc(100vw - 2 * var(--spacing-lg));
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
+  background: var(--bg-card);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card-rest);
+  padding: var(--spacing-xs);
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 .header-nav li {
   margin: 0;
-  flex-shrink: 0;
 }
 .header-nav a {
+  display: block;
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: var(--font-size-sm);
   color: var(--text-secondary);
   text-decoration: none;
-  padding: 0.25rem 0.5rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-control);
   transition:
     color var(--transition-base),
@@ -452,9 +524,9 @@ header .tagline {
   font-weight: 500;
 }
 .header-nav .lang-switcher {
-  margin-left: var(--spacing-xs);
-  padding-left: var(--spacing-xs);
-  border-left: 1px solid var(--border-subtle);
+  margin-top: var(--spacing-xs);
+  padding-top: var(--spacing-xs);
+  border-top: 1px solid var(--border-subtle);
 }
 .header-nav .lang-switcher a {
   font-weight: 500;
@@ -463,32 +535,28 @@ header .tagline {
 .header-nav .lang-switcher a:hover {
   color: var(--accent-primary);
 }
-@media (max-width: 768px) {
-  .header-nav {
-    margin-bottom: var(--spacing-sm);
-    padding-bottom: var(--spacing-xs);
-    overflow-x: hidden;
+/* Where the gutter beside the content column can't fit the open panel
+   (220px + offsets), push the column aside instead of covering it — the
+   open menu must never sit on top of the text (user feedback 2026-08-01).
+   Above 1367px the panel fits the gutter; at 768px and below the mobile
+   pattern applies. Browsers without :has() fall back to the overlay. */
+@media (min-width: 769px) and (max-width: 1367px) {
+  .container {
+    transition: margin-right var(--motion-duration) var(--motion-easing);
   }
-  .header-nav ul {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    gap: 0.25rem;
-    justify-content: flex-start;
-    padding: 0 var(--spacing-xs);
-    overflow-x: auto;
-    overflow-y: hidden;
+  body:has(.nav-menu[open]) .container {
+    margin-right: calc(220px + 2 * var(--spacing-sm) + var(--spacing-xs));
   }
-  .header-nav a {
-    font-size: 0.7rem;
-    padding: 0.5rem 0.4rem;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu-toggle,
+  .nav-menu-icon span,
+  .container {
+    transition: none;
   }
-  .header-nav .lang-switcher {
-    margin-left: 0.25rem;
-    padding-left: 0.25rem;
+  .nav-menu-toggle:active {
+    transform: none;
+    box-shadow: var(--shadow-action-press);
   }
 }
 .feature-badge {
@@ -557,55 +625,14 @@ p {
 
 .hero {
   text-align: center;
-  padding: var(--spacing-lg) 0 var(--spacing-xl);
+  padding: var(--spacing-sm) 0 var(--spacing-lg);
 }
-.hero-flow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 4px;
-  margin: 0 auto var(--spacing-xl);
-  max-width: 460px;
-}
-.hero-flow-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  width: 64px;
-}
-.hero-flow-icon {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-circle);
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  color: var(--accent-primary);
-}
-.hero-flow-icon svg {
-  width: 15px;
-  height: 15px;
-}
-.hero-flow-label {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-.hero-flow-arrow {
-  flex-shrink: 0;
-  color: var(--border-primary);
-  font-size: 0.9rem;
-  margin-top: 12px;
-}
+/* Tagline cap chosen so the EN hero copy's longest line stays on one line
+   inside the 880px column (~48px is the wrap threshold) — keeping the CTA
+   above the fold at 1366×768 (2026-07-31 requirement). */
 .hero-tagline {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: clamp(2.25rem, 5vw, 3rem);
   font-weight: 400;
   color: var(--text-primary);
   line-height: 1.2;
@@ -630,7 +657,7 @@ p {
   font-weight: 300;
   color: var(--text-secondary);
   max-width: 560px;
-  margin: 0 auto var(--spacing-xl);
+  margin: 0 auto var(--spacing-md);
   line-height: var(--line-height-relaxed);
 }
 .hero-image {
@@ -2991,14 +3018,43 @@ footer a:hover {
     margin-left: calc(-1 * var(--spacing-md));
     margin-right: calc(-1 * var(--spacing-md));
   }
+  /* Narrow screens: centered brand collides with the fixed corner toggle,
+     so switch to the standard mobile pattern — logo left, hamburger right. */
   header {
-    padding: var(--spacing-md) 0 var(--spacing-lg);
+    padding: var(--spacing-sm) 0 var(--spacing-sm);
+    text-align: left;
+  }
+  .header-logo {
+    justify-content: flex-start;
+  }
+  .header-logo a {
+    gap: var(--spacing-sm);
+  }
+  .logo-icon {
+    width: 36px;
+    height: 36px;
   }
   .hero-tagline {
     font-size: var(--font-size-4xl);
   }
+  /* Narrow screens: headline → CTA → detail. The subtitle moves below the
+     buttons (flex order, content unchanged) so "Get the extension" stays
+     above the fold on phones. */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero > * {
+    width: 100%;
+  }
   .hero-subtitle {
     font-size: var(--font-size-base);
+    order: 1;
+    margin-top: var(--spacing-xs);
+  }
+  .hero-ornament {
+    order: 2;
   }
   .buttons {
     flex-direction: column;
@@ -3060,8 +3116,10 @@ footer a:hover {
   .container {
     max-width: 1080px;
   }
+  /* 3.75rem keeps the EN copy's longest line on one line in the 1080px
+     column; 5rem re-wrapped it and pushed the CTA below the fold. */
   .hero-tagline {
-    font-size: 5rem;
+    font-size: 3.75rem;
   }
   .hero-subtitle {
     font-size: var(--font-size-xl);

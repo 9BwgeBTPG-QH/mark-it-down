@@ -107,7 +107,7 @@ export const sharedContent: Record<Lang, SharedCopy> = {
     footerLabel: 'Footer navigation',
     copyright: '© 2025-2026 reduktion.dev',
     skipLabel: 'Skip to main content',
-    tagline: 'Your browser is now a writing desk.',
+    tagline: 'Write it down. Keep it yours.',
     homeAriaLabel: 'Mark It Down Home',
   },
   ja: {
@@ -117,7 +117,8 @@ export const sharedContent: Record<Lang, SharedCopy> = {
     footerLabel: 'フッターナビゲーション',
     copyright: '© 2025-2026 reduktion.dev',
     skipLabel: 'メインコンテンツへスキップ',
-    tagline: 'ブラウザが、書斎になる。',
+    // ブランドフレーズとして EN/JA 共通で英語のまま掲げる（2026-07-31 決定）。
+    tagline: 'Write it down. Keep it yours.',
     homeAriaLabel: 'Mark It Down ホーム',
   },
 };

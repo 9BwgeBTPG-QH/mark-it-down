@@ -35,18 +35,28 @@
   <a href="#main-content" class="skip-to-content">メインコンテンツへ</a>
   <div class="container">
     <nav class="header-nav" aria-label="メインナビゲーション">
-      <ul>
-        <li><a href="../index-ja.html">ホーム</a></li>
-        <li><a href="../features-ja.html">機能</a></li>
-        <li><a href="../okf-ja.html">OKF</a></li>
-        <li><a href="../templates-ja.html" aria-current="page">テンプレート</a></li>
-        <li><a href="../faq-ja.html">よくある質問</a></li>
-        <li><a href="../troubleshooting-ja.html">トラブルシューティング</a></li>
-        <li><a href="../changelog-ja.html">更新履歴</a></li>
-        <li><a href="../feedback-ja.html">フィードバック</a></li>
-        <li><a href="../privacy-policy-ja.html">プライバシー</a></li>
-        <li class="lang-switcher"><a id="lang-switch" href="view.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a></li>
-      </ul>
+      <details class="nav-menu">
+        <summary class="nav-menu-toggle">
+          <span class="nav-menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="visually-hidden">メインナビゲーション</span>
+        </summary>
+        <ul class="nav-menu-panel">
+          <li><a href="../index-ja.html">ホーム</a></li>
+          <li><a href="../features-ja.html">機能</a></li>
+          <li><a href="../okf-ja.html">OKF</a></li>
+          <li><a href="../templates-ja.html" aria-current="page">テンプレート</a></li>
+          <li><a href="../faq-ja.html">よくある質問</a></li>
+          <li><a href="../troubleshooting-ja.html">トラブルシューティング</a></li>
+          <li><a href="../changelog-ja.html">更新履歴</a></li>
+          <li><a href="../feedback-ja.html">フィードバック</a></li>
+          <li><a href="../privacy-policy-ja.html">プライバシー</a></li>
+          <li class="lang-switcher"><a id="lang-switch" href="view.html" hreflang="en" onclick="sessionStorage.setItem('langOverride','1')">English</a></li>
+        </ul>
+      </details>
     </nav>
     <header role="banner">
       <div class="header-logo">
@@ -219,15 +229,10 @@
       var edgePrev = document.getElementById('edge-prev');
       var edgeNext = document.getElementById('edge-next');
       var viewerBar = document.querySelector('.template-viewer-bar');
-      var headerNav = document.querySelector('.header-nav');
 
-      // --- Sticky offset below header-nav ---
-      function updateStickyOffset() {
-        var h = headerNav ? headerNav.offsetHeight : 0;
-        viewerBar.style.top = h + 'px';
-      }
-      updateStickyOffset();
-      window.addEventListener('resize', updateStickyOffset);
+      // Header nav is a fixed corner hamburger (2026-07-31 redesign), no
+      // longer an in-flow sticky bar — the viewer bar sticks to the top.
+      viewerBar.style.top = '0px';
 
       // --- Scroll shadow ---
       var ticking = false;
