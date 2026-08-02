@@ -191,6 +191,10 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
         title: 'Brain-dump, then reorder',
         body: 'Write a list as it comes to mind, then use Alt+↑ / ↓ to reorder lines into shape.',
       },
+      {
+        title: 'Language study with read-aloud',
+        body: 'Paste study material and play it back — the sentence being read is highlighted as you listen. Want natural voices? Open the text in Microsoft Edge and its Read Aloud adds more high-quality choices.',
+      },
     ],
     recentEyebrow: "What's New",
     recentHeading: 'Recently Added',
@@ -309,6 +313,10 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
       {
         title: '思いつくまま書いて並べ替え',
         body: 'リストを思いつくまま書いて、Alt+↑ / ↓ で行を並べ替えて整える。',
+      },
+      {
+        title: '読み上げとハイライトで語学学習',
+        body: '教材を貼り付けて再生すると、読み上げ中の文がハイライトされる。Natural音声で聞きたいときは、Microsoft Edgeの読み上げ機能を使うと高品質な音声の選択肢が増える。',
       },
     ],
     recentEyebrow: "What's New",
