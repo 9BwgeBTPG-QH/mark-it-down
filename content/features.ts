@@ -536,7 +536,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Diff Navigation',
-          body: '▲2/5▼ nav controls in Compare & Edit banner. F5/Shift+F5 keyboard navigation. WYSIWYG reference view',
+          body: '▲2/5▼ nav controls in Compare & Edit banner. F5/Shift+F5 keyboard navigation. WYSIWYG reference view. The banner remains visible while auto-hide collapses surrounding header controls',
         },
         {
           title: 'New Tab / Side Panel Interface Parity',
@@ -552,6 +552,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         {
           title: 'GitHub Flavored',
           body: 'Tables, task lists, syntax highlighting',
+        },
+        {
+          title: 'Selection Toolbar',
+          body: 'Bold, Italic, Strikethrough, Link, Inline Code, and Code Block stay in the first row. Heading, List, Quote, Math, Highlight, and Read Aloud open from More; Copy, Snippet, Import, and handoff actions live under Share',
         },
         {
           title: 'Mermaid',
@@ -745,6 +749,14 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: 'Characters, words (CJK-aware), reading time',
         },
         {
+          title: 'Purpose-Specific Highlights',
+          body: 'Selection, saved marks, Read Aloud tracking, search attention, imported-note attention, and invisible-character warnings use distinct colors across all 4 themes',
+        },
+        {
+          title: 'Read Aloud Voice Choice',
+          body: 'Settings distinguish local and online voices, explain that the browser controls the default voice, and keep long voice names inside the panel',
+        },
+        {
           title: '4 Themes',
           body: 'Light / Dark / Parchment / CandleLight — the editor is a room, not just a tool',
           waxSealAccent: true,
@@ -817,7 +829,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: [
             'Open Knowledge Format — export notes as ',
             { code: '.okf.zip' },
-            ' with generated frontmatter, a self-contained concept graph viewer, and an activity log. A citations section is auto-generated from links in the note body, and relative Markdown links between notes convert to bundle-relative OKF paths. Git sync also writes OKF-compatible files',
+            ' with generated frontmatter, a self-contained concept graph viewer, and an activity log. A citations section is auto-generated from links in the note body, and relative Markdown links between notes convert to bundle-relative OKF paths. Raw status outside Inbox, citation provenance in the bundle graph, and recent type choices stay available for repeat handoffs. Git sync also writes OKF-compatible files',
           ],
           link: { label: 'Open Knowledge Format', slug: 'okf' },
         },
@@ -1336,7 +1348,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Diffナビゲーション',
-          body: 'Compare & Editバナーに▲2/5▼ナビコントロール。F5/Shift+F5キーボードナビ。参照ビューWYSIWYG化',
+          body: 'Compare & Editバナーに▲2/5▼ナビコントロール。F5/Shift+F5キーボードナビ。参照ビューWYSIWYG化。auto-hideで周囲のヘッダーが閉じてもバナーは残る',
         },
         {
           title: 'New Tab / Side Panel のインターフェース統一',
@@ -1350,6 +1362,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       icon: '#',
       items: [
         { title: 'GitHub Flavored', body: 'テーブル、タスクリスト、シンタックスハイライト' },
+        {
+          title: '選択ツールバー',
+          body: 'Bold、Italic、Strikethrough、Link、Inline Code、Code Blockは1段目に配置。Heading、List、Quote、Math、Highlight、Read AloudはMoreから開き、Copy、Snippet、Import、外部への受け渡しはShareにまとめる',
+        },
         {
           title: 'Mermaid',
           body: '全19種対応 — フローチャート、ER図、マインドマップ、ガントチャート等。ライブエディタで初回表示から描画。クリックで拡大、Ctrl+スクロールで25〜400%ズーム、全画面表示、SVG保存',
@@ -1500,6 +1516,14 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         { title: 'パンくずナビ', body: '現在の見出しパスを表示、クリックで祖先にジャンプ' },
         { title: 'Word Count', body: '文字数、単語数（CJK対応）、読了時間' },
         {
+          title: '役割ごとのハイライト',
+          body: '選択範囲、保存したマーク、読み上げ位置、検索中の注目、importしたノートへの注目、不可視文字の警告を、4テーマすべてで異なる色に分ける',
+        },
+        {
+          title: '読み上げ音声の選択',
+          body: '設定でローカル音声とオンライン音声を区別し、既定の音声はブラウザが決めることを案内する。長い音声名もパネル内に収まる',
+        },
+        {
           title: '4テーマ',
           body: 'ライト / ダーク / Parchment / CandleLight — エディタは道具であり「部屋」',
           waxSealAccent: true,
@@ -1550,7 +1574,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: [
             'Open Knowledge Format — ノートを ',
             { code: '.okf.zip' },
-            ' として出力。frontmatter の自動生成、self-contained な概念グラフ viewer、activity log を含む。本文中のリンクから自動生成される citations セクションと、ノート間の相対 Markdown リンクをバンドル内の相対パスに変換する機能を追加。Git 同期でも OKF 互換ファイルを出力',
+            ' として出力。frontmatter の自動生成、self-contained な概念グラフ viewer、activity log を含む。本文中のリンクから自動生成される citations セクションと、ノート間の相対 Markdown リンクをバンドル内の相対パスに変換する機能を追加。Inbox外のraw状態、bundle graphの引用元、最近のtype選択も保ち、繰り返しの受け渡しに使える。Git 同期でも OKF 互換ファイルを出力',
           ],
           link: { label: 'Open Knowledge Format', slug: 'okf' },
         },

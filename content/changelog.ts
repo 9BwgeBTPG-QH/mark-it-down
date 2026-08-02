@@ -96,12 +96,41 @@ export interface ChangelogVersion {
 export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   en: [
     {
-      version: 'v2.3.2',
-      highlight: 'Clearer recovery, safer dialogs, and localized background notices.',
+      version: 'v2.3.3',
+      highlight: 'Clearer editing actions, readable highlights, and traceable handoffs.',
       status: 'Under Review',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'This release makes the writing surface easier to read and easier to act on. Selection controls are grouped by intent, temporary attention and saved marks have distinct visual roles, and OKF bundles carry more of a note\'s provenance into the next tool.',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['Selection tools grouped by intent'], description: ['Bold, Italic, Strikethrough, Link, Inline Code, and Code Block stay immediate. More holds headings, lists, quotes, math, highlighting, and Read Aloud; Share holds copy, snippet, import, and handoff actions.'] },
+            { term: ['Purpose-specific highlights'], description: ['Selection, saved marks, Read Aloud tracking, search attention, imported-note attention, and invisible-character warnings use distinct colors across all four themes.'] },
+            { term: ['Visible voice boundary'], description: ['Read Aloud settings distinguish local and online voices, explain that the browser controls the default voice, and keep long voice names inside the panel.'] },
+            { term: ['OKF provenance and intent'], description: ['OKF export retains raw status outside Inbox, carries citation provenance into the bundle graph, and remembers recent type choices for repeat handoffs.'] },
+            { term: ['Compare state stays visible'], description: ['The Compare & Edit banner remains visible when auto-hide collapses the surrounding header controls.'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['Selection Toolbar menus'], description: ['Menus stay within the viewport, flip when space is tight, and close predictably with Escape.'] },
+            { term: ['Accessible compact groups'], description: ['Toolbar groups keep accessible names when visible labels are compacted.'] },
+            { term: ['Read Aloud layout'], description: ['Long voice names no longer force the settings panel wider than its container.'] },
+            { term: ['Highlight contrast'], description: ['CandleLight and dark-theme highlight states remain distinct against the actual editor canvas.'] },
+            { term: ['Auto-hidden Compare banner'], description: ['Compare & Edit no longer disappears with auto-hidden header controls.'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.2',
+      highlight: 'Clearer recovery, safer dialogs, and localized background notices.',
+      status: 'Released',
+      statusClass: 'released',
       theme: 'This release focuses on trust. Mark It Down already keeps your writing local; v2.3.2 makes failure, recovery, and dialog behavior clearer, so the app can explain what happened, what stayed safe, and what you can do next.',
       sections: [
         {
@@ -1501,12 +1530,41 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   ],
   ja: [
     {
-      version: 'v2.3.2',
-      highlight: '復帰の分かりやすさ、安全なダイアログ、日本語通知の強化。',
+      version: 'v2.3.3',
+      highlight: '編集操作を整理し、ハイライトを読みやすくし、受け渡しの文脈を残す。',
       status: '審査中',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: '書く面を読みやすくし、次の操作を選びやすくするリリース。選択ツールを目的別に分け、一時的な注目と保存したマークを見分けやすくし、OKF bundleにはノートの由来を次の道具へ渡すための文脈を残す。',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['選択ツールを目的別に整理'], description: ['Bold、Italic、Strikethrough、Link、Inline Code、Code Blockはすぐ使える位置に置く。見出し、リスト、引用、数式、ハイライト、Read AloudはMoreへ、copy、snippet、import、外部への受け渡しはShareへまとめた。'] },
+            { term: ['役割ごとのハイライト'], description: ['選択範囲、保存したマーク、読み上げ位置、検索中の注目、importしたノートへの注目、不可視文字の警告を、4テーマすべてで異なる色に分けた。'] },
+            { term: ['音声の境界を表示'], description: ['Read Aloud設定でローカル音声とオンライン音声を区別し、既定の音声はブラウザが決めることを案内する。長い音声名もパネル内に収まる。'] },
+            { term: ['OKFの由来と意図'], description: ['OKF exportはInbox外のraw状態を保ち、bundle graphに引用元を残し、最近選んだtypeを次のexportでも使えるようにする。'] },
+            { term: ['Compare状態を維持'], description: ['auto-hideで周囲のヘッダーが閉じても、Compare & Editの状態バナーは残る。'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['選択ツールバーのメニュー'], description: ['画面内に収まり、空きが少ないときは開く向きを変え、Escapeで予測どおり閉じる。'] },
+            { term: ['コンパクト表示の名前'], description: ['表示ラベルを短くしても、ツールバーの各グループはスクリーンリーダー向けの名前を保つ。'] },
+            { term: ['Read Aloudのレイアウト'], description: ['長い音声名で設定パネルがコンテナより広がらなくなった。'] },
+            { term: ['ハイライトのコントラスト'], description: ['CandleLightとdark themeでも、各ハイライトをeditor canvas上で見分けられる。'] },
+            { term: ['auto-hide中のCompareバナー'], description: ['ヘッダーが自動で隠れてもCompare & Editが消えなくなった。'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.2',
+      highlight: '復帰の分かりやすさ、安全なダイアログ、日本語通知の強化。',
+      status: 'リリース済',
+      statusClass: 'released',
       theme: '信頼性を高めるリリース。Mark It Down はすでにローカルに書く道具だが、v2.3.2 では失敗、復帰、ダイアログ操作をより分かりやすくし、何が起きたか、何が安全か、次に何をすればよいかを示す。',
       sections: [
         {

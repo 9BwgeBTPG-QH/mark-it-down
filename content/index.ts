@@ -194,27 +194,27 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: 'Recently Added',
-    recentStatus: 'v2.3.2 — Clearer recovery, safer dialogs, and localized background notices.',
+    recentStatus: 'v2.3.3 — Clearer selection tools, readable highlights, and traceable handoffs.',
     recentItems: [
       {
-        title: 'Failures explain what stayed safe',
-        body: 'Startup, autosave, import, export, Git, RSS, and clipping failures now say what happened, what stayed local, and what you can do next.',
+        title: 'Selection tools are grouped by intent',
+        body: 'Everyday formatting stays immediate, transformations move under More, and Share keeps copy, snippet, import, and handoff actions together.',
       },
       {
-        title: 'Dialogs share one accessible shell',
-        body: 'Escape, focus return, stacked confirmations, Enter guards, and theme-safe overlays now follow one modal foundation across the app.',
+        title: 'Highlights have distinct roles',
+        body: 'Selection, saved marks, Read Aloud tracking, search attention, and warnings stay visually distinct across all four themes.',
       },
       {
-        title: 'Command surfaces are aligned',
-        body: 'Command Palette, Search, Paste as Markdown, Git filename help, RSS/Git/Clipper settings, conflict resolution, and export dialogs now use the same interaction model.',
+        title: 'Voice choices explain their boundary',
+        body: 'Read Aloud settings distinguish local and online voices, and long voice names stay inside the settings layout.',
       },
       {
-        title: 'Guidance appears closer to use',
-        body: 'Contextual hints and Help now point to Today Entry, Omnibox search, Smart Paste, backup status, and key Settings surfaces.',
+        title: 'OKF carries more context forward',
+        body: 'Exports retain raw status, citation provenance, and recent type choices for the next tool.',
       },
       {
-        title: 'RSS notices respect language',
-        body: 'Background RSS failure notifications now use Chrome i18n messages for English and Japanese, including clear total and partial failure counts.',
+        title: 'Compare state stays visible',
+        body: 'Compare & Edit keeps its state banner visible when auto-hide collapses the surrounding header controls.',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -240,7 +240,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'View all FAQ',
     ctaHeading: 'Ready to write?',
     ctaNote: 'Available as a Chrome extension. No account required.',
-    ctaVersion: 'Latest version: v2.3.2',
+    ctaVersion: 'Latest version: v2.3.3',
     ctaSecondaryLabel: "What's new",
   },
   ja: {
@@ -313,27 +313,27 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: '最近の追加機能',
-    recentStatus: 'v2.3.2 — 復帰の分かりやすさ、安全なダイアログ、日本語通知の強化。',
+    recentStatus: 'v2.3.3 — 選択ツールバーの整理、ハイライトの視認性、OKFの受け渡し強化。',
     recentItems: [
       {
-        title: '失敗時に何が安全か分かる',
-        body: '起動、auto-save、import/export、Git、RSS、Webクリップの失敗時に、何が起きたか・何が手元に残ったか・次に何をすればよいかを示す。',
+        title: '選択ツールを目的別に整理',
+        body: '日常の書式はすぐ使え、変換操作はMoreへ、コピー、snippet、import、外部への受け渡しはShareへまとめた。',
       },
       {
-        title: 'ダイアログを共通基盤へ',
-        body: 'Escape、フォーカス復帰、確認ダイアログの重なり、Enter確認、テーマごとのoverlay表示を、1つのmodal foundationへ揃えた。',
+        title: 'ハイライトの役割を分離',
+        body: '選択範囲、保存したマーク、読み上げ位置、検索中の注目、警告を、4テーマすべてで見分けやすくした。',
       },
       {
-        title: 'コマンド系の操作も統一',
-        body: 'Command Palette、Search、Paste as Markdown、Git filename help、RSS/Git/Clipper settings、conflict resolution、export dialogsも同じ操作モデルに揃った。',
+        title: '音声の境界を設定で説明',
+        body: 'Read Aloud設定はローカル音声とオンライン音声を区別し、長い音声名もレイアウト内に収める。',
       },
       {
-        title: 'ガイダンスを使う場面に近づけた',
-        body: 'Contextual hints と Help が、Today Entry、Omnibox検索、Smart Paste、backup status、主要Settingsへ案内する。',
+        title: 'OKFに文脈を残す',
+        body: 'raw状態、引用元のつながり、最近のtype選択を保ち、次の道具へ渡せる。',
       },
       {
-        title: 'RSS通知が言語設定に対応',
-        body: 'RSSのバックグラウンド失敗通知はChromeの英語/日本語設定に合わせて表示され、全体失敗と一部失敗の件数も分かる。',
+        title: 'Compare状態を見失わない',
+        body: 'auto-hideで周囲のヘッダーが閉じても、Compare & Editの状態バナーは残る。',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -358,7 +358,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'すべてのFAQを見る',
     ctaHeading: '書き始めませんか？',
     ctaNote: 'Chrome拡張機能で利用可能。アカウント不要。',
-    ctaVersion: '最新版: v2.3.2',
+    ctaVersion: '最新版: v2.3.3',
     ctaSecondaryLabel: '更新履歴',
   },
 };
@@ -380,13 +380,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry',
-    dateModified: '2026-07-22',
+    dateModified: '2026-08-02',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
     },
-    softwareVersion: '2.3.2',
+    softwareVersion: '2.3.3',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
@@ -452,13 +452,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし',
-    dateModified: '2026-07-22',
+    dateModified: '2026-08-02',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'JPY',
     },
-    softwareVersion: '2.3.2',
+    softwareVersion: '2.3.3',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
