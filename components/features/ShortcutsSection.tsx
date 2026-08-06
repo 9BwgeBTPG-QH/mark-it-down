@@ -14,6 +14,8 @@ interface ShortcutsSectionProps {
   eyebrow: string;
   heading: string;
   icon: string;
+  // Forwarded to FeatureAccordionShell's <details> as its anchor id.
+  id?: string;
   groups: ShortcutGroup[];
 }
 
@@ -24,11 +26,11 @@ interface ShortcutsSectionProps {
 // <h3 class="changelog-group-title"> and its own <ul class="changelog-features">
 // of shortcut entries — so it composes FeatureAccordionShell directly rather
 // than going through FeatureCategoryAccordion's single flat <ul>.
-export function ShortcutsSection({ lang, eyebrow, heading, icon, groups }: ShortcutsSectionProps) {
+export function ShortcutsSection({ lang, eyebrow, heading, icon, id, groups }: ShortcutsSectionProps) {
   const ja = lang === 'ja';
 
   return (
-    <FeatureAccordionShell lang={lang} eyebrow={eyebrow} heading={heading} icon={icon}>
+    <FeatureAccordionShell lang={lang} eyebrow={eyebrow} heading={heading} icon={icon} id={id}>
       {groups.map((group, i) => (
         <div className="changelog-group" key={i}>
           <h3 className="changelog-group-title">{ja ? <Budoux text={group.heading} /> : group.heading}</h3>

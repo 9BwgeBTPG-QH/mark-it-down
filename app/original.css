@@ -1163,6 +1163,9 @@ a:hover {
   background: var(--bg-card);
   border: 2px solid var(--text-primary);
   border-radius: var(--radius-card);
+  /* Clears the fixed .header-nav toggle when an id anchor lands on a
+     category. Matches .tab-container's existing 80px. */
+  scroll-margin-top: 80px;
   overflow: hidden;
   box-shadow: var(--shadow-card-rest);
   transition:
@@ -1430,7 +1433,12 @@ a:hover {
     padding-left: 28px;
     margin-top: 4px;
   }
-  .accordion-icon + .accordion-highlight {
+  /* General sibling, not adjacent: on Features and Changelog an
+     .accordion-version sits between .accordion-icon and .accordion-highlight,
+     so the adjacent form never matched there and the desktop
+     nowrap/ellipsis survived onto the full-width wrapped row above. FAQ has
+     no .accordion-version, which is why only it was ever rescued. */
+  .accordion-icon ~ .accordion-highlight {
     white-space: normal;
     overflow: visible;
     text-overflow: unset;

@@ -120,6 +120,13 @@ interface FeaturesCtaCopy {
   body: string;
   primaryLabel: string;
   primaryAriaLabel: string;
+  // Added, not ported: a page that lists 167 capabilities and nothing it
+  // refuses to build reads as a wishlist. Rather than duplicate /why's
+  // "What we don't build" section here, the CTA paragraph ends with one
+  // sentence pointing at it (anchor id why-notbuilt-heading, defined in
+  // components/why/NotBuilt.tsx).
+  notBuiltNote: string;
+  notBuiltLinkLabel: string;
 }
 
 interface FeaturesSectionsCopy {
@@ -197,7 +204,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'llms.txt Detection',
-          body: 'Auto-checks /llms-full.txt and /llms.txt before Readability fallback. 24h cache, 5s timeout',
+          body: 'Checks /llms-full.txt and /llms.txt first, so a site that publishes one is clipped as its own clean text rather than a guess at where the article starts. Falls back to normal extraction within a few seconds, and remembers the answer for a day',
         },
         {
           title: 'Mermaid Preservation',
@@ -559,7 +566,12 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Mermaid',
-          body: 'All 19 diagram types — flowcharts, ER, mind maps, Gantt, and more. Diagrams render on first load in the live editor; click to enlarge, zoom 25–400% with Ctrl+scroll, fullscreen, SVG export',
+          // 16, not 19: the extension's own Help panel enumerates exactly 16
+          // entries (src/components/HelpModal.tsx:1408-1423) and its i18n key
+          // reads "Mermaid Diagrams (16 Types)"
+          // (public/_locales/en/messages.json:6057). The 19 was carried over
+          // from eed65be and never matched the shipped list.
+          body: 'All 16 diagram types — flowcharts, ER, mind maps, Gantt, and more. Diagrams render on first load in the live editor; click to enlarge, zoom 25–400% with Ctrl+scroll, fullscreen, SVG export',
         },
         {
           title: 'Math (LaTeX)',
@@ -806,7 +818,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Smart Loading',
-          body: '300KB+ shows choice dialog, Archive for fast read-only view',
+          body: 'A very large note asks how you want to open it: edit the whole thing, or read it right away in Archive view',
         },
         {
           title: 'Chrome Storage',
@@ -906,7 +918,9 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'History',
-          body: 'View past 20 commits, diff view',
+          // 50, not 20: src/AppMain.tsx:6482 calls getCommitHistory(config, 50)
+          // — the function's own default is 50 too (src/utils/git.ts:722).
+          body: 'View past 50 commits, diff view',
         },
         {
           title: 'Version Restore',
@@ -1004,6 +1018,8 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       body: 'Available as a Chrome extension. No account required.',
       primaryLabel: 'Get the extension',
       primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
+      notBuiltNote: 'Some things are missing on purpose.',
+      notBuiltLinkLabel: "See what we don't build",
     },
   },
   ja: {
@@ -1026,7 +1042,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'llms.txt検出',
-          body: 'Readabilityフォールバック前に /llms-full.txt と /llms.txt を自動チェック。24時間キャッシュ、5秒タイムアウト',
+          body: '/llms-full.txt と /llms.txt を先にチェック。公開しているサイトなら、本文の切り出しを推測せずサイト自身の整ったテキストで取り込む。無ければ数秒で通常の抽出に切り替わり、結果は1日おぼえておく',
         },
         {
           title: 'Mermaid保持',
@@ -1368,7 +1384,9 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Mermaid',
-          body: '全19種対応 — フローチャート、ER図、マインドマップ、ガントチャート等。ライブエディタで初回表示から描画。クリックで拡大、Ctrl+スクロールで25〜400%ズーム、全画面表示、SVG保存',
+          // EN 側と同じ訂正（19 → 16）。根拠は public/_locales/ja/messages.json:6057
+          // の「Mermaid図 (全16種)」。
+          body: '全16種対応 — フローチャート、ER図、マインドマップ、ガントチャート等。ライブエディタで初回表示から描画。クリックで拡大、Ctrl+スクロールで25〜400%ズーム、全画面表示、SVG保存',
         },
         {
           title: '数式 (LaTeX)',
@@ -1559,7 +1577,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: '0.5秒デバウンス、保存ボタン不要。保存済み基準はstorage成功後だけ更新されるため、保存失敗後のretryが意味を持つ',
         },
         { title: '段階的読み込み', body: '20KB超でも一瞬で開く — 見えている範囲の描画を優先し、書き始めるまでの摩擦をゼロに' },
-        { title: 'Smart Loading', body: '300KB+で選択ダイアログ表示、Archiveで高速読み取り専用表示' },
+        { title: 'Smart Loading', body: '特に大きいノートは開き方を聞く。全体を編集するか、Archiveですぐ読むか' },
         { title: 'Chrome Storage', body: 'キャッシュクリアでも残る' },
         {
           title: 'インポート/エクスポート',
@@ -1630,7 +1648,8 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           title: 'partial success warning',
           body: 'Push / Pull は remote success と local reflection / config-sync warning を分けて表示し、復帰できるlocal issueを全体失敗に見せない',
         },
-        { title: '履歴', body: '過去20件のコミット、差分ビュー' },
+        // EN 側と同じ訂正（20 → 50）。根拠は src/AppMain.tsx:6482。
+        { title: '履歴', body: '過去50件のコミット、差分ビュー' },
         { title: 'バージョン復元', body: 'ワンクリックで過去のバージョンに復元' },
       ],
     },
@@ -1724,6 +1743,45 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       body: 'Chrome拡張機能として利用可能。アカウント不要。',
       primaryLabel: '拡張機能を入手',
       primaryAriaLabel: 'Chrome Web StoreからMark It Downを入手',
+      notBuiltNote: '意図的に作らなかったものもある。',
+      notBuiltLinkLabel: '作らないものの一覧',
+    },
+  },
+};
+
+// WebPage JSON-LD, added rather than restored: eed65be's docs/features.html
+// carried no structured data at all, which left the site's largest page the
+// only major one invisible to it. Shape follows content/why.ts's whyJsonLd
+// verbatim (WebPage + isPartOf WebSite); name/description reuse
+// featuresContent so the structured data and the <head> metadata can never
+// drift apart. Rendered by components/FeaturesPage.tsx through
+// components/JsonLd.tsx. This is a deliberate delta against
+// doc/audit/seo-baseline-2026-07-12.json, not a regression.
+export const featuresJsonLd: Record<Lang, Record<string, unknown>> = {
+  en: {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: featuresContent.en.title,
+    description: featuresContent.en.description,
+    inLanguage: 'en',
+    url: 'https://markitdown.reduktion.dev/features.html',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Mark It Down',
+      url: 'https://markitdown.reduktion.dev/',
+    },
+  },
+  ja: {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: featuresContent.ja.title,
+    description: featuresContent.ja.description,
+    inLanguage: 'ja',
+    url: 'https://markitdown.reduktion.dev/features-ja.html',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Mark It Down',
+      url: 'https://markitdown.reduktion.dev/',
     },
   },
 };

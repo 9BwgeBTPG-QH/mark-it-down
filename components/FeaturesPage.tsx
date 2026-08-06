@@ -4,7 +4,8 @@ import { FeatureCategoryAccordion } from '@/components/features/FeatureCategoryA
 import { GitSyncIcon } from '@/components/features/GitSyncIcon';
 import { ShortcutsSection } from '@/components/features/ShortcutsSection';
 import { Cta } from '@/components/features/Cta';
-import { featuresSections, type Lang } from '@/content/features';
+import { JsonLd } from '@/components/JsonLd';
+import { featuresJsonLd, featuresSections, type Lang } from '@/content/features';
 
 // Shared skeleton for the EN/JA Features page pair, restored verbatim to
 // eed65be's docs/features.html / docs/features-ja.html structure (design-
@@ -13,8 +14,10 @@ import { featuresSections, type Lang } from '@/content/features';
 // app/(ja)/features-ja/page.tsx stay one-line wrappers. PageShell owns
 // SiteNav/SiteFooter (see components/ClipperPage.tsx for the same pattern).
 //
-// No JsonLd here: unlike the index/clipper/rss pages, docs/features.html /
-// docs/features-ja.html have no JSON-LD script tag to port.
+// The JsonLd block is the one thing here that is added rather than ported:
+// eed65be's docs/features.html had no JSON-LD script tag, so this page — the
+// site's largest — was the only major one without structured data. Payload
+// lives in content/features.ts as featuresJsonLd.
 //
 // All 12 categories sit in one flat <div class="changelog-accordion">, each
 // as a native <details class="accordion-item">, matching the old page's own
@@ -31,6 +34,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
 
   return (
     <PageShell lang={lang} slug="features">
+      <JsonLd data={featuresJsonLd[lang]} />
       <Hero lang={lang} />
       <div className="changelog-accordion">
         <FeatureCategoryAccordion
@@ -39,6 +43,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.webClipper.heading}
           icon={copy.webClipper.icon}
           items={copy.webClipper.items}
+          id="web-clipper"
           open
         />
         <FeatureCategoryAccordion
@@ -47,6 +52,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.rssReader.heading}
           icon={copy.rssReader.icon}
           items={copy.rssReader.items}
+          id="rss-reader"
         />
         <FeatureCategoryAccordion
           lang={lang}
@@ -54,6 +60,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.repositoryReader.heading}
           icon={copy.repositoryReader.icon}
           items={copy.repositoryReader.items}
+          id="repository-reader"
         />
         <FeatureCategoryAccordion
           lang={lang}
@@ -61,6 +68,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.noteGraph.heading}
           icon={copy.noteGraph.icon}
           items={copy.noteGraph.items}
+          id="note-graph"
         />
         <FeatureCategoryAccordion
           lang={lang}
@@ -68,6 +76,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.portability.heading}
           icon={copy.portability.icon}
           items={copy.portability.items}
+          id="portability"
         />
         <FeatureCategoryAccordion
           lang={lang}
@@ -75,6 +84,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.modes.heading}
           icon={copy.modes.icon}
           items={copy.modes.items}
+          id="modes"
         />
         <FeatureCategoryAccordion
           lang={lang}
@@ -82,6 +92,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.markdown.heading}
           icon={copy.markdown.icon}
           items={copy.markdown.items}
+          id="markdown"
         />
         <FeatureCategoryAccordion
           lang={lang}
@@ -89,6 +100,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.notes.heading}
           icon={copy.notes.icon}
           items={copy.notes.items}
+          id="notes"
         />
         <FeatureCategoryAccordion
           lang={lang}
@@ -96,6 +108,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.view.heading}
           icon={copy.view.icon}
           items={copy.view.items}
+          id="view"
         />
         <FeatureCategoryAccordion
           lang={lang}
@@ -103,6 +116,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.storage.heading}
           icon={copy.storage.icon}
           items={copy.storage.items}
+          id="storage"
         />
         <FeatureCategoryAccordion
           lang={lang}
@@ -111,6 +125,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           icon={<GitSyncIcon />}
           iconIsSvg
           items={copy.gitSync.items}
+          id="git-sync"
         />
         <ShortcutsSection
           lang={lang}
@@ -118,6 +133,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
           heading={copy.shortcuts.heading}
           icon={copy.shortcuts.icon}
           groups={copy.shortcuts.groups}
+          id="shortcuts"
         />
       </div>
       <Cta lang={lang} />

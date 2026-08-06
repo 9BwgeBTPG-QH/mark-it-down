@@ -1,6 +1,7 @@
 import { Budoux } from '@/components/Budoux';
 import { SealButton } from '@/components/SealButton';
 import { featuresSections, type Lang } from '@/content/features';
+import { navHref } from '@/content/shared';
 
 // Same Chrome Web Store URL as components/clipper/Cta.tsx,
 // components/rss/Cta.tsx, and components/index/Cta.tsx; duplicated locally
@@ -15,10 +16,18 @@ const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobel
 // .cta-section / .buttons markup (#1593 Wave R2 Batch 2). Unlike
 // components/clipper/Cta.tsx and components/rss/Cta.tsx (heading + two
 // buttons), the old Features CTA has only a single button — no secondary
-// "See all features" link, since this already is the features page. The
-// ground-truth anchor has no target/rel/onclick attribute at all (opens in
-// the same tab, no cta_click event), so no data-ga-cta conversion applies
-// here unlike rss/clipper's Cta.
+// "See all features" link, since this already is the features page.
+//
+// The trailing "what we don't build" sentence is likewise added, not ported.
+// It rides inside the existing <p> rather than getting its own, because
+// .cta-section p in app/original.css carries the block's bottom margin and a
+// second paragraph after .buttons would change the section's spacing.
+//
+// data-ga-cta is a deliberate departure from the ground truth: eed65be's
+// anchor had no analytics attribute, which left this page's only conversion
+// point unmeasurable. Label follows the convention of the other pages'
+// Cta.tsx (bare slug + "-ja"); index's "hero" is a page-local outlier and is
+// not copied. Delegated listener lives in components/GoogleAnalytics.tsx.
 export function Cta({ lang }: { lang: Lang }) {
   const copy = featuresSections[lang].cta;
   const ja = lang === 'ja';
@@ -26,9 +35,26 @@ export function Cta({ lang }: { lang: Lang }) {
   return (
     <section className="cta-section" aria-labelledby="cta-heading">
       <h2 id="cta-heading">{ja ? <Budoux text={copy.heading} /> : copy.heading}</h2>
-      <p>{ja ? <Budoux text={copy.body} /> : copy.body}</p>
+      <p>
+        {ja ? <Budoux text={copy.body} /> : copy.body}
+        {/* JA sentences butt up against each other after the full stop; only
+            EN needs the inter-sentence space. */}
+        {ja ? '' : ' '}
+        {ja ? <Budoux text={copy.notBuiltNote} /> : copy.notBuiltNote}
+        {ja ? '' : ' '}
+        <a href={`${navHref('why', lang)}#why-notbuilt-heading`}>
+          {ja ? <Budoux text={copy.notBuiltLinkLabel} /> : copy.notBuiltLinkLabel}
+        </a>
+        {ja ? '。' : '.'}
+      </p>
       <div className="buttons">
-        <SealButton href={CWS_URL} lang={lang} variant="primary" aria-label={copy.primaryAriaLabel}>
+        <SealButton
+          href={CWS_URL}
+          lang={lang}
+          variant="primary"
+          aria-label={copy.primaryAriaLabel}
+          data-ga-cta={ja ? 'features-ja' : 'features'}
+        >
           {copy.primaryLabel}
         </SealButton>
       </div>

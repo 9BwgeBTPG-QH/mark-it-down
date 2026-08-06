@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T05:03:11.738Z",
+  "generatedAt": "2026-08-06T08:09:50.334Z",
   "docsDir": "out",
   "excluded": [
     "slides-en.html",
@@ -208,7 +208,12 @@
       "ogDescription": "Mark It Downの機能一覧。Web Clipper、RSS Reader、Repository Reader、Obsidian風wikilink、Git同期、書き出し、テンプレートを掲載。",
       "ogImage": "https://markitdown.reduktion.dev/jp-dark.png",
       "firstH1": "Web Clipper、RSS Reader、ポータブルMarkdownの機能",
-      "jsonLd": []
+      "jsonLd": [
+        {
+          "@type": "WebPage",
+          "softwareVersion": null
+        }
+      ]
     },
     {
       "file": "features.html",
@@ -234,7 +239,12 @@
       "ogDescription": "Explore Mark It Down features: Web Clipper, RSS Reader, Repository Reader, Obsidian-style wikilinks, Git sync, export, templates, and Focus Mode.",
       "ogImage": "https://markitdown.reduktion.dev/en-dark.png",
       "firstH1": "Features for Web Clipper, RSS Reader, and portable Markdown",
-      "jsonLd": []
+      "jsonLd": [
+        {
+          "@type": "WebPage",
+          "softwareVersion": null
+        }
+      ]
     },
     {
       "file": "feedback-ja.html",

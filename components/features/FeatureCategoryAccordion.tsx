@@ -11,6 +11,8 @@ interface FeatureCategoryAccordionProps {
   icon: ReactNode;
   iconIsSvg?: boolean;
   open?: boolean;
+  // Forwarded to FeatureAccordionShell's <details> as its anchor id.
+  id?: string;
   items: FeaturesListItem[];
 }
 
@@ -29,10 +31,11 @@ export function FeatureCategoryAccordion({
   icon,
   iconIsSvg,
   open,
+  id,
   items,
 }: FeatureCategoryAccordionProps) {
   return (
-    <FeatureAccordionShell lang={lang} eyebrow={eyebrow} heading={heading} icon={icon} iconIsSvg={iconIsSvg} open={open}>
+    <FeatureAccordionShell lang={lang} eyebrow={eyebrow} heading={heading} icon={icon} iconIsSvg={iconIsSvg} open={open} id={id}>
       <ul className="changelog-features">
         {items.map((item, i) => (
           <FeatureItemRow key={i} item={item} lang={lang} />

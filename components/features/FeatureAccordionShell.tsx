@@ -17,6 +17,12 @@ interface FeatureAccordionShellProps {
   // Clipper) pre-expanded via a bare `open` attribute; every other category
   // starts collapsed.
   open?: boolean;
+  // Stable anchor id on the <details>, so other pages and external links can
+  // deep-link to a category (eed65be's markup had no per-category ids, so the
+  // page had no addressable sections at all). Landing offset is handled by
+  // .accordion-item's scroll-margin-top in app/original.css, which clears the
+  // fixed .header-nav.
+  id?: string;
   children: ReactNode;
 }
 
@@ -30,12 +36,12 @@ interface FeatureAccordionShellProps {
 // .accordion-header. FeaturesPage.tsx's own h1 (Hero) is the only heading in
 // the page outline until Keyboard Shortcuts' <h3 class="changelog-group-title">
 // group headings — categories themselves are not headings in the old design.
-export function FeatureAccordionShell({ lang, eyebrow, heading, icon, iconIsSvg, open, children }: FeatureAccordionShellProps) {
+export function FeatureAccordionShell({ lang, eyebrow, heading, icon, iconIsSvg, open, id, children }: FeatureAccordionShellProps) {
   const ja = lang === 'ja';
   const versionClass = iconIsSvg ? 'accordion-version accordion-icon-svg' : 'accordion-version';
 
   return (
-    <details className="accordion-item" open={open}>
+    <details className="accordion-item" id={id} open={open}>
       <summary className="accordion-header">
         <div className="accordion-title">
           <span className="accordion-icon"></span>
