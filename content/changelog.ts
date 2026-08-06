@@ -96,12 +96,39 @@ export interface ChangelogVersion {
 export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   en: [
     {
-      version: 'v2.3.3',
-      highlight: 'Clearer editing actions, readable highlights, and traceable handoffs.',
+      version: 'v2.3.4',
+      highlight: 'Steadier selection, safer note updates, and reachable Focus controls.',
       status: 'Under Review',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'This release repairs small breaks in trust: selection stays responsive in link-heavy notes, Quote Selection metadata survives safe updates, and visible Focus Mode controls receive normal pointer input.',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['Link-heavy selection'], description: ['Selection Toolbar placement updates are grouped once per animation frame, with less geometry work at the selected endpoint.'] },
+            { term: ['Clearer local-first boundary'], description: ['Public descriptions distinguish Mark It Down\'s local-first default from optional network features that connect to the source or provider you choose.'] },
+            { term: ['Feature inventory release gate'], description: ['Release checks compare Settings, Command Palette entries, context menus, and manifest commands with the implemented-feature inventory so new documentation drift fails the audit.'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['Quote Selection metadata'], description: ['Formatting no longer drops internal revision state, so status and quoted_at remain persistent while genuine stale writes are still rejected.'] },
+            { term: ['Selection Toolbar lifecycle'], description: ['Mutation bursts are coalesced per frame, and delayed placement work is cancelled when the toolbar is removed.'] },
+            { term: ['Focus Mode Sidebar controls'], description: ['The visible wide Sidebar stays above the App Header, so Today Entry and other top controls receive pointer clicks in pinned and hover-open paths.'] },
+            { term: ['Neighboring header controls'], description: ['The transparent Sidebar hover area no longer blocks Search or other adjacent header controls after the Sidebar closes.'] },
+            { term: ['Academic block spacing'], description: ['Blockquote and callout paragraph spacing remains symmetric with Academic typography.'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.3',
+      highlight: 'Clearer editing actions, readable highlights, and traceable handoffs.',
+      status: 'Released',
+      statusClass: 'released',
       theme: 'This release makes the writing surface easier to read and easier to act on. Selection controls are grouped by intent, temporary attention and saved marks have distinct visual roles, and OKF bundles carry more of a note\'s provenance into the next tool.',
       sections: [
         {
@@ -1530,12 +1557,39 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   ],
   ja: [
     {
-      version: 'v2.3.3',
-      highlight: '編集操作を整理し、ハイライトを読みやすくし、受け渡しの文脈を残す。',
+      version: 'v2.3.4',
+      highlight: '選択操作を安定させ、安全にノートを更新し、Focus Modeの操作へ届くようにする。',
       status: '審査中',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: '小さな信頼性の崩れを直すリリース。リンクの多いノートでも選択操作を軽く保ち、Quote Selectionのメタデータを安全な更新後も残し、Focus Modeで見えている操作を通常どおりクリックできるようにした。',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['リンクの多い範囲の選択'], description: ['Selection Toolbarの配置更新をanimation frameごとにまとめ、選択端点のgeometry計測を減らした。'] },
+            { term: ['ローカルファーストの境界を明確化'], description: ['公開文面で、Mark It Downのローカルファーストな既定動作と、選んだ取得元やプロバイダーへ接続する任意のネットワーク機能を区別した。'] },
+            { term: ['機能inventoryのrelease gate'], description: ['Settings、Command Palette、context menu、manifest commandを実装済み機能の一覧と照合し、新しい文書のずれをrelease auditで検出する。'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['Quote Selectionのメタデータ'], description: ['書式変更で内部revisionを失わないため、statusとquoted_atを保ちつつ、本当に古い書き込みは引き続き拒否する。'] },
+            { term: ['Selection Toolbarのlifecycle'], description: ['mutationの連続発生をframe単位でまとめ、toolbarを閉じた後に残る配置処理を取り消す。'] },
+            { term: ['Focus ModeのSidebar操作'], description: ['表示中のwide SidebarをApp Headerより前面に保ち、固定表示とhover表示のどちらでもToday Entryなど上部の操作をpointer clickで実行できる。'] },
+            { term: ['隣接するHeader操作'], description: ['Sidebarの透明なhover領域が、Sidebarを閉じた後のSearchなど隣接するHeader操作を遮らなくなった。'] },
+            { term: ['Academicのblock間隔'], description: ['Academic typographyでもblockquoteとcallout paragraphの上下間隔が対称になる。'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.3',
+      highlight: '編集操作を整理し、ハイライトを読みやすくし、受け渡しの文脈を残す。',
+      status: 'リリース済',
+      statusClass: 'released',
       theme: '書く面を読みやすくし、次の操作を選びやすくするリリース。選択ツールを目的別に分け、一時的な注目と保存したマークを見分けやすくし、OKF bundleにはノートの由来を次の道具へ渡すための文脈を残す。',
       sections: [
         {

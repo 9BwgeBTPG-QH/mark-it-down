@@ -198,27 +198,23 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: 'Recently Added',
-    recentStatus: 'v2.3.3 — Clearer selection tools, readable highlights, and traceable handoffs.',
+    recentStatus: 'v2.3.4 — Steadier selection, safer note updates, and reachable Focus controls.',
     recentItems: [
       {
-        title: 'Selection tools are grouped by intent',
-        body: 'Everyday formatting stays immediate, transformations move under More, and Share keeps copy, snippet, import, and handoff actions together.',
+        title: 'Selection stays smooth in link-heavy notes',
+        body: 'The formatting toolbar no longer repeatedly repositions itself while text is selected.',
       },
       {
-        title: 'Highlights have distinct roles',
-        body: 'Selection, saved marks, Read Aloud tracking, search attention, and warnings stay visually distinct across all four themes.',
+        title: 'Quote metadata survives formatting',
+        body: 'Quote Selection keeps its status and quoted date after formatting changes while safe-write protection remains active.',
       },
       {
-        title: 'Voice choices explain their boundary',
-        body: 'Read Aloud settings distinguish local and online voices, and long voice names stay inside the settings layout.',
+        title: 'Focus controls remain reachable',
+        body: 'The visible Sidebar stays above the header, so Today Entry and other top controls receive normal pointer clicks.',
       },
       {
-        title: 'OKF carries more context forward',
-        body: 'Exports retain raw status, citation provenance, and recent type choices for the next tool.',
-      },
-      {
-        title: 'Compare state stays visible',
-        body: 'Compare & Edit keeps its state banner visible when auto-hide collapses the surrounding header controls.',
+        title: 'Neighboring header controls stay clickable',
+        body: 'After the Sidebar closes, Search and other neighboring header controls remain available.',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -244,7 +240,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'View all FAQ',
     ctaHeading: 'Ready to write?',
     ctaNote: 'Available as a Chrome extension. No account required.',
-    ctaVersion: 'Latest version: v2.3.3',
+    ctaVersion: 'Latest version: v2.3.4',
     ctaSecondaryLabel: "What's new",
   },
   ja: {
@@ -321,27 +317,23 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: '最近の追加機能',
-    recentStatus: 'v2.3.3 — 選択ツールバーの整理、ハイライトの視認性、OKFの受け渡し強化。',
+    recentStatus: 'v2.3.4 — 選択操作の安定化、安全なノート更新、Focus Modeの操作性改善。',
     recentItems: [
       {
-        title: '選択ツールを目的別に整理',
-        body: '日常の書式はすぐ使え、変換操作はMoreへ、コピー、snippet、import、外部への受け渡しはShareへまとめた。',
+        title: 'リンクの多いノートでも滑らかに選択',
+        body: 'テキスト選択中に書式ツールバーが位置を繰り返し調整しない。',
       },
       {
-        title: 'ハイライトの役割を分離',
-        body: '選択範囲、保存したマーク、読み上げ位置、検索中の注目、警告を、4テーマすべてで見分けやすくした。',
+        title: '書式変更後も引用メタデータを保持',
+        body: 'Quote Selectionは安全な書き込み保護を保ちながら、状態と引用日を維持する。',
       },
       {
-        title: '音声の境界を設定で説明',
-        body: 'Read Aloud設定はローカル音声とオンライン音声を区別し、長い音声名もレイアウト内に収める。',
+        title: 'Focus Modeの操作に届く',
+        body: '表示中のSidebarがHeaderより前面に残り、Today Entryなど上部の操作を通常どおりクリックできる。',
       },
       {
-        title: 'OKFに文脈を残す',
-        body: 'raw状態、引用元のつながり、最近のtype選択を保ち、次の道具へ渡せる。',
-      },
-      {
-        title: 'Compare状態を見失わない',
-        body: 'auto-hideで周囲のヘッダーが閉じても、Compare & Editの状態バナーは残る。',
+        title: '隣接するHeader操作もクリック可能',
+        body: 'Sidebarを閉じた後も、Searchなど隣接するHeader操作を使える。',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -366,7 +358,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'すべてのFAQを見る',
     ctaHeading: '書き始めませんか？',
     ctaNote: 'Chrome拡張機能で利用可能。アカウント不要。',
-    ctaVersion: '最新版: v2.3.3',
+    ctaVersion: '最新版: v2.3.4',
     ctaSecondaryLabel: '更新履歴',
   },
 };
@@ -388,13 +380,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-06',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
     },
-    softwareVersion: '2.3.3',
+    softwareVersion: '2.3.4',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
@@ -460,13 +452,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-06',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'JPY',
     },
-    softwareVersion: '2.3.3',
+    softwareVersion: '2.3.4',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',

@@ -225,7 +225,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Save Selection — Unified Quote Format',
-          body: 'Saving selected text via right-click or RSS Quote Selection always produces the same structure: frontmatter (source URL + timestamp) + blockquote + attribution link + disclaimer footer',
+          body: 'Saving selected text via right-click or RSS Quote Selection always produces the same structure: frontmatter (source URL + timestamp) + blockquote + attribution link + disclaimer footer. Later formatting changes preserve status and quoted_at metadata',
         },
         {
           title: 'Ruby text → Aozora notation',
@@ -516,7 +516,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Focus Mode',
-          body: 'Typewriter scroll, cursor-aware highlighting',
+          body: 'Typewriter scroll and cursor-aware highlighting. When the wide Sidebar is visible, its top controls remain clickable without blocking neighboring header controls',
         },
         {
           title: 'Command Palette',
@@ -555,7 +555,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Selection Toolbar',
-          body: 'Bold, Italic, Strikethrough, Link, Inline Code, and Code Block stay in the first row. Heading, List, Quote, Math, Highlight, and Read Aloud open from More; Copy, Snippet, Import, and handoff actions live under Share',
+          body: 'Bold, Italic, Strikethrough, Link, Inline Code, and Code Block stay in the first row. Heading, List, Quote, Math, Highlight, and Read Aloud open from More; Copy, Snippet, Import, and handoff actions live under Share. Placement updates are grouped once per animation frame, and pending work is cancelled when the toolbar closes',
         },
         {
           title: 'Mermaid',
@@ -1054,7 +1054,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Save Selection — 引用フォーマット統一',
-          body: '右クリック「選択テキストを保存」と RSS Quote Selection はどちらも同じ形で出力される。frontmatter（保存元URL・日時）+ blockquote + 出典リンク + フッター免責文',
+          body: '右クリック「選択テキストを保存」と RSS Quote Selection はどちらも同じ形で出力される。frontmatter（保存元URL・日時）+ blockquote + 出典リンク + フッター免責文。後から書式を変更してもstatusとquoted_atを保持する',
         },
         {
           title: 'ルビ → 青空文庫記法に変換',
@@ -1335,7 +1335,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       items: [
         { title: 'New Tab', body: '全画面ワークスペース、Focus Mode (Alt+F)' },
         { title: 'Side Panel', body: 'AIやブラウジングの横で書く' },
-        { title: 'Focus Mode', body: 'タイプライタースクロール、カーソル追従ハイライト' },
+        { title: 'Focus Mode', body: 'タイプライタースクロール、カーソル追従ハイライト。wide Sidebarの表示中も上部の操作をクリックでき、隣接するHeader操作を遮らない' },
         {
           title: 'コマンドパレット',
           body: 'あいまい検索、アラート色インジケーター、構文プレビュー、設定操作',
@@ -1364,7 +1364,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         { title: 'GitHub Flavored', body: 'テーブル、タスクリスト、シンタックスハイライト' },
         {
           title: '選択ツールバー',
-          body: 'Bold、Italic、Strikethrough、Link、Inline Code、Code Blockは1段目に配置。Heading、List、Quote、Math、Highlight、Read AloudはMoreから開き、Copy、Snippet、Import、外部への受け渡しはShareにまとめる',
+          body: 'Bold、Italic、Strikethrough、Link、Inline Code、Code Blockは1段目に配置。Heading、List、Quote、Math、Highlight、Read AloudはMoreから開き、Copy、Snippet、Import、外部への受け渡しはShareにまとめる。配置更新をanimation frameごとにまとめ、toolbarを閉じた後の処理を取り消す',
         },
         {
           title: 'Mermaid',
