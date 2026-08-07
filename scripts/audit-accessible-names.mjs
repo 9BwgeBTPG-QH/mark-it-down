@@ -42,12 +42,14 @@ const ENTITIES = {
 
 // Budoux wraps CJK copy in <span> + <wbr>; stripping tags recovers the text a
 // sighted reader sees. Zero-width characters are invisible, so they must not
-// affect the comparison either.
+// affect the comparison either — written as escapes, not literals, so that an
+// editor or tool that strips zero-width bytes cannot silently turn the class
+// into one that matches nothing while the gate keeps reporting PASS.
 function visibleText(html) {
   return html
     .replace(/<[^>]*>/g, '')
     .replace(/&[a-z#0-9x]+;/gi, (e) => ENTITIES[e.toLowerCase()] ?? e)
-    .replace(/[​‌‍﻿]/g, '');
+    .replace(/[\u200B-\u200D\uFEFF]/g, '');
 }
 
 // Same normalisation Lighthouse applies before the substring test: collapse
