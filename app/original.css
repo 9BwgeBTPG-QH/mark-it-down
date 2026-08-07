@@ -450,22 +450,18 @@ header .tagline {
    provide the surface. justify-content is declared twice: `safe center`
    keeps the top items reachable when the list overflows (short
    viewports); browsers without the `safe` keyword fall back to center.
-   The box itself is capped to the content measure and centred so the links
-   land on the same column as the page text (and near the toggle) instead of
-   at the far viewport edge; margin-inline: auto is required, since
-   inset: 0 + max-width alone is over-constrained and collapses left. The
-   backdrop stays fullscreen — it is painted by .nav-menu[open]::before /
-   ::after, which are separate inset: 0 boxes.
-   text-align (not align-items: flex-end) does the right alignment: the li
-   keep stretching to the column, so the lang switcher's border-top still
-   spans it and the hover band keeps its current width — only the text moves
-   to the rail's right edge, where the toggle already sits. */
+   The box spans the viewport (no content-measure cap): the links are
+   centred on the screen, both axes, which is the usual reading of a
+   fullscreen overlay and keeps the eye in one place regardless of window
+   width. The backdrop is painted separately by .nav-menu[open]::before /
+   ::after (also inset: 0 boxes), so panel geometry never affects it.
+   text-align (not align-items: center) does the centring, so nothing here
+   depends on the items' own width; the rows keep their measure via the
+   .nav-menu-panel > li rule below. */
 .nav-menu-panel {
   position: fixed;
   inset: 0;
   z-index: 1;
-  max-width: var(--content-max);
-  margin: 0 auto;
   padding: calc(44px + 2 * var(--spacing-sm)) var(--spacing-lg) var(--spacing-lg);
   list-style: none;
   display: flex;
@@ -474,7 +470,7 @@ header .tagline {
   justify-content: safe center;
   gap: var(--spacing-xs);
   overflow-y: auto;
-  text-align: right;
+  text-align: center;
 }
 @keyframes nav-kenburns {
   from {
@@ -506,6 +502,15 @@ body:has(.nav-menu[open]) .header-nav {
 .header-nav li {
   margin: 0;
   opacity: 0;
+}
+/* The panel spans the viewport so the labels centre on the screen, but the
+   rows keep the content rail's measure: a flex item would otherwise stretch
+   edge to edge and take the hover band with it — a 2000px-wide tint behind a
+   short label on a wide monitor. .lang-switcher is excluded because it shrinks
+   to its own label via align-self, which an explicit width would defeat. */
+.nav-menu-panel > li:not(.lang-switcher) {
+  width: min(100%, var(--content-max));
+  margin-inline: auto;
 }
 .nav-menu[open] .nav-menu-panel li {
   animation: nav-item-in 0.4s var(--motion-easing) both;
@@ -560,12 +565,14 @@ body:has(.nav-menu[open]) .header-nav {
   font-weight: 500;
 }
 /* The separator above the language switch. align-self shrinks this one item
-   to its label so the rule ends at the rail's right edge with the text
-   instead of trailing far to the left of a right-aligned list. */
+   to its label and centres it, so the rule sits under the centred list
+   instead of stretching edge to edge across the viewport; the inline
+   padding lets it read as a divider rather than an underline. */
 .header-nav .lang-switcher {
-  align-self: flex-end;
+  align-self: center;
   margin-top: var(--spacing-xs);
   padding-top: var(--spacing-xs);
+  padding-inline: var(--spacing-lg);
   border-top: 1px solid var(--border-subtle);
 }
 .header-nav .lang-switcher a {
@@ -677,12 +684,16 @@ p {
   letter-spacing: -0.03em;
   text-wrap: balance;
 }
+/* The dimming used to come from opacity: 0.72 over --text-secondary, which
+   composites to #86827c on the light page — 3.27:1, below the 4.5:1 that
+   15px body text needs. --text-muted is the token that already means "one
+   step quieter than body text" and passes on its own (5.01:1 light,
+   7.94:1 dark), so the shade is a token now instead of a blend. */
 .hero-fact {
   font-family: var(--font-mono);
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-secondary);
-  opacity: 0.72;
+  color: var(--text-muted);
   max-width: 560px;
   margin: 0 auto var(--spacing-md);
   letter-spacing: 0.01em;
@@ -827,16 +838,21 @@ p {
     transition-delay: 0s !important;
   }
 }
+/* --border-primary at 0.5 rendered #bab3a9 — 1.78:1, far under the 3:1 that
+   24px text needs. The glyphs are decorative (aria-hidden) but they are real
+   text nodes, so the checker rates them as text and sighted low-vision
+   readers still have to resolve them. --text-muted at 0.8 keeps the flourish
+   visibly quieter than the copy around it (3.38:1 light, 5.38:1 dark). */
 .hero-ornament {
   display: block;
   text-align: center;
   font-family: var(--font-serif);
   font-size: 1.5rem;
-  color: var(--border-primary);
+  color: var(--text-muted);
   letter-spacing: 0.3em;
   margin-top: var(--spacing-lg);
   user-select: none;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 /* ============================================================================
@@ -3003,27 +3019,31 @@ footer {
   padding: var(--spacing-2xl) 0 var(--spacing-xl);
   margin-top: var(--spacing-2xl);
 }
+/* The 0.6 opacity used to sit on the whole block, so the wordmark rendered
+   at #98948e — 2.58:1 for 14px text. The fade only ever needed to quiet the
+   logo; the label carries its shade in --text-muted (5.01:1 light, 7.94:1
+   dark) and the hover lift now targets the image alone. */
 .footer-brand {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-xs);
   margin-bottom: var(--spacing-md);
-  opacity: 0.6;
-  transition: opacity var(--transition-base);
-}
-.footer-brand:hover {
-  opacity: 0.8;
 }
 .footer-brand img {
   width: 24px;
   height: 24px;
+  opacity: 0.6;
+  transition: opacity var(--transition-base);
+}
+.footer-brand:hover img {
+  opacity: 0.8;
 }
 .footer-brand span {
   font-family: var(--font-serif);
   font-size: var(--font-size-sm);
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--text-muted);
 }
 footer p {
   font-size: var(--font-size-sm);

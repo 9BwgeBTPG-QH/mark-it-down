@@ -10,8 +10,7 @@ docs/
 ├── index-ja.html           # Landing page (Japanese)
 ├── privacy-policy.html     # Privacy policy (English)
 ├── privacy-policy-ja.html  # Privacy policy (Japanese)
-├── style.css               # Shared styles (warm/cream palette, generated — see CSS Workflow below)
-├── style.src.css           # Shared styles, readable source (edit this, not style.css)
+├── style.src.css           # Shared styles (warm/cream palette) — see CSS Workflow below
 ├── favicon.png             # 128x128 icon
 ├── icon-*.png              # Extension icons (16/48/128)
 ├── screenshots/            # Screenshots for landing page
@@ -76,13 +75,23 @@ Replace `href="#"` with the actual Chrome Web Store URL.
 
 ## CSS Workflow
 
-- `docs/style.src.css` is the readable source — edit this file.
-- `docs/style.css` is the generated, minified file GitHub Pages actually serves — do not hand-edit it.
-- After editing `docs/style.src.css`, regenerate `docs/style.css`:
-  ```
-  npx --yes clean-css-cli docs/style.src.css -o docs/style.css
-  ```
-- Commit both files together.
+The Next.js pages get their CSS from `app/original.css` through the build, so
+nothing under `docs/` is involved for them. `docs/style.src.css` is a mirror of
+that file kept for two consumers:
+
+- the audit scripts (`scripts/audit-phase*.mjs`, `audit-chroma-budget.mjs`),
+  which diff it against `app/original.css` to catch theme drift;
+- `docs/templates/view*.html`, the hand-built template viewers, which link it
+  directly.
+
+Edit `app/original.css` and mirror the same change into `docs/style.src.css` —
+`npm run audit:site` fails if the two disagree.
+
+There used to be a third file, `docs/style.css`: a minified build of
+`style.src.css` that the viewers linked instead. Regenerating it was a manual
+step, so it silently went stale (last rebuilt at `dd69ba6`, while the source
+kept moving) and the viewers rendered an outdated stylesheet. It was removed in
+favour of linking the source directly — one file, no drift.
 
 ## Update Notes
 
