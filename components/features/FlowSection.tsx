@@ -71,8 +71,13 @@ export function FlowSection({ lang }: { lang: Lang }) {
           margin-inline: calc(-1 * var(--flow-gutter));
           padding-bottom: var(--spacing-xs);
           scrollbar-width: none;
-          -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--flow-gutter), #000 calc(100% - var(--flow-gutter)), transparent 100%);
-          mask-image: linear-gradient(to right, transparent 0, #000 var(--flow-gutter), #000 calc(100% - var(--flow-gutter)), transparent 100%);
+          /* currentColor, not #000: a mask reads only the alpha channel, so the
+             opaque stops carry no colour at all — and a hex literal here reads
+             to scripts/audit-phase3-colors.mjs as an untokenized theme colour
+             that would have to be classified as an exception. Both themes set
+             --text-primary fully opaque, so alpha is 1 either way. */
+          -webkit-mask-image: linear-gradient(to right, transparent 0, currentColor var(--flow-gutter), currentColor calc(100% - var(--flow-gutter)), transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, currentColor var(--flow-gutter), currentColor calc(100% - var(--flow-gutter)), transparent 100%);
         }
         .flow-track::-webkit-scrollbar { display: none; }
         .flow-track:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 4px; }
