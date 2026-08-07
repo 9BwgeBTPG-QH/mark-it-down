@@ -21,12 +21,28 @@ interface FeaturesCopy {
 // paragraph between the h1 and the hero-subtitle paragraph that clipper/rss
 // don't have.
 //
-// Both hero-subtitle strings had a manual <br> in the old markup
-// ("One pane. No distractions. <br>Write, see instantly." /
-// "1ペイン。集中できる。<br>書いて、すぐ見る。"); restored here as
-// heroSubtitleLines, rendered through components/index/BrokenLines.tsx
-// (#1593 Wave R2 Batch 2 — inline-tag restoration), same pattern as
-// content/why.ts's own lines[] fields.
+// The hero-subtitle is the one part of this block no longer lifted verbatim.
+// The old markup carried a two-line description of the editor ("One pane. No
+// distractions. <br>Write, see instantly." / "1ペイン。集中できる。<br>書い
+// て、すぐ見る。") — true, but true of the product on every page, and it left
+// the largest page on the site opening with nothing that scoped it. It now
+// names the four stages the page is organised around, so the hero previews
+// the flow block instead of restating the product. Wording from
+// $EXT/doc/research/features-page-ia-2026-08.md:245-266.
+//
+// That report also proposed replacing the h1 with the site tagline
+// ("Write it down. Keep it yours.", content/shared.ts:114). Not done: all 28
+// pages in doc/audit/seo-baseline-2026-08-07.json carry a distinct
+// keyword-bearing h1, and features.html is the page with the most to lose
+// from dropping "Web Clipper, RSS Reader, portable Markdown" out of its only
+// h1. The report knew this cost a baseline diff (it says to register one) but
+// weighed it without that 28/28 inventory in view. Keeping the h1 leaves the
+// tagline no job here, so the report's mechanism — reuse the tagline rather
+// than write a new h1 — reduces to the one bridging line below.
+//
+// Both lines keep the manual <br> of the old markup, rendered through
+// components/index/BrokenLines.tsx (#1593 Wave R2 Batch 2 — inline-tag
+// restoration), same pattern as content/why.ts's own lines[] fields.
 //
 // JA h1: the old markup separated phrases with manually inserted zero-width
 // spaces (U+200B) for line-break control, replaced here by <Budoux>. Unlike
@@ -40,7 +56,7 @@ export const featuresContent: Record<Lang, FeaturesCopy> = {
       'Explore Mark It Down features: Web Clipper, RSS Reader, Repository Reader, Obsidian-style wikilinks, Git sync, export, templates, and Focus Mode.',
     h1: 'Features for Web Clipper, RSS Reader, and portable Markdown',
     heroTagline: 'Write in Markdown.',
-    heroSubtitleLines: ['One pane. No distractions.', 'Write, see instantly.'],
+    heroSubtitleLines: ['Take it in, rewrite it, move it, send it out.', 'Only the tools for that.'],
   },
   ja: {
     lang: 'ja',
@@ -49,7 +65,7 @@ export const featuresContent: Record<Lang, FeaturesCopy> = {
       'Mark It Downの機能一覧。Web Clipper、RSS Reader、Repository Reader、Obsidian風wikilink、Git同期、書き出し、テンプレートを掲載。',
     h1: 'Web Clipper、RSS Reader、ポータブルMarkdownの機能',
     heroTagline: 'Markdownで書く。',
-    heroSubtitleLines: ['1ペイン。集中できる。', '書いて、すぐ見る。'],
+    heroSubtitleLines: ['取り込んで、書き直して、動かして、出ていく。', 'そのための道具だけがある。'],
   },
 };
 
