@@ -7,7 +7,7 @@
     "build": "next build",
     "sync": "npm run build && node scripts/sync-docs.mjs",
     "lint": "next lint",
-    "audit:site": "node scripts/audit-phase1-typography.mjs && node scripts/audit-phase2-light.mjs && node scripts/audit-phase3-colors.mjs && node scripts/audit-phase3-theme.mjs && node scripts/audit-features-ia.mjs"
+    "audit:site": "node scripts/audit-features-ia.mjs && node scripts/audit-phase1-typography.mjs && node scripts/audit-phase2-light.mjs && node scripts/audit-phase3-colors.mjs && node scripts/audit-phase3-theme.mjs"
   },
   "dependencies": {
     "budoux": "^0.8.4",
