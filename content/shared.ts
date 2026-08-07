@@ -9,7 +9,8 @@ export interface SiteNavLink {
 // Original-design nav (eed65be:docs/index.html header-nav, restored by the
 // #1593 rollback decision 2026-07-12): Home / Philosophy / Features / OKF /
 // Templates / FAQ / Troubleshooting / Changelog / Feedback / Privacy.
-// Web Clipper / RSS Reader are footer-only, exactly as the old site had them.
+// Web Clipper / RSS Reader are footer-only, exactly as the old site had them,
+// and Repository Reader (added 2026-08-07) follows the same placement.
 export const primaryNavLinks: SiteNavLink[] = [
   { slug: 'index', en: 'Home', ja: 'ホーム' },
   { slug: 'why', en: 'Philosophy', ja: 'MIDとは' },
@@ -29,6 +30,7 @@ export const footerNavLinks: SiteNavLink[] = [
   { slug: 'features', en: 'Features', ja: '機能' },
   { slug: 'clipper', en: 'Web Clipper', ja: 'Web Clipper' },
   { slug: 'rss', en: 'RSS Reader', ja: 'RSS Reader' },
+  { slug: 'repository', en: 'Repository Reader', ja: 'Repository Reader' },
   { slug: 'okf', en: 'OKF', ja: 'OKF' },
   { slug: 'templates', en: 'Templates', ja: 'テンプレート' },
   { slug: 'faq', en: 'FAQ', ja: 'よくある質問' },
@@ -82,6 +84,7 @@ export const pageTaglines: Record<Lang, Record<string, string | null>> = {
     okf: 'Portable knowledge, plain files.',
     clipper: 'Clip the web. Rewrite it in your own words.',
     rss: 'Read feeds. Keep only what you will rewrite.',
+    repository: 'Read the repo. Quote what you will rewrite.',
     welcome: null,
   },
   ja: {
@@ -95,6 +98,7 @@ export const pageTaglines: Record<Lang, Record<string, string | null>> = {
     okf: '持ち運べる知識を、普通のファイルで。',
     clipper: 'Webを取り込む。自分の言葉にする。',
     rss: 'フィードを読む。書き直すものだけ残す。',
+    repository: 'リポジトリを読む。書き直すものだけ引用する。',
     welcome: null,
   },
 };

@@ -402,7 +402,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Quote to Inbox',
-          body: 'Select text in the preview and save it as a note, with source URL and timestamp recorded in frontmatter',
+          body: 'Select text in the preview and save it as a note, with the source URL, repository, branch, and file path recorded in frontmatter',
         },
         {
           title: 'Back/Forward Navigation',
@@ -1239,7 +1239,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Quote to Inbox',
-          body: 'プレビュー内のテキストを選択してノートとして保存。出典URLとタイムスタンプをfrontmatterに記録',
+          body: 'プレビュー内のテキストを選択してノートとして保存。出典URL・リポジトリ・ブランチ・ファイルパスをfrontmatterに記録',
         },
         {
           title: 'Back/Forward ナビゲーション',
@@ -1760,10 +1760,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
 // and /ja carry the same string — so they stay in English on both pages and only
 // the trailing verb is localised.
 //
-// Only Entry and Exit carry links: clipper.html / rss.html / okf.html are real
-// pages. Edit and Move have no page of their own, and linking them at the
-// accordion's #id would land the reader on a collapsed <details> row, so they
-// carry no link at all.
+// Only Entry and Exit carry links: clipper.html / rss.html / repository.html /
+// okf.html are real pages. Edit and Move have no page of their own, and linking
+// them at the accordion's #id would land the reader on a collapsed <details>
+// row, so they carry no link at all.
 export interface FeaturesFlowLink {
   label: string;
   slug: string;
@@ -1805,6 +1805,7 @@ export const featuresFlow: Record<Lang, FeaturesFlowCopy> = {
         links: [
           { label: 'Web Clipper', slug: 'clipper' },
           { label: 'RSS Reader', slug: 'rss' },
+          { label: 'Repository Reader', slug: 'repository' },
         ],
       },
       {
@@ -1851,6 +1852,7 @@ export const featuresFlow: Record<Lang, FeaturesFlowCopy> = {
         links: [
           { label: 'Web Clipper', slug: 'clipper' },
           { label: 'RSS Reader', slug: 'rss' },
+          { label: 'Repository Reader', slug: 'repository' },
         ],
       },
       {
