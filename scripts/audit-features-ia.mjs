@@ -25,27 +25,29 @@ const ROOT = new URL('..', import.meta.url);
 
 const STAGES = ['entry', 'edit', 'move', 'exit'];
 
-// Flow order, not the pre-2026-08 order. Group boundaries fall after
-// repository-reader (3), view (6), note-graph (8) and git-sync (10).
-const CATEGORY_IDS = [
-  'web-clipper',
-  'rss-reader',
-  'repository-reader',
-  'markdown',
-  'modes',
-  'view',
-  'notes',
-  'note-graph',
-  'portability',
-  'git-sync',
-  'storage',
-  'shortcuts',
+// Flow order, not the pre-2026-08 order — and which categories sit under which
+// heading, not just the two orders side by side. Membership is the invariant
+// that carries meaning: heading order and id order can both be intact while a
+// heading has drifted past a category, which silently reassigns it to the
+// previous stage.
+const GROUPS = [
+  { en: 'Entry', ja: 'Entry', ids: ['web-clipper', 'rss-reader', 'repository-reader'] },
+  { en: 'Edit', ja: 'Edit', ids: ['markdown', 'modes', 'view'] },
+  { en: 'Move', ja: 'Move', ids: ['notes', 'note-graph'] },
+  { en: 'Exit', ja: 'Exit', ids: ['portability', 'git-sync'] },
+  { en: 'Everywhere', ja: 'どの段でも', ids: ['storage', 'shortcuts'] },
 ];
 
+const CATEGORY_COUNT = GROUPS.reduce((total, group) => total + group.ids.length, 0);
+
 const PAGES = [
-  { file: 'docs/features.html', lang: 'en', groups: ['Entry', 'Edit', 'Move', 'Exit', 'Everywhere'] },
-  { file: 'docs/features-ja.html', lang: 'ja', groups: ['Entry', 'Edit', 'Move', 'Exit', 'どの段でも'] },
+  { file: 'docs/features.html', lang: 'en' },
+  { file: 'docs/features-ja.html', lang: 'ja' },
 ];
+
+// One pass over the document so headings and categories keep their relative
+// order; matching them separately is what loses membership.
+const OUTLINE = /<h2 class="features-group">([\s\S]*?)<\/h2>|<details class="accordion-item"[^>]*id="([^"]+)"/g;
 
 let failures = 0;
 
@@ -107,16 +109,33 @@ for (const page of PAGES) {
   );
 
   // --- accordion grouping -------------------------------------------------
+  // Rebuild the outline as the browser sees it: each heading, then the
+  // categories that follow it before the next heading. A category appearing
+  // before any heading lands in the leading '' bucket and fails the comparison.
+  const outline = [];
+  let current = null;
+  for (const match of html.matchAll(OUTLINE)) {
+    if (match[1] !== undefined) {
+      current = { heading: text(match[1]), ids: [] };
+      outline.push(current);
+    } else if (current) {
+      current.ids.push(match[2]);
+    } else {
+      outline.push({ heading: '', ids: [match[2]] });
+      current = outline[outline.length - 1];
+    }
+  }
+
   equal(
-    matchAll(html, /<h2 class="features-group">([\s\S]*?)<\/h2>/g).map(text),
-    page.groups,
-    `${where} group headings changed`,
+    outline,
+    GROUPS.map((group) => ({ heading: group[page.lang], ids: group.ids })),
+    `${where} accordion grouping changed — headings, order, or which stage a category belongs to (deep links break)`,
   );
 
   equal(
-    matchAll(html, /<details class="accordion-item"[^>]*id="([^"]+)"/g),
-    CATEGORY_IDS,
-    `${where} accordion order or ids changed (deep links break)`,
+    outline.reduce((total, group) => total + group.ids.length, 0),
+    CATEGORY_COUNT,
+    `${where} expected ${CATEGORY_COUNT} categories`,
   );
 
   const open = [...html.matchAll(/<details class="accordion-item"[^>]*>/g)]
@@ -138,4 +157,6 @@ if (failures > 0) {
   process.exit(1);
 }
 
-console.log(`[features-ia] OK — ${PAGES.length} pages, ${STAGES.length} stages, ${CATEGORY_IDS.length} categories`);
+console.log(
+  `[features-ia] OK — ${PAGES.length} pages, ${STAGES.length} stages, ${GROUPS.length} groups, ${CATEGORY_COUNT} categories`,
+);
