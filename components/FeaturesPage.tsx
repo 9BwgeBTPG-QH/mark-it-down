@@ -1,5 +1,6 @@
 import { PageShell } from '@/components/PageShell';
 import { Hero } from '@/components/features/Hero';
+import { FlowSection } from '@/components/features/FlowSection';
 import { FeatureCategoryAccordion } from '@/components/features/FeatureCategoryAccordion';
 import { GitSyncIcon } from '@/components/features/GitSyncIcon';
 import { ShortcutsSection } from '@/components/features/ShortcutsSection';
@@ -19,6 +20,11 @@ import { featuresJsonLd, featuresSections, type Lang } from '@/content/features'
 // site's largest — was the only major one without structured data. Payload
 // lives in content/features.ts as featuresJsonLd.
 //
+// FlowSection is the second addition: the old page went straight from the hero
+// into the accordion, so nothing said what the twelve categories are for. It
+// renders the extension's own Entry -> Edit -> Move -> Exit toolbar stages once,
+// above the accordion, and does not otherwise touch it.
+//
 // All 12 categories sit in one flat <div class="changelog-accordion">, each
 // as a native <details class="accordion-item">, matching the old page's own
 // non-programmatic markup exactly — no per-category <section> wrapper, no
@@ -36,6 +42,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
     <PageShell lang={lang} slug="features">
       <JsonLd data={featuresJsonLd[lang]} />
       <Hero lang={lang} />
+      <FlowSection lang={lang} />
       <div className="changelog-accordion">
         <FeatureCategoryAccordion
           lang={lang}

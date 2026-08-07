@@ -682,8 +682,8 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: 'Check note content and metadata from the sidebar before opening the note',
         },
         {
-          title: 'NoteItem Simplification',
-          body: 'Each note row shows only checkbox and title. Actions consolidated in the Detail Panel',
+          title: 'Simplified Note Rows',
+          body: 'Each note row shows only a checkbox and the title. Actions live in the Detail Panel',
         },
         {
           title: 'Remote Sidebar',
@@ -791,7 +791,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Code Blocks',
-          body: 'Scrollable (20+ lines), reliable copy with ProseMirror-first extraction, Copy Code / Copy as Markdown. Hover delete',
+          body: 'Scrollable (20+ lines), copy that keeps the original text intact, Copy Code / Copy as Markdown. Hover delete',
         },
         {
           title: 'Inline Code',
@@ -1479,8 +1479,8 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: 'ノートを開く前に、サイドバー上で本文やメタ情報を確認できる',
         },
         {
-          title: 'NoteItemシンプル化',
-          body: '各ノート行をチェックボックスとタイトルのみに。アクションはDetail Panelに集約',
+          title: 'ノート行の簡素表示',
+          body: '各ノート行はチェックボックスとタイトルのみ。アクションはDetail Panelに集約',
         },
         {
           title: 'Remote Sidebar',
@@ -1558,7 +1558,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         { title: 'Auto Pair', body: '括弧、引用符を自動補完' },
         {
           title: 'コードブロック',
-          body: 'スクロール対応（20行超）、ProseMirror優先の確実なコピー、Copy Code / Copy as Markdown。ホバーで削除',
+          body: 'スクロール対応（20行超）、原文どおりに取れるコピー、Copy Code / Copy as Markdown。ホバーで削除',
         },
         { title: 'インラインコード', body: 'ダブルクリックでコピー、バッククォートで入力' },
         {
@@ -1746,6 +1746,142 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       notBuiltNote: '意図的に作らなかったものもある。',
       notBuiltLinkLabel: '作らないものの一覧',
     },
+  },
+};
+
+// Entry -> Edit -> Move -> Exit flow block, added rather than restored: the old
+// docs/features.html opened straight into the flat accordion, so the page never
+// said what the twelve categories are *for*. Kept as its own export instead of a
+// key on featuresSections, because that object is a verbatim port of the old
+// markup and widening it would blur where the port ends.
+//
+// The four stage labels are the extension's own toolbar labels (Entry / Edit /
+// Move / Exit in src/AppMain.tsx), which are untranslated — public/_locales/en
+// and /ja carry the same string — so they stay in English on both pages and only
+// the trailing verb is localised.
+//
+// Only Entry and Exit carry links: clipper.html / rss.html / okf.html are real
+// pages. Edit and Move have no page of their own, and linking them at the
+// accordion's #id would land the reader on a collapsed <details> row, so they
+// carry no link at all.
+export interface FeaturesFlowLink {
+  label: string;
+  slug: string;
+}
+
+export interface FeaturesFlowStage {
+  // Toolbar label, untranslated. Also the anchor id (lowercased).
+  id: string;
+  label: string;
+  // h2 text: `${label} — ${verb}`.
+  verb: string;
+  body: string;
+  // /screenshots/toolbar-<id>-<lang>.webp, captured at deviceScaleFactor 2 by
+  // $EXT/scripts/capture-site-assets.mjs. Intrinsic pixel size is declared so
+  // the aspect-ratio box reserves layout before decode (CLS).
+  imageWidth: number;
+  imageHeight: number;
+  imageAlt: string;
+  links?: FeaturesFlowLink[];
+}
+
+interface FeaturesFlowCopy {
+  sectionAriaLabel: string;
+  stages: FeaturesFlowStage[];
+}
+
+export const featuresFlow: Record<Lang, FeaturesFlowCopy> = {
+  en: {
+    sectionAriaLabel: 'How a note moves through Mark It Down',
+    stages: [
+      {
+        id: 'entry',
+        label: 'Entry',
+        verb: 'take it in',
+        body: 'Clip a page, subscribe to a feed, import a file. A clip lands in Inbox unsorted — you are not asked to file it before you have read it.',
+        imageWidth: 1856,
+        imageHeight: 332,
+        imageAlt: "Mark It Down's main toolbar with the Entry menu open.",
+        links: [
+          { label: 'Web Clipper', slug: 'clipper' },
+          { label: 'RSS Reader', slug: 'rss' },
+        ],
+      },
+      {
+        id: 'edit',
+        label: 'Edit',
+        verb: 'chew it over',
+        body: 'Rewrite it in your own words. Markdown goes in and renders as you type, in one pane, with no second preview to keep in sync.',
+        imageWidth: 1856,
+        imageHeight: 770,
+        imageAlt: "Mark It Down's main toolbar with the Edit menu open.",
+      },
+      {
+        id: 'move',
+        label: 'Move',
+        verb: 'put it away',
+        body: 'Five fixed folders, and no way to add a sixth. There is no filing system to design, so moving a note ends the decision instead of starting one.',
+        imageWidth: 1856,
+        imageHeight: 514,
+        imageAlt: "Mark It Down's main toolbar with the Move menu open.",
+      },
+      {
+        id: 'exit',
+        label: 'Exit',
+        verb: 'let it go',
+        body: 'Export as plain Markdown, or push to a Git remote you own. A note that leaves is the point, not a loss.',
+        imageWidth: 1856,
+        imageHeight: 852,
+        imageAlt: "Mark It Down's main toolbar with the Exit menu open.",
+        links: [{ label: 'Open Knowledge Format', slug: 'okf' }],
+      },
+    ],
+  },
+  ja: {
+    sectionAriaLabel: 'ノートが Mark It Down を通り抜ける流れ',
+    stages: [
+      {
+        id: 'entry',
+        label: 'Entry',
+        verb: '取り込む',
+        body: 'ページをクリップする、フィードを購読する、ファイルを読み込む。クリップしたものは未分類のまま Inbox に入る。読む前に分類を求められることはない。',
+        imageWidth: 1856,
+        imageHeight: 332,
+        imageAlt: 'Mark It Down のツールバー。Entry メニューを開いた状態。',
+        links: [
+          { label: 'Web Clipper', slug: 'clipper' },
+          { label: 'RSS Reader', slug: 'rss' },
+        ],
+      },
+      {
+        id: 'edit',
+        label: 'Edit',
+        verb: '咀嚼する',
+        body: '自分の言葉に書き直す。Markdown を書けばそのまま整形される。1ペインなので、同期し続けるプレビューを持たない。',
+        imageWidth: 1856,
+        imageHeight: 770,
+        imageAlt: 'Mark It Down のツールバー。Edit メニューを開いた状態。',
+      },
+      {
+        id: 'move',
+        label: 'Move',
+        verb: '片付ける',
+        body: 'フォルダは5つで固定。6つ目は作れない。整理の仕組みを設計する余地がないぶん、移した時点で判断が終わる。',
+        imageWidth: 1856,
+        imageHeight: 514,
+        imageAlt: 'Mark It Down のツールバー。Move メニューを開いた状態。',
+      },
+      {
+        id: 'exit',
+        label: 'Exit',
+        verb: '卒業する',
+        body: '素の Markdown で書き出す。自分の Git リモートへ押し出す。ノートが出ていくことは損失ではなく目的。',
+        imageWidth: 1856,
+        imageHeight: 852,
+        imageAlt: 'Mark It Down のツールバー。Exit メニューを開いた状態。',
+        links: [{ label: 'Open Knowledge Format', slug: 'okf' }],
+      },
+    ],
   },
 };
 
