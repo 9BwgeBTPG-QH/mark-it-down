@@ -476,7 +476,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Pin / Star Frontmatter',
-          body: 'Pinned and starred state round-trips through export/import',
+          body: 'Pinned and starred state travels as frontmatter and is restored on import — except under the Obsidian and Logseq presets and the public frontmatter profile, which strip system keys',
         },
         {
           title: 'Chat Format Smart Paste',
@@ -1313,7 +1313,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Pin / Star frontmatter',
-          body: 'ピン留めやスター状態がexport/importを往復しても保たれる',
+          body: 'ピン留めやスター状態はfrontmatterとして書き出され、importで復元される。ただしObsidian / Logseqプリセットと公開用frontmatterプロファイルはsystemキーを除外する',
         },
         {
           title: 'Chat Format Smart Paste',
