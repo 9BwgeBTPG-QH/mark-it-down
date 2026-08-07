@@ -455,7 +455,11 @@ header .tagline {
    at the far viewport edge; margin-inline: auto is required, since
    inset: 0 + max-width alone is over-constrained and collapses left. The
    backdrop stays fullscreen — it is painted by .nav-menu[open]::before /
-   ::after, which are separate inset: 0 boxes. */
+   ::after, which are separate inset: 0 boxes.
+   text-align (not align-items: flex-end) does the right alignment: the li
+   keep stretching to the column, so the lang switcher's border-top still
+   spans it and the hover band keeps its current width — only the text moves
+   to the rail's right edge, where the toggle already sits. */
 .nav-menu-panel {
   position: fixed;
   inset: 0;
@@ -470,6 +474,7 @@ header .tagline {
   justify-content: safe center;
   gap: var(--spacing-xs);
   overflow-y: auto;
+  text-align: right;
 }
 @keyframes nav-kenburns {
   from {
@@ -554,7 +559,11 @@ body:has(.nav-menu[open]) .header-nav {
   color: var(--accent-primary);
   font-weight: 500;
 }
+/* The separator above the language switch. align-self shrinks this one item
+   to its label so the rule ends at the rail's right edge with the text
+   instead of trailing far to the left of a right-aligned list. */
 .header-nav .lang-switcher {
+  align-self: flex-end;
   margin-top: var(--spacing-xs);
   padding-top: var(--spacing-xs);
   border-top: 1px solid var(--border-subtle);
