@@ -290,6 +290,18 @@ export const whyNotBuilt: Record<Lang, WhyNotBuiltCopy> = {
         title: 'Auto cloud sync',
         body: '"Tidy up, then push." That extra step is thinking time.',
       },
+      // Fourth item, added 2026-08. The commitment itself is old — a plugin
+      // system sits in $EXT/doc/technical-decisions/design-philosophy.md:119's
+      // list of things not to build, with the reasoning in
+      // rejected-features.md:897 — but it had never appeared on the public
+      // site, so the page read as three refusals where there are four. The
+      // claim is structural, not comparative: "no plugin system, therefore a
+      // ceiling" holds without a benchmark and without naming another editor,
+      // where "lighter than X" would need both.
+      {
+        title: 'A plugin system',
+        body: 'With no way to extend it, there is a ceiling on how heavy it can get.',
+      },
     ],
   },
   ja: {
@@ -312,6 +324,10 @@ export const whyNotBuilt: Record<Lang, WhyNotBuiltCopy> = {
       {
         title: '自動クラウド同期',
         body: '「片付けてからプッシュ」のリズムを守りたい。その手間が考える時間になる。',
+      },
+      {
+        title: 'プラグイン機構',
+        body: '拡張の口を作らないから、重くなることに上限がある。',
       },
     ],
   },

@@ -1,6 +1,7 @@
 import { PageShell } from '@/components/PageShell';
 import { Hero } from '@/components/features/Hero';
 import { FlowSection } from '@/components/features/FlowSection';
+import { NotBuilt } from '@/components/features/NotBuilt';
 import { FeatureCategoryAccordion } from '@/components/features/FeatureCategoryAccordion';
 import { GitSyncIcon } from '@/components/features/GitSyncIcon';
 import { ShortcutsSection } from '@/components/features/ShortcutsSection';
@@ -25,6 +26,12 @@ import { featuresCatalog, featuresJsonLd, featuresSections, type Lang } from '@/
 // into the accordion, so nothing said what the twelve categories are for. It
 // renders the extension's own Entry -> Edit -> Move -> Exit toolbar stages once,
 // above the accordion, and does not otherwise touch it.
+//
+// NotBuilt is the third, and sits between them: a page that enumerates 167
+// capabilities and no refusals reads as a wishlist. It summarises /why's list
+// and links there. Placed above the catalogue rather than below it because a
+// reader who has already scrolled 167 items has stopped asking what kind of
+// product this is.
 //
 // All 12 categories sit in one <div class="changelog-accordion">, each as a
 // native <details class="accordion-item">, matching the old page's own
@@ -61,6 +68,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
       <JsonLd data={featuresJsonLd[lang]} />
       <Hero lang={lang} />
       <FlowSection lang={lang} />
+      <NotBuilt lang={lang} />
       <style>{`
         .features-catalog-lead {
           max-width: 800px;

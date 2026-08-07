@@ -1,7 +1,6 @@
 import { Budoux } from '@/components/Budoux';
 import { SealButton } from '@/components/SealButton';
 import { featuresSections, type Lang } from '@/content/features';
-import { navHref } from '@/content/shared';
 
 // Same Chrome Web Store URL as components/clipper/Cta.tsx,
 // components/rss/Cta.tsx, and components/index/Cta.tsx; duplicated locally
@@ -18,10 +17,11 @@ const CWS_URL = 'https://chromewebstore.google.com/detail/mark-it-down/ibhjiobel
 // buttons), the old Features CTA has only a single button — no secondary
 // "See all features" link, since this already is the features page.
 //
-// The trailing "what we don't build" sentence is likewise added, not ported.
-// It rides inside the existing <p> rather than getting its own, because
-// .cta-section p in app/original.css carries the block's bottom margin and a
-// second paragraph after .buttons would change the section's spacing.
+// This CTA used to end with an added (not ported) sentence pointing at /why's
+// "what we don't build" list. That moved up the page into
+// components/features/NotBuilt.tsx, where a reader meets it before the
+// catalogue rather than after the buy button; its wording survives as that
+// section's heading.
 //
 // data-ga-cta is a deliberate departure from the ground truth: eed65be's
 // anchor had no analytics attribute, which left this page's only conversion
@@ -35,18 +35,7 @@ export function Cta({ lang }: { lang: Lang }) {
   return (
     <section className="cta-section" aria-labelledby="cta-heading">
       <h2 id="cta-heading">{ja ? <Budoux text={copy.heading} /> : copy.heading}</h2>
-      <p>
-        {ja ? <Budoux text={copy.body} /> : copy.body}
-        {/* JA sentences butt up against each other after the full stop; only
-            EN needs the inter-sentence space. */}
-        {ja ? '' : ' '}
-        {ja ? <Budoux text={copy.notBuiltNote} /> : copy.notBuiltNote}
-        {ja ? '' : ' '}
-        <a href={`${navHref('why', lang)}#why-notbuilt-heading`}>
-          {ja ? <Budoux text={copy.notBuiltLinkLabel} /> : copy.notBuiltLinkLabel}
-        </a>
-        {ja ? '。' : '.'}
-      </p>
+      <p>{ja ? <Budoux text={copy.body} /> : copy.body}</p>
       <div className="buttons">
         <SealButton
           href={CWS_URL}

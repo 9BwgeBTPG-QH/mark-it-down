@@ -120,13 +120,6 @@ interface FeaturesCtaCopy {
   body: string;
   primaryLabel: string;
   primaryAriaLabel: string;
-  // Added, not ported: a page that lists 167 capabilities and nothing it
-  // refuses to build reads as a wishlist. Rather than duplicate /why's
-  // "What we don't build" section here, the CTA paragraph ends with one
-  // sentence pointing at it (anchor id why-notbuilt-heading, defined in
-  // components/why/NotBuilt.tsx).
-  notBuiltNote: string;
-  notBuiltLinkLabel: string;
 }
 
 interface FeaturesSectionsCopy {
@@ -1018,8 +1011,6 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       body: 'Available as a Chrome extension. No account required.',
       primaryLabel: 'Get the extension',
       primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
-      notBuiltNote: 'Some things are missing on purpose.',
-      notBuiltLinkLabel: "See what we don't build",
     },
   },
   ja: {
@@ -1743,8 +1734,6 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       body: 'Chrome拡張機能として利用可能。アカウント不要。',
       primaryLabel: '拡張機能を入手',
       primaryAriaLabel: 'Chrome Web StoreからMark It Downを入手',
-      notBuiltNote: '意図的に作らなかったものもある。',
-      notBuiltLinkLabel: '作らないものの一覧',
     },
   },
 };
@@ -1890,6 +1879,90 @@ export const featuresFlow: Record<Lang, FeaturesFlowCopy> = {
         links: [{ label: 'Open Knowledge Format', slug: 'okf' }],
       },
     ],
+  },
+};
+
+// "What we don't build", between the flow and the catalogue. This replaces the
+// single sentence the CTA paragraph used to carry (notBuiltNote /
+// notBuiltLinkLabel, removed from FeaturesCtaCopy above): a page listing 167
+// capabilities needs its refusals somewhere the reader passes through, not in a
+// clause at the very bottom after they have already decided. The heading is
+// that sentence, reused verbatim, so nothing was rewritten to make room for it.
+//
+// It is a summary of /why's section, not a second source: the four items are
+// the four in whyNotBuilt (content/why.ts), shortened, and `linkLabel` points
+// at why-notbuilt-heading for the full reasoning. When one list changes the
+// other has to change with it — a features page listing four refusals that
+// links to a page listing three is worse than not linking at all.
+//
+// Placement follows the layer order in
+// $EXT/doc/research/features-page-ia-2026-08.md:198-215 (heading -> pains ->
+// flow -> what we don't build -> catalogue -> CTA) and the ④ item table at
+// :233-251. The plugin entry is the one the report adds: the commitment is old
+// (design-philosophy.md:119) but had never been stated publicly, and it is
+// where the lightness claim belongs — as a structural guarantee the reader can
+// check, not a speed number or a comparison against a named editor.
+export interface FeaturesNotBuiltItem {
+  title: string;
+  body: string;
+}
+
+export interface FeaturesNotBuiltCopy {
+  eyebrow: string;
+  heading: string;
+  lead: string;
+  items: FeaturesNotBuiltItem[];
+  linkLabel: string;
+}
+
+export const featuresNotBuilt: Record<Lang, FeaturesNotBuiltCopy> = {
+  en: {
+    eyebrow: "What we don't build",
+    heading: 'Some things are missing on purpose.',
+    lead: 'Everything above is what Mark It Down does. These four are what it will not do — not unfinished, but declined.',
+    items: [
+      {
+        title: 'AI generation (summarise / generate / proofread)',
+        body: 'A place to write, not a place to outsource thinking.',
+      },
+      {
+        title: 'Custom folders',
+        body: 'Making folders pulls you away from writing. Five, fixed.',
+      },
+      {
+        title: 'Auto cloud sync',
+        body: 'Tidy up, then push. That extra step is thinking time.',
+      },
+      {
+        title: 'A plugin system',
+        body: 'With no way to extend it, there is a ceiling on how heavy it can get.',
+      },
+    ],
+    linkLabel: 'The reasoning, in full',
+  },
+  ja: {
+    eyebrow: 'あえて、作らないもの',
+    heading: '意図的に作らなかったものもある。',
+    lead: 'ここまでが、できること。以下の4つは、これからも作らないもの。未実装ではなく、作らないと決めたもの。',
+    items: [
+      {
+        title: 'AI生成機能（要約・生成・校正）',
+        body: 'ここは書く場所であって、考えを外注する場所ではない。',
+      },
+      {
+        title: 'カスタムフォルダ',
+        body: 'フォルダを作る行為が、書くことから離れていく。だから5つ固定。',
+      },
+      {
+        title: '自動クラウド同期',
+        body: '片付けてからプッシュする。その手間が考える時間になる。',
+      },
+      {
+        title: 'プラグイン機構',
+        body: '拡張の口を作らないから、重くなることに上限がある。',
+      },
+    ],
+    linkLabel: '理由の全文',
   },
 };
 
