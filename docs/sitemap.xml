@@ -94,6 +94,24 @@
   </url>
 
   <url>
+    <loc>https://markitdown.reduktion.dev/repository.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://markitdown.reduktion.dev/repository.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/repository-ja.html"/>
+  </url>
+
+  <url>
+    <loc>https://markitdown.reduktion.dev/repository-ja.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://markitdown.reduktion.dev/repository.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://markitdown.reduktion.dev/repository-ja.html"/>
+  </url>
+
+  <url>
     <loc>https://markitdown.reduktion.dev/okf.html</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
