@@ -11,7 +11,8 @@ interface SiteNavProps {
   langSwitchSlug?: string;
 }
 
-// Header: a hamburger nav (top-right, all viewports; CSS-only <details> like
+// Header: a hamburger nav (top right of the content rail, all viewports;
+// CSS-only <details> like
 // every other disclosure on this site — no JS. Opening it covers the whole
 // viewport with a fullscreen overlay (2026-08-01); the only close affordance
 // is the summary itself, rendered as an X above the overlay — Esc-to-close

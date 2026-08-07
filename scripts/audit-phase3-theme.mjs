@@ -23,6 +23,7 @@ const LOCKED_PREFIXES = [
   '--radius-',
   '--motion-',
   '--transition-',
+  '--content-max',
 ];
 
 function read(path) {

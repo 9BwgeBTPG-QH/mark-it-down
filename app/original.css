@@ -86,6 +86,10 @@
   --spacing-2xl: 4rem;
   --spacing-section: 8rem;
   --spacing-hero: 8rem;
+  /* Content measure — the width .container caps to, and the same rail the
+     nav toggle and the overlay's link column align to. Widened to 1080px
+     in the min-width: 1600px tier. */
+  --content-max: 880px;
   --line-height-tight: 1.3;
   --line-height-normal: 1.7;
   --line-height-relaxed: 1.9;
@@ -284,7 +288,7 @@ html[lang="ja"] body {
    ============================================================================ */
 
 .container {
-  max-width: 880px;
+  max-width: var(--content-max);
   margin: 0 auto;
   padding: var(--spacing-lg);
 }
@@ -333,8 +337,8 @@ header .tagline {
   margin-top: var(--spacing-xs);
   letter-spacing: var(--letter-spacing-wide);
 }
-/* Hamburger nav (2026-08-01): toggle fixed in the viewport's top-right
-   corner; opening it covers the whole viewport with a fullscreen overlay —
+/* Hamburger nav (2026-08-01): toggle fixed at the top right of the content
+   rail; opening it covers the whole viewport with a fullscreen overlay —
    large-type links over a slow Ken Burns gradient backdrop. CSS-only
    <details> disclosure, like every other disclosure on this site; the
    only close affordance is the toggle itself (an X floating above the
@@ -345,7 +349,12 @@ header .tagline {
 .header-nav {
   position: fixed;
   top: var(--spacing-sm);
-  right: var(--spacing-sm);
+  /* Ride the content rail instead of the viewport edge: on wide screens the
+     toggle lands on .container's right edge (its own --spacing-lg padding
+     included), so the toggle and the overlay's link column share one column.
+     % on a fixed element resolves against the ICB, and max() keeps the old
+     viewport-edge inset once the rail gets narrower than that. */
+  right: max(var(--spacing-sm), calc((100% - var(--content-max)) / 2 + var(--spacing-lg)));
   z-index: 100;
 }
 .nav-menu {
@@ -440,12 +449,19 @@ header .tagline {
 /* Fullscreen overlay panel — transparent, the backdrop pseudos above
    provide the surface. justify-content is declared twice: `safe center`
    keeps the top items reachable when the list overflows (short
-   viewports); browsers without the `safe` keyword fall back to center. */
+   viewports); browsers without the `safe` keyword fall back to center.
+   The box itself is capped to the content measure and centred so the links
+   land on the same column as the page text (and near the toggle) instead of
+   at the far viewport edge; margin-inline: auto is required, since
+   inset: 0 + max-width alone is over-constrained and collapses left. The
+   backdrop stays fullscreen — it is painted by .nav-menu[open]::before /
+   ::after, which are separate inset: 0 boxes. */
 .nav-menu-panel {
   position: fixed;
   inset: 0;
   z-index: 1;
-  margin: 0;
+  max-width: var(--content-max);
+  margin: 0 auto;
   padding: calc(44px + 2 * var(--spacing-sm)) var(--spacing-lg) var(--spacing-lg);
   list-style: none;
   display: flex;
@@ -3209,8 +3225,10 @@ footer a:hover {
   }
 }
 @media (min-width: 1600px) {
-  .container {
-    max-width: 1080px;
+  /* Widening the measure moves .container, the nav toggle and the overlay's
+     link column together — they all read --content-max. */
+  :root {
+    --content-max: 1080px;
   }
   /* 3.75rem keeps the EN copy's longest line on one line in the 1080px
      column; 5rem re-wrapped it and pushed the CTA below the fold. */
