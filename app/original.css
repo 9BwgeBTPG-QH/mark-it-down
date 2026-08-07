@@ -779,19 +779,19 @@ p {
 .workflow-section.reveal-pending .workflow-list li {
   opacity: 0;
 }
-/* transition-delay maps per property: border-color / box-shadow / transform
-   stay at 0s so hover feedback is never delayed; only opacity staggers */
+/* transition-delay maps per property: border-color stays at 0s so state changes
+   are never delayed; only opacity staggers the scroll reveal */
 .coming-soon-list li:nth-child(2),
 .workflow-list li:nth-child(2) {
-  transition-delay: 0s, 0s, 0s, 90ms;
+  transition-delay: 0s, 90ms;
 }
 .coming-soon-list li:nth-child(3),
 .workflow-list li:nth-child(3) {
-  transition-delay: 0s, 0s, 0s, 180ms;
+  transition-delay: 0s, 180ms;
 }
 .coming-soon-list li:nth-child(n + 4),
 .workflow-list li:nth-child(n + 4) {
-  transition-delay: 0s, 0s, 0s, 270ms;
+  transition-delay: 0s, 270ms;
 }
 @media (prefers-reduced-motion: reduce) {
   .philosophy .philosophy-item,
@@ -845,10 +845,7 @@ p {
   border: 2px solid var(--text-primary);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card-rest);
-  transition:
-    border-color 0.3s cubic-bezier(0.44, 0, 0.56, 1),
-    box-shadow var(--motion-duration) var(--motion-easing),
-    transform var(--motion-duration) var(--motion-easing);
+  transition: border-color 0.3s cubic-bezier(0.44, 0, 0.56, 1);
   cursor: default;
 }
 .philosophy-item::before {
@@ -935,10 +932,7 @@ p {
   border-radius: var(--radius-card);
   border: 2px solid var(--text-primary);
   box-shadow: var(--shadow-card-rest);
-  transition:
-    border-color var(--transition-fast),
-    box-shadow var(--motion-duration) var(--motion-easing),
-    transform var(--motion-duration) var(--motion-easing);
+  transition: border-color var(--transition-fast);
 }
 .flow-icon {
   width: 24px;
@@ -1512,8 +1506,6 @@ a:hover {
   box-shadow: var(--shadow-card-rest);
   transition:
     border-color 0.3s cubic-bezier(0.44, 0, 0.56, 1),
-    box-shadow var(--motion-duration) var(--motion-easing),
-    transform var(--motion-duration) var(--motion-easing),
     opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: default;
 }
@@ -1568,8 +1560,6 @@ a:hover {
   box-shadow: var(--shadow-card-rest);
   transition:
     border-color 0.3s cubic-bezier(0.44, 0, 0.56, 1),
-    box-shadow var(--motion-duration) var(--motion-easing),
-    transform var(--motion-duration) var(--motion-easing),
     opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: default;
 }
@@ -3603,13 +3593,6 @@ footer a:hover {
     box-shadow: var(--shadow-action-hover);
   }
   .accordion-item:hover {
-    transform: translate(2px, 3px);
-    box-shadow: var(--shadow-card-hover);
-  }
-  .philosophy-item:hover,
-  .flow-item:hover,
-  .coming-soon-list li:hover,
-  .workflow-list li:hover {
     transform: translate(2px, 3px);
     box-shadow: var(--shadow-card-hover);
   }

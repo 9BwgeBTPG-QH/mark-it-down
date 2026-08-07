@@ -5,9 +5,15 @@ import { readFileSync } from 'node:fs';
 
 const ROOT = new URL('..', import.meta.url);
 const CSS_FILES = ['app/original.css', 'docs/style.src.css'];
+// Scope: theme-owned light tokens only (colors and shadows). Tokens matching
+// LOCKED_PREFIXES are excluded because they carry no theme meaning -- pinning them
+// here made unrelated spacing/typography edits fail a check named "light token"
+// (--spacing-section 6rem -> 8rem in 7eb6382 was the last false positive).
+// Those tokens keep their own guarantee below: the dark block must never override
+// them, so they stay single-sourced in :root.
 const PHASE3A_LIGHT_TOKEN_HASHES = [
-  '555eb64b33678ae6c6637f833aa8c05fa5b9042b8f5f67e5273f06ccf0160f9b',
-  'faa866b3cafdbffd4bedb3428f5bdd48dae0dc54a1cbae7efbef94f34b2aaf9d',
+  '6f391d40cf47b57984535de2b818ac154a87e35a8e666f4d55d7b745c3f93132',
+  '6f391d40cf47b57984535de2b818ac154a87e35a8e666f4d55d7b745c3f93132',
 ];
 const LOCKED_PREFIXES = [
   '--font',
@@ -129,12 +135,13 @@ const lightTokens = cssSources.map((source) => tokens(block(source, ':root')));
 const darkTokens = cssSources.map((source) => tokens(block(source, 'html:not([data-theme])')));
 
 for (const [index, path] of CSS_FILES.entries()) {
-  expect(
-    tokenHash(lightTokens[index]) === PHASE3A_LIGHT_TOKEN_HASHES[index],
-    `${path} changed a Phase 3a light token`
-  );
   const themeOwned = [...lightTokens[index].keys()].filter(
     (name) => !LOCKED_PREFIXES.some((prefix) => name.startsWith(prefix))
+  );
+  const themeOwnedTokens = new Map(themeOwned.map((name) => [name, lightTokens[index].get(name)]));
+  expect(
+    tokenHash(themeOwnedTokens) === PHASE3A_LIGHT_TOKEN_HASHES[index],
+    `${path} changed a Phase 3a light theme token`
   );
   const missing = themeOwned.filter((name) => !darkTokens[index].has(name));
   const locked = [...darkTokens[index].keys()].filter((name) =>
