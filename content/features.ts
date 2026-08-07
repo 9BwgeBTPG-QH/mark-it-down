@@ -1738,6 +1738,43 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
   },
 };
 
+export interface FeaturesPainsCopy {
+  eyebrow: string;
+  heading: string;
+  items: string[];
+}
+
+// The three situations the page answers, between the hero and the flow block.
+// Added, not ported. Layer order and the JA wording come from
+// $EXT/doc/research/features-page-ia-2026-08.md:216-233; the three axes it
+// settled on are unchewed intake, tool bloat, and the cost of filing.
+//
+// Each line describes a situation and stops there. The verdict belongs to the
+// "what we don't build" section further down (components/features/NotBuilt.tsx)
+// — stating it twice would make the page argue with itself before it has shown
+// anything. That is also why there is no lead paragraph here: the heading names
+// the frame, the three lines carry it, and nothing needs to conclude.
+export const featuresPains: Record<Lang, FeaturesPainsCopy> = {
+  en: {
+    eyebrow: 'Why this exists',
+    heading: 'Three things that happen where you write.',
+    items: [
+      'AI answers pile up without ever passing through your own words.',
+      'The more the tool grows, the slower the place you write becomes.',
+      'Keeping folders and tags in order eats more time than writing.',
+    ],
+  },
+  ja: {
+    eyebrow: 'なぜ、これがあるのか',
+    heading: '書く場所で、起きていること。',
+    items: [
+      'AI の回答が、自分の言葉を通らずに溜まっていく',
+      '拡張していくほど、書く場所そのものが遅く重くなる',
+      'フォルダとタグを整えるのが、書くことより時間を食う',
+    ],
+  },
+};
+
 // Entry -> Edit -> Move -> Exit flow block, added rather than restored: the old
 // docs/features.html opened straight into the flat accordion, so the page never
 // said what the twelve categories are *for*. Kept as its own export instead of a

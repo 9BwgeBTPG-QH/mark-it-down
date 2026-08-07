@@ -1,5 +1,6 @@
 import { PageShell } from '@/components/PageShell';
 import { Hero } from '@/components/features/Hero';
+import { Pains } from '@/components/features/Pains';
 import { FlowSection } from '@/components/features/FlowSection';
 import { NotBuilt } from '@/components/features/NotBuilt';
 import { FeatureCategoryAccordion } from '@/components/features/FeatureCategoryAccordion';
@@ -27,7 +28,11 @@ import { featuresCatalog, featuresJsonLd, featuresSections, type Lang } from '@/
 // renders the extension's own Entry -> Edit -> Move -> Exit toolbar stages once,
 // above the accordion, and does not otherwise touch it.
 //
-// NotBuilt is the third, and sits between them: a page that enumerates 167
+// Pains is the third, and comes first on the page: the hero used to hand the
+// reader four stage verbs before anything said why the stages exist. Three
+// sentences, no verdict.
+//
+// NotBuilt is the fourth, and sits between them: a page that enumerates 167
 // capabilities and no refusals reads as a wishlist. It summarises /why's list
 // and links there. Placed above the catalogue rather than below it because a
 // reader who has already scrolled 167 items has stopped asking what kind of
@@ -67,6 +72,7 @@ export function FeaturesPage({ lang }: { lang: Lang }) {
     <PageShell lang={lang} slug="features">
       <JsonLd data={featuresJsonLd[lang]} />
       <Hero lang={lang} />
+      <Pains lang={lang} />
       <FlowSection lang={lang} />
       <NotBuilt lang={lang} />
       <style>{`
