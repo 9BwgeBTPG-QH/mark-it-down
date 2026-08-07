@@ -204,7 +204,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'llms.txt Detection',
-          body: 'Checks /llms-full.txt and /llms.txt first, so a site that publishes one is clipped as its own clean text rather than a guess at where the article starts. Falls back to normal extraction within a few seconds, and remembers the answer for a day',
+          body: "Checks /llms-full.txt and /llms.txt first and clips the site's own text. Falls back to normal extraction within a few seconds; the answer is cached for a day",
         },
         {
           title: 'Mermaid Preservation',
@@ -232,21 +232,21 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Save Selection — Unified Quote Format',
-          body: 'Saving selected text via right-click or RSS Quote Selection always produces the same structure: frontmatter (source URL + timestamp) + blockquote + attribution link + disclaimer footer. Later formatting changes preserve status and quoted_at metadata',
+          body: 'Right-click save and RSS Quote Selection produce the same structure: frontmatter (source URL + timestamp) + blockquote + attribution link + disclaimer footer. Reformatting preserves status and quoted_at',
         },
         {
           title: 'Ruby text → Aozora notation',
           body: [
             'Pages with ',
             { code: '<ruby>' },
-            ' annotations (common in Japanese content) convert automatically to ',
+            ' annotations convert automatically to ',
             { code: '漢字《かんじ》' },
-            ' notation. Long articles that mix footnotes, tables, code blocks, and images also clip more accurately',
+            ' notation',
           ],
         },
         {
           title: 'Recoverable Clip Failures',
-          body: 'When clipping cannot finish, the captured preview path can stay available so you can retry instead of losing the content path',
+          body: 'When clipping fails, the captured preview stays available so you can retry instead of losing it',
         },
         {
           title: 'Learn More',
@@ -288,7 +288,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Reading Pane',
-          body: 'Articles render with the same engine as your notes — math, diagrams, and code highlighting included. Track read and saved state, and view the saved Markdown immediately after clipping',
+          body: 'Articles render with the same engine as your notes — math, diagrams, and code highlighting included. Read and saved state is tracked, and the saved Markdown opens right after clipping',
         },
         {
           title: 'Article TOC',
@@ -325,14 +325,14 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         {
           title: 'Background Polling',
           body: [
-            "Enable scheduled refresh in RSS settings and feeds update automatically at your configured interval — no need to keep the tab open. Uses Chrome's ",
+            "Feeds refresh at your configured interval without keeping a tab open. Uses Chrome's ",
             { code: 'alarms' },
             ' API; the schedule survives browser restarts',
           ],
         },
         {
           title: 'Desktop Notifications',
-          body: 'Opt in from RSS settings to receive desktop notifications for new article titles and localized background failure notices. Content is generated locally — nothing sent externally',
+          body: 'Opt in for desktop notifications of new article titles and background failure notices. Content is generated locally — nothing sent externally',
         },
         {
           title: 'Cross-Device Read Sync',
@@ -348,7 +348,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Dead Feed Cleanup',
-          body: 'When a feed fails repeatedly, a prompt surfaces to remove it or update the URL — keeping your subscription list healthy without manual audits',
+          body: 'When a feed fails repeatedly, a prompt surfaces to remove it or update the URL',
         },
         {
           title: 'Conditional GET (ETag / Last-Modified)',
@@ -357,7 +357,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
             { code: 'If-None-Match' },
             ' and ',
             { code: 'If-Modified-Since' },
-            ' headers. Unchanged feeds return 304 and skip parsing — less bandwidth, faster cycles',
+            ' headers. Unchanged feeds return 304 and skip parsing',
           ],
         },
         {
@@ -464,7 +464,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Copy as CommonMark / GFM / Hugo / Obsidian',
-          body: 'Choose a target dialect from the export menu before copying. Notes arrive closer to the format your publishing tool expects',
+          body: 'Choose a target dialect from the export menu before copying',
         },
         {
           title: 'Batch Conversion',
@@ -476,7 +476,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Pin / Star Frontmatter',
-          body: 'Pinned and starred state can round-trip through export/import instead of being lost at the boundary',
+          body: 'Pinned and starred state round-trips through export/import',
         },
         {
           title: 'Chat Format Smart Paste',
@@ -523,7 +523,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Focus Mode',
-          body: 'Typewriter scroll and cursor-aware highlighting. When the wide Sidebar is visible, its top controls remain clickable without blocking neighboring header controls',
+          body: 'Typewriter scroll and cursor-aware highlighting',
         },
         {
           title: 'Command Palette',
@@ -543,11 +543,11 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Diff Navigation',
-          body: '▲2/5▼ nav controls in Compare & Edit banner. F5/Shift+F5 keyboard navigation. WYSIWYG reference view. The banner remains visible while auto-hide collapses surrounding header controls',
+          body: '▲2/5▼ nav controls in the Compare & Edit banner. F5 / Shift+F5 keyboard navigation. WYSIWYG reference view',
         },
         {
           title: 'New Tab / Side Panel Interface Parity',
-          body: 'Header actions, panel pin vs. overlay behavior, and search preview availability are determined by screen role — removing subtle inconsistencies between the two views',
+          body: 'Header actions, panel pin vs. overlay behavior, and search preview availability follow the screen role, not the window',
         },
       ],
     },
@@ -562,7 +562,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Selection Toolbar',
-          body: 'Bold, Italic, Strikethrough, Link, Inline Code, and Code Block stay in the first row. Heading, List, Quote, Math, Highlight, and Read Aloud open from More; Copy, Snippet, Import, and handoff actions live under Share. Placement updates are grouped once per animation frame, and pending work is cancelled when the toolbar closes',
+          body: 'Bold, Italic, Strikethrough, Link, Inline Code, and Code Block stay in the first row. Heading, List, Quote, Math, Highlight, and Read Aloud open from More; Copy, Snippet, Import, and handoff actions live under Share',
         },
         {
           title: 'Mermaid',
@@ -571,11 +571,11 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           // reads "Mermaid Diagrams (16 Types)"
           // (public/_locales/en/messages.json:6057). The 19 was carried over
           // from eed65be and never matched the shipped list.
-          body: 'All 16 diagram types — flowcharts, ER, mind maps, Gantt, and more. Diagrams render on first load in the live editor; click to enlarge, zoom 25–400% with Ctrl+scroll, fullscreen, SVG export',
+          body: 'All 16 diagram types — flowcharts, ER, mind maps, Gantt, and more. Click to enlarge, zoom 25–400% with Ctrl+scroll, fullscreen, SVG export',
         },
         {
           title: 'Math (LaTeX)',
-          body: ['Inline ', { code: '$...$' }, ', block ', { code: '$$...$$' }, '. Math blocks render reliably in the live editor. Open in new tab, save as Retina 2x PNG'],
+          body: ['Inline ', { code: '$...$' }, ', block ', { code: '$$...$$' }, '. Open in new tab, save as Retina 2x PNG'],
         },
         {
           title: 'Callouts',
@@ -745,7 +745,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: [
             'Inbound ',
             { code: '[[links]]' },
-            ' pointing to the current note appear in a collapsible "Links here" list at the bottom of the TOC and in the Right Panel. Each entry shows the source note title, line number, and a preview of the surrounding text. Click or Enter to jump to the source note. Hidden when there are no backlinks',
+            ' appear as a collapsible "Links here" list at the bottom of the TOC and in the Right Panel, each showing source title, line number, and surrounding text. Click or Enter to jump. Hidden when empty',
           ],
         },
         {
@@ -766,7 +766,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Read Aloud Voice Choice',
-          body: 'Settings distinguish local and online voices, explain that the browser controls the default voice, and keep long voice names inside the panel',
+          body: 'Settings distinguish local and online voices; the browser decides the default',
         },
         {
           title: '4 Themes',
@@ -810,11 +810,11 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       items: [
         {
           title: 'Auto-save',
-          body: '0.5s debounce, no save button needed. The saved-content reference advances only after storage succeeds, so retry remains meaningful after a failed save',
+          body: '0.5s debounce, no save button needed. A failed save stays retryable',
         },
         {
           title: 'Progressive Loading',
-          body: '20KB+ opens instantly — start writing while the rest loads silently. Large notes prioritize visible rendering first',
+          body: '20KB+ opens instantly — start writing while the rest loads silently',
         },
         {
           title: 'Smart Loading',
@@ -841,7 +841,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: [
             'Open Knowledge Format — export notes as ',
             { code: '.okf.zip' },
-            ' with generated frontmatter, a self-contained concept graph viewer, and an activity log. A citations section is auto-generated from links in the note body, and relative Markdown links between notes convert to bundle-relative OKF paths. Raw status outside Inbox, citation provenance in the bundle graph, and recent type choices stay available for repeat handoffs. Git sync also writes OKF-compatible files',
+            ' with generated frontmatter, a self-contained concept graph viewer, and an activity log. Citations are generated from links in the note body, and relative Markdown links resolve inside the bundle. Git sync also writes OKF-compatible files',
           ],
           link: { label: 'Open Knowledge Format', slug: 'okf' },
         },
@@ -859,7 +859,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Portable Copy Targets',
-          body: 'Copy as CommonMark, GFM, Hugo, or Obsidian when you need Markdown shaped for a specific destination',
+          body: 'Copy as CommonMark, GFM, Hugo, or Obsidian',
         },
         {
           title: 'Rich Text Copy',
@@ -914,7 +914,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Partial-Success Warnings',
-          body: 'Push and pull distinguish remote success from local reflection or config-sync warnings, so recoverable local issues do not look like total failures',
+          body: 'Push and pull distinguish remote success from local reflection or config-sync warnings',
         },
         {
           title: 'History',
@@ -1042,7 +1042,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'llms.txt検出',
-          body: '/llms-full.txt と /llms.txt を先にチェック。公開しているサイトなら、本文の切り出しを推測せずサイト自身の整ったテキストで取り込む。無ければ数秒で通常の抽出に切り替わり、結果は1日おぼえておく',
+          body: '/llms-full.txt と /llms.txt を先にチェックし、あればサイト自身のテキストで取り込む。無ければ数秒で通常の抽出に切り替わる。判定は1日キャッシュ',
         },
         {
           title: 'Mermaid保持',
@@ -1078,12 +1078,12 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
             { code: '<ruby>' },
             ' タグを含むページを取り込むと ',
             { code: '漢字《かんじ》' },
-            ' 形式に自動変換される。脚注・表・コードブロック・画像を含む長文ページの取り込み品質も改善した',
+            ' 形式に自動変換される',
           ],
         },
         {
           title: '復帰できるクリップ失敗',
-          body: 'クリップが完了できない場合も、取得済みpreview pathを残して、内容の経路を失わずに再試行できる',
+          body: 'クリップに失敗しても取得済みのプレビューは残るので、失わずに再試行できる',
         },
         {
           title: '詳しく見る',
@@ -1125,7 +1125,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Reading Pane',
-          body: '記事はノートと同じレンダリングエンジンで表示。数式・図・コードハイライトに対応。既読/保存済み状態を追跡し、クリップ後は保存されたMarkdownの全文を表示',
+          body: '記事はノートと同じレンダリングエンジンで表示（数式・図・コードハイライト対応）。既読/保存済み状態を追跡し、クリップ後は保存されたMarkdownをそのまま開く',
         },
         {
           title: '記事TOC',
@@ -1162,14 +1162,14 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         {
           title: 'バックグラウンド定期取得',
           body: [
-            'RSS設定で定期取得を有効にすると、設定した間隔でフィードがバックグラウンドで自動更新される。タブを開いたままにしなくていい。Chromeの',
+            'タブを開いたままにしなくても、設定した間隔でフィードが自動更新される。Chromeの',
             { code: 'alarms' },
             ' APIを使用。ブラウザ再起動後も自動で再登録される',
           ],
         },
         {
           title: 'デスクトップ通知',
-          body: 'RSS設定でオプトインすると、新着記事タイトルとローカライズ済みのバックグラウンド失敗通知をデスクトップ通知で表示。外部への送信なし',
+          body: 'オプトインすると、新着記事タイトルとバックグラウンド失敗をデスクトップ通知で表示。通知はローカル生成で外部送信なし',
         },
         {
           title: '既読状態のデバイス間同期',
@@ -1185,7 +1185,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: '死んだフィードのクリーンアップ',
-          body: 'フィードが連続して失敗すると削除またはURL更新を促すプロンプトを表示。購読リストを手動で監視しなくても健全に保てる',
+          body: 'フィードが連続して失敗すると、削除またはURL更新を促すプロンプトを表示',
         },
         {
           title: 'Conditional GET（ETag / Last-Modified）',
@@ -1194,7 +1194,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
             { code: 'If-None-Match' },
             ' / ',
             { code: 'If-Modified-Since' },
-            ' ヘッダーを送信。未更新フィードは 304 を返しパースをスキップ——通信量削減、取得サイクル高速化',
+            ' ヘッダーを送信。未更新フィードは 304 を返しパースをスキップ',
           ],
         },
         {
@@ -1301,7 +1301,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'CommonMark / GFM / Hugo / Obsidian向けコピー',
-          body: 'エクスポートメニューから出力先の方言を選んでコピー。公開先での手直しを減らせる',
+          body: 'エクスポートメニューから出力先の方言を選んでコピー',
         },
         {
           title: 'バッチ変換',
@@ -1313,7 +1313,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Pin / Star frontmatter',
-          body: 'ピン留めやスター状態をexport/importの境界で失いにくくする',
+          body: 'ピン留めやスター状態がexport/importを往復しても保たれる',
         },
         {
           title: 'Chat Format Smart Paste',
@@ -1351,7 +1351,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       items: [
         { title: 'New Tab', body: '全画面ワークスペース、Focus Mode (Alt+F)' },
         { title: 'Side Panel', body: 'AIやブラウジングの横で書く' },
-        { title: 'Focus Mode', body: 'タイプライタースクロール、カーソル追従ハイライト。wide Sidebarの表示中も上部の操作をクリックでき、隣接するHeader操作を遮らない' },
+        { title: 'Focus Mode', body: 'タイプライタースクロール、カーソル追従ハイライト' },
         {
           title: 'コマンドパレット',
           body: 'あいまい検索、アラート色インジケーター、構文プレビュー、設定操作',
@@ -1364,11 +1364,11 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Diffナビゲーション',
-          body: 'Compare & Editバナーに▲2/5▼ナビコントロール。F5/Shift+F5キーボードナビ。参照ビューWYSIWYG化。auto-hideで周囲のヘッダーが閉じてもバナーは残る',
+          body: 'Compare & Editバナーに▲2/5▼ナビコントロール。F5/Shift+F5キーボードナビ。参照ビューWYSIWYG化',
         },
         {
           title: 'New Tab / Side Panel のインターフェース統一',
-          body: 'ヘッダーのボタン配置、パネルの固定/オーバーレイ、検索プレビューの可否を「画面の役割」に基づいて整理し直した。2つのビュー間の細かなズレを解消',
+          body: 'ヘッダーのボタン配置、パネルの固定/オーバーレイ、検索プレビューの可否は、ウィンドウではなく「画面の役割」に従う',
         },
       ],
     },
@@ -1380,17 +1380,17 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         { title: 'GitHub Flavored', body: 'テーブル、タスクリスト、シンタックスハイライト' },
         {
           title: '選択ツールバー',
-          body: 'Bold、Italic、Strikethrough、Link、Inline Code、Code Blockは1段目に配置。Heading、List、Quote、Math、Highlight、Read AloudはMoreから開き、Copy、Snippet、Import、外部への受け渡しはShareにまとめる。配置更新をanimation frameごとにまとめ、toolbarを閉じた後の処理を取り消す',
+          body: 'Bold、Italic、Strikethrough、Link、Inline Code、Code Blockは1段目に配置。Heading、List、Quote、Math、Highlight、Read AloudはMoreから開き、Copy、Snippet、Import、外部への受け渡しはShareにまとめる',
         },
         {
           title: 'Mermaid',
           // EN 側と同じ訂正（19 → 16）。根拠は public/_locales/ja/messages.json:6057
           // の「Mermaid図 (全16種)」。
-          body: '全16種対応 — フローチャート、ER図、マインドマップ、ガントチャート等。ライブエディタで初回表示から描画。クリックで拡大、Ctrl+スクロールで25〜400%ズーム、全画面表示、SVG保存',
+          body: '全16種対応 — フローチャート、ER図、マインドマップ、ガントチャート等。クリックで拡大、Ctrl+スクロールで25〜400%ズーム、全画面表示、SVG保存',
         },
         {
           title: '数式 (LaTeX)',
-          body: ['インライン ', { code: '$...$' }, '、ブロック ', { code: '$$...$$' }, '。ライブエディタ内で安定して描画。別タブで開いてRetina 2x PNGで保存'],
+          body: ['インライン ', { code: '$...$' }, '、ブロック ', { code: '$$...$$' }, '。別タブで開いてRetina 2x PNGで保存'],
         },
         { title: 'コールアウト', body: 'NOTE、TIP、IMPORTANT、WARNING、CAUTION' },
         { title: '自動リンク化', body: 'URLとメールアドレスが自動でリンクに' },
@@ -1527,7 +1527,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: [
             '現在のノートへの被リンク（',
             { code: '[[links]]' },
-            '）が「Links here」として目次下部と右パネルに折りたたみ表示される。各項目にリンク元のタイトル・行番号・前後の文脈プレビューを表示。クリックまたは Enter でリンク元ノートへジャンプ。バックリンクが0件のときは非表示',
+            '）が「Links here」として目次下部と右パネルに折りたたみ表示。各項目にリンク元のタイトル・行番号・前後のプレビューを表示し、クリックまたは Enter でジャンプ。0件のときは非表示',
           ],
         },
         { title: 'TOC並び替え', body: 'ドラッグ&ドロップやショートカットで見出しを構造化' },
@@ -1539,7 +1539,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: '読み上げ音声の選択',
-          body: '設定でローカル音声とオンライン音声を区別し、既定の音声はブラウザが決めることを案内する。長い音声名もパネル内に収まる',
+          body: '設定でローカル音声とオンライン音声を区別。既定の音声はブラウザが決める',
         },
         {
           title: '4テーマ',
@@ -1574,9 +1574,9 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       items: [
         {
           title: '自動保存',
-          body: '0.5秒デバウンス、保存ボタン不要。保存済み基準はstorage成功後だけ更新されるため、保存失敗後のretryが意味を持つ',
+          body: '0.5秒デバウンス、保存ボタン不要。保存に失敗しても再試行できる',
         },
-        { title: '段階的読み込み', body: '20KB超でも一瞬で開く — 見えている範囲の描画を優先し、書き始めるまでの摩擦をゼロに' },
+        { title: '段階的読み込み', body: '20KB超でも一瞬で開く — 残りは裏で読み込むので、すぐ書き始められる' },
         { title: 'Smart Loading', body: '特に大きいノートは開き方を聞く。全体を編集するか、Archiveですぐ読むか' },
         { title: 'Chrome Storage', body: 'キャッシュクリアでも残る' },
         {
@@ -1592,7 +1592,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: [
             'Open Knowledge Format — ノートを ',
             { code: '.okf.zip' },
-            ' として出力。frontmatter の自動生成、self-contained な概念グラフ viewer、activity log を含む。本文中のリンクから自動生成される citations セクションと、ノート間の相対 Markdown リンクをバンドル内の相対パスに変換する機能を追加。Inbox外のraw状態、bundle graphの引用元、最近のtype選択も保ち、繰り返しの受け渡しに使える。Git 同期でも OKF 互換ファイルを出力',
+            ' として出力。frontmatter の自動生成、self-contained な概念グラフ viewer、activity log を含む。citations は本文中のリンクから生成され、ノート間の相対 Markdown リンクはバンドル内で解決される。Git 同期でも OKF 互換ファイルを出力',
           ],
           link: { label: 'Open Knowledge Format', slug: 'okf' },
         },
@@ -1610,7 +1610,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: '出力先別コピー',
-          body: 'CommonMark、GFM、Hugo、Obsidian 向けに、用途に合わせたMarkdownとしてコピー',
+          body: 'CommonMark、GFM、Hugo、Obsidian 向けにコピー',
         },
         {
           title: 'リッチテキストコピー',
@@ -1646,7 +1646,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         { title: 'Git Fetch', body: 'ローカル変更なしでリモート確認' },
         {
           title: 'partial success warning',
-          body: 'Push / Pull は remote success と local reflection / config-sync warning を分けて表示し、復帰できるlocal issueを全体失敗に見せない',
+          body: 'Push / Pull は remote success と local reflection / config-sync warning を分けて表示',
         },
         // EN 側と同じ訂正（20 → 50）。根拠は src/AppMain.tsx:6482。
         { title: '履歴', body: '過去50件のコミット、差分ビュー' },
