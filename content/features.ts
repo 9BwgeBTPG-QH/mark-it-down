@@ -1787,12 +1787,17 @@ export interface FeaturesFlowStage {
 
 interface FeaturesFlowCopy {
   sectionAriaLabel: string;
+  // The stages sit in a horizontally scrollable track. WCAG 2.1.1 needs that
+  // track reachable by keyboard, which means it takes focus and therefore
+  // needs a name of its own, distinct from the section around it.
+  trackAriaLabel: string;
   stages: FeaturesFlowStage[];
 }
 
 export const featuresFlow: Record<Lang, FeaturesFlowCopy> = {
   en: {
     sectionAriaLabel: 'How a note moves through Mark It Down',
+    trackAriaLabel: 'The four stages, side by side — scroll or swipe to move between them',
     stages: [
       {
         id: 'entry',
@@ -1840,6 +1845,7 @@ export const featuresFlow: Record<Lang, FeaturesFlowCopy> = {
   },
   ja: {
     sectionAriaLabel: 'ノートが Mark It Down を通り抜ける流れ',
+    trackAriaLabel: '4つの段を横に並べたもの。スクロールまたはスワイプで移動できます',
     stages: [
       {
         id: 'entry',
@@ -1884,6 +1890,48 @@ export const featuresFlow: Record<Lang, FeaturesFlowCopy> = {
         links: [{ label: 'Open Knowledge Format', slug: 'okf' }],
       },
     ],
+  },
+};
+
+// Copy for the accordion catalogue below the flow: one lead paragraph and the
+// five group labels the twelve categories are sorted under. Added, not ported —
+// the old page went straight from the hero into a flat list of twelve.
+//
+// The lead has no heading of its own on purpose. The four stage headings above
+// it are h2 and Keyboard Shortcuts' group titles are h3, so an "All the small
+// things" h2 here would put two h2 levels in a row and leave the group labels
+// with nowhere to sit. The labels take the h2 instead, and the lead runs as
+// plain prose above them.
+//
+// Group labels repeat the flow's stage names rather than inventing index
+// names: the whole point of the grouping is that the reader has just seen those
+// four stages. `everywhere` is the fifth bucket for the two categories that
+// belong to no single stage (Storage, Keyboard Shortcuts).
+export interface FeaturesCatalogCopy {
+  lead: string;
+  groups: { entry: string; edit: string; move: string; exit: string; everywhere: string };
+}
+
+export const featuresCatalog: Record<Lang, FeaturesCatalogCopy> = {
+  en: {
+    lead: 'Below is the full catalogue, sorted into the stage each part belongs to. It is not meant to be read end to end — open a group when you want to check one specific thing.',
+    groups: {
+      entry: 'Entry',
+      edit: 'Edit',
+      move: 'Move',
+      exit: 'Exit',
+      everywhere: 'Everywhere',
+    },
+  },
+  ja: {
+    lead: 'ここから下は全機能の一覧。どの段に属するかで並べてある。通読する前提ではない。ひとつ確かめたいときに、その段を開く。',
+    groups: {
+      entry: 'Entry',
+      edit: 'Edit',
+      move: 'Move',
+      exit: 'Exit',
+      everywhere: 'どの段でも',
+    },
   },
 };
 
