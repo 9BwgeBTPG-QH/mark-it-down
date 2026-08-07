@@ -38,7 +38,7 @@ export const indexContent: Record<Lang, IndexCopy> = {
       'When it is ready, export it or move it through Git.',
     ],
     ctaPrimary: 'Get the extension',
-    ctaPrimaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
+    ctaPrimaryAriaLabel: 'Get the extension for Mark It Down from Chrome Web Store',
     ctaSecondary: 'See how it works',
   },
   ja: {
@@ -55,7 +55,7 @@ export const indexContent: Record<Lang, IndexCopy> = {
       'できあがったら、Export または Git で送り出す。',
     ],
     ctaPrimary: '拡張機能を入手',
-    ctaPrimaryAriaLabel: 'Chrome Web Storeで入手する',
+    ctaPrimaryAriaLabel: 'Chrome Web StoreでMark It Downの拡張機能を入手',
     ctaSecondary: '機能を見る',
   },
 };

@@ -1026,7 +1026,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       heading: 'Ready to write?',
       body: 'Available as a Chrome extension. No account required.',
       primaryLabel: 'Get the extension',
-      primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
+      primaryAriaLabel: 'Get the extension for Mark It Down from Chrome Web Store',
     },
   },
   ja: {
@@ -1749,7 +1749,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       heading: '書き始めよう',
       body: 'Chrome拡張機能として利用可能。アカウント不要。',
       primaryLabel: '拡張機能を入手',
-      primaryAriaLabel: 'Chrome Web StoreからMark It Downを入手',
+      primaryAriaLabel: 'Chrome Web StoreでMark It Downの拡張機能を入手',
     },
   },
 };

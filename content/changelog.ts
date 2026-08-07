@@ -3051,12 +3051,12 @@ export const changelogCta: Record<Lang, ChangelogCtaCopy> = {
     heading: 'Ready to write?',
     body: 'Available as a Chrome extension. No account required.',
     buttonLabel: 'Get the extension',
-    buttonAriaLabel: 'Get Mark It Down from Chrome Web Store',
+    buttonAriaLabel: 'Get the extension for Mark It Down from Chrome Web Store',
   },
   ja: {
     heading: '書き始めよう',
     body: 'Chrome拡張機能として利用可能。アカウント不要。',
     buttonLabel: '拡張機能を入手',
-    buttonAriaLabel: 'Chrome Web StoreからMark It Downを入手',
+    buttonAriaLabel: 'Chrome Web StoreでMark It Downの拡張機能を入手',
   },
 };

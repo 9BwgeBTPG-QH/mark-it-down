@@ -125,7 +125,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
     cta: {
       heading: 'Clip less. Keep what matters.',
       primaryLabel: 'Get the extension',
-      primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
+      primaryAriaLabel: 'Get the extension for Mark It Down from Chrome Web Store',
       secondaryLabel: 'See all features',
     },
   },
@@ -173,7 +173,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
     cta: {
       heading: '少なくクリップして、大事な部分だけを残す。',
       primaryLabel: '拡張機能を入手する',
-      primaryAriaLabel: 'Chrome ウェブストアから Mark It Down を入手',
+      primaryAriaLabel: 'Chrome ウェブストアで Mark It Down の拡張機能を入手する',
       secondaryLabel: '機能を見る',
     },
   },

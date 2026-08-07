@@ -352,13 +352,13 @@ export const whyCta: Record<Lang, WhyCtaCopy> = {
   en: {
     heading: 'Study, then write. Find your own words. Repeat.',
     primaryLabel: 'Get the extension',
-    primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
+    primaryAriaLabel: 'Get the extension for Mark It Down from Chrome Web Store',
     secondaryLabel: 'See how it works',
   },
   ja: {
     heading: '調べて、書く。自分の言葉にする。その繰り返しが、自分になる。',
     primaryLabel: '拡張機能を入手する',
-    primaryAriaLabel: 'Chrome ウェブストアから Mark It Down を入手',
+    primaryAriaLabel: 'Chrome ウェブストアで Mark It Down の拡張機能を入手する',
     secondaryLabel: '使い方を見る',
   },
 };

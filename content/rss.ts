@@ -126,7 +126,7 @@ export const rssSections: Record<Lang, RssSectionsCopy> = {
     cta: {
       heading: 'Turn reading into your own notes.',
       primaryLabel: 'Get the extension',
-      primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
+      primaryAriaLabel: 'Get the extension for Mark It Down from Chrome Web Store',
       secondaryLabel: 'See all features',
     },
   },
@@ -174,7 +174,7 @@ export const rssSections: Record<Lang, RssSectionsCopy> = {
     cta: {
       heading: '読んだものを、自分のノートに変える。',
       primaryLabel: '拡張機能を入手する',
-      primaryAriaLabel: 'Chrome ウェブストアから Mark It Down を入手',
+      primaryAriaLabel: 'Chrome ウェブストアで Mark It Down の拡張機能を入手する',
       secondaryLabel: '機能を見る',
     },
   },

@@ -308,13 +308,13 @@ export const okfCta: Record<Lang, OkfCtaCopy> = {
   en: {
     heading: 'Bring knowledge in. Rewrite it. Let it leave.',
     primaryLabel: 'Get the extension',
-    primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
+    primaryAriaLabel: 'Get the extension for Mark It Down from Chrome Web Store',
     secondaryLabel: 'See all features',
   },
   ja: {
     heading: '知識を取り込み、書き直し、外へ出す。',
     primaryLabel: '拡張機能を入手する',
-    primaryAriaLabel: 'Chrome ウェブストアから Mark It Down を入手',
+    primaryAriaLabel: 'Chrome ウェブストアで Mark It Down の拡張機能を入手する',
     secondaryLabel: '機能を見る',
   },
 };

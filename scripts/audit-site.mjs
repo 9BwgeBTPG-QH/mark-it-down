@@ -20,6 +20,9 @@ const AUDITS = [
   'audit-phase3-colors.mjs',
   'audit-phase3-theme.mjs',
   'audit-chroma-budget.mjs',
+  // Reads docs/ rather than the sources, so it reflects the last
+  // sync-docs.mjs --apply, not the working tree.
+  'audit-accessible-names.mjs',
 ];
 
 const failed = [];

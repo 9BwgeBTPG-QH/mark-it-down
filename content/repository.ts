@@ -136,7 +136,7 @@ export const repositorySections: Record<Lang, RepositorySectionsCopy> = {
     cta: {
       heading: 'Read the source. Write it down in your own words.',
       primaryLabel: 'Get the extension',
-      primaryAriaLabel: 'Get Mark It Down from Chrome Web Store',
+      primaryAriaLabel: 'Get the extension for Mark It Down from Chrome Web Store',
       secondaryLabel: 'See all features',
     },
   },
@@ -204,7 +204,7 @@ export const repositorySections: Record<Lang, RepositorySectionsCopy> = {
     cta: {
       heading: '読んだものを、自分の言葉で書き直す。',
       primaryLabel: '拡張機能を入手する',
-      primaryAriaLabel: 'Chrome ウェブストアから Mark It Down を入手',
+      primaryAriaLabel: 'Chrome ウェブストアで Mark It Down の拡張機能を入手する',
       secondaryLabel: '機能を見る',
     },
   },
