@@ -47,15 +47,32 @@ check(
   syncDry !== undefined && !syncDry.includes('--apply'),
   '"sync:dry" passes --apply, so the preview writes to docs/'
 );
-// Both wrap a build: syncing a stale out/ deploys the previous content.
+// Both must build *before* syncing: an out/ from an earlier run deploys the
+// previous content, and it is the ordering that matters, not the presence of
+// the two commands. Compare positions rather than matching a pattern -- a
+// membership test passes on "sync-docs.mjs && npm run build", which builds
+// after the deploy has already happened. Require && between them too, so a
+// failed build stops the sync instead of ; letting it run anyway.
 for (const [name, script] of [
   ['sync', sync],
   ['sync:dry', syncDry],
 ]) {
-  check(
-    /(^|&&\s*)(npm run build|next build)\b/.test(script ?? ''),
-    `"${name}" does not build before syncing, so it would deploy a stale out/`
-  );
+  const source = script ?? '';
+  const buildAt = source.search(/\b(npm run build|next build)\b/);
+  const syncAt = source.search(/\bsync-docs\.mjs\b/);
+  check(buildAt >= 0, `"${name}" does not build, so it would deploy a stale out/`);
+  check(syncAt >= 0, `"${name}" does not run sync-docs.mjs`);
+  if (buildAt >= 0 && syncAt >= 0) {
+    const ordered = buildAt < syncAt;
+    check(ordered, `"${name}" builds after syncing, so it would deploy the previous build's out/`);
+    // Only meaningful once the order is right; otherwise it restates the above.
+    if (ordered) {
+      check(
+        source.slice(buildAt, syncAt).includes('&&'),
+        `"${name}" does not chain build to sync with &&, so a failed build would still sync`
+      );
+    }
+  }
 }
 
 // The flag only means anything if sync-docs.mjs keeps deriving its mode from
