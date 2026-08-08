@@ -23,6 +23,7 @@ const AUDITS = [
   // Reads docs/ rather than the sources, so it reflects the last
   // sync-docs.mjs --apply, not the working tree.
   'audit-accessible-names.mjs',
+  'audit-deploy-scripts.mjs',
 ];
 
 const failed = [];
