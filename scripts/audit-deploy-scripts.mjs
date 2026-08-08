@@ -51,14 +51,20 @@ check(
 // previous content, and it is the ordering that matters, not the presence of
 // the two commands. Compare positions rather than matching a pattern -- a
 // membership test passes on "sync-docs.mjs && npm run build", which builds
-// after the deploy has already happened. Require && between them too, so a
-// failed build stops the sync instead of ; letting it run anyway.
+// after the deploy has already happened.
+//
+// The build must also *gate* the sync, and "an && appears between them" does
+// not establish that either: "npm run build || true && sync-docs.mjs" and
+// "npm run build; echo ok && sync-docs.mjs" each contain one while still
+// syncing after a failed build. So require && to be the only control operator
+// in the gap -- strike the &&s out and no ; | & may remain.
 for (const [name, script] of [
   ['sync', sync],
   ['sync:dry', syncDry],
 ]) {
   const source = script ?? '';
-  const buildAt = source.search(/\b(npm run build|next build)\b/);
+  const build = /\b(npm run build|next build)\b/.exec(source);
+  const buildAt = build ? build.index : -1;
   const syncAt = source.search(/\bsync-docs\.mjs\b/);
   check(buildAt >= 0, `"${name}" does not build, so it would deploy a stale out/`);
   check(syncAt >= 0, `"${name}" does not run sync-docs.mjs`);
@@ -67,9 +73,12 @@ for (const [name, script] of [
     check(ordered, `"${name}" builds after syncing, so it would deploy the previous build's out/`);
     // Only meaningful once the order is right; otherwise it restates the above.
     if (ordered) {
+      // Redirections carry an & without affecting the exit status, so drop
+      // them before looking for operators.
+      const between = source.slice(buildAt + build[0].length, syncAt).replace(/\d?>&\d/g, '');
       check(
-        source.slice(buildAt, syncAt).includes('&&'),
-        `"${name}" does not chain build to sync with &&, so a failed build would still sync`
+        between.includes('&&') && !/[;|&]/.test(between.split('&&').join('')),
+        `"${name}" does not gate sync on build success with a bare &&, so a failed build would still sync`
       );
     }
   }
