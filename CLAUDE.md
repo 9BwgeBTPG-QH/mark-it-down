@@ -83,9 +83,10 @@ When releasing a new version:
 ### Build & Deploy
 
 ```bash
-npm run dev     # localhost:3000（ルートは拡張子なし /why。本番は /why.html）
-npm run build   # out/ に静的出力（29 routes）
-npm run sync    # build + scripts/sync-docs.mjs で docs/ 反映
+npm run dev      # localhost:3000（ルートは拡張子なし /why。本番は /why.html）
+npm run build    # out/ に静的出力（29 routes）
+npm run sync:dry # build + 同期のプレビュー（コピー / 削除の対象を出力するだけ）
+npm run sync     # build + docs/ へ実際に反映（--apply）
 ```
 
 - GitHub Pages from `/docs` on `main` branch. URL: `https://markitdown.reduktion.dev/`
