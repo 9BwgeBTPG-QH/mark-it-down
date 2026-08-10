@@ -350,11 +350,14 @@ header .tagline {
   position: fixed;
   top: var(--spacing-sm);
   /* Ride the content rail instead of the viewport edge: on wide screens the
-     toggle lands on .container's right edge (its own --spacing-lg padding
-     included), so the toggle and the overlay's link column share one column.
-     % on a fixed element resolves against the ICB, and max() keeps the old
-     viewport-edge inset once the rail gets narrower than that. */
-  right: max(var(--spacing-sm), calc((100% - var(--content-max)) / 2 + var(--spacing-lg)));
+     toggle lands on .container's outer (border-box) right edge, so the
+     toggle and the overlay's link column share one column. (100% -
+     content-max) / 2 alone is that edge — --spacing-lg is already folded
+     into content-max's centering, so adding it again would double-count
+     the padding and shift the toggle inward. % on a fixed element resolves
+     against the ICB, and max() keeps the old viewport-edge inset once the
+     rail gets narrower than that. */
+  right: max(var(--spacing-sm), calc((100% - var(--content-max)) / 2));
   z-index: 100;
 }
 .nav-menu {
