@@ -8,7 +8,8 @@
     "sync": "npm run build && node scripts/sync-docs.mjs --apply",
     "sync:dry": "npm run build && node scripts/sync-docs.mjs",
     "lint": "next lint",
-    "audit:site": "node scripts/audit-site.mjs"
+    "audit:site": "node scripts/audit-site.mjs",
+    "test": "node scripts/test-margin-field.mjs"
   },
   "dependencies": {
     "budoux": "^0.8.4",

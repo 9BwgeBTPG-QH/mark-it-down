@@ -11,6 +11,14 @@
 2. 「Tear-off Pad」（2026-07-12 策定、index まで実装）→ 改善幅が投資に見合わずユーザー判断で中止（実装は `tear-off-pad-wave01` ブランチに退避）
 3. **オリジナルデザイン（eed65be の見た目）へ完全忠実回帰** — Next.js 基盤（EN/JA 同居 content、SEO パリティ、コンポーネント共有）は維持し、見た目だけ旧 CSS 移植で復元する
 
+### 例外: Margin Field 背景レイヤー（2026-08-10、index ページのみ）
+
+「完全忠実回帰」は**既存の見た目を一切変更しない**ことを指す。index ページの左右マージン（`--content-max` レール外の余白）に、背景として動く canvas 装飾（Margin Field）を追加した。これは既存 DOM・CSS を 1 行も変更せず、レール内には幾何学的に 1px も描画しないため、コンテンツの見た目は無変更のまま保たれる（回帰の対象外）。
+
+- 適用範囲: index ページのみ（EN/JA）。他ページには適用しない
+- 実装: `components/index/MarginFieldScript.tsx`（DOM/タイミング）+ `components/index/marginField.ts`（純粋シミュレーション）
+- 詳細仕様・コントラスト保証・色ガバナンスの盲点対策: `doc/technical-decisions/2026-08-10-margin-field-canvas.md`
+
 ## 実装ルール
 
 - **JSX は旧 HTML と同じクラス名を使う**（`hero` / `philosophy` / `flow-section` / `accordion-item` / `btn btn-primary` …）。ピクセル忠実は「同一 CSS を使う」ことで構造的に担保する

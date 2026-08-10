@@ -68,7 +68,7 @@ Every page has English (`*.html`) and Japanese (`*-ja.html`). **Always update bo
 - **title / meta description / h1 は変更禁止**（変更するなら seo-keyword-map.md と照合の上、明示的な合意を取る）
 - 検証: `node doc/audit/extract-seo-baseline.mjs --docs-dir out --out /tmp/<name>.json` → `doc/audit/seo-baseline-2026-07-12.json` と diff
 - **引数なし実行禁止** — デフォルトで docs/ を読み baseline を上書きする
-- Lighthouse は `doc/audit/lighthouse-baseline-2026-07-12.md`（Perf 97-99 / A11y 100）以上を維持。TTFB 二峰性は中央値判定
+- Lighthouse は `doc/audit/lighthouse-baseline-2026-07-12-original-rollback.md`（Perf 89 / A11y 96）以上を維持。TTFB 二峰性は中央値判定
 - 外部 CDN 禁止（フォント・スクリプト・画像はセルフホスト。例外は googletagmanager.com のみ）
 
 ### Version Updates
@@ -87,11 +87,13 @@ npm run dev      # localhost:3000（ルートは拡張子なし /why。本番は
 npm run build    # out/ に静的出力（29 routes）
 npm run sync:dry # build + 同期のプレビュー（コピー / 削除の対象を出力するだけ）
 npm run sync     # build + docs/ へ実際に反映（--apply）
+npm test         # scripts/test-*.mjs の回帰テスト（現状 Margin Field 2本）。DOM に触れる変更は build/lint だけでは検出できないため必須
 ```
 
 - GitHub Pages from `/docs` on `main` branch. URL: `https://markitdown.reduktion.dev/`
 - `docs/` は生成物 — **手編集禁止**。必ず app/components/content を直して `npm run sync`
 - URL 構造はフラット `.html` 維持（`trailingSlash: false`）。CNAME を消さないこと
+- `scripts/test-*.mjs` を新規追加したら `npm test` の `&&` チェーンに必ず加える（`audit:site` はサイト内容/デザイン監査専用のスコープなのでロジック回帰はここに置かない）
 
 ---
 

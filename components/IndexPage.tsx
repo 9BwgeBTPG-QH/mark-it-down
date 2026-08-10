@@ -9,6 +9,7 @@ import { RecentlyAdded } from '@/components/index/RecentlyAdded';
 import { FaqPreview } from '@/components/index/FaqPreview';
 import { Cta } from '@/components/index/Cta';
 import { RevealScript } from '@/components/index/RevealScript';
+import { MarginFieldScript } from '@/components/index/MarginFieldScript';
 import { indexJsonLd, type Lang } from '@/content/index';
 
 // Shared skeleton for the EN/JA index page pair. Copy lives in
@@ -31,6 +32,7 @@ export function IndexPage({ lang }: { lang: Lang }) {
       <FaqPreview lang={lang} />
       <Cta lang={lang} />
       <RevealScript />
+      <MarginFieldScript />
     </PageShell>
   );
 }
