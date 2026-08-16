@@ -198,23 +198,23 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: 'Recently Added',
-    recentStatus: 'v2.3.4 — Steadier selection, safer note updates, and reachable Focus controls.',
+    recentStatus: 'v2.3.5 — Portable export presets, clearer credits, and steadier clipping.',
     recentItems: [
       {
-        title: 'Selection stays smooth in link-heavy notes',
-        body: 'The formatting toolbar no longer repeatedly repositions itself while text is selected.',
+        title: 'Custom export presets travel through Git',
+        body: 'A dedicated Git config syncs custom Export Action Presets while the active preset and current export choices stay local to each device.',
       },
       {
-        title: 'Quote metadata survives formatting',
-        body: 'Quote Selection keeps its status and quoted date after formatting changes while safe-write protection remains active.',
+        title: 'Open-source credits are easier to inspect',
+        body: 'Help identifies the main open-source building blocks, and the extension package includes generated third-party license notices.',
       },
       {
-        title: 'Focus controls remain reachable',
-        body: 'The visible Sidebar stays above the header, so Today Entry and other top controls receive normal pointer clicks.',
+        title: 'Web Clipper keeps useful structure',
+        body: 'Reference-table labels are retained while unrelated card grids are removed more consistently.',
       },
       {
-        title: 'Neighboring header controls stay clickable',
-        body: 'After the Sidebar closes, Search and other neighboring header controls remain available.',
+        title: 'RSS actions say Move',
+        body: 'Archive, Template, and Trash actions are now called “Move” instead of “Clear,” without changing where notes go.',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -240,7 +240,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'View all FAQ',
     ctaHeading: 'Ready to write?',
     ctaNote: 'Available as a Chrome extension. No account required.',
-    ctaVersion: 'Latest version: v2.3.4',
+    ctaVersion: 'Latest version: v2.3.5',
     ctaSecondaryLabel: "What's new",
   },
   ja: {
@@ -317,23 +317,23 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: '最近の追加機能',
-    recentStatus: 'v2.3.4 — 選択操作の安定化、安全なノート更新、Focus Modeの操作性改善。',
+    recentStatus: 'v2.3.5 — 持ち運べるExport preset、明確なOSSクレジット、安定したクリップ。',
     recentItems: [
       {
-        title: 'リンクの多いノートでも滑らかに選択',
-        body: 'テキスト選択中に書式ツールバーが位置を繰り返し調整しない。',
+        title: 'カスタムExport presetをGitで持ち運べる',
+        body: '専用Git configでカスタムExport Action Presetを同期し、使用中のpresetと現在の書き出し設定は端末ごとに保持する。',
       },
       {
-        title: '書式変更後も引用メタデータを保持',
-        body: 'Quote Selectionは安全な書き込み保護を保ちながら、状態と引用日を維持する。',
+        title: 'OSSクレジットを確認しやすく',
+        body: 'Helpで主要なOSS構成を確認でき、拡張パッケージには生成済みの第三者ライセンス通知を同梱する。',
       },
       {
-        title: 'Focus Modeの操作に届く',
-        body: '表示中のSidebarがHeaderより前面に残り、Today Entryなど上部の操作を通常どおりクリックできる。',
+        title: 'Web Clipperの本文抽出を安定化',
+        body: 'reference tableのラベルを保ち、無関係なcard gridをより安定して除外する。',
       },
       {
-        title: '隣接するHeader操作もクリック可能',
-        body: 'Sidebarを閉じた後も、Searchなど隣接するHeader操作を使える。',
+        title: 'RSSの操作名をMoveに統一',
+        body: 'Archive / Template / Trashへの操作をClearではなくMoveと呼ぶ。移動先と挙動は変わらない。',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -358,7 +358,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'すべてのFAQを見る',
     ctaHeading: '書き始めませんか？',
     ctaNote: 'Chrome拡張機能で利用可能。アカウント不要。',
-    ctaVersion: '最新版: v2.3.4',
+    ctaVersion: '最新版: v2.3.5',
     ctaSecondaryLabel: '更新履歴',
   },
 };
@@ -380,13 +380,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry',
-    dateModified: '2026-08-06',
+    dateModified: '2026-08-16',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
     },
-    softwareVersion: '2.3.4',
+    softwareVersion: '2.3.5',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
@@ -452,13 +452,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし',
-    dateModified: '2026-08-06',
+    dateModified: '2026-08-16',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'JPY',
     },
-    softwareVersion: '2.3.4',
+    softwareVersion: '2.3.5',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',

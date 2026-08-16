@@ -204,6 +204,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: 'Right-click any page or selected text to save or copy it as clean Markdown. Saved notes open automatically in Side Panel',
         },
         {
+          title: 'Reference-aware Extraction',
+          body: 'Keeps labels from reference tables while filtering unrelated card grids from the saved Markdown',
+        },
+        {
           title: 'AI Chat Extraction',
           body: 'Captures output from Claude, ChatGPT, Grok, and Gemini as clean Markdown. Math, code, tables, and artifacts all preserved',
         },
@@ -513,7 +517,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Custom Export Preset Manager',
-          body: 'Create, edit, duplicate, and delete custom export presets from a dedicated UI — accessible from the right panel and the Markdown export menu',
+          body: 'Create, edit, duplicate, and delete custom export presets from a dedicated UI. Custom presets sync through config/export-action-presets.json; the active preset and current export choices remain local to each device',
         },
       ],
     },
@@ -778,6 +782,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: 'Settings distinguish local and online voices; the browser decides the default',
         },
         {
+          title: 'Open-source Credits',
+          body: 'Help lists the main bundled libraries. Packaged third-party notices include license text for shipped runtime packages',
+        },
+        {
           title: '4 Themes',
           body: 'Light / Dark / Parchment / CandleLight — the editor is a room, not just a tool',
           waxSealAccent: true,
@@ -1038,6 +1046,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         {
           title: 'Web Clipper（コンテキストメニュー）',
           body: 'ページやテキスト選択を右クリック→Markdownとして保存またはコピー。保存後はSide Panelに自動遷移',
+        },
+        {
+          title: 'Reference tableのラベル保持',
+          body: 'Reference tableのラベルを残し、無関係なcard gridを保存するMarkdownから除外する',
         },
         {
           title: 'AIチャット抽出',
@@ -1347,7 +1359,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'カスタムエクスポートプリセットマネージャー',
-          body: 'カスタムプリセットの作成・編集・削除・組み込み複製を専用UIで管理できる。右パネルと Markdown export メニューから導線を追加',
+          body: 'カスタムプリセットの作成・編集・削除・組み込み複製を専用UIで管理できる。カスタムpresetはconfig/export-action-presets.jsonで同期し、使用中のpresetと現在の書き出し設定は端末ごとに保持する',
         },
       ],
     },
@@ -1547,6 +1559,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         {
           title: '読み上げ音声の選択',
           body: '設定でローカル音声とオンライン音声を区別。既定の音声はブラウザが決める',
+        },
+        {
+          title: 'OSSクレジット',
+          body: 'Helpに主要なOSS構成を掲載。パッケージ内の第三者ライセンス通知に、同梱する実行時パッケージのライセンス本文を収録',
         },
         {
           title: '4テーマ',

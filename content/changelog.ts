@@ -96,12 +96,37 @@ export interface ChangelogVersion {
 export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   en: [
     {
-      version: 'v2.3.4',
-      highlight: 'Steadier selection, safer note updates, and reachable Focus controls.',
+      version: 'v2.3.5',
+      highlight: 'Portable export presets, clearer credits, and steadier clipping.',
       status: 'Under Review',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'This release makes existing boundaries easier to trust: custom export presets can travel through Git without moving device-local choices, open-source credits are visible in Help and packaged notices, and Web Clipper extraction keeps more useful structure.',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['Portable custom export presets'], description: ['Custom Export Action Presets sync through a dedicated Git config. Built-in presets, the active preset, and current export choices stay local to each device.'] },
+            { term: ['Inspectable open-source credits'], description: ['Help identifies the main open-source building blocks, and the extension package includes generated third-party notices with license text for bundled runtime packages.'] },
+            { term: ['Reference-aware Web Clipper extraction'], description: ['Reference-table labels are retained while unrelated card grids are removed more consistently.'] },
+            { term: ['Broader regression evidence'], description: ['Release checks cover export portability profiles, stale-write rejection across tabs, a 10,000-note search benchmark, startup performance, and dependency-family migrations.'] },
+          ],
+        },
+        {
+          title: 'Changed',
+          items: [
+            { term: ['RSS move wording'], description: ['Archive, Template, and Trash actions are now called “Move” instead of “Clear.” Their destinations and behavior are unchanged.'] },
+            { term: ['Dependency updates'], description: ['Toolchain and runtime dependencies were updated in isolated families while preserving existing browser, theme, export, and extension contracts.'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.4',
+      highlight: 'Steadier selection, safer note updates, and reachable Focus controls.',
+      status: 'Released',
+      statusClass: 'released',
       theme: 'This release repairs small breaks in trust: selection stays responsive in link-heavy notes, Quote Selection metadata survives safe updates, and visible Focus Mode controls receive normal pointer input.',
       sections: [
         {
@@ -1557,12 +1582,37 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   ],
   ja: [
     {
-      version: 'v2.3.4',
-      highlight: '選択操作を安定させ、安全にノートを更新し、Focus Modeの操作へ届くようにする。',
+      version: 'v2.3.5',
+      highlight: '持ち運べるExport preset、明確なOSSクレジット、安定したクリップ。',
       status: '審査中',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: '既存の境界を信頼しやすくするリリース。カスタムExport presetは端末ごとの選択を動かさずGitで持ち運べる。Helpとパッケージ内の通知でOSSクレジットを確認でき、Web Clipperは役立つ構造をより安定して残す。',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['持ち運べるカスタムExport preset'], description: ['カスタムExport Action Presetを専用Git configで同期する。組み込みpreset、使用中のpreset、現在の書き出し設定は端末ごとに保持する。'] },
+            { term: ['確認しやすいOSSクレジット'], description: ['Helpで主要なOSS構成を確認でき、拡張パッケージには、同梱する実行時パッケージのライセンス本文を収録した第三者ライセンス通知が入る。'] },
+            { term: ['構造を保つWeb Clipper抽出'], description: ['reference tableのラベルを残し、無関係なcard gridをより安定して除外する。'] },
+            { term: ['静かな回帰を捉える検証'], description: ['4つのexport portability profile、タブ間のstale write拒否、10,000ノート検索benchmark、起動performance、dependency family移行をrelease checkで検証する。'] },
+          ],
+        },
+        {
+          title: 'Changed',
+          items: [
+            { term: ['RSS操作の呼び方'], description: ['Archive / Template / Trashへの操作をClearではなくMoveと呼ぶ。移動先と挙動は変わらない。'] },
+            { term: ['依存関係の更新'], description: ['toolchainとruntime dependencyを分離したfamily単位で更新し、既存のbrowser、theme、export、extension contractを維持した。'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.4',
+      highlight: '選択操作を安定させ、安全にノートを更新し、Focus Modeの操作へ届くようにする。',
+      status: 'リリース済',
+      statusClass: 'released',
       theme: '小さな信頼性の崩れを直すリリース。リンクの多いノートでも選択操作を軽く保ち、Quote Selectionのメタデータを安全な更新後も残し、Focus Modeで見えている操作を通常どおりクリックできるようにした。',
       sections: [
         {
