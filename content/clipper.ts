@@ -113,6 +113,13 @@ interface ClipperSectionsCopy {
 // (save actions except YouTube transcripts then fall back to saving plain
 // text without confirmation, background.ts:1298-1312 — the walkthrough copy
 // hedges with "usually"/"may" instead of promising confirmation-only saves);
+// neither fallback is universal — background.ts:1196-1249 skips the
+// retry-preview/plain-text path entirely on an empty YouTube transcript or
+// AI digest, background.ts:1290-1298's own plain-text guard no-ops when
+// selectionText and pageTitle are both empty, and the save call itself can
+// throw (background.ts:1300-1312) — so the walkthrough copy also hedges the
+// failure-recovery claim with "though neither fallback catches every
+// failure" / "常に働くとは限らず" instead of promising the clip is never lost;
 // per-site extractors + Shadow DOM/iframe traversal + llms.txt detection +
 // ruby-to-Aozora conversion src/background/clipper.ts.
 export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
@@ -149,7 +156,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
         },
         {
           title: '2. Shape it in the preview',
-          body: 'The Side Panel opens with a preview of the extracted Markdown. Include or exclude sections one by one, or switch the extraction mode between article, full page, and CSS selector. If extraction fails, the content stays in the Side Panel so you can retry — and a save action may keep what it captured as plain text right away, so the clip is not lost.',
+          body: 'The Side Panel opens with a preview of the extracted Markdown. Include or exclude sections one by one, or switch the extraction mode between article, full page, and CSS selector. If extraction fails, the Side Panel usually keeps what it has so you can retry, and a save action may fall back to plain text instead — though neither fallback catches every failure, so a clip can still be lost in rare cases.',
         },
         {
           title: '3. Save to Inbox',
@@ -254,7 +261,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
         },
         {
           title: '2. プレビューで整える',
-          body: 'Side Panelが自動で開き、抽出されたMarkdownをプレビューします。セクション単位で取捨選択でき、抽出方法も記事・ページ全体・CSSセレクタから切り替えられます。抽出に失敗しても内容はSide Panelに残ってリトライできます。保存操作では、取れた分がその場でプレーンテキストのまま保存されることもあり、クリップは失われません。',
+          body: 'Side Panelが自動で開き、抽出されたMarkdownをプレビューします。セクション単位で取捨選択でき、抽出方法も記事・ページ全体・CSSセレクタから切り替えられます。抽出に失敗しても、多くの場合はSide Panelに内容が残ってリトライできます。保存操作では、取れた分がその場でプレーンテキストとして保存されることもありますが、どちらの救済も常に働くとは限らず、まれにクリップが失われることもあります。',
         },
         {
           title: '3. Inboxへ保存',
