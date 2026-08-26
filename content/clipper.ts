@@ -138,7 +138,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
       eyebrow: 'Walkthrough',
       heading: 'Three steps from right-click to an editable note.',
       intro:
-        'Every clip follows the same path: pick an action from the context menu, check the result in a preview, and keep it as an ordinary note in Inbox. Nothing is saved without your confirmation.',
+        'Every clip follows the same path: pick an action from the context menu, check the result in a preview, and keep it as an ordinary note in Inbox.',
       items: [
         {
           title: '1. Pick from the right-click menu',
@@ -243,7 +243,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
       eyebrow: 'Walkthrough',
       heading: '右クリックからノートになるまで、3ステップ。',
       intro:
-        'どのクリップも同じ道を通ります。右クリックメニューで選び、プレビューで確認し、Inboxに通常のノートとして保存する。確認なしに保存されることはありません。',
+        'どのクリップも同じ道を通ります。右クリックメニューで選び、プレビューで確認し、Inboxに通常のノートとして保存する。',
       items: [
         {
           title: '1. 右クリックメニューで選ぶ',
