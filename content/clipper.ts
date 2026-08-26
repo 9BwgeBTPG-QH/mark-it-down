@@ -109,7 +109,10 @@ interface ClipperSectionsCopy {
 // preview-before-save flow src/background.ts:1117-1123 + AppMain.tsx;
 // section toggles + article/full-page/CSS-selector re-extraction
 // ClipPreviewModal.tsx + clipEngine.ts; site-metadata-to-frontmatter
-// FrontmatterModal.tsx; failure-retains-preview background.ts:1288-1325;
+// FrontmatterModal.tsx; failure-retains-preview background.ts:1288-1325
+// (save actions except YouTube transcripts then fall back to saving plain
+// text without confirmation, background.ts:1298-1312 — the walkthrough copy
+// hedges with "usually"/"may" instead of promising confirmation-only saves);
 // per-site extractors + Shadow DOM/iframe traversal + llms.txt detection +
 // ruby-to-Aozora conversion src/background/clipper.ts.
 export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
@@ -138,7 +141,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
       eyebrow: 'Walkthrough',
       heading: 'Three steps from right-click to an editable note.',
       intro:
-        'Every clip follows the same path: pick an action from the context menu, check the result in a preview, and keep it as an ordinary note in Inbox.',
+        'Clipping usually takes the same three steps: pick an action from the context menu, check the result in a preview, and keep it as an ordinary note in Inbox.',
       items: [
         {
           title: '1. Pick from the right-click menu',
@@ -146,7 +149,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
         },
         {
           title: '2. Shape it in the preview',
-          body: 'The Side Panel opens with a preview of the extracted Markdown. Include or exclude sections one by one, or switch the extraction mode between article, full page, and CSS selector. If extraction fails, the content stays in the Side Panel so you can retry.',
+          body: 'The Side Panel opens with a preview of the extracted Markdown. Include or exclude sections one by one, or switch the extraction mode between article, full page, and CSS selector. If extraction fails, the content stays in the Side Panel so you can retry — and a save action may keep what it captured as plain text right away, so the clip is not lost.',
         },
         {
           title: '3. Save to Inbox',
@@ -243,7 +246,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
       eyebrow: 'Walkthrough',
       heading: '右クリックからノートになるまで、3ステップ。',
       intro:
-        'どのクリップも同じ道を通ります。右クリックメニューで選び、プレビューで確認し、Inboxに通常のノートとして保存する。',
+        'クリップは基本、同じ3ステップです。右クリックメニューで選び、プレビューで確認し、Inboxに通常のノートとして保存する。',
       items: [
         {
           title: '1. 右クリックメニューで選ぶ',
@@ -251,7 +254,7 @@ export const clipperSections: Record<Lang, ClipperSectionsCopy> = {
         },
         {
           title: '2. プレビューで整える',
-          body: 'Side Panelが自動で開き、抽出されたMarkdownをプレビューします。セクション単位で取捨選択でき、抽出方法も記事・ページ全体・CSSセレクタから切り替えられます。抽出に失敗しても内容はSide Panelに残り、リトライできます。',
+          body: 'Side Panelが自動で開き、抽出されたMarkdownをプレビューします。セクション単位で取捨選択でき、抽出方法も記事・ページ全体・CSSセレクタから切り替えられます。抽出に失敗しても内容はSide Panelに残ってリトライできます。保存操作では、取れた分がその場でプレーンテキストのまま保存されることもあり、クリップは失われません。',
         },
         {
           title: '3. Inboxへ保存',
