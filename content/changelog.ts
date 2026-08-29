@@ -96,12 +96,37 @@ export interface ChangelogVersion {
 export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   en: [
     {
-      version: 'v2.3.5',
-      highlight: 'Portable export presets, clearer credits, and steadier clipping.',
+      version: 'v2.3.6',
+      highlight: 'Easier voice selection, clearer compact previews, and steadier Focus navigation.',
       status: 'Under Review',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'This release makes dense notes easier to inspect and navigate: Read Aloud voices are easier to find, compact table and Mermaid previews can open larger, table actions stay with the intended table, and Focus Mode navigation remains reachable.',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['Searchable Read Aloud voice settings'], description: ['Search by voice name or language code, filter by language or on-device voices, and move through the results with the keyboard.'] },
+            { term: ['Compact table and Mermaid previews'], description: ['Wide tables scroll horizontally, and both table and Mermaid previews can open in a larger view.'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['Multi-table command targeting'], description: ['Table actions use the intended table in notes that contain more than one table.'] },
+            { term: ['Fenced table detection'], description: ['Pipe-separated examples inside fenced code blocks are not treated as Markdown tables.'] },
+            { term: ['First-playback voice selection'], description: ['A saved Read Aloud voice is applied on first playback when that voice is available.'] },
+            { term: ['Focus Mode carousel navigation'], description: ['TOC, Card, and Log navigation stays reachable while moving through the overlay carousel.'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.5',
+      highlight: 'Portable export presets, clearer credits, and steadier clipping.',
+      status: 'Released',
+      statusClass: 'released',
       theme: 'This release makes existing boundaries easier to trust: custom export presets can travel through Git without moving device-local choices, open-source credits are visible in Help and packaged notices, and Web Clipper extraction keeps more useful structure.',
       sections: [
         {
@@ -1582,12 +1607,37 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   ],
   ja: [
     {
-      version: 'v2.3.5',
-      highlight: '持ち運べるExport preset、明確なOSSクレジット、安定したクリップ。',
+      version: 'v2.3.6',
+      highlight: '読み上げ音声を選びやすくし、コンパクトプレビューとFocus Modeを安定化。',
       status: '審査中',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: '情報量の多いノートを確認し、移動しやすくするリリース。Read Aloudの音声を探しやすくし、コンパクト表示のテーブルとMermaid図を拡大できる。テーブル操作は意図したテーブルを対象にし、Focus Modeの移動操作へ届く状態を保つ。',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['検索できるRead Aloud音声設定'], description: ['音声名や言語コードで検索し、言語または端末内音声で絞り込み、キーボードで結果を移動できる。'] },
+            { term: ['コンパクト表示のテーブルとMermaid図'], description: ['幅の広いテーブルを横スクロールで読み、テーブルとMermaid図を拡大表示できる。'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['複数テーブルの操作対象'], description: ['複数のテーブルがあるノートでも、テーブル操作は意図したテーブルを対象にする。'] },
+            { term: ['コードフェンス内のテーブル判定'], description: ['コードフェンス内のパイプ区切り例をMarkdownテーブルとして扱わない。'] },
+            { term: ['初回再生の音声選択'], description: ['保存したRead Aloud音声が利用可能なら、初回再生からその音声を適用する。'] },
+            { term: ['Focus Modeのcarousel移動'], description: ['overlay carouselを移動しても、TOC / Card / Logの移動操作へ届く状態を保つ。'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.5',
+      highlight: '持ち運べるExport preset、明確なOSSクレジット、安定したクリップ。',
+      status: 'リリース済',
+      statusClass: 'released',
       theme: '既存の境界を信頼しやすくするリリース。カスタムExport presetは端末ごとの選択を動かさずGitで持ち運べる。Helpとパッケージ内の通知でOSSクレジットを確認でき、Web Clipperは役立つ構造をより安定して残す。',
       sections: [
         {

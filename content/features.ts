@@ -536,7 +536,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Focus Mode',
-          body: 'Typewriter scroll and cursor-aware highlighting',
+          body: 'Typewriter scroll, cursor-aware highlighting, and reachable TOC / Card / Log navigation',
         },
         {
           title: 'Command Palette',
@@ -617,6 +617,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         {
           title: 'Tables',
           body: 'Open a dedicated grid editor for range selection, row and column operations, sorting, autofill, search, and selected-cell Bold/Italic/Code formatting. Tables remain plain Markdown. Paste from Excel/Google Sheets',
+        },
+        {
+          title: 'Compact Table and Mermaid Preview',
+          body: 'Wide table previews scroll horizontally. Table and Mermaid previews can open in a larger view',
         },
         {
           title: 'Custom Snippets',
@@ -779,7 +783,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Read Aloud Voice Choice',
-          body: 'Settings distinguish local and online voices; the browser decides the default',
+          body: 'Search by voice name or language code, filter by language or on-device voices, and use keyboard navigation. A saved voice applies from first playback when available',
         },
         {
           title: 'Open-source Credits',
@@ -1370,7 +1374,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
       items: [
         { title: 'New Tab', body: '全画面ワークスペース、Focus Mode (Alt+F)' },
         { title: 'Side Panel', body: 'AIやブラウジングの横で書く' },
-        { title: 'Focus Mode', body: 'タイプライタースクロール、カーソル追従ハイライト' },
+        { title: 'Focus Mode', body: 'タイプライタースクロール、カーソル追従ハイライト、TOC / Card / Logの移動操作' },
         {
           title: 'コマンドパレット',
           body: 'あいまい検索、アラート色インジケーター、構文プレビュー、設定操作',
@@ -1432,6 +1436,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         {
           title: 'テーブル',
           body: '専用グリッドエディタで範囲選択、行・列操作、並び替え、オートフィル、検索、選択セルへの太字/斜体/コード書式を扱える。テーブルは plain Markdown のまま保持。Excel/Google Sheetsから貼り付けで自動変換',
+        },
+        {
+          title: 'テーブルとMermaid図のコンパクトプレビュー',
+          body: '幅の広いテーブルは横スクロール。テーブルとMermaid図は拡大表示できる',
         },
         {
           title: 'カスタムスニペット',
@@ -1558,7 +1566,7 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: '読み上げ音声の選択',
-          body: '設定でローカル音声とオンライン音声を区別。既定の音声はブラウザが決める',
+          body: '音声名や言語コードで検索し、言語または端末内音声で絞り込み、キーボードで移動できる。保存した音声が利用可能なら初回再生から適用する',
         },
         {
           title: 'OSSクレジット',

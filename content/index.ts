@@ -198,23 +198,23 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: 'Recently Added',
-    recentStatus: 'v2.3.5 — Portable export presets, clearer credits, and steadier clipping.',
+    recentStatus: 'v2.3.6 — Easier voice selection, clearer compact previews, and steadier Focus navigation.',
     recentItems: [
       {
-        title: 'Custom export presets travel through Git',
-        body: 'A dedicated Git config syncs custom Export Action Presets while the active preset and current export choices stay local to each device.',
+        title: 'Find the right Read Aloud voice',
+        body: 'Search voice names or language codes, filter by language or on-device voices, and move through choices with the keyboard.',
       },
       {
-        title: 'Open-source credits are easier to inspect',
-        body: 'Help identifies the main open-source building blocks, and the extension package includes generated third-party license notices.',
+        title: 'Open compact previews wider',
+        body: 'Wide tables scroll horizontally, and table or Mermaid previews can open in a larger view.',
       },
       {
-        title: 'Web Clipper keeps useful structure',
-        body: 'Reference-table labels are retained while unrelated card grids are removed more consistently.',
+        title: 'Table actions stay with the selected table',
+        body: 'In notes with several tables, operations target the intended table; pipe-separated examples inside fenced code blocks stay out of table detection.',
       },
       {
-        title: 'RSS actions say Move',
-        body: 'Archive, Template, and Trash actions are now called “Move” instead of “Clear,” without changing where notes go.',
+        title: 'Saved voices and Focus navigation start ready',
+        body: 'When a saved Read Aloud voice is available, it applies on first playback. Focus Mode keeps TOC, Card, and Log navigation reachable.',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -240,7 +240,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'View all FAQ',
     ctaHeading: 'Ready to write?',
     ctaNote: 'Available as a Chrome extension. No account required.',
-    ctaVersion: 'Latest version: v2.3.5',
+    ctaVersion: 'Latest version: v2.3.6',
     ctaSecondaryLabel: "What's new",
   },
   ja: {
@@ -317,23 +317,23 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: '最近の追加機能',
-    recentStatus: 'v2.3.5 — 持ち運べるExport preset、明確なOSSクレジット、安定したクリップ。',
+    recentStatus: 'v2.3.6 — 読み上げ音声を選びやすくし、コンパクトプレビューとFocus Modeを安定化。',
     recentItems: [
       {
-        title: 'カスタムExport presetをGitで持ち運べる',
-        body: '専用Git configでカスタムExport Action Presetを同期し、使用中のpresetと現在の書き出し設定は端末ごとに保持する。',
+        title: '読み上げ音声を絞り込んで選ぶ',
+        body: '音声名や言語コードを検索し、言語または端末内音声で絞り込み、キーボードで候補を移動できる。',
       },
       {
-        title: 'OSSクレジットを確認しやすく',
-        body: 'Helpで主要なOSS構成を確認でき、拡張パッケージには生成済みの第三者ライセンス通知を同梱する。',
+        title: 'コンパクトプレビューを広く見る',
+        body: '幅の広いテーブルは横スクロールで読み、テーブルとMermaid図は拡大表示できる。',
       },
       {
-        title: 'Web Clipperの本文抽出を安定化',
-        body: 'reference tableのラベルを保ち、無関係なcard gridをより安定して除外する。',
+        title: '選んだテーブルを操作',
+        body: '複数テーブルのノートでは意図したテーブルを対象にし、コードフェンス内のパイプ区切り例はテーブルとして検出しない。',
       },
       {
-        title: 'RSSの操作名をMoveに統一',
-        body: 'Archive / Template / Trashへの操作をClearではなくMoveと呼ぶ。移動先と挙動は変わらない。',
+        title: '保存済み音声とFocus navigationを初回から',
+        body: '保存した読み上げ音声が利用可能なら初回再生から適用し、Focus ModeではTOC / Card / Logの移動操作を保つ。',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -358,7 +358,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'すべてのFAQを見る',
     ctaHeading: '書き始めませんか？',
     ctaNote: 'Chrome拡張機能で利用可能。アカウント不要。',
-    ctaVersion: '最新版: v2.3.5',
+    ctaVersion: '最新版: v2.3.6',
     ctaSecondaryLabel: '更新履歴',
   },
 };
@@ -380,13 +380,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry',
-    dateModified: '2026-08-16',
+    dateModified: '2026-08-30',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
     },
-    softwareVersion: '2.3.5',
+    softwareVersion: '2.3.6',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
@@ -452,13 +452,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし',
-    dateModified: '2026-08-16',
+    dateModified: '2026-08-30',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'JPY',
     },
-    softwareVersion: '2.3.5',
+    softwareVersion: '2.3.6',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
