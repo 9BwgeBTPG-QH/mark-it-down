@@ -198,23 +198,23 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: 'Recently Added',
-    recentStatus: 'v2.3.6 — Easier voice selection, clearer compact previews, and steadier Focus navigation.',
+    recentStatus: 'v2.3.7 — Safer pastes, steadier feeds, more predictable exports.',
     recentItems: [
       {
-        title: 'Find the right Read Aloud voice',
-        body: 'Search voice names or language codes, filter by language or on-device voices, and move through choices with the keyboard.',
+        title: 'Paste nested quotes without losing their shape',
+        body: 'Markdown copied from other apps, including a quote inside a quote, keeps its original structure instead of collapsing into one flattened block.',
       },
       {
-        title: 'Open compact previews wider',
-        body: 'Wide tables scroll horizontally, and table or Mermaid previews can open in a larger view.',
+        title: 'Feed subscriptions register and fetch more reliably',
+        body: 'Adding or checking a feed works as expected, and a dismissed article can now be restored individually instead of only through the five-second undo or a full reset.',
       },
       {
-        title: 'Table actions stay with the selected table',
-        body: 'In notes with several tables, operations target the intended table; pipe-separated examples inside fenced code blocks stay out of table detection.',
+        title: 'Export and import syntax checks show up when they should',
+        body: "The review screen for Markdown syntax a target app won't render the same way now appears consistently before conversion, with issues reviewable in grouped batches.",
       },
       {
-        title: 'Saved voices and Focus navigation start ready',
-        body: 'When a saved Read Aloud voice is available, it applies on first playback. Focus Mode keeps TOC, Card, and Log navigation reachable.',
+        title: 'Keep multiple panels pinned at once',
+        body: 'Pin Notes, Table of Contents, or Note History independently — pinning one no longer un-pins another.',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -240,7 +240,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'View all FAQ',
     ctaHeading: 'Ready to write?',
     ctaNote: 'Available as a Chrome extension. No account required.',
-    ctaVersion: 'Latest version: v2.3.6',
+    ctaVersion: 'Latest version: v2.3.7',
     ctaSecondaryLabel: "What's new",
   },
   ja: {
@@ -317,23 +317,23 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: '最近の追加機能',
-    recentStatus: 'v2.3.6 — 読み上げ音声を選びやすくし、コンパクトプレビューとFocus Modeを安定化。',
+    recentStatus: 'v2.3.7 — 貼り付けをより安全に、フィードをより安定に、書き出しをより予測しやすく。',
     recentItems: [
       {
-        title: '読み上げ音声を絞り込んで選ぶ',
-        body: '音声名や言語コードを検索し、言語または端末内音声で絞り込み、キーボードで候補を移動できる。',
+        title: '入れ子の引用を崩さず貼り付け',
+        body: '他アプリからコピーしたMarkdown（引用の中の引用を含む）が、ひとつに潰れず元の構造のまま貼り付けられる。',
       },
       {
-        title: 'コンパクトプレビューを広く見る',
-        body: '幅の広いテーブルは横スクロールで読み、テーブルとMermaid図は拡大表示できる。',
+        title: 'フィード購読の登録・取得が安定',
+        body: 'フィードの追加・確認が想定どおりに動き、非表示にした記事は5秒Undoや全件リセットだけでなく、個別に復元できるようになった。',
       },
       {
-        title: '選んだテーブルを操作',
-        body: '複数テーブルのノートでは意図したテーブルを対象にし、コードフェンス内のパイプ区切り例はテーブルとして検出しない。',
+        title: 'Exportとimportの記法チェックが確実に表示',
+        body: '変換先アプリで表示が崩れる記法を確認する画面が、変換前に確実に表示されるようになり、issueはグループ単位でまとめてレビューできる。',
       },
       {
-        title: '保存済み音声とFocus navigationを初回から',
-        body: '保存した読み上げ音声が利用可能なら初回再生から適用し、Focus ModeではTOC / Card / Logの移動操作を保つ。',
+        title: '複数のパネルを同時にピン留め',
+        body: 'Notes・目次・Note Historyをそれぞれ独立にピン留めできる。ひとつをピン留めしても他のピンは外れない。',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -358,7 +358,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'すべてのFAQを見る',
     ctaHeading: '書き始めませんか？',
     ctaNote: 'Chrome拡張機能で利用可能。アカウント不要。',
-    ctaVersion: '最新版: v2.3.6',
+    ctaVersion: '最新版: v2.3.7',
     ctaSecondaryLabel: '更新履歴',
   },
 };
@@ -380,13 +380,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry',
-    dateModified: '2026-08-30',
+    dateModified: '2026-09-23',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
     },
-    softwareVersion: '2.3.6',
+    softwareVersion: '2.3.7',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
@@ -452,13 +452,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし',
-    dateModified: '2026-08-30',
+    dateModified: '2026-09-23',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'JPY',
     },
-    softwareVersion: '2.3.6',
+    softwareVersion: '2.3.7',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',

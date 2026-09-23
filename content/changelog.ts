@@ -96,12 +96,40 @@ export interface ChangelogVersion {
 export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   en: [
     {
-      version: 'v2.3.6',
-      highlight: 'Easier voice selection, clearer compact previews, and steadier Focus navigation.',
+      version: 'v2.3.7',
+      highlight: 'Safer pastes, steadier feeds, more predictable exports.',
       status: 'Under Review',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'This release closes a paste-corruption bug that could silently mangle nested quotes copied from any app, fixes a cluster of RSS feed reliability issues, makes the export/import syntax-check screen behave more predictably, and lets you keep more than one side panel pinned open at the same time.',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['Nested quotes survive pasting'], description: ['Markdown pasted from other apps — including a quote inside a quote — keeps its original structure instead of collapsing into a single, garbled quote block.'] },
+            { term: ['More reliable feed subscriptions'], description: ['Adding, checking, and fetching feeds works as expected, and a low-frequency feed’s new articles are no longer crowded out by a high-frequency feed.'] },
+            { term: ['Individual dismissed-article restore'], description: ['Restore a single dismissed article from RSS settings, on top of the five-second undo and full reset. Dismissed articles are now kept for 90 days from the moment you dismiss them.'] },
+            { term: ['Consistent export/import syntax checks'], description: ['The syntax-check screen now appears consistently before conversion, with issues reviewable and applicable in grouped batches, plus a “skip all” option on import.'] },
+            { term: ['Independent panel pinning'], description: ['Notes, Table of Contents, and Note History panels can each stay pinned open, whether docked or floating, without un-pinning one another.'] },
+          ],
+        },
+        {
+          title: 'Changed',
+          items: [
+            { term: ['Panel-switcher button stability'], description: ['The button no longer shifts position when switching panels repeatedly in a wide window.'] },
+            { term: ['Table hover toolbar layering'], description: ['The toolbar above a table no longer appears on top of the table’s grid-editing window.'] },
+            { term: ['Live settings refresh'], description: ['The Help and Git settings screens pick up changes made in another window while they’re open, instead of showing stale values until reopened.'] },
+            { term: ['Web Clipper preview refetch'], description: ['Re-fetching a page preview restores correctly afterward.'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.6',
+      highlight: 'Easier voice selection, clearer compact previews, and steadier Focus navigation.',
+      status: 'Released',
+      statusClass: 'released',
       theme: 'This release makes dense notes easier to inspect and navigate: Read Aloud voices are easier to find, compact table and Mermaid previews can open larger, table actions stay with the intended table, and Focus Mode navigation remains reachable.',
       sections: [
         {
@@ -1607,12 +1635,40 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   ],
   ja: [
     {
-      version: 'v2.3.6',
-      highlight: '読み上げ音声を選びやすくし、コンパクトプレビューとFocus Modeを安定化。',
+      version: 'v2.3.7',
+      highlight: '貼り付けをより安全に、フィードをより安定に、書き出しをより予測しやすく。',
       status: '審査中',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: '他アプリからコピーした入れ子の引用を崩さず貼り付けられるようにし、RSSフィードの信頼性に関する複数の不具合を修正し、Exportとimportの記法チェック画面をより予測しやすい動作にし、複数のside panelを同時にピン留めできるようにするリリース。',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['入れ子の引用を崩さず貼り付け'], description: ['他アプリからコピーしたMarkdown（引用の中の引用を含む）が、ひとつに潰れた引用ブロックにならず、元の構造のまま貼り付けられる。'] },
+            { term: ['フィード購読の信頼性向上'], description: ['フィードの追加・確認・取得が想定どおりに動作し、更新頻度の低いフィードの新着記事が高頻度フィードに押し出されなくなった。'] },
+            { term: ['非表示記事の個別復元'], description: ['RSS設定から非表示にした記事を個別に復元できる。5秒Undoと全件リセットに加えた選択肢。非表示にした記事は、非表示にした時点から90日間保持する。'] },
+            { term: ['Exportとimportの記法チェックを確実に表示'], description: ['記法チェック画面が変換前に確実に表示されるようになり、issueはグループ単位でまとめてレビュー・適用でき、importには「すべてスキップ」も追加した。'] },
+            { term: ['パネルごとに独立したピン留め'], description: ['Notes・目次・Note Historyの各パネルを、dockでもfloatingでも独立してピン留めできる。ひとつのピン留めが他を解除しない。'] },
+          ],
+        },
+        {
+          title: 'Changed',
+          items: [
+            { term: ['パネル切り替えボタンの安定'], description: ['広いウィンドウでパネルを連続切り替えしても、ボタンの位置がずれなくなった。'] },
+            { term: ['テーブルhover toolbarの重なり'], description: ['テーブル上部のhover toolbarが、テーブルのgrid編集ウィンドウの上に重ならなくなった。'] },
+            { term: ['設定画面のライブ反映'], description: ['HelpとGit設定画面が、開いたまま別ウィンドウでの変更を反映する。閉じて開き直す必要がなくなった。'] },
+            { term: ['Web Clipperプレビューの再取得'], description: ['ページプレビューを再取得したあと、正しく復元されるようになった。'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.6',
+      highlight: '読み上げ音声を選びやすくし、コンパクトプレビューとFocus Modeを安定化。',
+      status: 'リリース済',
+      statusClass: 'released',
       theme: '情報量の多いノートを確認し、移動しやすくするリリース。Read Aloudの音声を探しやすくし、コンパクト表示のテーブルとMermaid図を拡大できる。テーブル操作は意図したテーブルを対象にし、Focus Modeの移動操作へ届く状態を保つ。',
       sections: [
         {
