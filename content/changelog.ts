@@ -96,12 +96,42 @@ export interface ChangelogVersion {
 export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   en: [
     {
-      version: 'v2.3.7',
-      highlight: 'Safer pastes, steadier feeds, more predictable exports.',
+      version: 'v2.3.8',
+      highlight: 'A reading mode for AI output, favorite voices, and steadier input.',
       status: 'Under Review',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'This release adds RSVP, a reading mode that shows one phrase at a time, and lets you keep favorite Read Aloud voices. The rest is fixes: data handling at install and when creating a note, typing and Markdown input, clipped toolbars, and cursor position. We have not measured whether RSVP changes how well you read or edit.',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['RSVP reading mode'], description: ['Shows the phrase you are reading enlarged and dims the rest. Step with Space, the arrow keys, or a click; Esc exits and leaves your cursor at that phrase. Auto-advance runs at x0.5 to x1.8, and a new selection-toolbar button starts RSVP on just the selected text.'] },
+            { term: ['RSVP with Read Aloud'], description: ['Run Read Aloud alongside RSVP, with speech following the RSVP speed. Mask the phrase to listen first and reveal it when you want. Jump by phrase number or from a headings list; playback stops at the new position.'] },
+            { term: ['Favorite Read Aloud voices'], description: ['Star up to five voices in Settings and switch between them from RSVP. A favorite that is not available on the current device is skipped. Favorites sync across your devices.'] },
+            { term: ['Read Aloud follows clauses'], description: ['The highlight and reading unit now split at 、 ， and , instead of covering whole sentences.'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['Install no longer writes starting data'], description: ['The install step used to write an initial snapshot of app data and no longer does. Profiles that already ended up with only an Inbox folder are not repaired by this release.'] },
+            { term: ['Safer new notes'], description: ['Creating a note no longer adds an invalid, empty entry to the note list, and no longer overwrites a newer copy saved from another tab or a Git sync.'] },
+            { term: ['RSVP settings and settings sync'], description: ['Changing an RSVP setting at the same moment a synced settings update arrives no longer loses one of the two. Other places that save settings are not covered yet.'] },
+            { term: ['Typing and Markdown input'], description: ['A horizontal rule typed as --- or *** converts reliably, ***text*** gives bold and italic together, select-all with wikilink completion no longer errors, and a note that starts with a quote is no longer split into a separate paragraph.'] },
+            { term: ['Toolbars'], description: ['The math block and Mermaid toolbars are no longer cut off, the table toolbar stays while your pointer is over the table, and the code block toolbar keeps its link to its block. The Toggle Line Breaks button is back in the selection toolbar.'] },
+            { term: ['Cursor and focus'], description: ['Several timing cases after Alt+N and new-note creation, where the cursor moved or typing went to the previous note, are fixed. Each fix is narrow and not a general promise.'] },
+            { term: ['RSS pages that need JavaScript'], description: ['Waits no longer stretch or shrink when the system clock changes or the computer wakes from sleep.'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.7',
+      highlight: 'Safer pastes, steadier feeds, more predictable exports.',
+      status: 'Released',
+      statusClass: 'released',
       theme: 'This release closes a paste-corruption bug that could silently mangle nested quotes copied from any app, fixes a cluster of RSS feed reliability issues, makes the export/import syntax-check screen behave more predictably, and lets you keep more than one side panel pinned open at the same time.',
       sections: [
         {
@@ -1635,12 +1665,42 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   ],
   ja: [
     {
-      version: 'v2.3.7',
-      highlight: '貼り付けをより安全に、フィードをより安定に、書き出しをより予測しやすく。',
+      version: 'v2.3.8',
+      highlight: 'AI出力を読むための読書モード、お気に入り音声、入力まわりの修正。',
       status: '審査中',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: '1フレーズずつ表示するRSVP読書モードを追加し、Read Aloudの音声をお気に入りに登録できるようにするリリース。ほかはインストールと新規ノート作成時のデータ処理、入力とMarkdown記法、途切れたツールバー、カーソル位置の修正。RSVPが読み方や編集にどう影響するかは測っていない。',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['RSVP読書モード'], description: ['読んでいるフレーズを拡大し、まわりを暗くする。Space・矢印キー・クリックでフレーズを移動し、Escで抜けるとカーソルはそのフレーズに残る。自動送りはx0.5〜x1.8で、選択ツールバーの新しいボタンから選択範囲だけをRSVPで開始できる。'] },
+            { term: ['RSVPとRead Aloudの併用'], description: ['RSVPと一緒にRead Aloudを再生でき、読み上げ速度はRSVPの速度に従う。先に聞いてから見られるようフレーズを隠し、好きなときに表示できる。フレーズ番号の入力や見出し一覧から移動でき、移動後は再生が止まる。'] },
+            { term: ['読み上げ音声のお気に入り'], description: ['設定で音声に星を付けて最大5つ登録し、RSVPから切り替えられる。いまの端末で使えないお気に入りは飛ばす。お気に入りはデバイス間で同期する。'] },
+            { term: ['読み上げが文節単位に'], description: ['ハイライトと読み上げの単位を、文全体ではなく、、，, で区切った文節にした。'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['インストール時の初期データ書き込みを廃止'], description: ['インストール時にアプリデータの初期スナップショットを書き込んでいたが、書き込まなくなった。すでにInboxフォルダだけになったプロファイルは、このリリースでは修復されない。'] },
+            { term: ['新規ノート作成の安全性'], description: ['新規ノートの作成でノート一覧に不正な空エントリが追加されなくなり、別タブやGit同期で保存された新しいノートを上書きしなくなった。'] },
+            { term: ['RSVP設定と設定同期'], description: ['RSVP設定の変更と同期された設定の反映が同時に起きても、片方が失われなくなった。ほかの設定保存箇所は未対応。'] },
+            { term: ['入力とMarkdown記法'], description: ['---や***で入力した水平線が確実に変換され、***text***は太字と斜体になり、全選択してのwikilink補完でエラーにならず、引用で始まるノートが別段落に分かれなくなった。'] },
+            { term: ['ツールバー'], description: ['数式ブロックとMermaidのツールバーが途切れなくなり、テーブル上にポインターがある間はテーブルツールバーが消えず、コードブロックのツールバーがブロックとの紐づけを保つ。選択ツールバーに「改行の切り替え」ボタンが戻った。'] },
+            { term: ['カーソルとフォーカス'], description: ['Alt+Nや新規ノート作成の直後に、カーソルが動いたり入力が前のノートに入ったりするタイミングの問題をいくつか修正した。修正はそれぞれ限定的で、一般的な保証ではない。'] },
+            { term: ['JavaScriptが必要なRSSページ'], description: ['システム時計の調整やスリープ復帰で待ち時間が伸び縮みしなくなった。'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.7',
+      highlight: '貼り付けをより安全に、フィードをより安定に、書き出しをより予測しやすく。',
+      status: 'リリース済',
+      statusClass: 'released',
       theme: '他アプリからコピーした入れ子の引用を崩さず貼り付けられるようにし、RSSフィードの信頼性に関する複数の不具合を修正し、Exportとimportの記法チェック画面をより予測しやすい動作にし、複数のside panelを同時にピン留めできるようにするリリース。',
       sections: [
         {

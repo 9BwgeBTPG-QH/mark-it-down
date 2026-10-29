@@ -783,7 +783,11 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: 'Read Aloud Voice Choice',
-          body: 'Search by voice name or language code, filter by language or on-device voices, and use keyboard navigation. A saved voice applies from first playback when available',
+          body: 'Search by voice name or language code, filter by language or on-device voices, and use keyboard navigation. A saved voice applies from first playback when available. Star up to five favorites and switch between them; an unavailable favorite is skipped',
+        },
+        {
+          title: 'RSVP Reading Mode',
+          body: 'Full-screen overlay that shows one phrase at a time, enlarged, with the rest dimmed. Space / Shift+Space / arrow keys to step, P to auto-advance (x0.5–x1.8), Esc to exit at your place. Start from a selection, run with Read Aloud (T), mask and reveal the phrase (M / R), jump by phrase number or heading. Read Aloud follows clauses',
         },
         {
           title: 'Open-source Credits',
@@ -1566,7 +1570,11 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         },
         {
           title: '読み上げ音声の選択',
-          body: '音声名や言語コードで検索し、言語または端末内音声で絞り込み、キーボードで移動できる。保存した音声が利用可能なら初回再生から適用する',
+          body: '音声名や言語コードで検索し、言語または端末内音声で絞り込み、キーボードで移動できる。保存した音声が利用可能なら初回再生から適用する。お気に入りを最大5つ登録して切り替え可能。使えないお気に入りは飛ばす',
+        },
+        {
+          title: 'RSVP読書モード',
+          body: '1フレーズずつ拡大表示し、まわりを暗くする全画面オーバーレイ。Space / Shift+Space / 矢印キーで移動、Pで自動送り（x0.5〜x1.8）、Escで今の位置のまま終了。選択範囲から開始、Read Aloud併用（T）、フレーズの非表示・表示（M / R）、フレーズ番号や見出しへの移動に対応。読み上げは文節単位',
         },
         {
           title: 'OSSクレジット',

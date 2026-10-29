@@ -193,28 +193,28 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
       },
       {
         title: 'Language study with read-aloud',
-        body: 'Paste study material and play it back — the sentence being read is highlighted as you listen. Want natural voices? Open the text in Microsoft Edge and its Read Aloud adds more high-quality choices.',
+        body: 'Paste study material and play it back — the clause being read is highlighted as you listen. Want natural voices? Open the text in Microsoft Edge and its Read Aloud adds more high-quality choices.',
       },
     ],
     recentEyebrow: "What's New",
     recentHeading: 'Recently Added',
-    recentStatus: 'v2.3.7 — Safer pastes, steadier feeds, more predictable exports.',
+    recentStatus: 'v2.3.8 — A reading mode for AI output, favorite voices, and steadier input.',
     recentItems: [
       {
-        title: 'Paste nested quotes without losing their shape',
-        body: 'Markdown copied from other apps, including a quote inside a quote, keeps its original structure instead of collapsing into one flattened block.',
+        title: 'Read one phrase at a time with RSVP',
+        body: 'RSVP shows the phrase you are on enlarged and dims the rest. It can run together with Read Aloud, and you can jump to any heading while it plays.',
       },
       {
-        title: 'Feed subscriptions register and fetch more reliably',
-        body: 'Adding or checking a feed works as expected, and a dismissed article can now be restored individually instead of only through the five-second undo or a full reset.',
+        title: 'Keep five favorite Read Aloud voices',
+        body: 'Star up to five voices in Settings and switch between them from RSVP. Read Aloud now follows clauses instead of whole sentences.',
       },
       {
-        title: 'Export and import syntax checks show up when they should',
-        body: "The review screen for Markdown syntax a target app won't render the same way now appears consistently before conversion, with issues reviewable in grouped batches.",
+        title: 'Steadier typing and Markdown input',
+        body: 'Horizontal rules, ***bold italic***, and wikilink completion behave as typed, and clipped math and Mermaid toolbars sit inside their blocks.',
       },
       {
-        title: 'Keep multiple panels pinned at once',
-        body: 'Pin Notes, Table of Contents, or Note History independently — pinning one no longer un-pins another.',
+        title: 'Safer data handling around install and new notes',
+        body: 'Install no longer writes starting data over your app state, and creating a note no longer overwrites a newer saved copy.',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -240,7 +240,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'View all FAQ',
     ctaHeading: 'Ready to write?',
     ctaNote: 'Available as a Chrome extension. No account required.',
-    ctaVersion: 'Latest version: v2.3.7',
+    ctaVersion: 'Latest version: v2.3.8',
     ctaSecondaryLabel: "What's new",
   },
   ja: {
@@ -312,28 +312,28 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
       },
       {
         title: '読み上げとハイライトで語学学習',
-        body: '教材を貼り付けて再生すると、読み上げ中の文がハイライトされる。Natural音声で聞きたいときは、Microsoft Edgeの読み上げ機能を使うと高品質な音声の選択肢が増える。',
+        body: '教材を貼り付けて再生すると、読み上げ中の文節がハイライトされる。Natural音声で聞きたいときは、Microsoft Edgeの読み上げ機能を使うと高品質な音声の選択肢が増える。',
       },
     ],
     recentEyebrow: "What's New",
     recentHeading: '最近の追加機能',
-    recentStatus: 'v2.3.7 — 貼り付けをより安全に、フィードをより安定に、書き出しをより予測しやすく。',
+    recentStatus: 'v2.3.8 — AI出力を読むための読書モード、お気に入り音声、入力まわりの修正。',
     recentItems: [
       {
-        title: '入れ子の引用を崩さず貼り付け',
-        body: '他アプリからコピーしたMarkdown（引用の中の引用を含む）が、ひとつに潰れず元の構造のまま貼り付けられる。',
+        title: 'RSVPで1フレーズずつ読む',
+        body: '読んでいるフレーズを拡大し、まわりを暗くする。Read Aloudと一緒に使え、再生中に見出しへ移動できる。',
       },
       {
-        title: 'フィード購読の登録・取得が安定',
-        body: 'フィードの追加・確認が想定どおりに動き、非表示にした記事は5秒Undoや全件リセットだけでなく、個別に復元できるようになった。',
+        title: '読み上げ音声をお気に入りに5つまで登録',
+        body: '設定で音声に星を付けて最大5つ登録し、RSVPから切り替えられる。読み上げは文全体ではなく文節単位になった。',
       },
       {
-        title: 'Exportとimportの記法チェックが確実に表示',
-        body: '変換先アプリで表示が崩れる記法を確認する画面が、変換前に確実に表示されるようになり、issueはグループ単位でまとめてレビューできる。',
+        title: '入力とMarkdown記法がより安定',
+        body: '水平線・***太字斜体***・wikilink補完が入力どおりに動き、途切れていた数式とMermaidのツールバーはブロック内に収まる。',
       },
       {
-        title: '複数のパネルを同時にピン留め',
-        body: 'Notes・目次・Note Historyをそれぞれ独立にピン留めできる。ひとつをピン留めしても他のピンは外れない。',
+        title: 'インストールと新規ノートまわりのデータ処理を修正',
+        body: 'インストール時にアプリの状態へ初期データを上書きしなくなり、新規ノート作成が新しく保存されたノートを上書きしなくなった。',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -358,7 +358,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'すべてのFAQを見る',
     ctaHeading: '書き始めませんか？',
     ctaNote: 'Chrome拡張機能で利用可能。アカウント不要。',
-    ctaVersion: '最新版: v2.3.7',
+    ctaVersion: '最新版: v2.3.8',
     ctaSecondaryLabel: '更新履歴',
   },
 };
@@ -380,13 +380,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry',
-    dateModified: '2026-09-23',
+    dateModified: '2026-10-29',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
     },
-    softwareVersion: '2.3.7',
+    softwareVersion: '2.3.8',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
@@ -452,13 +452,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし',
-    dateModified: '2026-09-23',
+    dateModified: '2026-10-29',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'JPY',
     },
-    softwareVersion: '2.3.7',
+    softwareVersion: '2.3.8',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
