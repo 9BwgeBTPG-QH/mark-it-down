@@ -198,23 +198,23 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: 'Recently Added',
-    recentStatus: 'v2.3.8 — A reading mode for AI output, favorite voices, and steadier input.',
+    recentStatus: 'v2.3.9 — More in the Alt menu, and settings that save in order.',
     recentItems: [
       {
-        title: 'Read one phrase at a time with RSVP',
-        body: 'RSVP shows the phrase you are on enlarged and dims the rest. It can run together with Read Aloud, and you can jump to any heading while it plays.',
+        title: 'More in the Alt menu',
+        body: 'Tap Alt on its own to toggle Focus Mode, the Scratchpad, and the Note log from the same menu, and to jump to the previous or next part of a series.',
       },
       {
-        title: 'Keep five favorite Read Aloud voices',
-        body: 'Star up to five voices in Settings and switch between them from RSVP. Read Aloud now follows clauses instead of whole sentences.',
+        title: 'Settings that save in order',
+        body: 'Places that save settings now take turns, so changes made at nearly the same moment are saved one after another. A few places are not covered yet and are planned for the next version.',
       },
       {
-        title: 'Steadier typing and Markdown input',
-        body: 'Horizontal rules, ***bold italic***, and wikilink completion behave as typed, and clipped math and Mermaid toolbars sit inside their blocks.',
+        title: 'Libraries updated after reported vulnerabilities',
+        body: 'We updated the libraries behind pasted-content cleanup and the editor core.',
       },
       {
-        title: 'Safer data handling around install and new notes',
-        body: 'Install no longer writes starting data over your app state, and creating a note no longer overwrites a newer saved copy.',
+        title: 'Two small fixes',
+        body: 'Find & Replace keeps focus in the Replace box once you click it, and the Note log shortcut checks the current state when you press it.',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -240,7 +240,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'View all FAQ',
     ctaHeading: 'Ready to write?',
     ctaNote: 'Available as a Chrome extension. No account required.',
-    ctaVersion: 'Latest version: v2.3.8',
+    ctaVersion: 'Latest version: v2.3.9',
     ctaSecondaryLabel: "What's new",
   },
   ja: {
@@ -317,23 +317,23 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     ],
     recentEyebrow: "What's New",
     recentHeading: '最近の追加機能',
-    recentStatus: 'v2.3.8 — AI出力を読むための読書モード、お気に入り音声、入力まわりの修正。',
+    recentStatus: 'v2.3.9 — Altメニューの操作を追加、設定の保存を順番待ちに。',
     recentItems: [
       {
-        title: 'RSVPで1フレーズずつ読む',
-        body: '読んでいるフレーズを拡大し、まわりを暗くする。Read Aloudと一緒に使え、再生中に見出しへ移動できる。',
+        title: 'Altメニューの操作を追加',
+        body: 'Altを単独で押すメニューから、Focus Mode・Scratchpad・Note logを切り替え、シリーズの前後のパートへ移動できる。',
       },
       {
-        title: '読み上げ音声をお気に入りに5つまで登録',
-        body: '設定で音声に星を付けて最大5つ登録し、RSVPから切り替えられる。読み上げは文全体ではなく文節単位になった。',
+        title: '設定の保存を順番待ちに',
+        body: '設定を保存する箇所を順番待ちにし、ほぼ同時の変更を順に保存するようにした。まだ対象外の箇所が一部あり、次のバージョンで対応予定。',
       },
       {
-        title: '入力とMarkdown記法がより安定',
-        body: '水平線・***太字斜体***・wikilink補完が入力どおりに動き、途切れていた数式とMermaidのツールバーはブロック内に収まる。',
+        title: '脆弱性の報告があったライブラリを更新',
+        body: '貼り付け内容の無害化とエディタの中核を担うライブラリを更新した。',
       },
       {
-        title: 'インストールと新規ノートまわりのデータ処理を修正',
-        body: 'インストール時にアプリの状態へ初期データを上書きしなくなり、新規ノート作成が新しく保存されたノートを上書きしなくなった。',
+        title: '小さな修正を2件',
+        body: '置換欄をクリックした後、検索欄へフォーカスが戻らない。Note logのショートカットは、押した時点の状態で判断する。',
       },
     ],
     faqEyebrow: 'FAQ',
@@ -358,7 +358,7 @@ export const indexSections: Record<Lang, IndexSectionsCopy> = {
     faqMoreLabel: 'すべてのFAQを見る',
     ctaHeading: '書き始めませんか？',
     ctaNote: 'Chrome拡張機能で利用可能。アカウント不要。',
-    ctaVersion: '最新版: v2.3.8',
+    ctaVersion: '最新版: v2.3.9',
     ctaSecondaryLabel: '更新履歴',
   },
 };
@@ -380,13 +380,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdown editor, Chrome extension, Web Clipper, AI output, ChatGPT, Claude, Git sync, side panel, Obsidian compatible, Zenn, Hugo, EPUB export, LaTeX, Mermaid, offline, no telemetry',
-    dateModified: '2026-10-29',
+    dateModified: '2026-11-09',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
     },
-    softwareVersion: '2.3.8',
+    softwareVersion: '2.3.9',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',
@@ -452,13 +452,13 @@ export const indexJsonLd: Record<Lang, Record<string, unknown>> = {
     isAccessibleForFree: true,
     keywords:
       'Markdownエディタ, Chrome拡張, Webクリッパー, AI出力, ChatGPT, Claude, Git同期, サイドパネル, Obsidian互換, Zenn, Hugo, EPUBエクスポート, LaTeX, Mermaid, オフライン, テレメトリなし',
-    dateModified: '2026-10-29',
+    dateModified: '2026-11-09',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'JPY',
     },
-    softwareVersion: '2.3.8',
+    softwareVersion: '2.3.9',
     author: {
       '@type': 'Person',
       name: 'Mark It Down Developer',

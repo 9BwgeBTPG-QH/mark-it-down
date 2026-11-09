@@ -735,6 +735,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
           body: 'Split a long note by heading into a linked series. Parts group in the sidebar, navigate with Alt+PageUp/PageDown, merge back anytime, or export the whole series at once',
         },
         {
+          title: 'Alt Quick Menu',
+          body: 'Tap Alt on its own to open a keyboard menu: toggle Focus Mode (F), the Scratchpad (G), and the Note log (L), or jump to the previous/next series part with Alt+PageUp/PageDown. Unavailable rows are greyed out',
+        },
+        {
           title: 'Merge Notes',
           body: 'Ctrl+Click to select, drag to reorder, combine into one',
         },
@@ -1532,6 +1536,10 @@ export const featuresSections: Record<Lang, FeaturesSectionsCopy> = {
         {
           title: 'ノートシリーズ',
           body: '見出し単位でノートを分割してシリーズにまとめられる。サイドバーにグループ表示され、Alt+PageUp/PageDown で移動、結合、シリーズ全体のエクスポートも可能',
+        },
+        {
+          title: 'Altクイック操作',
+          body: 'Altを単独で押すとキーボードメニューが開く。Focus Mode（F）・Scratchpad（G）・Note log（L）の切り替えと、Alt+PageUp/PageDownでのシリーズ前後パートへの移動に対応。使えない行はグレーアウト',
         },
         { title: 'ノート結合', body: 'Ctrl+クリックで選択、ドラッグで並び替え、1つに結合' },
         {

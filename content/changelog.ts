@@ -96,12 +96,42 @@ export interface ChangelogVersion {
 export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   en: [
     {
-      version: 'v2.3.8',
-      highlight: 'A reading mode for AI output, favorite voices, and steadier input.',
+      version: 'v2.3.9',
+      highlight: 'More in the Alt menu, and settings that save in order.',
       status: 'Under Review',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'This release puts more everyday switches in the menu that opens when you tap Alt on its own, and makes the remaining places that save settings take turns. We also updated libraries after reported vulnerabilities and fixed two small bugs. Some places that save settings are not covered yet and are planned for the next release.',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['More actions in the Alt quick menu'], description: ['Tap Alt on its own to toggle Focus Mode (F), the Scratchpad (G), and the Note log (L) from the same menu. For notes in a series, Alt+PageUp and Alt+PageDown jump to the previous or next part. A row that cannot be used right now is greyed out.'] },
+          ],
+        },
+        {
+          title: 'Changed',
+          items: [
+            { term: ['Settings saves take turns'], description: ['Git connection and sync state, the Settings screens, appearance and export preferences, snippets and presets, and RSS settings now save one after another, so changes made at nearly the same moment are saved one after another. We never saw a setting get lost before this change, and the checks used simulated storage. A few places still work out the new value before their turn: the recent export folders list, the queue of system-note deletions after a Git push, RSS settings applied from sync, and snippets and presets saved by hand while a sync arrives. These are planned for the next release.'] },
+            { term: ['Libraries updated for reported vulnerabilities'], description: ['We updated the libraries that sanitize pasted content and power the editor core. Five low-severity audit findings remain in the math-rendering chain.'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['Find & Replace focus'], description: ['The search box no longer takes focus back after you click into the Replace box.'] },
+            { term: ['Note log shortcut'], description: ['The shortcut now checks the current panel state when you press the key.'] },
+            { term: ['Alt quick menu'], description: ['Alt+F no longer toggles Focus Mode behind an open dialog, and closing the Note log with L leaves your cursor in the editor.'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.8',
+      highlight: 'A reading mode for AI output, favorite voices, and steadier input.',
+      status: 'Released',
+      statusClass: 'released',
       theme: 'This release adds RSVP, a reading mode that shows one phrase at a time, and lets you keep favorite Read Aloud voices. The rest is fixes: data handling at install and when creating a note, typing and Markdown input, clipped toolbars, and cursor position. We have not measured whether RSVP changes how well you read or edit.',
       sections: [
         {
@@ -1665,12 +1695,42 @@ export const changelogVersions: Record<Lang, ChangelogVersion[]> = {
   ],
   ja: [
     {
-      version: 'v2.3.8',
-      highlight: 'AI出力を読むための読書モード、お気に入り音声、入力まわりの修正。',
+      version: 'v2.3.9',
+      highlight: 'Altメニューの操作を追加、設定の保存を順番待ちに。',
       status: '審査中',
       statusClass: 'under-review',
       latest: true,
       defaultOpen: true,
+      theme: 'Altを単独で押すメニューに日常の切り替えを増やし、設定を保存する残りの箇所を順番待ちにするリリース。報告された脆弱性に対応してライブラリを更新し、小さな不具合を2件修正した。設定を保存する箇所には、まだ対象外のものが一部あり、次のリリースで対応予定。',
+      sections: [
+        {
+          title: 'Improvements',
+          items: [
+            { term: ['Altクイック操作の追加'], description: ['Altを単独で押すメニューから、Focus Mode（F）・Scratchpad（G）・Note log（L）を切り替えられる。シリーズのノートでは、Alt+PageUp / Alt+PageDownで前後のパートへ移動できる。いま使えない行はグレーアウトされる。'] },
+          ],
+        },
+        {
+          title: 'Changed',
+          items: [
+            { term: ['設定の保存を順番待ちに'], description: ['Gitの接続・同期状態、設定画面、外観とエクスポートの設定、スニペットとプリセット、RSS設定を順に保存するようにし、ほぼ同時の変更を順に保存するようにした。この変更の前に設定が失われるのは確認しておらず、検証は模擬ストレージで行った。新しい値を順番の前に計算している箇所が一部残る。最近のエクスポート先フォルダー、Git push後のシステムノート削除キュー、同期から反映するRSS設定、同期の受信中に手動で保存したスニペットとプリセット。次のリリースで対応予定。'] },
+            { term: ['脆弱性の報告があったライブラリを更新'], description: ['貼り付けた内容を無害化するライブラリと、エディタの中核ライブラリを更新した。数式描画まわりの低重大度の監査指摘5件は残っている。'] },
+          ],
+        },
+        {
+          title: 'Fixed',
+          items: [
+            { term: ['検索と置換のフォーカス'], description: ['置換欄をクリックした後に、検索欄へフォーカスが戻らないようにした。'] },
+            { term: ['Note logのショートカット'], description: ['キーを押した時点のパネルの状態で判断するようにした。'] },
+            { term: ['Altクイック操作'], description: ['ダイアログが開いている間はAlt+FでFocus Modeが切り替わらず、LでNote logを閉じるとカーソルがエディタに残る。'] },
+          ],
+        },
+      ],
+    },
+    {
+      version: 'v2.3.8',
+      highlight: 'AI出力を読むための読書モード、お気に入り音声、入力まわりの修正。',
+      status: 'リリース済',
+      statusClass: 'released',
       theme: '1フレーズずつ表示するRSVP読書モードを追加し、Read Aloudの音声をお気に入りに登録できるようにするリリース。ほかはインストールと新規ノート作成時のデータ処理、入力とMarkdown記法、途切れたツールバー、カーソル位置の修正。RSVPが読み方や編集にどう影響するかは測っていない。',
       sections: [
         {
